@@ -1,14 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://bevb6tr6a0snb"]
+[gd_scene load_steps=4 format=3 uid="uid://bevb6tr6a0snb"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_wnr0d"]
 [ext_resource type="Texture2D" uid="uid://bkmlvpfyhc4ad" path="res://icon.svg" id="2_5bm74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmvo1"]
+size = Vector2(1024, 20)
 
 [node name="room_001" type="Node2D"]
 script = ExtResource("1_wnr0d")
 
 [node name="savepoint" type="Node2D" parent="."]
-position = Vector2(-128, -112)
+position = Vector2(0, -272)
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-134, -113)
+position = Vector2(0, -272)
 texture = ExtResource("2_5bm74")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-264, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="Icon2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-136, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="Icon3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-8, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="Icon4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(120, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="Icon5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(248, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="Icon6" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(376, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="Icon7" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(504, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="Icon8" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(632, 56)
+texture = ExtResource("2_5bm74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_rmvo1")
