@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd5do2tqya03u"]
+
+[ext_resource type="PackedScene" uid="uid://b0j605csrsrs1" path="res://Ingame/game_objects/platforms/pipe_tile/pipe_tile.tscn" id="1_smxnk"]
+
+[node name="PipeVertShort" type="Node2D"]
+
+[node name="pipe_tile7" parent="." instance=ExtResource("1_smxnk")]
+position = Vector2(0, 16)
+direction = 0
+
+[node name="pipe_tile8" parent="." instance=ExtResource("1_smxnk")]
+position = Vector2(0, 48)
+direction = 0

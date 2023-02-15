@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvjb27dw4m1jk"]
+
+[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="1_odiym"]
+[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="2_isyel"]
+[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="3_kcqwv"]
+[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="4_ec8y5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
+animations = [{
+"frames": [ExtResource("1_odiym"), ExtResource("2_isyel"), ExtResource("3_kcqwv"), ExtResource("4_ec8y5"), ExtResource("3_kcqwv"), ExtResource("2_isyel")],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="zzz" type="AnimatedSprite2D"]
+texture_filter = 1
+frames = SubResource("SpriteFrames_h6so0")
+playing = true
+centered = false

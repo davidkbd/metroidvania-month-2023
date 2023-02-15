@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://djxrqdepgdkwu"]
+
+[ext_resource type="PackedScene" uid="uid://bv5c1pyo72cni" path="res://Ingame/game_objects/event_trigger/event_trigger.tscn" id="1_0w41x"]
+[ext_resource type="Script" path="res://Ingame/game_objects/camera_event_trigger/camera_event_trigger.gd" id="2_gifum"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_t7pci"]
+a = Vector2(-1024, 0)
+b = Vector2(1024, 0)
+
+[node name="camera_event_trigger" instance=ExtResource("1_0w41x")]
+script = ExtResource("2_gifum")
+trigger_id = "camera_event_trigger"
+
+[node name="Shape" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource("SegmentShape2D_t7pci")
+debug_color = Color(0.654902, 0.517647, 0, 0.419608)

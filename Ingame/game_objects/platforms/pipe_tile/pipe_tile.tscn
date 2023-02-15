@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0j605csrsrs1"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/platforms/pipe_tile/pipe_tile.gd" id="1_1pgh7"]
+[ext_resource type="Texture2D" uid="uid://dqopwrq3fvwqe" path="res://Ingame/levels/sprites/pipe-tile.png" id="2_1glna"]
+
+[node name="pipe_tile" type="Node2D" groups=["LEVEL_LISTENER"]]
+script = ExtResource("1_1pgh7")
+textures_directory = "res://Ingame/levels/sprites/"
+direction = 3
+
+[node name="sprite" type="Sprite2D" parent="."]
+rotation = -7.85398
+texture = ExtResource("2_1glna")
+region_enabled = true
+region_rect = Rect2(32, 0, 8, 32)

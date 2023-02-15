@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://da5cbxfs88ulq"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/follow_player_eye/follow_player_eye.gd" id="1_2mlor"]
+[ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="1_lv0dy"]
+
+[node name="follow_player_eye" type="Node2D" groups=["PLAYER_LISTENER"]]
+modulate = Color(0.811765, 0.811765, 0.811765, 1)
+script = ExtResource("1_2mlor")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 0.996001)
+scale = Vector2(0.2, 0.2915)
+texture = ExtResource("1_lv0dy")
+
+[node name="iris" type="Sprite2D" parent="."]
+modulate = Color(0.184314, 0.184314, 0.184314, 1)
+texture_filter = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_lv0dy")

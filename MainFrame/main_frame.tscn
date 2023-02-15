@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5pwui3h07ejx"]
+
+[ext_resource type="Script" path="res://MainFrame/main_frame.gd" id="1_13s85"]
+[ext_resource type="PackedScene" uid="uid://bnjdbvkc0iqdo" path="res://Ingame/ingame.tscn" id="2_y1wo4"]
+[ext_resource type="PackedScene" uid="uid://dqa0pkk14m26r" path="res://Menu/menu.tscn" id="3_my4pk"]
+[ext_resource type="PackedScene" uid="uid://bn3oqc5fi2l0h" path="res://MainFrame/fade_in/fade_in.tscn" id="4_p81vl"]
+[ext_resource type="PackedScene" uid="uid://1ba7px6bcwga" path="res://sfx/menu_sfx.tscn" id="5_2ts4h"]
+[ext_resource type="PackedScene" uid="uid://cqku88ctemmvr" path="res://music/music_manager.tscn" id="6_mtnew"]
+
+[node name="MainFrame" type="Node"]
+script = ExtResource("1_13s85")
+
+[node name="ingame" parent="." instance=ExtResource("2_y1wo4")]
+
+[node name="menu" parent="." instance=ExtResource("3_my4pk")]
+
+[node name="fade_in" parent="." instance=ExtResource("4_p81vl")]
+layer = 100
+
+[node name="menu_sfx" parent="." instance=ExtResource("5_2ts4h")]
+
+[node name="music_manager" parent="." instance=ExtResource("6_mtnew")]

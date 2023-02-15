@@ -1,0 +1,204 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd4nk5jiw54pw"]
+
+[ext_resource type="Script" path="res://Menu/credits_menu/credits_menu.gd" id="1_3dtsr"]
+[ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_4ub5q"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://Menu/sprites/panel.png" id="3_6yr1s"]
+[ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="3_io8xj"]
+[ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_7o2va"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_byi5v"]
+content_margin_bottom = 8.0
+
+[node name="credits_menu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3dtsr")
+
+[node name="background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_io8xj")
+
+[node name="zzz" parent="background" instance=ExtResource("4_7o2va")]
+
+[node name="panel" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.04
+anchor_right = 0.8
+anchor_bottom = 0.88
+texture = ExtResource("3_6yr1s")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="back_button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.9
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 16
+text = "BACK"
+
+[node name="people_container" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.12
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="credits_title" type="Label" parent="people_container"]
+offset_right = 640.0
+offset_bottom = 35.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 32
+text = "PROGRAMMERS"
+horizontal_alignment = 1
+
+[node name="programmers" type="Label" parent="people_container"]
+offset_top = 39.0
+offset_right = 640.0
+offset_bottom = 85.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
+text = "DavidKBD (David Gil Gomez)
+Jonnydrumz (Jon Huarte Martinez)"
+horizontal_alignment = 1
+
+[node name="credits_title2" type="Label" parent="people_container"]
+offset_top = 89.0
+offset_right = 640.0
+offset_bottom = 124.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 32
+text = "IN-GAME GRAPHCIS"
+horizontal_alignment = 1
+
+[node name="graphics" type="Label" parent="people_container"]
+offset_top = 128.0
+offset_right = 640.0
+offset_bottom = 155.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
+text = "Mushy (Andres Munoz Gomez)"
+horizontal_alignment = 1
+
+[node name="credits_title4" type="Label" parent="people_container"]
+offset_top = 159.0
+offset_right = 640.0
+offset_bottom = 194.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 32
+text = "UI GRAPHICS"
+horizontal_alignment = 1
+
+[node name="graphics3" type="Label" parent="people_container"]
+offset_top = 198.0
+offset_right = 640.0
+offset_bottom = 244.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
+text = "Mushy (Andres Munoz Gomez)
+Ykram (Jose Aguilar Acena)"
+horizontal_alignment = 1
+
+[node name="credits_title3" type="Label" parent="people_container"]
+offset_top = 248.0
+offset_right = 640.0
+offset_bottom = 283.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 32
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="graphics2" type="Label" parent="people_container"]
+offset_top = 287.0
+offset_right = 640.0
+offset_bottom = 314.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
+text = "DavidKBD (David Gil Gomez)"
+horizontal_alignment = 1
+
+[node name="credits_title5" type="Label" parent="people_container"]
+offset_top = 318.0
+offset_right = 640.0
+offset_bottom = 353.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
+theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 32
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="sfx" type="Label" parent="people_container"]
+offset_top = 357.0
+offset_right = 640.0
+offset_bottom = 376.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_4ub5q")
+theme_override_font_sizes/font_size = 16
+text = "Sound Effects from Pixabay"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

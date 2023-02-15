@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsatvxxv7qock"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/enemy_diezone.gd" id="1_s1ytt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujvbw"]
+size = Vector2(16, 64)
+
+[node name="enemy_diezone" type="Area2D"]
+collision_layer = 0
+collision_mask = 32768
+monitorable = false
+script = ExtResource("1_s1ytt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-328, -24)
+shape = SubResource("RectangleShape2D_ujvbw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(328, -24)
+shape = SubResource("RectangleShape2D_ujvbw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2lge3vtu8ffs"]
+
+[ext_resource type="PackedScene" uid="uid://b0j605csrsrs1" path="res://Ingame/game_objects/platforms/pipe_tile/pipe_tile.tscn" id="1_pcq13"]
+
+[node name="PipeVertShortTopElbow" type="Node2D"]
+
+[node name="pipe_tile7" parent="." instance=ExtResource("1_pcq13")]
+position = Vector2(0, 20)
+direction = 0
+
+[node name="pipe_tile9" parent="." instance=ExtResource("1_pcq13")]
+pipe_type = 0
+direction = 0

@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://24bxrog8l4ph"]
+
+[ext_resource type="Script" path="res://Menu/options_menu/options_menu.gd" id="1_tfdth"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://Menu/sprites/panel.png" id="2_d57fj"]
+[ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_hgh2i"]
+[ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_rj6ce"]
+[ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_fuw5u"]
+
+[node name="options_menu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfdth")
+
+[node name="background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rj6ce")
+
+[node name="zzz" parent="background" instance=ExtResource("3_fuw5u")]
+
+[node name="panel" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.4
+anchor_right = 0.75
+anchor_bottom = 0.59
+texture = ExtResource("2_d57fj")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="sfx_label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.45
+anchor_right = 0.39
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hgh2i")
+theme_override_font_sizes/font_size = 16
+text = "SFX"
+horizontal_alignment = 2
+
+[node name="sfx_volume" type="HSlider" parent="."]
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.45
+anchor_right = 0.7
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.1
+
+[node name="music_label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.39
+anchor_bottom = 0.55
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hgh2i")
+theme_override_font_sizes/font_size = 16
+text = "MUSIC"
+horizontal_alignment = 2
+
+[node name="music_volume" type="HSlider" parent="."]
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 0.55
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.1
+
+[node name="back_button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.9
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hgh2i")
+theme_override_font_sizes/font_size = 16
+text = "BACK"
+
+[connection signal="value_changed" from="sfx_volume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="value_changed" from="music_volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

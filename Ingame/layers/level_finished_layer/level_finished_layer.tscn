@@ -1,0 +1,267 @@
+[gd_scene load_steps=24 format=3 uid="uid://duvrck46bgh10"]
+
+[ext_resource type="Script" path="res://Ingame/layers/level_finished_layer/level_finished_layer.gd" id="1_8ux0s"]
+[ext_resource type="Script" path="res://Ingame/layers/level_finished_layer/stars.gd" id="2_mvgnr"]
+[ext_resource type="Texture2D" uid="uid://beuol5fco5qed" path="res://Ingame/layers/level_finished_layer/sprites/background.png" id="2_xyu1h"]
+[ext_resource type="Texture2D" uid="uid://b3a78ofyvp0bs" path="res://Ingame/layers/level_finished_layer/sprites/retry.png" id="3_h8urm"]
+[ext_resource type="Texture2D" uid="uid://cv3k7jei52mup" path="res://Ingame/layers/level_finished_layer/sprites/retry-hover.png" id="4_e1ui8"]
+[ext_resource type="Texture2D" uid="uid://dh035orr0el8a" path="res://Ingame/layers/level_finished_layer/sprites/next.png" id="5_abajm"]
+[ext_resource type="Texture2D" uid="uid://bfv2r47wamf6y" path="res://Ingame/layers/level_finished_layer/sprites/next-hover.png" id="6_sbwm2"]
+[ext_resource type="Texture2D" uid="uid://b2nmchkvse7vi" path="res://Ingame/layers/level_finished_layer/sprites/retry-focused.png" id="6_xivy8"]
+[ext_resource type="Texture2D" uid="uid://c1nb2pqgx7116" path="res://Ingame/layers/level_finished_layer/sprites/stars.png" id="7_qguem"]
+[ext_resource type="Texture2D" uid="uid://c5a2hy2deq5sd" path="res://Ingame/layers/level_finished_layer/sprites/star-particle.png" id="8_05dqf"]
+[ext_resource type="Texture2D" uid="uid://ccdhd5xp6uavc" path="res://Ingame/layers/level_finished_layer/sprites/next-focused.png" id="8_pfqi4"]
+[ext_resource type="Texture2D" uid="uid://r4sqq6q1egld" path="res://Ingame/layers/level_finished_layer/sprites/quit.png" id="12_tnx4f"]
+[ext_resource type="Texture2D" uid="uid://bbnep7pqi84g3" path="res://Ingame/layers/level_finished_layer/sprites/quit-hover.png" id="13_fl76j"]
+[ext_resource type="AudioStream" uid="uid://iqmnlrwka5ab" path="res://sfx/ingame_win.wav" id="15_56oni"]
+[ext_resource type="Texture2D" uid="uid://hq61pohcs7v8" path="res://Ingame/layers/level_finished_layer/sprites/quit-focused.png" id="15_e8v01"]
+[ext_resource type="AudioStream" uid="uid://dagvk5a1c2xy0" path="res://sfx/ingame_lose.wav" id="16_5mc2k"]
+
+[sub_resource type="Curve" id="Curve_kffyl"]
+max_value = 2.0
+_data = [Vector2(0, 0.490909), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_4yfgl"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwe1c"]
+atlas = ExtResource("7_qguem")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0cci"]
+atlas = ExtResource("7_qguem")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v7gq"]
+atlas = ExtResource("7_qguem")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a4hc"]
+atlas = ExtResource("7_qguem")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k437q"]
+animations = [{
+"frames": [SubResource("AtlasTexture_kwe1c"), SubResource("AtlasTexture_m0cci"), SubResource("AtlasTexture_4v7gq"), SubResource("AtlasTexture_2a4hc")],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="finish_level_layer" type="CanvasLayer"]
+layer = 11
+script = ExtResource("1_8ux0s")
+
+[node name="finish" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="background" type="ColorRect" parent="finish"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="score" type="TextureRect" parent="finish"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_xyu1h")
+stretch_mode = 3
+
+[node name="quit_button" type="TextureButton" parent="finish/score"]
+custom_minimum_size = Vector2(48, 0)
+offset_left = 360.0
+offset_top = 312.0
+offset_right = 408.0
+offset_bottom = 360.0
+texture_normal = ExtResource("12_tnx4f")
+texture_pressed = ExtResource("12_tnx4f")
+texture_hover = ExtResource("13_fl76j")
+texture_disabled = ExtResource("12_tnx4f")
+texture_focused = ExtResource("15_e8v01")
+
+[node name="retry_button" type="TextureButton" parent="finish/score"]
+custom_minimum_size = Vector2(48, 48)
+offset_left = 232.0
+offset_top = 312.0
+offset_right = 280.0
+offset_bottom = 360.0
+texture_normal = ExtResource("3_h8urm")
+texture_pressed = ExtResource("3_h8urm")
+texture_hover = ExtResource("4_e1ui8")
+texture_disabled = ExtResource("3_h8urm")
+texture_focused = ExtResource("6_xivy8")
+
+[node name="next_button" type="TextureButton" parent="finish/score"]
+custom_minimum_size = Vector2(48, 48)
+offset_left = 296.0
+offset_top = 312.0
+offset_right = 344.0
+offset_bottom = 360.0
+texture_normal = ExtResource("5_abajm")
+texture_pressed = ExtResource("5_abajm")
+texture_hover = ExtResource("6_sbwm2")
+texture_disabled = ExtResource("5_abajm")
+texture_focused = ExtResource("8_pfqi4")
+
+[node name="particles" type="CPUParticles2D" parent="finish/score/next_button"]
+position = Vector2(24, 24)
+emitting = false
+amount = 32
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.29
+texture = ExtResource("5_abajm")
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 60.0
+initial_velocity_max = 300.0
+angular_velocity_min = -55.39
+angular_velocity_max = 46.15
+angle_min = -18.5
+angle_max = 27.7
+scale_amount_min = 0.9
+scale_amount_max = 1.1
+scale_amount_curve = SubResource("Curve_kffyl")
+color_ramp = SubResource("Gradient_4yfgl")
+
+[node name="stars" type="Control" parent="finish"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -32.0
+offset_right = 100.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mvgnr")
+
+[node name="star_sfx" type="AudioStreamPlayer" parent="finish/stars"]
+stream = ExtResource("15_56oni")
+volume_db = -15.0
+bus = &"sfx"
+
+[node name="star_1" type="AnimatedSprite2D" parent="finish/stars"]
+position = Vector2(2, -4)
+frames = SubResource("SpriteFrames_k437q")
+playing = true
+centered = false
+
+[node name="particles" type="CPUParticles2D" parent="finish/stars/star_1"]
+position = Vector2(32, 32)
+emitting = false
+amount = 32
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.29
+texture = ExtResource("8_05dqf")
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 60.0
+initial_velocity_max = 300.0
+angular_velocity_min = -55.39
+angular_velocity_max = 46.15
+angle_min = -18.5
+angle_max = 27.7
+scale_amount_min = 0.9
+scale_amount_max = 1.1
+scale_amount_curve = SubResource("Curve_kffyl")
+color_ramp = SubResource("Gradient_4yfgl")
+
+[node name="star_2" type="AnimatedSprite2D" parent="finish/stars"]
+position = Vector2(67, -4)
+frames = SubResource("SpriteFrames_k437q")
+playing = true
+centered = false
+
+[node name="particles" type="CPUParticles2D" parent="finish/stars/star_2"]
+position = Vector2(32, 32)
+emitting = false
+amount = 32
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.29
+texture = ExtResource("8_05dqf")
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 60.0
+initial_velocity_max = 300.0
+angular_velocity_min = -55.39
+angular_velocity_max = 46.15
+angle_min = -18.5
+angle_max = 27.7
+scale_amount_min = 0.9
+scale_amount_max = 1.1
+scale_amount_curve = SubResource("Curve_kffyl")
+color_ramp = SubResource("Gradient_4yfgl")
+
+[node name="star_3" type="AnimatedSprite2D" parent="finish/stars"]
+position = Vector2(133, -4)
+frames = SubResource("SpriteFrames_k437q")
+playing = true
+centered = false
+
+[node name="particles" type="CPUParticles2D" parent="finish/stars/star_3"]
+position = Vector2(32, 32)
+emitting = false
+amount = 32
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.29
+texture = ExtResource("8_05dqf")
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 60.0
+initial_velocity_max = 300.0
+angular_velocity_min = -55.39
+angular_velocity_max = 46.15
+angle_min = -18.5
+angle_max = 27.7
+scale_amount_min = 0.9
+scale_amount_max = 1.1
+scale_amount_curve = SubResource("Curve_kffyl")
+color_ramp = SubResource("Gradient_4yfgl")
+
+[node name="win_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_56oni")
+volume_db = -15.0
+bus = &"sfx"
+
+[node name="lose_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_5mc2k")
+volume_db = -12.0
+bus = &"sfx"
+
+[connection signal="pressed" from="finish/score/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="finish/score/retry_button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="finish/score/next_button" to="." method="_on_next_button_pressed"]
+[connection signal="finished" from="finish/stars" to="." method="_on_stars_finished"]

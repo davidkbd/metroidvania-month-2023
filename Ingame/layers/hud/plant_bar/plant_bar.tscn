@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciehav0ieetbc"]
+
+[ext_resource type="Script" path="res://Ingame/layers/hud/plant_bar/plant_bar.gd" id="1_nmpyt"]
+
+[sub_resource type="Gradient" id="Gradient_x4oku"]
+offsets = PackedFloat32Array(0, 0.219178, 0.456621, 0.730594, 1)
+colors = PackedColorArray(0.689453, 0.0612327, 9.62615e-08, 1, 0.581129, 0.469709, 0.266392, 1, 0.591085, 0.617648, 0.364415, 1, 0.603032, 0.795176, 0.482043, 1, 0.669312, 0.841933, 0.62488, 1)
+
+[node name="plant_bar" type="Control" groups=["PLANT_LISTENER"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 448.0
+offset_right = 632.0
+offset_bottom = 472.0
+script = ExtResource("1_nmpyt")
+color_ramp = SubResource("Gradient_x4oku")
+
+[node name="statusbar" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

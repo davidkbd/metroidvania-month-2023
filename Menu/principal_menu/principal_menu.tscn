@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjgsfu5k0osie"]
+
+[ext_resource type="Script" path="res://Menu/principal_menu/principal_menu.gd" id="1_bp4pa"]
+[ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0msl5"]
+[ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_stxfv"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://Menu/sprites/panel.png" id="2_uh5pl"]
+[ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_xhhig"]
+
+[node name="principal_menu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bp4pa")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0msl5")
+
+[node name="zzz" parent="background" instance=ExtResource("3_xhhig")]
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = 602.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("2_stxfv")
+theme_override_font_sizes/font_size = 58
+text = "LITTLE GROW"
+
+[node name="panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68
+anchor_top = 0.56
+anchor_right = 0.97
+anchor_bottom = 0.98
+texture = ExtResource("2_uh5pl")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="start_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.6
+anchor_right = 0.95
+anchor_bottom = 0.65
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_stxfv")
+theme_override_font_sizes/font_size = 16
+text = "PLAY"
+
+[node name="options_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.7
+anchor_right = 0.95
+anchor_bottom = 0.75
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_stxfv")
+theme_override_font_sizes/font_size = 16
+text = "OPTIONS"
+
+[node name="credits_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 0.95
+anchor_bottom = 0.85
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_stxfv")
+theme_override_font_sizes/font_size = 16
+text = "CREDITS
+"
+
+[node name="quit_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.9
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_stxfv")
+theme_override_font_sizes/font_size = 16
+text = "QUIT"
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn3oqc5fi2l0h"]
+
+[ext_resource type="Script" path="res://MainFrame/fade_in/fade_in.gd" id="1_e2lq0"]
+
+[node name="fade_in_canvas" type="CanvasLayer"]
+layer = 10
+
+[node name="fade_in" type="ColorRect" parent="." groups=["HUD_LISTENER", "LEVEL_LISTENER", "MENU_LISTENER"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_e2lq0")

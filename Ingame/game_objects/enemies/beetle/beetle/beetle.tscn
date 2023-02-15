@@ -1,0 +1,237 @@
+[gd_scene load_steps=33 format=3 uid="uid://by3av46w140ci"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/state_machine/state_machine.gd" id="1_1rtwf"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/beetle/beetle/beetle.gd" id="1_ijima"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/state_machine/on_ground.gd" id="2_vq6bx"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/state_machine/on_air.gd" id="4_emxv8"]
+[ext_resource type="Shader" path="res://Ingame/shaders/color_replace.gdshader" id="4_v36uy"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/state_machine/on_eating.gd" id="5_gebu6"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/state_machine/on_died.gd" id="6_vdih6"]
+[ext_resource type="Texture2D" uid="uid://cqaffcrnkjr30" path="res://Ingame/game_objects/enemies/beetle/beetle/sprites/beetle.png" id="7_5j5q8"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/state_machine/on_attack.gd" id="7_qpja8"]
+[ext_resource type="PackedScene" uid="uid://8qf60jalmtrh" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/player_hit_target/player_hit_target.tscn" id="8_jpuqn"]
+[ext_resource type="PackedScene" uid="uid://bqhyp412txpys" path="res://Ingame/game_objects/enemies/beetle/beetle/parts/player_damage/player_damage.tscn" id="9_ncj63"]
+[ext_resource type="AudioStream" uid="uid://dg2t7fk8xojyl" path="res://sfx/ingame_beetle_die.wav" id="12_oofre"]
+[ext_resource type="AudioStream" uid="uid://c18l7w1vlo3ug" path="res://sfx/ingame_beetle_eating.wav" id="12_tdo53"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljysm"]
+shader = ExtResource("4_v36uy")
+shader_parameter/visible = false
+shader_parameter/color1_to_change = Color(1, 0, 0, 1)
+shader_parameter/color2_to_change = Color(0, 0, 1, 1)
+shader_parameter/color1 = Color(0.0156863, 0.517647, 0.819608, 1)
+shader_parameter/color2 = Color(0.172549, 0.909804, 0.956863, 1)
+
+[sub_resource type="Animation" id="Animation_i3cha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7fwwp"]
+resource_name = "attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_yqcvf"]
+resource_name = "die"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_ury1h"]
+resource_name = "eat"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_456g7"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k3mnr"]
+_data = {
+"RESET": SubResource("Animation_i3cha"),
+"attack": SubResource("Animation_7fwwp"),
+"die": SubResource("Animation_yqcvf"),
+"eat": SubResource("Animation_ury1h"),
+"walk": SubResource("Animation_456g7")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rq7mk"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yo8ln"]
+animation = &"die"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nxdfp"]
+animation = &"eat"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jwsub"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o50vf"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_eating"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6a6yj"]
+advance_expression = "get_parent().is_marked_to_die"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pyf7e"]
+advance_expression = "get_parent().is_marked_to_die"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sy6jj"]
+advance_condition = &"autostart"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_861sb"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tomrf"]
+switch_mode = 2
+auto_advance = true
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2y83o"]
+states/Start/position = Vector2(202.5, 93.5)
+states/attack/node = SubResource("AnimationNodeAnimation_rq7mk")
+states/attack/position = Vector2(292, 166.5)
+states/die/node = SubResource("AnimationNodeAnimation_yo8ln")
+states/die/position = Vector2(433.5, 166.5)
+states/eat/node = SubResource("AnimationNodeAnimation_nxdfp")
+states/eat/position = Vector2(552.5, 77)
+states/walk/node = SubResource("AnimationNodeAnimation_jwsub")
+states/walk/position = Vector2(346.5, 41.5)
+transitions = ["walk", "eat", SubResource("AnimationNodeStateMachineTransition_o50vf"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_6a6yj"), "eat", "die", SubResource("AnimationNodeStateMachineTransition_pyf7e"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_sy6jj"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_861sb"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_tomrf")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_1s156"]
+
+[node name="beetle" type="CharacterBody2D" groups=["BEETLE"]]
+z_index = 5
+collision_layer = 32768
+collision_mask = 32769
+script = ExtResource("1_ijima")
+
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource("1_1rtwf")
+on_ground_state = NodePath("on_ground")
+on_air_state = NodePath("on_air")
+on_eating_state = NodePath("on_eating")
+on_died_state = NodePath("on_died")
+on_attack_state = NodePath("on_attack")
+initial_state = NodePath("on_ground")
+
+[node name="on_ground" type="Node" parent="state_machine"]
+script = ExtResource("2_vq6bx")
+
+[node name="on_air" type="Node" parent="state_machine"]
+script = ExtResource("4_emxv8")
+
+[node name="on_eating" type="Node" parent="state_machine"]
+script = ExtResource("5_gebu6")
+
+[node name="on_died" type="Node" parent="state_machine"]
+script = ExtResource("6_vdih6")
+
+[node name="on_attack" type="Node" parent="state_machine"]
+script = ExtResource("7_qpja8")
+
+[node name="delete_timer" type="Timer" parent="."]
+
+[node name="collider" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, 0, 8, 0, 24, -8, 24, -16, -24, -16, -24, -8)
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_ljysm")
+position = Vector2(0, -24)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_5j5q8")
+hframes = 5
+vframes = 4
+
+[node name="player_hit_target" parent="." instance=ExtResource("8_jpuqn")]
+position = Vector2(0, -24)
+
+[node name="player_damage" parent="." instance=ExtResource("9_ncj63")]
+position = Vector2(0, -8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k3mnr")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_2y83o")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_1s156")
+parameters/conditions/autostart = true
+
+[node name="eating_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_tdo53")
+volume_db = 6.0
+pitch_scale = 1.2
+max_distance = 640.0
+bus = &"sfx"
+
+[node name="die_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_oofre")
+volume_db = -9.0
+pitch_scale = 1.2
+max_distance = 640.0
+bus = &"sfx"
+
+[connection signal="timeout" from="delete_timer" to="." method="_on_delete_timer_timeout"]

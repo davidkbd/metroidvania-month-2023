@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvisof3c4xikf"]
+
+[ext_resource type="PackedScene" uid="uid://b0j605csrsrs1" path="res://Ingame/game_objects/platforms/pipe_tile/pipe_tile.tscn" id="1_85fvg"]
+
+[node name="PipeHorizLeftElbow" type="Node2D"]
+
+[node name="pipe_tile" parent="." instance=ExtResource("1_85fvg")]
+position = Vector2(148, 0)
+
+[node name="pipe_tile14" parent="." instance=ExtResource("1_85fvg")]
+position = Vector2(180, 0)
+
+[node name="pipe_tile2" parent="." instance=ExtResource("1_85fvg")]
+position = Vector2(116, 0)
+
+[node name="pipe_tile3" parent="." instance=ExtResource("1_85fvg")]
+position = Vector2(84, 0)
+
+[node name="pipe_tile4" parent="." instance=ExtResource("1_85fvg")]
+position = Vector2(52, 0)
+
+[node name="pipe_tile5" parent="." instance=ExtResource("1_85fvg")]
+position = Vector2(20, 0)
+
+[node name="pipe_tile6" parent="." instance=ExtResource("1_85fvg")]
+pipe_type = 0
+direction = 2

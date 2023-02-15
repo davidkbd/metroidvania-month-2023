@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://djwa8t2bem6s7"]
+
+[ext_resource type="Script" path="res://Menu/levels_menu/levels_menu.gd" id="1_oe2fm"]
+[ext_resource type="PackedScene" uid="uid://cadomlr4cvqg5" path="res://Menu/levels_menu/parts/level_button/level_button.tscn" id="2_deaky"]
+[ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="3_eddgg"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://Menu/sprites/panel.png" id="4_u4qn1"]
+[ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="4_xrtvo"]
+[ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="5_eev1d"]
+
+[node name="levels" type="Control" groups=["MENU_LISTENER"]]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oe2fm")
+level_button_template = ExtResource("2_deaky")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xrtvo")
+
+[node name="zzz" parent="Background" instance=ExtResource("5_eev1d")]
+
+[node name="panel" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.18
+anchor_right = 0.93
+anchor_bottom = 0.82
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_u4qn1")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="container" type="CenterContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_list" type="GridContainer" parent="container"]
+offset_left = 256.0
+offset_top = 144.0
+offset_right = 256.0
+offset_bottom = 144.0
+columns = 4
+
+[node name="back_button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.9
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_eddgg")
+theme_override_font_sizes/font_size = 16
+text = "BACK"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

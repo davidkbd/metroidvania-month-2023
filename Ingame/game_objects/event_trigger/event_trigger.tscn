@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv5c1pyo72cni"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/event_trigger/event_trigger.gd" id="1_31elb"]
+
+[node name="event_trigger" type="Area2D"]
+collision_layer = 128
+collision_mask = 128
+monitorable = false
+script = ExtResource("1_31elb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

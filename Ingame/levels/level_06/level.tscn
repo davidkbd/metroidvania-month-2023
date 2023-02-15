@@ -1,0 +1,142 @@
+[gd_scene load_steps=15 format=3 uid="uid://nao6rxepwcd7"]
+
+[ext_resource type="Script" path="res://Ingame/levels/level_02/level.gd" id="1_528ko"]
+[ext_resource type="PackedScene" uid="uid://c7dwmg5vqqj1j" path="res://Ingame/game_objects/drop_manager/drop_manager.tscn" id="2_tp8et"]
+[ext_resource type="PackedScene" uid="uid://bwmduxqdhduiu" path="res://Ingame/game_objects/enemies/beetle/beetle_spawner/beetle_spawner.tscn" id="3_temtn"]
+[ext_resource type="PackedScene" uid="uid://djxrqdepgdkwu" path="res://Ingame/game_objects/camera_event_trigger/camera_event_trigger.tscn" id="5_iqu3a"]
+[ext_resource type="PackedScene" uid="uid://dd1fkuwy7iyrc" path="res://Ingame/game_objects/drop_button/drop_button.tscn" id="6_v25ed"]
+[ext_resource type="PackedScene" uid="uid://do6skgrdqat1l" path="res://Ingame/game_objects/drop_spawner/drop_spawner.tscn" id="8_w8018"]
+[ext_resource type="PackedScene" uid="uid://031cnx6ckbfj" path="res://Ingame/game_objects/platforms/groups/pipe_horiz_short.tscn" id="9_67afa"]
+[ext_resource type="PackedScene" uid="uid://dhgifikr1625k" path="res://Ingame/game_objects/platforms/groups/pipe_vert.tscn" id="10_cxuu0"]
+[ext_resource type="PackedScene" uid="uid://d2lge3vtu8ffs" path="res://Ingame/game_objects/platforms/groups/pipe_vert_short_top_elbow.tscn" id="11_frktc"]
+[ext_resource type="PackedScene" uid="uid://reuphsfmdf11" path="res://Ingame/game_objects/platforms/groups/2_bridge.tscn" id="11_timl4"]
+[ext_resource type="PackedScene" uid="uid://7jghdyrp2vrn" path="res://Ingame/game_objects/platforms/groups/pipe_vert_top_elbow.tscn" id="12_ik828"]
+[ext_resource type="PackedScene" uid="uid://bd5do2tqya03u" path="res://Ingame/game_objects/platforms/groups/pipe_vert_short.tscn" id="12_ur563"]
+[ext_resource type="PackedScene" uid="uid://b6cldibb4oxb8" path="res://Ingame/game_objects/platforms/groups/4_platform.tscn" id="12_wpqia"]
+[ext_resource type="PackedScene" uid="uid://d0iyd2d3civs6" path="res://Ingame/game_objects/platforms/groups/pipe_horiz.tscn" id="13_h7321"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_528ko")
+stars_drops_first = 3
+stars_drops_second = 6
+stars_drops_third = 9
+plant_health_increment = 0.12
+plant_grow_step_size = 75
+
+[node name="drop_manager" parent="." instance=ExtResource("2_tp8et")]
+button_nodepath = NodePath("../drop_button")
+spawners_array = [NodePath("../drop_spawner"), NodePath("../drop_spawner2"), NodePath("../drop_spawner3"), NodePath("../drop_spawner4"), NodePath("../drop_spawner5")]
+
+[node name="beetle_spawner" parent="." instance=ExtResource("3_temtn")]
+min_time = 10.0
+max_time = 15.0
+
+[node name="camera_event_trigger" parent="." instance=ExtResource("5_iqu3a")]
+position = Vector2(136, -232)
+
+[node name="camera_event_trigger3" parent="." instance=ExtResource("5_iqu3a")]
+position = Vector2(144, -328)
+
+[node name="camera_event_trigger2" parent="." instance=ExtResource("5_iqu3a")]
+position = Vector2(136, -408)
+
+[node name="drop_spawner" parent="." instance=ExtResource("8_w8018")]
+position = Vector2(-216, -344)
+
+[node name="drop_spawner2" parent="." instance=ExtResource("8_w8018")]
+position = Vector2(192, -168)
+
+[node name="drop_spawner3" parent="." instance=ExtResource("8_w8018")]
+position = Vector2(200, -392)
+
+[node name="drop_spawner4" parent="." instance=ExtResource("8_w8018")]
+position = Vector2(-224, -216)
+
+[node name="drop_spawner5" parent="." instance=ExtResource("8_w8018")]
+position = Vector2(264, -280)
+
+[node name="4platform" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(248, -104)
+
+[node name="4platform4" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(296, -216)
+
+[node name="4platform7" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(248, -320)
+
+[node name="4platform8" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(296, -424)
+
+[node name="4platform2" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(-192, -160)
+
+[node name="4platform3" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(-232, -56)
+
+[node name="4platform5" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(-192, -376)
+
+[node name="4platform9" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(-232, -480)
+
+[node name="4platform6" parent="." instance=ExtResource("12_wpqia")]
+position = Vector2(-232, -272)
+
+[node name="2bridge" parent="." instance=ExtResource("11_timl4")]
+position = Vector2(64, -376)
+
+[node name="2bridge2" parent="." instance=ExtResource("11_timl4")]
+position = Vector2(-128, -216)
+
+[node name="2bridge3" parent="." instance=ExtResource("11_timl4")]
+position = Vector2(-128, -504)
+
+[node name="PipeHorizShort" parent="." instance=ExtResource("9_67afa")]
+position = Vector2(-288, -216)
+
+[node name="PipeHorizShort2" parent="." instance=ExtResource("9_67afa")]
+position = Vector2(-288, -344)
+
+[node name="PipeVertShortTopElbow4" parent="." instance=ExtResource("11_frktc")]
+position = Vector2(320, -360)
+
+[node name="PipeVert" parent="." instance=ExtResource("10_cxuu0")]
+position = Vector2(-288, -304)
+
+[node name="PipeVertShortTopElbow" parent="." instance=ExtResource("11_frktc")]
+position = Vector2(-288, -344)
+
+[node name="PipeVertTopElbow" parent="." instance=ExtResource("12_ik828")]
+position = Vector2(-288, -216)
+
+[node name="PipeVertShort" parent="." instance=ExtResource("12_ur563")]
+position = Vector2(280, -456)
+
+[node name="PipeHorizShort3" parent="." instance=ExtResource("9_67afa")]
+position = Vector2(264, -280)
+
+[node name="PipeVert2" parent="." instance=ExtResource("10_cxuu0")]
+position = Vector2(320, -304)
+
+[node name="PipeHoriz" parent="." instance=ExtResource("13_h7321")]
+position = Vector2(200, -392)
+
+[node name="PipeHoriz2" parent="." instance=ExtResource("13_h7321")]
+position = Vector2(200, -168)
+
+[node name="PipeVertShortTopElbow2" parent="." instance=ExtResource("11_frktc")]
+position = Vector2(320, -320)
+
+[node name="PipeVertShortTopElbow3" parent="." instance=ExtResource("11_frktc")]
+position = Vector2(320, -392)
+
+[node name="PipeVert3" parent="." instance=ExtResource("10_cxuu0")]
+position = Vector2(320, -168)
+
+[node name="PipeVertShort2" parent="." instance=ExtResource("12_ur563")]
+position = Vector2(320, -36)
+
+[node name="drop_button" parent="." instance=ExtResource("6_v25ed")]
+position = Vector2(272, -424)
+toggle_delay_seconds = 60.0
+trigger_id = "drop_button"

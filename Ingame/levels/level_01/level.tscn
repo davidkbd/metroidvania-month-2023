@@ -1,0 +1,81 @@
+[gd_scene load_steps=15 format=3 uid="uid://8cq5hahr06nw"]
+
+[ext_resource type="PackedScene" uid="uid://c7dwmg5vqqj1j" path="res://Ingame/game_objects/drop_manager/drop_manager.tscn" id="1_fja71"]
+[ext_resource type="Script" path="res://Ingame/levels/level_01/level.gd" id="1_mbg8x"]
+[ext_resource type="PackedScene" uid="uid://djxrqdepgdkwu" path="res://Ingame/game_objects/camera_event_trigger/camera_event_trigger.tscn" id="4_cqpbd"]
+[ext_resource type="PackedScene" uid="uid://dd1fkuwy7iyrc" path="res://Ingame/game_objects/drop_button/drop_button.tscn" id="5_bbwbw"]
+[ext_resource type="PackedScene" uid="uid://do6skgrdqat1l" path="res://Ingame/game_objects/drop_spawner/drop_spawner.tscn" id="6_gxugj"]
+[ext_resource type="PackedScene" uid="uid://bd5do2tqya03u" path="res://Ingame/game_objects/platforms/groups/pipe_vert_short.tscn" id="9_at5gs"]
+[ext_resource type="PackedScene" uid="uid://031cnx6ckbfj" path="res://Ingame/game_objects/platforms/groups/pipe_horiz_short.tscn" id="10_me6p4"]
+[ext_resource type="PackedScene" uid="uid://reuphsfmdf11" path="res://Ingame/game_objects/platforms/groups/2_bridge.tscn" id="11_ltuta"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/platforms/groups/8_platform.tscn" id="12_elnn1"]
+[ext_resource type="PackedScene" uid="uid://c2y12281hjstr" path="res://Ingame/game_objects/platforms/groups/3_platform.tscn" id="12_onkb5"]
+[ext_resource type="PackedScene" uid="uid://d0iyd2d3civs6" path="res://Ingame/game_objects/platforms/groups/pipe_horiz.tscn" id="12_puty6"]
+[ext_resource type="PackedScene" uid="uid://b6cldibb4oxb8" path="res://Ingame/game_objects/platforms/groups/4_platform.tscn" id="13_maixk"]
+[ext_resource type="PackedScene" uid="uid://7jghdyrp2vrn" path="res://Ingame/game_objects/platforms/groups/pipe_vert_top_elbow.tscn" id="13_mwhvt"]
+[ext_resource type="PackedScene" uid="uid://cvisof3c4xikf" path="res://Ingame/game_objects/platforms/groups/pipe_horiz_left_elbow.tscn" id="14_j5mtt"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_mbg8x")
+
+[node name="drop_manager" parent="." instance=ExtResource("1_fja71")]
+button_nodepath = NodePath("../drop_button")
+spawners_array = [NodePath("../drop_spawner2"), NodePath("../drop_spawner")]
+
+[node name="camera_event_trigger" parent="." instance=ExtResource("4_cqpbd")]
+position = Vector2(137, -210)
+
+[node name="drop_spawner2" parent="." instance=ExtResource("6_gxugj")]
+position = Vector2(144, -296)
+
+[node name="drop_spawner" parent="." instance=ExtResource("6_gxugj")]
+position = Vector2(152, -88)
+
+[node name="4platform" parent="." instance=ExtResource("13_maixk")]
+position = Vector2(-184, -248)
+
+[node name="4platform2" parent="." instance=ExtResource("13_maixk")]
+position = Vector2(-96, -56)
+
+[node name="8platform" parent="." instance=ExtResource("12_elnn1")]
+position = Vector2(312, -128)
+
+[node name="2bridge" parent="." instance=ExtResource("11_ltuta")]
+position = Vector2(-152, -248)
+
+[node name="2bridge2" parent="." instance=ExtResource("11_ltuta")]
+position = Vector2(-112, -160)
+
+[node name="2bridge3" parent="." instance=ExtResource("11_ltuta")]
+position = Vector2(72, -224)
+
+[node name="3platform" parent="." instance=ExtResource("12_onkb5")]
+position = Vector2(-112, -160)
+
+[node name="3platform2" parent="." instance=ExtResource("12_onkb5")]
+position = Vector2(232, -224)
+
+[node name="PipeVertShort" parent="." instance=ExtResource("9_at5gs")]
+position = Vector2(152, -152)
+
+[node name="PipeHorizShort" parent="." instance=ExtResource("10_me6p4")]
+position = Vector2(72, -296)
+
+[node name="PipeHoriz" parent="." instance=ExtResource("12_puty6")]
+position = Vector2(-112, -88)
+
+[node name="PipeVertTopElbow2" parent="." instance=ExtResource("13_mwhvt")]
+position = Vector2(-112, -296)
+
+[node name="PipeVertTopElbow" parent="." instance=ExtResource("13_mwhvt")]
+position = Vector2(-112, -88)
+
+[node name="PipeHorizLeftElbow" parent="." instance=ExtResource("14_j5mtt")]
+position = Vector2(-112, -296)
+
+[node name="drop_button" parent="." instance=ExtResource("5_bbwbw")]
+position = Vector2(144, -128)
+trigger_id = "drop_button"
+
+[node name="PipeHoriz2" parent="." instance=ExtResource("12_puty6")]
+position = Vector2(16, -88)

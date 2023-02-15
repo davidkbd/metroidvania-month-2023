@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://hpi2qsba8oj8"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/camera/camera.gd" id="1_1ecar"]
+
+[node name="camera" type="Camera2D" groups=["EVENT_TRIGGER_LISTENER"]]
+current = true
+script = ExtResource("1_1ecar")

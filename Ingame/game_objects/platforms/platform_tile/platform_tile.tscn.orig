@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+[gd_scene load_steps=4 format=3 uid="uid://drqrgridlg2ta"]
+=======
+[gd_scene load_steps=3 format=3]
+>>>>>>> 70a10853e04549d15a8a48917561f0dfa58b710a
+
+[ext_resource type="Script" path="res://Ingame/game_objects/platforms/platform_tile/platform_tile.gd" id="1_a3meg"]
+[ext_resource type="Texture2D" uid="uid://cp7jb1h4wq1jx" path="res://Ingame/levels/sprites/platform-tile.png" id="2_g1rt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b2pn"]
+size = Vector2(32, 16)
+
+[node name="platform_tile" type="StaticBody2D" groups=["LEVEL_LISTENER"]]
+z_index = 1
+collision_layer = 513
+collision_mask = 513
+script = ExtResource("1_a3meg")
+textures_directory = "res://Ingame/levels/sprites"
+
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_8b2pn")
+debug_color = Color(0, 0.635294, 0.419608, 0.419608)
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_g1rt5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)

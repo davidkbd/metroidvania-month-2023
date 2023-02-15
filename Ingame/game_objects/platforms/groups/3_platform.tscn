@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2y12281hjstr"]
+
+[ext_resource type="PackedScene" uid="uid://drqrgridlg2ta" path="res://Ingame/game_objects/platforms/platform_tile/platform_tile.tscn" id="1_vi0ol"]
+
+[node name="3platform" type="Node2D"]
+position = Vector2(96, 0)
+
+[node name="platform_tile20" parent="." instance=ExtResource("1_vi0ol")]
+position = Vector2(-96, 0)
+platform_type = 0
+
+[node name="platform_tile21" parent="." instance=ExtResource("1_vi0ol")]
+position = Vector2(-64, 0)
+
+[node name="platform_tile19" parent="." instance=ExtResource("1_vi0ol")]
+position = Vector2(-32, 0)
+platform_type = 2
+metadata/_edit_group_ = true

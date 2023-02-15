@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" uid="uid://drqrgridlg2ta" path="res://Ingame/game_objects/platforms/groups/platform_tile/platform_tile.tscn" id="1_oprwj"]
+[ext_resource type="Texture2D" uid="uid://c5fxpbhkhxl4y" path="res://Ingame/levels/sprites/platform-edge.png" id="2_mlqho"]
+[ext_resource type="Texture2D" uid="uid://cp7jb1h4wq1jx" path="res://Ingame/levels/sprites/platform-tile.png" id="3_k5tuh"]
+[ext_resource type="Texture2D" uid="uid://bw7jv51iexheo" path="res://Ingame/levels/sprites/platform-bridge.png" id="4_fl5rj"]
+
+[node name="8platform" type="Node2D"]
+position = Vector2(224, 0)
+metadata/_edit_group_ = true
+
+[node name="platform_tile25" parent="." instance=ExtResource("1_oprwj")]
+position = Vector2(-224, 0)
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+platform_type = 0
+
+[node name="platform_tile20" parent="." instance=ExtResource("1_oprwj")]
+position = Vector2(-96, 0)
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+
+[node name="platform_tile21" parent="." instance=ExtResource("1_oprwj")]
+position = Vector2(-64, 0)
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+
+[node name="platform_tile22" parent="." instance=ExtResource("1_oprwj")]
+position = Vector2(-32, 0)
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+bridge_texture = ExtResource("4_fl5rj")
+
+[node name="platform_tile23" parent="." instance=ExtResource("1_oprwj")]
+position = Vector2(-160, 0)
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+
+[node name="platform_tile24" parent="." instance=ExtResource("1_oprwj")]
+position = Vector2(-128, 0)
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+bridge_texture = ExtResource("4_fl5rj")
+
+[node name="platform_tile26" parent="." instance=ExtResource("1_oprwj")]
+position = Vector2(-192, 0)
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+bridge_texture = ExtResource("4_fl5rj")
+
+[node name="platform_tile19" parent="." instance=ExtResource("1_oprwj")]
+edge_texture = ExtResource("2_mlqho")
+middle_texture = ExtResource("3_k5tuh")
+bridge_texture = ExtResource("4_fl5rj")
+platform_type = 2
