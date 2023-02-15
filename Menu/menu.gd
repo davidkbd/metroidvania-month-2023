@@ -26,7 +26,7 @@ func menu_listener_on_open_credits_menu_pressed() -> void:
 func hud_listener_on_game_finished() -> void:
 	_show_menu(game_finished_menu_template)
 
-func menu_listener_on_level_opened(_level_name : String) -> void:
+func menu_listener_on_game_state_requested(_level_name : String) -> void:
 	menu_instance.queue_free()
 
 func _show_menu(template : PackedScene) -> void:

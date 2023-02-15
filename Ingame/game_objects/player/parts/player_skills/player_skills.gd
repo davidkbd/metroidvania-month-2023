@@ -3,6 +3,6 @@ class_name PlayerSkills
 
 var double_jump : bool = false
 
-func progress_listener_on_level_opened(_level_data : Dictionary) -> void:
-	if not _level_data.has("player"): return
-	double_jump = _level_data.player.skills.double_jump
+func progress_listener_on_saved_game_state_loaded(_saved_state : Dictionary) -> void:
+	if not _saved_state.has("player"): return
+	double_jump = _saved_state.player.skills.double_jump

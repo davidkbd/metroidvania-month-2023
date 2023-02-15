@@ -18,7 +18,7 @@ func hud_listener_on_game_finished() -> void:
 	await get_tree().create_timer(1.0).timeout
 	hud_listener_on_level_closed()
 
-func menu_listener_on_level_opened(_level_name : String) -> void:
+func menu_listener_on_game_state_requested(_level_name : String) -> void:
 	await get_tree().create_timer(1).timeout
 	
 	current_level_name = _level_name

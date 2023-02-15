@@ -44,7 +44,7 @@ func menu_listener_on_open_principal_menu_pressed() -> void:
 #func _on_level_button_pressed(button : Button) -> void:
 #	DirAccess.remove_absolute(Directories.RECENT_PASSED_PATH)
 #	get_tree().call_group("MENU_SFX", "play_level_start")
-#	get_tree().call_group("MENU_LISTENER", "menu_listener_on_level_opened", levels[button.get_index()].name)
+#	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_state_requested", levels[button.get_index()].name)
 
 func _on_back_button_pressed():
 	get_tree().call_group("MENU_SFX", "play_button_back")
@@ -63,4 +63,4 @@ func _input(event : InputEvent):
 func _ready() -> void:
 #	_check_recent_passed()
 #	_instance_buttons()
-	get_tree().call_group("MENU_LISTENER", "menu_listener_on_level_opened", "level_001")
+	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_state_requested", "level_001")

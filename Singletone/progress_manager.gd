@@ -2,7 +2,7 @@ extends Node
 
 @onready var PROGRESS_FILE = Directories.PROGRESS_PATH + "progress-%s.data"
 
-var level_data : Dictionary = {
+var game_state : Dictionary = {
 	"level": {
 		"room_spawn": "room_001"
 	},
@@ -12,21 +12,21 @@ var level_data : Dictionary = {
 var current_level_id : String
 
 func progress_listener_on_room_updated(_room_id : String, _data : Dictionary) -> void:
-	level_data.rooms[_room_id] = _data
+	game_state.rooms[_room_id] = _data
 
 func progress_listener_on_progress_store_requested(from_room_id : String) -> void:
-	level_data.level.room_spawn = from_room_id
+	game_state.level.room_spawn = from_room_id
 	var file = FileAccess.open(PROGRESS_FILE % current_level_id, FileAccess.WRITE)
-	file.store_var(level_data)
+	file.store_var(game_state)
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_progress_stored")
 
 func level_listener_on_ready(_level_data : Dictionary) -> void:
 	current_level_id = _level_data.level.name
 	var file = FileAccess.open(PROGRESS_FILE % current_level_id, FileAccess.READ)
-	if file: level_data = file.get_var()
+	if file: game_state = file.get_var()
 	await get_tree().process_frame
-	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_level_opened", level_data)
-	print(level_data)
+	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_saved_game_state_loaded", game_state)
+	print(game_state)
 
 func _ready():
 	add_to_group("LEVEL_LISTENER")

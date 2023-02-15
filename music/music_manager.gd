@@ -7,7 +7,7 @@ extends Node
 @onready var _current       : AudioStreamPlayer = null
 @onready var _previous      : AudioStreamPlayer = null
 
-func menu_listener_on_level_opened(_level_name) -> void:
+func menu_listener_on_game_state_requested(_level_name) -> void:
 	_play(ingame_music)
 
 func hud_listener_on_level_closed() -> void:
