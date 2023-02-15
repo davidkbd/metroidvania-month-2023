@@ -31,9 +31,6 @@ func fall(_delta : float) -> void:
 			velocity.y + specs.gravity * _delta,
 			specs.max_up_speed, specs.max_down_speed)
 
-func _physics_process(delta : float) -> void:
-	state_machine.step(delta)
-
 func _ready() -> void:
 	get_tree().call_deferred(
 			"call_group",
