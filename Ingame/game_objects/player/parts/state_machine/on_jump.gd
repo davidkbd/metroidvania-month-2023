@@ -4,7 +4,7 @@ var jump_timer : float
 
 func enter() -> void:
 	host.jump_sfx.play()
-	host.velocity.y = host.JUMP_IMPULSE
+	host.velocity.y = host.specs.jump_impulse
 	jump_timer = .1
 
 func exit() -> void:
@@ -30,9 +30,9 @@ func _jump(delta : float) -> void:
 
 	var direction = Input.get_axis("l", "r")
 	if direction:
-		host.velocity.x = move_toward(host.velocity.x, direction * host.SPEED, host.AIR_ACCELERATION)
+		host.velocity.x = move_toward(host.velocity.x, direction * host.specs.speed, host.specs.air_acceleration)
 	else:
-		host.velocity.x = move_toward(host.velocity.x, .0, host.AIR_DECELERATION)
+		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.air_deceleration)
 
 func _go_down_cancel() -> void:
 	host.set_collision_mask_value(1, true)

@@ -39,6 +39,6 @@ func _coyote_time(delta : float) -> void:
 func _movement() -> void:
 	var direction = Input.get_axis("l", "r")
 	if direction:
-		host.velocity.x = move_toward(host.velocity.x, direction * host.SPEED, host.ACCELERATION)
+		host.velocity.x = move_toward(host.velocity.x, direction * host.specs.speed, host.specs.acceleration)
 	else:
-		host.velocity.x = move_toward(host.velocity.x, .0, host.DECELERATION)
+		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)

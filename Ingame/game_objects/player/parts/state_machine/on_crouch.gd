@@ -13,7 +13,7 @@ func step(delta : float) -> StateMachineState:
 	if not host.is_on_floor():
 		host.fall(delta)
 
-	host.velocity.x = move_toward(host.velocity.x, .0, host.DECELERATION)
+	host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
 
 	host.move_and_slide()
 	

@@ -1,6 +1,5 @@
-[gd_scene load_steps=65 format=3 uid="uid://cq0y3783et42d"]
+[gd_scene load_steps=66 format=3 uid="uid://c0lqdijl6ehi"]
 
-[ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprite/player.png" id="1_2pvsm"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_ground.gd" id="2_1orwr"]
@@ -12,7 +11,9 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Shader" path="res://Ingame/shaders/color_replace.gdshader" id="10_4bjpc"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
+[ext_resource type="PackedScene" uid="uid://15grj8h30num" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.tscn" id="11_x5sqa"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
+[ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
@@ -391,6 +392,8 @@ script = ExtResource("9_l3fvl")
 [node name="on_enemybounce" type="Node" parent="state_machine"]
 script = ExtResource("10_m6qjo")
 
+[node name="skills" parent="." instance=ExtResource("11_x5sqa")]
+
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
@@ -410,7 +413,7 @@ target_position = Vector2(0, 16)
 texture_filter = 1
 material = SubResource("ShaderMaterial_d7brj")
 position = Vector2(0, -14.96)
-texture = ExtResource("1_2pvsm")
+texture = ExtResource("13_vjjdm")
 hframes = 6
 vframes = 9
 

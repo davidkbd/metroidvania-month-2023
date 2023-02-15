@@ -14,6 +14,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Singletone/angles.gd"
 }, {
+"base": "CharacterBody2D",
+"class": &"CharacterAlive",
+"language": &"GDScript",
+"path": "res://Ingame/game_objects/_abstract/character_alive.gd"
+}, {
+"base": "RefCounted",
+"class": &"CharacterAliveSpecs",
+"language": &"GDScript",
+"path": "res://Singletone/character_alive_specs.gd"
+}, {
 "base": "RefCounted",
 "class": &"Directories",
 "language": &"GDScript",
@@ -64,15 +74,15 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Singletone/levels.gd"
 }, {
-"base": "CharacterBody2D",
+"base": "CharacterAlive",
 "class": &"Player",
 "language": &"GDScript",
 "path": "res://Ingame/game_objects/player/player.gd"
 }, {
-"base": "RefCounted",
-"class": &"PlayerSpecs",
+"base": "Node",
+"class": &"PlayerSkills",
 "language": &"GDScript",
-"path": "res://Singletone/player_specs.gd"
+"path": "res://Ingame/game_objects/player/parts/player_skills/player_skills.gd"
 }, {
 "base": "Node2D",
 "class": &"Room",
@@ -101,6 +111,8 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "Angles": "",
+"CharacterAlive": "",
+"CharacterAliveSpecs": "",
 "Directories": "",
 "Drop": "",
 "DropInitial": "",
@@ -112,7 +124,7 @@ _global_script_class_icons={
 "LevelButton": "",
 "Levels": "",
 "Player": "",
-"PlayerSpecs": "",
+"PlayerSkills": "",
 "Room": "",
 "Settings": "",
 "StateMachine": "",
