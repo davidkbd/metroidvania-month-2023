@@ -231,6 +231,7 @@ u={
 
 2d_physics/layer_1="player_floor"
 2d_physics/layer_2="no_go_down_platform"
+2d_physics/layer_3="player_camera_hook"
 2d_physics/layer_4="enemy_player"
 2d_physics/layer_8="event_trigger"
 2d_physics/layer_10="floor_and_drop"
