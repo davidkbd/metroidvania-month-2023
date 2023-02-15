@@ -1,4 +1,4 @@
-class_name PlayerSpecs
+class_name CharacterAliveSpecs
 
 static func get_default_specs() -> Dictionary:
 	return {

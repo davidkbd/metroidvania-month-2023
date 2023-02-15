@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://15grj8h30num"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.gd" id="1_b3d6q"]
+
+[node name="player_skills" type="Node" groups=["PROGRESS_LISTENER"]]
+script = ExtResource("1_b3d6q")
