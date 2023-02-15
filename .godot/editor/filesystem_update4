@@ -34,3 +34,7 @@ res://Ingame/game_objects/camera/camera.tscn
 res://Ingame/game_objects/camera/camera.gd
 res://Ingame/game_objects/follow_target_camera/follow_target_camera.tscn
 res://Ingame/game_objects/follow_target_camera/follow_target_camera.gd
+res://Ingame/game_objects/_abstract/state_machine_state.gd
+res://Ingame/game_objects/_abstract/character.gd
+res://Ingame/game_objects/_abstract/character_alive.gd
+res://Singletone/player_specs.gd

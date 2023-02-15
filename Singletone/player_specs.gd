@@ -2,12 +2,16 @@ class_name PlayerSpecs
 
 static func get_default_specs() -> Dictionary:
 	return {
-	"oxygen_lose": .01,
-	"charge_delay": .25,
-	"rotation_speed": 12.0,
-	"engine_max_power": 140.0,
-	"engine_min_power": -140.0,
-	"engine_accel": 16.0,
-	"max_inclination_floor": 1.5,
-	"crash_impulse": 96.0
+"speed":               300.0,
+"acceleration":        32.0,
+"deceleration":        128.0,
+"air_acceleration":    24.0,
+"air_deceleration":    64.0,
+"gravity":             ProjectSettings.get_setting("physics/2d/default_gravity"),
+"jump_impulse":        -ProjectSettings.get_setting("physics/2d/default_gravity") * .25,
+"doublejump_impulse":  -ProjectSettings.get_setting("physics/2d/default_gravity") * .25,
+"damage_impulse":      -ProjectSettings.get_setting("physics/2d/default_gravity") * .25,
+"damage_deceleration": 20.0,
+"max_up_speed":        -10000.0,
+"max_down_speed":      700.0
 }

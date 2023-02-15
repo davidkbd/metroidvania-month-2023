@@ -2,8 +2,8 @@ extends Node
 
 class_name StateMachineState
 
-@onready var state_machine : StateMachine = get_parent()
-@onready var host          : Player       = state_machine.get_parent()
+@onready var state_machine : StateMachine   = get_parent()
+@onready var host          : CharacterAlive = state_machine.get_parent()
 
 func enter() -> void:
 	print("enter")
