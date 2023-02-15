@@ -1,6 +1,6 @@
 extends Node
 
-@onready var PROGRESS_FILE = Directories.PROGRESS_PATH + "progress-%s.data"
+@onready var PROGRESS_FILE = Directories.PROGRESS_PATH + "game-state-%s.data"
 
 var game_state : Dictionary = {
 	"level": {
