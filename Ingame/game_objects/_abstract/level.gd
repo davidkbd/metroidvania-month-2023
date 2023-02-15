@@ -15,7 +15,6 @@ func progress_listener_on_level_opened(_level_data : Dictionary) -> void:
 	await get_tree().physics_frame
 	room.apply_data()
 
-
 func _ready() -> void:
 	add_to_group("PROGRESS_LISTENER")
 	add_to_group("LEVEL")

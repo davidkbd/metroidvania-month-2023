@@ -3,8 +3,6 @@ extends StateMachineState
 func enter() -> void:
 	host.jump_sfx.play()
 	host.velocity.y = host.DOUBLEJUMP_IMPULSE
-	if host.cube_is_full:
-		host.drop_cube()
 
 func exit() -> void:
 	pass

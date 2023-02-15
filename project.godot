@@ -39,6 +39,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Ingame/game_objects/event_trigger/event_trigger.gd"
 }, {
+"base": "Camera2D",
+"class": &"FollowTargetCamera",
+"language": &"GDScript",
+"path": "res://Ingame/game_objects/follow_target_camera/follow_target_camera.gd"
+}, {
 "base": "Node",
 "class": &"Ingame",
 "language": &"GDScript",
@@ -89,11 +94,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Ingame/game_objects/_abstract/state_machine_state.gd"
 }, {
-"base": "Camera2D",
-"class": &"VerticalStepsCamera",
-"language": &"GDScript",
-"path": "res://Ingame/game_objects/camera/camera.gd"
-}, {
 "base": "Node",
 "class": &"drop_manager",
 "language": &"GDScript",
@@ -106,6 +106,7 @@ _global_script_class_icons={
 "DropInitial": "",
 "DropSpawner": "",
 "EventTrigger": "",
+"FollowTargetCamera": "",
 "Ingame": "",
 "Level": "",
 "LevelButton": "",
@@ -116,7 +117,6 @@ _global_script_class_icons={
 "Settings": "",
 "StateMachine": "",
 "StateMachineState": "",
-"VerticalStepsCamera": "",
 "drop_manager": ""
 }
 
