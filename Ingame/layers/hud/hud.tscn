@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://uljlx3vlote8"]
+[gd_scene load_steps=2 format=3 uid="uid://uljlx3vlote8"]
 
 [ext_resource type="PackedScene" uid="uid://5dbxs6hrfaml" path="res://Ingame/layers/hud/exit_bar/exit_bar.tscn" id="1_xo8ib"]
-[ext_resource type="PackedScene" uid="uid://ciehav0ieetbc" path="res://Ingame/layers/hud/plant_bar/plant_bar.tscn" id="2_anu6v"]
 
 [node name="hud" type="CanvasLayer"]
 layer = 2
 
 [node name="exit_bar" parent="." instance=ExtResource("1_xo8ib")]
-
-[node name="plant_bar" parent="." instance=ExtResource("2_anu6v")]
-offset_top = 464.0

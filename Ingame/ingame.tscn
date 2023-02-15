@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnjdbvkc0iqdo"]
+[gd_scene load_steps=4 format=3 uid="uid://bnjdbvkc0iqdo"]
 
 [ext_resource type="Script" path="res://Ingame/ingame.gd" id="1_vmgj6"]
 [ext_resource type="PackedScene" uid="uid://du8bhvj0jvmlk" path="res://Ingame/layers/game_layer/game_layer.tscn" id="3_q230j"]
-[ext_resource type="PackedScene" uid="uid://duvrck46bgh10" path="res://Ingame/layers/level_finished_layer/level_finished_layer.tscn" id="4_ne5nr"]
 [ext_resource type="PackedScene" uid="uid://uljlx3vlote8" path="res://Ingame/layers/hud/hud.tscn" id="9_bc1jw"]
 
 [node name="ingame" type="Node" groups=["HUD_LISTENER", "MENU_LISTENER"]]
 script = ExtResource("1_vmgj6")
 hud_template = ExtResource("9_bc1jw")
 game_layer_template = ExtResource("3_q230j")
-finish_layer_template = ExtResource("4_ne5nr")

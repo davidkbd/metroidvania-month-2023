@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bevb6tr6a0snb"]
+
+[ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_wnr0d"]
+[ext_resource type="Texture2D" uid="uid://bkmlvpfyhc4ad" path="res://icon.svg" id="2_5bm74"]
+
+[node name="room_001" type="Node2D"]
+script = ExtResource("1_wnr0d")
+
+[node name="savepoint" type="Node2D" parent="."]
+position = Vector2(-128, -112)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-134, -113)
+texture = ExtResource("2_5bm74")

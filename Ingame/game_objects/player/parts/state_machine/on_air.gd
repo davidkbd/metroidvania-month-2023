@@ -1,7 +1,5 @@
 extends StateMachineState
 
-@onready var player : Player = get_parent().get_parent()
-
 func enter() -> void:
 	pass
 
@@ -9,26 +7,26 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-	if player.go_down_floor_sensor.is_colliding(): _go_down_cancel()
+	if host.go_down_floor_sensor.is_colliding(): _go_down_cancel()
 	
 	_fall(delta)
 	
-	player.move_and_slide()
+	host.move_and_slide()
 
-	if player.get_collision_mask_value(1) and player.is_on_floor(): return get_parent().on_ground
-	if player.enemy_died: return get_parent().on_enemybounce
-	if player.damager: return get_parent().on_damaged
+	if host.get_collision_mask_value(1) and host.is_on_floor(): return state_machine.on_ground
+	if host.enemy_died: return state_machine.on_enemybounce
+	if host.damager: return state_machine.on_damaged
 
 	return self
 
 func _fall(delta : float) -> void:
-	player.fall(delta)
+	host.fall(delta)
 	var direction = Input.get_axis("l", "r")
 	if direction:
-		player.velocity.x = move_toward(player.velocity.x, direction * player.SPEED, player.AIR_ACCELERATION)
+		host.velocity.x = move_toward(host.velocity.x, direction * host.SPEED, host.AIR_ACCELERATION)
 	else:
-		player.velocity.x = move_toward(player.velocity.x, .0, player.AIR_DECELERATION)
+		host.velocity.x = move_toward(host.velocity.x, .0, host.AIR_DECELERATION)
 
 
 func _go_down_cancel() -> void:
-	player.set_collision_mask_value(1, true)
+	host.set_collision_mask_value(1, true)

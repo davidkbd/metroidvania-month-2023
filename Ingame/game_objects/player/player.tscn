@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://cq0y3783et42d"]
+[gd_scene load_steps=65 format=3 uid="uid://cq0y3783et42d"]
 
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprite/player.png" id="1_2pvsm"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
@@ -9,13 +9,10 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_jump.gd" id="5_mtmft"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/on_doublejump.gd" id="6_3a6w2"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_crouch.gd" id="8_7t7jd"]
-[ext_resource type="PackedScene" uid="uid://cteuo2irwv522" path="res://Ingame/game_objects/player/parts/drop_spawner_sensor/drop_spawner_sensor.tscn" id="8_ia38d"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/player/parts/drop_target/drop_target.tscn" id="9_7mt5f"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Shader" path="res://Ingame/shaders/color_replace.gdshader" id="10_4bjpc"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
-[ext_resource type="PackedScene" uid="uid://t6peeh7rq658" path="res://Ingame/game_objects/player/parts/plant_drop_target_sensor/plant_drop_target_sensor.tscn" id="13_lcc3h"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
@@ -401,16 +398,6 @@ current = true
 position = Vector2(0, 1.01)
 shape = SubResource("CapsuleShape2D_yjv8n")
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)
-
-[node name="drop_target" parent="." instance=ExtResource("9_7mt5f")]
-position = Vector2(0, 8)
-collision_mask = 256
-
-[node name="drop_spawner_sensor" parent="." instance=ExtResource("8_ia38d")]
-collision_layer = 0
-
-[node name="plant_drop_target_sensor" parent="." instance=ExtResource("13_lcc3h")]
-position = Vector2(0, 8)
 
 [node name="enemy_hit_area" parent="." instance=ExtResource("13_5apk1")]
 position = Vector2(0, 14)

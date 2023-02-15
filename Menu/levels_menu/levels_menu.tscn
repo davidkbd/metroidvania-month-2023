@@ -53,9 +53,9 @@ grow_vertical = 2
 
 [node name="level_list" type="GridContainer" parent="container"]
 offset_left = 256.0
-offset_top = 144.0
+offset_top = 108.0
 offset_right = 256.0
-offset_bottom = 144.0
+offset_bottom = 108.0
 columns = 4
 
 [node name="back_button" type="Button" parent="."]

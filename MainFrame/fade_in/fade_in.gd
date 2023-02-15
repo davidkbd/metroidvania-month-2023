@@ -13,9 +13,6 @@ func menu_listener_on_level_opened(_level_name : String) -> void:
 func hud_listener_on_level_restarted() -> void:
 	_fade_out()
 
-func hud_listener_on_level_passed() -> void:
-	_fade_out()
-
 func hud_listener_on_game_finished() -> void:
 	_fade_out()
 

@@ -17,7 +17,6 @@ grow_vertical = 2
 script = ExtResource("1_bp4pa")
 
 [node name="background" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,7 +27,6 @@ texture = ExtResource("2_0msl5")
 [node name="zzz" parent="background" instance=ExtResource("3_xhhig")]
 
 [node name="title" type="Label" parent="."]
-layout_mode = 0
 offset_left = 192.0
 offset_top = 32.0
 offset_right = 602.0
@@ -38,7 +36,6 @@ theme_override_font_sizes/font_size = 58
 text = "LITTLE GROW"
 
 [node name="panel" type="NinePatchRect" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.68
 anchor_top = 0.56
@@ -51,7 +48,6 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="start_button" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7
 anchor_top = 0.6
@@ -66,7 +62,6 @@ theme_override_font_sizes/font_size = 16
 text = "PLAY"
 
 [node name="options_button" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7
 anchor_top = 0.7
@@ -81,7 +76,6 @@ theme_override_font_sizes/font_size = 16
 text = "OPTIONS"
 
 [node name="credits_button" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7
 anchor_top = 0.8
@@ -97,7 +91,6 @@ text = "CREDITS
 "
 
 [node name="quit_button" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7
 anchor_top = 0.9

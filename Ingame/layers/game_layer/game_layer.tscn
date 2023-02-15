@@ -1,59 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://du8bhvj0jvmlk"]
+[gd_scene load_steps=6 format=3 uid="uid://du8bhvj0jvmlk"]
 
 [ext_resource type="Script" path="res://Ingame/layers/game_layer/game_layer.gd" id="1_dbug8"]
 [ext_resource type="PackedScene" uid="uid://hpi2qsba8oj8" path="res://Ingame/game_objects/camera/camera.tscn" id="2_5agsk"]
-[ext_resource type="Texture2D" uid="uid://be580tmb1fptb" path="res://Ingame/levels/sprites/background-0.png" id="2_7687p"]
-[ext_resource type="Texture2D" uid="uid://cr62jt4d3i2cy" path="res://Ingame/levels/sprites/background-8.png" id="3_ni2m8"]
-[ext_resource type="PackedScene" uid="uid://b8s4bdrwvt6ii" path="res://Ingame/game_objects/plant/plant.tscn" id="3_taeix"]
-[ext_resource type="Texture2D" uid="uid://cqvq0nphgcseg" path="res://Ingame/levels/sprites/background-5.png" id="3_yi8l7"]
 [ext_resource type="PackedScene" uid="uid://cq0y3783et42d" path="res://Ingame/game_objects/player/player.tscn" id="4_8bdh4"]
-[ext_resource type="Texture2D" uid="uid://cj7lrmg6ermda" path="res://Ingame/levels/sprites/background-4.png" id="4_bdift"]
-[ext_resource type="PackedScene" uid="uid://bcjhhx1yfutdx" path="res://Ingame/game_objects/platforms/bottom_platform/bottom_platform.tscn" id="5_iw3mh"]
-[ext_resource type="PackedScene" uid="uid://dsatvxxv7qock" path="res://Ingame/game_objects/enemies/enemy_diezone.tscn" id="7_0t3lk"]
+[ext_resource type="Texture2D" uid="uid://bkmlvpfyhc4ad" path="res://icon.svg" id="4_83t2b"]
 
-[node name="game_layer" type="CanvasLayer" groups=["HUD_LISTENER"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44atb"]
+size = Vector2(1024, 20)
+
+[node name="game_layer" type="CanvasLayer" groups=["HUD_LISTENER", "MENU_LISTENER"]]
 follow_viewport_enabled = true
 script = ExtResource("1_dbug8")
-
-[node name="parallax" type="ParallaxBackground" parent="."]
-
-[node name="parallax_layer0" type="ParallaxLayer" parent="parallax"]
-texture_filter = 1
-motion_scale = Vector2(1, 0.2)
-
-[node name="background-0" type="Sprite2D" parent="parallax/parallax_layer0"]
-position = Vector2(0, -64)
-texture = ExtResource("2_7687p")
-region_enabled = true
-region_rect = Rect2(0, 0, 640, 800)
-
-[node name="parallax_layer4" type="ParallaxLayer" parent="parallax"]
-visible = false
-texture_filter = 1
-motion_scale = Vector2(1, 0.4)
-
-[node name="background-5" type="Sprite2D" parent="parallax/parallax_layer4"]
-position = Vector2(248, -224)
-texture = ExtResource("3_yi8l7")
-
-[node name="background-6" type="Sprite2D" parent="parallax/parallax_layer4"]
-position = Vector2(-112, -704)
-texture = ExtResource("3_yi8l7")
-
-[node name="background-4" type="Sprite2D" parent="parallax/parallax_layer4"]
-position = Vector2(-168, -368)
-texture = ExtResource("4_bdift")
-
-[node name="background-7" type="Sprite2D" parent="parallax/parallax_layer4"]
-position = Vector2(352, -568)
-texture = ExtResource("4_bdift")
-
-[node name="parallax_layer8" type="ParallaxLayer" parent="parallax"]
-texture_filter = 1
-motion_scale = Vector2(1, 0.6)
-
-[node name="background-8" type="Sprite2D" parent="parallax/parallax_layer8"]
-texture = ExtResource("3_ni2m8")
 
 [node name="game_container" type="Node2D" parent="."]
 texture_filter = 1
@@ -61,12 +18,42 @@ texture_filter = 1
 [node name="camera" parent="game_container" groups=["DROP_MANAGER_LISTENER"] instance=ExtResource("2_5agsk")]
 position = Vector2(0, -192)
 
-[node name="plant" parent="game_container" instance=ExtResource("3_taeix")]
-
 [node name="player" parent="game_container" instance=ExtResource("4_8bdh4")]
 position = Vector2(0, -72)
 
-[node name="bottom_platform" parent="game_container" instance=ExtResource("5_iw3mh")]
-position = Vector2(0, -8)
+[node name="StaticBody2D" type="StaticBody2D" parent="game_container"]
 
-[node name="enemy_diezone" parent="game_container" instance=ExtResource("7_0t3lk")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_container/StaticBody2D"]
+shape = SubResource("RectangleShape2D_44atb")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-264, 56)
+texture = ExtResource("4_83t2b")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(-136, 56)
+texture = ExtResource("4_83t2b")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(-8, 56)
+texture = ExtResource("4_83t2b")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(120, 56)
+texture = ExtResource("4_83t2b")
+
+[node name="Icon5" type="Sprite2D" parent="."]
+position = Vector2(248, 56)
+texture = ExtResource("4_83t2b")
+
+[node name="Icon6" type="Sprite2D" parent="."]
+position = Vector2(376, 56)
+texture = ExtResource("4_83t2b")
+
+[node name="Icon7" type="Sprite2D" parent="."]
+position = Vector2(504, 56)
+texture = ExtResource("4_83t2b")
+
+[node name="Icon8" type="Sprite2D" parent="."]
+position = Vector2(632, 56)
+texture = ExtResource("4_83t2b")
