@@ -12,13 +12,11 @@ var distance         : float
 var delta_speed      : float
 
 func request(_target : Node2D) -> void:
-	print("REQ ", _target.get_path())
 	requested_target = _target
 	if target == null or not target is CameraHook:
 		set_target(_target)
 
 func unrequest(_target : Node2D) -> bool:
-	print("UNREQ ", _target.get_path())
 	if _target == requested_target: return false
 	target = requested_target
 	return true

@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba8lr50gindmx"]
+[gd_scene load_steps=10 format=3]
 
-[ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_tkvvm"]
+[ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_ilv60"]
 [ext_resource type="Texture2D" uid="uid://bkmlvpfyhc4ad" path="res://icon.svg" id="2_rbv6n"]
 [ext_resource type="Texture2D" uid="uid://dbvqqb42rox8e" path="res://Ingame/level-sprites/default/tiles/tiles.png" id="3_8rd1f"]
-[ext_resource type="PackedScene" uid="uid://dbjqrcd01w8o4" path="res://Ingame/game_objects/follow_target_camera/camera_hook/camera_hook.tscn" id="4_m1y3m"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room_area/room_area.tscn" id="4_m1y3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1376, 704)
@@ -1263,7 +1263,7 @@ terrain_set_0/terrain_1/color = Color(0.215686, 0.521569, 0.156863, 1)
 sources/0 = SubResource("TileSetAtlasSource_8e76h")
 
 [node name="room_002" type="Node2D"]
-script = ExtResource("1_tkvvm")
+script = ExtResource("1_ilv60")
 
 [node name="savepoint" type="Node2D" parent="."]
 position = Vector2(352, -32)

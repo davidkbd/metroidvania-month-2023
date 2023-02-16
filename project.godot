@@ -17,7 +17,7 @@ _global_script_classes=[{
 "base": "Node2D",
 "class": &"CameraHook",
 "language": &"GDScript",
-"path": "res://Ingame/game_objects/follow_target_camera/camera_hook/hook.gd"
+"path": "res://Ingame/game_objects/camera/camera_hook/camera_hook.gd"
 }, {
 "base": "CharacterBody2D",
 "class": &"CharacterAlive",
@@ -57,7 +57,7 @@ _global_script_classes=[{
 "base": "Camera2D",
 "class": &"FollowTargetCamera",
 "language": &"GDScript",
-"path": "res://Ingame/game_objects/follow_target_camera/follow_target_camera.gd"
+"path": "res://Ingame/game_objects/camera/follow_target_camera/follow_target_camera.gd"
 }, {
 "base": "Node",
 "class": &"Ingame",
@@ -93,6 +93,11 @@ _global_script_classes=[{
 "class": &"Room",
 "language": &"GDScript",
 "path": "res://Ingame/game_objects/_abstract/room.gd"
+}, {
+"base": "Area2D",
+"class": &"RoomArea",
+"language": &"GDScript",
+"path": "res://Ingame/game_objects/room_area/room_area.gd"
 }, {
 "base": "Node",
 "class": &"Settings",
@@ -132,6 +137,7 @@ _global_script_class_icons={
 "Player": "",
 "PlayerSkills": "",
 "Room": "",
+"RoomArea": "",
 "Settings": "",
 "StateMachine": "",
 "StateMachineState": "",
@@ -237,7 +243,7 @@ u={
 
 2d_physics/layer_1="player_floor"
 2d_physics/layer_2="no_go_down_platform"
-2d_physics/layer_3="player_camera_hook"
+2d_physics/layer_3="player_room-area"
 2d_physics/layer_4="enemy_player"
 2d_physics/layer_8="event_trigger"
 2d_physics/layer_10="floor_and_drop"

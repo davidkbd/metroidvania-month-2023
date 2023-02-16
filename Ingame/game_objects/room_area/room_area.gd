@@ -1,14 +1,16 @@
 extends Area2D
 
-@onready var hook : Node2D = $hook
+class_name RoomArea
+
+@onready var hook : Node2D = $camera_hook
 
 @onready var camera : FollowTargetCamera = get_tree().get_first_node_in_group("CAMERA")
 
-func enable():
+func enable_camera_hook():
 	camera.request(hook)
 	hook.enable(get_tree().get_first_node_in_group("PLAYER"))
 	
-func disable():
+func disable_camera_hook():
 	if camera.unrequest(hook):
 		hook.disable()
 
