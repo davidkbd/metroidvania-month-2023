@@ -5,9 +5,23 @@ class_name FollowTargetCamera
 
 @onready var target : Node2D = get_tree().get_first_node_in_group("PLAYER")
 
-var target_position : Vector2
-var distance        : float
-var delta_speed     : float
+var requested_target : Node2D
+
+var target_position  : Vector2
+var distance         : float
+var delta_speed      : float
+
+func request(_target : Node2D) -> void:
+	print("REQ ", _target.get_path())
+	requested_target = _target
+	if target == null or not target is CameraHook:
+		set_target(_target)
+
+func unrequest(_target : Node2D) -> bool:
+	print("UNREQ ", _target.get_path())
+	if _target == requested_target: return false
+	target = requested_target
+	return true
 
 func set_target(_target : Node2D) -> void:
 	target = _target

@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name CameraHook
+
 var target : Player
 var rect   : Rect2
 

@@ -14,6 +14,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Singletone/angles.gd"
 }, {
+"base": "Node2D",
+"class": &"CameraHook",
+"language": &"GDScript",
+"path": "res://Ingame/game_objects/follow_target_camera/camera_hook/hook.gd"
+}, {
 "base": "CharacterBody2D",
 "class": &"CharacterAlive",
 "language": &"GDScript",
@@ -111,6 +116,7 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "Angles": "",
+"CameraHook": "",
 "CharacterAlive": "",
 "CharacterAliveSpecs": "",
 "Directories": "",
