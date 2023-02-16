@@ -11,13 +11,13 @@ class_name RoomArea
 
 @onready var hook : Node2D = $camera_hook
 
-func enable_camera_hook():
+func enable_camera_hook() -> void:
 	room_area_manager.camera_request(hook)
 	
-func disable_camera_hook():
+func disable_camera_hook() -> void:
 	room_area_manager.camera_unrequest(hook)
 
-func _configure_hook():
+func _configure_hook() -> void:
 	var col  : CollisionShape2D = get_node("CollisionShape2D")
 	var rect : Rect2 = col.shape.get_rect()
 	rect.size.x -= get_viewport().size.x
@@ -27,5 +27,5 @@ func _configure_hook():
 	rect.position -= margin
 	hook.set_rect(rect)
 
-func _ready():
+func _ready() -> void:
 	call_deferred("_configure_hook")

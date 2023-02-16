@@ -161,7 +161,6 @@ _global_script_class_icons={
 config/name="MetroidvaniaMonth2023"
 run/main_scene="res://MainFrame/main_frame.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-run/max_fps=60
 config/icon="res://icon-512.png"
 
 [autoload]

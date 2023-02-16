@@ -36,4 +36,3 @@ func _find_savepoint() -> Node2D:
 		print("ERROR: this room (%s) has not a savepoint node" % name.to_lower())
 		return null
 	return r
-	

@@ -1289,3 +1289,5 @@ layer_0/tile_data = PackedInt32Array(65539, 262144, 2, 65540, 196608, 3, 131076,
 
 [node name="savepoint_area" parent="." instance=ExtResource("4_wr02k")]
 position = Vector2(256, 32)
+
+[node name="room_content" type="Node2D" parent="."]

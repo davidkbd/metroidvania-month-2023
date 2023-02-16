@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://c0lqdijl6ehi"]
+[gd_scene load_steps=68 format=3 uid="uid://2jifvngn6r34"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckdb6olmafoqs" path="res://Ingame/game_objects/drop/drop.tscn" id="2_psaao"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_air.gd" id="4_taln5"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_jump.gd" id="5_mtmft"]
-[ext_resource type="Script" path="res://Ingame/game_objects/player/on_doublejump.gd" id="6_3a6w2"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_doublejump.gd" id="7_bx4yu"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_crouch.gd" id="8_7t7jd"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Shader" path="res://Ingame/shaders/color_replace.gdshader" id="10_4bjpc"]
@@ -383,7 +383,7 @@ script = ExtResource("8_7t7jd")
 script = ExtResource("5_mtmft")
 
 [node name="on_doublejump" type="Node" parent="state_machine"]
-script = ExtResource("6_3a6w2")
+script = ExtResource("7_bx4yu")
 
 [node name="on_air" type="Node" parent="state_machine"]
 script = ExtResource("4_taln5")

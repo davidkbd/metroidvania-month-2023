@@ -13,4 +13,3 @@ func fall(_delta : float) -> void:
 
 func _physics_process(delta : float) -> void:
 	state_machine.step(delta)
-
