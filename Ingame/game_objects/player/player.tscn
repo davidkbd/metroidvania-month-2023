@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://c0lqdijl6ehi"]
+[gd_scene load_steps=68 format=3 uid="uid://c0lqdijl6ehi"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://vm3tspvl4og8" path="res://Ingame/game_objects/player/parts/camera_hook_sensor/camera_hook_sensor.tscn" id="12_vty2u"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
+[ext_resource type="PackedScene" uid="uid://uikbynpt7681" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
@@ -404,6 +405,8 @@ shape = SubResource("CapsuleShape2D_yjv8n")
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 
 [node name="camera_hook_sensor" parent="." instance=ExtResource("12_vty2u")]
+
+[node name="savepoint_sensor" parent="." instance=ExtResource("14_3x4jn")]
 
 [node name="enemy_hit_area" parent="." instance=ExtResource("13_5apk1")]
 position = Vector2(0, 14)

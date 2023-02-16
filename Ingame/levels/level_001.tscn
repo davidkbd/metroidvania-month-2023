@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7c3jyi0g5xk2"]
 
 [ext_resource type="Script" path="res://Ingame/levels/level_001.gd" id="1_477p2"]
-[ext_resource type="PackedScene" uid="uid://c6l4xyt1pf8l3" path="res://Ingame/rooms/room_001.tscn" id="2_eat6y"]
-[ext_resource type="PackedScene" uid="uid://dgilx5ijgijm" path="res://Ingame/rooms/room_002.tscn" id="3_pam6d"]
+[ext_resource type="PackedScene" uid="uid://bn74cssp614t4" path="res://Ingame/rooms/room_001.tscn" id="2_eat6y"]
+[ext_resource type="PackedScene" uid="uid://dfdx3iehxri3c" path="res://Ingame/rooms/room_002.tscn" id="3_pam6d"]
 
 [node name="level_001" type="Node2D" groups=["LEVEL"]]
 script = ExtResource("1_477p2")
@@ -10,4 +10,4 @@ script = ExtResource("1_477p2")
 [node name="room_001" parent="." instance=ExtResource("2_eat6y")]
 
 [node name="room_002" parent="." instance=ExtResource("3_pam6d")]
-position = Vector2(1344, 0)
+position = Vector2(1312, 32)

@@ -100,6 +100,16 @@ _global_script_classes=[{
 "path": "res://Ingame/game_objects/room_area/room_area.gd"
 }, {
 "base": "Node",
+"class": &"RoomAreaManager",
+"language": &"GDScript",
+"path": "res://Ingame/game_objects/room_area/room_area_manager.gd"
+}, {
+"base": "Area2D",
+"class": &"SavepointArea",
+"language": &"GDScript",
+"path": "res://Ingame/game_objects/savepoint_area/savepoint_area.gd"
+}, {
+"base": "Node",
 "class": &"Settings",
 "language": &"GDScript",
 "path": "res://Singletone/settings.gd"
@@ -138,6 +148,8 @@ _global_script_class_icons={
 "PlayerSkills": "",
 "Room": "",
 "RoomArea": "",
+"RoomAreaManager": "",
+"SavepointArea": "",
 "Settings": "",
 "StateMachine": "",
 "StateMachineState": "",
@@ -245,6 +257,7 @@ u={
 2d_physics/layer_2="no_go_down_platform"
 2d_physics/layer_3="player_room-area"
 2d_physics/layer_4="enemy_player"
+2d_physics/layer_5="player_savepoint"
 2d_physics/layer_8="event_trigger"
 2d_physics/layer_10="floor_and_drop"
 2d_physics/layer_16="enemy_diezone"

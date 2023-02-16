@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccvm24q01c2fx"]
+
+[ext_resource type="Texture2D" uid="uid://bkmlvpfyhc4ad" path="res://icon.svg" id="1_00n60"]
+[ext_resource type="Script" path="res://Ingame/game_objects/savepoint_area/savepoint_area.gd" id="1_xyabg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/savepoint_area/savepoint.gd" id="3_y8eqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2hr6"]
+size = Vector2(32, 40)
+
+[node name="savepoint_area" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_xyabg")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+texture = ExtResource("1_00n60")
+
+[node name="collishape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_v2hr6")
+
+[node name="savepoint" type="Node2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("3_y8eqo")

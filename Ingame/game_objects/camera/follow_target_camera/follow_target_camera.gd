@@ -14,7 +14,8 @@ func set_target(_target : Node2D) -> void:
 	target = _target
 
 func teleport() -> void:
-	target_position = target.global_position
+	target_position = round(target.global_position + offset_position)
+	global_position = target_position
 
 func _process(_delta : float) -> void:
 	distance = clamp(target_position.distance_squared_to(target.global_position), 1.0, 150.0) / 5.0
