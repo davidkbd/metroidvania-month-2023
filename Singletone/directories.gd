@@ -1,10 +1,10 @@
 class_name Directories
 
-const SETTINGS_PATH : String = "user://settings/"
-const PROGRESS_PATH : String = "user://progress/"
+const SETTINGS_PATH      : String = "user://settings/"
+const PROGRESS_PATH      : String = "user://progress/"
 const LEVEL_SPRITES_PATH : String = "res://Ingame/level-sprites/"
 const RECENT_PASSED_PATH : String = PROGRESS_PATH + "recent-passed"
-const LEVEL_STARS_PATH : String = PROGRESS_PATH + "/level-stars/"
+const LEVEL_STARS_PATH   : String = PROGRESS_PATH + "/level-stars/"
 
 const LEVELS_PATH : String = "res://Ingame/levels/"
 

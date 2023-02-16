@@ -6,10 +6,11 @@ class_name CharacterAlive
 @onready var sprite        : Sprite2D     = $sprite
 @onready var specs         : Dictionary   = CharacterAliveSpecs.get_default_specs()
 
-func _physics_process(delta : float) -> void:
-	state_machine.step(delta)
-
 func fall(_delta : float) -> void:
 	velocity.y = clamp(
 			velocity.y + specs.gravity * _delta,
 			specs.max_up_speed, specs.max_down_speed)
+
+func _physics_process(delta : float) -> void:
+	state_machine.step(delta)
+
