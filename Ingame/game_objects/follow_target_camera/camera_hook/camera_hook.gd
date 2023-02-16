@@ -12,15 +12,13 @@ func disable():
 	if camera.unrequest(hook):
 		hook.disable()
 
-func _ready():
-	call_deferred("configure_hook")
-
-func configure_hook():
+func _configure_hook():
 	var col  : CollisionShape2D = get_node("CollisionShape2D")
 	var rect : Rect2 = col.shape.get_rect()
 	rect.size.x -= get_viewport().size.x
 	rect.size.y -= get_viewport().size.y
-	rect.position += col.global_position
-	rect.position.x += get_viewport().size.x / 2
-	rect.position.y += get_viewport().size.y / 2
+	rect.position += col.global_position + get_viewport().size / 2.0
 	hook.set_rect(rect)
+
+func _ready():
+	call_deferred("_configure_hook")
