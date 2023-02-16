@@ -8,6 +8,8 @@ var rect   : Rect2
 func enable(_player : Player):
 	set_physics_process(true)
 	target = _player
+	global_position.x = clamp(target.global_position.x, rect.position.x, rect.position.x + rect.size.x)
+	global_position.y = clamp(target.global_position.y, rect.position.y, rect.position.y + rect.size.y)
 
 func disable():
 	set_physics_process(false)
