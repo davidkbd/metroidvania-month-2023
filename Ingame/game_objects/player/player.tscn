@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://2jifvngn6r34"]
+[gd_scene load_steps=68 format=3 uid="uid://b3ogtk2d2y2h7"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -12,7 +12,7 @@
 [ext_resource type="Shader" path="res://Ingame/shaders/color_replace.gdshader" id="10_4bjpc"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
 [ext_resource type="PackedScene" uid="uid://15grj8h30num" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.tscn" id="11_x5sqa"]
-[ext_resource type="PackedScene" uid="uid://vm3tspvl4og8" path="res://Ingame/game_objects/player/parts/camera_hook_sensor/camera_hook_sensor.tscn" id="12_vty2u"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="PackedScene" uid="uid://uikbynpt7681" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
@@ -404,7 +404,7 @@ position = Vector2(0, 1.01)
 shape = SubResource("CapsuleShape2D_yjv8n")
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 
-[node name="camera_hook_sensor" parent="." instance=ExtResource("12_vty2u")]
+[node name="room_area_sensor" parent="." instance=ExtResource("12_vty2u")]
 
 [node name="savepoint_sensor" parent="." instance=ExtResource("14_3x4jn")]
 

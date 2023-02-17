@@ -10,9 +10,9 @@ func activate() -> void:
 
 func _get_room() -> Room:
 	var i : int = 0
-	var r : Node2D = null
+	var r : Node2D = get_parent()
 	while not r is Room:
-		r = get_parent()
+		r = r.get_parent()
 		i += 1
 		if i > 20:
 			return null

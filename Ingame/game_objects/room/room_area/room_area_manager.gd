@@ -9,3 +9,10 @@ func camera_request(_hook : CameraHook) -> void:
 
 func camera_unrequest(_hook : CameraHook) -> void:
 	camera_room_area_manager.camera_unrequest(_hook)
+
+func room_activate(_room : Room) -> void:
+	_room.activate()
+
+func room_deactivate(_room : Room) -> void:
+	_room.deactivate()
+

@@ -18,6 +18,7 @@ func progress_listener_on_progress_store_requested(from_room_id : String) -> voi
 	game_state.level.room_spawn = from_room_id
 	var file = FileAccess.open(PROGRESS_FILE % current_level_id, FileAccess.WRITE)
 	file.store_var(game_state)
+	print("Hay que recibir progress_listener_on_progress_stored en hud")
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_progress_stored")
 
 func level_listener_on_ready(_level_data : Dictionary) -> void:

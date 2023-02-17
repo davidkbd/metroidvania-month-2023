@@ -8,6 +8,7 @@ class_name RoomArea
 @export var margin : Vector2 = Vector2.ONE * 8.0
 
 @onready var room_area_manager : RoomAreaManager = get_tree().get_first_node_in_group("ROOM_AREA_MANAGER")
+@onready var room              : Room            = get_parent()
 
 @onready var hook : Node2D = $camera_hook
 
@@ -16,6 +17,12 @@ func enable_camera_hook() -> void:
 	
 func disable_camera_hook() -> void:
 	room_area_manager.camera_unrequest(hook)
+
+func enable_room() -> void:
+	room_area_manager.room_activate(room)
+	
+func disable_room() -> void:
+	room_area_manager.room_deactivate(room)
 
 func _configure_hook() -> void:
 	var col  : CollisionShape2D = get_node("CollisionShape2D")
