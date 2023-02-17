@@ -12,7 +12,7 @@
 [ext_resource type="Shader" path="res://Ingame/shaders/color_replace.gdshader" id="10_4bjpc"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
 [ext_resource type="PackedScene" uid="uid://15grj8h30num" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.tscn" id="11_x5sqa"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
+[ext_resource type="PackedScene" uid="uid://dmv6l4xue6oj0" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="PackedScene" uid="uid://uikbynpt7681" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
