@@ -1,6 +1,9 @@
 extends Area2D
 class_name SavepointArea
 
+@icon("res://Ingame/game_objects/room/savepoint_area/icon.png")
+
+
 func activate() -> void:
 	var room : Room = _get_room()
 	if room == null:
