@@ -1,6 +1,9 @@
 extends Node2D
 class_name Room
 
+@onready var player : Player             = get_tree().get_first_node_in_group("PLAYER")
+@onready var camera : FollowTargetCamera = get_tree().get_first_node_in_group("CAMERA")
+
 var room_data : Dictionary
 
 func activate() -> void:
@@ -15,10 +18,7 @@ func teleport_player() -> void:
 	var room_area : RoomArea = _find_room_area()
 	if room_area == null: return
 	
-	var player : Player             = get_tree().get_first_node_in_group("PLAYER")
 	player.teleport(savepoint.global_position)
-
-	var camera : FollowTargetCamera = get_tree().get_first_node_in_group("CAMERA")
 	room_area.hook.enable(player)
 	camera.set_target(room_area.hook)
 	camera.teleport()
