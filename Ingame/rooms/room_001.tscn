@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw720f4jovxb2"]
+[gd_scene load_steps=13 format=3 uid="uid://cw720f4jovxb2"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_wnr0d"]
 [ext_resource type="Texture2D" uid="uid://dbvqqb42rox8e" path="res://Ingame/level-sprites/default/tiles/tiles.png" id="3_66gas"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="4_148m3"]
+[ext_resource type="PackedScene" uid="uid://cxcyby7d7xayf" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="4_148m3"]
 [ext_resource type="PackedScene" uid="uid://bber4ocj05g21" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_dkf1h"]
 [ext_resource type="PackedScene" uid="uid://dus1y81ksdb7q" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_tio88"]
+[ext_resource type="PackedScene" uid="uid://s1hrh8jn480a" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_tvbbv"]
+[ext_resource type="Texture2D" uid="uid://bkmlvpfyhc4ad" path="res://icon.svg" id="7_lqdvn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1280, 720)
@@ -1292,3 +1294,16 @@ layer_0/tile_data = PackedInt32Array(65539, 262144, 2, 65540, 196608, 3, 131076,
 
 [node name="savepoint_area" parent="room_content" instance=ExtResource("4_148m3")]
 position = Vector2(208, 320)
+
+[node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
+position = Vector2(24, 272)
+
+[node name="PointLight2D" type="PointLight2D" parent="room_content"]
+position = Vector2(-120, 264)
+editor_only = true
+blend_mode = 2
+range_layer_min = -100
+range_layer_max = 100
+texture = ExtResource("7_lqdvn")
+
+[editable path="room_content/npc_spawner"]
