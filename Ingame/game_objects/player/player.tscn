@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b3ogtk2d2y2h7"]
+[gd_scene load_steps=69 format=3 uid="uid://cjrblhrq0lxss"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -9,13 +9,14 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_doublejump.gd" id="7_bx4yu"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_crouch.gd" id="8_7t7jd"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
-[ext_resource type="Shader" path="res://Ingame/shaders/color_replace.gdshader" id="10_4bjpc"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
 [ext_resource type="PackedScene" uid="uid://15grj8h30num" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.tscn" id="11_x5sqa"]
 [ext_resource type="PackedScene" uid="uid://dmv6l4xue6oj0" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="PackedScene" uid="uid://uikbynpt7681" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
+[ext_resource type="Shader" path="res://Ingame/shaders/player_shader.gdshader" id="15_unq2k"]
+[ext_resource type="Texture2D" uid="uid://cpejugcss86qx" path="res://Ingame/game_objects/player/sprites/player_bubbles.png" id="17_0r6jg"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
@@ -25,12 +26,9 @@ radius = 8.0
 height = 29.98
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
-shader = ExtResource("10_4bjpc")
-shader_parameter/visible = false
-shader_parameter/color1_to_change = Color(1, 0, 0, 1)
-shader_parameter/color2_to_change = Color(0, 0, 1, 1)
-shader_parameter/color1 = Color(0.0156863, 0.517647, 0.819608, 1)
-shader_parameter/color2 = Color(0.172549, 0.909804, 0.956863, 1)
+shader = ExtResource("15_unq2k")
+shader_parameter/timescale = null
+shader_parameter/tex = ExtResource("17_0r6jg")
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1738c"]
 animation = &"catch_drop"
@@ -416,12 +414,11 @@ position = Vector2(0, 20)
 target_position = Vector2(0, 16)
 
 [node name="sprite" type="Sprite2D" parent="."]
+light_mask = 32769
 texture_filter = 1
 material = SubResource("ShaderMaterial_d7brj")
 position = Vector2(0, -14.96)
 texture = ExtResource("13_vjjdm")
-hframes = 6
-vframes = 9
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_77pts")
