@@ -15,4 +15,5 @@ func room_activate(_room : Room) -> void:
 
 func room_deactivate(_room : Room) -> void:
 	_room.deactivate()
+	_room.update_data()
 

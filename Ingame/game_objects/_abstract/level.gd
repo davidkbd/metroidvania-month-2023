@@ -12,9 +12,6 @@ func progress_listener_on_saved_game_state_loaded(_saved_state : Dictionary) -> 
 	room.activate()
 	room.teleport_player()
 
-	await get_tree().physics_frame
-	room.apply_data()
-
 func _ready() -> void:
 	add_to_group("PROGRESS_LISTENER")
 	add_to_group("LEVEL")

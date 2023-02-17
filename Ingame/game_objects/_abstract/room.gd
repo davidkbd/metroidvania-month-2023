@@ -15,8 +15,9 @@ func activate() -> void:
 func deactivate() -> void:
 	room_content.deactivate()
 
-func apply_data() -> void:
-	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_room_player_exited", name, room_data)
+func update_data() -> void:
+	room_data.state = room_content.get_state()
+	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_room_updated", name, room_data)
 
 func teleport_player() -> void:
 	if savepoint == null: return

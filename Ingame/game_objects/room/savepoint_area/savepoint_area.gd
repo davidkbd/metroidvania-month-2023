@@ -6,6 +6,7 @@ func activate() -> void:
 	if room == null:
 		print("ERROR room no encontrada ???")
 		return
+	room.update_data()
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_progress_store_requested", room.name)
 
 func _get_room() -> Room:
