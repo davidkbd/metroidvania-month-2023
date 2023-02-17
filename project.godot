@@ -79,6 +79,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Singletone/levels.gd"
 }, {
+"base": "Node2D",
+"class": &"NpcSpawner",
+"language": &"GDScript",
+"path": "res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.gd"
+}, {
 "base": "CharacterAlive",
 "class": &"Player",
 "language": &"GDScript",
@@ -149,13 +154,14 @@ _global_script_class_icons={
 "Level": "",
 "LevelButton": "",
 "Levels": "",
+"NpcSpawner": "",
 "Player": "",
 "PlayerSkills": "",
 "Room": "",
 "RoomArea": "",
 "RoomAreaManager": "",
 "RoomContent": "",
-"SavepointArea": "",
+"SavepointArea": "res://Ingame/game_objects/room/savepoint_area/icon.png",
 "Settings": "",
 "StateMachine": "",
 "StateMachineState": "",
@@ -258,6 +264,7 @@ u={
 
 [layer_names]
 
+2d_render/layer_16="player_bubbles"
 2d_physics/layer_1="player_floor"
 2d_physics/layer_2="no_go_down_platform"
 2d_physics/layer_3="player_room-area"
