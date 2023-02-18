@@ -12,6 +12,11 @@ class_name RoomArea
 
 @onready var hook : Node2D = $camera_hook
 
+@onready var viewport_size = Vector2i(
+			ProjectSettings.get_setting("display/window/size/viewport_width"),
+			ProjectSettings.get_setting("display/window/size/viewport_height")
+			)
+
 func enable_camera_hook() -> void:
 	configure_hook()
 	room_area_manager.camera_request(hook)
@@ -29,9 +34,10 @@ func disable_room() -> void:
 func configure_hook() -> void:
 	var col  : CollisionShape2D = get_node("CollisionShape2D")
 	var rect : Rect2 = col.shape.get_rect()
-	rect.size.x -= get_viewport().size.x
-	rect.size.y -= get_viewport().size.y
+	
+	rect.size.x -= viewport_size.x
+	rect.size.y -= viewport_size.y
 	rect.size += margin * 2.0
-	rect.position += col.global_position + get_viewport().size / 2.0
+	rect.position += col.global_position + viewport_size / 2.0
 	rect.position -= margin
 	hook.set_rect(rect)
