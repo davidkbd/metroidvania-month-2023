@@ -161,7 +161,7 @@ _global_script_class_icons={
 "RoomArea": "",
 "RoomAreaManager": "",
 "RoomContent": "",
-"SavepointArea": "res://Ingame/game_objects/room/savepoint_area/icon.png",
+"SavepointArea": "",
 "Settings": "",
 "StateMachine": "",
 "StateMachineState": "",

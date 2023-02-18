@@ -13,5 +13,7 @@ static func get_default_specs() -> Dictionary:
 "damage_impulse":      -ProjectSettings.get_setting("physics/2d/default_gravity") * .15,
 "damage_deceleration": 20.0,
 "max_up_speed":        -10000.0,
-"max_down_speed":      700.0
+"max_down_speed":      700.0,
+"wall_down_speed":     500.0,
+"wall_jump_impulse":   200.0
 }

@@ -1,11 +1,13 @@
 extends StateMachineState
 
-var jump_timer : float
+var jump_timer            : float
+var prevent_on_wall_timer : float
 
 func enter() -> void:
 	host.jump_sfx.play()
 	host.velocity.y = host.specs.jump_impulse
 	jump_timer = .1
+	prevent_on_wall_timer = .2
 
 func exit() -> void:
 	pass
@@ -18,9 +20,11 @@ func step(delta : float) -> StateMachineState:
 	host.move_and_slide()
 
 	jump_timer -= delta
+	prevent_on_wall_timer -= delta
 
 	if Input.is_action_just_pressed("j"): return state_machine.on_doublejump
 	if jump_timer < .0 and host.is_on_floor(): return state_machine.on_ground
+	if prevent_on_wall_timer < .0 and host.is_on_wall(): return state_machine.on_wall
 	if host.enemy_died: return state_machine.on_enemybounce
 	if host.damager: return state_machine.on_damaged
 	return self
