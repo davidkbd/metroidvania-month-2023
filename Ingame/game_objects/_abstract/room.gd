@@ -18,6 +18,7 @@ func progress_listener_on_saved_game_state_loaded(_saved_state : Dictionary) -> 
 	activate()
 
 func activate() -> void:
+	print("ROOM DATA: ", room_data)
 	room_content.activate(room_data)
 
 func deactivate() -> void:

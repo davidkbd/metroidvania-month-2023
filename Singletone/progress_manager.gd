@@ -16,8 +16,9 @@ func progress_listener_on_room_updated(_room_id : String, _data : Dictionary) ->
 
 func progress_listener_on_progress_store_requested(from_room_id : String) -> void:
 	game_state.level.room_spawn = from_room_id
+	var storeable_game_state = _create_storeable_game_state()
 	var file = FileAccess.open(PROGRESS_FILE % current_level_id, FileAccess.WRITE)
-	file.store_var(game_state)
+	file.store_var(storeable_game_state)
 	print("Hay que recibir progress_listener_on_progress_stored en hud")
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_progress_stored")
 
@@ -28,6 +29,18 @@ func level_listener_on_ready(_level_data : Dictionary) -> void:
 	await get_tree().process_frame
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_saved_game_state_loaded", game_state)
 	print(game_state)
+
+func _create_storeable_game_state() -> Dictionary:
+	var r : Dictionary = game_state.duplicate(true)
+	for room_key in r.rooms.keys():
+		var room_state : Dictionary = r.rooms[room_key].state
+		for spawner_state in room_state.keys():
+			for character_state in r.rooms[room_key].state[spawner_state].keys():
+				if not r.rooms[room_key].state[spawner_state][character_state].storeable:
+					r.rooms[room_key].state[spawner_state][character_state] = {}
+				print(r.rooms[room_key].state[spawner_state][character_state])
+	print("Hay que desechar todos los datos que se encutren en el dictionary que sean storeable=false")
+	return r
 
 func _ready():
 	add_to_group("LEVEL_LISTENER")

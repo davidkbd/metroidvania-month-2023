@@ -1452,3 +1452,6 @@ position = Vector2(208, 320)
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
 position = Vector2(72, 256)
+
+[node name="npc_spawner2" parent="room_content" instance=ExtResource("6_tvbbv")]
+position = Vector2(72, 256)
