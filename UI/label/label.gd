@@ -89,6 +89,7 @@ const CHAR_METADATA : Dictionary = {
 		"l": { "width": 5, "pos": 37 },
 		"m": { "width": 9, "pos": 38 },
 		"n": { "width": 8, "pos": 39 },
+		"ñ": { "width": 8, "pos": 39 },
 		"o": { "width": 8, "pos": 40 },
 		"p": { "width": 8, "pos": 41 },
 		"q": { "width": 8, "pos": 42 },
@@ -189,22 +190,72 @@ func _print_char(_x : int, _y : int, _w : int, _char_pos : int) -> void:
 	var rect_position : Rect2 = Rect2(_x, _y, 9.0, 11.0)
 	draw_texture_rect_region(bitmap, rect_position, char_region)
 
-func _draw():
-	var x : int = 0
-	var y : int = 0
-	var end_line : bool = false
+func _configure_colors() -> void:
 	material.set_shader_parameter("color1", first_half_color)
 	material.set_shader_parameter("color2", last_half_color)
 	material.set_shader_parameter("color3", shadow_color)
-	for l in text:
-		if x > width:
-			end_line = true
-		if end_line and l == " ":
-			l = '\n'
-		if l == '\n':
-			y += CHAR_HEIGHT
-			x = 0
-			end_line = false
+
+func _calculate_width_lines(_text : String) -> Array[int]:
+	var r : Array[int] = []
+	
+	var width_chars : Array[int] = []
+
+	for l in _text:
 		var md = CHAR_METADATA.bold[l] if bold else CHAR_METADATA.normal[l]
-		_print_char(x, y, md.width, md.pos)
-		x += md.width
+		width_chars.append(md.width)
+
+	var l : String
+	var i : int = 0
+	var w : int = 0
+	var space_position : int = -1
+	while i < _text.length():
+		w += width_chars[i]
+		l = _text[i]
+		if l == '\n':
+			r.append(w)
+			w = 0
+			space_position = -1
+		elif w < width and l == " ":
+			space_position = i
+		if w >= width:
+			if space_position == -1:
+				if l == " ":
+					r.append(w)
+					w = 0
+					space_position = -1
+			else:
+				while w >= width or l != " ":
+					l = _text[i]
+					w -= width_chars[i]
+					i -= 1
+				i += 1
+				r.append(w)
+				w = 0
+				space_position = -1
+		i += 1
+	r.append(w)
+	
+	return r
+
+func _draw():
+	_configure_colors()
+
+	var text_to_parse = text#.trim_suffix(" ")
+
+	var widths : Array[int] = _calculate_width_lines(text_to_parse)
+	var x : int = 0
+	var y : int = 0
+	var height_i : int = 0
+	var md : Dictionary
+	if bold:
+		md = CHAR_METADATA.bold
+	else:
+		md = CHAR_METADATA.normal
+	for l in text_to_parse:
+		var char_md = md[l]
+		if x >= widths[height_i]:
+			height_i += 1
+			y += CHAR_HEIGHT
+			x = -char_md.width if l == " " else 0
+		_print_char(x, y, char_md.width, char_md.pos)
+		x += char_md.width
