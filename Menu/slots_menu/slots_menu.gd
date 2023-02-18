@@ -1,11 +1,11 @@
 extends Control
 
-@export var level_button_template : PackedScene
+@export var slot_button_template : PackedScene
 
-@onready var level_list   : Container       = $container/level_list
+@onready var slot_list   : Container       = $container/slot_list
 @onready var back_button  : Button          = $back_button
 
-#var levels : Array = Levels.get_levels()
+#var slotss : Array = Slots.get_slots()
 #var recent_passed : String = ""
 
 var trick : bool = false
@@ -21,18 +21,18 @@ func menu_listener_on_open_principal_menu_pressed() -> void:
 #		recent_passed = recent_file.get_as_text()
 
 #func _instance_buttons() -> void:
-#	for b in level_list.get_children():
+#	for b in slot_list.get_children():
 #		b.queue_free()
 #	var unlock : bool = true
 #	var button_count : int = 0
 #	var previous_name = "NONEEEEEEEEEEEEE"
-#	for l in levels:
-#		var button : LevelButton = level_button_template.instantiate()
-#		button.set_level_name(l.name)
+#	for l in slots:
+#		var button : slotButton = slot_button_template.instantiate()
+#		button.set_slot_name(l.name)
 #		button.set_locked(!unlock)
 #		button.set_recent_unlock(recent_passed == previous_name)
-#		level_list.add_child(button)
-#		button.pressed.connect(_on_level_button_pressed.bind(button))
+#		slot_list.add_child(button)
+#		button.pressed.connect(_on_slot_button_pressed.bind(button))
 #		if unlock:
 #			button.grab_focus()
 #		unlock = (button.star_count > 0) or trick
@@ -41,10 +41,10 @@ func menu_listener_on_open_principal_menu_pressed() -> void:
 #
 #	if button_count < 1: back_button.grab_focus()
 #
-#func _on_level_button_pressed(button : Button) -> void:
+#func _on_slot_button_pressed(button : Button) -> void:
 #	DirAccess.remove_absolute(Directories.RECENT_PASSED_PATH)
-#	get_tree().call_group("MENU_SFX", "play_level_start")
-#	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_state_requested", levels[button.get_index()].name)
+#	get_tree().call_group("MENU_SFX", "play_slot_start")
+#	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_start_requested", slots[button.get_index()].name)
 
 func _on_back_button_pressed():
 	get_tree().call_group("MENU_SFX", "play_button_back")
@@ -63,4 +63,4 @@ func _input(event : InputEvent):
 func _ready() -> void:
 #	_check_recent_passed()
 #	_instance_buttons()
-	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_state_requested", "level_001")
+	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_start_requested", "level_001")

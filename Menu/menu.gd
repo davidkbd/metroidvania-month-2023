@@ -1,7 +1,7 @@
 extends Node
 
 @export var principal_menu_template     : PackedScene
-@export var levels_menu_template        : PackedScene
+@export var slots_menu_template         : PackedScene
 @export var options_menu_template       : PackedScene
 @export var credits_menu_template       : PackedScene
 @export var game_finished_menu_template : PackedScene
@@ -9,13 +9,13 @@ extends Node
 var menu_instance
 
 func hud_listener_on_level_closed() -> void:
-	_show_menu(levels_menu_template)
+	_show_menu(slots_menu_template)
 
 func menu_listener_on_open_principal_menu_pressed() -> void:
 	_show_menu(principal_menu_template)
 
-func menu_listener_on_open_levels_menu_pressed() -> void:
-	_show_menu(levels_menu_template)
+func menu_listener_on_open_slots_menu_pressed() -> void:
+	_show_menu(slots_menu_template)
 
 func menu_listener_on_open_options_menu_pressed() -> void:
 	_show_menu(options_menu_template)
@@ -26,7 +26,7 @@ func menu_listener_on_open_credits_menu_pressed() -> void:
 func hud_listener_on_game_finished() -> void:
 	_show_menu(game_finished_menu_template)
 
-func menu_listener_on_game_state_requested(_level_name : String) -> void:
+func menu_listener_on_game_start_requested(_level_name : String) -> void:
 	menu_instance.queue_free()
 
 func _show_menu(template : PackedScene) -> void:

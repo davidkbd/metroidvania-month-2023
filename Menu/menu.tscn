@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqa0pkk14m26r"]
+[gd_scene load_steps=7 format=3 uid="uid://ccv5co7mnsawd"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_ygp0x"]
 [ext_resource type="PackedScene" uid="uid://bjgsfu5k0osie" path="res://Menu/principal_menu/principal_menu.tscn" id="2_qcsjw"]
 [ext_resource type="PackedScene" uid="uid://24bxrog8l4ph" path="res://Menu/options_menu/options_menu.tscn" id="3_6yxbt"]
-[ext_resource type="PackedScene" uid="uid://djwa8t2bem6s7" path="res://Menu/levels_menu/levels_menu.tscn" id="3_nuxfb"]
+[ext_resource type="PackedScene" uid="uid://gnvyp7vni8nm" path="res://Menu/slots_menu/slots_menu.tscn" id="3_ao8vq"]
 [ext_resource type="PackedScene" uid="uid://cd4nk5jiw54pw" path="res://Menu/credits_menu/credits_menu.tscn" id="5_lly03"]
 [ext_resource type="PackedScene" uid="uid://bjwxvh0xsuaov" path="res://Menu/game_finished_menu/game_finished_menu.tscn" id="6_e3pk2"]
 
 [node name="menu" type="Node" groups=["HUD_LISTENER", "MENU_LISTENER"]]
 script = ExtResource("1_ygp0x")
 principal_menu_template = ExtResource("2_qcsjw")
-levels_menu_template = ExtResource("3_nuxfb")
+slots_menu_template = ExtResource("3_ao8vq")
 options_menu_template = ExtResource("3_6yxbt")
 credits_menu_template = ExtResource("5_lly03")
 game_finished_menu_template = ExtResource("6_e3pk2")

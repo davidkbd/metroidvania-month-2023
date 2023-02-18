@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://1ba7px6bcwga"]
+[gd_scene load_steps=6 format=3 uid="uid://1ba7px6bcwga"]
 
 [ext_resource type="Script" path="res://sfx/menu_sfx.gd" id="1_kg680"]
 [ext_resource type="AudioStream" uid="uid://blfxn2is5v0xo" path="res://sfx/menu_button.wav" id="2_a7b77"]
 [ext_resource type="AudioStream" uid="uid://sc74lcvj5vg" path="res://sfx/menu_button_back.wav" id="3_7khfo"]
 [ext_resource type="AudioStream" uid="uid://8008maf4mlpf" path="res://sfx/menu_slider.wav" id="3_tudqx"]
 [ext_resource type="AudioStream" uid="uid://bpravwxx0svu1" path="res://sfx/menu_level_start.wav" id="4_44v0k"]
-[ext_resource type="AudioStream" uid="uid://b564ydppuut0k" path="res://sfx/menu_level_unlock.wav" id="5_roaex"]
 
 [node name="menu_sfx" type="Node" groups=["MENU_SFX"]]
 script = ExtResource("1_kg680")
@@ -23,12 +22,7 @@ stream = ExtResource("3_tudqx")
 volume_db = -5.0
 bus = &"sfx"
 
-[node name="level_start" type="AudioStreamPlayer" parent="."]
+[node name="slot_start" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_44v0k")
-volume_db = -5.0
-bus = &"sfx"
-
-[node name="level_unlock" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_roaex")
 volume_db = -5.0
 bus = &"sfx"

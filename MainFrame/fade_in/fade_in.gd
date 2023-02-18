@@ -7,7 +7,7 @@ var tween : Tween
 func hud_listener_on_level_closed() -> void:
 	_fade_in()
 
-func menu_listener_on_game_state_requested(_level_name : String) -> void:
+func menu_listener_on_game_start_requested(_level_name : String) -> void:
 	_fade_out()
 
 func hud_listener_on_level_restarted() -> void:

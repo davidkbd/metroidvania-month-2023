@@ -4,7 +4,7 @@ var quit_confirm : ConfirmationDialog
 
 func _on_start_button_pressed() -> void:
 	get_tree().call_group("MENU_SFX", "play_button")
-	get_tree().call_group("MENU_LISTENER", "menu_listener_on_open_levels_menu_pressed")
+	get_tree().call_group("MENU_LISTENER", "menu_listener_on_open_slots_menu_pressed")
 
 func _on_options_button_pressed():
 	get_tree().call_group("MENU_SFX", "play_button")

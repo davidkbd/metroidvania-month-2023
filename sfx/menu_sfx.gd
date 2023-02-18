@@ -9,8 +9,5 @@ func play_button_back() -> void:
 func play_slider() -> void:
 	$slider.play()
 
-func play_level_start() -> void:
-	$level_start.play()
-
-func play_level_unlock() -> void:
-	$level_unlock.play()
+func play_slot_start() -> void:
+	$slot_start.play()

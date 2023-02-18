@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cadomlr4cvqg5"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="1_3v4cv"]
-[ext_resource type="Script" path="res://Menu/levels_menu/parts/level_button/level_button.gd" id="1_xeq1t"]
-[ext_resource type="Texture2D" uid="uid://4d5xp2y1togq" path="res://Menu/levels_menu/parts/level_button/sprites/star.png" id="2_o08kl"]
-[ext_resource type="Texture2D" uid="uid://bj0ld4vqnf2e3" path="res://Menu/levels_menu/parts/level_button/sprites/lock.png" id="3_v87d7"]
+[ext_resource type="Script" path="res://Menu/slots_menu/parts/slot_button/slot_button.gd" id="1_xeq1t"]
+[ext_resource type="Texture2D" uid="uid://4d5xp2y1togq" path="res://Menu/slots_menu/parts/slot_button/sprites/star.png" id="2_o08kl"]
+[ext_resource type="Texture2D" uid="uid://bj0ld4vqnf2e3" path="res://Menu/slots_menu/parts/slot_button/sprites/lock.png" id="3_v87d7"]
 
 [node name="level_button" type="Button" groups=["MENU_LISTENER"]]
 custom_minimum_size = Vector2(128, 128)
