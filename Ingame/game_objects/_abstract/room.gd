@@ -32,6 +32,7 @@ func teleport_player() -> void:
 	if savepoint == null: return
 	
 	player.teleport(savepoint.global_position)
+	room_area.configure_hook()
 	room_area.hook.enable(player)
 	camera.set_target(room_area.hook)
 	camera.teleport()
