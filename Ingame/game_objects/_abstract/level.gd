@@ -7,9 +7,14 @@ class_name Level
 #
 # Restaura partida, activa la room y teleporta el player al savepoint
 #
-func progress_listener_on_game_state_loaded(_saved_state : Dictionary) -> void:
-	var room : Room = get_node(_saved_state.level.room_spawn)
+func initialize(_game_state : Dictionary) -> void:
+	var room : Room = get_node(_game_state.level.room_spawn)
 #	room.activate()
+
+	for r in get_children():
+		r.initialize(_game_state)
+
+	await get_tree().physics_frame
 	room.teleport_player()
 
 func _ready() -> void:

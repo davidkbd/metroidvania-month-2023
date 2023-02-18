@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://do0ddn52c5qjm" path="res://Ingame/layers/game_layer/game_layer.tscn" id="3_q230j"]
 [ext_resource type="PackedScene" uid="uid://uljlx3vlote8" path="res://Ingame/layers/hud/hud.tscn" id="9_bc1jw"]
 
-[node name="ingame" type="Node" groups=["HUD_LISTENER", "MENU_LISTENER"]]
+[node name="ingame" type="Node" groups=["HUD_LISTENER", "PROGRESS_LISTENER"]]
 script = ExtResource("1_vmgj6")
 hud_template = ExtResource("9_bc1jw")
 game_layer_template = ExtResource("3_q230j")

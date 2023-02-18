@@ -17,12 +17,12 @@ const SPRITES_PATH      := "res://Ingame/game_objects/npc/%s/sprites/spawner_spr
 const PACKEDSCENES_PATH := "res://Ingame/game_objects/npc/%s/character.tscn"
 const NPC_DATA := [
 	{
-		"id": "mother",
-		"storeable": true
+		"id": "mother"
+#		"storeable": true
 	},
 	{
-		"id": "grandfa",
-		"storeable": true
+		"id": "grandfa"
+#		"storeable": true
 	}
 ]
 
@@ -34,15 +34,15 @@ var instance_name : String
 
 func update_instance_data(_data : Dictionary) -> void:
 	instance_data[instance_name.to_lower()] = _data
-
-func is_storeable() -> void:
-	return NPC_DATA[npc_type].storeable
+#
+#func is_storeable() -> void:
+#	return NPC_DATA[npc_type].storeable
 
 func activate(_data : Dictionary) -> void:
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[npc_type].id).instantiate()
 	instance_name = instance.name.to_lower()
 	add_child(instance)
-	instance.update_data(_get_instance_data_from_data(_data))
+	instance.update_room_data(_get_instance_data_from_data(_data))
 
 func deactivate() -> void:
 	if is_instance_valid(instance): instance.queue_free()

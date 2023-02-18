@@ -9,6 +9,7 @@ const LEVEL_FILE_PATH = Directories.LEVELS_PATH + "%s.tscn"
 func hud_listener_on_level_finished() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
-func instance_level(_level_id : String) -> void:
-	level_instance = load(LEVEL_FILE_PATH % _level_id).instantiate()
+func instance_level(_game_state : Dictionary) -> void:
+	level_instance = load(LEVEL_FILE_PATH % _game_state.level.level).instantiate()
 	game_container.add_child(level_instance)
+	level_instance.initialize(_game_state)

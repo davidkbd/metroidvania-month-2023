@@ -9,13 +9,13 @@ class_name Room
 
 var room_data : Dictionary
 
-#
-# Restaura partida, carga los datos en cada room
-#
-func progress_listener_on_game_state_loaded(_saved_state : Dictionary) -> void:
-	var room_name = name.to_lower()
-	room_data = _saved_state.rooms[room_name] if _saved_state.rooms.has(room_name) else {}
-#	activate()
+##
+## Restaura partida, carga los datos en cada room
+##
+#func progress_listener_on_game_state_loaded(_game_state : Dictionary) -> void:
+#	var room_name = name.to_lower()
+#	room_data = _game_state.rooms[room_name] if _game_state.rooms.has(room_name) else {}
+##	activate()
 
 func activate() -> void:
 	print("ROOM DATA: ", room_data)
@@ -24,7 +24,11 @@ func activate() -> void:
 func deactivate() -> void:
 	room_content.deactivate()
 
-func update_data() -> void:
+func initialize(_game_state : Dictionary) -> void:
+	var room_name = name.to_lower()
+	room_data = _game_state.rooms[room_name] if _game_state.rooms.has(room_name) else {}
+
+func update_room_data() -> void:
 	room_data.state = room_content.get_state()
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_room_updated", name, room_data)
 
@@ -58,5 +62,5 @@ func _find_savepoint() -> Node2D:
 		return null
 	return r
 
-func _enter_tree() -> void:
-	add_to_group("PROGRESS_LISTENER")
+#func _enter_tree() -> void:
+#	add_to_group("PROGRESS_LISTENER")

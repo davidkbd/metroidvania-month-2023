@@ -18,14 +18,14 @@ func hud_listener_on_game_finished() -> void:
 	await get_tree().create_timer(1.0).timeout
 	hud_listener_on_level_closed()
 
-func menu_listener_on_game_start_requested(_level_name : String) -> void:
+func progress_listener_on_game_state_loaded(_game_state : Dictionary) -> void:
 	await get_tree().create_timer(1).timeout
 	
-	current_level_name = _level_name
-	
+	current_level_name = _game_state.level.level
+
 	hud_instance = hud_template.instantiate()
 	game_layer_instance = game_layer_template.instantiate()
-	
+
 	add_child(hud_instance)
 	add_child(game_layer_instance)
-	game_layer_instance.instance_level(_level_name)
+	game_layer_instance.instance_level(_game_state)
