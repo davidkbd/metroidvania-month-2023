@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://cjrblhrq0lxss"]
+[gd_scene load_steps=77 format=3 uid="uid://cjrblhrq0lxss"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -145,6 +145,9 @@ advance_expression = "get_parent().state_machine.current_state == get_parent().s
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ch4p8"]
 advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bc0ao"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_wall"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f4fiv"]
 states/Start/position = Vector2(-119, 101)
 states/catch_drop/node = SubResource("AnimationNodeAnimation_1738c")
@@ -169,8 +172,8 @@ states/run/node = SubResource("AnimationNodeAnimation_1qbf2")
 states/run/position = Vector2(761.243, 271.15)
 states/wait_drop/node = SubResource("AnimationNodeAnimation_3stj8")
 states/wait_drop/position = Vector2(-119, -121.568)
-transitions = ["idle", "pre_drop", SubResource("AnimationNodeStateMachineTransition_ptd2f"), "catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_wohx0"), "wait_drop", "catch_drop", SubResource("AnimationNodeStateMachineTransition_ugvf3"), "pre_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_qlpka"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_f2sgt"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_fv3la"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_pjgf8"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_du247"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_okxeu"), "double_jump", "idle", SubResource("AnimationNodeStateMachineTransition_8oibt"), "jump", "double_jump", SubResource("AnimationNodeStateMachineTransition_tg07p"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_oom8a"), "idle", "crouch", SubResource("AnimationNodeStateMachineTransition_6ioo3"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_rbnwo"), "wait_drop", "no_catch_drop", SubResource("AnimationNodeStateMachineTransition_glysd"), "no_catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_lx2ky"), "no_catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_itajn"), "catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_xjvyc"), "crouch", "fall", SubResource("AnimationNodeStateMachineTransition_qeplk"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_g8plo"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_bmelx"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_vyeoe"), "jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_5wjfw"), "on_wall", "jump", SubResource("AnimationNodeStateMachineTransition_1rl0o"), "on_wall", "idle", SubResource("AnimationNodeStateMachineTransition_ch4p8")]
-graph_offset = Vector2(-268.225, -173.916)
+transitions = ["idle", "pre_drop", SubResource("AnimationNodeStateMachineTransition_ptd2f"), "catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_wohx0"), "wait_drop", "catch_drop", SubResource("AnimationNodeStateMachineTransition_ugvf3"), "pre_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_qlpka"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_f2sgt"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_fv3la"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_pjgf8"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_du247"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_okxeu"), "double_jump", "idle", SubResource("AnimationNodeStateMachineTransition_8oibt"), "jump", "double_jump", SubResource("AnimationNodeStateMachineTransition_tg07p"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_oom8a"), "idle", "crouch", SubResource("AnimationNodeStateMachineTransition_6ioo3"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_rbnwo"), "wait_drop", "no_catch_drop", SubResource("AnimationNodeStateMachineTransition_glysd"), "no_catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_lx2ky"), "no_catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_itajn"), "catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_xjvyc"), "crouch", "fall", SubResource("AnimationNodeStateMachineTransition_qeplk"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_g8plo"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_bmelx"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_vyeoe"), "jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_5wjfw"), "on_wall", "jump", SubResource("AnimationNodeStateMachineTransition_1rl0o"), "on_wall", "idle", SubResource("AnimationNodeStateMachineTransition_ch4p8"), "double_jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_bc0ao")]
+graph_offset = Vector2(295.775, -111.636)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bjlgn"]
 
@@ -223,7 +226,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_pyij5"]
 resource_name = "double_jump"
-length = 0.45
+length = 0.65
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -232,7 +235,7 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.55, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [60, 61, 62, 63, 64, 65, 66, 67, 68]
@@ -305,6 +308,22 @@ tracks/0/keys = {
 "values": [31, 30]
 }
 
+[sub_resource type="Animation" id="Animation_njckj"]
+resource_name = "on_wall"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [70, 71]
+}
+
 [sub_resource type="Animation" id="Animation_ua5cx"]
 resource_name = "pre_drop"
 length = 0.2
@@ -371,22 +390,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [36]
-}
-
-[sub_resource type="Animation" id="Animation_njckj"]
-resource_name = "on_wall"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [70, 71]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3wnei"]
