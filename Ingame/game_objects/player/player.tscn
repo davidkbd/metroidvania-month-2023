@@ -139,7 +139,7 @@ states/catch_drop/position = Vector2(82.6555, -7.85)
 states/crouch/node = SubResource("AnimationNodeAnimation_32ts4")
 states/crouch/position = Vector2(-30.29, 263.15)
 states/double_jump/node = SubResource("AnimationNodeAnimation_8itoi")
-states/double_jump/position = Vector2(285.488, 11.15)
+states/double_jump/position = Vector2(480.488, -19.35)
 states/fall/node = SubResource("AnimationNodeAnimation_2eaqa")
 states/fall/position = Vector2(155.743, 263.15)
 states/idle/node = SubResource("AnimationNodeAnimation_owedy")
@@ -155,7 +155,7 @@ states/run/position = Vector2(352.243, 263.15)
 states/wait_drop/node = SubResource("AnimationNodeAnimation_3stj8")
 states/wait_drop/position = Vector2(-119, -121.568)
 transitions = ["idle", "pre_drop", SubResource("AnimationNodeStateMachineTransition_ptd2f"), "catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_wohx0"), "wait_drop", "catch_drop", SubResource("AnimationNodeStateMachineTransition_ugvf3"), "pre_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_qlpka"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_f2sgt"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_fv3la"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_pjgf8"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_du247"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_okxeu"), "double_jump", "idle", SubResource("AnimationNodeStateMachineTransition_8oibt"), "jump", "double_jump", SubResource("AnimationNodeStateMachineTransition_tg07p"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_oom8a"), "idle", "crouch", SubResource("AnimationNodeStateMachineTransition_6ioo3"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_rbnwo"), "wait_drop", "no_catch_drop", SubResource("AnimationNodeStateMachineTransition_glysd"), "no_catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_lx2ky"), "no_catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_itajn"), "catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_xjvyc"), "crouch", "fall", SubResource("AnimationNodeStateMachineTransition_qeplk"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_g8plo"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_bmelx"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_vyeoe")]
-graph_offset = Vector2(-197.725, 40.652)
+graph_offset = Vector2(-56.725, -83.908)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bjlgn"]
 
@@ -208,7 +208,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_pyij5"]
 resource_name = "double_jump"
-length = 0.1
+length = 0.45
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -216,10 +217,10 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [18]
+"values": [60, 61, 62, 63, 64, 65, 66, 67, 68]
 }
 
 [sub_resource type="Animation" id="Animation_5eyh6"]
@@ -235,7 +236,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [24]
+"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_lf06g"]
@@ -270,7 +271,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [24]
+"values": [40]
 }
 
 [sub_resource type="Animation" id="Animation_sqxii"]
@@ -319,7 +320,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [12]
+"values": [20]
 }
 
 [sub_resource type="Animation" id="Animation_dn7p7"]
@@ -334,10 +335,10 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [6, 7, 8, 9, 10]
+"values": [10, 11, 12, 13]
 }
 
 [sub_resource type="Animation" id="Animation_06bb3"]
@@ -444,8 +445,8 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_d7brj")
 position = Vector2(0, -14.96)
 texture = ExtResource("13_vjjdm")
-hframes = 6
-vframes = 7
+hframes = 10
+vframes = 8
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_77pts")
