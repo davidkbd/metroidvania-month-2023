@@ -19,7 +19,6 @@ script = ExtResource("1_oe2fm")
 level_button_template = ExtResource("2_deaky")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,7 +29,6 @@ texture = ExtResource("4_xrtvo")
 [node name="zzz" parent="Background" instance=ExtResource("5_eev1d")]
 
 [node name="panel" type="NinePatchRect" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.07
 anchor_top = 0.18
@@ -45,7 +43,6 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="container" type="CenterContainer" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
 anchor_top = 0.2
@@ -55,11 +52,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="level_list" type="GridContainer" parent="container"]
-layout_mode = 2
+offset_left = 256.0
+offset_top = 108.0
+offset_right = 256.0
+offset_bottom = 108.0
 columns = 4
 
 [node name="back_button" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7
 anchor_top = 0.9

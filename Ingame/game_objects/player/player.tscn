@@ -22,8 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjv8n"]
-radius = 8.0
-height = 29.98
+radius = 14.99
+height = 45.98
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
 shader = ExtResource("15_unq2k")
@@ -399,6 +399,7 @@ current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.01)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yjv8n")
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 

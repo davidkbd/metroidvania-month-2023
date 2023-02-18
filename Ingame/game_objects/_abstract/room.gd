@@ -9,8 +9,16 @@ class_name Room
 
 var room_data : Dictionary
 
+#
+# Restaura partida, carga los datos en cada room
+#
+func progress_listener_on_saved_game_state_loaded(_saved_state : Dictionary) -> void:
+	var room_name = name.to_lower()
+	room_data = _saved_state.rooms[room_name] if _saved_state.rooms.has(room_name) else {}
+	activate()
+
 func activate() -> void:
-	room_content.activate()
+	room_content.activate(room_data)
 
 func deactivate() -> void:
 	room_content.deactivate()
@@ -47,3 +55,6 @@ func _find_savepoint() -> Node2D:
 		print("ERROR: this room (%s) has not a savepoint node" % name.to_lower())
 		return null
 	return r
+
+func _enter_tree() -> void:
+	add_to_group("PROGRESS_LISTENER")

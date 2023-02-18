@@ -10,4 +10,4 @@ const LEVELS_PATH : String = "res://Ingame/levels/"
 
 static func create() -> void:
 	DirAccess.make_dir_recursive_absolute(SETTINGS_PATH)
-	DirAccess.make_dir_recursive_absolute(LEVEL_STARS_PATH)
+	DirAccess.make_dir_recursive_absolute(PROGRESS_PATH)

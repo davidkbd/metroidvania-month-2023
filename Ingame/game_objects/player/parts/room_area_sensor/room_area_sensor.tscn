@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.gd" id="1_hhgca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yep22"]
-size = Vector2(4, 4)
+size = Vector2(16, 4)
 
 [node name="room_area_sensor" type="Area2D"]
 collision_layer = 0

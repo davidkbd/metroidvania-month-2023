@@ -5,7 +5,7 @@ class_name RoomArea
 # Cuidado, si este size es mayor que los los margenes del area de sala
 # se puede llegar a mover la camara antes de entrar en la siguiente sala
 # la camara se movera pero el hook no se activara
-@export var margin : Vector2 = Vector2.ONE * 8.0
+@export var margin : Vector2 = Vector2.ONE * -16.0
 
 @onready var room_area_manager : RoomAreaManager = get_tree().get_first_node_in_group("ROOM_AREA_MANAGER")
 @onready var room              : Room            = get_parent()
