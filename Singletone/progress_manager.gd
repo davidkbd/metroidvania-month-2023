@@ -27,7 +27,7 @@ func level_listener_on_ready(_level_data : Dictionary) -> void:
 	var file = FileAccess.open(PROGRESS_FILE % current_level_id, FileAccess.READ)
 	if file: game_state = file.get_var()
 	await get_tree().process_frame
-	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_saved_game_state_loaded", game_state)
+	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_game_state_loaded", game_state)
 	print(game_state)
 
 func _create_storeable_game_state() -> Dictionary:

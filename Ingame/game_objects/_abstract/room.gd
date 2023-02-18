@@ -12,7 +12,7 @@ var room_data : Dictionary
 #
 # Restaura partida, carga los datos en cada room
 #
-func progress_listener_on_saved_game_state_loaded(_saved_state : Dictionary) -> void:
+func progress_listener_on_game_state_loaded(_saved_state : Dictionary) -> void:
 	var room_name = name.to_lower()
 	room_data = _saved_state.rooms[room_name] if _saved_state.rooms.has(room_name) else {}
 #	activate()
