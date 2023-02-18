@@ -18,6 +18,9 @@ func step(delta : float) -> StateMachineState:
 	_jump(delta)
 	
 	host.move_and_slide()
+	
+	var direction = Input.get_axis("l", "r")
+	_flip_player(direction)
 
 	jump_timer -= delta
 	prevent_on_wall_timer -= delta
@@ -40,3 +43,9 @@ func _jump(delta : float) -> void:
 
 func _go_down_cancel() -> void:
 	host.set_collision_mask_value(1, true)
+
+func _flip_player(direction) -> void:
+	if direction > .0:
+		host.sprite.flip_h = true
+	elif direction < .0:
+		host.sprite.flip_h = false 
