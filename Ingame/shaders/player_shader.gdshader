@@ -6,7 +6,7 @@ uniform float timescale = .25;
 
 void fragment() {
 	vec4 sprite_color = COLOR;
-	vec2 uv = vec2(UV.x, UV.y + TIME * timescale);
+	vec2 uv = vec2(UV.x * 6.0, UV.y * 6.0 + TIME * timescale);
 	vec4 t = texture(tex, uv);
 	if (sprite_color.a != .0) {
 		sprite_color.rgba += vec4(t.a, t.a, t.a, t.a) * .1;
