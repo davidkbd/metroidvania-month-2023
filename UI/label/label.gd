@@ -2,7 +2,7 @@ extends Node2D
 @tool
 
 @export_category("Content")
-@export_multiline var text  : String = "hola amijo\nhola" : 
+@export_multiline var text  : String = "" : 
 	get: return text
 	set(value):
 		if value == text: return
@@ -19,6 +19,18 @@ extends Node2D
 	set(value):
 		if value == width: return
 		width = value
+		queue_redraw()
+@export var centered : bool = false :
+	get: return centered
+	set(value):
+		if value == centered: return
+		centered = value
+		queue_redraw()
+@export var vertical_centered : bool = false :
+	get: return vertical_centered
+	set(value):
+		if value == vertical_centered: return
+		vertical_centered = value
 		queue_redraw()
 
 @export_category("Graphics")
@@ -284,5 +296,5 @@ func _draw():
 				height_i += 1
 				y += CHAR_HEIGHT
 				x = -char_md.width if l == " " else 0
-			_print_char(x, y, char_md.width, char_md.pos)
+			_print_char(x - widths[height_i] / 2 if centered else x, y - widths.size() * CHAR_HEIGHT / 2 if vertical_centered else y, char_md.width, char_md.pos)
 			x += char_md.width
