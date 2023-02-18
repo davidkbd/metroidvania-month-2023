@@ -47,142 +47,169 @@ extends Node2D
 const CHAR_WIDTH  : float = 9.0
 const CHAR_HEIGHT : float = 11.0
 
-const CHAR_METADATA : Dictionary = {
-	"normal": {
-		"A": { "width": 8, "pos": 0 },
-		"B": { "width": 8, "pos": 1 },
-		"C": { "width": 8, "pos": 2 },
-		"D": { "width": 8, "pos": 3 },
-		"E": { "width": 8, "pos": 4 },
-		"F": { "width": 8, "pos": 5 },
-		"G": { "width": 8, "pos": 6 },
-		"H": { "width": 8, "pos": 7 },
-		"I": { "width": 6, "pos": 8 },
-		"J": { "width": 8, "pos": 9 },
-		"K": { "width": 8, "pos": 10 },
-		"L": { "width": 8, "pos": 11 },
-		"M": { "width": 9, "pos": 12 },
-		"N": { "width": 8, "pos": 13 },
-		"O": { "width": 8, "pos": 14 },
-		"P": { "width": 8, "pos": 15 },
-		"Q": { "width": 8, "pos": 16 },
-		"R": { "width": 8, "pos": 17 },
-		"S": { "width": 8, "pos": 18 },
-		"T": { "width": 8, "pos": 19 },
-		"U": { "width": 8, "pos": 20 },
-		"V": { "width": 8, "pos": 21 },
-		"W": { "width": 9, "pos": 22 },
-		"X": { "width": 8, "pos": 23 },
-		"Y": { "width": 8, "pos": 24 },
-		"Z": { "width": 8, "pos": 25 },
-		"a": { "width": 8, "pos": 26 },
-		"b": { "width": 8, "pos": 27 },
-		"c": { "width": 8, "pos": 28 },
-		"d": { "width": 8, "pos": 29 },
-		"e": { "width": 8, "pos": 30 },
-		"f": { "width": 6, "pos": 31 },
-		"g": { "width": 8, "pos": 32 },
-		"h": { "width": 8, "pos": 33 },
-		"i": { "width": 5, "pos": 34 },
-		"j": { "width": 8, "pos": 35 },
-		"k": { "width": 8, "pos": 36 },
-		"l": { "width": 5, "pos": 37 },
-		"m": { "width": 9, "pos": 38 },
-		"n": { "width": 8, "pos": 39 },
-		"ñ": { "width": 8, "pos": 39 },
-		"o": { "width": 8, "pos": 40 },
-		"p": { "width": 8, "pos": 41 },
-		"q": { "width": 8, "pos": 42 },
-		"r": { "width": 7, "pos": 43 },
-		"s": { "width": 8, "pos": 44 },
-		"t": { "width": 7, "pos": 45 },
-		"u": { "width": 8, "pos": 46 },
-		"v": { "width": 8, "pos": 47 },
-		"w": { "width": 9, "pos": 48 },
-		"x": { "width": 8, "pos": 49 },
-		"y": { "width": 8, "pos": 50 },
-		"z": { "width": 8, "pos": 51 },
-		"0": { "width": 8, "pos": 52 },
-		"1": { "width": 8, "pos": 53 },
-		"2": { "width": 8, "pos": 54 },
-		"3": { "width": 8, "pos": 55 },
-		"4": { "width": 8, "pos": 56 },
-		"5": { "width": 8, "pos": 57 },
-		"6": { "width": 8, "pos": 58 },
-		"7": { "width": 8, "pos": 59 },
-		"8": { "width": 8, "pos": 60 },
-		"9": { "width": 8, "pos": 61 },
-		" ": { "width": 8, "pos": 62 },
-		"\n": { "width": 0, "pos": 62 }
-	},
-	"bold": {
-		"A": { "width": 8, "pos": 0 },
-		"B": { "width": 8, "pos": 1 },
-		"C": { "width": 8, "pos": 2 },
-		"D": { "width": 8, "pos": 3 },
-		"E": { "width": 8, "pos": 4 },
-		"F": { "width": 8, "pos": 5 },
-		"G": { "width": 8, "pos": 6 },
-		"H": { "width": 8, "pos": 7 },
-		"I": { "width": 7, "pos": 8 },
-		"J": { "width": 8, "pos": 9 },
-		"K": { "width": 8, "pos": 10 },
-		"L": { "width": 8, "pos": 11 },
-		"M": { "width": 9, "pos": 12 },
-		"N": { "width": 9, "pos": 13 },
-		"O": { "width": 8, "pos": 14 },
-		"P": { "width": 8, "pos": 15 },
-		"Q": { "width": 8, "pos": 16 },
-		"R": { "width": 8, "pos": 17 },
-		"S": { "width": 8, "pos": 18 },
-		"T": { "width": 8, "pos": 19 },
-		"U": { "width": 8, "pos": 20 },
-		"V": { "width": 8, "pos": 21 },
-		"W": { "width": 9, "pos": 22 },
-		"X": { "width": 8, "pos": 23 },
-		"Y": { "width": 8, "pos": 24 },
-		"Z": { "width": 8, "pos": 25 },
-		"a": { "width": 8, "pos": 26 },
-		"b": { "width": 8, "pos": 27 },
-		"c": { "width": 8, "pos": 28 },
-		"d": { "width": 8, "pos": 29 },
-		"e": { "width": 8, "pos": 30 },
-		"f": { "width": 7, "pos": 31 },
-		"g": { "width": 8, "pos": 32 },
-		"h": { "width": 8, "pos": 33 },
-		"i": { "width": 6, "pos": 34 },
-		"j": { "width": 8, "pos": 35 },
-		"k": { "width": 8, "pos": 36 },
-		"l": { "width": 6, "pos": 37 },
-		"m": { "width": 9, "pos": 38 },
-		"n": { "width": 8, "pos": 39 },
-		"o": { "width": 8, "pos": 40 },
-		"p": { "width": 8, "pos": 41 },
-		"q": { "width": 8, "pos": 42 },
-		"r": { "width": 8, "pos": 43 },
-		"s": { "width": 8, "pos": 44 },
-		"t": { "width": 7, "pos": 45 },
-		"u": { "width": 8, "pos": 46 },
-		"v": { "width": 8, "pos": 47 },
-		"w": { "width": 9, "pos": 48 },
-		"x": { "width": 8, "pos": 49 },
-		"y": { "width": 8, "pos": 50 },
-		"z": { "width": 8, "pos": 51 },
-		"0": { "width": 8, "pos": 52 },
-		"1": { "width": 8, "pos": 53 },
-		"2": { "width": 8, "pos": 54 },
-		"3": { "width": 8, "pos": 55 },
-		"4": { "width": 8, "pos": 56 },
-		"5": { "width": 8, "pos": 57 },
-		"6": { "width": 8, "pos": 58 },
-		"7": { "width": 8, "pos": 59 },
-		"8": { "width": 8, "pos": 60 },
-		"9": { "width": 8, "pos": 61 },
-		" ": { "width": 8, "pos": 62 },
-		"\n": { "width": 0, "pos": 62 }
-	},
-	
-}
+func _get_char_metadata(_char : String) -> Dictionary:
+	if bold:
+		match _char:
+			"A": return { "width": 8, "pos": 0 }
+			"B": return { "width": 8, "pos": 1 }
+			"C": return { "width": 8, "pos": 2 }
+			"D": return { "width": 8, "pos": 3 }
+			"E": return { "width": 8, "pos": 4 }
+			"F": return { "width": 8, "pos": 5 }
+			"G": return { "width": 8, "pos": 6 }
+			"H": return { "width": 8, "pos": 7 }
+			"I": return { "width": 7, "pos": 8 }
+			"J": return { "width": 8, "pos": 9 }
+			"K": return { "width": 8, "pos": 10 }
+			"L": return { "width": 8, "pos": 11 }
+			"M": return { "width": 9, "pos": 12 }
+			"N": return { "width": 9, "pos": 13 }
+			"O": return { "width": 8, "pos": 14 }
+			"P": return { "width": 8, "pos": 15 }
+			"Q": return { "width": 8, "pos": 16 }
+			"R": return { "width": 8, "pos": 17 }
+			"S": return { "width": 8, "pos": 18 }
+			"T": return { "width": 8, "pos": 19 }
+			"U": return { "width": 8, "pos": 20 }
+			"V": return { "width": 8, "pos": 21 }
+			"W": return { "width": 9, "pos": 22 }
+			"X": return { "width": 8, "pos": 23 }
+			"Y": return { "width": 8, "pos": 24 }
+			"Z": return { "width": 8, "pos": 25 }
+			"a": return { "width": 8, "pos": 26 }
+			"b": return { "width": 8, "pos": 27 }
+			"c": return { "width": 8, "pos": 28 }
+			"d": return { "width": 8, "pos": 29 }
+			"e": return { "width": 8, "pos": 30 }
+			"f": return { "width": 7, "pos": 31 }
+			"g": return { "width": 8, "pos": 32 }
+			"h": return { "width": 8, "pos": 33 }
+			"i": return { "width": 6, "pos": 34 }
+			"j": return { "width": 8, "pos": 35 }
+			"k": return { "width": 8, "pos": 36 }
+			"l": return { "width": 6, "pos": 37 }
+			"m": return { "width": 9, "pos": 38 }
+			"n": return { "width": 8, "pos": 39 }
+			"o": return { "width": 8, "pos": 40 }
+			"p": return { "width": 8, "pos": 41 }
+			"q": return { "width": 8, "pos": 42 }
+			"r": return { "width": 8, "pos": 43 }
+			"s": return { "width": 8, "pos": 44 }
+			"t": return { "width": 7, "pos": 45 }
+			"u": return { "width": 8, "pos": 46 }
+			"v": return { "width": 8, "pos": 47 }
+			"w": return { "width": 9, "pos": 48 }
+			"x": return { "width": 8, "pos": 49 }
+			"y": return { "width": 8, "pos": 50 }
+			"z": return { "width": 8, "pos": 51 }
+			"0": return { "width": 8, "pos": 52 }
+			"1": return { "width": 8, "pos": 53 }
+			"2": return { "width": 8, "pos": 54 }
+			"3": return { "width": 8, "pos": 55 }
+			"4": return { "width": 8, "pos": 56 }
+			"5": return { "width": 8, "pos": 57 }
+			"6": return { "width": 8, "pos": 58 }
+			"7": return { "width": 8, "pos": 59 }
+			"8": return { "width": 8, "pos": 60 }
+			"9": return { "width": 8, "pos": 61 }
+			" ": return { "width": 8, "pos": 62 }
+			"\n": return { "width": 0, "pos": 62 }
+			";": return { "width": 8, "pos": 63 }
+			".": return { "width": 8, "pos": 64 }
+			":": return { "width": 8, "pos": 65 }
+			"'": return { "width": 8, "pos": 66 }
+			"\"": return { "width": 8, "pos": 67 }
+			"(": return { "width": 8, "pos": 68 }
+			"!": return { "width": 8, "pos": 69 }
+			"?": return { "width": 8, "pos": 70 }
+			")": return { "width": 8, "pos": 71 }
+			"+": return { "width": 8, "pos": 72 }
+			"-": return { "width": 8, "pos": 73 }
+			"^": return { "width": 8, "pos": 74 }
+			"/": return { "width": 8, "pos": 75 }
+			"=": return { "width": 8, "pos": 76 }
+	else:
+		match _char:
+			"A": return { "width": 8, "pos": 0 }
+			"B": return { "width": 8, "pos": 1 }
+			"C": return { "width": 8, "pos": 2 }
+			"D": return { "width": 8, "pos": 3 }
+			"E": return { "width": 8, "pos": 4 }
+			"F": return { "width": 8, "pos": 5 }
+			"G": return { "width": 8, "pos": 6 }
+			"H": return { "width": 8, "pos": 7 }
+			"I": return { "width": 6, "pos": 8 }
+			"J": return { "width": 8, "pos": 9 }
+			"K": return { "width": 8, "pos": 10 }
+			"L": return { "width": 8, "pos": 11 }
+			"M": return { "width": 9, "pos": 12 }
+			"N": return { "width": 8, "pos": 13 }
+			"O": return { "width": 8, "pos": 14 }
+			"P": return { "width": 8, "pos": 15 }
+			"Q": return { "width": 8, "pos": 16 }
+			"R": return { "width": 8, "pos": 17 }
+			"S": return { "width": 8, "pos": 18 }
+			"T": return { "width": 8, "pos": 19 }
+			"U": return { "width": 8, "pos": 20 }
+			"V": return { "width": 8, "pos": 21 }
+			"W": return { "width": 9, "pos": 22 }
+			"X": return { "width": 8, "pos": 23 }
+			"Y": return { "width": 8, "pos": 24 }
+			"Z": return { "width": 8, "pos": 25 }
+			"a": return { "width": 8, "pos": 26 }
+			"b": return { "width": 8, "pos": 27 }
+			"c": return { "width": 8, "pos": 28 }
+			"d": return { "width": 8, "pos": 29 }
+			"e": return { "width": 8, "pos": 30 }
+			"f": return { "width": 6, "pos": 31 }
+			"g": return { "width": 8, "pos": 32 }
+			"h": return { "width": 8, "pos": 33 }
+			"i": return { "width": 5, "pos": 34 }
+			"j": return { "width": 8, "pos": 35 }
+			"k": return { "width": 8, "pos": 36 }
+			"l": return { "width": 5, "pos": 37 }
+			"m": return { "width": 9, "pos": 38 }
+			"n": return { "width": 8, "pos": 39 }
+			"ñ": return { "width": 8, "pos": 39 }
+			"o": return { "width": 8, "pos": 40 }
+			"p": return { "width": 8, "pos": 41 }
+			"q": return { "width": 8, "pos": 42 }
+			"r": return { "width": 7, "pos": 43 }
+			"s": return { "width": 8, "pos": 44 }
+			"t": return { "width": 7, "pos": 45 }
+			"u": return { "width": 8, "pos": 46 }
+			"v": return { "width": 8, "pos": 47 }
+			"w": return { "width": 9, "pos": 48 }
+			"x": return { "width": 8, "pos": 49 }
+			"y": return { "width": 8, "pos": 50 }
+			"z": return { "width": 8, "pos": 51 }
+			"0": return { "width": 8, "pos": 52 }
+			"1": return { "width": 8, "pos": 53 }
+			"2": return { "width": 8, "pos": 54 }
+			"3": return { "width": 8, "pos": 55 }
+			"4": return { "width": 8, "pos": 56 }
+			"5": return { "width": 8, "pos": 57 }
+			"6": return { "width": 8, "pos": 58 }
+			"7": return { "width": 8, "pos": 59 }
+			"8": return { "width": 8, "pos": 60 }
+			"9": return { "width": 8, "pos": 61 }
+			" ": return { "width": 8, "pos": 62 }
+			"\n": return { "width": 0, "pos": 62 }
+			";": return { "width": 8, "pos": 63 }
+			".": return { "width": 8, "pos": 64 }
+			":": return { "width": 8, "pos": 65 }
+			"'": return { "width": 8, "pos": 66 }
+			"\"": return { "width": 8, "pos": 67 }
+			"(": return { "width": 8, "pos": 68 }
+			"!": return { "width": 8, "pos": 69 }
+			"?": return { "width": 8, "pos": 70 }
+			")": return { "width": 8, "pos": 71 }
+			"+": return { "width": 8, "pos": 72 }
+			"-": return { "width": 8, "pos": 73 }
+			"^": return { "width": 8, "pos": 74 }
+			"/": return { "width": 8, "pos": 75 }
+			"=": return { "width": 8, "pos": 76 }
+	return { "width": 8, "pos": 70 }
 
 func _print_char(_x : int, _y : int, _w : int, _char_pos : int) -> void:
 	var char_posy = CHAR_HEIGHT if bold else .0
@@ -201,8 +228,11 @@ func _calculate_width_lines(_text : String) -> Array[int]:
 	var width_chars : Array[int] = []
 
 	for l in _text:
-		var md = CHAR_METADATA.bold[l] if bold else CHAR_METADATA.normal[l]
-		width_chars.append(md.width)
+		var md = _get_char_metadata(l)
+		if md.size() == 0:
+			width_chars.append(0)
+		else:
+			width_chars.append(md.width)
 
 	var l : String
 	var i : int = 0
@@ -240,22 +270,19 @@ func _calculate_width_lines(_text : String) -> Array[int]:
 func _draw():
 	_configure_colors()
 
-	var text_to_parse = text#.trim_suffix(" ")
+	var text_to_parse = text
 
 	var widths : Array[int] = _calculate_width_lines(text_to_parse)
 	var x : int = 0
 	var y : int = 0
 	var height_i : int = 0
-	var md : Dictionary
-	if bold:
-		md = CHAR_METADATA.bold
-	else:
-		md = CHAR_METADATA.normal
+
 	for l in text_to_parse:
-		var char_md = md[l]
-		if x >= widths[height_i]:
-			height_i += 1
-			y += CHAR_HEIGHT
-			x = -char_md.width if l == " " else 0
-		_print_char(x, y, char_md.width, char_md.pos)
-		x += char_md.width
+		var char_md = _get_char_metadata(l)
+		if char_md.size() > 0:
+			if x >= widths[height_i]:
+				height_i += 1
+				y += CHAR_HEIGHT
+				x = -char_md.width if l == " " else 0
+			_print_char(x, y, char_md.width, char_md.pos)
+			x += char_md.width
