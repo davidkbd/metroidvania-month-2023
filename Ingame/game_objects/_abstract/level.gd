@@ -9,7 +9,7 @@ class_name Level
 #
 func progress_listener_on_saved_game_state_loaded(_saved_state : Dictionary) -> void:
 	var room : Room = get_node(_saved_state.level.room_spawn)
-	room.activate()
+#	room.activate()
 	room.teleport_player()
 
 func _ready() -> void:
