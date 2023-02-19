@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://binkw3elim20g"]
+
+[ext_resource type="PackedScene" uid="uid://dit2fh7iqtem4" path="res://UI/textbox/textbox.tscn" id="1_mfbea"]
+
+[sub_resource type="GDScript" id="GDScript_wx2b6"]
+script/source = "extends Control
+
+signal text_animation_finished
+
+@export var textbox_template : PackedScene
+
+var textbox_instance : TextBox
+
+func start(text : String) -> void:
+	if is_instance_valid(textbox_instance):
+		textbox_instance.queue_free()
+	textbox_instance = textbox_template.instantiate()
+	textbox_instance.text_animation_finished.connect(_text_animation_finished)
+	textbox_instance
+	print(\"NPC quiere hablar: \", text)
+	textbox_instance.text = text
+	add_child(textbox_instance)
+
+func stop() -> void:
+	textbox_instance.queue_free()
+
+func skip() -> void:
+	if is_instance_valid(textbox_instance):
+		textbox_instance.terminate_animation()
+
+func _text_animation_finished() -> void:
+	emit_signal(\"text_animation_finished\")
+"
+
+[node name="dialog_textboxes" type="Control" groups=["DIALOG_TEXTBOXES"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_wx2b6")
+textbox_template = ExtResource("1_mfbea")

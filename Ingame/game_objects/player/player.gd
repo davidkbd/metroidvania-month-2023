@@ -6,14 +6,13 @@ class_name Player
 
 @onready var space_state = get_world_2d().get_direct_space_state()
 
-@onready var go_down_floor_sensor : RayCast2D         = $go_down_floor_sensor
 @onready var savepoint_sensor     : Area2D            = $savepoint_sensor
 @onready var jump_sfx             : AudioStreamPlayer = $jump_sfx
 @onready var catch_water_sfx      : AudioStreamPlayer = $catch_water_sfx
 @onready var damaged_sfx          : AudioStreamPlayer = $damaged_sfx
 @onready var skills               : PlayerSkills      = $skills
 
-var crouching := true
+var talking_npc   : NPC = null
 
 var damager    : CharacterBody2D = null
 var enemy_died : CharacterBody2D = null

@@ -1,4 +1,4 @@
-extends Node2D
+extends NPC
 
 var value : int = 0
 
@@ -10,6 +10,12 @@ func update_room_data(_data : Dictionary) -> void:
 		value = _data.value
 	value += 1
 	_update_room_data()
+
+func get_texts() -> Array[String]:
+	return [
+		"HOLA AMIGOS",
+		"Que se te acontece"
+	]
 
 func _update_room_data() -> void:
 	get_parent().update_instance_data({ "storeable": true, "value": value })

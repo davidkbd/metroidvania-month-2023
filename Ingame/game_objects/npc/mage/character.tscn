@@ -59,7 +59,7 @@ texture_filter = 1
 script = ExtResource("1_rf4bo")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(-56, 0)
+position = Vector2(-96, -110)
 texture = ExtResource("2_8vnf1")
 centered = false
 hframes = 7

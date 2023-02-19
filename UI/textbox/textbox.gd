@@ -2,6 +2,8 @@ extends Node2D
 class_name TextBox
 @tool
 
+signal text_animation_finished
+
 @export_multiline var text = "holi holi holi holi holi ssssss ssss asdfasdf asdfasdfadsf aa  asdfads fasdf asdf aafasdf asdf holi holi holi holi holi holi holi holi holi holi holi holi aafasdf asdf aafasdf asdf aafasdf asdf aaasad asdffff aa comadreja ssdfgsdfg sdfgsdfg holi holi holi holi holi holi holi holi holi holi holi holi holi holi holi holi dfa adfasd fasdfad ad adfasdf dfadsf adsf asdf asdf asdfasdf adsf asdfadsf adf holi holi holi holi holi holi holi " :
 	get: return text
 	set(value):
@@ -20,6 +22,10 @@ class_name TextBox
 
 var text_tween : Tween
 
+func terminate_animation() -> void:
+	if text_tween: text_tween.kill()
+	_update_text_tween_method(text.length())
+
 func _update(_text) -> void:
 	if is_inside_tree():
 		var text_height : int = $label.calc_size(text).y
@@ -27,9 +33,11 @@ func _update(_text) -> void:
 		$label.text = _text
 
 func _animate() -> void:
-	if text_tween: text_tween.kill
+	if text_tween: text_tween.kill()
 	text_tween = create_tween()
 	text_tween.tween_method(_update_text_tween_method, 0, text.length(), text.length() / animation_speed)
+	await text_tween.finished
+	emit_signal("text_animation_finished")
 	text_tween = null
 
 func _update_text_tween_method(_text_length : int) -> void:
