@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjwxvh0xsuaov"]
+[gd_scene load_steps=6 format=3 uid="uid://bjwxvh0xsuaov"]
 
 [ext_resource type="Script" path="res://Menu/game_finished_menu/game_finished_menu.gd" id="1_fb25t"]
 [ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_mywh6"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="3_dnym8"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_h6j5c"]
+[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://UI/back_button/back_button.tscn" id="5_svsdd"]
 
 [node name="game_finished" type="Control"]
 texture_filter = 1
@@ -23,19 +24,6 @@ texture = ExtResource("3_dnym8")
 
 [node name="zzz" parent="background" instance=ExtResource("4_h6j5c")]
 
-[node name="back_button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.9
-anchor_right = 0.95
-anchor_bottom = 0.95
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_mywh6")
-theme_override_font_sizes/font_size = 16
-text = "BACK"
-
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 0
@@ -48,5 +36,8 @@ text = "CONGRATULATIONS
 YOU WIN!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="back_button" parent="." instance=ExtResource("5_svsdd")]
+layout_mode = 1
 
 [connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

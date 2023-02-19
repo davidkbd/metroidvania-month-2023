@@ -6,6 +6,5 @@
 [node name="label" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_ov5nt")
-text = "hola caracolaaaAaaaaf+ddd"
 last_half_color = Color(0.878431, 0.623529, 0.419608, 1)
 bitmap = ExtResource("2_4gaxw")

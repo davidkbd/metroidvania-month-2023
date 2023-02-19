@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://24bxrog8l4ph"]
+[gd_scene load_steps=7 format=3 uid="uid://cnrlorpg2ej4v"]
 
 [ext_resource type="Script" path="res://Menu/options_menu/options_menu.gd" id="1_tfdth"]
-[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://Menu/sprites/panel.png" id="2_d57fj"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_d57fj"]
 [ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_hgh2i"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_rj6ce"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_fuw5u"]
+[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://UI/back_button/back_button.tscn" id="6_rcxg2"]
 
 [node name="options_menu" type="Control"]
 texture_filter = 1
@@ -86,18 +87,7 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.1
 
-[node name="back_button" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.9
-anchor_right = 0.95
-anchor_bottom = 0.95
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_hgh2i")
-theme_override_font_sizes/font_size = 16
-text = "BACK"
+[node name="back_button" parent="." instance=ExtResource("6_rcxg2")]
 
 [connection signal="value_changed" from="sfx_volume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="music_volume" to="." method="_on_music_volume_value_changed"]
-[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
