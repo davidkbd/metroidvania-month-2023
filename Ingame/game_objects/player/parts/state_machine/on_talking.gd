@@ -11,6 +11,7 @@ func enter() -> void:
 	texts = host.talking_npc.get_texts()
 	current_text_position = 0
 	end_talking_lock_time = -10.0
+	host.talking_npc.hide_talk_letter()
 	_pass_text()
 
 func exit() -> void:
@@ -40,7 +41,6 @@ func _move(delta : float) -> void:
 	var my_position : float = host.global_position.x
 	var npc_position : float = host.talking_npc.global_position.x
 	var npc_player_position : float = npc_position + host.talking_npc.player_target_relative_position.x
-	print(abs(my_position - npc_player_position))
 	if abs(my_position - npc_player_position) > 5.0:
 		host.velocity.x = move_toward(host.velocity.x, direction * host.specs.speed, host.specs.acceleration)
 	else:
