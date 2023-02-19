@@ -177,6 +177,7 @@ on_idle_state = NodePath("on_idle")
 on_patrol_state = NodePath("on_patrol")
 on_attack_state = NodePath("on_attack")
 on_chase_state = NodePath("on_chase")
+on_comeback_state = NodePath("on_comeback")
 initial_state = NodePath("on_patrol")
 
 [node name="on_idle" type="Node" parent="state_machine"]
