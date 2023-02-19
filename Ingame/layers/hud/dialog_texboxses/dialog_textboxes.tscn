@@ -22,7 +22,8 @@ func start(text : String) -> void:
 	add_child(textbox_instance)
 
 func stop() -> void:
-	textbox_instance.queue_free()
+	if is_instance_valid(textbox_instance):
+		textbox_instance.queue_free()
 
 func skip() -> void:
 	if is_instance_valid(textbox_instance):

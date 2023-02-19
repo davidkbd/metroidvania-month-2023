@@ -18,17 +18,34 @@ func exit() -> void:
 	host.talking_npc = null
 
 func step(delta : float) -> StateMachineState:
+	if not is_instance_valid(host.talking_npc): return state_machine.on_ground
+
+	_move(delta)
+	
 	if Input.is_action_just_pressed("pass_text"):
 		_pass_text()
+		
+	host.move_and_slide()
 	
 	if talking == false:
 		end_talking_lock_time -= delta
 		
-	if host.talking_npc == null: return state_machine.on_ground
 	if  current_text_position >= texts.size() + 1:
 		return state_machine.on_ground
 	
 	return self
+
+func _move(delta : float) -> void:
+	var direction = -1.0
+	var my_position : float = host.global_position.x
+	var npc_position : float = host.talking_npc.global_position.x
+	var npc_player_position : float = npc_position + host.talking_npc.player_target_relative_position.x
+	print(abs(my_position - npc_player_position))
+	if abs(my_position - npc_player_position) > 5.0:
+		host.velocity.x = move_toward(host.velocity.x, direction * host.specs.speed, host.specs.acceleration)
+	else:
+		host.velocity.x = .0
+		host.sprite.flip_h = true
 
 func _pass_text() -> void:
 	if talking:
