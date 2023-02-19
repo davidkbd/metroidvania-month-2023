@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://gnvyp7vni8nm"]
+[gd_scene load_steps=7 format=3 uid="uid://dacojp0ms1dd0"]
 
 [ext_resource type="Script" path="res://Menu/slots_menu/slots_menu.gd" id="1_oe2fm"]
-[ext_resource type="PackedScene" path="res://Menu/slots_menu/parts/slot_button/slot_button.tscn" id="2_rh7q7"]
+[ext_resource type="PackedScene" uid="uid://dki6cesf6s3jt" path="res://Menu/slots_menu/parts/slot_data_control/slot_data_control.tscn" id="2_rh7q7"]
 [ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="3_eddgg"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://Menu/sprites/panel.png" id="4_u4qn1"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="4_xrtvo"]
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oe2fm")
-slot_button_template = ExtResource("2_rh7q7")
+slot_data_control_template = ExtResource("2_rh7q7")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -30,9 +30,9 @@ texture = ExtResource("4_xrtvo")
 
 [node name="panel" type="NinePatchRect" parent="."]
 anchors_preset = -1
-anchor_left = 0.07
+anchor_left = 0.06
 anchor_top = 0.18
-anchor_right = 0.93
+anchor_right = 0.94
 anchor_bottom = 0.82
 grow_horizontal = 2
 grow_vertical = 2
@@ -44,19 +44,19 @@ patch_margin_bottom = 16
 
 [node name="container" type="CenterContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.1
+anchor_left = 0.08
 anchor_top = 0.2
-anchor_right = 0.9
+anchor_right = 0.92
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="slot_list" type="GridContainer" parent="container"]
-offset_left = 256.0
+offset_left = 268.0
 offset_top = 108.0
-offset_right = 256.0
+offset_right = 268.0
 offset_bottom = 108.0
-columns = 4
+columns = 3
 
 [node name="back_button" type="Button" parent="."]
 anchors_preset = -1

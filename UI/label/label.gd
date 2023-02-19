@@ -1,4 +1,5 @@
 extends Node2D
+class_name PixelLabel
 @tool
 
 @export_category("Content")
@@ -126,20 +127,20 @@ func _get_char_metadata(_char : String) -> Dictionary:
 			"9": return { "width": 8, "pos": 61 }
 			" ": return { "width": 8, "pos": 62 }
 			"\n": return { "width": 0, "pos": 62 }
-			";": return { "width": 8, "pos": 63 }
-			".": return { "width": 8, "pos": 64 }
-			":": return { "width": 8, "pos": 65 }
-			"'": return { "width": 8, "pos": 66 }
-			"\"": return { "width": 8, "pos": 67 }
-			"(": return { "width": 8, "pos": 68 }
-			"!": return { "width": 8, "pos": 69 }
-			"?": return { "width": 8, "pos": 70 }
-			")": return { "width": 8, "pos": 71 }
-			"+": return { "width": 8, "pos": 72 }
-			"-": return { "width": 8, "pos": 73 }
-			"^": return { "width": 8, "pos": 74 }
-			"/": return { "width": 8, "pos": 75 }
-			"=": return { "width": 8, "pos": 76 }
+			";": return { "width": 5, "pos": 63 }
+			".": return { "width": 5, "pos": 64 }
+			":": return { "width": 6, "pos": 65 }
+			"'": return { "width": 5, "pos": 66 }
+			"\"": return { "width": 5, "pos": 67 }
+			"(": return { "width": 5, "pos": 68 }
+			"!": return { "width": 5, "pos": 69 }
+			"?": return { "width": 5, "pos": 70 }
+			")": return { "width": 5, "pos": 71 }
+			"+": return { "width": 5, "pos": 72 }
+			"-": return { "width": 6, "pos": 73 }
+			"^": return { "width": 5, "pos": 74 }
+			"/": return { "width": 5, "pos": 75 }
+			"=": return { "width": 5, "pos": 76 }
 	else:
 		match _char:
 			"A": return { "width": 8, "pos": 0 }
@@ -207,20 +208,20 @@ func _get_char_metadata(_char : String) -> Dictionary:
 			"9": return { "width": 8, "pos": 61 }
 			" ": return { "width": 8, "pos": 62 }
 			"\n": return { "width": 0, "pos": 62 }
-			";": return { "width": 8, "pos": 63 }
-			".": return { "width": 8, "pos": 64 }
-			":": return { "width": 8, "pos": 65 }
-			"'": return { "width": 8, "pos": 66 }
-			"\"": return { "width": 8, "pos": 67 }
-			"(": return { "width": 8, "pos": 68 }
-			"!": return { "width": 8, "pos": 69 }
-			"?": return { "width": 8, "pos": 70 }
-			")": return { "width": 8, "pos": 71 }
-			"+": return { "width": 8, "pos": 72 }
-			"-": return { "width": 8, "pos": 73 }
-			"^": return { "width": 8, "pos": 74 }
-			"/": return { "width": 8, "pos": 75 }
-			"=": return { "width": 8, "pos": 76 }
+			";": return { "width": 5, "pos": 63 }
+			".": return { "width": 5, "pos": 64 }
+			":": return { "width": 6, "pos": 65 }
+			"'": return { "width": 5, "pos": 66 }
+			"\"": return { "width": 5, "pos": 67 }
+			"(": return { "width": 5, "pos": 68 }
+			"!": return { "width": 5, "pos": 69 }
+			"?": return { "width": 5, "pos": 70 }
+			")": return { "width": 5, "pos": 71 }
+			"+": return { "width": 5, "pos": 72 }
+			"-": return { "width": 6, "pos": 73 }
+			"^": return { "width": 5, "pos": 74 }
+			"/": return { "width": 5, "pos": 75 }
+			"=": return { "width": 5, "pos": 76 }
 	return { "width": 8, "pos": 70 }
 
 func _print_char(_x : int, _y : int, _w : int, _char_pos : int) -> void:

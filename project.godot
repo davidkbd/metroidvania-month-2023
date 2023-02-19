@@ -79,6 +79,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.gd"
 }, {
+"base": "Node2D",
+"class": &"PixelLabel",
+"language": &"GDScript",
+"path": "res://UI/label/label.gd"
+}, {
 "base": "CharacterAlive",
 "class": &"Player",
 "language": &"GDScript",
@@ -119,10 +124,10 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://Singletone/settings.gd"
 }, {
-"base": "Button",
-"class": &"SlotButton",
+"base": "Control",
+"class": &"SlotDataControl",
 "language": &"GDScript",
-"path": "res://Menu/slots_menu/parts/slot_button/slot_button.gd"
+"path": "res://Menu/slots_menu/parts/slot_data_control/slot_data_control.gd"
 }, {
 "base": "Node",
 "class": &"StateMachine",
@@ -154,6 +159,7 @@ _global_script_class_icons={
 "Level": "",
 "Levels": "",
 "NpcSpawner": "",
+"PixelLabel": "",
 "Player": "",
 "PlayerSkills": "",
 "Room": "",
@@ -162,7 +168,7 @@ _global_script_class_icons={
 "RoomContent": "",
 "SavepointArea": "res://Ingame/game_objects/room/savepoint_area/icon.png",
 "Settings": "",
-"SlotButton": "",
+"SlotDataControl": "",
 "StateMachine": "",
 "StateMachineState": "",
 "drop_manager": ""
