@@ -1,14 +1,13 @@
 extends Node2D
 class_name RoomContent
 
-func activate(_data : Dictionary) -> void:
+func activate(_room_data : Dictionary) -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
-	if _data.has("state"):
-		for spawner in find_children("*_spawner*"):
-			if _data.state.has(spawner.name.to_lower()):
-				spawner.activate(_data.state[spawner.name.to_lower()])
-			else:
-				spawner.activate({})
+	for spawner in find_children("*_spawner*"):
+		if _room_data.state.has(spawner.name.to_lower()):
+			spawner.activate(_room_data.state[spawner.name.to_lower()])
+		else:
+			spawner.activate({})
 
 func deactivate() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED

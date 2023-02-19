@@ -63,4 +63,4 @@ func _input(event : InputEvent):
 func _ready() -> void:
 #	_check_recent_passed()
 #	_instance_buttons()
-	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_start_requested", "level_001")
+	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_start_requested", "slot_001")
