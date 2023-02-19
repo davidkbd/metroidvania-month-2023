@@ -13,8 +13,6 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-	if host.go_down_floor_sensor.is_colliding(): _go_down_cancel()
-
 	_jump(delta)
 	
 	host.move_and_slide()
@@ -40,9 +38,6 @@ func _jump(delta : float) -> void:
 		host.velocity.x = move_toward(host.velocity.x, direction * host.specs.speed, host.specs.air_acceleration)
 	else:
 		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.air_deceleration)
-
-func _go_down_cancel() -> void:
-	host.set_collision_mask_value(1, true)
 
 func _flip_player(direction) -> void:
 	if direction > .0:

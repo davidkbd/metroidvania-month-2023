@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cjrblhrq0lxss"]
+[gd_scene load_steps=79 format=3 uid="uid://cjrblhrq0lxss"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -12,10 +12,12 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
 [ext_resource type="PackedScene" uid="uid://15grj8h30num" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.tscn" id="11_x5sqa"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_talking.gd" id="12_olhsd"]
 [ext_resource type="PackedScene" uid="uid://dmv6l4xue6oj0" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="PackedScene" uid="uid://uikbynpt7681" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
+[ext_resource type="PackedScene" uid="uid://b20aljkkgimqh" path="res://Ingame/game_objects/player/parts/npc_sensor/npc_sensor.tscn" id="14_omfj5"]
 [ext_resource type="Shader" path="res://Ingame/shaders/player_shader.gdshader" id="15_unq2k"]
 [ext_resource type="Texture2D" uid="uid://cpejugcss86qx" path="res://Ingame/game_objects/player/sprites/player_bubbles.png" id="17_0r6jg"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
@@ -426,6 +428,7 @@ on_wall_state = NodePath("on_wall")
 on_air_state = NodePath("on_air")
 on_damaged_state = NodePath("on_damaged")
 on_enemybounce_state = NodePath("on_enemybounce")
+on_talking_state = NodePath("on_talking")
 initial_state = NodePath("on_ground")
 
 [node name="on_ground" type="Node" parent="state_machine"]
@@ -452,6 +455,9 @@ script = ExtResource("9_l3fvl")
 [node name="on_enemybounce" type="Node" parent="state_machine"]
 script = ExtResource("10_m6qjo")
 
+[node name="on_talking" type="Node" parent="state_machine"]
+script = ExtResource("12_olhsd")
+
 [node name="skills" parent="." instance=ExtResource("11_x5sqa")]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
@@ -465,14 +471,12 @@ debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 
 [node name="room_area_sensor" parent="." instance=ExtResource("12_vty2u")]
 
+[node name="npc_sensor" parent="." instance=ExtResource("14_omfj5")]
+
 [node name="savepoint_sensor" parent="." instance=ExtResource("14_3x4jn")]
 
 [node name="enemy_hit_area" parent="." instance=ExtResource("13_5apk1")]
 position = Vector2(0, 14)
-
-[node name="go_down_floor_sensor" type="RayCast2D" parent="."]
-position = Vector2(0, 20)
-target_position = Vector2(0, 16)
 
 [node name="sprite" type="Sprite2D" parent="."]
 light_mask = 32769

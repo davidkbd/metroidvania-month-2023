@@ -8,5 +8,6 @@ texture_filter = 1
 script = ExtResource("1_y8ucm")
 
 [node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-40, -110)
 texture = ExtResource("2_gxqgp")
 centered = false

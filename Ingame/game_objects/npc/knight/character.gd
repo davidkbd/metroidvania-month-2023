@@ -2,6 +2,9 @@ extends CharacterAlive
 
 var value : int = 0
 
+@onready var animation : AnimationPlayer = $AnimationPlayer
+@onready var player    : Player = null
+
 func update_room_data(_data : Dictionary) -> void:
 	print("NPC LOADED DATA: ", _data)
 	if _data.size() == 0:
@@ -16,3 +19,4 @@ func _update_room_data() -> void:
 
 func _ready() -> void:
 	_update_room_data()
+	

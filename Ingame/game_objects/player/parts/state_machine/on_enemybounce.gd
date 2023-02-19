@@ -11,7 +11,6 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-	if host.go_down_floor_sensor.is_colliding(): _go_down_cancel()
 	if host.enemy_died: enter()
 
 	_jump(delta)
@@ -32,6 +31,3 @@ func _jump(delta : float) -> void:
 		host.velocity.x = move_toward(host.velocity.x, direction * host.SPEED, host.AIR_ACCELERATION)
 	else:
 		host.velocity.x = move_toward(host.velocity.x, .0, host.AIR_DECELERATION)
-
-func _go_down_cancel() -> void:
-	host.set_collision_mask_value(1, true)

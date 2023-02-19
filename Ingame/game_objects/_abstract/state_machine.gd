@@ -15,3 +15,6 @@ func _change_state(next_state : StateMachineState) -> void:
 	current_state.exit()
 	next_state.enter()
 	current_state = next_state
+	
+func _ready():
+	current_state.enter()
