@@ -3,10 +3,10 @@ class_name NpcSpawner
 @tool
 
 enum NpcType {
-	MOTHER, GRANDPA
+	MAGE, KNIGHT
 }
 
-@export var npc_type : NpcType = NpcType.MOTHER :
+@export var npc_type : NpcType = NpcType.MAGE :
 	get: return npc_type
 	set(value):
 		if value == npc_type: return
@@ -17,11 +17,11 @@ const SPRITES_PATH      := "res://Ingame/game_objects/npc/%s/sprites/spawner_spr
 const PACKEDSCENES_PATH := "res://Ingame/game_objects/npc/%s/character.tscn"
 const NPC_DATA := [
 	{
-		"id": "mother"
+		"id": "mage"
 #		"storeable": true
 	},
 	{
-		"id": "grandfa"
+		"id": "knight"
 #		"storeable": true
 	}
 ]

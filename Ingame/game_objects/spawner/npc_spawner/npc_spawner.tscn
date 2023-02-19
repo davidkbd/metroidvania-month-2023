@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://s1hrh8jn480a"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.gd" id="1_y8ucm"]
-[ext_resource type="Texture2D" uid="uid://clx1ays1e4ui4" path="res://Ingame/game_objects/npc/mother/sprites/spawner_sprite.png" id="2_gr2jx"]
+[ext_resource type="Texture2D" uid="uid://degb8ht2g4ua0" path="res://Ingame/game_objects/npc/mage/sprites/spawner_sprite.png" id="2_gxqgp"]
 
 [node name="npc_spawner" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_y8ucm")
 
 [node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_gr2jx")
+texture = ExtResource("2_gxqgp")
+centered = false

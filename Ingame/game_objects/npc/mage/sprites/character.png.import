@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0nxtpac3ce3r"
-path="res://.godot/imported/spawner_sprite.png-67e6414e8e169f5dae419e6954ebc905.ctex"
+uid="uid://cdbmmkrhnoa7n"
+path="res://.godot/imported/character.png-17062f26212a7c74f37c10b6c24103ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/game_objects/npc/grandfa/sprites/spawner_sprite.png"
-dest_files=["res://.godot/imported/spawner_sprite.png-67e6414e8e169f5dae419e6954ebc905.ctex"]
+source_file="res://Ingame/game_objects/npc/mage/sprites/character.png"
+dest_files=["res://.godot/imported/character.png-17062f26212a7c74f37c10b6c24103ac.ctex"]
 
 [params]
 

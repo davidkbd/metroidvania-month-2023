@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clx1ays1e4ui4"
-path="res://.godot/imported/spawner_sprite.png-4a585f2d14d198b633cab2dfbad3cc4e.ctex"
+path="res://.godot/imported/spawner_sprite.png-d7c31185d0fd080740f6a8fbc0df18b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/game_objects/npc/mother/sprites/spawner_sprite.png"
-dest_files=["res://.godot/imported/spawner_sprite.png-4a585f2d14d198b633cab2dfbad3cc4e.ctex"]
+source_file="res://Ingame/game_objects/npc/knight/sprites/spawner_sprite.png"
+dest_files=["res://.godot/imported/spawner_sprite.png-d7c31185d0fd080740f6a8fbc0df18b9.ctex"]
 
 [params]
 

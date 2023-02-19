@@ -1451,7 +1451,4 @@ layer_0/tile_data = PackedInt32Array(65539, 196609, 2, 65540, 131073, 3, 131076,
 position = Vector2(208, 320)
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
-position = Vector2(72, 256)
-
-[node name="npc_spawner2" parent="room_content" instance=ExtResource("6_tvbbv")]
-position = Vector2(8, 264)
+position = Vector2(0, 208)
