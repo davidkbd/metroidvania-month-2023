@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjgsfu5k0osie"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://Menu/principal_menu/principal_menu.gd" id="1_bp4pa"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0msl5"]
 [ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_stxfv"]
-[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://Menu/sprites/panel.png" id="2_uh5pl"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_uh5pl"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_xhhig"]
 
 [node name="principal_menu" type="Control"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_ygp0x"]
 [ext_resource type="PackedScene" uid="uid://bjgsfu5k0osie" path="res://Menu/principal_menu/principal_menu.tscn" id="2_qcsjw"]
 [ext_resource type="PackedScene" uid="uid://24bxrog8l4ph" path="res://Menu/options_menu/options_menu.tscn" id="3_6yxbt"]
-[ext_resource type="PackedScene" uid="uid://gnvyp7vni8nm" path="res://Menu/slots_menu/slots_menu.tscn" id="3_ao8vq"]
+[ext_resource type="PackedScene" uid="uid://dacojp0ms1dd0" path="res://Menu/slots_menu/slots_menu.tscn" id="3_ao8vq"]
 [ext_resource type="PackedScene" uid="uid://cd4nk5jiw54pw" path="res://Menu/credits_menu/credits_menu.tscn" id="5_lly03"]
 [ext_resource type="PackedScene" uid="uid://bjwxvh0xsuaov" path="res://Menu/game_finished_menu/game_finished_menu.tscn" id="6_e3pk2"]
 

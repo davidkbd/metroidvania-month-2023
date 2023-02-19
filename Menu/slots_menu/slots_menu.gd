@@ -3,7 +3,7 @@ extends Control
 @export var slot_data_control_template : PackedScene
 
 @onready var slot_list    : Container       = $container/slot_list
-@onready var back_button  : Button          = $back_button
+@onready var back_button  : TextureButton   = $back_button
 
 var slots : Array = [
 		{"name": "Slot 1", "id": "slot_001"},

@@ -13,6 +13,10 @@ class_name TextBox
 
 @export var border_textures : Array[Texture2D]
 
+@onready var viewport_size = Vector2i(
+			ProjectSettings.get_setting("display/window/size/viewport_width"),
+			ProjectSettings.get_setting("display/window/size/viewport_height")
+			)
 
 var text_tween : Tween
 
@@ -33,8 +37,8 @@ func _update_text_tween_method(_text_length : int) -> void:
 
 func _center() -> void:
 	var text_height : int = clamp($label.calc_size(text).y, 44.0, 1000.0)
-	global_position.x = (640 - 400) / 2.0
-	global_position.y = (360 - text_height - 32) / 2.0
+	global_position.x = (viewport_size.x - 400.0) / 2.0
+	global_position.y = (viewport_size.y - text_height - 32.0) / 2.0
 	global_position += position_offset
 
 func _ready():

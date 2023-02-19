@@ -47,6 +47,12 @@ class_name PixelLabel
 		if value == last_half_color: return
 		last_half_color = value
 		queue_redraw()
+@export var color_height     : int = 6 :
+	get: return color_height
+	set(value):
+		if value == color_height: return
+		color_height = value
+		queue_redraw()
 @export var shadow_color     : Color = Color("#272727") :
 	get: return shadow_color
 	set(value):
@@ -136,7 +142,7 @@ func _get_char_metadata(_char : String) -> Dictionary:
 			"!": return { "width": 5, "pos": 69 }
 			"?": return { "width": 5, "pos": 70 }
 			")": return { "width": 5, "pos": 71 }
-			"+": return { "width": 5, "pos": 72 }
+			"+": return { "width": 6, "pos": 72 }
 			"-": return { "width": 6, "pos": 73 }
 			"^": return { "width": 5, "pos": 74 }
 			"/": return { "width": 5, "pos": 75 }
@@ -217,7 +223,7 @@ func _get_char_metadata(_char : String) -> Dictionary:
 			"!": return { "width": 5, "pos": 69 }
 			"?": return { "width": 5, "pos": 70 }
 			")": return { "width": 5, "pos": 71 }
-			"+": return { "width": 5, "pos": 72 }
+			"+": return { "width": 6, "pos": 72 }
 			"-": return { "width": 6, "pos": 73 }
 			"^": return { "width": 5, "pos": 74 }
 			"/": return { "width": 5, "pos": 75 }
@@ -227,13 +233,16 @@ func _get_char_metadata(_char : String) -> Dictionary:
 func _print_char(_x : int, _y : int, _w : int, _char_pos : int) -> void:
 	var char_posy = CHAR_HEIGHT if bold else .0
 	var char_region : Rect2 = Rect2(_char_pos * CHAR_WIDTH, char_posy, _w, CHAR_HEIGHT)
-	var rect_position : Rect2 = Rect2(_x, _y, 9.0, 11.0)
-	draw_texture_rect_region(bitmap, rect_position, char_region)
-
-func _configure_colors() -> void:
-	material.set_shader_parameter("color1", first_half_color)
-	material.set_shader_parameter("color2", last_half_color)
-	material.set_shader_parameter("color3", shadow_color)
+	var rect_position : Rect2
+	
+	rect_position = Rect2(_x+1, _y+1, 9.0, 11.0)
+	draw_texture_rect_region(bitmap, rect_position, char_region, shadow_color)
+	rect_position = Rect2(_x, _y, 9.0, 11.0)
+	draw_texture_rect_region(bitmap, rect_position, char_region, last_half_color)
+	char_region = Rect2(_char_pos * CHAR_WIDTH, char_posy, _w, color_height)
+	rect_position = Rect2(_x, _y, 9.0, color_height)
+	draw_texture_rect_region(bitmap, rect_position, char_region, first_half_color)
+	
 
 func calc_size(_text : String) -> Vector2i:
 	var widths : Array[int] = _calculate_width_lines(_text)
@@ -288,8 +297,6 @@ func _calculate_width_lines(_text : String) -> Array[int]:
 	return r
 
 func _draw():
-	_configure_colors()
-
 	var text_to_parse = text
 
 	var widths : Array[int] = _calculate_width_lines(text_to_parse)

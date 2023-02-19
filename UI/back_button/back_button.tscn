@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://tiwfehad74ty"]
+
+[ext_resource type="PackedScene" uid="uid://brfxj123il76g" path="res://UI/button/button.tscn" id="1_dk1up"]
+[ext_resource type="Script" path="res://UI/back_button/back_button.gd" id="2_v8lgr"]
+
+[node name="back_button" instance=ExtResource("1_dk1up")]
+script = ExtResource("2_v8lgr")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
