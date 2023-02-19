@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterAlive
 
 var value : int = 0
 
