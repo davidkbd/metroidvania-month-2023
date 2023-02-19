@@ -235,6 +235,13 @@ func _configure_colors() -> void:
 	material.set_shader_parameter("color2", last_half_color)
 	material.set_shader_parameter("color3", shadow_color)
 
+func calc_size(_text : String) -> Vector2i:
+	var widths : Array[int] = _calculate_width_lines(_text)
+	var max_w : int = 0
+	for w in widths:
+		if w > max_w: max_w = w
+	return Vector2i(max_w, widths.size() * CHAR_HEIGHT)
+
 func _calculate_width_lines(_text : String) -> Array[int]:
 	var r : Array[int] = []
 	

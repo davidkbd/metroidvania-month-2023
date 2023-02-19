@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=3 uid="uid://dit2fh7iqtem4"]
+
+[ext_resource type="Script" path="res://UI/textbox/textbox.gd" id="1_7eh0l"]
+[ext_resource type="Texture2D" uid="uid://bcuc2g4hdxhd8" path="res://UI/sprites/textbox-border1.png" id="2_mni56"]
+[ext_resource type="PackedScene" uid="uid://cqrajpo01h5eo" path="res://UI/label/label.tscn" id="2_nh2ad"]
+[ext_resource type="Texture2D" uid="uid://ty3focco66gk" path="res://UI/sprites/textbox-border2.png" id="3_iudkf"]
+[ext_resource type="Texture2D" uid="uid://cm11jvimjaefb" path="res://UI/sprites/textbox-border3.png" id="4_l4nx3"]
+[ext_resource type="Texture2D" uid="uid://hyko2x1is3sq" path="res://UI/sprites/textbox-border4.png" id="5_l4y6q"]
+[ext_resource type="Texture2D" uid="uid://dh1fd88f0km1x" path="res://UI/sprites/textbox-border5.png" id="6_8kcff"]
+[ext_resource type="Texture2D" uid="uid://cmeid18h257cy" path="res://UI/sprites/textbox-border6.png" id="7_scx03"]
+[ext_resource type="Texture2D" uid="uid://bccyxvvbi8nyl" path="res://UI/sprites/textbox-border7.png" id="8_c7ifa"]
+[ext_resource type="Texture2D" uid="uid://bkb6fkyogxb5p" path="res://UI/sprites/textbox-border8.png" id="9_ualon"]
+
+[node name="textbox" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_7eh0l")
+text = "holi
+asdf
+asdf
+adsfa
+asdfadsfaa
+asdfadsfa
+dsafsfadsf
+asdfasfd"
+position_offset = null
+animation_speed = null
+border_textures = [ExtResource("2_mni56"), ExtResource("3_iudkf"), ExtResource("4_l4nx3"), ExtResource("5_l4y6q"), ExtResource("6_8kcff"), ExtResource("7_scx03"), ExtResource("8_c7ifa"), ExtResource("9_ualon")]
+
+[node name="border" type="Sprite2D" parent="."]
+texture = ExtResource("7_scx03")
+centered = false
+
+[node name="label" parent="." instance=ExtResource("2_nh2ad")]
+position = Vector2(18, 16)
+text = "holi
+asdf
+asdf
+adsfa
+asdfadsfaa
+asdfadsfa
+dsafsfadsf
+asdfasfd"
+width = 364
+first_half_color = Color(0.541176, 0.615686, 0.54902, 1)
+last_half_color = Color(0.4, 0.439216, 0.4, 1)
