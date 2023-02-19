@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cxqeripkn381w"]
+[gd_scene load_steps=32 format=3 uid="uid://cxqeripkn381w"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
@@ -47,10 +47,27 @@ tracks/1/path = NodePath("../SwordCollider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 0.7),
+"times": PackedFloat32Array(0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_htql3"]
+resource_name = "chase"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8]
 }
 
 [sub_resource type="Animation" id="Animation_kkfye"]
@@ -72,23 +89,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_tkdw1"]
 resource_name = "patrol"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [5, 6, 7, 8]
-}
-
-[sub_resource type="Animation" id="Animation_htql3"]
-resource_name = "chase"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -135,10 +135,10 @@ advance_expression = "get_parent().state_machine.current_state == get_parent().s
 advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_patrol"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2a2y2"]
-advance_expression = "get_parent().player"
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ix6lv"]
-advance_expression = "get_parent().player"
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1k3hg"]
 advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_attack"
@@ -146,6 +146,9 @@ advance_expression = "get_parent().state_machine.current_state == get_parent().s
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4kmj1"]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07pm7"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i8lyk"]
 states/attack/node = SubResource("AnimationNodeAnimation_6kqv2")
@@ -156,7 +159,7 @@ states/idle/node = SubResource("AnimationNodeAnimation_s0mlb")
 states/idle/position = Vector2(466.5, 28)
 states/patrol/node = SubResource("AnimationNodeAnimation_c26op")
 states/patrol/position = Vector2(454, 141)
-transitions = ["Start", "patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "patrol", "idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "idle", "patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "idle", "chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "patrol", "chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "chase", "attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "attack", "patrol", SubResource("AnimationNodeStateMachineTransition_4kmj1")]
+transitions = ["Start", "patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "patrol", "idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "idle", "patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "idle", "chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "patrol", "chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "chase", "attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "attack", "patrol", SubResource("AnimationNodeStateMachineTransition_4kmj1"), "chase", "idle", SubResource("AnimationNodeStateMachineTransition_07pm7")]
 graph_offset = Vector2(77.2875, -51.9751)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
@@ -169,6 +172,8 @@ radius = 24.0
 height = 80.0
 
 [node name="character" type="CharacterBody2D"]
+collision_layer = 1024
+collision_mask = 1024
 script = ExtResource("1_rovep")
 
 [node name="state_machine" type="Node" parent="."]
@@ -200,8 +205,9 @@ one_shot = true
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(8, 56)
+position = Vector2(-96, -110)
 texture = ExtResource("2_gepj4")
+centered = false
 hframes = 5
 vframes = 3
 
@@ -218,15 +224,17 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
 [node name="SwordCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 56)
+position = Vector2(-32, -48)
 shape = SubResource("CircleShape2D_bagww")
 disabled = true
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
-position = Vector2(24, 80)
+position = Vector2(0, -40)
 shape = SubResource("CapsuleShape2D_o5kqg")
 
 [node name="PlayerSensor" parent="." instance=ExtResource("6_06166")]
-position = Vector2(0, 80)
+position = Vector2(0, -40)
+collision_layer = 8
+collision_mask = 8
 
 [connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]

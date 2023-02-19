@@ -211,8 +211,8 @@ ProgressManager="*res://Singletone/progress_manager.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 
 [input]
@@ -302,6 +302,7 @@ u={
 2d_physics/layer_5="player_savepoint"
 2d_physics/layer_8="event_trigger"
 2d_physics/layer_10="floor_and_drop"
+2d_physics/layer_11="floor_and_enemy"
 2d_physics/layer_16="enemy_diezone"
 
 [physics]

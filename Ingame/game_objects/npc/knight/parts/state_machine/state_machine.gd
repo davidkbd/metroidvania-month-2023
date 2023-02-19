@@ -26,6 +26,7 @@ var idle_patrol_timer_flag : bool
 func _on_idle_patrol_switch_timer_timeout():
 	idle_patrol_timer_flag = true
 	
+	
 func start_idle_patrol_switch_timer():
 	idle_patrol_timer_flag = false
 	idle_patrol_switch_timer.start(randi_range(idle_patrol_switch_min_time,idle_patrol_switch_max_time))

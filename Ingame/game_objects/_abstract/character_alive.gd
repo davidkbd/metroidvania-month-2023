@@ -5,6 +5,7 @@ class_name CharacterAlive
 @onready var state_machine : StateMachine = $state_machine
 @onready var sprite        : Sprite2D     = $sprite
 @onready var specs         : Dictionary   = CharacterAliveSpecs.get_default_specs()
+@onready var space_state = get_world_2d().get_direct_space_state()
 
 func fall(_delta : float) -> void:
 	velocity.y = clamp(

@@ -1408,7 +1408,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_aacnl"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 1537
+physics_layer_0/collision_mask = 1537
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
@@ -1446,5 +1447,5 @@ layer_0/tile_data = PackedInt32Array(65539, 196611, 2, 65540, 196611, 2, 131076,
 [node name="room_content" parent="." instance=ExtResource("5_othvg")]
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_1ad87")]
-position = Vector2(-16, 176)
+position = Vector2(-216, 184)
 npc_type = 1

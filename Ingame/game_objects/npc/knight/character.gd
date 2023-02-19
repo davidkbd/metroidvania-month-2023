@@ -2,8 +2,11 @@ extends CharacterAlive
 
 var value : int = 0
 
-@onready var animation : AnimationPlayer = $AnimationPlayer
-@onready var player    : Player = null
+@onready var player           : Player = null
+
+@onready var initial_position : Vector2 = global_position
+@onready var animation        : AnimationPlayer = $AnimationPlayer
+@onready var sword_collider   : CollisionShape2D = $SwordCollider
 
 func update_room_data(_data : Dictionary) -> void:
 	print("NPC LOADED DATA: ", _data)
@@ -20,3 +23,6 @@ func _update_room_data() -> void:
 func _ready() -> void:
 	_update_room_data()
 	
+func flip(direction):
+	sprite.flip_h = direction > 0
+	sword_collider.position = Vector2.LEFT * (-32.0) * direction + Vector2.UP * 64.0

@@ -2,7 +2,10 @@ extends StateMachineState
 
 func enter():
 	pass
-
+	
+func exit():
+	pass
+	
 func step(delta):
 	if _is_animation_finished(): return state_machine.on_patrol
 	return self

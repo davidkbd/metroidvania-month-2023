@@ -4,8 +4,6 @@ class_name Player
 
 @export var drop_template : PackedScene
 
-@onready var space_state = get_world_2d().get_direct_space_state()
-
 @onready var savepoint_sensor     : Area2D            = $savepoint_sensor
 @onready var jump_sfx             : AudioStreamPlayer = $jump_sfx
 @onready var catch_water_sfx      : AudioStreamPlayer = $catch_water_sfx
