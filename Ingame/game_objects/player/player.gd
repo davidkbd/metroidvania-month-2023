@@ -23,15 +23,10 @@ var walk_direction : float
 
 func initialize(_game_state : Dictionary) -> void:
 	skills.initialize(_game_state)
-	
+
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
-	print("Estaria bien mover este if a un script en el sprite")
-	if walk_direction > .0:
-		sprite.flip_h = true
-	elif walk_direction < .0:
-		sprite.flip_h = false 
-	
+
 func can_hit_enemy() -> bool:
 	if enemy_died: return false
 	if damager: return false
