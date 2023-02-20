@@ -2,7 +2,10 @@ extends CharacterAlive
 
 class_name Player
 
-@export var drop_template : PackedScene
+
+@export var check_snap_wall_ray_position : Vector2 = Vector2.UP * 36.0
+@export var check_snap_wall_ray_vector   : Vector2 = Vector2.LEFT * 64
+
 
 @onready var savepoint_sensor     : Area2D            = $savepoint_sensor
 @onready var jump_sfx             : AudioStreamPlayer = $jump_sfx
@@ -15,11 +18,33 @@ var talking_npc   : NPC = null
 var damager    : CharacterBody2D = null
 var enemy_died : CharacterBody2D = null
 
+var walk_direction : float
+
+func set_walk_direction(_direction : float) -> void:
+	walk_direction = _direction
+	print("Estaria bien mover este if a un script en el sprite")
+	if walk_direction > .0:
+		sprite.flip_h = true
+	elif walk_direction < .0:
+		sprite.flip_h = false 
+	
 func can_hit_enemy() -> bool:
 	if enemy_died: return false
 	if damager: return false
 	if is_on_floor(): return false
 	return velocity.y > .0
+
+func can_snap_to_wall() -> bool:
+	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
+	var origin : Vector2 = global_position + check_snap_wall_ray_position
+	query.from = origin
+	query.to = origin + check_snap_wall_ray_vector * Vector2.LEFT * sign(walk_direction)
+	query.collide_with_bodies = true
+	query.collide_with_areas = false
+	query.collision_mask = 1
+	query.exclude = [get_rid()]
+	var result = space_state.intersect_ray(query)
+	return result.size() > 0 and is_on_wall()
 
 func teleport(_global_position : Vector2) -> void:
 	global_position = _global_position

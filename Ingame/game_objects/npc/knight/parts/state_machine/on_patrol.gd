@@ -41,6 +41,5 @@ func _can_walk() -> bool:
 	query.collide_with_areas = false
 	query.collision_mask = 1
 	var result = host.space_state.intersect_ray(query)
-	print(query.to)
 	return result.size() == 0
 

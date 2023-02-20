@@ -15,11 +15,6 @@ func step(delta : float) -> StateMachineState:
 	_coyote_time(delta)
 	_movement()
 
-	if host.velocity.x > .0:
-		host.sprite.flip_h = true
-	elif host.velocity.x < .0:
-		host.sprite.flip_h = false
-
 	host.move_and_slide()
 
 	if Input.is_action_just_pressed("j"): return state_machine.on_jump
@@ -38,8 +33,8 @@ func _coyote_time(delta : float) -> void:
 		coyote_timer -= delta
 
 func _movement() -> void:
-	var direction = Input.get_axis("l", "r")
-	if direction:
-		host.velocity.x = move_toward(host.velocity.x, direction * host.specs.speed, host.specs.acceleration)
+	host.set_walk_direction(Input.get_axis("l", "r"))
+	if host.walk_direction:
+		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
 	else:
 		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)

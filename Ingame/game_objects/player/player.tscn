@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_ground.gd" id="2_1orwr"]
-[ext_resource type="PackedScene" uid="uid://ckdb6olmafoqs" path="res://Ingame/game_objects/drop/drop.tscn" id="2_psaao"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_air.gd" id="4_taln5"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_jump.gd" id="5_mtmft"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_doublejump.gd" id="7_bx4yu"]
@@ -32,152 +31,6 @@ height = 45.98
 shader = ExtResource("15_unq2k")
 shader_parameter/timescale = null
 shader_parameter/tex = ExtResource("17_0r6jg")
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1738c"]
-animation = &"catch_drop"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_32ts4"]
-animation = &"crouch"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8itoi"]
-animation = &"double_jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2eaqa"]
-animation = &"fall"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_owedy"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4p8lk"]
-animation = &"jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qewcc"]
-animation = &"no_catch_drop"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8utwh"]
-animation = &"on_wall"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lv6hh"]
-animation = &"pre_drop"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1qbf2"]
-animation = &"run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3stj8"]
-animation = &"wait_drop"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ptd2f"]
-advance_expression = "get_parent().is_drop_over_player()"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wohx0"]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ugvf3"]
-advance_expression = "get_parent().cube_is_full"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qlpka"]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f2sgt"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_jump"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fv3la"]
-advance_expression = "not get_parent().velocity.x"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pjgf8"]
-advance_expression = "get_parent().velocity.x"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_du247"]
-switch_mode = 2
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_okxeu"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_jump"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8oibt"]
-switch_mode = 2
-auto_advance = true
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tg07p"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_doublejump"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oom8a"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ioo3"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_crouch"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rbnwo"]
-advance_condition = &"autostart"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_glysd"]
-advance_expression = "(not get_parent().is_drop_over_player() and not get_parent().cube_is_full) or (get_parent().state_machine.current_state == get_parent().state_machine.on_jump)"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lx2ky"]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_itajn"]
-advance_expression = "get_parent().is_drop_over_player() and get_parent().state_machine.current_state != get_parent().state_machine.on_jump"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xjvyc"]
-advance_expression = "get_parent().is_drop_over_player()"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qeplk"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_air"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g8plo"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_air"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bmelx"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_air"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vyeoe"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5wjfw"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_wall"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1rl0o"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_jump"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ch4p8"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bc0ao"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_wall"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f4fiv"]
-states/Start/position = Vector2(-119, 101)
-states/catch_drop/node = SubResource("AnimationNodeAnimation_1738c")
-states/catch_drop/position = Vector2(82.6555, -7.85)
-states/crouch/node = SubResource("AnimationNodeAnimation_32ts4")
-states/crouch/position = Vector2(-30.29, 263.15)
-states/double_jump/node = SubResource("AnimationNodeAnimation_8itoi")
-states/double_jump/position = Vector2(602.988, -107.35)
-states/fall/node = SubResource("AnimationNodeAnimation_2eaqa")
-states/fall/position = Vector2(358.743, 280.15)
-states/idle/node = SubResource("AnimationNodeAnimation_owedy")
-states/idle/position = Vector2(155.743, 100)
-states/jump/node = SubResource("AnimationNodeAnimation_4p8lk")
-states/jump/position = Vector2(755.988, 114)
-states/no_catch_drop/node = SubResource("AnimationNodeAnimation_qewcc")
-states/no_catch_drop/position = Vector2(254.21, -121.568)
-states/on_wall/node = SubResource("AnimationNodeAnimation_8utwh")
-states/on_wall/position = Vector2(779.275, -54.9156)
-states/pre_drop/node = SubResource("AnimationNodeAnimation_lv6hh")
-states/pre_drop/position = Vector2(-119, -7.85)
-states/run/node = SubResource("AnimationNodeAnimation_1qbf2")
-states/run/position = Vector2(761.243, 271.15)
-states/wait_drop/node = SubResource("AnimationNodeAnimation_3stj8")
-states/wait_drop/position = Vector2(-119, -121.568)
-transitions = ["idle", "pre_drop", SubResource("AnimationNodeStateMachineTransition_ptd2f"), "catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_wohx0"), "wait_drop", "catch_drop", SubResource("AnimationNodeStateMachineTransition_ugvf3"), "pre_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_qlpka"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_f2sgt"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_fv3la"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_pjgf8"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_du247"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_okxeu"), "double_jump", "idle", SubResource("AnimationNodeStateMachineTransition_8oibt"), "jump", "double_jump", SubResource("AnimationNodeStateMachineTransition_tg07p"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_oom8a"), "idle", "crouch", SubResource("AnimationNodeStateMachineTransition_6ioo3"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_rbnwo"), "wait_drop", "no_catch_drop", SubResource("AnimationNodeStateMachineTransition_glysd"), "no_catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_lx2ky"), "no_catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_itajn"), "catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_xjvyc"), "crouch", "fall", SubResource("AnimationNodeStateMachineTransition_qeplk"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_g8plo"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_bmelx"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_vyeoe"), "jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_5wjfw"), "on_wall", "jump", SubResource("AnimationNodeStateMachineTransition_1rl0o"), "on_wall", "idle", SubResource("AnimationNodeStateMachineTransition_ch4p8"), "double_jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_bc0ao")]
-graph_offset = Vector2(295.775, -111.636)
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bjlgn"]
 
 [sub_resource type="Animation" id="Animation_gfq3y"]
 length = 0.001
@@ -411,12 +264,160 @@ _data = {
 "wait_drop": SubResource("Animation_06bb3")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1738c"]
+animation = &"catch_drop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_32ts4"]
+animation = &"crouch"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8itoi"]
+animation = &"double_jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2eaqa"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_owedy"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4p8lk"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qewcc"]
+animation = &"no_catch_drop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8utwh"]
+animation = &"on_wall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lv6hh"]
+animation = &"pre_drop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1qbf2"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3stj8"]
+animation = &"wait_drop"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ptd2f"]
+advance_expression = "get_parent().is_drop_over_player()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wohx0"]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ugvf3"]
+advance_expression = "get_parent().cube_is_full"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qlpka"]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f2sgt"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fv3la"]
+advance_expression = "not get_parent().velocity.x"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pjgf8"]
+advance_expression = "get_parent().velocity.x"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_du247"]
+switch_mode = 2
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_okxeu"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8oibt"]
+switch_mode = 2
+auto_advance = true
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tg07p"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_doublejump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oom8a"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ioo3"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_crouch"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rbnwo"]
+advance_condition = &"autostart"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_glysd"]
+advance_expression = "(not get_parent().is_drop_over_player() and not get_parent().cube_is_full) or (get_parent().state_machine.current_state == get_parent().state_machine.on_jump)"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lx2ky"]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_itajn"]
+advance_expression = "get_parent().is_drop_over_player() and get_parent().state_machine.current_state != get_parent().state_machine.on_jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xjvyc"]
+advance_expression = "get_parent().is_drop_over_player()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qeplk"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_air"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g8plo"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_air"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bmelx"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_air"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vyeoe"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5wjfw"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_wall"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1rl0o"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ch4p8"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_ground"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bc0ao"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_wall"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1h6dp"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_wall"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f4fiv"]
+states/Start/position = Vector2(-119, 101)
+states/catch_drop/node = SubResource("AnimationNodeAnimation_1738c")
+states/catch_drop/position = Vector2(82.6555, -7.85)
+states/crouch/node = SubResource("AnimationNodeAnimation_32ts4")
+states/crouch/position = Vector2(-30.29, 263.15)
+states/double_jump/node = SubResource("AnimationNodeAnimation_8itoi")
+states/double_jump/position = Vector2(602.988, -107.35)
+states/fall/node = SubResource("AnimationNodeAnimation_2eaqa")
+states/fall/position = Vector2(358.743, 280.15)
+states/idle/node = SubResource("AnimationNodeAnimation_owedy")
+states/idle/position = Vector2(155.743, 100)
+states/jump/node = SubResource("AnimationNodeAnimation_4p8lk")
+states/jump/position = Vector2(755.988, 114)
+states/no_catch_drop/node = SubResource("AnimationNodeAnimation_qewcc")
+states/no_catch_drop/position = Vector2(254.21, -121.568)
+states/on_wall/node = SubResource("AnimationNodeAnimation_8utwh")
+states/on_wall/position = Vector2(779.275, -54.9156)
+states/pre_drop/node = SubResource("AnimationNodeAnimation_lv6hh")
+states/pre_drop/position = Vector2(-119, -7.85)
+states/run/node = SubResource("AnimationNodeAnimation_1qbf2")
+states/run/position = Vector2(761.243, 271.15)
+states/wait_drop/node = SubResource("AnimationNodeAnimation_3stj8")
+states/wait_drop/position = Vector2(-119, -121.568)
+transitions = ["idle", "pre_drop", SubResource("AnimationNodeStateMachineTransition_ptd2f"), "catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_wohx0"), "wait_drop", "catch_drop", SubResource("AnimationNodeStateMachineTransition_ugvf3"), "pre_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_qlpka"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_f2sgt"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_fv3la"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_pjgf8"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_du247"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_okxeu"), "double_jump", "idle", SubResource("AnimationNodeStateMachineTransition_8oibt"), "jump", "double_jump", SubResource("AnimationNodeStateMachineTransition_tg07p"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_oom8a"), "idle", "crouch", SubResource("AnimationNodeStateMachineTransition_6ioo3"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_rbnwo"), "wait_drop", "no_catch_drop", SubResource("AnimationNodeStateMachineTransition_glysd"), "no_catch_drop", "idle", SubResource("AnimationNodeStateMachineTransition_lx2ky"), "no_catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_itajn"), "catch_drop", "wait_drop", SubResource("AnimationNodeStateMachineTransition_xjvyc"), "crouch", "fall", SubResource("AnimationNodeStateMachineTransition_qeplk"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_g8plo"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_bmelx"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_vyeoe"), "jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_5wjfw"), "on_wall", "jump", SubResource("AnimationNodeStateMachineTransition_1rl0o"), "on_wall", "idle", SubResource("AnimationNodeStateMachineTransition_ch4p8"), "double_jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_bc0ao"), "fall", "on_wall", SubResource("AnimationNodeStateMachineTransition_1h6dp")]
+graph_offset = Vector2(-117.489, -258.373)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bjlgn"]
+
 [node name="player" type="CharacterBody2D" groups=["PLAYER"]]
 z_index = 5
 collision_layer = 139
 collision_mask = 11
 script = ExtResource("1_p8tho")
-drop_template = ExtResource("2_psaao")
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("1_5x2j1")
@@ -486,6 +487,7 @@ position = Vector2(0, -14.96)
 texture = ExtResource("13_vjjdm")
 hframes = 10
 vframes = 8
+frame = 2
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_77pts")
@@ -504,14 +506,14 @@ volume_db = -13.0
 pitch_scale = 2.0
 bus = &"sfx"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3wnei")
+}
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_f4fiv")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_bjlgn")
 parameters/conditions/autostart = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_3wnei")
-}
