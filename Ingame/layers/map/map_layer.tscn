@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxa8s28n2gqed"]
+
+[ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="1_2ao4x"]
+[ext_resource type="Script" path="res://Ingame/layers/map/map_layer.gd" id="1_k4eyx"]
+[ext_resource type="Texture2D" uid="uid://dqvwhs0xwr6c1" path="res://Ingame/layers/map/sprites/player_position.png" id="2_iog5c"]
+[ext_resource type="Texture2D" uid="uid://dwyxvvh8m2bs1" path="res://Ingame/levels/sprites/map_001.png" id="3_x78d4"]
+
+[node name="map_layer" type="CanvasLayer" groups=["MAP"]]
+layer = 100
+script = ExtResource("1_k4eyx")
+
+[node name="map_container" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="background" type="ColorRect" parent="map_container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0470588, 0.0588235, 0.105882, 0.627451)
+
+[node name="title" parent="map_container" instance=ExtResource("1_2ao4x")]
+z_index = 6
+position = Vector2(8, 8)
+text = "Map"
+
+[node name="map_sprite" type="Sprite2D" parent="map_container"]
+texture = ExtResource("3_x78d4")
+centered = false
+
+[node name="player_position_sprite" type="Sprite2D" parent="map_container"]
+position = Vector2(320, 176)
+texture = ExtResource("2_iog5c")

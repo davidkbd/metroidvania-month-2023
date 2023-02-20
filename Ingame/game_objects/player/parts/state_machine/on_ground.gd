@@ -1,5 +1,7 @@
 extends StateMachineState
 
+@onready var map : Map = get_tree().get_first_node_in_group("MAP")
+
 @export var check_floor_ray_vector : Vector2 = Vector2.DOWN * 32.0
 @export var coyote_time : float = .08
 
@@ -9,7 +11,7 @@ func enter() -> void:
 	coyote_timer = coyote_time
 
 func exit() -> void:
-	pass
+	if Input.is_action_just_pressed("map"): map.hide_map()
 
 func step(delta : float) -> StateMachineState:
 	_coyote_time(delta)
@@ -17,6 +19,7 @@ func step(delta : float) -> StateMachineState:
 
 	host.move_and_slide()
 
+	if Input.is_action_just_pressed("map"): map.toggle_map()
 	if Input.is_action_just_pressed("j"): return state_machine.on_jump
 	if Input.is_action_pressed("d"): return state_machine.on_crouch
 	if host.talking_npc and Input.is_action_pressed("u"): return state_machine.on_talking
