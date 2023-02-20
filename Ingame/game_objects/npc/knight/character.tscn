@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cxqeripkn381w"]
+[gd_scene load_steps=33 format=3 uid="uid://cxqeripkn381w"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3clbn22gc1tt" path="res://Ingame/game_objects/npc/knight/parts/player_sensor/player_sensor.tscn" id="6_06166"]
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bagww"]
 radius = 40.0
@@ -216,6 +217,7 @@ texture = ExtResource("2_gepj4")
 centered = false
 hframes = 5
 vframes = 3
+script = ExtResource("9_30soe")
 
 [node name="SwordCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-32, -48)

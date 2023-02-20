@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cjrblhrq0lxss"]
+[gd_scene load_steps=81 format=3 uid="uid://cjrblhrq0lxss"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -14,12 +14,20 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_talking.gd" id="12_olhsd"]
 [ext_resource type="PackedScene" uid="uid://dmv6l4xue6oj0" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
 [ext_resource type="PackedScene" uid="uid://cjn2anr4seqa6" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.tscn" id="13_5apk1"]
-[ext_resource type="PackedScene" uid="uid://dkdd6624x3apv" path="res://Ingame/game_objects/player/parts/player_sprite/sprite.tscn" id="13_sxeuk"]
+[ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="PackedScene" uid="uid://uikbynpt7681" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
 [ext_resource type="PackedScene" uid="uid://b20aljkkgimqh" path="res://Ingame/game_objects/player/parts/npc_sensor/npc_sensor.tscn" id="14_omfj5"]
+[ext_resource type="Shader" path="res://Ingame/shaders/player_shader.gdshader" id="15_unq2k"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/player_sprite/player_sprite.gd" id="16_4ekit"]
+[ext_resource type="Texture2D" uid="uid://cpejugcss86qx" path="res://Ingame/game_objects/player/sprites/player_bubbles.png" id="17_0r6jg"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
+shader = ExtResource("15_unq2k")
+shader_parameter/timescale = null
+shader_parameter/tex = ExtResource("17_0r6jg")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjv8n"]
 radius = 14.99
@@ -461,8 +469,16 @@ script = ExtResource("12_olhsd")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
-[node name="sprite" parent="." instance=ExtResource("13_sxeuk")]
-frame = 0
+[node name="sprite" type="Sprite2D" parent="."]
+light_mask = 32769
+texture_filter = 1
+material = SubResource("ShaderMaterial_d7brj")
+position = Vector2(-32, -46.96)
+texture = ExtResource("13_vjjdm")
+centered = false
+hframes = 10
+vframes = 8
+script = ExtResource("16_4ekit")
 
 [node name="body_collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.01)

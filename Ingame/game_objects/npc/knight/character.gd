@@ -11,11 +11,6 @@ var value : int = 0
 
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
-	print("Estaria bien mover este if a un script en el sprite")
-	if walk_direction > .0:
-		sprite.flip_h = true
-	elif walk_direction < .0:
-		sprite.flip_h = false 
 	sword_collider.position = Vector2.LEFT * (-32.0) * walk_direction + Vector2.UP * 64.0
 
 func update_room_data(_data : Dictionary) -> void:
