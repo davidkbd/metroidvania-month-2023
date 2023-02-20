@@ -216,7 +216,6 @@ texture = ExtResource("2_gepj4")
 centered = false
 hframes = 5
 vframes = 3
-frame = 5
 
 [node name="SwordCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-32, -48)

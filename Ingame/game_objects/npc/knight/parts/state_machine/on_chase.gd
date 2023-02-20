@@ -1,7 +1,5 @@
 extends StateMachineState
 
-var direction: float
-
 func enter():
 	pass
 
@@ -18,12 +16,11 @@ func step(delta):
 	return self
 
 func _movement():
-	if direction:
-		host.velocity.x = move_toward(host.velocity.x, direction * host.specs.speed * 0.1, host.specs.acceleration)
+	if host.walk_direction:
+		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed * 0.1, host.specs.acceleration)
 	else:
 		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
-	host.flip(direction)
 	
-func _random_direction():
-	direction = sign(host.global_position.x - host.player.global_position.x)
-	host.flip(direction)
+func _choose_direction():
+	host.set_walk_direction(sign(host.global_position.x - host.player.global_position.x))
+
