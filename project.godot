@@ -17,12 +17,12 @@ _global_script_classes=[{
 "base": "Node2D",
 "class": &"CameraHook",
 "language": &"GDScript",
-"path": "res://game_objects/camera/camera_hook/camera_hook.gd"
+"path": "res://Ingame/game_objects/camera/camera_hook/camera_hook.gd"
 }, {
 "base": "CharacterBody2D",
 "class": &"CharacterAlive",
 "language": &"GDScript",
-"path": "res://game_objects/_abstract/character_alive.gd"
+"path": "res://Ingame/game_objects/_abstract/character_alive.gd"
 }, {
 "base": "RefCounted",
 "class": &"CharacterAliveSpecs",
@@ -37,32 +37,32 @@ _global_script_classes=[{
 "base": "RigidBody2D",
 "class": &"Drop",
 "language": &"GDScript",
-"path": "res://game_objects/drop/drop.gd"
+"path": "res://Ingame/game_objects/drop/drop.gd"
 }, {
 "base": "Area2D",
 "class": &"DropInitial",
 "language": &"GDScript",
-"path": "res://game_objects/drop_initial/drop_initial.gd"
+"path": "res://Ingame/game_objects/drop_initial/drop_initial.gd"
 }, {
 "base": "Node2D",
 "class": &"DropSpawner",
 "language": &"GDScript",
-"path": "res://game_objects/drop_spawner/drop_spawner.gd"
+"path": "res://Ingame/game_objects/drop_spawner/drop_spawner.gd"
 }, {
 "base": "Node2D",
 "class": &"EnemySpawner",
 "language": &"GDScript",
-"path": "res://game_objects/spawner/enemy_spawner/enemy_spawner.gd"
+"path": "res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.gd"
 }, {
 "base": "Area2D",
 "class": &"EventTrigger",
 "language": &"GDScript",
-"path": "res://game_objects/event_trigger/event_trigger.gd"
+"path": "res://Ingame/game_objects/event_trigger/event_trigger.gd"
 }, {
 "base": "Camera2D",
 "class": &"FollowTargetCamera",
 "language": &"GDScript",
-"path": "res://game_objects/camera/follow_target_camera/follow_target_camera.gd"
+"path": "res://Ingame/game_objects/camera/follow_target_camera/follow_target_camera.gd"
 }, {
 "base": "Node",
 "class": &"Ingame",
@@ -72,7 +72,7 @@ _global_script_classes=[{
 "base": "Node2D",
 "class": &"Level",
 "language": &"GDScript",
-"path": "res://game_objects/_abstract/level.gd"
+"path": "res://Ingame/game_objects/_abstract/level.gd"
 }, {
 "base": "RefCounted",
 "class": &"Levels",
@@ -87,12 +87,12 @@ _global_script_classes=[{
 "base": "Node2D",
 "class": &"NPC",
 "language": &"GDScript",
-"path": "res://game_objects/_abstract/npc.gd"
+"path": "res://Ingame/game_objects/_abstract/npc.gd"
 }, {
 "base": "Node2D",
 "class": &"NpcSpawner",
 "language": &"GDScript",
-"path": "res://game_objects/spawner/npc_spawner/npc_spawner.gd"
+"path": "res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.gd"
 }, {
 "base": "Node2D",
 "class": &"PixelLabel",
@@ -107,37 +107,37 @@ _global_script_classes=[{
 "base": "CharacterAlive",
 "class": &"Player",
 "language": &"GDScript",
-"path": "res://game_objects/player/player.gd"
+"path": "res://Ingame/game_objects/player/player.gd"
 }, {
 "base": "Node",
 "class": &"PlayerSkills",
 "language": &"GDScript",
-"path": "res://game_objects/player/parts/player_skills/player_skills.gd"
+"path": "res://Ingame/game_objects/player/parts/player_skills/player_skills.gd"
 }, {
 "base": "Node2D",
 "class": &"Room",
 "language": &"GDScript",
-"path": "res://game_objects/_abstract/room.gd"
+"path": "res://Ingame/game_objects/_abstract/room.gd"
 }, {
 "base": "Area2D",
 "class": &"RoomArea",
 "language": &"GDScript",
-"path": "res://game_objects/room/room_area/room_area.gd"
+"path": "res://Ingame/game_objects/room/room_area/room_area.gd"
 }, {
 "base": "Node",
 "class": &"RoomAreaManager",
 "language": &"GDScript",
-"path": "res://game_objects/room/room_area/room_area_manager.gd"
+"path": "res://Ingame/game_objects/room/room_area/room_area_manager.gd"
 }, {
 "base": "Node2D",
 "class": &"RoomContent",
 "language": &"GDScript",
-"path": "res://game_objects/room/room_content/room_content.gd"
+"path": "res://Ingame/game_objects/room/room_content/room_content.gd"
 }, {
 "base": "Area2D",
 "class": &"SavepointArea",
 "language": &"GDScript",
-"path": "res://game_objects/room/savepoint_area/savepoint_area.gd"
+"path": "res://Ingame/game_objects/room/savepoint_area/savepoint_area.gd"
 }, {
 "base": "Node",
 "class": &"Settings",
@@ -152,12 +152,12 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"StateMachine",
 "language": &"GDScript",
-"path": "res://game_objects/_abstract/state_machine.gd"
+"path": "res://Ingame/game_objects/_abstract/state_machine.gd"
 }, {
 "base": "Node",
 "class": &"StateMachineState",
 "language": &"GDScript",
-"path": "res://game_objects/_abstract/state_machine_state.gd"
+"path": "res://Ingame/game_objects/_abstract/state_machine_state.gd"
 }, {
 "base": "Node2D",
 "class": &"TextBox",
@@ -172,7 +172,7 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"drop_manager",
 "language": &"GDScript",
-"path": "res://game_objects/drop_manager/drop_manager.gd"
+"path": "res://Ingame/game_objects/drop_manager/drop_manager.gd"
 }]
 _global_script_class_icons={
 "Angles": "",
@@ -301,6 +301,12 @@ u={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":87,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+map={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
 

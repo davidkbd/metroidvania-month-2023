@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/npc_sensor/npc_sensor.gd" id="1_nsrbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epm21"]
+size = Vector2(8, 8)
+
+[node name="npc_sensor" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource("1_nsrbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_epm21")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

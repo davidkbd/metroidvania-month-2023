@@ -1,0 +1,299 @@
+[gd_scene load_steps=44 format=3]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
+[ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/state_machine.gd" id="2_u4jvg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_idle.gd" id="3_jmssg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_patrol.gd" id="4_uvc5i"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_chase.gd" id="5_ugfq0"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/npc/knight/parts/player_sensor/player_sensor.tscn" id="6_06166"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_die.gd" id="8_8jep2"]
+[ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="8_k7dny"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
+[ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://disolve-texture.png" id="9_ee6j4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
+shader = ExtResource("8_k7dny")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/dissolve_texture = ExtResource("9_ee6j4")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bagww"]
+radius = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
+radius = 24.0
+height = 80.0
+
+[sub_resource type="Animation" id="Animation_7ourq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3r3ke"]
+resource_name = "attack"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SwordCollider:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_htql3"]
+resource_name = "chase"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_kkfye"]
+resource_name = "idle"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_tkdw1"]
+resource_name = "patrol"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_p5f1j"]
+resource_name = "die"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uoji7"]
+_data = {
+"RESET": SubResource("Animation_7ourq"),
+"attack": SubResource("Animation_3r3ke"),
+"chase": SubResource("Animation_htql3"),
+"die": SubResource("Animation_p5f1j"),
+"idle": SubResource("Animation_kkfye"),
+"patrol": SubResource("Animation_tkdw1")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6kqv2"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i2ufr"]
+animation = &"chase"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uxrnv"]
+animation = &"die"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s0mlb"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c26op"]
+animation = &"patrol"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hx8j"]
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aakgw"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v7w2j"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_patrol"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2a2y2"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ix6lv"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1k3hg"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07pm7"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iue7h"]
+switch_mode = 2
+auto_advance = true
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vrb1j"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_patrol"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s6twy"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mpchp"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1ffr6"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q3eem"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i8lyk"]
+states/attack/node = SubResource("AnimationNodeAnimation_6kqv2")
+states/attack/position = Vector2(630, 230)
+states/chase/node = SubResource("AnimationNodeAnimation_i2ufr")
+states/chase/position = Vector2(641.575, 32.1999)
+states/die/node = SubResource("AnimationNodeAnimation_uxrnv")
+states/die/position = Vector2(789.16, 134.482)
+states/idle/node = SubResource("AnimationNodeAnimation_s0mlb")
+states/idle/position = Vector2(466.5, 28)
+states/patrol/node = SubResource("AnimationNodeAnimation_c26op")
+states/patrol/position = Vector2(454, 141)
+transitions = ["Start", "patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "patrol", "idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "idle", "patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "idle", "chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "patrol", "chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "chase", "attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "chase", "idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "attack", "chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "chase", "patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "patrol", "die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "chase", "die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "attack", "die", SubResource("AnimationNodeStateMachineTransition_q3eem")]
+graph_offset = Vector2(15.4575, 8.47492)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
+
+[node name="character" type="CharacterBody2D"]
+collision_layer = 1024
+collision_mask = 1024
+script = ExtResource("1_rovep")
+
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource("2_u4jvg")
+on_idle_state = NodePath("on_idle")
+on_patrol_state = NodePath("on_patrol")
+on_attack_state = NodePath("on_attack")
+on_chase_state = NodePath("on_chase")
+on_comeback_state = NodePath("on_comeback")
+on_damaged_state = NodePath("on_damaged")
+on_die_state = NodePath("on_die")
+initial_state = NodePath("on_patrol")
+
+[node name="on_idle" type="Node" parent="state_machine"]
+script = ExtResource("3_jmssg")
+
+[node name="on_patrol" type="Node" parent="state_machine"]
+script = ExtResource("4_uvc5i")
+
+[node name="on_chase" type="Node" parent="state_machine"]
+script = ExtResource("5_ugfq0")
+
+[node name="on_comeback" type="Node" parent="state_machine"]
+script = ExtResource("6_y37hn")
+
+[node name="on_attack" type="Node" parent="state_machine"]
+script = ExtResource("6_bii6k")
+
+[node name="on_damaged" type="Node" parent="state_machine"]
+
+[node name="on_die" type="Node" parent="state_machine"]
+script = ExtResource("8_8jep2")
+
+[node name="IdlePatrolSwitchTimer" type="Timer" parent="state_machine"]
+one_shot = true
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_i0l2x")
+position = Vector2(-80, -128)
+texture = ExtResource("2_gepj4")
+centered = false
+hframes = 6
+vframes = 3
+script = ExtResource("9_30soe")
+
+[node name="SwordCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-32, -48)
+shape = SubResource("CircleShape2D_bagww")
+disabled = true
+
+[node name="BodyCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("CapsuleShape2D_o5kqg")
+
+[node name="PlayerSensor" parent="." instance=ExtResource("6_06166")]
+position = Vector2(0, -40)
+collision_layer = 8
+collision_mask = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../sprite")
+libraries = {
+"": SubResource("AnimationLibrary_uoji7")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_i8lyk")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(0, -40)
+
+[connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]

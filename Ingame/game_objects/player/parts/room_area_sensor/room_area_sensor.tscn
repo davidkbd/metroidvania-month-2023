@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.gd" id="1_hhgca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yep22"]
+size = Vector2(16, 4)
+
+[node name="room_area_sensor" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_hhgca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yep22")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

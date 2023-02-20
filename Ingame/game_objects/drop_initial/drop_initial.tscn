@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/drop_initial/drop_initial.gd" id="1_21m3n"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/drop/drop.tscn" id="2_wjcfp"]
+[ext_resource type="Texture2D" uid="uid://c5vgkcv41w2kf" path="res://Ingame/game_objects/drop_initial/sprites/initial-drop.png" id="3_bl0vs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7lbku"]
+radius = 4.0
+
+[node name="drop_initial" type="Area2D"]
+collision_layer = 2048
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_21m3n")
+drop_template = ExtResource("2_wjcfp")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-8, 2)
+texture = ExtResource("3_bl0vs")
+centered = false
+hframes = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_7lbku")

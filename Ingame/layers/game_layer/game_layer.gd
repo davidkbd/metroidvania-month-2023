@@ -10,6 +10,7 @@ func hud_listener_on_level_finished() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 func instance_level(_game_state : Dictionary) -> void:
+	print(LEVEL_FILE_PATH % _game_state.level.level)
 	level_instance = load(LEVEL_FILE_PATH % _game_state.level.level).instantiate()
 	game_container.add_child(level_instance)
 	level_instance.initialize(_game_state)
