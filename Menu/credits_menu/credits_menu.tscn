@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1j4l32qwp0qr"]
+[gd_scene load_steps=8 format=3 uid="uid://c1j4l32qwp0qr"]
 
 [ext_resource type="Script" path="res://Menu/credits_menu/credits_menu.gd" id="1_3dtsr"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="3_6yr1s"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="3_io8xj"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_7o2va"]
-[ext_resource type="PackedScene" uid="uid://cqrajpo01h5eo" path="res://UI/label/label.tscn" id="5_y2i5s"]
+[ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="5_wrqxl"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_y2i5s"]
 [ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://UI/back_button/back_button.tscn" id="6_r2q8y"]
 
 [node name="credits_menu" type="Control"]
@@ -41,14 +42,15 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="programmers_title" parent="panel" instance=ExtResource("5_y2i5s")]
-position = Vector2(192, 54.1)
+[node name="programmers_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 40)
 text = "Programmers"
 centered = true
-last_half_color = Color(0.772549, 0.623529, 0.8, 1)
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
 [node name="programmers" parent="panel" instance=ExtResource("5_y2i5s")]
-position = Vector2(192, 70.1)
+position = Vector2(192, 62.1)
 text = "DavidKBD (David Gil Gomez)
 Jonnydrumz (Jon Huarte Martinez)"
 bold = false
@@ -56,11 +58,12 @@ width = 256
 centered = true
 last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
-[node name="graphics_title" parent="panel" instance=ExtResource("5_y2i5s")]
-position = Vector2(192, 110.1)
+[node name="graphics_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 104)
 text = "Graphics"
 centered = true
-last_half_color = Color(0.772549, 0.623529, 0.8, 1)
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
 [node name="graphics" parent="panel" instance=ExtResource("5_y2i5s")]
 position = Vector2(192, 126.1)
@@ -70,28 +73,30 @@ width = 256
 centered = true
 last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
-[node name="music_title" parent="panel" instance=ExtResource("5_y2i5s")]
-position = Vector2(192, 158.1)
+[node name="music_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 160)
 text = "Music"
 centered = true
-last_half_color = Color(0.772549, 0.623529, 0.8, 1)
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
 [node name="music" parent="panel" instance=ExtResource("5_y2i5s")]
-position = Vector2(192, 174.1)
+position = Vector2(192, 182.1)
 text = "DavidKBD (David Gil Gomez)"
 bold = false
 width = 256
 centered = true
 last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
-[node name="sfx_title" parent="panel" instance=ExtResource("5_y2i5s")]
-position = Vector2(192, 206.1)
-text = "Sfx"
+[node name="sfx_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 216)
+text = "SFX"
 centered = true
-last_half_color = Color(0.772549, 0.623529, 0.8, 1)
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
 [node name="sfx" parent="panel" instance=ExtResource("5_y2i5s")]
-position = Vector2(192, 222.1)
+position = Vector2(192, 238.1)
 text = "Sound Effects from Pixabay"
 bold = false
 width = 256
