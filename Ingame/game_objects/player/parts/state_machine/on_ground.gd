@@ -11,7 +11,7 @@ func enter() -> void:
 	coyote_timer = coyote_time
 
 func exit() -> void:
-	if Input.is_action_just_pressed("map"): map.hide_map()
+	pass
 
 func step(delta : float) -> StateMachineState:
 	_coyote_time(delta)
