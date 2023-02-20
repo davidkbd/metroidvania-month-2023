@@ -41,7 +41,7 @@ func update_instance_data(_data : Dictionary) -> void:
 func activate(_data : Dictionary) -> void:
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[npc_type].id).instantiate()
 	instance_name = instance.name.to_lower()
-	add_child(instance)
+	call_deferred("add_child", instance)
 	instance.update_room_data(_get_instance_data_from_data(_data))
 
 func deactivate() -> void:
