@@ -6,7 +6,7 @@ extends StateMachine
 @export var on_chase_state       : NodePath
 @export var on_comeback_state    : NodePath
 @export var on_damaged_state     : NodePath
-@export var on_died_state        : NodePath
+@export var on_die_state        : NodePath
 
 @onready var on_idle        : StateMachineState = get_node(on_idle_state)
 @onready var on_patrol      : StateMachineState = get_node(on_patrol_state)
@@ -14,7 +14,7 @@ extends StateMachine
 @onready var on_chase       : StateMachineState = get_node(on_chase_state)
 @onready var on_comeback    : StateMachineState = get_node(on_comeback_state)
 #@onready var on_damaged     : StateMachineState = get_node(on_damaged_state)
-#@onready var on_died        : StateMachineState = get_node(on_died_state)
+@onready var on_die         : StateMachineState = get_node(on_die_state)
 
 @onready var idle_patrol_switch_timer : Timer = $IdlePatrolSwitchTimer
 @export var idle_patrol_switch_min_time : float = 2.0

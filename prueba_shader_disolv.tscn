@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq26iadmef4p6"]
+[gd_scene load_steps=6 format=3 uid="uid://bt2r2vl6h347v"]
 
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="1_aratg"]
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://disolve-texture.png" id="2_e3dil"]
