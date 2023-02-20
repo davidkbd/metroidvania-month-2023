@@ -21,6 +21,9 @@ var enemy_died : CharacterBody2D = null
 
 var walk_direction : float
 
+func initialize(_game_state : Dictionary) -> void:
+	skills.initialize(_game_state)
+	
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
 	print("Estaria bien mover este if a un script en el sprite")
