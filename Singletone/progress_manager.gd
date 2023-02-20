@@ -8,7 +8,6 @@ var game_state : Dictionary = {
 		"room_spawn": "room_001"
 	},
 	"player": {
-		"skills": {}
 	},
 	"rooms": {}
 }

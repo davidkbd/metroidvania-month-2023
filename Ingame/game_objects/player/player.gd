@@ -33,7 +33,14 @@ func can_hit_enemy() -> bool:
 	if is_on_floor(): return false
 	return velocity.y > .0
 
+func can_double_jump() -> bool:
+	return skills.data.double_jump
+
+func can_finta() -> bool:
+	return skills.data.finta
+
 func can_snap_to_wall() -> bool:
+	if not skills.data.snap_wall: return false
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
 	var origin : Vector2 = global_position + check_snap_wall_ray_position
 	query.from = origin
@@ -56,4 +63,8 @@ func _ready() -> void:
 			"player_listener_on_ready",
 			self)
 	global_position = Vector2.ONE * 9999999999.0
-
+	
+	print("Ponemos todas las skills pero esto hay que quitarlo")
+	skills.set_skill_value("double_jump", true)
+	skills.set_skill_value("finta", true)
+	skills.set_skill_value("snap_wall", true)
