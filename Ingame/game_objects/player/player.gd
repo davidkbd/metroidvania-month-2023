@@ -56,3 +56,4 @@ func _ready() -> void:
 			"player_listener_on_ready",
 			self)
 	global_position = Vector2.ONE * 9999999999.0
+

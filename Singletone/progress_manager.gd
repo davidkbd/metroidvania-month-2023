@@ -7,6 +7,9 @@ var game_state : Dictionary = {
 		"level": "level_001",
 		"room_spawn": "room_001"
 	},
+	"player": {
+		"skills": {}
+	},
 	"rooms": {}
 }
 
@@ -14,6 +17,9 @@ var current_slot_id : String
 
 func progress_listener_on_room_updated(_room_id : String, _data : Dictionary) -> void:
 	game_state.rooms[_room_id] = _data
+
+func progress_listener_on_player_skills_updated(_skills : Dictionary) -> void:
+	game_state.player.skills = _skills
 
 func progress_listener_on_progress_store_requested(from_room_id : String) -> void:
 	game_state.level.room_spawn = from_room_id
