@@ -7,10 +7,11 @@ func exit():
 	pass
 
 func step(delta):
+	if not host.player : return state_machine.on_comeback
+	_choose_direction()
 	_movement()
 	host.fall(delta)
 	host.move_and_slide()
-	if not host.player : return state_machine.on_comeback
 	if host.player.global_position.distance_to(host.global_position) < 128.0: 
 		return state_machine.on_attack
 	return self
@@ -22,5 +23,5 @@ func _movement():
 		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
 	
 func _choose_direction():
-	host.set_walk_direction(sign(host.global_position.x - host.player.global_position.x))
+	host.set_walk_direction(sign(host.player.global_position.x - host.global_position.x))
 
