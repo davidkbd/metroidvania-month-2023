@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cjrblhrq0lxss"]
+[gd_scene load_steps=80 format=3 uid="uid://cjrblhrq0lxss"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -23,14 +23,18 @@
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjv8n"]
-radius = 14.99
-height = 45.98
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
 shader = ExtResource("15_unq2k")
 shader_parameter/timescale = null
 shader_parameter/tex = ExtResource("17_0r6jg")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjv8n"]
+radius = 14.99
+height = 45.98
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46x3k"]
+radius = 14.99
+height = 61.98
 
 [sub_resource type="Animation" id="Animation_gfq3y"]
 length = 0.001
@@ -464,10 +468,27 @@ script = ExtResource("12_olhsd")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
+light_mask = 32769
+texture_filter = 1
+material = SubResource("ShaderMaterial_d7brj")
+position = Vector2(-32, -46.96)
+texture = ExtResource("13_vjjdm")
+centered = false
+hframes = 10
+vframes = 8
+frame = 71
+
+[node name="body_collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.01)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yjv8n")
+debug_color = Color(0.917647, 0, 0.705882, 0.419608)
+
+[node name="onwall_collider" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -16)
+shape = SubResource("CapsuleShape2D_46x3k")
+disabled = true
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 
 [node name="room_area_sensor" parent="." instance=ExtResource("12_vty2u")]
@@ -478,16 +499,6 @@ debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 
 [node name="enemy_hit_area" parent="." instance=ExtResource("13_5apk1")]
 position = Vector2(0, 14)
-
-[node name="sprite" type="Sprite2D" parent="."]
-light_mask = 32769
-texture_filter = 1
-material = SubResource("ShaderMaterial_d7brj")
-position = Vector2(0, -14.96)
-texture = ExtResource("13_vjjdm")
-hframes = 10
-vframes = 8
-frame = 2
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_77pts")

@@ -6,7 +6,8 @@ class_name Player
 @export var check_snap_wall_ray_position : Vector2 = Vector2.UP * 36.0
 @export var check_snap_wall_ray_vector   : Vector2 = Vector2.LEFT * 64
 
-
+@onready var body_collider        : CollisionShape2D  = $body_collider
+@onready var onwall_collider      : CollisionShape2D  = $onwall_collider
 @onready var savepoint_sensor     : Area2D            = $savepoint_sensor
 @onready var jump_sfx             : AudioStreamPlayer = $jump_sfx
 @onready var catch_water_sfx      : AudioStreamPlayer = $catch_water_sfx

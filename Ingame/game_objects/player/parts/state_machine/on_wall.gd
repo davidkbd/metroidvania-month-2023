@@ -1,5 +1,7 @@
 extends StateMachineState
 
+var onwall_collider_initial_position : Vector2
+
 var walled_time
 var intial_direction
 var direction
@@ -10,9 +12,10 @@ func enter() -> void:
 	walled_time = .15
 	direction = .0
 	host.velocity = Vector2.ZERO
+	_update_colliders()
 
 func exit() -> void:
-	pass
+	_restore_colliders()
 
 func step(delta : float) -> StateMachineState:
 	_update_direction()
@@ -43,3 +46,18 @@ func _snap_to_wall(direction) -> void:
 		host.sprite.flip_h = true
 	elif direction < .0:
 		host.sprite.flip_h = false 
+
+func _update_colliders() -> void:
+	host.body_collider.disabled = true
+	host.onwall_collider.disabled = false
+	host.onwall_collider.position.x = onwall_collider_initial_position.x * sign(-host.walk_direction)
+
+func _restore_colliders() -> void:
+	host.body_collider.disabled = false
+	host.onwall_collider.disabled = true
+
+func _update_host_references() -> void:
+	onwall_collider_initial_position = host.onwall_collider.position
+
+func _ready() -> void:
+	call_deferred("_update_host_references")
