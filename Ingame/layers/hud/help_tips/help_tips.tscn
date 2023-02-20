@@ -20,6 +20,8 @@ position = Vector2(576, 8)
 text = "Game saved"
 width = 128
 centered = true
+first_half_color = Color(0.890196, 0.890196, 0.890196, 1)
+last_half_color = Color(0.956863, 0.823529, 0.721569, 1)
 
 [node name="pad_sprite" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
