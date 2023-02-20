@@ -26,6 +26,7 @@ func step(delta : float) -> StateMachineState:
 		_apply_impulse(direction)
 		return state_machine.on_jump
 	if host.is_on_floor(): return state_machine.on_ground
+	if not host.is_on_wall(): return state_machine.on_air
 	if host.enemy_died: return state_machine.on_enemybounce
 	if host.damager: return state_machine.on_damaged
 	return self
