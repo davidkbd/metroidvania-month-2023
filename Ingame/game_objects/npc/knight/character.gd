@@ -3,8 +3,13 @@ extends CharacterAlive
 @onready var initial_position : Vector2 = global_position
 @onready var animation        : AnimationPlayer = $AnimationPlayer
 @onready var sword_collider   : CollisionShape2D = $SwordCollider
+@onready var center           : Node2D = $Center
 
 @onready var player           : Player = null
+
+@onready var speed = 1200.0
+@onready var acceleration = 32.0
+@onready var deceleration = 32.0
 
 var walk_direction : float
 var value : int = 0
