@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.gd" id="1_1bdoi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1k5n"]
-size = Vector2(4, 4)
+size = Vector2(64, 4)
 
 [node name="savepoint_sensor" type="Area2D"]
 position = Vector2(0, 14)
@@ -18,4 +18,5 @@ shape = SubResource("RectangleShape2D_n1k5n")
 [node name="temporarily_deactivate_timer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="timeout" from="temporarily_deactivate_timer" to="." method="_on_temporarily_deactivate_timer_timeout"]

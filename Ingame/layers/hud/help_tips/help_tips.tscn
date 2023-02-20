@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://3uib0onhpfvj"]
+
+[ext_resource type="Script" path="res://Ingame/layers/hud/help_tips/help_tips.gd" id="1_ovly0"]
+[ext_resource type="Texture2D" uid="uid://df0nori5j7y4k" path="res://UI/sprites/control-pad.png" id="2_pxhih"]
+[ext_resource type="Script" path="res://Ingame/layers/hud/help_tips/pad_sprite.gd" id="3_ppvbv"]
+[ext_resource type="PackedScene" uid="uid://cqrajpo01h5eo" path="res://UI/label/label.tscn" id="4_hpej5"]
+
+[node name="help_tips" type="Control" groups=["HELP_TIPS", "PROGRESS_LISTENER"]]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ovly0")
+
+[node name="saved_label" parent="." instance=ExtResource("4_hpej5")]
+position = Vector2(576, 8)
+text = "Game saved"
+width = 128
+centered = true
+
+[node name="pad_sprite" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_pxhih")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+script = ExtResource("3_ppvbv")

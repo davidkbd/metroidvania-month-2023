@@ -16,17 +16,17 @@ extends StateMachine
 #@onready var on_damaged     : StateMachineState = get_node(on_damaged_state)
 #@onready var on_died        : StateMachineState = get_node(on_died_state)
 
-@onready var idle_patrol_switch_timer : Timer = $IdlePatrolSwitchTimer
+#@onready var idle_patrol_switch_timer : Timer = $IdlePatrolSwitchTimer
 @export var idle_patrol_switch_min_time : float = 2.0
 @export var idle_patrol_switch_max_time : float = 5.0
 
 var idle_patrol_timer_flag : bool
 
-
-func _on_idle_patrol_switch_timer_timeout():
-	idle_patrol_timer_flag = true
-	
-	
-func start_idle_patrol_switch_timer():
-	idle_patrol_timer_flag = false
-	idle_patrol_switch_timer.start(randi_range(idle_patrol_switch_min_time,idle_patrol_switch_max_time))
+#
+#func _on_idle_patrol_switch_timer_timeout():
+#	idle_patrol_timer_flag = true
+#
+#
+#func start_idle_patrol_switch_timer():
+#	idle_patrol_timer_flag = false
+#	idle_patrol_switch_timer.start(randi_range(idle_patrol_switch_min_time,idle_patrol_switch_max_time))
