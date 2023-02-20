@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crmma1xtnk53b"]
+
+[ext_resource type="Script" path="res://UI/label/title.gd" id="1_bay37"]
+[ext_resource type="Texture2D" uid="uid://cvp08j6vp4tv6" path="res://UI/sprites/title-bitmap-font.png" id="2_ypebj"]
+
+[node name="title" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_bay37")
+text = "holafasdfj"
+bitmap = ExtResource("2_ypebj")

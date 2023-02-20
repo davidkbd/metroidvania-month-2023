@@ -12,6 +12,7 @@ var room_data : Dictionary
 func activate() -> void:
 	print("ROOM DATA: ", room_data)
 	room_content.activate(room_data)
+	get_tree().call_group("ROOM_LISTENER", "room_listener_on_activated", self)
 
 func deactivate() -> void:
 	room_content.deactivate()
@@ -29,7 +30,7 @@ func update_room_data() -> void:
 func teleport_player() -> void:
 	if savepoint == null: return
 	
-	player.teleport(savepoint.global_position)
+	player.global_position = savepoint.global_position
 	room_area.configure_hook()
 	room_area.hook.enable(player)
 	camera.set_target(room_area.hook)

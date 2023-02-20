@@ -1,14 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1j4l32qwp0qr"]
 
 [ext_resource type="Script" path="res://Menu/credits_menu/credits_menu.gd" id="1_3dtsr"]
-[ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_4ub5q"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="3_6yr1s"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="3_io8xj"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_7o2va"]
+[ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="5_wrqxl"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_y2i5s"]
 [ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://UI/back_button/back_button.tscn" id="6_r2q8y"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_byi5v"]
-content_margin_bottom = 8.0
 
 [node name="credits_menu" type="Control"]
 texture_filter = 1
@@ -44,135 +42,66 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="people_container" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.12
-anchor_right = 1.0
-anchor_bottom = 0.8
-grow_horizontal = 2
-grow_vertical = 2
+[node name="programmers_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 40)
+text = "Programmers"
+centered = true
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
-[node name="credits_title" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
-theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
-theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 32
-text = "PROGRAMMERS"
-horizontal_alignment = 1
-
-[node name="programmers" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
+[node name="programmers" parent="panel" instance=ExtResource("5_y2i5s")]
+position = Vector2(192, 62.1)
 text = "DavidKBD (David Gil Gomez)
 Jonnydrumz (Jon Huarte Martinez)"
-horizontal_alignment = 1
+bold = false
+width = 256
+centered = true
+last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
-[node name="credits_title2" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
-theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
-theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 32
-text = "IN-GAME GRAPHCIS"
-horizontal_alignment = 1
+[node name="graphics_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 104)
+text = "Graphics"
+centered = true
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
-[node name="graphics" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
+[node name="graphics" parent="panel" instance=ExtResource("5_y2i5s")]
+position = Vector2(192, 126.1)
 text = "Mushy (Andres Munoz Gomez)"
-horizontal_alignment = 1
+bold = false
+width = 256
+centered = true
+last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
-[node name="credits_title4" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
-theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
-theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 32
-text = "UI GRAPHICS"
-horizontal_alignment = 1
+[node name="music_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 160)
+text = "Music"
+centered = true
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
-[node name="graphics3" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
-text = "Mushy (Andres Munoz Gomez)
-Ykram (Jose Aguilar Acena)"
-horizontal_alignment = 1
-
-[node name="credits_title3" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
-theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
-theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 32
-text = "MUSIC"
-horizontal_alignment = 1
-
-[node name="graphics2" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxEmpty_byi5v")
+[node name="music" parent="panel" instance=ExtResource("5_y2i5s")]
+position = Vector2(192, 182.1)
 text = "DavidKBD (David Gil Gomez)"
-horizontal_alignment = 1
+bold = false
+width = 256
+centered = true
+last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
-[node name="credits_title5" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.835294, 0.635294, 0.870588, 1)
-theme_override_colors/font_shadow_color = Color(0.564706, 0.298039, 0.615686, 1)
-theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 32
+[node name="sfx_title" parent="panel" instance=ExtResource("5_wrqxl")]
+position = Vector2(192, 216)
 text = "SFX"
-horizontal_alignment = 1
+centered = true
+first_half_color = Color(0.85098, 0.85098, 0.85098, 1)
+last_half_color = Color(0.745098, 0.552941, 0.745098, 1)
 
-[node name="sfx" type="Label" parent="people_container"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.72549, 0.494118, 0.627451, 1)
-theme_override_fonts/font = ExtResource("2_4ub5q")
-theme_override_font_sizes/font_size = 16
+[node name="sfx" parent="panel" instance=ExtResource("5_y2i5s")]
+position = Vector2(192, 238.1)
 text = "Sound Effects from Pixabay"
-horizontal_alignment = 1
+bold = false
+width = 256
+centered = true
+last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
 [node name="back_button" parent="." instance=ExtResource("6_r2q8y")]
 layout_mode = 1

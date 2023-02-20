@@ -4,7 +4,7 @@ class_name TextBox
 
 signal text_animation_finished
 
-@export_multiline var text = "holi holi holi holi holi ssssss ssss asdfasdf asdfasdfadsf aa  asdfads fasdf asdf aafasdf asdf holi holi holi holi holi holi holi holi holi holi holi holi aafasdf asdf aafasdf asdf aafasdf asdf aaasad asdffff aa comadreja ssdfgsdfg sdfgsdfg holi holi holi holi holi holi holi holi holi holi holi holi holi holi holi holi dfa adfasd fasdfad ad adfasdf dfadsf adsf asdf asdf asdfasdf adsf asdfadsf adf holi holi holi holi holi holi holi " :
+@export_multiline var text = "" :
 	get: return text
 	set(value):
 		if value == text: return
@@ -29,8 +29,9 @@ func terminate_animation() -> void:
 func _update(_text) -> void:
 	if is_inside_tree():
 		var text_height : int = $label.calc_size(text).y
-		$border.texture = border_textures[clamp(text_height / 11 - 3, 0, border_textures.size() - 1)]
+		$border.texture = border_textures[clamp(text_height / $label.CHAR_HEIGHT - 3, 0, border_textures.size() - 1)]
 		$label.text = _text
+		print(text_height / $label.CHAR_HEIGHT)
 
 func _animate() -> void:
 	if text_tween: text_tween.kill()

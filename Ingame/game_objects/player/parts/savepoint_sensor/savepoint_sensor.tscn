@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1k5n"]
 size = Vector2(64, 4)
 
-[node name="savepoint_sensor" type="Area2D"]
+[node name="savepoint_sensor" type="Area2D" groups=["ROOM_LISTENER"]]
 position = Vector2(0, 14)
 collision_layer = 0
 collision_mask = 16
@@ -15,8 +15,5 @@ script = ExtResource("1_1bdoi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n1k5n")
 
-[node name="temporarily_deactivate_timer" type="Timer" parent="."]
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="timeout" from="temporarily_deactivate_timer" to="." method="_on_temporarily_deactivate_timer_timeout"]

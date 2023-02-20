@@ -14,30 +14,14 @@
 [node name="textbox" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_7eh0l")
-text = "holi
-asdf
-asdf
-adsfa
-asdfadsfaa
-asdfadsfa
-dsafsfadsf
-asdfasfd"
 border_textures = [ExtResource("2_mni56"), ExtResource("3_iudkf"), ExtResource("4_l4nx3"), ExtResource("5_l4y6q"), ExtResource("6_8kcff"), ExtResource("7_scx03"), ExtResource("8_c7ifa"), ExtResource("9_ualon")]
 
 [node name="border" type="Sprite2D" parent="."]
-texture = ExtResource("7_scx03")
+texture = ExtResource("2_mni56")
 centered = false
 
 [node name="label" parent="." instance=ExtResource("2_nh2ad")]
 position = Vector2(18, 16)
-text = "holi
-asdf
-asdf
-adsfa
-asdfadsfaa
-asdfadsfa
-dsafsfadsf
-asdfasfd"
 width = 364
 first_half_color = Color(0.694118, 0.756863, 0.698039, 1)
 last_half_color = Color(0.580392, 0.623529, 0.580392, 1)

@@ -8,7 +8,7 @@ var direction
 
 func enter() -> void:
 	intial_direction = sign(host.get_last_slide_collision().get_position().x - host.global_position.x)
-	_snap_to_wall(intial_direction)
+	_apply_sprite_fip(intial_direction)
 	walled_time = .15
 	direction = .0
 	host.velocity = Vector2.ZERO
@@ -26,7 +26,7 @@ func step(delta : float) -> StateMachineState:
 		_apply_impulse(direction)
 		return state_machine.on_jump
 	if host.is_on_floor(): return state_machine.on_ground
-	if not host.is_on_wall(): return state_machine.on_air
+	if not _is_on_wall(): return state_machine.on_air
 	if host.enemy_died: return state_machine.on_enemybounce
 	if host.damager: return state_machine.on_damaged
 	return self
@@ -39,10 +39,10 @@ func _walled_gravity(delta) -> void:
 		host.wall_fall(delta)
 		
 func _apply_impulse(direction) -> void:
-	_snap_to_wall(direction)
+	_apply_sprite_fip(direction)
 	host.velocity.x = direction * host.specs.wall_jump_impulse
 
-func _snap_to_wall(direction) -> void:
+func _apply_sprite_fip(direction) -> void:
 	if direction > .0:
 		host.sprite.flip_h = true
 	elif direction < .0:
@@ -59,6 +59,18 @@ func _restore_colliders() -> void:
 
 func _update_host_references() -> void:
 	onwall_collider_initial_position = host.onwall_collider.position
+
+func _is_on_wall() -> bool:
+	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
+	var origin : Vector2 = host.global_position + host.check_snap_wall_ray_position
+	query.from = origin
+	query.to = origin + host.check_snap_wall_ray_vector * Vector2.LEFT * sign(host.walk_direction)
+	query.collide_with_bodies = true
+	query.collide_with_areas = false
+	query.collision_mask = 1
+	query.exclude = [host.get_rid()]
+	var result = host.space_state.intersect_ray(query)
+	return result.size() > 0
 
 func _ready() -> void:
 	call_deferred("_update_host_references")
