@@ -477,7 +477,6 @@ texture = ExtResource("13_vjjdm")
 centered = false
 hframes = 10
 vframes = 8
-frame = 71
 
 [node name="body_collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.01)

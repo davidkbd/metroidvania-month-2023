@@ -9,10 +9,10 @@ extends StateMachine
 @export var on_died_state        : NodePath
 
 @onready var on_idle        : StateMachineState = get_node(on_idle_state)
-@onready var on_patrol      : StateMachineState = get_node(on_patrol_state)
-@onready var on_attack      : StateMachineState = get_node(on_attack_state)
-@onready var on_chase       : StateMachineState = get_node(on_chase_state)
-@onready var on_comeback    : StateMachineState = get_node(on_comeback_state)
+#@onready var on_patrol      : StateMachineState = get_node(on_patrol_state)
+#@onready var on_attack      : StateMachineState = get_node(on_attack_state)
+#@onready var on_chase       : StateMachineState = get_node(on_chase_state)
+#@onready var on_comeback    : StateMachineState = get_node(on_comeback_state)
 #@onready var on_damaged     : StateMachineState = get_node(on_damaged_state)
 #@onready var on_died        : StateMachineState = get_node(on_died_state)
 

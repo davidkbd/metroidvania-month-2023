@@ -10,6 +10,13 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bagww"]
+radius = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
+radius = 24.0
+height = 80.0
+
 [sub_resource type="Animation" id="Animation_7ourq"]
 length = 0.001
 tracks/0/type = "value"
@@ -164,13 +171,6 @@ graph_offset = Vector2(77.2875, -51.9751)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bagww"]
-radius = 40.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
-radius = 24.0
-height = 80.0
-
 [node name="character" type="CharacterBody2D"]
 collision_layer = 1024
 collision_mask = 1024
@@ -216,18 +216,7 @@ texture = ExtResource("2_gepj4")
 centered = false
 hframes = 5
 vframes = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../sprite")
-libraries = {
-"": SubResource("AnimationLibrary_uoji7")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_i8lyk")
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
+frame = 5
 
 [node name="SwordCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-32, -48)
@@ -242,5 +231,17 @@ shape = SubResource("CapsuleShape2D_o5kqg")
 position = Vector2(0, -40)
 collision_layer = 8
 collision_mask = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../sprite")
+libraries = {
+"": SubResource("AnimationLibrary_uoji7")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_i8lyk")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
 [connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]

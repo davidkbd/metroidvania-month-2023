@@ -1,4 +1,4 @@
-extends NPC
+extends CharacterAlive
 
 var value : int = 0
 
@@ -24,5 +24,4 @@ func _update_room_data() -> void:
 	get_parent().update_instance_data({ "storeable": true, "value": value })
 
 func _ready() -> void:
-	super._ready()
 	call_deferred("_update_room_data")

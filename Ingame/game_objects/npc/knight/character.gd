@@ -15,14 +15,14 @@ func update_room_data(_data : Dictionary) -> void:
 	else:
 		value = _data.value
 	value += 1
-	_update_room_data()
+	call_deferred("_update_room_data")
 
 func _update_room_data() -> void:
 	get_parent().update_instance_data({ "storeable": true, "value": value })
-
-func _ready() -> void:
-	_update_room_data()
 	
 func flip(direction):
 	sprite.flip_h = direction > 0
 	sword_collider.position = Vector2.LEFT * (-32.0) * direction + Vector2.UP * 64.0
+
+func _ready() -> void:
+	call_deferred("_update_room_data")

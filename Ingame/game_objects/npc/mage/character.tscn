@@ -1,7 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwkq6vfe70u8d"]
+[gd_scene load_steps=13 format=3 uid="uid://dwkq6vfe70u8d"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/character.gd" id="1_rf4bo"]
 [ext_resource type="Texture2D" uid="uid://cdbmmkrhnoa7n" path="res://Ingame/game_objects/npc/mage/sprites/character.png" id="2_8vnf1"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/parts/state_machine/state_machine.gd" id="2_448ke"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/parts/state_machine/on_idle.gd" id="3_1guig"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgkmu"]
+radius = 24.0
+height = 80.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_47fju"]
 animation = &"idle"
@@ -54,9 +60,17 @@ _data = {
 "idle": SubResource("Animation_5np5v")
 }
 
-[node name="character" type="Node2D"]
+[node name="character" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_rf4bo")
+
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource("2_448ke")
+on_idle_state = NodePath("on_idle")
+initial_state = NodePath("on_idle")
+
+[node name="on_idle" type="Node" parent="state_machine"]
+script = ExtResource("3_1guig")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-96, -110)
@@ -64,6 +78,10 @@ texture = ExtResource("2_8vnf1")
 centered = false
 hframes = 7
 vframes = 2
+
+[node name="BodyCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("CapsuleShape2D_pgkmu")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_a37ib")
