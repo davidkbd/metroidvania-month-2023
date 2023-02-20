@@ -1,14 +1,17 @@
 extends StateMachineState
 
+var animation_finished_timer : float
+
 func enter():
-	pass
+	animation_finished_timer = host.animation.get_animation("attack").length
 	
 func exit():
 	pass
 	
 func step(delta):
-	if _is_animation_finished(): return state_machine.on_patrol
+	animation_finished_timer -= delta
+	if _is_animation_finished(delta): return state_machine.on_chase
 	return self
 
-func _is_animation_finished() -> bool:
-	return host.animation.current_animation_length == host.animation.current_animation_position
+func _is_animation_finished(delta) -> bool:
+	return animation_finished_timer <= 0
