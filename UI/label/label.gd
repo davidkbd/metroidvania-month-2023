@@ -63,8 +63,9 @@ class_name PixelLabel
 @export_category("Internal")
 @export var bitmap : Texture2D
 
-const CHAR_WIDTH  : float = 9.0
-const CHAR_HEIGHT : float = 11.0
+const CHAR_CELL_WIDTH  : float = 9.0
+const CHAR_CELL_HEIGHT : float = 11.0
+const CHAR_HEIGHT      : float = 10.0
 
 func _get_char_metadata(_char : String) -> Dictionary:
 	if bold:
@@ -219,7 +220,7 @@ func _get_char_metadata(_char : String) -> Dictionary:
 			":": return { "width": 6, "pos": 65 }
 			"'": return { "width": 5, "pos": 66 }
 			"\"": return { "width": 5, "pos": 67 }
-			"(": return { "width": 5, "pos": 68 }
+			"(": return { "width": 6, "pos": 68 }
 			"!": return { "width": 5, "pos": 69 }
 			"?": return { "width": 5, "pos": 70 }
 			")": return { "width": 5, "pos": 71 }
@@ -231,16 +232,16 @@ func _get_char_metadata(_char : String) -> Dictionary:
 	return { "width": 8, "pos": 70 }
 
 func _print_char(_x : int, _y : int, _w : int, _char_pos : int) -> void:
-	var char_posy = CHAR_HEIGHT if bold else .0
-	var char_region : Rect2 = Rect2(_char_pos * CHAR_WIDTH, char_posy, _w, CHAR_HEIGHT)
+	var char_posy = CHAR_CELL_HEIGHT if bold else .0
+	var char_region : Rect2 = Rect2(_char_pos * CHAR_CELL_WIDTH, char_posy, _w, CHAR_CELL_HEIGHT)
 	var rect_position : Rect2
 	
-	rect_position = Rect2(_x+1, _y+1, 9.0, 11.0)
+	rect_position = Rect2(_x+1, _y+1, CHAR_CELL_WIDTH, CHAR_CELL_HEIGHT)
 	draw_texture_rect_region(bitmap, rect_position, char_region, shadow_color)
-	rect_position = Rect2(_x, _y, 9.0, 11.0)
+	rect_position = Rect2(_x, _y, CHAR_CELL_WIDTH, CHAR_CELL_HEIGHT)
 	draw_texture_rect_region(bitmap, rect_position, char_region, last_half_color)
-	char_region = Rect2(_char_pos * CHAR_WIDTH, char_posy, _w, color_height)
-	rect_position = Rect2(_x, _y, 9.0, color_height)
+	char_region = Rect2(_char_pos * CHAR_CELL_WIDTH, char_posy, _w, color_height)
+	rect_position = Rect2(_x, _y, CHAR_CELL_WIDTH, color_height)
 	draw_texture_rect_region(bitmap, rect_position, char_region, first_half_color)
 	
 
@@ -311,5 +312,5 @@ func _draw():
 				height_i += 1
 				y += CHAR_HEIGHT
 				x = -char_md.width if l == " " else 0
-			_print_char(x - widths[height_i] / 2 if centered else x, y - widths.size() * CHAR_HEIGHT / 2 if vertical_centered else y, char_md.width, char_md.pos)
+			_print_char(x - widths[height_i] / 2 if centered else x, y - widths.size() * CHAR_CELL_HEIGHT / 2 if vertical_centered else y, char_md.width, char_md.pos)
 			x += char_md.width
