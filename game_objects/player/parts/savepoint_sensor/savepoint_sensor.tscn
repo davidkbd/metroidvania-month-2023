@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game_objects/player/parts/savepoint_sensor/savepoint_sensor.gd" id="1_1bdoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1k5n"]
+size = Vector2(64, 4)
+
+[node name="savepoint_sensor" type="Area2D" groups=["ROOM_LISTENER"]]
+position = Vector2(0, 14)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("1_1bdoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n1k5n")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

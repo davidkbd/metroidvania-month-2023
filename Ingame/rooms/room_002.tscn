@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwdp3kysceyi6"]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_ilv60"]
 [ext_resource type="Texture2D" uid="uid://dbvqqb42rox8e" path="res://Ingame/level-sprites/default/tiles/tiles.png" id="3_8rd1f"]
-[ext_resource type="PackedScene" uid="uid://bber4ocj05g21" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_m1y3m"]
+[ext_resource type="PackedScene" path="res://game_objects/room/room_area/room_area.tscn" id="4_m1y3m"]
 [ext_resource type="Texture2D" uid="uid://dl85d5d32a1y3" path="res://Ingame/level-sprites/default/tiles/groundTile.png" id="4_us5fm"]
-[ext_resource type="PackedScene" uid="uid://dc5pa4md6cy0w" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="4_wr02k"]
-[ext_resource type="PackedScene" uid="uid://dus1y81ksdb7q" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_7o3yd"]
+[ext_resource type="PackedScene" path="res://game_objects/room/savepoint_area/savepoint_area.tscn" id="4_wr02k"]
+[ext_resource type="PackedScene" path="res://game_objects/room/room_content/room_content.tscn" id="5_7o3yd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1360, 736)

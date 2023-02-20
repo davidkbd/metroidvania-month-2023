@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnrlorpg2ej4v"]
+[gd_scene load_steps=8 format=3 uid="uid://cf04maky452na"]
 
 [ext_resource type="Script" path="res://Menu/options_menu/options_menu.gd" id="1_tfdth"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_d57fj"]
-[ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_hgh2i"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_rj6ce"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_fuw5u"]
-[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://UI/back_button/back_button.tscn" id="6_rcxg2"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_t8xu4"]
+[ext_resource type="PackedScene" uid="uid://bkeup4bed05rk" path="res://UI/slider/slider.tscn" id="6_hxa6w"]
+[ext_resource type="PackedScene" uid="uid://cimlcghry86oa" path="res://Menu/buttons/back_button/back_button.tscn" id="6_rcxg2"]
 
 [node name="options_menu" type="Control"]
 texture_filter = 1
@@ -18,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_tfdth")
 
 [node name="background" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,6 +30,7 @@ texture = ExtResource("2_rj6ce")
 [node name="zzz" parent="background" instance=ExtResource("3_fuw5u")]
 
 [node name="panel" type="NinePatchRect" parent="."]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
 anchor_top = 0.4
@@ -39,55 +42,34 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="sfx_label" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.45
-anchor_right = 0.39
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_hgh2i")
-theme_override_font_sizes/font_size = 16
-text = "SFX"
-horizontal_alignment = 2
+[node name="sfx_label" parent="." instance=ExtResource("5_t8xu4")]
+position = Vector2(200, 162)
+text = "Sfx"
+last_half_color = Color(0.690196, 0.690196, 0.690196, 1)
+shadow_color = Color(0.152941, 0.152941, 0.152941, 0)
 
-[node name="sfx_volume" type="HSlider" parent="."]
-anchors_preset = -1
-anchor_left = 0.4
-anchor_top = 0.45
-anchor_right = 0.7
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-max_value = 1.0
-step = 0.1
+[node name="music_label" parent="." instance=ExtResource("5_t8xu4")]
+position = Vector2(200, 186)
+text = "Music"
+last_half_color = Color(0.690196, 0.690196, 0.690196, 1)
+shadow_color = Color(0.152941, 0.152941, 0.152941, 0)
 
-[node name="music_label" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.5
-anchor_right = 0.39
-anchor_bottom = 0.55
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_hgh2i")
-theme_override_font_sizes/font_size = 16
-text = "MUSIC"
-horizontal_alignment = 2
+[node name="sfx_volume" parent="." instance=ExtResource("6_hxa6w")]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 160.0
+offset_right = 448.0
+offset_bottom = 176.0
 
-[node name="music_volume" type="HSlider" parent="."]
-anchors_preset = -1
-anchor_left = 0.4
-anchor_top = 0.5
-anchor_right = 0.7
-anchor_bottom = 0.55
-grow_horizontal = 2
-grow_vertical = 2
-max_value = 1.0
-step = 0.1
+[node name="music_volume" parent="." instance=ExtResource("6_hxa6w")]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 184.0
+offset_right = 448.0
+offset_bottom = 200.0
 
 [node name="back_button" parent="." instance=ExtResource("6_rcxg2")]
+layout_mode = 1
 
 [connection signal="value_changed" from="sfx_volume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="music_volume" to="." method="_on_music_volume_value_changed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1j4l32qwp0qr"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://Menu/credits_menu/credits_menu.gd" id="1_3dtsr"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="3_6yr1s"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_7o2va"]
 [ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="5_wrqxl"]
 [ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_y2i5s"]
-[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://UI/back_button/back_button.tscn" id="6_r2q8y"]
+[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://Menu/buttons/back_button/back_button.tscn" id="6_r2q8y"]
 
 [node name="credits_menu" type="Control"]
 texture_filter = 1
@@ -19,7 +19,6 @@ grow_vertical = 2
 script = ExtResource("1_3dtsr")
 
 [node name="background" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,7 +29,6 @@ texture = ExtResource("3_io8xj")
 [node name="zzz" parent="background" instance=ExtResource("4_7o2va")]
 
 [node name="panel" type="NinePatchRect" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
 anchor_top = 0.04
@@ -104,4 +102,3 @@ centered = true
 last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
 [node name="back_button" parent="." instance=ExtResource("6_r2q8y")]
-layout_mode = 1

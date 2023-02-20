@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://bo2ap6waiebgb"]
 
 [ext_resource type="Script" path="res://Menu/principal_menu/principal_menu.gd" id="1_bp4pa"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0msl5"]
-[ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_stxfv"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_uh5pl"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_xhhig"]
+[ext_resource type="PackedScene" uid="uid://bipnhavrx54oa" path="res://Menu/buttons/play_button/play_button.tscn" id="6_dab66"]
+[ext_resource type="PackedScene" uid="uid://bgfoam4dnvnjw" path="res://Menu/buttons/options_button/options_button.tscn" id="7_5rj78"]
+[ext_resource type="PackedScene" uid="uid://cvpwmwxo3mmol" path="res://Menu/buttons/credits_button/credits_button.tscn" id="8_njrsb"]
+[ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="9_c00c0"]
+[ext_resource type="PackedScene" uid="uid://cenpygx3uaebe" path="res://Menu/buttons/quit_button/quit_button.tscn" id="9_cg4ke"]
 
 [node name="principal_menu" type="Control"]
 texture_filter = 1
@@ -26,15 +30,6 @@ texture = ExtResource("2_0msl5")
 
 [node name="zzz" parent="background" instance=ExtResource("3_xhhig")]
 
-[node name="title" type="Label" parent="."]
-offset_left = 192.0
-offset_top = 32.0
-offset_right = 602.0
-offset_bottom = 94.0
-theme_override_fonts/font = ExtResource("2_stxfv")
-theme_override_font_sizes/font_size = 58
-text = "LITTLE GROW"
-
 [node name="panel" type="NinePatchRect" parent="."]
 anchors_preset = -1
 anchor_left = 0.68
@@ -47,62 +42,30 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="start_button" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.6
-anchor_right = 0.95
-anchor_bottom = 0.65
-offset_top = -3.5
-offset_bottom = 3.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_stxfv")
-theme_override_font_sizes/font_size = 16
-text = "PLAY"
+[node name="title" parent="." instance=ExtResource("9_c00c0")]
+position = Vector2(440, 184)
+text = "Metroidcosa"
 
-[node name="options_button" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.7
-anchor_right = 0.95
-anchor_bottom = 0.75
-offset_top = -3.5
-offset_bottom = 3.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_stxfv")
-theme_override_font_sizes/font_size = 16
-text = "OPTIONS"
+[node name="play_button" parent="." instance=ExtResource("6_dab66")]
+offset_left = -192.0
+offset_top = -136.0
+offset_right = -128.0
+offset_bottom = -120.0
 
-[node name="credits_button" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.8
-anchor_right = 0.95
-anchor_bottom = 0.85
-offset_top = -3.5
-offset_bottom = 3.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_stxfv")
-theme_override_font_sizes/font_size = 16
-text = "CREDITS
-"
+[node name="options_button" parent="." instance=ExtResource("7_5rj78")]
+offset_left = -192.0
+offset_top = -112.0
+offset_right = -128.0
+offset_bottom = -96.0
 
-[node name="quit_button" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.9
-anchor_right = 0.95
-anchor_bottom = 0.95
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_stxfv")
-theme_override_font_sizes/font_size = 16
-text = "QUIT"
+[node name="credits_button" parent="." instance=ExtResource("8_njrsb")]
+offset_left = -192.0
+offset_top = -88.0
+offset_right = -128.0
+offset_bottom = -72.0
 
-[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
+[node name="quit_button" parent="." instance=ExtResource("9_cg4ke")]
+offset_left = -192.0
+offset_top = -64.0
+offset_right = -128.0
+offset_bottom = -48.0

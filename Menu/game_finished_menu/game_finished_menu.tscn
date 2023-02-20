@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjwxvh0xsuaov"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://Menu/game_finished_menu/game_finished_menu.gd" id="1_fb25t"]
 [ext_resource type="FontFile" uid="uid://fu3peoullrtt" path="res://Menu/ttf/Minecraft.ttf" id="2_mywh6"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="3_dnym8"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_h6j5c"]
-[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://UI/back_button/back_button.tscn" id="5_svsdd"]
+[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://Menu/buttons/back_button/back_button.tscn" id="5_svsdd"]
 
 [node name="game_finished" type="Control"]
 texture_filter = 1

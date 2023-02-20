@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game_objects/camera/follow_target_camera/follow_target_camera.gd" id="1_1ecar"]
+
+[node name="follow_target_camera" type="Camera2D" groups=["CAMERA"]]
+current = true
+script = ExtResource("1_1ecar")

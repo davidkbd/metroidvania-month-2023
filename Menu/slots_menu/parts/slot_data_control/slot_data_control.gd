@@ -4,10 +4,10 @@ class_name SlotDataControl
 signal start_pressed
 signal delete_pressed
 
-@onready var start_button_label : PixelLabel = $start_button/label
+@onready var slot_name_label    : PixelTitle = $slot_name_label
 @onready var datetime_label     : PixelLabel = $datetime_label
-@onready var start_button       : Button = $start_button
-@onready var delete_button      : Button = $delete_button
+@onready var start_button       : UIButton = $start_button
+@onready var delete_button      : UIButton = $delete_button
 
 var slot_name     : String
 var slot_id       : String
@@ -38,7 +38,7 @@ func _full_number(number : int, digits : int) -> String:
 	return r
 
 func _ready() -> void:
-	start_button_label.text = slot_name
+	slot_name_label.text = slot_name
 	var file_path : String = Directories.PROGRESS_PATH + "/game-state-" + slot_id + ".data"
 	if FileAccess.file_exists(file_path):
 		var date_dict = Time.get_datetime_dict_from_unix_time(FileAccess.get_modified_time(file_path))

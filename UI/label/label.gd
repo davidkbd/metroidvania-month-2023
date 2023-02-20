@@ -144,7 +144,7 @@ func _get_char_metadata(_char : String) -> Dictionary:
 			"?": return { "width": 5, "pos": 70 }
 			")": return { "width": 5, "pos": 71 }
 			"+": return { "width": 6, "pos": 72 }
-			"-": return { "width": 6, "pos": 73 }
+			"-": return { "width": 7, "pos": 73 }
 			"^": return { "width": 5, "pos": 74 }
 			"/": return { "width": 5, "pos": 75 }
 			"=": return { "width": 5, "pos": 76 }
