@@ -52,10 +52,6 @@ func can_snap_to_wall() -> bool:
 	var result = space_state.intersect_ray(query)
 	return result.size() > 0 and is_on_wall()
 
-func teleport(_global_position : Vector2) -> void:
-	global_position = _global_position
-	savepoint_sensor.temporarily_deactivate()
-
 func _ready() -> void:
 	get_tree().call_deferred(
 			"call_group",
