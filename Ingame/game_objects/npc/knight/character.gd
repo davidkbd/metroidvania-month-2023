@@ -7,10 +7,6 @@ extends CharacterAlive
 
 @onready var player           : Player = null
 
-@onready var speed = 1200.0
-@onready var acceleration = 32.0
-@onready var deceleration = 32.0
-
 var walk_direction : float
 var value : int = 0
 
@@ -31,4 +27,5 @@ func _update_room_data() -> void:
 	get_parent().update_instance_data({ "storeable": true, "value": value })
 
 func _ready() -> void:
+	specs = CharacterAliveSpecs.get_knight_specs()
 	call_deferred("_update_room_data")

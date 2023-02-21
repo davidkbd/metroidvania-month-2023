@@ -17,3 +17,13 @@ static func get_default_specs() -> Dictionary:
 "wall_down_speed":     500.0,
 "wall_jump_impulse":   200.0
 }
+
+static func get_knight_specs() -> Dictionary:
+	return {
+"speed":               120.0,
+"acceleration":        32.0,
+"deceleration":        32.0,
+"gravity":             ProjectSettings.get_setting("physics/2d/default_gravity"),
+"max_up_speed":        -10000.0,
+"max_down_speed":      700.0,
+}

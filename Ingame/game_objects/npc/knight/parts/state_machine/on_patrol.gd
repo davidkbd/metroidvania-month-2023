@@ -1,7 +1,6 @@
 extends StateMachineState
 
-@export var raycast_origin_position      : Vector2 = Vector2.UP * 32.0
-@export var raycast_destination_position : Vector2 = Vector2.UP * 32.0 + Vector2.LEFT * 32.0
+@export var raycast_direction        : Vector2 = Vector2.LEFT * 32.0
 
 func enter() -> void:
 	host.animation_playblack.travel(name)
@@ -23,17 +22,18 @@ func step(delta : float) -> StateMachineState:
 
 func _movement():
 	if host.walk_direction:
-		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.speed * 0.1, host.acceleration)
+		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
 	else:
-		host.velocity.x = move_toward(host.velocity.x, .0, host.deceleration)
+		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
 
 func _choose_direction():
 	host.set_walk_direction(-1.0 if randi()%2 == 0 else -1.0)
 
 func _can_walk() -> bool:
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
-	query.from = host.global_position + raycast_origin_position
-	query.to = host.global_position + raycast_destination_position * Vector2.LEFT * host.walk_direction
+	var my_position = host.center.global_position
+	query.from = my_position
+	query.to = my_position + raycast_direction * Vector2.LEFT * host.walk_direction
 	query.collide_with_bodies = true
 	query.collide_with_areas = false
 	query.collision_mask = 1
