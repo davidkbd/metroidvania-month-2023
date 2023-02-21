@@ -21,3 +21,7 @@ func _on_quit_confirmed() -> void:
 func _on_quit_cancelled() -> void:
 	get_tree().call_group("MENU_SFX", "play_button")
 	quit_confirm.queue_free()
+
+func _physics_process(_delta : float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		grab_focus()
