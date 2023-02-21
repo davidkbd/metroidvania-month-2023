@@ -1,0 +1,200 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://Menu/controls_menu/controls_menu.gd" id="1_ji6gl"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="3_6yr1s"]
+[ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="3_io8xj"]
+[ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_7o2va"]
+[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="4_n7i3a"]
+[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="5_cim5i"]
+[ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="5_wrqxl"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_y2i5s"]
+[ext_resource type="PackedScene" uid="uid://cimlcghry86oa" path="res://Menu/buttons/back_button/back_button.tscn" id="6_r2q8y"]
+[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="6_vbppe"]
+[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="7_y1lhn"]
+[ext_resource type="Texture2D" uid="uid://df0nori5j7y4k" path="res://UI/sprites/control-pad.png" id="10_ka7e5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n7i3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cim5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vbppe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y1lhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vbppe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cim5i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="help_menu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ji6gl")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_io8xj")
+
+[node name="zzz" parent="background" instance=ExtResource("4_7o2va")]
+sprite_frames = SubResource("SpriteFrames_h6so0")
+
+[node name="panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.04
+anchor_right = 0.96
+anchor_bottom = 0.96
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6yr1s")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="movement_title" parent="." instance=ExtResource("5_wrqxl")]
+position = Vector2(48, 32)
+text = "Movement"
+
+[node name="movement_title2" parent="." instance=ExtResource("5_wrqxl")]
+position = Vector2(48, 112)
+text = "UI"
+
+[node name="L_pad" type="Sprite2D" parent="."]
+position = Vector2(48, 48)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 0, 64, 64)
+
+[node name="R_pad" type="Sprite2D" parent="."]
+position = Vector2(112, 48)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="actions_title" parent="." instance=ExtResource("5_wrqxl")]
+position = Vector2(256, 31)
+text = "Actions"
+
+[node name="U_pad" type="Sprite2D" parent="."]
+position = Vector2(256, 48)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="interact" parent="." instance=ExtResource("5_y2i5s")]
+position = Vector2(320, 56)
+text = "Interact (Talk / Save)
+Look up"
+bold = false
+width = 256
+
+[node name="U_pad2" type="Sprite2D" parent="."]
+position = Vector2(256, 104)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="lookdown" parent="." instance=ExtResource("5_y2i5s")]
+position = Vector2(320, 112)
+text = "Look down"
+bold = false
+width = 256
+
+[node name="X_pad" type="Sprite2D" parent="."]
+position = Vector2(256, 160)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(384, 0, 64, 64)
+
+[node name="jump" parent="." instance=ExtResource("5_y2i5s")]
+position = Vector2(320, 168)
+text = "Jump
+Double jump
+Jump from walls
+  (Jump + Left / Right)"
+bold = false
+width = 256
+
+[node name="Sq_pad" type="Sprite2D" parent="."]
+position = Vector2(256, 216)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(448, 0, 64, 64)
+
+[node name="attack" parent="." instance=ExtResource("5_y2i5s")]
+position = Vector2(320, 224)
+text = "Attack"
+bold = false
+width = 256
+
+[node name="O_pad" type="Sprite2D" parent="."]
+position = Vector2(256, 272)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(320, 0, 64, 64)
+
+[node name="dash" parent="." instance=ExtResource("5_y2i5s")]
+position = Vector2(320, 280)
+text = "Dash"
+bold = false
+width = 256
+
+[node name="Sl_pad" type="Sprite2D" parent="."]
+position = Vector2(48, 128)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(576, 0, 64, 64)
+
+[node name="map" parent="." instance=ExtResource("5_y2i5s")]
+position = Vector2(112, 144)
+text = "Open map"
+bold = false
+width = 256
+
+[node name="St_pad" type="Sprite2D" parent="."]
+position = Vector2(48, 176)
+texture = ExtResource("10_ka7e5")
+centered = false
+region_enabled = true
+region_rect = Rect2(512, 0, 64, 64)
+
+[node name="menu" parent="." instance=ExtResource("5_y2i5s")]
+position = Vector2(112, 192)
+text = "Open Menu"
+bold = false
+width = 256
+
+[node name="back_button" parent="." instance=ExtResource("6_r2q8y")]
+layout_mode = 1
