@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Ingame/layers/map/map_layer.gd" id="1_k4eyx"]
 [ext_resource type="Script" path="res://Ingame/layers/map/map_container.gd" id="2_81fij"]
 [ext_resource type="Texture2D" uid="uid://dqvwhs0xwr6c1" path="res://Ingame/layers/map/sprites/player_position.png" id="2_iog5c"]
-[ext_resource type="Texture2D" uid="uid://dwyxvvh8m2bs1" path="res://Ingame/levels/sprites/map_001.png" id="3_x78d4"]
+[ext_resource type="Script" path="res://Ingame/layers/map/map.gd" id="4_hm7pb"]
 
 [node name="map_layer" type="CanvasLayer" groups=["MAP"]]
 layer = 100
@@ -35,10 +35,9 @@ z_index = 6
 position = Vector2(8, 8)
 text = "Map"
 
-[node name="map_sprite" type="Sprite2D" parent="map_container"]
-texture = ExtResource("3_x78d4")
-centered = false
+[node name="map" type="Node2D" parent="map_container"]
+script = ExtResource("4_hm7pb")
 
 [node name="player_position_sprite" type="Sprite2D" parent="map_container"]
-position = Vector2(320, 176)
+position = Vector2(320, 180)
 texture = ExtResource("2_iog5c")

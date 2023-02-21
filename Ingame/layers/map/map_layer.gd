@@ -24,5 +24,9 @@ func toggle_map() -> void:
 	else:
 		hide_map()
 
+func initialize(_game_state : Dictionary) -> void:
+	if _game_state.has("rooms"):
+		container.initialize_rooms_state(_game_state.rooms)
+
 func _ready() -> void:
 	container.modulate.a = .0
