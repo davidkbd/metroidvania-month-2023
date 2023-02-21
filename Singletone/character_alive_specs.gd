@@ -23,6 +23,8 @@ static func get_knight_specs() -> Dictionary:
 "speed":               120.0,
 "acceleration":        32.0,
 "deceleration":        32.0,
+"attack_deceleration": 15.0,
+"attack_impulse":      400.0,
 "gravity":             ProjectSettings.get_setting("physics/2d/default_gravity"),
 "max_up_speed":        -10000.0,
 "max_down_speed":      700.0,
