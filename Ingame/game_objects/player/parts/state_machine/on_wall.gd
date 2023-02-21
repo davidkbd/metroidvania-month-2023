@@ -7,6 +7,7 @@ var intial_direction
 var direction
 
 func enter() -> void:
+	host.animation_playblack.travel(name)
 	intial_direction = sign(host.get_last_slide_collision().get_position().x - host.global_position.x)
 	_apply_sprite_fip(intial_direction)
 	walled_time = .15
@@ -38,14 +39,14 @@ func _walled_gravity(delta) -> void:
 	if walled_time < .0:
 		host.wall_fall(delta)
 		
-func _apply_impulse(direction) -> void:
-	_apply_sprite_fip(direction)
+func _apply_impulse(_direction : float) -> void:
+	_apply_sprite_fip(_direction)
 	host.velocity.x = direction * host.specs.wall_jump_impulse
 
-func _apply_sprite_fip(direction) -> void:
-	if direction > .0:
+func _apply_sprite_fip(_direction : float) -> void:
+	if _direction > .0:
 		host.sprite.flip_h = true
-	elif direction < .0:
+	elif _direction < .0:
 		host.sprite.flip_h = false 
 
 func _update_colliders() -> void:

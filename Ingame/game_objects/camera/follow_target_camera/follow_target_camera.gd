@@ -28,4 +28,4 @@ func _process(_delta : float) -> void:
 	global_position = round(target_position + offset_position)
 
 func _ready() -> void:
-	current = true
+	make_current()

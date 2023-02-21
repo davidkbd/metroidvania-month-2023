@@ -1,6 +1,6 @@
+@tool
 extends Node2D
 class_name TextBox
-@tool
 
 signal text_animation_finished
 

@@ -1,6 +1,6 @@
+@tool
 extends Node2D
 class_name EnemySpawner
-@tool
 
 enum EnemyType {
 	KNIGHT

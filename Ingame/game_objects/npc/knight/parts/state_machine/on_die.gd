@@ -1,10 +1,16 @@
 extends StateMachineState
 
-# Called when the node enters the scene tree for the first time.
-func enter():
+func enter() -> void:
+	host.animation_playblack.travel(name)
 	host.sprite.material = host.sprite.shader_mat
 	var tween : Tween = create_tween()
 	tween.tween_method(_disolve, 1.0, .0, .5)
+
+func exit() -> void:
+	pass
+
+func step(_delta : float) -> StateMachineState:
+	return self
 
 func _disolve(q : float) -> void:
 	host.sprite.shader_mat.set_shader_parameter("dissolve_value", q)

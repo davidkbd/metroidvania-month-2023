@@ -1,7 +1,6 @@
 extends StateMachine
 
 @export var on_ground_state      : NodePath
-@export var on_crouch_state      : NodePath
 @export var on_jump_state        : NodePath
 @export var on_doublejump_state  : NodePath
 @export var on_wall_state        : NodePath
@@ -11,7 +10,6 @@ extends StateMachine
 @export var on_talking_state     : NodePath
 
 
-@onready var on_crouch      : StateMachineState = get_node(on_crouch_state)
 @onready var on_ground      : StateMachineState = get_node(on_ground_state)
 @onready var on_jump        : StateMachineState = get_node(on_jump_state)
 @onready var on_doublejump  : StateMachineState = get_node(on_doublejump_state)

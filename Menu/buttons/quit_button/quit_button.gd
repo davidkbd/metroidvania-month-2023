@@ -11,7 +11,7 @@ func _on_pressed() -> void:
 	quit_confirm.cancel_button_text = "Cancel"
 	quit_confirm.dialog_text = "Press Quit to close the game or Cancel to return to menu."
 	quit_confirm.connect("confirmed", _on_quit_confirmed)
-	quit_confirm.connect("cancelled", _on_quit_cancelled)
+	quit_confirm.get_cancel_button().pressed.connect(_on_quit_cancelled)
 	quit_confirm.popup_centered()
 	quit_confirm.get_cancel_button().grab_focus()
 

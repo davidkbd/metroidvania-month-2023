@@ -3,6 +3,7 @@ extends StateMachineState
 var jump_timer : float
 
 func enter() -> void:
+	host.animation_playblack.travel(name)
 	host.velocity.y = host.JUMP_IMPULSE
 	jump_timer = .1
 	host.enemy_died = null

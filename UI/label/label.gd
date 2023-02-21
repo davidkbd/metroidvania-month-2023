@@ -1,6 +1,6 @@
+@tool
 extends Node2D
 class_name PixelLabel
-@tool
 
 @export_category("Content")
 @export_multiline var text  : String = "" : 
@@ -63,9 +63,9 @@ class_name PixelLabel
 @export_category("Internal")
 @export var bitmap : Texture2D
 
-const CHAR_CELL_WIDTH  : float = 9.0
-const CHAR_CELL_HEIGHT : float = 11.0
-const CHAR_HEIGHT      : float = 10.0
+const CHAR_CELL_WIDTH  : int = 9
+const CHAR_CELL_HEIGHT : int = 11
+const CHAR_HEIGHT      : int = 10
 
 func _get_char_metadata(_char : String) -> Dictionary:
 	if bold:
@@ -312,5 +312,7 @@ func _draw():
 				height_i += 1
 				y += CHAR_HEIGHT
 				x = -char_md.width if l == " " else 0
-			_print_char(x - widths[height_i] / 2 if centered else x, y - widths.size() * CHAR_CELL_HEIGHT / 2 if vertical_centered else y, char_md.width, char_md.pos)
+			var char_x : int = (x - widths[height_i] / 2) if centered else x
+			var char_y : int = (y - widths.size() * CHAR_CELL_HEIGHT / 2) if vertical_centered else y
+			_print_char(char_x, char_y, char_md.width, char_md.pos)
 			x += char_md.width

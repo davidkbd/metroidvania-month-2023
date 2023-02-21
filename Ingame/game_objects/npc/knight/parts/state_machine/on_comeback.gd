@@ -1,12 +1,12 @@
 extends StateMachineState
 
-func enter():
-	pass
+func enter() -> void:
+	host.animation_playblack.travel(name)
 
-func exit():
+func exit() -> void:
 	pass
 	
-func step(delta):
+func step(delta : float) -> StateMachineState:
 	_movement()
 	host.fall(delta)
 	host.move_and_slide()

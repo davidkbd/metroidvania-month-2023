@@ -4,7 +4,7 @@ extends Sprite2D
 
 var walk_direction : float
 
-func _physics_process(delta : float) -> void:
+func _physics_process(_delta : float) -> void:
 	walk_direction = player.walk_direction
 	if walk_direction > .0:
 		flip_h = true

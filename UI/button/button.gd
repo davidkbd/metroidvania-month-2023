@@ -1,6 +1,6 @@
+@tool
 extends TextureButton
 class_name UIButton
-@tool
 
 @onready var label = $label
 

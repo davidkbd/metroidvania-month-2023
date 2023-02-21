@@ -1,6 +1,6 @@
+@tool
 extends Node2D
 class_name PixelTitle
-@tool
 
 @export_category("Content")
 @export_multiline var text  : String = "" : 

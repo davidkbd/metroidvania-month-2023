@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b80xwuy7nmueu"]
+[gd_scene load_steps=47 format=3 uid="uid://b80xwuy7nmueu"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
@@ -152,6 +152,9 @@ animation = &"attack"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i2ufr"]
 animation = &"chase"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yltc1"]
+animation = &"patrol"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uxrnv"]
 animation = &"die"
 
@@ -162,59 +165,53 @@ animation = &"idle"
 animation = &"patrol"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hx8j"]
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aakgw"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v7w2j"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_patrol"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2a2y2"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ix6lv"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1k3hg"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07pm7"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iue7h"]
 switch_mode = 2
-auto_advance = true
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_chase"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vrb1j"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_patrol"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s6twy"]
 advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mpchp"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1ffr6"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q3eem"]
-advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tsj41"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5nxpp"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i8lyk"]
-states/attack/node = SubResource("AnimationNodeAnimation_6kqv2")
-states/attack/position = Vector2(630, 230)
-states/chase/node = SubResource("AnimationNodeAnimation_i2ufr")
-states/chase/position = Vector2(641.575, 32.1999)
-states/die/node = SubResource("AnimationNodeAnimation_uxrnv")
-states/die/position = Vector2(789.16, 134.482)
-states/idle/node = SubResource("AnimationNodeAnimation_s0mlb")
-states/idle/position = Vector2(466.5, 28)
-states/patrol/node = SubResource("AnimationNodeAnimation_c26op")
-states/patrol/position = Vector2(454, 141)
-transitions = ["Start", "patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "patrol", "idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "idle", "patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "idle", "chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "patrol", "chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "chase", "attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "chase", "idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "attack", "chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "chase", "patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "patrol", "die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "chase", "die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "attack", "die", SubResource("AnimationNodeStateMachineTransition_q3eem")]
-graph_offset = Vector2(15.4575, 8.47492)
+states/Start/position = Vector2(255, 141)
+states/on_attack/node = SubResource("AnimationNodeAnimation_6kqv2")
+states/on_attack/position = Vector2(630, 230)
+states/on_chase/node = SubResource("AnimationNodeAnimation_i2ufr")
+states/on_chase/position = Vector2(630, -16)
+states/on_comeback/node = SubResource("AnimationNodeAnimation_yltc1")
+states/on_comeback/position = Vector2(454, -126.525)
+states/on_die/node = SubResource("AnimationNodeAnimation_uxrnv")
+states/on_die/position = Vector2(797.16, 141)
+states/on_idle/node = SubResource("AnimationNodeAnimation_s0mlb")
+states/on_idle/position = Vector2(454, -16)
+states/on_patrol/node = SubResource("AnimationNodeAnimation_c26op")
+states/on_patrol/position = Vector2(454, 141)
+transitions = ["Start", "on_patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "on_patrol", "on_idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "on_idle", "on_patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "on_idle", "on_chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "on_patrol", "on_chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "on_chase", "on_attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "on_chase", "on_idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "on_attack", "on_chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "on_chase", "on_patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "on_patrol", "on_die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "on_idle", "on_die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "on_chase", "on_die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "on_attack", "on_die", SubResource("AnimationNodeStateMachineTransition_q3eem"), "on_chase", "on_comeback", SubResource("AnimationNodeStateMachineTransition_tsj41"), "on_comeback", "on_idle", SubResource("AnimationNodeStateMachineTransition_5nxpp")]
+graph_offset = Vector2(144.458, -204.543)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
 
@@ -267,6 +264,9 @@ hframes = 6
 vframes = 3
 script = ExtResource("9_30soe")
 
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(0, -40)
+
 [node name="SwordCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-32, -48)
 shape = SubResource("CircleShape2D_bagww")
@@ -292,8 +292,5 @@ tree_root = SubResource("AnimationNodeStateMachine_i8lyk")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
-
-[node name="Center" type="Node2D" parent="."]
-position = Vector2(0, -40)
 
 [connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]

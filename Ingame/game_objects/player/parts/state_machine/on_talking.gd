@@ -36,7 +36,7 @@ func step(delta : float) -> StateMachineState:
 	
 	return self
 
-func _move(delta : float) -> void:
+func _move(_delta : float) -> void:
 	var direction = -1.0
 	var my_position : float = host.global_position.x
 	var npc_position : float = host.talking_npc.global_position.x
@@ -64,4 +64,5 @@ func _text_animation_finished() -> void:
 	end_talking_lock_time = .3
 
 func _ready() -> void:
-	dialog_textboxses.text_animation_finished.connect(_text_animation_finished)
+	if dialog_textboxses:
+		dialog_textboxses.text_animation_finished.connect(_text_animation_finished)

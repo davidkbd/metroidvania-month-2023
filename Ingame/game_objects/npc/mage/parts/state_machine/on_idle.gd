@@ -6,5 +6,5 @@ func enter():
 func exit():
 	pass
 	
-func step(delta):
+func step(_delta : float):
 	return self

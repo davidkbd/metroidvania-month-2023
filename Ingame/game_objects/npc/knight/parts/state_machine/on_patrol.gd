@@ -3,14 +3,15 @@ extends StateMachineState
 @export var raycast_origin_position      : Vector2 = Vector2.UP * 32.0
 @export var raycast_destination_position : Vector2 = Vector2.UP * 32.0 + Vector2.LEFT * 32.0
 
-func enter():
+func enter() -> void:
+	host.animation_playblack.travel(name)
 	call_deferred("_choose_direction")
 	state_machine.start_idle_patrol_switch_timer()
 
-func exit():
+func exit() -> void:
 	pass
 	
-func step(delta):
+func step(delta : float) -> StateMachineState:
 	if not _can_walk():
 		host.set_walk_direction(-host.walk_direction)
 	_movement()

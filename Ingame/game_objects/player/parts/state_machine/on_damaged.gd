@@ -3,6 +3,7 @@ extends StateMachineState
 var damage_timer : float
 
 func enter() -> void:
+	host.animation_playblack.travel(name)
 	host.damaged_sfx.play()
 	if is_instance_valid(host.damager):
 		host.velocity.y = host.DAMAGE_IMPULSE

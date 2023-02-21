@@ -1,7 +1,7 @@
 extends StateMachineState
 
 func enter() -> void:
-	pass
+	host.animation_playblack.travel(name)
 
 func exit() -> void:
 	pass
@@ -19,7 +19,7 @@ func step(delta : float) -> StateMachineState:
 
 	return self
 
-func _movement(delta : float) -> void:
+func _movement(_delta : float) -> void:
 	host.set_walk_direction(Input.get_axis("l", "r"))
 	if host.walk_direction:
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.air_acceleration)

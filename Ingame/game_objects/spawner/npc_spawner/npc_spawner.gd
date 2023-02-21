@@ -1,6 +1,6 @@
+@tool
 extends Node2D
 class_name NpcSpawner
-@tool
 
 enum NpcType {
 	MAGE, KNIGHT

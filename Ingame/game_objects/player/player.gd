@@ -14,6 +14,7 @@ class_name Player
 @onready var damaged_sfx          : AudioStreamPlayer = $damaged_sfx
 @onready var skills               : PlayerSkills      = $skills
 
+
 var talking_npc   : NPC = null
 
 var damager    : CharacterBody2D = null
@@ -53,6 +54,7 @@ func can_snap_to_wall() -> bool:
 	return result.size() > 0 and is_on_wall()
 
 func _ready() -> void:
+#	super._ready()
 	get_tree().call_deferred(
 			"call_group",
 			"PLAYER_LISTENER",

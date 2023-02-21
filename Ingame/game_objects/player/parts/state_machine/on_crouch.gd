@@ -3,7 +3,7 @@ extends StateMachineState
 @export var check_floor_ray_vector : Vector2 = Vector2.DOWN * 32.0
 
 func enter() -> void:
-	pass
+	host.animation_playblack.travel(name)
 
 func exit() -> void:
 	pass

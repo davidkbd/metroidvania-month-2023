@@ -4,7 +4,7 @@ extends Area2D
 
 var savepoint : SavepointArea = null
 
-func room_listener_on_activated(room : Room) -> void:
+func room_listener_on_activated(_room : Room) -> void:
 	enabled = false
 	await create_tween().tween_interval(2.0).finished
 	enabled = true
@@ -14,7 +14,7 @@ func _on_area_entered(area : SavepointArea):
 		get_tree().get_first_node_in_group("HELP_TIPS").show_pad(0)
 		savepoint = area
 
-func _on_area_exited(area : SavepointArea):
+func _on_area_exited(_area : SavepointArea):
 	get_tree().get_first_node_in_group("HELP_TIPS").hide_pad()
 	savepoint = null
 

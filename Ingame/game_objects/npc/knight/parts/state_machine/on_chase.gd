@@ -1,12 +1,12 @@
 extends StateMachineState
 
-func enter():
+func enter() -> void:
+	host.animation_playblack.travel(name)
+
+func exit() -> void:
 	pass
 
-func exit():
-	pass
-
-func step(delta):
+func step(delta : float) -> StateMachineState:
 	if not host.player : return state_machine.on_comeback
 	_choose_direction()
 	_movement()

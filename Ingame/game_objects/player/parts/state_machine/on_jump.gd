@@ -4,6 +4,7 @@ var jump_timer            : float
 var prevent_on_wall_timer : float
 
 func enter() -> void:
+	host.animation_playblack.travel(name)
 	host.jump_sfx.play()
 	host.velocity.y = host.specs.jump_impulse
 	jump_timer = .1
@@ -28,7 +29,7 @@ func step(delta : float) -> StateMachineState:
 	if host.damager: return state_machine.on_damaged
 	return self
 
-func _movement(delta : float) -> void:
+func _movement(_delta : float) -> void:
 	host.set_walk_direction(Input.get_axis("l", "r"))
 	if host.walk_direction:
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.air_acceleration)

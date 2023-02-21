@@ -8,6 +8,7 @@ extends StateMachineState
 var coyote_timer : float
 
 func enter() -> void:
+	host.animation_playblack.travel(name)
 	coyote_timer = coyote_time
 
 func exit() -> void:
@@ -21,7 +22,6 @@ func step(delta : float) -> StateMachineState:
 
 	if Input.is_action_just_pressed("map"): map.toggle_map()
 	if Input.is_action_just_pressed("j"): return state_machine.on_jump
-	if Input.is_action_pressed("d"): return state_machine.on_crouch
 	if host.talking_npc and Input.is_action_pressed("u"): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
 	if host.damager: return state_machine.on_damaged
@@ -38,6 +38,8 @@ func _coyote_time(delta : float) -> void:
 func _movement() -> void:
 	host.set_walk_direction(Input.get_axis("l", "r"))
 	if host.walk_direction:
+		host.animation_tree.set("parameters/on_ground/blend_position", host.velocity.x)
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
 	else:
+		host.animation_tree.set("parameters/on_ground/blend_position", .0)
 		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
