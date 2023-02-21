@@ -1,12 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf04maky452na"]
+[gd_scene load_steps=13 format=3 uid="uid://cf04maky452na"]
 
 [ext_resource type="Script" path="res://Menu/options_menu/options_menu.gd" id="1_tfdth"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_d57fj"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_rj6ce"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_fuw5u"]
+[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="4_ci63n"]
+[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="5_2o2s0"]
 [ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_t8xu4"]
+[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="6_hg2tq"]
 [ext_resource type="PackedScene" uid="uid://bkeup4bed05rk" path="res://UI/slider/slider.tscn" id="6_hxa6w"]
 [ext_resource type="PackedScene" uid="uid://cimlcghry86oa" path="res://Menu/buttons/back_button/back_button.tscn" id="6_rcxg2"]
+[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="7_bprl0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ci63n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2o2s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hg2tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bprl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hg2tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2o2s0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="options_menu" type="Control"]
 texture_filter = 1
@@ -28,6 +58,7 @@ grow_vertical = 2
 texture = ExtResource("2_rj6ce")
 
 [node name="zzz" parent="background" instance=ExtResource("3_fuw5u")]
+sprite_frames = SubResource("SpriteFrames_h6so0")
 
 [node name="panel" type="NinePatchRect" parent="."]
 layout_mode = 1
