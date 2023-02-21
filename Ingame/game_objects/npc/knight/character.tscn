@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b80xwuy7nmueu"]
+[gd_scene load_steps=49 format=3 uid="uid://ch2pnqrrupbv8"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="8_k7dny"]
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://disolve-texture.png" id="9_ee6j4"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/damage_area/damage_area.gd" id="14_v5hiw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
 shader = ExtResource("8_k7dny")
@@ -346,6 +347,7 @@ collision_mask = 8
 collision_layer = 8
 collision_mask = 0
 monitoring = false
+script = ExtResource("14_v5hiw")
 
 [node name="body_collider" type="CollisionShape2D" parent="body_area"]
 position = Vector2(0, -40)
@@ -355,6 +357,8 @@ shape = SubResource("CapsuleShape2D_0h6vo")
 collision_layer = 8
 collision_mask = 0
 monitoring = false
+script = ExtResource("14_v5hiw")
+power = 15.0
 
 [node name="SwordCollider" type="CollisionShape2D" parent="sword_area"]
 position = Vector2(-32, -16)

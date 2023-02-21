@@ -23,7 +23,7 @@ func step(delta : float) -> StateMachineState:
 		_go_down()
 		return state_machine.on_air
 		
-	if host.damager: return state_machine.on_damaged
+	if host.damager.size(): return state_machine.on_damaged
 	
 	return self
 

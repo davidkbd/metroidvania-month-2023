@@ -24,7 +24,7 @@ func step(delta : float) -> StateMachineState:
 	if Input.is_action_just_pressed("j"): return state_machine.on_jump
 	if host.talking_npc and Input.is_action_pressed("u"): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
-	if host.damager: return state_machine.on_damaged
+	if host.damager.size(): return state_machine.on_damaged
 	
 	return self
 

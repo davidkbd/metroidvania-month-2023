@@ -1,27 +1,34 @@
 extends StateMachineState
 
+var hilight_tween : Tween
+
 var damage_timer : float
 
 func enter() -> void:
 	host.animation_playblack.travel(name)
+	if hilight_tween: hilight_tween.kill()
+	hilight_tween = create_tween()
+	host.modulate = Color(1.5, 1.5, 1.5, 1)
+	hilight_tween.tween_property(host, "modulate", Color.WHITE, .25)
 	host.damaged_sfx.play()
-	if is_instance_valid(host.damager):
-		host.velocity.y = host.DAMAGE_IMPULSE
-		host.velocity.x = host.DAMAGE_IMPULSE * sign(host.damager.global_position.x - host.global_position.x)
-		if host.cube_is_full:
-			host.drop_cube()
+	if host.damager.size():
+		var impulse := Vector2.ZERO
+		impulse.y = host.specs.damage_impulse
+		impulse.x = host.specs.damage_impulse * sign(host.damager.global_position.x - host.global_position.x)
+		impulse *= host.damager.power
+		host.velocity = impulse
 		damage_timer = .1
-	host.damager = null
+	host.damager = {}
 
 func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-	if host.go_down_floor_sensor.is_colliding(): _go_down_cancel()
-	if host.damager: enter()
+#	if host.go_down_floor_sensor.is_colliding(): _go_down_cancel()
+	if host.damager.size(): enter()
 
 	host.fall(delta)
-	host.velocity.x = move_toward(host.velocity.x, .0, host.DAMAGE_DECELERATION)
+	host.velocity.x = move_toward(host.velocity.x, .0, host.specs.damage_deceleration)
 
 	damage_timer -= delta
 	host.move_and_slide()

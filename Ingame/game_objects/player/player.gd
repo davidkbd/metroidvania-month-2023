@@ -17,7 +17,7 @@ class_name Player
 
 var talking_npc   : NPC = null
 
-var damager    : CharacterBody2D = null
+var damager    : Dictionary = {}
 var enemy_died : CharacterBody2D = null
 
 var walk_direction : float

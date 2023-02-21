@@ -430,6 +430,7 @@ debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 position = Vector2(0, 14)
 
 [node name="enemy_damage_area" parent="." instance=ExtResource("20_yqshm")]
+position = Vector2(0, 3)
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_77pts")

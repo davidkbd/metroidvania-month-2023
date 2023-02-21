@@ -15,7 +15,7 @@ func step(delta : float) -> StateMachineState:
 	if host.get_collision_mask_value(1) and host.is_on_floor(): return state_machine.on_ground
 	if host.can_snap_to_wall(): return state_machine.on_wall
 	if host.enemy_died: return state_machine.on_enemybounce
-	if host.damager: return state_machine.on_damaged
+	if host.damager.size(): return state_machine.on_damaged
 
 	return self
 

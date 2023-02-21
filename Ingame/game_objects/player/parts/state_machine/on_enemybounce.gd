@@ -19,7 +19,7 @@ func step(delta : float) -> StateMachineState:
 	jump_timer -= delta
 	host.move_and_slide()
 	
-	if host.damager: return state_machine.on_damaged
+	if host.damager.size(): return state_machine.on_damaged
 	if jump_timer < .0 and host.is_on_floor(): return state_machine.on_ground
 	if Input.is_action_just_pressed("j"): return state_machine.on_doublejump
 	return self
