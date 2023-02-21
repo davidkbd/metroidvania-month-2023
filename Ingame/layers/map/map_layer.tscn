@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqvwhs0xwr6c1" path="res://Ingame/layers/map/sprites/player_position.png" id="2_iog5c"]
 [ext_resource type="Script" path="res://Ingame/layers/map/map.gd" id="4_hm7pb"]
 
-[node name="map_layer" type="CanvasLayer" groups=["MAP"]]
+[node name="map_layer" type="CanvasLayer" groups=["MAP", "PROGRESS_LISTENER"]]
 layer = 100
 script = ExtResource("1_k4eyx")
 

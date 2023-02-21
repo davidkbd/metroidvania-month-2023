@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://n1gl7gekmp5d"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.gd" id="1_1bdoi"]
 

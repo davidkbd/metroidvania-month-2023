@@ -25,7 +25,7 @@ func progress_listener_on_progress_store_requested(from_room_id : String) -> voi
 	var storeable_game_state = _create_storeable_game_state()
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.WRITE)
 	file.store_var(storeable_game_state)
-	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_progress_stored")
+	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_progress_stored", game_state)
 
 func menu_listener_on_game_start_requested(_slot_id : String) -> void:
 	current_slot_id = _slot_id

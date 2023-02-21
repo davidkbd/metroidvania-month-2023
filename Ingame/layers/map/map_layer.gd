@@ -8,6 +8,9 @@ class_name Map
 
 var container_visivility_tween : Tween
 
+func progress_listener_on_progress_stored(_game_state : Dictionary) -> void:
+	initialize(_game_state)
+
 func show_map() -> void:
 	if container_visivility_tween: container_visivility_tween.kill()
 	container_visivility_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
