@@ -43,8 +43,11 @@ func _create_storeable_game_state() -> Dictionary:
 		for spawner_state in room_state.keys():
 			for character_state in r.rooms[room_key].state[spawner_state].keys():
 				if not r.rooms[room_key].state[spawner_state][character_state].storeable:
-					r.rooms[room_key].state[spawner_state][character_state] = {}
-				print(r.rooms[room_key].state[spawner_state][character_state])
+#					r.rooms[room_key].state[spawner_state][character_state] = {}
+					r.rooms[room_key].state[spawner_state]={}
+#				print(r.rooms[room_key].state[spawner_state][character_state])
+	print(r)
+	print(game_state)
 	print("Hay que desechar todos los datos que se encutren en el dictionary que sean storeable=false")
 	return r
 
@@ -52,3 +55,4 @@ func _ready():
 	add_to_group("MENU_LISTENER")
 	add_to_group("PROGRESS_LISTENER")
 	Directories.create()
+	

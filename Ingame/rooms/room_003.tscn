@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://b0vn0c2ckxsjs"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_6dtbh"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_d5o5w"]
+[ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_d5o5w"]
 [ext_resource type="Texture2D" uid="uid://dbvqqb42rox8e" path="res://Ingame/level-sprites/default/tiles/tiles.png" id="3_rvtpo"]
 [ext_resource type="Texture2D" uid="uid://dl85d5d32a1y3" path="res://Ingame/level-sprites/default/tiles/groundTile.png" id="4_ryd6h"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_othvg"]
+[ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_othvg"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_1ad87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
@@ -1420,7 +1420,7 @@ terrain_set_0/terrain_2/color = Color(0.172549, 0.411765, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_8e76h")
 sources/3 = SubResource("TileSetAtlasSource_1nk2i")
 
-[node name="room_002" type="Node2D"]
+[node name="room_003" type="Node2D"]
 script = ExtResource("1_6dtbh")
 
 [node name="room_area" parent="." instance=ExtResource("2_d5o5w")]
