@@ -1,10 +1,11 @@
 extends CharacterAlive
 
-@onready var initial_position : Vector2 = global_position
-@onready var animation        : AnimationPlayer = $AnimationPlayer
-@onready var sword_collider   : CollisionShape2D = $SwordCollider
-@onready var center           : Node2D = $Center
+@onready var center                : Node2D = $Center
+@onready var animation             : AnimationPlayer = $AnimationPlayer
+@onready var sword_collider        : CollisionShape2D = $SwordCollider
+@onready var attack_foot_particles : CPUParticles2D = $attack_foot_particles
 
+@onready var initial_position : Vector2 = global_position
 @onready var player           : Player = null
 
 var walk_direction : float
@@ -13,9 +14,12 @@ var value : int = 0
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
 	sword_collider.position = Vector2.LEFT * (-32.0) * walk_direction + Vector2.UP * 64.0
+	attack_foot_particles.position.x = 16.0 * walk_direction
 
 func attack_impulse() -> void:
 	velocity.x = specs.attack_impulse * walk_direction
+	attack_foot_particles.restart()
+	attack_foot_particles.emitting = true
 
 func update_room_data(_data : Dictionary) -> void:
 	print("NPC LOADED DATA: ", _data)
