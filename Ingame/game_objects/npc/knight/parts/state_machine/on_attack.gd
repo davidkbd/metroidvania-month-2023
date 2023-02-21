@@ -6,13 +6,13 @@ func enter() -> void:
 	host.animation_playblack.travel(name)
 	host.velocity = Vector2.ZERO
 	animation_finished_timer = host.animation.get_animation("attack").length
+	Engine.time_scale = .1
 	
 func exit() -> void:
-	pass
+	Engine.time_scale = 1.0
 	
 func step(delta : float) -> StateMachineState:
 	animation_finished_timer -= delta
-	
 	_brake()
 	host.move_and_slide()
 	

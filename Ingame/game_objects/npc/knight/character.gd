@@ -2,7 +2,7 @@ extends CharacterAlive
 
 @onready var center                : Node2D = $Center
 @onready var animation             : AnimationPlayer = $AnimationPlayer
-@onready var sword_collider        : CollisionShape2D = $SwordCollider
+@onready var sword_collider        : CollisionShape2D = $player_damage_area/SwordCollider
 @onready var attack_foot_particles : CPUParticles2D = $attack_foot_particles
 
 @onready var initial_position : Vector2 = global_position
@@ -35,4 +35,5 @@ func _update_room_data() -> void:
 
 func _ready() -> void:
 	specs = CharacterAliveSpecs.get_knight_specs()
+	sword_collider.disabled = true
 	call_deferred("_update_room_data")
