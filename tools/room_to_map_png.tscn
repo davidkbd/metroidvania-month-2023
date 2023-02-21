@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlygdcrpf1yvj"]
+
+[ext_resource type="PackedScene" uid="uid://c0eke8npk0umn" path="res://Ingame/rooms/room_001.tscn" id="1_08ig0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnl4k"]
+
+[sub_resource type="GDScript" id="GDScript_6k48p"]
+script/source = "extends Node2D
+
+@export_dir var output_directory : String
+@export_dir var rooms_directory  : String
+@export     var room_template : PackedScene
+
+@onready var viewport := $content/Camera2D.get_viewport()
+
+func _make_snapshots() -> void:
+	await create_tween().tween_interval(.1).finished
+	var dir = DirAccess.open(rooms_directory)
+	for file in dir.get_files():
+		if file.ends_with(\".tscn\"):
+			var room_instance = load(rooms_directory + \"/\" + file).instantiate()
+			room_instance.modulate = Color.WHITE
+			$content.add_child(room_instance)
+			room_instance.global_position = Vector2.ZERO
+			_clean_room(room_instance)
+
+			await create_tween().tween_interval(.1).finished
+
+			var export_img = viewport.get_texture().get_image()
+			var export_path = output_directory + \"/map-\" + file.replace(\".tscn\", \".png\")
+			export_img.save_png(export_path)
+			
+			await get_tree().physics_frame
+
+			var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+			room_instance.modulate = Color(2, 2, 2, 1)
+			tween.tween_interval(.1)
+			tween.tween_property(room_instance, \"modulate\", Color.WHITE, .15)
+			await tween.finished
+			room_instance.queue_free()
+			await create_tween().tween_interval(.1).finished
+	get_tree().quit()
+
+func _clean_room(room_instance) -> void:
+	var content = room_instance.find_child(\"room_content\")
+	for spawner in content.find_children(\"*spawner*\"):
+		spawner.queue_free()
+
+func _ready():
+	$content/Camera2D.current = true
+	$content/Camera2D.global_position = Vector2.ZERO
+	viewport.transparent_bg=true
+	call_deferred(\"_make_snapshots\")
+"
+
+[sub_resource type="Environment" id="Environment_dkj0y"]
+background_mode = 3
+background_canvas_max_layer = 200
+adjustment_enabled = true
+adjustment_contrast = 1.5
+adjustment_saturation = 0.2
+
+[node name="container" type="Node2D"]
+material = SubResource("ShaderMaterial_vnl4k")
+scale = Vector2(0.1, 0.1)
+script = SubResource("GDScript_6k48p")
+output_directory = "res://Ingame/rooms"
+rooms_directory = "res://Ingame/rooms"
+room_template = ExtResource("1_08ig0")
+
+[node name="content" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="content"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dkj0y")
