@@ -2,7 +2,7 @@ extends CharacterAlive
 
 @onready var center                : Node2D = $Center
 @onready var animation             : AnimationPlayer = $AnimationPlayer
-@onready var sword_collider        : CollisionShape2D = $player_damage_area/SwordCollider
+@onready var sword_collider        : CollisionShape2D = $sword_area/SwordCollider
 @onready var attack_foot_particles : CPUParticles2D = $attack_foot_particles
 
 @onready var initial_position : Vector2 = global_position
@@ -13,7 +13,7 @@ var value : int = 0
 
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
-	sword_collider.position = Vector2.LEFT * (-32.0) * walk_direction + Vector2.UP * 64.0
+	sword_collider.position = Vector2.LEFT * (-32.0) * walk_direction
 	attack_foot_particles.position.x = 16.0 * walk_direction
 
 func attack_impulse() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cg6rsp0xxfkvq"]
+[gd_scene load_steps=64 format=3 uid="uid://cg6rsp0xxfkvq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
+[ext_resource type="PackedScene" uid="uid://cpm8y1uompigj" path="res://Ingame/game_objects/player/parts/enemy_damage_area/enemy_damage_area.tscn" id="20_yqshm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
 shader = ExtResource("15_unq2k")
@@ -29,7 +30,7 @@ shader_parameter/timescale = 0.25
 shader_parameter/tex = ExtResource("17_0r6jg")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjv8n"]
-radius = 14.99
+radius = 20.0
 height = 45.98
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46x3k"]
@@ -408,7 +409,7 @@ vframes = 8
 script = ExtResource("16_4ekit")
 
 [node name="body_collider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.01)
+position = Vector2(0, -3.99)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yjv8n")
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)
@@ -427,6 +428,8 @@ debug_color = Color(0.917647, 0, 0.705882, 0.419608)
 
 [node name="enemy_hit_area" parent="." instance=ExtResource("13_5apk1")]
 position = Vector2(0, 14)
+
+[node name="enemy_damage_area" parent="." instance=ExtResource("20_yqshm")]
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_77pts")
