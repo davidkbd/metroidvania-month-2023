@@ -1,14 +1,45 @@
-[gd_scene load_steps=10 format=3 uid="uid://bo2ap6waiebgb"]
+[gd_scene load_steps=16 format=3 uid="uid://bo2ap6waiebgb"]
 
 [ext_resource type="Script" path="res://Menu/principal_menu/principal_menu.gd" id="1_bp4pa"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0msl5"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_uh5pl"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_xhhig"]
-[ext_resource type="PackedScene" uid="uid://bipnhavrx54oa" path="res://Menu/buttons/play_button/play_button.tscn" id="6_dab66"]
-[ext_resource type="PackedScene" uid="uid://bgfoam4dnvnjw" path="res://Menu/buttons/options_button/options_button.tscn" id="7_5rj78"]
-[ext_resource type="PackedScene" uid="uid://cvpwmwxo3mmol" path="res://Menu/buttons/credits_button/credits_button.tscn" id="8_njrsb"]
+[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="4_782pu"]
+[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="5_rllpr"]
+[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="6_5xuon"]
+[ext_resource type="PackedScene" uid="uid://d00sany3yuwyv" path="res://Menu/buttons/play_button/play_button.tscn" id="6_dab66"]
+[ext_resource type="PackedScene" uid="uid://ccx1mv6cykivo" path="res://Menu/buttons/options_button/options_button.tscn" id="7_5rj78"]
+[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="7_t8lch"]
+[ext_resource type="PackedScene" uid="uid://c0lno0c0myi3d" path="res://Menu/buttons/credits_button/credits_button.tscn" id="8_njrsb"]
 [ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="9_c00c0"]
-[ext_resource type="PackedScene" uid="uid://cenpygx3uaebe" path="res://Menu/buttons/quit_button/quit_button.tscn" id="9_cg4ke"]
+[ext_resource type="PackedScene" uid="uid://b8xl2b6d65mfo" path="res://Menu/buttons/quit_button/quit_button.tscn" id="9_cg4ke"]
+[ext_resource type="PackedScene" uid="uid://b6qf1uo3q04cl" path="res://Menu/buttons/controls_button/controls_button.tscn" id="12_qrxpa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_782pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rllpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5xuon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t8lch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5xuon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rllpr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="principal_menu" type="Control"]
 texture_filter = 1
@@ -21,7 +52,7 @@ grow_vertical = 2
 script = ExtResource("1_bp4pa")
 
 [node name="background" type="TextureRect" parent="."]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -29,9 +60,10 @@ grow_vertical = 2
 texture = ExtResource("2_0msl5")
 
 [node name="zzz" parent="background" instance=ExtResource("3_xhhig")]
+sprite_frames = SubResource("SpriteFrames_h6so0")
 
 [node name="panel" type="NinePatchRect" parent="."]
-anchors_preset = -1
+layout_mode = 0
 anchor_left = 0.68
 anchor_top = 0.56
 anchor_right = 0.97
@@ -47,25 +79,71 @@ position = Vector2(440, 184)
 text = "Metroidcosa"
 
 [node name="play_button" parent="." instance=ExtResource("6_dab66")]
-offset_left = -192.0
-offset_top = -136.0
-offset_right = -128.0
-offset_bottom = -120.0
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 536.0
+offset_top = 216.0
+offset_right = 600.0
+offset_bottom = 232.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="options_button" parent="." instance=ExtResource("7_5rj78")]
-offset_left = -192.0
-offset_top = -112.0
-offset_right = -128.0
-offset_bottom = -96.0
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 536.0
+offset_top = 240.0
+offset_right = 600.0
+offset_bottom = 256.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="controls_button" parent="." instance=ExtResource("12_qrxpa")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 536.0
+offset_top = 264.0
+offset_right = 600.0
+offset_bottom = 280.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="credits_button" parent="." instance=ExtResource("8_njrsb")]
-offset_left = -192.0
-offset_top = -88.0
-offset_right = -128.0
-offset_bottom = -72.0
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 536.0
+offset_top = 288.0
+offset_right = 600.0
+offset_bottom = 304.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="quit_button" parent="." instance=ExtResource("9_cg4ke")]
-offset_left = -192.0
-offset_top = -64.0
-offset_right = -128.0
-offset_bottom = -48.0
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 536.0
+offset_top = 312.0
+offset_right = 600.0
+offset_bottom = 328.0
+grow_horizontal = 1
+grow_vertical = 1

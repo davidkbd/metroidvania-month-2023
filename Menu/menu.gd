@@ -3,6 +3,7 @@ extends Node
 @export var principal_menu_template     : PackedScene
 @export var slots_menu_template         : PackedScene
 @export var options_menu_template       : PackedScene
+@export var controls_menu_template      : PackedScene
 @export var credits_menu_template       : PackedScene
 @export var game_finished_menu_template : PackedScene
 
@@ -19,6 +20,9 @@ func menu_listener_on_open_slots_menu_pressed() -> void:
 
 func menu_listener_on_open_options_menu_pressed() -> void:
 	_show_menu(options_menu_template)
+
+func menu_listener_on_open_controls_menu_pressed() -> void:
+	_show_menu(controls_menu_template)
 
 func menu_listener_on_open_credits_menu_pressed() -> void:
 	_show_menu(credits_menu_template)
