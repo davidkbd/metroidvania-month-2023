@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://78v7juh2ypqq"
-path="res://.godot/imported/map-room_001.png-51aa995c8fb698494a25c12e7c3f9ef0.ctex"
+uid="uid://chvxupbtvic7s"
+path="res://.godot/imported/rockTile.png-7a84d52e49bd2c6062a63aa3cea74882.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/rooms/map-room_001.png"
-dest_files=["res://.godot/imported/map-room_001.png-51aa995c8fb698494a25c12e7c3f9ef0.ctex"]
+source_file="res://Ingame/level-sprites/default/tiles/rockTile.png"
+dest_files=["res://.godot/imported/rockTile.png-7a84d52e49bd2c6062a63aa3cea74882.ctex"]
 
 [params]
 

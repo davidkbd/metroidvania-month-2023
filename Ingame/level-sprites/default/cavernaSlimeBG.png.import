@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://78v7juh2ypqq"
-path="res://.godot/imported/map-room_001.png-51aa995c8fb698494a25c12e7c3f9ef0.ctex"
+uid="uid://erqactl2ihou"
+path="res://.godot/imported/cavernaSlimeBG.png-88199dea08c8426998ebf23ec33cbb9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/rooms/map-room_001.png"
-dest_files=["res://.godot/imported/map-room_001.png-51aa995c8fb698494a25c12e7c3f9ef0.ctex"]
+source_file="res://Ingame/level-sprites/default/cavernaSlimeBG.png"
+dest_files=["res://.godot/imported/cavernaSlimeBG.png-88199dea08c8426998ebf23ec33cbb9b.ctex"]
 
 [params]
 

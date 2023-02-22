@@ -12,7 +12,8 @@ func initialize(_game_state : Dictionary) -> void:
 #	room.activate()
 
 	for r in get_children():
-		r.initialize(_game_state)
+		if r is Room:
+			r.initialize(_game_state)
 
 	await get_tree().physics_frame
 	room.teleport_player()
