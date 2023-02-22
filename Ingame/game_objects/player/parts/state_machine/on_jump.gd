@@ -22,7 +22,7 @@ func step(delta : float) -> StateMachineState:
 	jump_timer -= delta
 	prevent_on_wall_timer -= delta
 
-	if host.can_double_jump() and Input.is_action_just_pressed("j"): return state_machine.on_doublejump
+	if host.can_double_jump() and Input.is_action_just_pressed("x"): return state_machine.on_doublejump
 	if jump_timer < .0 and host.is_on_floor(): return state_machine.on_ground
 	if prevent_on_wall_timer < .0 and host.can_snap_to_wall(): return state_machine.on_wall
 	if host.enemy_died: return state_machine.on_enemybounce

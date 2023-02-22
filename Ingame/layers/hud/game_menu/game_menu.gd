@@ -34,7 +34,7 @@ func _open() -> void:
 
 func _process(_delta : float):
 	if visible: return
-	if Input.is_action_just_pressed("x"):
+	if Input.is_action_just_pressed("st"):
 		_open()
 
 func _ready() -> void:

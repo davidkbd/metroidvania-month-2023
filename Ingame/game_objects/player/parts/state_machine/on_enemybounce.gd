@@ -21,7 +21,7 @@ func step(delta : float) -> StateMachineState:
 	
 	if host.damager.size(): return state_machine.on_damaged
 	if jump_timer < .0 and host.is_on_floor(): return state_machine.on_ground
-	if Input.is_action_just_pressed("j"): return state_machine.on_doublejump
+	if Input.is_action_just_pressed("x"): return state_machine.on_doublejump
 	return self
 
 func _jump(delta : float) -> void:

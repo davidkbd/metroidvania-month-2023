@@ -23,7 +23,7 @@ func step(delta : float) -> StateMachineState:
 	_walled_gravity(delta)
 	host.move_and_slide()
 	walled_time -= delta
-	if Input.is_action_just_pressed("j") and direction != intial_direction and direction != .0:
+	if Input.is_action_just_pressed("x") and direction != intial_direction and direction != .0:
 		_apply_impulse(direction)
 		return state_machine.on_jump
 	if host.is_on_floor(): return state_machine.on_ground

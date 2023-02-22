@@ -19,7 +19,7 @@ func step(delta : float) -> StateMachineState:
 	
 	if Input.is_action_just_released("d"): return get_parent().on_ground
 	
-	if Input.is_action_just_pressed("j") and _can_go_down():
+	if Input.is_action_just_pressed("x") and _can_go_down():
 		_go_down()
 		return state_machine.on_air
 		

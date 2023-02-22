@@ -17,6 +17,7 @@ func _on_pressed() -> void:
 
 func _on_quit_confirmed() -> void:
 	get_tree().call_group("MENU_SFX", "play_button")
+	get_tree().call_group("HUD_LISTENER", "hud_listener_on_level_closed")
 
 func _on_quit_cancelled() -> void:
 	get_tree().call_group("MENU_SFX", "play_button")

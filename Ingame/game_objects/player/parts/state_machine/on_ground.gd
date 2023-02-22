@@ -20,8 +20,8 @@ func step(delta : float) -> StateMachineState:
 
 	host.move_and_slide()
 
-	if Input.is_action_just_pressed("map"): map.toggle_map()
-	if Input.is_action_just_pressed("j"): return state_machine.on_jump
+	if Input.is_action_just_pressed("sl"): map.toggle_map()
+	if Input.is_action_just_pressed("x"): return state_machine.on_jump
 	if host.talking_npc and Input.is_action_pressed("u"): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged

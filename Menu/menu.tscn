@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://Menu/credits_menu/credits_menu.tscn" id="5_lly03"]
 [ext_resource type="PackedScene" path="res://Menu/game_finished_menu/game_finished_menu.tscn" id="6_e3pk2"]
 
-[node name="menu" type="Node" groups=["HUD_LISTENER", "MENU_LISTENER"]]
+[node name="menu" type="CanvasLayer" groups=["HUD_LISTENER", "MENU_LISTENER"]]
 script = ExtResource("1_ygp0x")
 principal_menu_template = ExtResource("2_qcsjw")
 slots_menu_template = ExtResource("3_ao8vq")
