@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://cshwlyorvtvl5"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.gd" id="1_y8ucm"]
 [ext_resource type="Texture2D" uid="uid://degb8ht2g4ua0" path="res://Ingame/game_objects/npc/mage/sprites/spawner_sprite.png" id="2_gxqgp"]

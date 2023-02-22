@@ -3,7 +3,7 @@ extends Node2D
 class_name NpcSpawner
 
 enum NpcType {
-	MAGE, KNIGHT
+	MAGE
 }
 
 @export var npc_type : NpcType = NpcType.MAGE :
@@ -18,10 +18,6 @@ const PACKEDSCENES_PATH := "res://Ingame/game_objects/npc/%s/character.tscn"
 const NPC_DATA := [
 	{
 		"id": "mage"
-#		"storeable": true
-	},
-	{
-		"id": "knight"
 #		"storeable": true
 	}
 ]

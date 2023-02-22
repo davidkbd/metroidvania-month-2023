@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://bikcvbeqp8uja"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/character.gd" id="1_rf4bo"]
 [ext_resource type="Texture2D" uid="uid://cdbmmkrhnoa7n" path="res://Ingame/game_objects/npc/mage/sprites/character.png" id="2_8vnf1"]
@@ -13,7 +13,7 @@ height = 80.0
 animation = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5reon"]
-auto_advance = true
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a37ib"]
 states/idle/node = SubResource("AnimationNodeAnimation_47fju")

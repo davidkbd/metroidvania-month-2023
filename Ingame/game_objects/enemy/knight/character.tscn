@@ -1,19 +1,19 @@
-[gd_scene load_steps=49 format=3 uid="uid://ch2pnqrrupbv8"]
+[gd_scene load_steps=49 format=3 uid="uid://c7n7hoavwiy8l"]
 
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
-[ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/state_machine.gd" id="2_u4jvg"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_idle.gd" id="3_jmssg"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_patrol.gd" id="4_uvc5i"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_chase.gd" id="5_ugfq0"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/npc/knight/parts/player_sensor/player_sensor.tscn" id="6_06166"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/on_die.gd" id="8_8jep2"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/character.gd" id="1_rovep"]
+[ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/enemy/knight/sprites/character.png" id="2_gepj4"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/state_machine.gd" id="2_u4jvg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_idle.gd" id="3_jmssg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_patrol.gd" id="4_uvc5i"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_chase.gd" id="5_ugfq0"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.tscn" id="6_06166"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_die.gd" id="8_8jep2"]
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="8_k7dny"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://disolve-texture.png" id="9_ee6j4"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/damage_area/damage_area.gd" id="14_v5hiw"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/damage_area/damage_area.gd" id="14_v5hiw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
 shader = ExtResource("8_k7dny")
@@ -232,6 +232,7 @@ animation = &"idle"
 animation = &"patrol"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hx8j"]
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aakgw"]
 
@@ -278,7 +279,7 @@ states/on_idle/position = Vector2(454, -16)
 states/on_patrol/node = SubResource("AnimationNodeAnimation_c26op")
 states/on_patrol/position = Vector2(454, 141)
 transitions = ["Start", "on_patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "on_patrol", "on_idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "on_idle", "on_patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "on_idle", "on_chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "on_patrol", "on_chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "on_chase", "on_attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "on_chase", "on_idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "on_attack", "on_chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "on_chase", "on_patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "on_patrol", "on_die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "on_idle", "on_die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "on_chase", "on_die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "on_attack", "on_die", SubResource("AnimationNodeStateMachineTransition_q3eem"), "on_chase", "on_comeback", SubResource("AnimationNodeStateMachineTransition_tsj41"), "on_comeback", "on_idle", SubResource("AnimationNodeStateMachineTransition_5nxpp")]
-graph_offset = Vector2(144.458, -204.543)
+graph_offset = Vector2(-178.305, 94.8393)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
 
@@ -329,6 +330,7 @@ texture = ExtResource("2_gepj4")
 centered = false
 hframes = 6
 vframes = 3
+frame = 7
 script = ExtResource("9_30soe")
 
 [node name="Center" type="Node2D" parent="."]
