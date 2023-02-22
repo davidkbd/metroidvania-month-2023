@@ -19,7 +19,7 @@ func _on_area_exited(_area : SavepointArea):
 	savepoint = null
 
 func _physics_process(_delta : float) -> void:
-	if savepoint and Input.is_action_just_pressed("u"):
+	if savepoint and ControlInput.is_interact_just_pressed():
 		get_tree().get_first_node_in_group("HELP_TIPS").hide_pad()
 		savepoint.activate()
 		savepoint = null

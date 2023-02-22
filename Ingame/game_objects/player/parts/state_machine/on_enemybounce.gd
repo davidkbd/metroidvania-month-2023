@@ -21,13 +21,13 @@ func step(delta : float) -> StateMachineState:
 	
 	if host.damager.size(): return state_machine.on_damaged
 	if jump_timer < .0 and host.is_on_floor(): return state_machine.on_ground
-	if Input.is_action_just_pressed("x"): return state_machine.on_doublejump
+	if ControlInput.is_doublejump_just_pressed(): return state_machine.on_doublejump
 	return self
 
 func _jump(delta : float) -> void:
 	host.fall(delta)
 
-	var direction = Input.get_axis("l", "r")
+	var direction = ControlInput.get_horizontal_axis()
 	if direction:
 		host.velocity.x = move_toward(host.velocity.x, direction * host.SPEED, host.AIR_ACCELERATION)
 	else:

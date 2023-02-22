@@ -26,7 +26,7 @@ func step(delta : float) -> StateMachineState:
 	return self
 
 func _movement(_delta : float) -> void:
-	host.set_walk_direction(Input.get_axis("l", "r"))
+	host.set_walk_direction(ControlInput.get_horizontal_axis())
 	if host.walk_direction:
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.air_acceleration)
 	else:

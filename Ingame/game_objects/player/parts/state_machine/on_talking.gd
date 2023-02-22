@@ -23,7 +23,7 @@ func step(delta : float) -> StateMachineState:
 
 	_move(delta)
 	
-	if Input.is_action_just_pressed("pass_text"):
+	if ControlInput.is_pass_text_just_pressed():
 		_pass_text()
 		
 	host.move_and_slide()

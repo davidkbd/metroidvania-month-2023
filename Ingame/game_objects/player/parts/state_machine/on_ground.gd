@@ -20,9 +20,9 @@ func step(delta : float) -> StateMachineState:
 
 	host.move_and_slide()
 
-	if Input.is_action_just_pressed("sl"): map.toggle_map()
-	if Input.is_action_just_pressed("x"): return state_machine.on_jump
-	if host.talking_npc and Input.is_action_pressed("u"): return state_machine.on_talking
+	if ControlInput.is_map_just_pressed(): map.toggle_map()
+	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
+	if host.talking_npc and ControlInput.is_interact_just_pressed(): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged
 	
@@ -36,7 +36,7 @@ func _coyote_time(delta : float) -> void:
 		coyote_timer -= delta
 
 func _movement() -> void:
-	host.set_walk_direction(Input.get_axis("l", "r"))
+	host.set_walk_direction(ControlInput.get_horizontal_axis())
 	if host.walk_direction:
 		host.animation_tree.set("parameters/on_ground/blend_position", host.velocity.x)
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
