@@ -53,4 +53,4 @@ metadata/_edit_lock_ = true
 position = Vector2(1312, 32)
 
 [node name="room_003" parent="." instance=ExtResource("4_71wtu")]
-position = Vector2(4896, -768)
+position = Vector2(4888, -768)
