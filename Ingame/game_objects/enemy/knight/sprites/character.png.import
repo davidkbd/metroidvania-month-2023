@@ -2,23 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clx1ays1e4ui4"
-path="res://.godot/imported/spawner_sprite.png-d7c31185d0fd080740f6a8fbc0df18b9.ctex"
+uid="uid://cp7qighlspcwd"
+path="res://.godot/imported/character.png-efb963bb9ca88d57deb63398c30ce61f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/game_objects/npc/knight/sprites/spawner_sprite.png"
-dest_files=["res://.godot/imported/spawner_sprite.png-d7c31185d0fd080740f6a8fbc0df18b9.ctex"]
+source_file="res://Ingame/game_objects/enemy/knight/sprites/character.png"
+dest_files=["res://.godot/imported/character.png-efb963bb9ca88d57deb63398c30ce61f.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

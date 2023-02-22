@@ -6,7 +6,7 @@ enum EnemyType {
 	KNIGHT
 }
 
-@export var enemy_type : EnemyType = EnemyType.KNIGT :
+@export var enemy_type : EnemyType = EnemyType.KNIGHT :
 	get: return enemy_type
 	set(value):
 		if value == enemy_type: return
@@ -16,9 +16,6 @@ enum EnemyType {
 const SPRITES_PATH      := "res://Ingame/game_objects/enemy/%s/sprites/spawner_sprite.png"
 const PACKEDSCENES_PATH := "res://Ingame/game_objects/enemy/%s/character.tscn"
 const NPC_DATA := [
-	{
-		"id": "mage"
-	},
 	{
 		"id": "knight"
 	}
@@ -36,7 +33,7 @@ func update_instance_data(_data : Dictionary) -> void:
 func activate(_data : Dictionary) -> void:
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[enemy_type].id).instantiate()
 	instance_name = instance.name.to_lower()
-	add_child(instance)
+	call_deferred("add_child", instance)
 	instance.update_room_data(_get_instance_data_from_data(_data))
 
 func deactivate() -> void:
