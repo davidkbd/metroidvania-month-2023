@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://owdfsgdaq748"]
+
+[ext_resource type="Texture2D" uid="uid://bsmkqaxdaapes" path="res://Menu/sprites/pad.png" id="1_wet86"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="2_p36ur"]
+[ext_resource type="Script" path="res://Menu/options_menu/pad/pad.gd" id="2_ysm32"]
+
+[node name="Pad" type="Sprite2D"]
+position = Vector2(320, 216)
+texture = ExtResource("1_wet86")
+script = ExtResource("2_ysm32")
+
+[node name="u" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(-208, -83)
+text = "Interact
+Look up"
+
+[node name="l" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(-208, -25)
+text = "Movement"
+
+[node name="d" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(-216, 47)
+text = "Look down"
+
+[node name="sl" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(0, 70)
+text = "Map"
+
+[node name="st" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(-32, -79)
+text = "Menu
+"
+
+[node name="x" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(152, -4)
+text = "Jump
+Double jump"
+width = 256
+
+[node name="o" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(152, -56)
+text = "Dash"
+
+[node name="sq" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(152, 53)
+text = "Attack"
+
+[node name="A" parent="." instance=ExtResource("2_p36ur")]
+position = Vector2(152, -100)
+text = "Not used"
