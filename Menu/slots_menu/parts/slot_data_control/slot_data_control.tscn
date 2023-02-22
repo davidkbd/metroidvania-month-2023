@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Menu/slots_menu/parts/slot_data_control/slot_data_control.gd" id="1_xeq1t"]
 [ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="2_ttfme"]
 [ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="2_xyiu7"]
-[ext_resource type="PackedScene" uid="uid://boj1rnahsrt5c" path="res://UI/button/button.tscn" id="3_apmck"]
+[ext_resource type="PackedScene" uid="uid://cgjwa4njwisfi" path="res://UI/button/button.tscn" id="3_apmck"]
 
 [node name="slot_data_control" type="Control"]
 custom_minimum_size = Vector2(144, 160)

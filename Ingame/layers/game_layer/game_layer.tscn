@@ -1,12 +1,12 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://po2ekur2u146"]
 
 [ext_resource type="Script" path="res://Ingame/layers/game_layer/game_layer.gd" id="1_dbug8"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/camera/follow_target_camera/follow_target_camera.tscn" id="2_5agsk"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/room_area/room_area_manager.tscn" id="2_iagip"]
 [ext_resource type="Script" path="res://Ingame/layers/game_layer/game_container.gd" id="3_hlpqv"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/player/player.tscn" id="4_8bdh4"]
+[ext_resource type="PackedScene" uid="uid://cg6rsp0xxfkvq" path="res://Ingame/game_objects/player/player.tscn" id="4_8bdh4"]
 
-[node name="game_layer" type="CanvasLayer" groups=["HUD_LISTENER"]]
+[node name="game_layer" type="CanvasLayer" groups=["GAME_LAYER", "HUD_LISTENER"]]
 layer = 0
 follow_viewport_enabled = true
 script = ExtResource("1_dbug8")

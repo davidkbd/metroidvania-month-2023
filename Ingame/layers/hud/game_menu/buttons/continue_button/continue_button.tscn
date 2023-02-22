@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://owqdi0f1scl3"]
+
+[ext_resource type="PackedScene" uid="uid://cgjwa4njwisfi" path="res://UI/button/button.tscn" id="1_50k7q"]
+[ext_resource type="Script" path="res://Ingame/layers/hud/game_menu/buttons/continue_button/continue_button.gd" id="2_wk0rc"]
+
+[node name="continue_button" instance=ExtResource("1_50k7q")]
+script = ExtResource("2_wk0rc")
+text = "Continue"
+
+[node name="label" parent="." index="0"]
+text = ""
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

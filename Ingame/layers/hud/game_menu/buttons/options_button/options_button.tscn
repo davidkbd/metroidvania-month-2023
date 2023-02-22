@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq4lfddk4hre"]
+
+[ext_resource type="PackedScene" uid="uid://cgjwa4njwisfi" path="res://UI/button/button.tscn" id="1_24387"]
+[ext_resource type="Script" path="res://Ingame/layers/hud/game_menu/buttons/options_button/options_button.gd" id="2_uyj6f"]
+
+[node name="options_button" instance=ExtResource("1_24387")]
+script = ExtResource("2_uyj6f")
+text = "Options"
+
+[node name="label" parent="." index="0"]
+text = ""
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

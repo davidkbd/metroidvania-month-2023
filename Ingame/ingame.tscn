@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Ingame/ingame.gd" id="1_vmgj6"]
 [ext_resource type="PackedScene" uid="uid://cxa8s28n2gqed" path="res://Ingame/layers/map/map_layer.tscn" id="3_gquyi"]
-[ext_resource type="PackedScene" uid="uid://do0ddn52c5qjm" path="res://Ingame/layers/game_layer/game_layer.tscn" id="3_q230j"]
-[ext_resource type="PackedScene" uid="uid://uljlx3vlote8" path="res://Ingame/layers/hud/hud.tscn" id="9_bc1jw"]
+[ext_resource type="PackedScene" uid="uid://po2ekur2u146" path="res://Ingame/layers/game_layer/game_layer.tscn" id="3_q230j"]
+[ext_resource type="PackedScene" path="res://Ingame/layers/hud/hud.tscn" id="9_bc1jw"]
 
 [node name="ingame" type="Node" groups=["HUD_LISTENER", "PROGRESS_LISTENER"]]
 script = ExtResource("1_vmgj6")

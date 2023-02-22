@@ -26,5 +26,4 @@ func _physics_process(_delta : float):
 	label.modulate.a = .25 if disabled else 1.0
 
 func _ready() -> void:
-	if not Engine.is_editor_hint():
-		_update_text()
+	_update_text()

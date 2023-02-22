@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b16k7mvtmqine"]
+
+[ext_resource type="PackedScene" uid="uid://cgjwa4njwisfi" path="res://UI/button/button.tscn" id="1_7sbhb"]
+[ext_resource type="Script" path="res://Ingame/layers/hud/game_menu/buttons/quit_button/quit_button.gd" id="2_8ny3v"]
+
+[node name="quit_button" instance=ExtResource("1_7sbhb")]
+script = ExtResource("2_8ny3v")
+text = "Quit"
+
+[node name="label" parent="." index="0"]
+text = ""
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
