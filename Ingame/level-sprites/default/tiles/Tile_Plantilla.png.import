@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgfj5jge5ikem"
-path="res://.godot/imported/player.png-9689abd7ddf4c814c174ba680a560c21.ctex"
+uid="uid://d1hp7x0jqkfes"
+path="res://.godot/imported/Tile_Plantilla.png-28b5bb0193d4a33b52532ab53edfa040.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/game_objects/player/sprites/player.png"
-dest_files=["res://.godot/imported/player.png-9689abd7ddf4c814c174ba680a560c21.ctex"]
+source_file="res://Ingame/level-sprites/default/tiles/Tile_Plantilla.png"
+dest_files=["res://.godot/imported/Tile_Plantilla.png-28b5bb0193d4a33b52532ab53edfa040.ctex"]
 
 [params]
 

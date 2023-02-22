@@ -9,7 +9,7 @@ func enter() -> void:
 	if hilight_tween: hilight_tween.kill()
 	hilight_tween = create_tween()
 	host.modulate = Color(1.5, 1.5, 1.5, 1)
-	hilight_tween.tween_property(host, "modulate", Color.WHITE, .25)
+	hilight_tween.tween_property(host, "modulate", Color.WHITE, .50)
 	host.damaged_sfx.play()
 	if host.damager.size():
 		var impulse := Vector2.ZERO
