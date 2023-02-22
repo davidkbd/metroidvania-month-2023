@@ -39,5 +39,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = SubResource("GDScript_wx2b6")
 textbox_template = ExtResource("1_mfbea")
