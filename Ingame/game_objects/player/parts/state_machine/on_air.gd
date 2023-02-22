@@ -11,6 +11,9 @@ func step(delta : float) -> StateMachineState:
 	host.fall(delta)
 	
 	host.move_and_slide()
+	
+	
+	host.animation_tree.set("parameters/on_jump/blend_position", host.velocity.y)
 
 	if host.get_collision_mask_value(1) and host.is_on_floor(): return state_machine.on_ground
 	if host.can_snap_to_wall(): return state_machine.on_wall
