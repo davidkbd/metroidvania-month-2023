@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccv5co7mnsawd"]
+[gd_scene load_steps=8 format=3 uid="uid://dfi3x702hcyun"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_ygp0x"]
-[ext_resource type="PackedScene" uid="uid://bo2ap6waiebgb" path="res://Menu/principal_menu/principal_menu.tscn" id="2_qcsjw"]
+[ext_resource type="PackedScene" path="res://Menu/principal_menu/principal_menu.tscn" id="2_qcsjw"]
 [ext_resource type="PackedScene" uid="uid://cf04maky452na" path="res://Menu/options_menu/options_menu.tscn" id="3_6yxbt"]
 [ext_resource type="PackedScene" uid="uid://rx8yagvwwkhi" path="res://Menu/slots_menu/slots_menu.tscn" id="3_ao8vq"]
-[ext_resource type="PackedScene" path="res://Menu/controls_menu/controls_menu.tscn" id="5_8ne1t"]
+[ext_resource type="PackedScene" uid="uid://dl8y52gu0cp6" path="res://Menu/help_menu/help_menu.tscn" id="5_8ne1t"]
 [ext_resource type="PackedScene" path="res://Menu/credits_menu/credits_menu.tscn" id="5_lly03"]
 [ext_resource type="PackedScene" path="res://Menu/game_finished_menu/game_finished_menu.tscn" id="6_e3pk2"]
 
@@ -13,6 +13,6 @@ script = ExtResource("1_ygp0x")
 principal_menu_template = ExtResource("2_qcsjw")
 slots_menu_template = ExtResource("3_ao8vq")
 options_menu_template = ExtResource("3_6yxbt")
-controls_menu_template = ExtResource("5_8ne1t")
+help_menu_template = ExtResource("5_8ne1t")
 credits_menu_template = ExtResource("5_lly03")
 game_finished_menu_template = ExtResource("6_e3pk2")

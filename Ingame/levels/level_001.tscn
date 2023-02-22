@@ -29,7 +29,6 @@ environment = SubResource("Environment_mmnho")
 motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.164706, 0.164706, 0.164706, 1)
 texture_filter = 1
 position = Vector2(272, 184)
 texture = ExtResource("2_tmjtc")

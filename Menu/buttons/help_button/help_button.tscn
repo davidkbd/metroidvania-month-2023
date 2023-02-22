@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6qf1uo3q04cl"]
+[gd_scene load_steps=5 format=3 uid="uid://bvkqv0hgdg836"]
 
-[ext_resource type="PackedScene" uid="uid://boj1rnahsrt5c" path="res://UI/button/button.tscn" id="1_2i1n5"]
+[ext_resource type="PackedScene" uid="uid://cgjwa4njwisfi" path="res://UI/button/button.tscn" id="1_2i1n5"]
 [ext_resource type="Shader" path="res://Menu/shaders/control.gdshader" id="2_drvkw"]
-[ext_resource type="Script" path="res://Menu/buttons/controls_button/controls_button.gd" id="3_sjlxx"]
+[ext_resource type="Script" path="res://Menu/buttons/help_button/help_button.gd" id="3_sjlxx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x313d"]
 shader = ExtResource("2_drvkw")
@@ -14,7 +14,7 @@ shader_parameter/color2 = Color(0.282353, 0.352941, 0.411765, 1)
 [node name="controls_button" instance=ExtResource("1_2i1n5")]
 material = SubResource("ShaderMaterial_x313d")
 script = ExtResource("3_sjlxx")
-text = "Control"
+text = "Help"
 
 [node name="label" parent="." index="0"]
 text = "Control"

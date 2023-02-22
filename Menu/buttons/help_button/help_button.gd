@@ -2,5 +2,5 @@ extends UIButton
 
 func _on_pressed() -> void:
 	get_tree().call_group("MENU_SFX", "play_button")
-	get_tree().call_group("MENU_LISTENER", "menu_listener_on_open_controls_menu_pressed")
+	get_tree().call_group("MENU_LISTENER", "menu_listener_on_open_help_menu_pressed")
 

@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dl8y52gu0cp6"]
+
+[ext_resource type="Script" path="res://Menu/help_menu/help_menu.gd" id="1_xax1t"]
+[ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0cpk3"]
+[ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_h8s0j"]
+[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="4_g5w3g"]
+[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="5_0a0ky"]
+[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="6_hmwl1"]
+[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="7_03hxp"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="8_myh2d"]
+[ext_resource type="PackedScene" uid="uid://cimlcghry86oa" path="res://Menu/buttons/back_button/back_button.tscn" id="12_ix1pc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g5w3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0a0ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hmwl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_03hxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hmwl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0a0ky")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="help_menu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xax1t")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0cpk3")
+
+[node name="zzz" parent="background" instance=ExtResource("3_h8s0j")]
+sprite_frames = SubResource("SpriteFrames_h6so0")
+
+[node name="panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.04
+anchor_right = 0.96
+anchor_bottom = 0.96
+offset_left = 0.400002
+offset_top = -0.4
+offset_right = -6.39996
+offset_bottom = -25.6
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_myh2d")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="back_button" parent="." instance=ExtResource("12_ix1pc")]
+layout_mode = 1

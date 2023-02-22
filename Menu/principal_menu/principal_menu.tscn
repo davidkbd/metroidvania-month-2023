@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bo2ap6waiebgb"]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://Menu/principal_menu/principal_menu.gd" id="1_bp4pa"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0msl5"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c0lno0c0myi3d" path="res://Menu/buttons/credits_button/credits_button.tscn" id="8_njrsb"]
 [ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="9_c00c0"]
 [ext_resource type="PackedScene" uid="uid://b8xl2b6d65mfo" path="res://Menu/buttons/quit_button/quit_button.tscn" id="9_cg4ke"]
-[ext_resource type="PackedScene" uid="uid://b6qf1uo3q04cl" path="res://Menu/buttons/controls_button/controls_button.tscn" id="12_qrxpa"]
+[ext_resource type="PackedScene" path="res://Menu/buttons/help_button/help_button.tscn" id="12_qrxpa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
 animations = [{

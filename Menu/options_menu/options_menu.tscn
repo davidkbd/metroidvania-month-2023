@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cf04maky452na"]
+[gd_scene load_steps=14 format=3 uid="uid://cf04maky452na"]
 
 [ext_resource type="Script" path="res://Menu/options_menu/options_menu.gd" id="1_tfdth"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_d57fj"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bkeup4bed05rk" path="res://UI/slider/slider.tscn" id="6_hxa6w"]
 [ext_resource type="PackedScene" uid="uid://cimlcghry86oa" path="res://Menu/buttons/back_button/back_button.tscn" id="6_rcxg2"]
 [ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="7_bprl0"]
+[ext_resource type="Texture2D" uid="uid://bsmkqaxdaapes" path="res://Menu/sprites/pad.png" id="12_k3el3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
 animations = [{
@@ -67,6 +68,10 @@ anchor_left = 0.25
 anchor_top = 0.4
 anchor_right = 0.75
 anchor_bottom = 0.59
+offset_left = -104.0
+offset_top = -120.0
+offset_right = 104.0
+offset_bottom = 107.6
 texture = ExtResource("2_d57fj")
 patch_margin_left = 16
 patch_margin_top = 16
@@ -74,33 +79,91 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="sfx_label" parent="." instance=ExtResource("5_t8xu4")]
-position = Vector2(200, 162)
+position = Vector2(128, 50)
 text = "Sfx"
 last_half_color = Color(0.690196, 0.690196, 0.690196, 1)
 shadow_color = Color(0.152941, 0.152941, 0.152941, 0)
 
 [node name="music_label" parent="." instance=ExtResource("5_t8xu4")]
-position = Vector2(200, 186)
+position = Vector2(128, 74)
 text = "Music"
+last_half_color = Color(0.690196, 0.690196, 0.690196, 1)
+shadow_color = Color(0.152941, 0.152941, 0.152941, 0)
+
+[node name="controls_label" parent="." instance=ExtResource("5_t8xu4")]
+position = Vector2(128, 98)
+text = "Controls"
 last_half_color = Color(0.690196, 0.690196, 0.690196, 1)
 shadow_color = Color(0.152941, 0.152941, 0.152941, 0)
 
 [node name="sfx_volume" parent="." instance=ExtResource("6_hxa6w")]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 160.0
-offset_right = 448.0
-offset_bottom = 176.0
+offset_left = 208.0
+offset_top = 48.0
+offset_right = 408.0
+offset_bottom = 64.0
 
 [node name="music_volume" parent="." instance=ExtResource("6_hxa6w")]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 184.0
-offset_right = 448.0
-offset_bottom = 200.0
+offset_left = 208.0
+offset_top = 72.0
+offset_right = 408.0
+offset_bottom = 88.0
+
+[node name="controls" parent="." instance=ExtResource("6_hxa6w")]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 96.0
+offset_right = 408.0
+offset_bottom = 112.0
+
+[node name="Pad" type="Sprite2D" parent="."]
+position = Vector2(320, 216)
+texture = ExtResource("12_k3el3")
+
+[node name="up" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(-208, -83)
+text = "Interact
+Look up"
+
+[node name="left_rght" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(-208, -25)
+text = "Movement"
+
+[node name="down" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(-216, 47)
+text = "Look down"
+
+[node name="select" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(0, 70)
+text = "Map"
+
+[node name="start" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(-32, -79)
+text = "Menu
+"
+
+[node name="x" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(152, -4)
+text = "Jump
+Double jump"
+width = 256
+
+[node name="o" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(152, -56)
+text = "Dash"
+
+[node name="sq" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(152, 53)
+text = "Attack"
+
+[node name="A" parent="Pad" instance=ExtResource("5_t8xu4")]
+position = Vector2(152, -100)
+text = "Not used"
 
 [node name="back_button" parent="." instance=ExtResource("6_rcxg2")]
 layout_mode = 1
 
 [connection signal="value_changed" from="sfx_volume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="music_volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="controls" to="." method="_on_music_volume_value_changed"]
