@@ -116,6 +116,8 @@ offset_left = 208.0
 offset_top = 96.0
 offset_right = 408.0
 offset_bottom = 112.0
+max_value = 3.0
+step = 1.0
 
 [node name="Pad" type="Sprite2D" parent="."]
 position = Vector2(320, 216)
@@ -166,4 +168,4 @@ layout_mode = 1
 
 [connection signal="value_changed" from="sfx_volume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="music_volume" to="." method="_on_music_volume_value_changed"]
-[connection signal="value_changed" from="controls" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="controls" to="." method="_on_controls_value_changed"]
