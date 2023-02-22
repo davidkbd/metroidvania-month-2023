@@ -398,7 +398,7 @@ script = ExtResource("12_olhsd")
 current = true
 
 [node name="sprite" type="Sprite2D" parent="."]
-light_mask = 32769
+light_mask = 3
 texture_filter = 1
 material = SubResource("ShaderMaterial_d7brj")
 position = Vector2(-32, -46.96)

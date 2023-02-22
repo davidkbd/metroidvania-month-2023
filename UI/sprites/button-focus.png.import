@@ -2,23 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mb1rwgqahg17"
-path="res://.godot/imported/button-disable1.png-e52fb54cf44a93f25a4a45b4c7e06dbb.ctex"
+uid="uid://botpnaq7rm8vp"
+path="res://.godot/imported/button-focus.png-67cfa7059fa2a730ca7e2a90e3b29ec0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/sprites/button-disable1.png"
-dest_files=["res://.godot/imported/button-disable1.png-e52fb54cf44a93f25a4a45b4c7e06dbb.ctex"]
+source_file="res://UI/sprites/button-focus.png"
+dest_files=["res://.godot/imported/button-focus.png-67cfa7059fa2a730ca7e2a90e3b29ec0.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

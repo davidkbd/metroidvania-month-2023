@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://boj1rnahsrt5c"]
+[gd_scene load_steps=10 format=3 uid="uid://cgjwa4njwisfi"]
 
-[ext_resource type="Texture2D" uid="uid://d0l3t4h5ho0t7" path="res://UI/sprites/button-normal1.png" id="1_386jl"]
 [ext_resource type="Shader" path="res://Menu/shaders/control.gdshader" id="1_ktvkf"]
-[ext_resource type="Texture2D" uid="uid://cqeytnm28uuah" path="res://UI/sprites/button-hover1.png" id="2_mux50"]
-[ext_resource type="Texture2D" uid="uid://botpnaq7rm8vp" path="res://UI/sprites/button-focus1.png" id="3_bv41r"]
+[ext_resource type="Texture2D" uid="uid://d0l3t4h5ho0t7" path="res://UI/sprites/button-normal.png" id="2_6mj84"]
+[ext_resource type="Texture2D" uid="uid://cqeytnm28uuah" path="res://UI/sprites/button-hover.png" id="3_noo6m"]
+[ext_resource type="Texture2D" uid="uid://ciilmobvgfy0q" path="res://UI/sprites/button-pressed.png" id="3_ongy5"]
 [ext_resource type="Script" path="res://UI/button/button.gd" id="4_i78l0"]
+[ext_resource type="Texture2D" uid="uid://mb1rwgqahg17" path="res://UI/sprites/button-disable.png" id="4_rwapf"]
+[ext_resource type="Texture2D" uid="uid://botpnaq7rm8vp" path="res://UI/sprites/button-focus.png" id="5_5lbrd"]
 [ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_qrvgj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jl06d"]
@@ -28,9 +30,11 @@ offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("1_386jl")
-texture_hover = ExtResource("2_mux50")
-texture_focused = ExtResource("3_bv41r")
+texture_normal = ExtResource("2_6mj84")
+texture_pressed = ExtResource("3_ongy5")
+texture_hover = ExtResource("3_noo6m")
+texture_disabled = ExtResource("4_rwapf")
+texture_focused = ExtResource("5_5lbrd")
 script = ExtResource("4_i78l0")
 
 [node name="label" parent="." instance=ExtResource("5_qrvgj")]

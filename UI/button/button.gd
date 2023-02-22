@@ -22,6 +22,9 @@ func _update_text() -> void:
 		$label.text = text
 		$label.queue_redraw()
 
+func _physics_process(_delta : float):
+	label.modulate.a = .25 if disabled else 1.0
+
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		_update_text()
