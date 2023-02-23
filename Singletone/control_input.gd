@@ -17,7 +17,7 @@ const PASS_TEXT_ACTIONS  : Array[String] = ["x","sq","O"]
 const MAP_ACTIONS        : Array[String] = ["sl","sl","A"]
 const MENU_ACTIONS       : Array[String] = ["st","st","st"]
 
-var configurated_control_mode : int = 0
+var configurated_control_mode : int = 1
 
 func get_horizontal_axis() ->        float: return Input.get_axis(L_ACTIONS[configurated_control_mode], R_ACTIONS[configurated_control_mode])
 #func is_left_pressed() ->            bool:  return Input.is_action_pressed(L_ACTIONS[configurated_control_mode])
