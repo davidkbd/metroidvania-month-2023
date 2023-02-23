@@ -7,15 +7,15 @@ extends Control
 func _on_sfx_volume_value_changed(value : float):
 	if _silent: return
 	get_tree().call_group("MENU_SFX", "play_slider")
-#	AudioServer.set_bus_volume_db(1, linear_to_db(value))
-	AudioServer.set_bus_volume_db(1, log(value) * 20.0)
+	var c_val = clamp(value, .001, 1.0)
+	AudioServer.set_bus_volume_db(1, log(c_val) * 20.0)
 	Settings.save_sfx_volume()
 
 func _on_music_volume_value_changed(value):
 	if _silent: return
 	get_tree().call_group("MENU_SFX", "play_slider")
-#	AudioServer.set_bus_volume_db(2, linear_to_db(value))
-	AudioServer.set_bus_volume_db(2, log(value) * 20.0)
+	var c_val = clamp(value, .001, 1.0)
+	AudioServer.set_bus_volume_db(2, log(c_val) * 20.0)
 	Settings.save_music_volume()
 
 func _on_controls_value_changed(value):
@@ -26,6 +26,6 @@ func _on_controls_value_changed(value):
 
 func _ready() -> void:
 	$sfx_volume.grab_focus()
-	$sfx_volume.value = db_to_linear(AudioServer.get_bus_volume_db(1))
-	$music_volume.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+	$sfx_volume.value = exp(AudioServer.get_bus_volume_db(1) / 20)
+	$music_volume.value = exp(AudioServer.get_bus_volume_db(2) / 20)
 	_silent = false
