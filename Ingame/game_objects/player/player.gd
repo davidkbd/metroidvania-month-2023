@@ -29,7 +29,7 @@ func initialize(_game_state : Dictionary) -> void:
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
 
-func can_hit_enemy() -> bool:
+func can_hit_endemy() -> bool:
 	if enemy_died: return false
 	if damager: return false
 	if is_on_floor(): return false

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dl85d5d32a1y3" path="res://Ingame/level-sprites/default/tiles/groundTile.png" id="4_2xnv6"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_d66vx"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="6_w3pm8"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="7_ng5ri"]
+[ext_resource type="PackedScene" uid="uid://cshwlyorvtvl5" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="7_ng5ri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1352, 736)

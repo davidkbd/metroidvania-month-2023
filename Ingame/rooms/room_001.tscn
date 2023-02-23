@@ -15,6 +15,7 @@ size = Vector2(1000, 568)
 script = ExtResource("1_wnr0d")
 
 [node name="room_area" parent="." instance=ExtResource("4_dkf1h")]
+visible = false
 position = Vector2(32, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
@@ -26,7 +27,6 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 position = Vector2(104, 384)
 scale = Vector2(16, 2)
 color = Color(0.513726, 1, 0, 1)
-energy = 2.95
 range_item_cull_mask = 2
 texture = ExtResource("6_mx5ml")
 
