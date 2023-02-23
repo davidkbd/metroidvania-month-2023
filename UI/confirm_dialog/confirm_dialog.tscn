@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh4pcjj7h0kdf"]
+
+[ext_resource type="Script" path="res://UI/confirm_dialog/confirm_dialog.gd" id="1_qvg6y"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="2_6hnrh"]
+[ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_rhvpu"]
+[ext_resource type="PackedScene" uid="uid://cgjwa4njwisfi" path="res://UI/button/button.tscn" id="3_fr8cf"]
+
+[node name="confirm_dialog" type="Window"]
+process_mode = 3
+transparent_bg = true
+snap_2d_transforms_to_pixel = true
+size = Vector2i(200, 100)
+wrap_controls = true
+exclusive = true
+unresizable = true
+borderless = true
+always_on_top = true
+popup_window = true
+script = ExtResource("1_qvg6y")
+
+[node name="panel1" type="Sprite2D" parent="."]
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="panel2" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+scale = Vector2(23, 1.045)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="panel3" type="Sprite2D" parent="."]
+position = Vector2(192, 0)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(56, 0, 8, 8)
+
+[node name="panel4" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+scale = Vector2(1, 11)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)
+
+[node name="panel5" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(23, 11)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(8, 8, 8, 8)
+
+[node name="panel6" type="Sprite2D" parent="."]
+position = Vector2(192, 8)
+scale = Vector2(1, 11)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(56, 8, 8, 8)
+
+[node name="panel7" type="Sprite2D" parent="."]
+position = Vector2(0, 92)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 56, 8, 8)
+
+[node name="panel8" type="Sprite2D" parent="."]
+position = Vector2(8, 92)
+scale = Vector2(23, 1)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(8, 56, 8, 8)
+
+[node name="panel9" type="Sprite2D" parent="."]
+position = Vector2(192, 92)
+texture = ExtResource("2_rhvpu")
+centered = false
+region_enabled = true
+region_rect = Rect2(56, 56, 8, 8)
+
+[node name="label" parent="." instance=ExtResource("2_6hnrh")]
+position = Vector2(100, 16)
+text = "Realmente quieres cerrar el juego¿"
+centered = true
+
+[node name="buttons" type="HBoxContainer" parent="."]
+texture_filter = 1
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="accept_button" parent="buttons" instance=ExtResource("3_fr8cf")]
+layout_mode = 2
+text = "OK"
+
+[node name="cancel_button" parent="buttons" instance=ExtResource("3_fr8cf")]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="buttons/accept_button" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="buttons/cancel_button" to="." method="_on_cancel_button_pressed"]

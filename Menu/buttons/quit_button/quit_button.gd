@@ -1,26 +1,20 @@
 extends UIButton
 
-var quit_confirm : ConfirmationDialog
+var confirm_dialog_instance_template : PackedScene = preload("res://UI/confirm_dialog/confirm_dialog.tscn")
+var confirm_dialog_instance          : ConfirmDialog
 
 func _on_pressed() -> void:
 	get_tree().call_group("MENU_SFX", "play_button")
-	quit_confirm = ConfirmationDialog.new()
-	add_child(quit_confirm)
-	quit_confirm.title = "Quit game?"
-	quit_confirm.ok_button_text = "Quit"
-	quit_confirm.cancel_button_text = "Cancel"
-	quit_confirm.dialog_text = "Press Quit to close the game or Cancel to return to menu."
-	quit_confirm.connect("confirmed", _on_quit_confirmed)
-	quit_confirm.get_cancel_button().pressed.connect(_on_quit_cancelled)
-	quit_confirm.popup_centered()
-	quit_confirm.get_cancel_button().grab_focus()
+	confirm_dialog_instance = confirm_dialog_instance_template.instantiate()
+	confirm_dialog_instance.title = "Quit game?"
+	confirm_dialog_instance.set_texts(
+			"Press 'Quit' to close the game or 'Cancel' to return to menu.",
+			"Quit", "Cancel")
+	add_child(confirm_dialog_instance)
+	confirm_dialog_instance.accepted.connect(_on_quit_confirmed)
 
 func _on_quit_confirmed() -> void:
 	get_tree().quit()
-
-func _on_quit_cancelled() -> void:
-	get_tree().call_group("MENU_SFX", "play_button")
-	quit_confirm.queue_free()
 
 func _physics_process(_delta : float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):

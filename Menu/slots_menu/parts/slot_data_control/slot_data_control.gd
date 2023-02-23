@@ -9,7 +9,8 @@ signal delete_pressed
 @onready var start_button       : UIButton = $start_button
 @onready var delete_button      : UIButton = $delete_button
 
-var quit_confirm  : ConfirmationDialog
+var confirm_dialog_instance_template : PackedScene = preload("res://UI/confirm_dialog/confirm_dialog.tscn")
+var confirm_dialog_instance          : ConfirmDialog
 
 var slot_name     : String
 var slot_id       : String
@@ -28,29 +29,19 @@ func _on_start_button_pressed():
 
 func _on_delete_button_pressed() -> void:
 	get_tree().call_group("MENU_SFX", "play_button")
-	quit_confirm = ConfirmationDialog.new()
-	add_child(quit_confirm)
-	quit_confirm.title = "Do you want delete this game?"
-	quit_confirm.ok_button_text = "Delete"
-	quit_confirm.cancel_button_text = "Cancel"
-	quit_confirm.dialog_text = "Press the delete button to delete the game or cancel to keep it."
-	quit_confirm.connect("confirmed", _on_delete_confirmed)
-	quit_confirm.get_cancel_button().pressed.connect(_on_quit_cancelled)
-	quit_confirm.popup_centered()
-	quit_confirm.get_cancel_button().grab_focus()
+	confirm_dialog_instance = confirm_dialog_instance_template.instantiate()
+	confirm_dialog_instance.set_texts(
+			"Press the 'OK' button to delete the game or 'Keep' to keep it.",
+			"OK", "Keep")
+	add_child(confirm_dialog_instance)
+	confirm_dialog_instance.accepted.connect(_on_delete_confirmed)
 
 func _on_delete_confirmed() -> void:
-	get_tree().call_group("MENU_SFX", "play_button")
 	emit_signal("delete_pressed", slot_id)
 	delete_button.disabled = true
 	delete_button.focus_mode = Control.FOCUS_NONE
 	datetime_label.text = ""
 	start_button.grab_focus()
-	quit_confirm.queue_free()
-
-func _on_quit_cancelled() -> void:
-	get_tree().call_group("MENU_SFX", "play_button")
-	quit_confirm.queue_free()
 
 func _full_number(number : int, digits : int) -> String:
 	var r = str(number)
@@ -59,6 +50,7 @@ func _full_number(number : int, digits : int) -> String:
 	return r
 
 func _ready() -> void:
+	
 	slot_name_label.text = slot_name
 	var file_path : String = Directories.PROGRESS_PATH + "/game-state-" + slot_id + ".data"
 	if FileAccess.file_exists(file_path):

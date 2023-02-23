@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8xl2b6d65mfo"]
 
-[ext_resource type="PackedScene" uid="uid://boj1rnahsrt5c" path="res://UI/button/button.tscn" id="1_iufgt"]
+[ext_resource type="PackedScene" uid="uid://cgjwa4njwisfi" path="res://UI/button/button.tscn" id="1_iufgt"]
 [ext_resource type="Shader" path="res://Menu/shaders/control.gdshader" id="2_qh3p7"]
 [ext_resource type="Script" path="res://Menu/buttons/quit_button/quit_button.gd" id="3_1hvep"]
 
