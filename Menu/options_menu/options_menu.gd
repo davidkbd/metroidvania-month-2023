@@ -23,9 +23,11 @@ func _on_controls_value_changed(value):
 	get_tree().call_group("MENU_SFX", "play_slider")
 	ControlInput.configurated_control_mode = value
 	pad.update_texts()
+	Settings.save_controls()
 
 func _ready() -> void:
 	$sfx_volume.grab_focus()
 	$sfx_volume.value = exp(AudioServer.get_bus_volume_db(1) / 20)
 	$music_volume.value = exp(AudioServer.get_bus_volume_db(2) / 20)
+	$controls.value = ControlInput.configurated_control_mode
 	_silent = false

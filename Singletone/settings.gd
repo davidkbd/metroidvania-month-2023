@@ -27,7 +27,9 @@ static func _load_sfx_volume() -> void:
 static func _load_controls() -> void:
 	var file = FileAccess.open(Directories.SETTINGS_PATH + "controls", FileAccess.READ)
 	if file:
-		ControlInput.configurated_control_mode =  file.get_8()
+		ControlInput.configurated_control_mode = file.get_8()
+	else:
+		ControlInput.configurated_control_mode = 0
 
 static func _load_music_volume() -> void:
 	var file = FileAccess.open(Directories.SETTINGS_PATH + "music-volume", FileAccess.READ)
