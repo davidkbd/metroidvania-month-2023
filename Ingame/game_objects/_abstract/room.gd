@@ -5,7 +5,6 @@ class_name Room
 @onready var camera       : FollowTargetCamera = get_tree().get_first_node_in_group("CAMERA")
 @onready var room_area    : RoomArea           = _find_room_area()
 @onready var room_content : RoomContent        = _find_room_content()
-@onready var savepoint    : Node2D             = _find_savepoint()
 
 var room_data : Dictionary
 
@@ -28,6 +27,7 @@ func update_room_data() -> void:
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_room_updated", name, room_data)
 
 func teleport_player() -> void:
+	var savepoint : Node2D = _find_savepoint()
 	if savepoint == null: return
 	
 	player.global_position = savepoint.global_position

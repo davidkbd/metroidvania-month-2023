@@ -6,7 +6,8 @@ var player : Player
 var tween : Tween
 
 func room_listener_on_updated(aaa) -> void:
-	print(aaa)
+#	print(aaa)
+	pass
 
 #func room_listener_on_hooked(room) -> void:
 #	if tween: tween.kill()
