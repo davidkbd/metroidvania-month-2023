@@ -6,8 +6,10 @@ var area_position : Vector2
 var position  : Vector2
 var direction : AutoadvanceArea.Direction
 var is_horizontal : bool
+var is_falling    : bool
 
 func enter() -> void:
+	is_falling = false
 	speed = host.velocity.length()
 	direction = host.autoadvance_area.direction
 	is_horizontal = (direction == AutoadvanceArea.Direction.LEFT or direction == AutoadvanceArea.Direction.RIGHT)
@@ -27,8 +29,9 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-	_movement(delta)
-	if is_horizontal:
+	if not is_falling:
+		_movement(delta)
+	if is_horizontal or is_falling:
 		host.fall(delta)
 
 	host.move_and_slide()
@@ -40,14 +43,17 @@ func step(delta : float) -> StateMachineState:
 		if abs(host.global_position.x - position.x) < 5.0:
 			return state_machine.on_ground
 	else:
-		if abs(host.global_position.y - area_position.y) < 5.0:
-			host.global_position.x = area_position.x
 		if abs(host.global_position.y - position.y) < 5.0:
-			if direction == AutoadvanceArea.Direction.UP:
+			if not is_falling:
 				host.velocity.y = host.specs.jump_impulse
-				host.velocity.x = host.specs.jump_impulse * 1.3
-				return state_machine.on_air
-			return state_machine.on_ground
+				var control_direction = sign(ControlInput.get_horizontal_axis())
+				if not control_direction: control_direction = 1.0
+				host.velocity.x = 160.0 * control_direction
+			is_falling = true
+		if not is_falling and abs(host.global_position.y - area_position.y) < 5.0:
+			host.global_position.x = area_position.x
+	if is_falling and host.is_on_floor():
+		return state_machine.on_ground
 	return self
 
 func _movement(_delta : float) -> void:

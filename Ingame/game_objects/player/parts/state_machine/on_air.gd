@@ -19,7 +19,7 @@ func step(delta : float) -> StateMachineState:
 	if host.can_snap_to_wall(): return state_machine.on_wall
 	if host.enemy_died: return state_machine.on_enemybounce
 	if host.damager.size(): return state_machine.on_damaged
-
+	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	return self
 
 func _movement(_delta : float) -> void:
