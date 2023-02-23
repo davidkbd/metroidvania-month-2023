@@ -21,11 +21,13 @@ func step(delta : float) -> StateMachineState:
 	host.move_and_slide()
 
 	if ControlInput.is_map_just_pressed(): map.toggle_map()
+
+	# Returns
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if host.talking_npc and ControlInput.is_interact_just_pressed(): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged
-	
+	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	return self
 
 func _coyote_time(delta : float) -> void:

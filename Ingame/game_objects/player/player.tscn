@@ -1,8 +1,9 @@
-[gd_scene load_steps=65 format=3 uid="uid://cg6rsp0xxfkvq"]
+[gd_scene load_steps=67 format=3 uid="uid://cw5yhpn0qyh8k"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_ground.gd" id="2_1orwr"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_autoadvancing.gd" id="3_g25y3"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_air.gd" id="4_taln5"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_jump.gd" id="5_mtmft"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_doublejump.gd" id="7_bx4yu"]
@@ -20,6 +21,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/player_sprite/player_sprite.gd" id="16_4ekit"]
 [ext_resource type="Texture2D" uid="uid://cpejugcss86qx" path="res://Ingame/game_objects/player/sprites/player_bubbles.png" id="17_0r6jg"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
+[ext_resource type="PackedScene" uid="uid://d4idunmyyn4bf" path="res://Ingame/game_objects/player/parts/autoadvance_area_sensor/autoadvance_area_sensor.tscn" id="17_tbw11"]
 [ext_resource type="AudioStream" uid="uid://bf8gskh77fjl1" path="res://sfx/ingame_player_catch_water.wav" id="18_7j6e1"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
 [ext_resource type="PackedScene" uid="uid://cpm8y1uompigj" path="res://Ingame/game_objects/player/parts/enemy_damage_area/enemy_damage_area.tscn" id="20_yqshm"]
@@ -357,6 +359,7 @@ script = ExtResource("1_p8tho")
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("1_5x2j1")
+on_autoadvancing_state = NodePath("on_autoadvancing")
 on_ground_state = NodePath("on_ground")
 on_jump_state = NodePath("on_jump")
 on_doublejump_state = NodePath("on_doublejump")
@@ -366,6 +369,9 @@ on_damaged_state = NodePath("on_damaged")
 on_enemybounce_state = NodePath("on_enemybounce")
 on_talking_state = NodePath("on_talking")
 initial_state = NodePath("on_ground")
+
+[node name="on_autoadvancing" type="Node" parent="state_machine"]
+script = ExtResource("3_g25y3")
 
 [node name="on_ground" type="Node" parent="state_machine"]
 script = ExtResource("2_1orwr")
@@ -418,6 +424,10 @@ position = Vector2(-8, -16)
 shape = SubResource("CapsuleShape2D_46x3k")
 disabled = true
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)
+
+[node name="autoadvance_area_sensor" parent="." instance=ExtResource("17_tbw11")]
+position = Vector2(0, 16)
+collision_mask = 64
 
 [node name="room_area_sensor" parent="." instance=ExtResource("12_vty2u")]
 

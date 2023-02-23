@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0vn0c2ckxsjs"]
+[gd_scene load_steps=9 format=3 uid="uid://b0vn0c2ckxsjs"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_6dtbh"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_d5o5w"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_6hfr1"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="5_77c7j"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_othvg"]
+[ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="7_kjeg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 1560)
@@ -33,6 +34,14 @@ layer_0/tile_data = PackedInt32Array(65515, 262146, 3, -21, 196610, 4, -65557, 1
 
 [node name="enemy_spawner" parent="room_content" instance=ExtResource("5_6hfr1")]
 position = Vector2(40, 288)
+
+[node name="autoadvance_area" parent="room_content" instance=ExtResource("7_kjeg2")]
+position = Vector2(-704, -96)
+direction = 3
+
+[node name="autoadvance_area2" parent="room_content" instance=ExtResource("7_kjeg2")]
+position = Vector2(360, -504)
+direction = 0
 
 [node name="savepoint_area" parent="room_content" instance=ExtResource("5_77c7j")]
 position = Vector2(-72, -416)

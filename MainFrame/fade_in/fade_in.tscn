@@ -5,7 +5,7 @@
 [node name="fade_in_canvas" type="CanvasLayer"]
 layer = 10
 
-[node name="fade_in" type="ColorRect" parent="." groups=["HUD_LISTENER", "LEVEL_LISTENER", "MENU_LISTENER"]]
+[node name="fade_in" type="ColorRect" parent="." groups=["HUD_LISTENER", "LEVEL_LISTENER", "MENU_LISTENER", "PLAYER_LISTENER"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

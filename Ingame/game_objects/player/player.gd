@@ -20,7 +20,8 @@ var talking_npc   : NPC = null
 var damager    : Dictionary = {}
 var enemy_died : CharacterBody2D = null
 
-var walk_direction : float
+var autoadvance_area : AutoadvanceArea = null
+var walk_direction   : float
 
 func initialize(_game_state : Dictionary) -> void:
 	skills.initialize(_game_state)
@@ -54,7 +55,6 @@ func can_snap_to_wall() -> bool:
 	return result.size() > 0 and is_on_wall()
 
 func _ready() -> void:
-#	super._ready()
 	get_tree().call_deferred(
 			"call_group",
 			"PLAYER_LISTENER",

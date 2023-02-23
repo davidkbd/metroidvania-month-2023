@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0t83wkvk5d6l"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.gd" id="1_v180g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu7dy"]
+size = Vector2(128, 128)
+
+[node name="autoadvance_area" type="Area2D"]
+collision_layer = 64
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_v180g")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hu7dy")
+debug_color = Color(0.976471, 0, 0.427451, 0.419608)
