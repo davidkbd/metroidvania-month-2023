@@ -18,7 +18,9 @@ static func get_default_specs() -> Dictionary:
 "wall_jump_impulse":   200.0,
 "attack_deceleration": 15.0, 
 "basic_attack_power":  10.0,
-"basic_attack_feedback_impulse": 200.0
+"basic_attack_feedback_impulse": 200.0,
+"dash_impulse":        800.0,
+"dash_deceleration":   30.0
 }
 
 static func get_knight_specs() -> Dictionary:
