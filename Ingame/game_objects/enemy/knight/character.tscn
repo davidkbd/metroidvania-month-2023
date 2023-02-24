@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c7n7hoavwiy8l"]
+[gd_scene load_steps=49 format=3 uid="uid://bhjfmd5a478ct"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/enemy/knight/sprites/character.png" id="2_gepj4"]
@@ -12,13 +12,13 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_die.gd" id="8_8jep2"]
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="8_k7dny"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
-[ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://disolve-texture.png" id="9_ee6j4"]
+[ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_qu7c6"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/damage_area/damage_area.gd" id="14_v5hiw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
 shader = ExtResource("8_k7dny")
 shader_parameter/dissolve_value = 1.0
-shader_parameter/dissolve_texture = ExtResource("9_ee6j4")
+shader_parameter/dissolve_texture = ExtResource("10_qu7c6")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
 radius = 24.0
@@ -287,6 +287,7 @@ graph_offset = Vector2(-178.305, 94.8393)
 collision_layer = 1024
 collision_mask = 1024
 script = ExtResource("1_rovep")
+max_life = null
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("2_u4jvg")
@@ -330,7 +331,6 @@ texture = ExtResource("2_gepj4")
 centered = false
 hframes = 6
 vframes = 3
-frame = 9
 script = ExtResource("9_30soe")
 
 [node name="Center" type="Node2D" parent="."]

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://otwks1gui2s1"
-path.s3tc="res://.godot/imported/disolve-texture.png-ecdde3ce4c8fce298becb82cccb9a40e.s3tc.ctex"
+path.s3tc="res://.godot/imported/disolve-texture.png-2954b6e90a2572d3018bc7a383337bbf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://disolve-texture.png"
-dest_files=["res://.godot/imported/disolve-texture.png-ecdde3ce4c8fce298becb82cccb9a40e.s3tc.ctex"]
+source_file="res://Ingame/shaders/disolve-texture.png"
+dest_files=["res://.godot/imported/disolve-texture.png-2954b6e90a2572d3018bc7a383337bbf.s3tc.ctex"]
 
 [params]
 

@@ -1,14 +1,10 @@
-extends CharacterAlive
+extends EnemyCharacterAlive
 
 @onready var center                : Node2D = $Center
 @onready var animation             : AnimationPlayer = $AnimationPlayer
 @onready var sword_collider        : CollisionShape2D = $sword_area/SwordCollider
 @onready var attack_foot_particles : CPUParticles2D = $attack_foot_particles
 
-@onready var initial_position : Vector2 = global_position
-@onready var player           : Player = null
-
-var walk_direction : float
 var value : int = 0
 
 func set_walk_direction(_direction : float) -> void:
@@ -34,6 +30,8 @@ func _update_room_data() -> void:
 	get_parent().update_instance_data({ "storeable": true, "value": value })
 
 func _ready() -> void:
+	collision_areas.append($sword_area)
+	collision_areas.append($body_area)
 	specs = CharacterAliveSpecs.get_knight_specs()
 	sword_collider.disabled = true
 	call_deferred("_update_room_data")

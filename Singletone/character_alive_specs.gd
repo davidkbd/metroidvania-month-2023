@@ -15,7 +15,10 @@ static func get_default_specs() -> Dictionary:
 "max_up_speed":        -10000.0,
 "max_down_speed":      700.0,
 "wall_down_speed":     500.0,
-"wall_jump_impulse":   200.0
+"wall_jump_impulse":   200.0,
+"attack_deceleration": 15.0, 
+"basic_attack_power":  10.0,
+"basic_attack_feedback_impulse": 200.0
 }
 
 static func get_knight_specs() -> Dictionary:

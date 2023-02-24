@@ -12,10 +12,13 @@ func exit() -> void:
 	pass
 	
 func step(delta : float) -> StateMachineState:
-	animation_finished_timer -= delta
 	_brake()
+	host.fall(delta)
 	host.move_and_slide()
 	
+	animation_finished_timer -= delta
+	
+	if host.life <= 0: return state_machine.on_die
 	if _is_animation_finished(): return state_machine.on_chase
 	return self
 

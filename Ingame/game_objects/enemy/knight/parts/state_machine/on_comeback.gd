@@ -11,6 +11,7 @@ func step(delta : float) -> StateMachineState:
 	_movement()
 	host.fall(delta)
 	host.move_and_slide()
+	if host.life <= 0: return state_machine.on_die
 	if host.player : return state_machine.on_chase
 	if _initial_position_direction() < 1.0: return state_machine.on_idle
 	return self

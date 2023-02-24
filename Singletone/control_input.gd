@@ -28,6 +28,8 @@ func is_down_pressed() ->            bool:  return Input.is_action_pressed(R_ACT
 func is_jump_just_pressed() ->       bool:  return Input.is_action_just_pressed(JUMP_ACTIONS[configurated_control_mode])
 func is_doublejump_just_pressed() -> bool:  return Input.is_action_just_pressed(DOUBLEJUMP_ACTIONS[configurated_control_mode])
 
+func is_attack_just_pressed() ->     bool:  return Input.is_action_just_pressed(ATTACK_ACTIONS[configurated_control_mode])
+
 func is_map_just_pressed() ->        bool:  return Input.is_action_just_pressed(MAP_ACTIONS[configurated_control_mode])
 func is_menu_just_pressed() ->       bool:  return Input.is_action_just_pressed(MENU_ACTIONS[configurated_control_mode])
 

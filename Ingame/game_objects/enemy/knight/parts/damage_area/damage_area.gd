@@ -8,3 +8,6 @@ func get_damage_data() -> Dictionary:
 		"global_position": global_position,
 		"power": power
 		}
+
+func hit(_position : Vector2, _power : float) -> void:
+	get_parent().hit(_position, _power)

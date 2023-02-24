@@ -5,6 +5,7 @@ func enter() -> void:
 	host.sprite.material = host.sprite.shader_mat
 	var tween : Tween = create_tween()
 	tween.tween_method(_disolve, 1.0, .0, .5)
+	host.set_physics_process(false)
 
 func exit() -> void:
 	pass

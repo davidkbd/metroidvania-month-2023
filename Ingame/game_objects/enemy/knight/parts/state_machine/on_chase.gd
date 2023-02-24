@@ -7,6 +7,7 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
+	if host.life <= 0: return state_machine.on_die
 	if not host.player : return state_machine.on_comeback
 	_choose_direction()
 	_movement()

@@ -17,6 +17,7 @@ func step(delta : float) -> StateMachineState:
 	host.fall(delta)
 	host.move_and_slide()
 	if host.player : return state_machine.on_chase
+	if host.life <= 0: return state_machine.on_die
 	if state_machine.idle_patrol_timer_flag: return state_machine.on_idle
 	return self
 
