@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bhjfmd5a478ct"]
+[gd_scene load_steps=49 format=3 uid="uid://c7n7hoavwiy8l"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/enemy/knight/sprites/character.png" id="2_gepj4"]
