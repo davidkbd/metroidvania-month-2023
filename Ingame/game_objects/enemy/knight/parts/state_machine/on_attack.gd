@@ -9,7 +9,7 @@ func enter() -> void:
 	pass
 
 func exit() -> void:
-	pass
+	host.sword_collider.disabled = true
 	
 func step(delta : float) -> StateMachineState:
 	_brake()
