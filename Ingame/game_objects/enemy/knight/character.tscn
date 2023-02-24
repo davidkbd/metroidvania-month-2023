@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_idle.gd" id="3_jmssg"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_patrol.gd" id="4_uvc5i"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_chase.gd" id="5_ugfq0"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.tscn" id="6_06166"]
+[ext_resource type="PackedScene" uid="uid://4lmxxuoxtbht" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.tscn" id="6_06166"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_die.gd" id="8_8jep2"]

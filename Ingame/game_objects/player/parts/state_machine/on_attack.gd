@@ -1,6 +1,6 @@
 extends StateMachineState
 
-@export var attack_timer : float = .4
+@export var attack_timer : float = .2
 
 var attack_time : float
 
@@ -14,7 +14,7 @@ func exit() -> void:
 	_enable_collision(false)
 
 func step(delta : float) -> StateMachineState:
-	_brake()
+	_movement()
 	host.fall(delta)
 	host.move_and_slide()
 	
@@ -25,5 +25,9 @@ func step(delta : float) -> StateMachineState:
 func _enable_collision(_enabled : bool) -> void:
 	host.enemy_hit_area.collision_mask = 8 if _enabled else 0
 
-func _brake() -> void:
-	host.velocity.x = move_toward(host.velocity.x, .0, host.specs.attack_deceleration)
+func _movement() -> void:
+	host.set_walk_direction(ControlInput.get_horizontal_axis())
+	if host.walk_direction:
+		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
+	else:
+		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
