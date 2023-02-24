@@ -23,25 +23,11 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 [node name="room_content" parent="." instance=ExtResource("3_fw60c")]
 
 [node name="autoadvance_area_left" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(-680, 224)
-direction = 3
-
-[node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(-680, 96)
-direction = 3
-
-[node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(-680, -32)
+position = Vector2(-664, 224)
 direction = 3
 
 [node name="autoadvance_area_right" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(1272, 224)
-
-[node name="autoadvance_area_right2" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(1272, 96)
-
-[node name="autoadvance_area_right3" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(1272, -32)
+position = Vector2(1256, 216)
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
 texture_filter = 1
