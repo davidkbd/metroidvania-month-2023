@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu8c57v64xjja"]
+
+[ext_resource type="Script" path="res://tools/level_viewer.gd" id="1_xxhim"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/camera/follow_target_camera/follow_target_camera.tscn" id="2_y1y1e"]
+
+[node name="level_viewer" type="Node2D"]
+script = ExtResource("1_xxhim")
+level_tscn = "res://Ingame/levels/level_001.tscn"
+
+[node name="follow_target_camera" parent="." instance=ExtResource("2_y1y1e")]
