@@ -84,7 +84,7 @@ script = SubResource("GDScript_fmbcn")
 metadata/_edit_lock_ = true
 
 [node name="room_002" parent="." instance=ExtResource("3_pam6d")]
-position = Vector2(1312, 32)
+position = Vector2(1320, 32)
 script = ExtResource("7_gyps8")
 
 [node name="room_002_secret" parent="." instance=ExtResource("9_7v7q3")]
@@ -94,8 +94,8 @@ position = Vector2(1280, 32)
 position = Vector2(1320, 32)
 
 [node name="room_003" parent="." instance=ExtResource("4_71wtu")]
-position = Vector2(4888, -1600)
+position = Vector2(4896, -1600)
 script = ExtResource("7_gyps8")
 
 [node name="room_003_2" parent="." instance=ExtResource("11_r2o2u")]
-position = Vector2(4888, -1600)
+position = Vector2(4896, -1600)

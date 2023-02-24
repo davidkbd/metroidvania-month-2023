@@ -6,7 +6,6 @@ func enter() -> void:
 	host.animation_playblack.travel(name)
 	host.velocity = Vector2.ZERO
 	animation_finished_timer = host.animation.get_animation("attack").length
-	pass
 
 func exit() -> void:
 	host.sword_collider.disabled = true

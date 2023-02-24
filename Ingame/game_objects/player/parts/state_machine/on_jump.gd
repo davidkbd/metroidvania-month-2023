@@ -18,9 +18,9 @@ func step(delta : float) -> StateMachineState:
 	host.fall(delta)
 
 	host.move_and_slide()
-	host.animation_tree.set("parameters/on_jump/blend_position", host.velocity.y)
-#	print(host.animation_tree.get("parameters/on_jump/blend_position"))
 
+	host.animation_tree.set("parameters/on_jump/blend_position", host.velocity)
+	
 	jump_timer -= delta
 	prevent_on_wall_timer -= delta
 
