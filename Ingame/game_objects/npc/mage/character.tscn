@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bikcvbeqp8uja"]
+[gd_scene load_steps=15 format=3 uid="uid://bikcvbeqp8uja"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/character.gd" id="1_rf4bo"]
 [ext_resource type="Texture2D" uid="uid://cdbmmkrhnoa7n" path="res://Ingame/game_objects/npc/mage/sprites/character.png" id="2_8vnf1"]
@@ -9,6 +9,9 @@
 radius = 24.0
 height = 80.0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kxqh1"]
+animation = &"asd"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_47fju"]
 animation = &"idle"
 
@@ -16,6 +19,8 @@ animation = &"idle"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a37ib"]
+states/asd/node = SubResource("AnimationNodeAnimation_kxqh1")
+states/asd/position = Vector2(593.5, 105)
 states/idle/node = SubResource("AnimationNodeAnimation_47fju")
 states/idle/position = Vector2(433, 92.5)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5reon")]
@@ -54,9 +59,13 @@ tracks/0/keys = {
 "values": [0, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_n3n6c"]
+resource_name = "asd"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohchq"]
 _data = {
 "RESET": SubResource("Animation_yha46"),
+"asd": SubResource("Animation_n3n6c"),
 "idle": SubResource("Animation_5np5v")
 }
 

@@ -39,5 +39,5 @@ position = Vector2(-704, -96)
 direction = 3
 
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("7_kjeg2")]
-position = Vector2(464, -344)
+position = Vector2(424, -352)
 direction = 0

@@ -35,7 +35,7 @@ layer_0/tile_data = PackedInt32Array(-1376278, 131074, 3, -1376277, 131074, 3, -
 position = Vector2(688, -1024)
 
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_sxi5s")]
-position = Vector2(456, -368)
+position = Vector2(488, -384)
 direction = 2
 
 [node name="savepoint_area" parent="room_content" instance=ExtResource("7_emtfj")]
