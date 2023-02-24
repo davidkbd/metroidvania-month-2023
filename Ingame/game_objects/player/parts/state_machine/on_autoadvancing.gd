@@ -44,7 +44,7 @@ func step(delta : float) -> StateMachineState:
 			return state_machine.on_ground
 	else:
 		if abs(host.global_position.y - position.y) < 5.0:
-			if not is_falling:
+			if not is_falling and direction == AutoadvanceArea.Direction.UP:
 				host.velocity.y = host.specs.jump_impulse
 				var control_direction = sign(ControlInput.get_horizontal_axis())
 				if not control_direction: control_direction = 1.0

@@ -547,7 +547,6 @@ texture = ExtResource("13_vjjdm")
 centered = false
 hframes = 9
 vframes = 11
-frame = 12
 script = ExtResource("16_4ekit")
 
 [node name="body_collider" type="CollisionShape2D" parent="."]
