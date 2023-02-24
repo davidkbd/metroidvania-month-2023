@@ -10,3 +10,8 @@ func _physics_process(_delta : float) -> void:
 		flip_h = true
 	elif walk_direction < .0:
 		flip_h = false 
+
+func _ready() -> void:
+	var mat : ShaderMaterial = material
+	mat.set_shader_parameter("animation_columns", hframes)
+	mat.set_shader_parameter("animation_rows", vframes)

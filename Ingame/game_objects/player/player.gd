@@ -66,3 +66,4 @@ func _ready() -> void:
 	skills.set_skill_value("double_jump", true)
 	skills.set_skill_value("finta", true)
 	skills.set_skill_value("snap_wall", true)
+
