@@ -6,7 +6,7 @@ var attack_time : float
 
 func enter() -> void:
 	host.animation_playblack.travel("on_attack")
-	host.animation_tree.set("parameters/on_attack/blend_position", .0)
+	host.animation_tree.set("parameters/on_attack/blend_position", .1)
 	_enable_collision(true)
 	attack_time = attack_timer
 	host.enemy_hit_area.scale.x = -1 if host.sprite.flip_h else 1
@@ -18,7 +18,7 @@ func step(delta : float) -> StateMachineState:
 	_movement()
 	host.fall(delta)
 	host.move_and_slide()
-		
+	
 	attack_time -= delta
 	if attack_time < .0: return state_machine.on_ground
 	return self

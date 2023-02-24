@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://cg6rsp0xxfkvq"]
+[gd_scene load_steps=87 format=3 uid="uid://cg6rsp0xxfkvq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_doublejump.gd" id="7_bx4yu"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_attack.gd" id="7_v12wq"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_wall.gd" id="8_2ivm0"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/on_normal_attack.gd" id="8_kqfbx"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_dash.gd" id="9_qc1tk"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
@@ -336,9 +337,14 @@ animation = &"fall"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bigqy"]
 animation = &"attack_horizontal"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vsv8q"]
+animation = &"attack_horizontal"
+
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_igas7"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_bigqy")
 blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_vsv8q")
+blend_point_1/pos = 0.1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_odwo1"]
 animation = &"dash"
@@ -476,7 +482,7 @@ states/on_jump/position = Vector2(210.36, -33.368)
 states/on_wall/node = SubResource("AnimationNodeAnimation_8utwh")
 states/on_wall/position = Vector2(409.275, -33.368)
 transitions = ["on_doublejump", "on_wall", SubResource("AnimationNodeStateMachineTransition_bc0ao"), "on_air", "on_wall", SubResource("AnimationNodeStateMachineTransition_1h6dp"), "on_wall", "on_air", SubResource("AnimationNodeStateMachineTransition_sxd1o"), "Start", "on_ground", SubResource("AnimationNodeStateMachineTransition_b74ck"), "on_ground", "on_air", SubResource("AnimationNodeStateMachineTransition_4kmwi"), "on_air", "on_ground", SubResource("AnimationNodeStateMachineTransition_7s5o5"), "on_wall", "on_ground", SubResource("AnimationNodeStateMachineTransition_102h6"), "on_doublejump", "on_ground", SubResource("AnimationNodeStateMachineTransition_sokds"), "on_ground", "on_attack", SubResource("AnimationNodeStateMachineTransition_s70q7"), "on_attack", "on_ground", SubResource("AnimationNodeStateMachineTransition_7mjoh"), "on_ground", "on_jump", SubResource("AnimationNodeStateMachineTransition_elpxu"), "on_jump", "on_doublejump", SubResource("AnimationNodeStateMachineTransition_d3gy4"), "on_jump", "on_ground", SubResource("AnimationNodeStateMachineTransition_5x7cb"), "on_jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_ydcgu"), "on_wall", "on_jump", SubResource("AnimationNodeStateMachineTransition_3jk0h"), "on_ground", "on_dash", SubResource("AnimationNodeStateMachineTransition_sibbg"), "on_dash", "on_ground", SubResource("AnimationNodeStateMachineTransition_40x5q")]
-graph_offset = Vector2(-255.64, -45.561)
+graph_offset = Vector2(-545.64, -72.561)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bjlgn"]
 
@@ -492,7 +498,8 @@ on_autoadvancing_state = NodePath("on_autoadvancing")
 on_ground_state = NodePath("on_ground")
 on_jump_state = NodePath("on_jump")
 on_doublejump_state = NodePath("on_doublejump")
-on_attack_state = NodePath("on_attack")
+on_simple_attack_state = NodePath("on_simple_attack")
+on_normal_attack_state = NodePath("on_normal_attack")
 on_dash_state = NodePath("on_dash")
 on_wall_state = NodePath("on_wall")
 on_air_state = NodePath("on_air")
@@ -513,8 +520,11 @@ script = ExtResource("5_mtmft")
 [node name="on_doublejump" type="Node" parent="state_machine"]
 script = ExtResource("7_bx4yu")
 
-[node name="on_attack" type="Node" parent="state_machine"]
+[node name="on_simple_attack" type="Node" parent="state_machine"]
 script = ExtResource("7_v12wq")
+
+[node name="on_normal_attack" type="Node" parent="state_machine"]
+script = ExtResource("8_kqfbx")
 
 [node name="on_dash" type="Node" parent="state_machine"]
 script = ExtResource("9_qc1tk")
@@ -622,7 +632,7 @@ tree_root = SubResource("AnimationNodeStateMachine_f4fiv")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_bjlgn")
-parameters/on_attack/blend_position = -0.000848174
+parameters/on_attack/blend_position = 0.0
 parameters/on_ground/blend_position = -0.000424087
 parameters/on_jump/blend_position = Vector2(0.10082, -0.271868)
 

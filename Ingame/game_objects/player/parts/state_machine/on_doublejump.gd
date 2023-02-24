@@ -20,7 +20,7 @@ func step(delta : float) -> StateMachineState:
 	prevent_on_wall_timer -= delta
 
 	if host.is_on_floor(): return state_machine.on_ground
-	if prevent_on_wall_timer < .0 and host.can_snap_to_wall(): return state_machine.on_wall
+	if host.skills.data.snap_wall and prevent_on_wall_timer < .0 and host.can_snap_to_wall(): return state_machine.on_wall
 	if host.enemy_died: return state_machine.on_enemybounce
 	if host.damager.size(): return state_machine.on_damaged
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing

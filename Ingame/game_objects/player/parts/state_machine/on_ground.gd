@@ -24,8 +24,12 @@ func step(delta : float) -> StateMachineState:
 
 	# Returns
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
-	if ControlInput.is_attack_just_pressed(): return state_machine.on_attack
-	if host.can_double_jump() and ControlInput.is_dash_just_pressed(): return state_machine.on_dash
+	if ControlInput.is_attack_just_pressed():
+		if host.skills.data.normal_attack:
+			return state_machine.on_normal_attack
+		else:
+			return state_machine.on_simple_attack
+	if host.skills.data.snap_wall and ControlInput.is_dash_just_pressed(): return state_machine.on_dash
 	if host.talking_npc and ControlInput.is_interact_just_pressed(): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged
