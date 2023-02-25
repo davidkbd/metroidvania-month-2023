@@ -1,24 +1,24 @@
 [gd_scene load_steps=21 format=3 uid="uid://dqvs4h4pm2ru7"]
 
-[ext_resource type="Script" path="res://Ingame/levels/level_001.gd" id="1_477p2"]
-[ext_resource type="PackedScene" uid="uid://c0eke8npk0umn" path="res://Ingame/rooms/room_001.tscn" id="2_eat6y"]
-[ext_resource type="Texture2D" uid="uid://crlffvvvdwuty" path="res://Ingame/level-sprites/default/cavernaSlime.png" id="2_tmjtc"]
-[ext_resource type="PackedScene" uid="uid://cbx4tsxjquwqb" path="res://Ingame/rooms/room_002.tscn" id="3_pam6d"]
-[ext_resource type="Texture2D" uid="uid://erqactl2ihou" path="res://Ingame/level-sprites/default/cavernaSlimeBG.png" id="3_r5kqk"]
-[ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="3_y32sq"]
-[ext_resource type="PackedScene" uid="uid://b0vn0c2ckxsjs" path="res://Ingame/rooms/room_003.tscn" id="4_71wtu"]
-[ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_as6cq"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_secret.tscn" id="6_a6r66"]
-[ext_resource type="Script" path="res://Ingame/rooms/room_002_secret.gd" id="7_gyps8"]
-[ext_resource type="PackedScene" uid="uid://2rytg7wo8un4" path="res://Ingame/rooms/room_002_secret.tscn" id="9_7v7q3"]
-[ext_resource type="PackedScene" uid="uid://qhf55h8w530v" path="res://Ingame/rooms/room_002_tunnel.tscn" id="10_eu167"]
-[ext_resource type="PackedScene" uid="uid://dgdmijka5t3dd" path="res://Ingame/rooms/room_004.tscn" id="11_r2o2u"]
-[ext_resource type="PackedScene" uid="uid://brjkpj6nrt24k" path="res://Ingame/rooms/room_003_tunnel.tscn" id="13_x5t4v"]
-[ext_resource type="PackedScene" uid="uid://bssipoexjcdj8" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_j6idy"]
-[ext_resource type="PackedScene" uid="uid://cwh0rcolcsywr" path="res://Ingame/rooms/room_006_tunnel.tscn" id="15_j2x28"]
-[ext_resource type="PackedScene" uid="uid://bdhy8fdfbaxdx" path="res://Ingame/rooms/room_006.tscn" id="16_60un4"]
-[ext_resource type="PackedScene" uid="uid://vofh41enak8e" path="res://Ingame/rooms/room_007.tscn" id="17_sq45t"]
-[ext_resource type="PackedScene" uid="uid://r6ep3ivwt7hn" path="res://Ingame/rooms/room_008.tscn" id="18_l47ne"]
+[ext_resource type="Script" path="res://Ingame/levels/level_001.gd" id="1_67tbm"]
+[ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="2_vpw7i"]
+[ext_resource type="Texture2D" uid="uid://crlffvvvdwuty" path="res://Ingame/level-sprites/default/cavernaSlime.png" id="3_fuh8n"]
+[ext_resource type="Texture2D" uid="uid://erqactl2ihou" path="res://Ingame/level-sprites/default/cavernaSlimeBG.png" id="4_j3vsp"]
+[ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_n3beu"]
+[ext_resource type="PackedScene" uid="uid://c0eke8npk0umn" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
+[ext_resource type="PackedScene" uid="uid://cbx4tsxjquwqb" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
+[ext_resource type="Script" path="res://Ingame/rooms/room_002_secret.gd" id="8_x010g"]
+[ext_resource type="PackedScene" uid="uid://2rytg7wo8un4" path="res://Ingame/rooms/room_002_secret.tscn" id="9_l220f"]
+[ext_resource type="PackedScene" uid="uid://qhf55h8w530v" path="res://Ingame/rooms/room_002_tunnel.tscn" id="10_dh8cp"]
+[ext_resource type="PackedScene" uid="uid://b0vn0c2ckxsjs" path="res://Ingame/rooms/room_003.tscn" id="11_hgltt"]
+[ext_resource type="PackedScene" uid="uid://brjkpj6nrt24k" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
+[ext_resource type="PackedScene" uid="uid://dgdmijka5t3dd" path="res://Ingame/rooms/room_004.tscn" id="13_dsqei"]
+[ext_resource type="PackedScene" uid="uid://bssipoexjcdj8" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_s8mat"]
+[ext_resource type="PackedScene" uid="uid://cwh0rcolcsywr" path="res://Ingame/rooms/room_006_tunnel.tscn" id="15_u1dht"]
+[ext_resource type="PackedScene" uid="uid://bdhy8fdfbaxdx" path="res://Ingame/rooms/room_006.tscn" id="16_uxsce"]
+[ext_resource type="PackedScene" uid="uid://vofh41enak8e" path="res://Ingame/rooms/room_007.tscn" id="17_y2cyn"]
+[ext_resource type="PackedScene" uid="uid://r6ep3ivwt7hn" path="res://Ingame/rooms/room_008.tscn" id="18_0mwn2"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
@@ -34,7 +34,7 @@ adjustment_brightness = 0.6
 adjustment_contrast = 1.23
 
 [node name="level_001" type="Node2D" groups=["LEVEL"]]
-script = ExtResource("1_477p2")
+script = ExtResource("1_67tbm")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.34
@@ -48,27 +48,27 @@ environment = SubResource("Environment_mmnho")
 follow_viewport_enabled = true
 scroll_base_scale = Vector2(-1, -1)
 
-[node name="first_room_bg" parent="parallax/ParallaxBackground" instance=ExtResource("3_y32sq")]
+[node name="first_room_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/first_room_bg"]
 texture_filter = 1
 position = Vector2(-96, -48)
-texture = ExtResource("2_tmjtc")
+texture = ExtResource("3_fuh8n")
 centered = false
 
-[node name="first_room_particles" parent="parallax/ParallaxBackground" instance=ExtResource("3_y32sq")]
+[node name="first_room_particles" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.5, 0.5)
 
-[node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles" instance=ExtResource("4_as6cq")]
+[node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles" instance=ExtResource("4_n3beu")]
 position = Vector2(320, 192)
 scale_amount_min = 0.2
 scale_amount_max = 1.0
 
-[node name="first_room_particles2" parent="parallax/ParallaxBackground" instance=ExtResource("3_y32sq")]
+[node name="first_room_particles2" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.3, 0.3)
 
-[node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles2" instance=ExtResource("4_as6cq")]
+[node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles2" instance=ExtResource("4_n3beu")]
 position = Vector2(320, 192)
 scale_amount_min = 0.4
 scale_amount_max = 1.2
@@ -78,57 +78,57 @@ layer = 10
 follow_viewport_enabled = true
 scroll_base_scale = Vector2(-1, -1)
 
-[node name="first_room_particles" parent="parallax/ParallaxForeground" instance=ExtResource("3_y32sq")]
+[node name="first_room_particles" parent="parallax/ParallaxForeground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(-0.3, -0.3)
 
-[node name="ambient_particles" parent="parallax/ParallaxForeground/first_room_particles" instance=ExtResource("4_as6cq")]
+[node name="ambient_particles" parent="parallax/ParallaxForeground/first_room_particles" instance=ExtResource("4_n3beu")]
 
-[node name="first_room_roots" parent="parallax/ParallaxForeground" instance=ExtResource("3_y32sq")]
+[node name="first_room_roots" parent="parallax/ParallaxForeground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(-1.1, -1.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxForeground/first_room_roots"]
 texture_filter = 1
 position = Vector2(-480, -248)
-texture = ExtResource("3_r5kqk")
+texture = ExtResource("4_j3vsp")
 centered = false
 
-[node name="room_001" parent="." instance=ExtResource("2_eat6y")]
+[node name="room_001" parent="." instance=ExtResource("5_olijw")]
 metadata/_edit_lock_ = true
 
-[node name="room_001_secret" parent="." instance=ExtResource("6_a6r66")]
+[node name="room_001_secret" parent="." instance=ExtResource("6_tc7rs")]
 position = Vector2(0, 32)
 
-[node name="room_002" parent="." instance=ExtResource("3_pam6d")]
-position = Vector2(2376, 32)
-script = ExtResource("7_gyps8")
+[node name="room_002" parent="." instance=ExtResource("7_75ef1")]
+position = Vector2(1896, 32)
+script = ExtResource("8_x010g")
 
-[node name="room_002_secret" parent="." instance=ExtResource("9_7v7q3")]
-position = Vector2(2280, 32)
+[node name="room_002_secret" parent="." instance=ExtResource("9_l220f")]
+position = Vector2(1800, 32)
 
-[node name="room_002_tunnel" parent="." instance=ExtResource("10_eu167")]
+[node name="room_002_tunnel" parent="." instance=ExtResource("10_dh8cp")]
 position = Vector2(1320, 32)
 
-[node name="room_003" parent="." instance=ExtResource("4_71wtu")]
-position = Vector2(5952, -1600)
-script = ExtResource("7_gyps8")
+[node name="room_003" parent="." instance=ExtResource("11_hgltt")]
+position = Vector2(5472, -1600)
+script = ExtResource("8_x010g")
 
-[node name="room_003_tunnel" parent="." instance=ExtResource("13_x5t4v")]
-position = Vector2(7336, -1600)
+[node name="room_003_tunnel" parent="." instance=ExtResource("12_po3mq")]
+position = Vector2(6856, -1600)
 
-[node name="room_003_2" parent="." instance=ExtResource("11_r2o2u")]
-position = Vector2(5952, -1632)
+[node name="room_003_2" parent="." instance=ExtResource("13_dsqei")]
+position = Vector2(5472, -1632)
 
-[node name="room_004_tunnel" parent="." instance=ExtResource("14_j6idy")]
-position = Vector2(7336, -2880)
+[node name="room_004_tunnel" parent="." instance=ExtResource("14_s8mat")]
+position = Vector2(6856, -2880)
 
-[node name="room_006_tunnel" parent="." instance=ExtResource("15_j2x28")]
-position = Vector2(9928, -640)
+[node name="room_006_tunnel" parent="." instance=ExtResource("15_u1dht")]
+position = Vector2(9448, -640)
 
-[node name="room_006" parent="." instance=ExtResource("16_60un4")]
-position = Vector2(10464, -2944)
+[node name="room_006" parent="." instance=ExtResource("16_uxsce")]
+position = Vector2(9984, -2944)
 
-[node name="room_007" parent="." instance=ExtResource("17_sq45t")]
-position = Vector2(9848, 480)
+[node name="room_007" parent="." instance=ExtResource("17_y2cyn")]
+position = Vector2(9376, 480)
 
-[node name="room_008" parent="." instance=ExtResource("18_l47ne")]
-position = Vector2(8152, 480)
+[node name="room_008" parent="." instance=ExtResource("18_0mwn2")]
+position = Vector2(7648, 480)
