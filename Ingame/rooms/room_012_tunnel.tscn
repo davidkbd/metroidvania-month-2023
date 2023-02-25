@@ -16,23 +16,23 @@ script = ExtResource("1_irgqd")
 position = Vector2(64, 288)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(1832, -1046)
+position = Vector2(-16, -392)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="room_content" parent="." instance=ExtResource("3_s7gjg")]
 
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(1496, 216)
+position = Vector2(-352, 870)
 direction = 3
 
 [node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(1496, 88)
+position = Vector2(-352, 742)
 direction = 3
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(-232, 288)
+position = Vector2(-2080, 936)
 tile_set = ExtResource("5_m8mxu")
 cell_quadrant_size = 32
 format = 2

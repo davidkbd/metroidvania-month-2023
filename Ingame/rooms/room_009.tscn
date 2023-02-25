@@ -16,51 +16,51 @@ script = ExtResource("1_7g7e0")
 position = Vector2(64, 288)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(1512, -1644)
+position = Vector2(-120, -492)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="room_content" parent="." instance=ExtResource("3_mtwnp")]
 
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(632, -32)
+position = Vector2(-1000, 1120)
 direction = 2
 
 [node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(728, -32)
+position = Vector2(-904, 1120)
 direction = 2
 
 [node name="autoadvance_area_left4" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(2392, -32)
+position = Vector2(760, 1120)
 direction = 2
 
 [node name="autoadvance_area_left6" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(3864, -1152)
+position = Vector2(2232, 0)
 
 [node name="autoadvance_area_left7" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(3864, -1280)
+position = Vector2(2232, -128)
 
 [node name="autoadvance_area_left8" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(3856, -2272)
+position = Vector2(2224, -1120)
 
 [node name="autoadvance_area_left9" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(3856, -2400)
+position = Vector2(2224, -1248)
 
 [node name="autoadvance_area_left10" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(-712, -2424)
+position = Vector2(-2344, -1272)
 direction = 3
 
 [node name="autoadvance_area_left11" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(-712, -2496)
+position = Vector2(-2344, -1344)
 direction = 3
 
 [node name="autoadvance_area_left5" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(2488, -32)
+position = Vector2(856, 1120)
 direction = 2
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(-232, 288)
+position = Vector2(-1864, 1440)
 tile_set = ExtResource("5_7toqt")
 cell_quadrant_size = 32
 format = 2
