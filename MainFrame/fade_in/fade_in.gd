@@ -19,10 +19,11 @@ func hud_listener_on_game_finished() -> void:
 func level_listener_on_ready(_data : Dictionary) -> void:
 	_fade_in()
 
-func player_listener_on_autoadvance_entered() -> void:
-	_fade_out(.1)
+func player_listener_on_autoadvance_entered(area : AutoadvanceArea) -> void:
+	if area.fade_out_in:
+		_fade_out(.1)
 
-func player_listener_on_autoadvance_exited() -> void:
+func player_listener_on_autoadvance_exited(area : AutoadvanceArea) -> void:
 	_fade_in()
 
 func _fade_in(fade_time_multiplier : float = 1.0) -> void:
