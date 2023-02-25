@@ -11,6 +11,7 @@ size = Vector2(3016, 424)
 
 [node name="room_002_tunnel" type="Node2D"]
 script = ExtResource("1_q3u51")
+parallax_name = "sewers"
 
 [node name="room_area" parent="." instance=ExtResource("2_ms4b8")]
 position = Vector2(64, 288)
