@@ -23,7 +23,11 @@ func _convert_action_to_region_position(_action : String) -> float:
 	var r : float = .0
 	match _action:
 		"u": r = .0
+		"r": r = 1.0
+		"d": r = 2.0
+		"l": r = 3.0
 		"A": r = 4.0
+		"x": r = 6.0
 	return r  * 64.0
 
 func _ready() -> void:

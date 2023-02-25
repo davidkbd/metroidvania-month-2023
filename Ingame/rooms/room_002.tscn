@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbx4tsxjquwqb"]
+[gd_scene load_steps=8 format=3 uid="uid://cbx4tsxjquwqb"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_ilv60"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_e1mai"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="4_l0ln6"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_m1y3m"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_7o3yd"]
+[ext_resource type="PackedScene" uid="uid://cc3xlv2ppyil" path="res://Ingame/game_objects/control_tip_area/control_tip_area.tscn" id="5_h1fbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1608, 2208)
@@ -44,6 +45,10 @@ direction = 3
 [node name="autoadvance_area_bottom_left2" parent="room_content" instance=ExtResource("4_e1mai")]
 position = Vector2(1272, 96)
 direction = 3
+
+[node name="ControlTipArea" parent="room_content" instance=ExtResource("5_h1fbl")]
+position = Vector2(1688, 288)
+control_type = 3
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
 texture_filter = 1

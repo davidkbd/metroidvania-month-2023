@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://3uib0onhpfvj"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://Ingame/layers/hud/help_tips/help_tips.gd" id="1_ovly0"]
 [ext_resource type="Texture2D" uid="uid://df0nori5j7y4k" path="res://UI/sprites/control-pad.png" id="2_pxhih"]
-[ext_resource type="Script" path="res://Ingame/layers/hud/help_tips/pad_sprite.gd" id="3_ppvbv"]
+[ext_resource type="Script" path="res://Ingame/layers/hud/help_tips/controls.gd" id="3_ppvbv"]
 [ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="4_hpej5"]
 [ext_resource type="Texture2D" uid="uid://bidhgcf4w0scj" path="res://UI/sprites/control-qwerty.png" id="5_kbyum"]
 

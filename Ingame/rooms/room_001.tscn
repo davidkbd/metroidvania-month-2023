@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0eke8npk0umn"]
+[gd_scene load_steps=11 format=3 uid="uid://c0eke8npk0umn"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_wnr0d"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="4_6qv04"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_m2y6s"]
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="6_mx5ml"]
 [ext_resource type="PackedScene" uid="uid://cshwlyorvtvl5" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_tvbbv"]
+[ext_resource type="PackedScene" uid="uid://cc3xlv2ppyil" path="res://Ingame/game_objects/control_tip_area/control_tip_area.tscn" id="9_nr8k4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1008, 568)
@@ -45,6 +46,14 @@ format = 2
 layer_0/tile_data = PackedInt32Array(393203, 65538, 3, 458739, 65538, 3, 524275, 65538, 3, 589811, 65538, 3, 655347, 65538, 3, 458740, 196610, 3, 524276, 196610, 3, 589812, 196610, 3, 655348, 196610, 3, 393205, 327682, 3, 458741, 327682, 3, 524277, 327682, 3, 589813, 327682, 3, 655349, 327682, 3, 393204, 196610, 3, 720884, 196610, 3, 720885, 131074, 5, 720883, 65538, 3, 327668, 196610, 3, 327667, 65538, 3)
 
 [node name="room_content" parent="." instance=ExtResource("4_tio88")]
+
+[node name="JumpHelp" parent="room_content" instance=ExtResource("9_nr8k4")]
+position = Vector2(144, 408)
+control_type = 3
+
+[node name="MoveRightHelp" parent="room_content" instance=ExtResource("9_nr8k4")]
+position = Vector2(-160, 320)
+control_type = 1
 
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("6_m2y6s")]
 position = Vector2(640, 256)
