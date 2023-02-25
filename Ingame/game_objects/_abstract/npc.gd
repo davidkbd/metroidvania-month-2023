@@ -19,7 +19,7 @@ func get_texts() -> Array[String]:
 	return ["HOLI"]
 
 func show_talk_letter() -> void:
-	help_tips.show_pad(0)
+	help_tips.show_control(ControlInput.INTERACT_ACTIONS[ControlInput.configurated_control_mode])
 	if is_instance_valid(talk_letter_label_instance): talk_letter_label_instance.queue_free()
 	talk_letter_label_instance = talk_letter_label_packedscene.instantiate()
 	talk_letter_label_instance.text = "Talk"
