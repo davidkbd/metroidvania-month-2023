@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://cg6rsp0xxfkvq"]
+[gd_scene load_steps=88 format=3 uid="uid://cg6rsp0xxfkvq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://n1gl7gekmp5d" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/player/parts/npc_sensor/npc_sensor.tscn" id="14_omfj5"]
 [ext_resource type="Shader" path="res://Ingame/shaders/player_shader.gdshader" id="15_unq2k"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_consulting_map.gd" id="15_yn632"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/player_sprite/player_sprite.gd" id="16_4ekit"]
 [ext_resource type="Texture2D" uid="uid://cpejugcss86qx" path="res://Ingame/game_objects/player/sprites/player_bubbles.png" id="17_0r6jg"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
@@ -506,6 +507,7 @@ on_air_state = NodePath("on_air")
 on_damaged_state = NodePath("on_damaged")
 on_enemybounce_state = NodePath("on_enemybounce")
 on_talking_state = NodePath("on_talking")
+on_consulting_map_state = NodePath("on_consulting_map")
 initial_state = NodePath("on_ground")
 
 [node name="on_autoadvancing" type="Node" parent="state_machine"]
@@ -543,6 +545,9 @@ script = ExtResource("10_m6qjo")
 
 [node name="on_talking" type="Node" parent="state_machine"]
 script = ExtResource("12_olhsd")
+
+[node name="on_consulting_map" type="Node" parent="state_machine"]
+script = ExtResource("15_yn632")
 
 [node name="skills" parent="." instance=ExtResource("11_x5sqa")]
 

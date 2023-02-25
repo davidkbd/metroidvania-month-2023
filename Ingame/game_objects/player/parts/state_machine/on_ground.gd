@@ -1,7 +1,5 @@
 extends StateMachineState
 
-@onready var map : Map = get_tree().get_first_node_in_group("MAP")
-
 @export var check_floor_ray_vector : Vector2 = Vector2.DOWN * 32.0
 @export var coyote_time : float = .08
 
@@ -20,7 +18,7 @@ func step(delta : float) -> StateMachineState:
 
 	host.move_and_slide()
 
-	if ControlInput.is_map_just_pressed(): map.toggle_map()
+	if ControlInput.is_map_just_pressed(): return state_machine.on_consulting_map
 
 	# Returns
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump

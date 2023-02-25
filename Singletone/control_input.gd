@@ -20,6 +20,7 @@ const MENU_ACTIONS       : Array[String] = ["st","st","st"]
 var configurated_control_mode : int = 1
 
 func get_horizontal_axis() ->        float: return Input.get_axis(L_ACTIONS[configurated_control_mode], R_ACTIONS[configurated_control_mode])
+func get_vertical_axis() ->          float: return Input.get_axis(U_ACTIONS[configurated_control_mode], D_ACTIONS[configurated_control_mode])
 #func is_left_pressed() ->            bool:  return Input.is_action_pressed(L_ACTIONS[configurated_control_mode])
 #func is_right_pressed() ->           bool:  return Input.is_action_pressed(R_ACTIONS[configurated_control_mode])
 func is_up_pressed() ->              bool:  return Input.is_action_pressed(L_ACTIONS[configurated_control_mode])

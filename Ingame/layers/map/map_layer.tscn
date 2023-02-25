@@ -22,7 +22,8 @@ mouse_filter = 2
 script = ExtResource("2_81fij")
 
 [node name="background" type="ColorRect" parent="map_container"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -35,9 +36,11 @@ z_index = 6
 position = Vector2(8, 8)
 text = "Map"
 
-[node name="map" type="Node2D" parent="map_container"]
+[node name="scroll" type="Node2D" parent="map_container"]
+
+[node name="map" type="Node2D" parent="map_container/scroll"]
 script = ExtResource("4_hm7pb")
 
-[node name="player_position_sprite" type="Sprite2D" parent="map_container"]
+[node name="player_position_sprite" type="Sprite2D" parent="map_container/scroll"]
 position = Vector2(320, 180)
 texture = ExtResource("2_iog5c")

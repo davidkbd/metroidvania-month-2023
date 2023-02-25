@@ -12,6 +12,7 @@ extends StateMachine
 @export var on_damaged_state        : NodePath
 @export var on_enemybounce_state    : NodePath
 @export var on_talking_state        : NodePath
+@export var on_consulting_map_state : NodePath
 
 
 @onready var on_autoadvancing  : StateMachineState = get_node(on_autoadvancing_state)
@@ -26,3 +27,4 @@ extends StateMachine
 @onready var on_damaged        : StateMachineState = get_node(on_damaged_state)
 @onready var on_enemybounce    : StateMachineState = get_node(on_enemybounce_state)
 @onready var on_talking        : StateMachineState = get_node(on_talking_state)
+@onready var on_consulting_map : StateMachineState = get_node(on_consulting_map_state)
