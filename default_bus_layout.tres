@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://bmgil72mlkae6"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://bmgil72mlkae6"]
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_0y4um"]
 resource_name = "Limiter"
@@ -11,6 +11,15 @@ threshold = -8.0
 resource_name = "Compressor"
 threshold = -8.0
 ratio = 2.0
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_02hbj"]
+resource_name = "EQ"
+band_db/32_hz = -51.2
+band_db/100_hz = -8.0
+band_db/320_hz = -5.2
+band_db/1000_hz = -12.5
+band_db/3200_hz = -60.0
+band_db/10000_hz = -60.0
 
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectLimiter_0y4um")
@@ -31,3 +40,5 @@ bus/2/volume_db = 0.0
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectCompressor_i5l5x")
 bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectEQ_02hbj")
+bus/2/effect/1/enabled = false
