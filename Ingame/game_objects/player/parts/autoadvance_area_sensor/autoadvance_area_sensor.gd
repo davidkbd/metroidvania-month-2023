@@ -10,5 +10,6 @@ func _on_area_entered(area : AutoadvanceArea):
 
 
 func _on_area_exited(area : AutoadvanceArea):
-	player.autoadvance_area = null
-	get_tree().call_group("PLAYER_LISTENER", "player_listener_on_autoadvance_exited", area)
+	if player.autoadvance_area == area:
+		get_tree().call_group("PLAYER_LISTENER", "player_listener_on_autoadvance_exited", area)
+		player.autoadvance_area = null

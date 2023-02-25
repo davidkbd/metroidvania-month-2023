@@ -1,6 +1,8 @@
 extends Node2D
 class_name Room
 
+@export var parallax_name : String
+
 @onready var player       : Player             = get_tree().get_first_node_in_group("PLAYER")
 @onready var camera       : FollowTargetCamera = get_tree().get_first_node_in_group("CAMERA")
 @onready var room_area    : RoomArea           = _find_room_area()
