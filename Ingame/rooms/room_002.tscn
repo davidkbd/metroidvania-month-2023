@@ -30,7 +30,11 @@ position = Vector2(1288, -1536)
 direction = 3
 
 [node name="autoadvance_area_bottom_left" parent="room_content" instance=ExtResource("4_e1mai")]
-position = Vector2(1280, 216)
+position = Vector2(1272, 224)
+direction = 3
+
+[node name="autoadvance_area_bottom_left2" parent="room_content" instance=ExtResource("4_e1mai")]
+position = Vector2(1272, 96)
 direction = 3
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
