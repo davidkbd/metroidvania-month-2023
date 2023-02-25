@@ -30,8 +30,8 @@ func progress_listener_on_game_state_loaded(_game_state : Dictionary) -> void:
 	map_instance = map_template.instantiate()
 	game_layer_instance = game_layer_template.instantiate()
 
-	add_child(hud_instance)
 	add_child(map_instance)
+	add_child(hud_instance)
 	add_child(game_layer_instance)
 	game_layer_instance.instance_level(_game_state)
 	map_instance.initialize(_game_state)

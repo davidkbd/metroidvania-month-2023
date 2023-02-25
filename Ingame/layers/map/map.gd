@@ -19,7 +19,7 @@ func initialize_rooms_state(_rooms_state : Dictionary) -> void:
 	for key in rooms_state:
 		room = level.find_child(key)
 		map_image.append(load(PATH % key))
-		map_pos.append(room.global_position * .08 + offset)
+		map_pos.append(floor(room.global_position * .08 + offset))
 	queue_redraw()
 
 func _draw():
