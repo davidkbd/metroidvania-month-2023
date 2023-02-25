@@ -2,7 +2,7 @@ extends CharacterAlive
 
 class_name Player
 
-@export var check_snap_wall_ray_position : Vector2 = Vector2.UP * 36.0
+@export var check_snap_wall_ray_position : Vector2 = Vector2.UP * 56.0
 @export var check_snap_wall_ray_vector   : Vector2 = Vector2.LEFT * 64
 
 @onready var skills               : PlayerSkills      = $skills
