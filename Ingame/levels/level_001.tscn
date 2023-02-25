@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://erqactl2ihou" path="res://Ingame/level-sprites/default/cavernaSlimeBG.png" id="4_j3vsp"]
 [ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_n3beu"]
 [ext_resource type="PackedScene" uid="uid://c0eke8npk0umn" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
+[ext_resource type="PackedScene" uid="uid://g8e6tumw718r" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
 [ext_resource type="PackedScene" uid="uid://cbx4tsxjquwqb" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
 [ext_resource type="Script" path="res://Ingame/rooms/room_002_secret.gd" id="8_x010g"]
 [ext_resource type="PackedScene" uid="uid://2rytg7wo8un4" path="res://Ingame/rooms/room_002_secret.tscn" id="9_l220f"]
@@ -142,13 +142,13 @@ position = Vector2(7648, 480)
 position = Vector2(12360, -4064)
 
 [node name="room_009" parent="." instance=ExtResource("20_t6n72")]
-position = Vector2(13448, -4160)
+position = Vector2(15080, -5312)
 
 [node name="room_010_tunnel" parent="." instance=ExtResource("22_j37te")]
-position = Vector2(14120, -4064)
+position = Vector2(16984, -3936)
 
 [node name="room_011" parent="." instance=ExtResource("23_t6j15")]
 position = Vector2(18016, -5216)
 
 [node name="room_010_tunnel2" parent="." instance=ExtResource("24_q05xe")]
-position = Vector2(15816, -6656)
+position = Vector2(17664, -7304)
