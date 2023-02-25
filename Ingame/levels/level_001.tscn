@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://erqactl2ihou" path="res://Ingame/level-sprites/default/cavernaSlimeBG.png" id="3_r5kqk"]
 [ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="3_y32sq"]
 [ext_resource type="PackedScene" uid="uid://b0vn0c2ckxsjs" path="res://Ingame/rooms/room_003.tscn" id="4_71wtu"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_secret.tscn" id="6_a6r66"]
+[ext_resource type="PackedScene" uid="uid://g8e6tumw718r" path="res://Ingame/rooms/room_001_secret.tscn" id="6_a6r66"]
 [ext_resource type="Script" path="res://Ingame/rooms/room_002_secret.gd" id="7_gyps8"]
 [ext_resource type="PackedScene" uid="uid://2rytg7wo8un4" path="res://Ingame/rooms/room_002_secret.tscn" id="9_7v7q3"]
 [ext_resource type="PackedScene" uid="uid://qhf55h8w530v" path="res://Ingame/rooms/room_002_tunnel.tscn" id="10_eu167"]
