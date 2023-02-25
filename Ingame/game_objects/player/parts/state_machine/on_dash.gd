@@ -21,7 +21,7 @@ func step(delta : float) -> StateMachineState:
 	dash_time -= delta
 
 
-	print("Habra que hacer algo con damager.size() no, o que?")
+	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if host.damager.size(): return state_machine.on_damaged
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	if dash_time < .0: return state_machine.on_ground
