@@ -35,25 +35,21 @@ layer_0/tile_data = PackedInt32Array(-65518, 196610, 4, -65517, 196610, 2, -1310
 position = Vector2(40, 288)
 
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("6_5aovd")]
-position = Vector2(-992, -96)
+position = Vector2(-992, -64)
 direction = 3
 
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_5aovd")]
-position = Vector2(-992, 32)
+position = Vector2(-992, 64)
 direction = 3
 
 [node name="autoadvance_area5" parent="room_content" instance=ExtResource("6_5aovd")]
-position = Vector2(-992, 160)
+position = Vector2(-992, 192)
 direction = 3
 
 [node name="autoadvance_area6" parent="room_content" instance=ExtResource("6_5aovd")]
-position = Vector2(-992, 288)
-direction = 3
-
-[node name="autoadvance_area7" parent="room_content" instance=ExtResource("6_5aovd")]
 position = Vector2(-992, 320)
 direction = 3
 
 [node name="autoadvance_area3" parent="room_content" instance=ExtResource("6_5aovd")]
-position = Vector2(-992, -224)
+position = Vector2(-992, -192)
 direction = 3

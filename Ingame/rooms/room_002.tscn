@@ -26,7 +26,15 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 position = Vector2(2872, -1728)
 
 [node name="autoadvance_area_top_left" parent="room_content" instance=ExtResource("4_e1mai")]
-position = Vector2(1288, -1536)
+position = Vector2(1272, -1536)
+direction = 3
+
+[node name="autoadvance_area_top_left2" parent="room_content" instance=ExtResource("4_e1mai")]
+position = Vector2(1272, -1664)
+direction = 3
+
+[node name="autoadvance_area_top_left3" parent="room_content" instance=ExtResource("4_e1mai")]
+position = Vector2(1272, -1792)
 direction = 3
 
 [node name="autoadvance_area_bottom_left" parent="room_content" instance=ExtResource("4_e1mai")]

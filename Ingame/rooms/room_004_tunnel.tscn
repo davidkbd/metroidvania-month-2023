@@ -23,11 +23,11 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 [node name="room_content" parent="." instance=ExtResource("3_jc2fp")]
 
 [node name="autoadvance_area_left" parent="room_content" instance=ExtResource("4_qmyac")]
-position = Vector2(-680, 224)
+position = Vector2(-680, 288)
 direction = 3
 
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_qmyac")]
-position = Vector2(-680, 104)
+position = Vector2(-680, 160)
 direction = 3
 
 [node name="autoadvance_area_right3" parent="room_content" instance=ExtResource("4_qmyac")]

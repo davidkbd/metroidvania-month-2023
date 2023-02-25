@@ -52,9 +52,6 @@ position = Vector2(640, 256)
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_m2y6s")]
 position = Vector2(640, 128)
 
-[node name="autoadvance_area3" parent="room_content" instance=ExtResource("6_m2y6s")]
-position = Vector2(640, 0)
-
 [node name="savepoint_area" parent="room_content" instance=ExtResource("4_148m3")]
 position = Vector2(-160, 320)
 
