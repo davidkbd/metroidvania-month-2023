@@ -21,9 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://r6ep3ivwt7hn" path="res://Ingame/rooms/room_008.tscn" id="18_0mwn2"]
 [ext_resource type="PackedScene" uid="uid://dasfnkt7upls1" path="res://Ingame/rooms/room_009_tunnel.tscn" id="19_h3l0m"]
 [ext_resource type="PackedScene" uid="uid://gvp7110741ic" path="res://Ingame/rooms/room_009.tscn" id="20_t6n72"]
-[ext_resource type="PackedScene" uid="uid://6h1yxaj4eev0" path="res://Ingame/rooms/room_010_tunnel.tscn" id="22_j37te"]
-[ext_resource type="PackedScene" uid="uid://nl5b1oatad63" path="res://Ingame/rooms/room_011.tscn" id="23_t6j15"]
-[ext_resource type="PackedScene" uid="uid://bp7c17h6dokoq" path="res://Ingame/rooms/room_012_tunnel.tscn" id="24_q05xe"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_010_tunnel.tscn" id="22_j37te"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_011.tscn" id="23_t6j15"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_012_tunnel.tscn" id="24_q05xe"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
@@ -120,8 +120,8 @@ script = ExtResource("8_x010g")
 [node name="room_003_tunnel" parent="." instance=ExtResource("12_po3mq")]
 position = Vector2(6856, -1600)
 
-[node name="room_003_2" parent="." instance=ExtResource("13_dsqei")]
-position = Vector2(5472, -1632)
+[node name="room_004" parent="." instance=ExtResource("13_dsqei")]
+position = Vector2(5472, -2432)
 
 [node name="room_004_tunnel" parent="." instance=ExtResource("14_s8mat")]
 position = Vector2(6856, -2880)

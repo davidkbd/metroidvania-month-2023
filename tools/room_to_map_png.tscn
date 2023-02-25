@@ -47,7 +47,7 @@ func _clean_room(room_instance) -> void:
 		spawner.queue_free()
 
 func _ready():
-	$content/Camera2D.current = true
+	$content/Camera2D.make_current()
 	$content/Camera2D.global_position = Vector2.ZERO
 	viewport.transparent_bg=true
 	call_deferred(\"_make_snapshots\")

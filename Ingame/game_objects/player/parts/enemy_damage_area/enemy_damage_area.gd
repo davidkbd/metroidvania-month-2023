@@ -13,4 +13,3 @@ func _on_area_entered(area : Area2D) -> void:
 	disable_area_tween = create_tween()
 	await disable_area_tween.tween_interval(disabled_seconds).finished
 	collision_mask = default_collision_mask
-	
