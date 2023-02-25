@@ -19,3 +19,7 @@ bus = &"music"
 [node name="room_002_tunnel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_25k82")
 bus = &"music"
+
+[node name="room_002" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_we8vj")
+bus = &"music"

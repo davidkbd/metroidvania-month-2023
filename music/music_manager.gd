@@ -1,6 +1,6 @@
 extends Node
 
-@export_range(.1, 10.0) var fade_time : float = 3.0
+@export_range(.1, 10.0) var fade_time : float = 1.0
 
 @onready var menu_music     : AudioStreamPlayer = $menu_music
 @onready var ingame_music   : Array[Node] = [
@@ -30,8 +30,9 @@ func _play(_music : AudioStreamPlayer) -> void:
 	_previous = _current
 	_current = _music
 	var tween : Tween = get_tree().create_tween().bind_node(self)
+	_current.play()#randf_range(.0, _current.stream.get_length()))
+#	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_trans(Tween.TRANS_CUBIC)
-	_current.play(randf_range(.0, _current.stream.get_length()))
 	tween.set_ease(Tween.EASE_OUT).tween_property(_current, "volume_db", 0, fade_time)
 	if _previous:
 		_current.seek(_previous.get_playback_position())
@@ -42,10 +43,11 @@ func _play(_music : AudioStreamPlayer) -> void:
 func _stop() -> void:
 	_previous = _current
 	_current = null
-	var tween : Tween = get_tree().create_tween().bind_node(self)
-	tween.set_trans(Tween.TRANS_CUBIC)
 	if _previous:
-		tween.set_ease(Tween.EASE_IN).parallel().tween_property(_previous, "volume_db", -80, fade_time)
+		var tween : Tween = get_tree().create_tween().bind_node(self)
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.set_ease(Tween.EASE_IN).parallel()
+		tween.tween_property(_previous, "volume_db", -80, fade_time)
 		await tween.finished
 		_previous.stop()
 
