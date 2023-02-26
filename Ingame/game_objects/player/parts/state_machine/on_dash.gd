@@ -25,7 +25,6 @@ func step(delta : float) -> StateMachineState:
 	
 	dash_time -= delta
 
-
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if ControlInput.is_attack_just_pressed():
 		if host.skills.data.normal_attack:

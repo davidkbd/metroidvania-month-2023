@@ -33,7 +33,7 @@ func step(delta : float) -> StateMachineState:
 	damage_timer -= delta
 	host.move_and_slide()
 
-	print("hay que permitir controlar el personaje durante on_damaged")
+	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if damage_timer < .0 and host.is_on_floor(): return state_machine.on_ground
 	return self
 
