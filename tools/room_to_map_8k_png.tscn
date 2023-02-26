@@ -10,6 +10,7 @@ script/source = "extends Node2D
 @export_dir var output_directory : String
 @export_dir var rooms_directory  : String
 @export     var room_template : PackedScene
+@export     var scale_factor : float = 1.0
 
 @onready var viewport := $content/Camera2D.get_viewport()
 
@@ -49,6 +50,7 @@ func _clean_room(room_instance) -> void:
 func _ready():
 	$content/Camera2D.make_current()
 	$content/Camera2D.global_position = Vector2.ZERO
+
 	viewport.transparent_bg=true
 	call_deferred(\"_make_snapshots\")
 "

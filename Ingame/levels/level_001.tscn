@@ -158,7 +158,7 @@ position = Vector2(15080, -5312)
 position = Vector2(16984, -3936)
 
 [node name="room_011" parent="." instance=ExtResource("23_t6j15")]
-position = Vector2(18016, -5216)
+position = Vector2(18016, -5536)
 
 [node name="room_010_tunnel2" parent="." instance=ExtResource("24_q05xe")]
 position = Vector2(17664, -7304)
