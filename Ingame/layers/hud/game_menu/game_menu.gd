@@ -9,7 +9,7 @@ var options_instance : Control
 func menu_listener_on_continue_pressed() -> void:
 	AudioServer.set_bus_effect_enabled(2, 1, false)
 	visible = false
-	get_tree().get_first_node_in_group("GAME_LAYER").process_mode = Node.PROCESS_MODE_INHERIT
+	get_tree().paused = false
 
 func menu_listener_on_options_pressed() -> void:
 	if main_game_instance: main_game_instance.queue_free()
@@ -29,7 +29,7 @@ func hud_listener_on_level_finished() -> void:
 
 func _open() -> void:
 	visible = true
-	get_tree().get_first_node_in_group("GAME_LAYER").process_mode = Node.PROCESS_MODE_DISABLED
+	get_tree().paused = true
 	if main_game_instance: main_game_instance.queue_free()
 	main_game_instance = main_game_template.instantiate()
 	add_child(main_game_instance)
