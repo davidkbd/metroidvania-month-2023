@@ -64,7 +64,7 @@ adjustment_saturation = 0.2
 material = SubResource("ShaderMaterial_vnl4k")
 scale = Vector2(0.08, 0.08)
 script = SubResource("GDScript_6k48p")
-output_directory = "res://Ingame/rooms"
+output_directory = "res://Ingame/rooms/map-pngs"
 rooms_directory = "res://Ingame/rooms"
 room_template = ExtResource("1_08ig0")
 

@@ -5,7 +5,7 @@ const PROGRESS_PATH      : String = "user://progress/"
 const LEVEL_SPRITES_PATH : String = "res://Ingame/level-sprites/"
 
 const LEVELS_PATH : String = "res://Ingame/levels/"
-const MAP_PNG_PATH : String = "res://Ingame/rooms/"
+const MAP_PNG_PATH : String = "res://Ingame/rooms/map-pngs/"
 
 static func create() -> void:
 	DirAccess.make_dir_recursive_absolute(SETTINGS_PATH)

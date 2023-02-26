@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var scale_factor : float = 2.0
 @export_file var level_tscn : String
 @onready var camera       : FollowTargetCamera = get_tree().get_first_node_in_group("CAMERA")
 
@@ -18,5 +19,8 @@ func _physics_process(delta):
 	camera.global_position.y += Input.get_axis("u", "d") * delta * s
 
 func _ready() -> void:
+	DisplayServer.window_set_size(Vector2i(640, 360) * scale_factor)
+	DisplayServer.window_set_position(Vector2i.ZERO)#(DisplayServer.screen_get_size() + DisplayServer.window_get_size()) / 2.0)
+
 	_instance()
 	camera.set_process(false)
