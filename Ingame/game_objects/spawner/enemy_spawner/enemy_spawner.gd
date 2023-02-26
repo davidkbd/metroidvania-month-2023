@@ -31,6 +31,10 @@ func update_instance_data(_data : Dictionary) -> void:
 	instance_data[instance_name.to_lower()] = _data
 
 func activate(_data : Dictionary) -> void:
+	if _data.has("character"):
+		if _data.character.has("reborn_timestamp"):
+			if _data.character.reborn_timestamp > Time.get_unix_time_from_system():
+				return
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[enemy_type].id).instantiate()
 	instance_name = instance.name.to_lower()
 	call_deferred("add_child", instance)
