@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(816, 2324)
 
-[node name="room_010_tunnel" type="Node2D"]
+[node name="room_012_tunnel" type="Node2D"]
 script = ExtResource("1_irgqd")
 
 [node name="room_area" parent="." instance=ExtResource("2_moehs")]
