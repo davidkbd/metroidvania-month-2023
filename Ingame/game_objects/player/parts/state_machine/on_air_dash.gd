@@ -19,7 +19,7 @@ func exit() -> void:
 
 func step(delta : float) -> StateMachineState:
 	_brake(delta)
-	host.fall(delta)
+	host.fall_dash(delta)
 
 	host.move_and_slide()
 	

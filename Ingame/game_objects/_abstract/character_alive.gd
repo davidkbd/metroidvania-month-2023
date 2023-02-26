@@ -15,6 +15,11 @@ func fall(_delta : float) -> void:
 			velocity.y + specs.gravity * _delta,
 			specs.max_up_speed, specs.max_down_speed)
 			
+func fall_dash(_delta : float) -> void:
+	velocity.y = clamp(
+			velocity.y + specs.gravity * _delta,
+			specs.max_up_speed, specs.max_down_air_speed)
+			
 func wall_fall(_delta : float) -> void:
 	velocity.y = clamp(
 			velocity.y + specs.gravity * _delta,
