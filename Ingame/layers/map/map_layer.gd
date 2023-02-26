@@ -15,7 +15,7 @@ func progress_listener_on_progress_stored(_game_state : Dictionary) -> void:
 
 func show_map() -> void:
 	get_tree().paused = true
-	container.show()
+	container.open()
 	if container_visivility_tween: container_visivility_tween.kill()
 	container_visivility_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	container_visivility_tween.tween_property(container, "modulate:a", 1.0, show_time)
@@ -32,6 +32,8 @@ func hide_map() -> void:
 func initialize(_game_state : Dictionary) -> void:
 	if _game_state.has("rooms"):
 		container.initialize_rooms_state(_game_state.rooms)
+	if _game_state.has("map"):
+		container.initialize_map_state(_game_state.map)
 
 func _process(_delta : float) -> void:
 	if ControlInput.is_map_just_pressed():

@@ -9,6 +9,8 @@ var game_state : Dictionary = {
 	},
 	"player": {
 	},
+	"map": {
+	},
 	"rooms": {}
 }
 
@@ -23,9 +25,20 @@ func progress_listener_on_player_skills_updated(_skills : Dictionary) -> void:
 func progress_listener_on_progress_store_requested(from_room_id : String) -> void:
 	game_state.level.room_spawn = from_room_id
 	var storeable_game_state = _create_storeable_game_state()
+	_update_map(storeable_game_state)
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.WRITE)
 	file.store_var(storeable_game_state)
+	game_state.map = storeable_game_state.map
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_progress_stored", game_state)
+
+func room_listener_on_activated(room : Room) -> void:
+	if game_state.map.has(room.name): return
+	game_state.map[room.name] = {
+			"visible": false,
+			"position_x": room.global_position.x,
+			"position_y": room.global_position.y,
+			"variation": 0
+		}
 
 func menu_listener_on_game_start_requested(_slot_id : String) -> void:
 	current_slot_id = _slot_id
@@ -43,15 +56,23 @@ func _create_storeable_game_state() -> Dictionary:
 		for spawner_state in room_state.keys():
 			for character_state in r.rooms[room_key].state[spawner_state].keys():
 				if not r.rooms[room_key].state[spawner_state][character_state].storeable:
-#					r.rooms[room_key].state[spawner_state][character_state] = {}
 					r.rooms[room_key].state[spawner_state]={}
-#				print(r.rooms[room_key].state[spawner_state][character_state])
 	print(r)
 	print(game_state)
 	print("Hay que desechar todos los datos que se encutren en el dictionary que sean storeable=false")
 	return r
 
+func _update_map(storeable_game_state : Dictionary) -> void:
+	var room : Dictionary
+	for key in storeable_game_state.map:
+		room = storeable_game_state.map[key]
+		room.visible = true
+		if room.has("res"):
+			room.erase("res")
+			
+
 func _ready():
+	add_to_group("ROOM_LISTENER")
 	add_to_group("MENU_LISTENER")
 	add_to_group("PROGRESS_LISTENER")
 	Directories.create()

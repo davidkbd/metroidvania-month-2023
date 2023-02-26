@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_n3beu"]
 [ext_resource type="PackedScene" uid="uid://c0eke8npk0umn" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
 [ext_resource type="Texture2D" uid="uid://cc6x8cf1uayv5" path="res://Ingame/level-sprites/foreground/room_002_foreground01.png" id="6_nhmka"]
-[ext_resource type="PackedScene" uid="uid://g8e6tumw718r" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
 [ext_resource type="PackedScene" uid="uid://cbx4tsxjquwqb" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
 [ext_resource type="Script" path="res://Ingame/rooms/room_002_secret.gd" id="8_x010g"]
 [ext_resource type="PackedScene" uid="uid://2rytg7wo8un4" path="res://Ingame/rooms/room_002_secret.tscn" id="9_l220f"]

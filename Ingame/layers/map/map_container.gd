@@ -18,7 +18,13 @@ func room_listener_on_updated(aaa) -> void:
 
 func initialize_rooms_state(_rooms_state : Dictionary) -> void:
 	player = get_tree().get_first_node_in_group("PLAYER")
-	map.initialize_rooms_state(_rooms_state)
+
+func initialize_map_state(_map_state : Dictionary) -> void:
+	map.initialize_map_state(_map_state)
+
+func open() -> void:
+	show()
+	map.open()
 
 func _physics_process(_delta : float):
 	if reset_position_tween: return
