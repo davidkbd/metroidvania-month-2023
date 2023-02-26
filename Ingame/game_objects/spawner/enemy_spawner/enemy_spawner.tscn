@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://djaquspk2nph0"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.gd" id="1_u1ik3"]
-[ext_resource type="Texture2D" uid="uid://degb8ht2g4ua0" path="res://Ingame/game_objects/npc/mage/sprites/spawner_sprite.png" id="2_rc7g7"]
+[ext_resource type="Texture2D" uid="uid://clx1ays1e4ui4" path="res://Ingame/game_objects/enemy/knight/sprites/spawner_sprite.png" id="2_ex4ik"]
 
 [node name="enemy_spawner" type="Node2D"]
 texture_filter = 1
@@ -9,5 +9,5 @@ script = ExtResource("1_u1ik3")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-40, -110)
-texture = ExtResource("2_rc7g7")
+texture = ExtResource("2_ex4ik")
 centered = false
