@@ -20,7 +20,7 @@ func step(delta : float) -> StateMachineState:
 	host.move_and_slide()
 	
 	attack_time -= delta
-	if attack_time < .0: return state_machine.on_ground
+	if attack_time < .0: return state_machine.previous_state
 	return self
 
 func _enable_collision(_enabled : bool) -> void:

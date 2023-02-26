@@ -1,12 +1,12 @@
 extends StateMachineState
 
-@export var attack_timer : float = .2
+@export var attack_timer : float = .3
 
 var attack_time : float
 
 func enter() -> void:
 	host.animation_playblack.travel("on_attack")
-	host.animation_tree.set("parameters/on_attack/blend_position", .0)
+	host.animation_tree.set("parameters/on_attack/blend_position", Vector2(ControlInput.get_horizontal_axis(), -ControlInput.get_vertical_axis()))
 	_enable_collision(true)
 	attack_time = attack_timer
 	host.enemy_hit_area.scale.x = -1 if host.sprite.flip_h else 1
@@ -20,6 +20,8 @@ func step(delta : float) -> StateMachineState:
 	host.move_and_slide()
 		
 	attack_time -= delta
+
+	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if attack_time < .0: return state_machine.on_ground
 	return self
 

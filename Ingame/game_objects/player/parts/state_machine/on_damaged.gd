@@ -24,7 +24,6 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-#	if host.go_down_floor_sensor.is_colliding(): _go_down_cancel()
 	if host.damager.size(): enter()
 
 	host.fall(delta)
@@ -36,6 +35,3 @@ func step(delta : float) -> StateMachineState:
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if damage_timer < .0 and host.is_on_floor(): return state_machine.on_ground
 	return self
-
-func _go_down_cancel() -> void:
-	host.set_collision_mask_value(1, true)
