@@ -14,6 +14,7 @@ class_name Player
 @onready var hitenemy_sfx         : AudioStreamPlayer = $hitenemy_sfx
 
 @onready var enemy_hit_area       : Area2D            = $enemy_hit_area
+@onready var enemy_damage_area    : Area2D            = $enemy_damage_area
 
 var talking_npc   : NPC = null
 
