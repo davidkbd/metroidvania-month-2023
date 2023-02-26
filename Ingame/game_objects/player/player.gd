@@ -2,10 +2,11 @@ extends CharacterAlive
 
 class_name Player
 
-@export var check_snap_wall_ray_position   : Vector2 = Vector2.UP * 56.0
-@export var check_snap_wall_ray_vector     : Vector2 = Vector2.LEFT * 64
-@export var check_attack_down_ray_position : Vector2 = Vector2.UP * 16.0
-@export var check_attack_down_ray_vector   : Vector2 = Vector2.DOWN * 96.0
+@export var check_snap_wall_ray_position    : Vector2 = Vector2.UP * 56.0
+@export var check_snap_wall_ray_vector      : Vector2 = Vector2.LEFT * 64.0
+@export var check_snap_wall_ray_ceil_vector : Vector2 = Vector2.UP * 64.0
+@export var check_attack_down_ray_position  : Vector2 = Vector2.UP * 16.0
+@export var check_attack_down_ray_vector    : Vector2 = Vector2.DOWN * 96.0
 
 @onready var skills               : PlayerSkills      = $skills
 @onready var body_collider        : CollisionShape2D  = $body_collider
@@ -46,6 +47,9 @@ func can_dash() -> bool:
 	return skills.data.dash
 
 func can_snap_to_wall() -> bool:
+	if not is_on_wall(): return false
+	
+	# Compruebo si hay una pared a la que agarrarse
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
 	var origin : Vector2 = global_position + check_snap_wall_ray_position
 	query.from = origin
@@ -55,7 +59,20 @@ func can_snap_to_wall() -> bool:
 	query.collision_mask = 1
 	query.exclude = [get_rid()]
 	var result = space_state.intersect_ray(query)
-	return result.size() > 0 and is_on_wall()
+	if result.size() == 0: return false
+	
+	# Compruebo si el techo esta demasiado bajo
+	query = PhysicsRayQueryParameters2D.new()
+	query.from = global_position
+	query.to = global_position + check_snap_wall_ray_ceil_vector
+	query.collide_with_bodies = true
+	query.collide_with_areas = false
+	query.collision_mask = 1
+	query.exclude = [get_rid()]
+	result = space_state.intersect_ray(query)
+	if result.size() > 0: return false
+	
+	return true
 
 func can_attack_down() -> bool:
 	if is_on_floor(): return false

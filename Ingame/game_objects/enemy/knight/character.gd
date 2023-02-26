@@ -1,9 +1,10 @@
 extends EnemyCharacterAlive
 
 @onready var center                : Node2D = $Center
-@onready var animation             : AnimationPlayer = $AnimationPlayer
+@onready var animation             : AnimationPlayer  = $AnimationPlayer
 @onready var sword_collider        : CollisionShape2D = $sword_area/SwordCollider
-@onready var attack_foot_particles : CPUParticles2D = $attack_foot_particles
+@onready var attack_foot_particles : CPUParticles2D   = $attack_foot_particles
+@onready var explode_particles     : Array = [ $explode_color1, $explode_color2, $explode_color3 ]
 
 var value : int = 0
 

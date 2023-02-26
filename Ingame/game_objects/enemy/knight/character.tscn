@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c7n7hoavwiy8l"]
+[gd_scene load_steps=50 format=3 uid="uid://c7n7hoavwiy8l"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/enemy/knight/sprites/character.png" id="2_gepj4"]
@@ -18,6 +18,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
 shader = ExtResource("8_k7dny")
 shader_parameter/dissolve_value = 1.0
+shader_parameter/animation_columns = 6
+shader_parameter/animation_rows = 3
 shader_parameter/dissolve_texture = ExtResource("10_qu7c6")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
@@ -30,6 +32,10 @@ height = 80.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bagww"]
 radius = 40.0
+
+[sub_resource type="Gradient" id="Gradient_gq6km"]
+offsets = PackedFloat32Array(0, 0.257576, 0.823232, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.0941176, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_7ourq"]
 length = 0.001
@@ -287,7 +293,6 @@ graph_offset = Vector2(-178.305, 94.8393)
 collision_layer = 1024
 collision_mask = 1024
 script = ExtResource("1_rovep")
-max_life = null
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("2_u4jvg")
@@ -379,6 +384,60 @@ gravity = Vector2(0, 200)
 initial_velocity_min = 68.84
 initial_velocity_max = 94.2
 color = Color(0.654902, 0.662745, 0.603922, 1)
+
+[node name="explode_color1" type="CPUParticles2D" parent="."]
+position = Vector2(0, -40)
+emitting = false
+amount = 128
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(24, 32)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+angle_min = -436.7
+angle_max = 401.3
+scale_amount_max = 2.0
+color = Color(0.333333, 0.403922, 0.490196, 1)
+color_ramp = SubResource("Gradient_gq6km")
+
+[node name="explode_color2" type="CPUParticles2D" parent="."]
+position = Vector2(0, -40)
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(24, 32)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+angle_min = -436.7
+angle_max = 401.3
+scale_amount_max = 2.0
+color = Color(0.286275, 0.192157, 0.152941, 1)
+color_ramp = SubResource("Gradient_gq6km")
+
+[node name="explode_color3" type="CPUParticles2D" parent="."]
+position = Vector2(0, -40)
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(24, 32)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+angle_min = -436.7
+angle_max = 401.3
+scale_amount_max = 2.0
+color = Color(0.85098, 0.643137, 0.239216, 1)
+color_ramp = SubResource("Gradient_gq6km")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sprite")
