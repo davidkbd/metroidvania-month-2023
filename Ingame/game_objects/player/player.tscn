@@ -624,6 +624,9 @@ script = ExtResource("8_kqfbx")
 [node name="on_dash" type="Node" parent="state_machine"]
 script = ExtResource("9_qc1tk")
 
+[node name="on_air_dash" type="Node" parent="state_machine"]
+script = ExtResource("15_nxfi3")
+
 [node name="on_wall" type="Node" parent="state_machine"]
 script = ExtResource("8_2ivm0")
 
@@ -638,9 +641,6 @@ script = ExtResource("10_m6qjo")
 
 [node name="on_talking" type="Node" parent="state_machine"]
 script = ExtResource("12_olhsd")
-
-[node name="on_air_dash" type="Node" parent="state_machine"]
-script = ExtResource("15_nxfi3")
 
 [node name="skills" parent="." instance=ExtResource("11_x5sqa")]
 
