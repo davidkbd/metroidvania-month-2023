@@ -12,7 +12,6 @@ func step(delta : float) -> StateMachineState:
 	
 	host.move_and_slide()
 	
-	
 	host.animation_tree.set("parameters/on_jump/blend_position", host.velocity.y)
 
 	if host.is_on_floor(): return state_machine.on_ground
