@@ -18,15 +18,16 @@ func enter() -> void:
 		impulse *= host.damager.power
 		host.velocity = impulse
 		damage_timer = .1
-		host.life -= host.damager.power * host.specs.damage_received_factor
-		get_tree().call_group("PLAYER_LISTENER", "player_listener_on_life_updated", host)
+		host.life.increment_value(-host.damager.power * host.specs.damage_received_factor)
 	host.damager = {}
-	
 
 func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
+	if host.life.is_died():
+		get_tree().call_group("PLAYER_LISTENER", "player_listener_on_died")
+		return state_machine.on_ground # deberia retornar on_died
 	if host.damager.size(): enter()
 
 	host.fall(delta)

@@ -19,8 +19,8 @@ func initialize(_game_state : Dictionary) -> void:
 	room.teleport_player()
 
 func _ready() -> void:
-	add_to_group("PROGRESS_LISTENER")
-	add_to_group("LEVEL")
+#	add_to_group("PROGRESS_LISTENER")
+#	add_to_group("LEVEL")
 	get_tree().call_group("LEVEL_LISTENER", "level_listener_on_ready", {
 			"level": { "name": name.to_lower() },
 			"skin": {

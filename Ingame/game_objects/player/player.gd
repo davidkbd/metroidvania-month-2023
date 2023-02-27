@@ -8,6 +8,7 @@ class_name Player
 @export var check_attack_down_ray_position  : Vector2 = Vector2.UP * 16.0
 @export var check_attack_down_ray_vector    : Vector2 = Vector2.DOWN * 96.0
 
+@onready var life                 : PlayerLife        = $life
 @onready var skills               : PlayerSkills      = $skills
 @onready var body_collider        : CollisionShape2D  = $body_collider
 @onready var onwall_collider      : CollisionShape2D  = $onwall_collider
@@ -18,9 +19,6 @@ class_name Player
 
 @onready var enemy_hit_area       : Area2D            = $enemy_hit_area
 @onready var enemy_damage_area    : Area2D            = $enemy_damage_area
-
-var life      : float = 3.0
-var max_life  : int = 4
 
 var talking_npc   : NPC = null
 
@@ -33,6 +31,7 @@ var walk_direction   : float
 
 func initialize(_game_state : Dictionary) -> void:
 	skills.initialize(_game_state)
+	life.initialize(_game_state)
 
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
@@ -103,4 +102,3 @@ func _ready() -> void:
 	skills.set_skill_value("double_jump", true)
 	skills.set_skill_value("dash", true)
 	skills.set_skill_value("snap_wall", true)
-

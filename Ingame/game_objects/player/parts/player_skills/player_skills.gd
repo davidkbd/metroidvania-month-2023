@@ -16,4 +16,4 @@ func initialize(_game_state : Dictionary) -> void:
 
 func set_skill_value(key : String, value : bool) -> void:
 	data[key] = value
-	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_player_skills_updated", data)
+	get_tree().call_group("PLAYER_LISTENER", "player_listener_on_skills_updated", data)

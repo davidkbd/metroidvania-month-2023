@@ -35,3 +35,7 @@ func progress_listener_on_game_state_loaded(_game_state : Dictionary) -> void:
 	add_child(game_layer_instance)
 	game_layer_instance.instance_level(_game_state)
 	map_instance.initialize(_game_state)
+
+func progress_listener_on_player_died_game_state_loaded(_game_state : Dictionary) -> void:
+	game_layer_instance.reset_level(_game_state)
+	map_instance.initialize(_game_state)

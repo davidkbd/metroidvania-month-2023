@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://cg6rsp0xxfkvq"]
+[gd_scene load_steps=95 format=3 uid="uid://cg6rsp0xxfkvq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_air_dash.gd" id="15_nxfi3"]
 [ext_resource type="Shader" path="res://Ingame/shaders/player_shader.gdshader" id="15_unq2k"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/player_sprite/player_sprite.gd" id="16_4ekit"]
+[ext_resource type="PackedScene" uid="uid://5ubixfyms4tr" path="res://Ingame/game_objects/player/parts/life/life.tscn" id="16_t3qh3"]
 [ext_resource type="Texture2D" uid="uid://cpejugcss86qx" path="res://Ingame/game_objects/player/sprites/player_bubbles.png" id="17_0r6jg"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="PackedScene" uid="uid://d4idunmyyn4bf" path="res://Ingame/game_objects/player/parts/autoadvance_area_sensor/autoadvance_area_sensor.tscn" id="17_tbw11"]
@@ -641,6 +642,8 @@ script = ExtResource("10_m6qjo")
 
 [node name="on_talking" type="Node" parent="state_machine"]
 script = ExtResource("12_olhsd")
+
+[node name="life" parent="." instance=ExtResource("16_t3qh3")]
 
 [node name="skills" parent="." instance=ExtResource("11_x5sqa")]
 

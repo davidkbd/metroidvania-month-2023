@@ -15,3 +15,7 @@ func instance_level(_game_state : Dictionary) -> void:
 	game_container.add_child(level_instance)
 	level_instance.initialize(_game_state)
 	game_container.initialize(_game_state)
+
+func reset_level(_game_state : Dictionary) -> void:
+	level_instance.initialize(_game_state)
+	game_container.initialize(_game_state)
