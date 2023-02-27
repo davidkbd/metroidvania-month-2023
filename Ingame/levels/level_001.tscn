@@ -107,11 +107,11 @@ motion_scale = Vector2(-0.04, -0.04)
 position = Vector2(744, -320)
 texture = ExtResource("6_nhmka")
 
-[node name="room_001" parent="." instance=ExtResource("5_olijw")]
-metadata/_edit_lock_ = true
-
 [node name="room_001_secret" parent="." instance=ExtResource("6_tc7rs")]
 position = Vector2(0, 32)
+
+[node name="room_001" parent="." instance=ExtResource("5_olijw")]
+metadata/_edit_lock_ = true
 
 [node name="room_002" parent="." instance=ExtResource("7_75ef1")]
 position = Vector2(1896, 32)
