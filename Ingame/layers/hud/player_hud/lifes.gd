@@ -8,15 +8,15 @@ extends Node2D
 		return value
 	set(_value):
 		if value == _value: return
-		value = clamp(_value, .0, max_lifes)
+		value = clamp(_value, .0, max_value)
 		queue_redraw()
 
-@export var max_lifes : int = 5 :
+@export var max_value : int = 5 :
 	get:
-		return max_lifes
+		return max_value
 	set(_value):
-		if max_lifes == _value: return
-		max_lifes = _value
+		if max_value == _value: return
+		max_value = _value
 		queue_redraw()
 
 @export_group("Graphics")
@@ -34,10 +34,10 @@ func _draw() -> void:
 	var lifes   = int(floor(value))
 	var decimas = int(floor(value * 10)) % 10
 	var i : int = 0
-	while i <= lifes and i < max_lifes:
+	while i <= lifes and i < max_value:
 		_draw_life(10 if i < lifes else decimas, i)
 		i += 1
-	while i < max_lifes:
+	while i < max_value:
 		_draw_life(.0, i)
 		i += 1
 

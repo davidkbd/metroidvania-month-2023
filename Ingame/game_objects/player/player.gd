@@ -19,6 +19,9 @@ class_name Player
 @onready var enemy_hit_area       : Area2D            = $enemy_hit_area
 @onready var enemy_damage_area    : Area2D            = $enemy_damage_area
 
+var life      : float = 3.0
+var max_life  : int = 4
+
 var talking_npc   : NPC = null
 
 var damager    : Dictionary = {}

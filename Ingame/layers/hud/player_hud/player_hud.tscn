@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkac4w10rg8fr"]
+[gd_scene load_steps=4 format=3 uid="uid://bkac4w10rg8fr"]
 
 [ext_resource type="Script" path="res://Ingame/layers/hud/player_hud/lifes.gd" id="1_0id8n"]
+[ext_resource type="Script" path="res://Ingame/layers/hud/player_hud/player_hud.gd" id="1_h0nl3"]
 [ext_resource type="Texture2D" uid="uid://dub1avytapn4g" path="res://Ingame/layers/hud/player_hud/sprites/heart.png" id="2_acg1b"]
 
-[node name="player_hud" type="Control"]
+[node name="player_hud" type="Control" groups=["PLAYER_LISTENER"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,10 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_h0nl3")
 
 [node name="lifes" type="Node2D" parent="."]
 position = Vector2(8, 328)
 script = ExtResource("1_0id8n")
-value = 4.0
-max_lifes = 4
+max_value = null
 lifes_texture = ExtResource("2_acg1b")
