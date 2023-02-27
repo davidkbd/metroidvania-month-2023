@@ -12,6 +12,7 @@ static func get_default_specs() -> Dictionary:
 "doublejump_impulse":  -ProjectSettings.get_setting("physics/2d/default_gravity") * .45,
 "damage_impulse":      -48.0,
 "damage_deceleration": 20.0,
+"damage_received_factor": .05, # cantidad de vida que se pierde multiplicandolo por el power del impacto
 "max_up_speed":        -10000.0,
 "max_down_speed":      700.0,
 "max_down_air_speed":  300.0,

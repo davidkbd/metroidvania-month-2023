@@ -18,7 +18,7 @@ func enter() -> void:
 		impulse *= host.damager.power
 		host.velocity = impulse
 		damage_timer = .1
-		host.life -= host.damager.power * .05
+		host.life -= host.damager.power * host.specs.damage_received_factor
 		get_tree().call_group("PLAYER_LISTENER", "player_listener_on_life_updated", host)
 	host.damager = {}
 	
