@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dub1avytapn4g"
-path="res://.godot/imported/heart.png-9cc78a35ffb6a0a7caaefa9c46a99cdd.ctex"
+path="res://.godot/imported/heart.png-7c4075289dc70a7c2ebeac72163db448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/layers/hud/lifes/sprites/heart.png"
-dest_files=["res://.godot/imported/heart.png-9cc78a35ffb6a0a7caaefa9c46a99cdd.ctex"]
+source_file="res://Ingame/layers/hud/player_hud/sprites/heart.png"
+dest_files=["res://.godot/imported/heart.png-7c4075289dc70a7c2ebeac72163db448.ctex"]
 
 [params]
 
