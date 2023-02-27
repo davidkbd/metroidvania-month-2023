@@ -12,13 +12,13 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/on_normal_attack.gd" id="8_kqfbx"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_dash.gd" id="9_qc1tk"]
-[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_enemybounce.gd" id="10_m6qjo"]
 [ext_resource type="PackedScene" uid="uid://dbs2cljuqmi6" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.tscn" id="11_x5sqa"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_talking.gd" id="12_olhsd"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="PackedScene" uid="uid://n1gl7gekmp5d" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/player/parts/npc_sensor/npc_sensor.tscn" id="14_omfj5"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_died.gd" id="14_r8c4a"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_air_dash.gd" id="15_nxfi3"]
 [ext_resource type="Shader" path="res://Ingame/shaders/player_shader.gdshader" id="15_unq2k"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/player_sprite/player_sprite.gd" id="16_4ekit"]
@@ -600,8 +600,8 @@ on_air_dash_state = NodePath("on_air_dash")
 on_wall_state = NodePath("on_wall")
 on_air_state = NodePath("on_air")
 on_damaged_state = NodePath("on_damaged")
-on_enemybounce_state = NodePath("on_enemybounce")
 on_talking_state = NodePath("on_talking")
+on_died_state = NodePath("on_died")
 initial_state = NodePath("on_ground")
 
 [node name="on_autoadvancing" type="Node" parent="state_machine"]
@@ -637,8 +637,8 @@ script = ExtResource("4_taln5")
 [node name="on_damaged" type="Node" parent="state_machine"]
 script = ExtResource("9_l3fvl")
 
-[node name="on_enemybounce" type="Node" parent="state_machine"]
-script = ExtResource("10_m6qjo")
+[node name="on_died" type="Node" parent="state_machine"]
+script = ExtResource("14_r8c4a")
 
 [node name="on_talking" type="Node" parent="state_machine"]
 script = ExtResource("12_olhsd")

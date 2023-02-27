@@ -29,7 +29,6 @@ func step(delta : float) -> StateMachineState:
 		return state_machine.on_jump
 	if host.is_on_floor(): return state_machine.on_ground
 	if not _is_on_wall(): return state_machine.on_air
-	if host.enemy_died: return state_machine.on_enemybounce
 	if host.damager.size(): return state_machine.on_damaged
 	return self
 

@@ -17,6 +17,8 @@ func initialize(_game_state : Dictionary) -> void:
 
 	await get_tree().physics_frame
 	room.teleport_player()
+	
+	get_tree().call_group("LEVEL_LISTENER", "level_listener_on_initialized")
 
 func _ready() -> void:
 #	add_to_group("PROGRESS_LISTENER")
