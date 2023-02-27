@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://6h1yxaj4eev0" path="res://Ingame/rooms/room_010_tunnel.tscn" id="22_j37te"]
 [ext_resource type="PackedScene" uid="uid://nl5b1oatad63" path="res://Ingame/rooms/room_011.tscn" id="23_t6j15"]
 [ext_resource type="PackedScene" uid="uid://bp7c17h6dokoq" path="res://Ingame/rooms/room_012_tunnel.tscn" id="24_q05xe"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_013.tscn" id="26_mqqgf"]
+[ext_resource type="PackedScene" uid="uid://bo5t1gv0njpmv" path="res://Ingame/rooms/room_013.tscn" id="26_mqqgf"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3

@@ -44,6 +44,8 @@ layer_0/tile_data = PackedInt32Array(196607, 262146, 2, 131071, 262146, 1, 19660
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
 position = Vector2(-336, 224)
+emitting = false
+one_shot = true
 explosiveness = 1.0
 texture = ExtResource("5_5a81s")
 emission_shape = 3
@@ -53,6 +55,10 @@ spread = 48.76
 gravity = Vector2(0, 200)
 initial_velocity_min = 20.82
 initial_velocity_max = 124.99
+angular_velocity_min = -305.0
+angular_velocity_max = 255.0
+linear_accel_min = -31.02
+linear_accel_max = 57.17
 scale_amount_min = 0.25
 scale_amount_max = 0.75
 
