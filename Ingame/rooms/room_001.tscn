@@ -45,6 +45,7 @@ layer_0/tile_data = PackedInt32Array(196607, 262146, 2, 131071, 262146, 1, 19660
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
 position = Vector2(-336, 224)
 emitting = false
+lifetime = 0.01
 one_shot = true
 explosiveness = 1.0
 texture = ExtResource("5_5a81s")
