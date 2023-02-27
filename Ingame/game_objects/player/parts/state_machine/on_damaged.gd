@@ -25,9 +25,6 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-	if host.life.is_died():
-		get_tree().call_group("PLAYER_LISTENER", "player_listener_on_died")
-		return state_machine.on_ground # deberia retornar on_died
 	if host.damager.size(): enter()
 
 	host.fall(delta)
@@ -36,6 +33,8 @@ func step(delta : float) -> StateMachineState:
 	damage_timer -= delta
 	host.move_and_slide()
 
+	if damage_timer < .0:
+		if host.life.is_died(): return state_machine.on_died
+		if host.is_on_floor(): return state_machine.on_ground
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
-	if damage_timer < .0 and host.is_on_floor(): return state_machine.on_ground
 	return self

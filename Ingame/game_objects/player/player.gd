@@ -23,7 +23,6 @@ class_name Player
 var talking_npc   : NPC = null
 
 var damager    : Dictionary = {}
-var enemy_died : CharacterBody2D = null # este era el saltito que da al matar un enemigo en el juego del gnomo
 var hitted_enemy : EnemyCharacterAlive = null
 
 var autoadvance_area : AutoadvanceArea = null
@@ -32,12 +31,15 @@ var walk_direction   : float
 func initialize(_game_state : Dictionary) -> void:
 	skills.initialize(_game_state)
 	life.initialize(_game_state)
+	talking_npc = null
+	damager = {}
+	hitted_enemy = null
+	autoadvance_area = null
 
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
 
 func can_hit_endemy() -> bool:
-	if enemy_died: return false
 	if damager: return false
 	if is_on_floor(): return false
 	return velocity.y > .0
