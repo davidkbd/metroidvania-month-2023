@@ -37,7 +37,8 @@ func step(delta : float) -> StateMachineState:
 	return self
 
 func _enable_collision(_enabled : bool) -> void:
-	host.enemy_hit_area.collision_mask = 8 if _enabled else 0
+	# 8=enemy + 16384=destroyable
+	host.enemy_hit_area.collision_mask = 8 + 16384 if _enabled else 0
 
 func _movement() -> void:
 	host.set_walk_direction(ControlInput.get_horizontal_axis())

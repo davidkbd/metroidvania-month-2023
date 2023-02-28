@@ -761,8 +761,8 @@ position = Vector2(0, -2)
 
 [node name="enemy_hit_area" type="Area2D" parent="."]
 position = Vector2(0, -16)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16384
+collision_mask = 16384
 monitorable = false
 script = ExtResource("22_o8j16")
 

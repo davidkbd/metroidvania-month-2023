@@ -141,6 +141,7 @@ A={
 2d_physics/layer_8="event_trigger"
 2d_physics/layer_10="player_restart_point"
 2d_physics/layer_11="floor_and_enemy"
+2d_physics/layer_15="destroyable"
 
 [physics]
 
