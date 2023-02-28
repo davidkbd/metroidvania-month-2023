@@ -11,6 +11,11 @@ var distance         : float
 var delta_speed      : float
 var fading           : bool
 
+func player_listener_on_deatharea_restarted() -> void:
+	fading = true
+	await create_tween().tween_interval(.25).finished
+	fading = false
+
 func player_listener_on_autoadvance_exited(area : AutoadvanceArea) -> void:
 	if area.fade_out_in:
 		fading = true

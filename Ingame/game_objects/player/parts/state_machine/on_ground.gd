@@ -33,6 +33,7 @@ func step(delta : float) -> StateMachineState:
 	if host.talking_npc and ControlInput.is_interact_just_pressed(): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged
+	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	return self
 

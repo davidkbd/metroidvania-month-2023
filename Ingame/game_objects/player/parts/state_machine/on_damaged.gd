@@ -36,5 +36,6 @@ func step(delta : float) -> StateMachineState:
 	if damage_timer < .0:
 		if host.life.is_died(): return state_machine.on_died
 		if host.is_on_floor(): return state_machine.on_ground
+	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	return self

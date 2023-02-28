@@ -17,7 +17,6 @@ func hud_listener_on_game_finished() -> void:
 	_fade_out()
 
 func level_listener_on_initialized() -> void:
-	print("LEVEL INITIALIZED FADE")
 	_fade_in()
 
 func player_listener_on_autoadvance_entered(area : AutoadvanceArea) -> void:
@@ -27,11 +26,14 @@ func player_listener_on_autoadvance_entered(area : AutoadvanceArea) -> void:
 func player_listener_on_autoadvance_exited(area : AutoadvanceArea) -> void:
 	_fade_in()
 
-func player_listener_on_predied() -> void:
-	print("PLAYER DIED FADE")
+func player_listener_on_entered_in_deatharea() -> void:
 	_fade_out(.25)
-#	await tween.finished
-#	_fade_in(.5) 
+
+func player_listener_on_deatharea_restarted() -> void:
+	_fade_in()
+
+func player_listener_on_predied() -> void:
+	_fade_out(.25)
 
 func _fade_in(fade_time_multiplier : float = 1.0) -> void:
 	_fade(color.a, 0.0, fade_time_multiplier)

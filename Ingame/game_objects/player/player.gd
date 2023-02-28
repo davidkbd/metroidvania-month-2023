@@ -17,17 +17,19 @@ class_name Player
 @onready var jump_sfx             : AudioStreamPlayer = $jump_sfx
 @onready var damaged_sfx          : AudioStreamPlayer = $damaged_sfx
 @onready var hitenemy_sfx         : AudioStreamPlayer = $hitenemy_sfx
+@onready var restartpoint_sensor  : Area2D            = $restartpoint_area_sensor
 
 @onready var enemy_hit_area       : Area2D            = $enemy_hit_area
 @onready var enemy_damage_area    : Area2D            = $enemy_damage_area
 
 var talking_npc   : NPC = null
 
-var damager    : Dictionary = {}
-var hitted_enemy : EnemyCharacterAlive = null
+var damager       : Dictionary = {}
+var hitted_enemy  : EnemyCharacterAlive = null
 
-var autoadvance_area : AutoadvanceArea = null
-var walk_direction   : float
+var deatharea_entered : bool
+var autoadvance_area  : AutoadvanceArea = null
+var walk_direction    : float
 
 func initialize(_game_state : Dictionary) -> void:
 	skills.initialize(_game_state)
@@ -36,6 +38,7 @@ func initialize(_game_state : Dictionary) -> void:
 	damager = {}
 	hitted_enemy = null
 	autoadvance_area = null
+	velocity = Vector2.ZERO
 
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
@@ -91,6 +94,10 @@ func can_attack_down() -> bool:
 	query.exclude = [get_rid()]
 	var result = space_state.intersect_ray(query)
 	return result.size() == 0
+
+func entered_in_death_area() -> void:
+	if restartpoint_sensor.last_restartpoint and is_instance_valid(restartpoint_sensor.last_restartpoint):
+		deatharea_entered = true
 
 func _ready() -> void:
 	get_tree().call_deferred(

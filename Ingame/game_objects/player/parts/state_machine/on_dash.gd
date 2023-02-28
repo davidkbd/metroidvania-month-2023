@@ -47,6 +47,7 @@ func step(delta : float) -> StateMachineState:
 		else:
 			return state_machine.on_simple_attack
 	if host.damager.size(): return state_machine.on_damaged
+	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	if dash_time < .0 and not under_platform: return state_machine.on_ground
 	return self

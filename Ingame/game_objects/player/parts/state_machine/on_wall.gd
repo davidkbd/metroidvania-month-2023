@@ -30,6 +30,7 @@ func step(delta : float) -> StateMachineState:
 	if host.is_on_floor(): return state_machine.on_ground
 	if not _is_on_wall(): return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged
+	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	return self
 
 func _update_direction() -> void:
