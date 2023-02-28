@@ -11,7 +11,7 @@ func enter() -> void:
 	fadeout_time  = fadeout_timer
 	teleport_time = teleport_timer
 	fadeout_executed = false
-	host.life.increment_value(.5)
+	host.life.increment_value(-.5)
 	host.deatharea_entered = false
 
 func exit() -> void:

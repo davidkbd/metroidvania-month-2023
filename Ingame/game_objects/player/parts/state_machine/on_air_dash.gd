@@ -20,7 +20,9 @@ func exit() -> void:
 
 func step(delta : float) -> StateMachineState:
 	_brake(delta)
-#	host.fall_dash(delta)
+	if dash_time < .0:
+		host.fall(delta)
+		host.animation_playblack.travel("on_air")
 
 	host.move_and_slide()
 	
@@ -36,7 +38,8 @@ func step(delta : float) -> StateMachineState:
 	if host.damager.size(): return state_machine.on_damaged
 	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
-	if dash_time < .0: return state_machine.on_air
+	if host.is_on_floor(): return state_machine.on_ground
+	#	if dash_time < .0: return state_machine.on_air
 	return self
 
 func _brake(_delta : float) -> void:
