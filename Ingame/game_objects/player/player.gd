@@ -12,6 +12,7 @@ class_name Player
 @onready var skills               : PlayerSkills      = $skills
 @onready var body_collider        : CollisionShape2D  = $body_collider
 @onready var onwall_collider      : CollisionShape2D  = $onwall_collider
+@onready var ondash_collider      : CollisionShape2D  = $ondash_collider
 @onready var savepoint_sensor     : Area2D            = $savepoint_sensor
 @onready var jump_sfx             : AudioStreamPlayer = $jump_sfx
 @onready var damaged_sfx          : AudioStreamPlayer = $damaged_sfx

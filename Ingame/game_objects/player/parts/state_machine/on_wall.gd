@@ -8,7 +8,7 @@ var direction
 
 func enter() -> void:
 	host.animation_playblack.travel(name)
-	intial_direction = sign(host.get_last_slide_collision().get_position().x - host.global_position.x)
+	intial_direction = host.walk_direction
 	_apply_sprite_fip(intial_direction)
 	walled_time = .15
 	direction = .0
