@@ -38,12 +38,12 @@ shader_parameter/animation_rows = 11
 shader_parameter/tex = ExtResource("17_0r6jg")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjv8n"]
-radius = 20.0
-height = 45.98
+radius = 18.0
+height = 42.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46x3k"]
-radius = 14.99
-height = 61.98
+radius = 13.0
+height = 62.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv7lo"]
 size = Vector2(16, 8)
@@ -662,7 +662,7 @@ vframes = 11
 script = ExtResource("16_4ekit")
 
 [node name="body_collider" type="CollisionShape2D" parent="."]
-position = Vector2(0, -19.99)
+position = Vector2(0, -18.99)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yjv8n")
 debug_color = Color(0.917647, 0, 0.705882, 0.419608)

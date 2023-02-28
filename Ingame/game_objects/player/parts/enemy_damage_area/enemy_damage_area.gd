@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var disabled_seconds : float = .4
+@export var disabled_seconds : float = .2
 
 @onready var default_collision_mask = collision_mask
 
