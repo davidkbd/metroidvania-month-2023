@@ -154,7 +154,7 @@ position = Vector2(7648, 480)
 position = Vector2(12360, -4064)
 
 [node name="room_009" parent="." instance=ExtResource("20_t6n72")]
-position = Vector2(15080, -5288)
+position = Vector2(15072, -5312)
 
 [node name="room_010_tunnel" parent="." instance=ExtResource("22_j37te")]
 position = Vector2(16984, -3936)
