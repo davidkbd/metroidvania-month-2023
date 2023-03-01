@@ -1,4 +1,5 @@
 @tool
+@icon("res://Ingame/game_objects/spawner/npc_spawner/icon.png")
 extends Node2D
 class_name NpcSpawner
 

@@ -60,6 +60,7 @@ func _hit(direction : float) -> void:
 
 func _destruction(direction : float) -> void:
 	particles.direction.x = particles.direction.x
+	particles.restart()
 	particles.emitting = true
 	target.hide()
 	if target is PhysicsBody2D:

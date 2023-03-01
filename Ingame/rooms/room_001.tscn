@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cshwlyorvtvl5" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_tvbbv"]
 [ext_resource type="Texture2D" uid="uid://by88n8j30vwk1" path="res://Ingame/level-sprites/destroyable_wall_sprite.png" id="8_oidpe"]
 [ext_resource type="PackedScene" uid="uid://cc3xlv2ppyil" path="res://Ingame/game_objects/control_tip_area/control_tip_area.tscn" id="9_nr8k4"]
-[ext_resource type="PackedScene" uid="uid://c2tca64uvtnk2" path="res://Ingame/game_objects/items/rat_health_home/rat_health_home.tscn" id="12_5hs71"]
+[ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="11_nuhjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1008, 568)
@@ -112,8 +112,20 @@ position = Vector2(640, 128)
 [node name="savepoint" type="Node2D" parent="room_content"]
 position = Vector2(64, 384)
 
-[node name="rat_health_home" parent="room_content" instance=ExtResource("12_5hs71")]
-position = Vector2(256, 320)
+[node name="room_element_spawner" parent="room_content" instance=ExtResource("11_nuhjb")]
+position = Vector2(208, 320)
+
+[node name="room_element_spawner2" parent="room_content" instance=ExtResource("11_nuhjb")]
+position = Vector2(248, 320)
+element_type = 1
+
+[node name="room_element_spawner3" parent="room_content" instance=ExtResource("11_nuhjb")]
+position = Vector2(288, 320)
+element_type = 1
+
+[node name="room_element_spawner4" parent="room_content" instance=ExtResource("11_nuhjb")]
+position = Vector2(320, 320)
+element_type = 1
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
 position = Vector2(432, 320)
