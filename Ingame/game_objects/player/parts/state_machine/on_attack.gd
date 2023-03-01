@@ -14,6 +14,7 @@ func enter() -> void:
 	_enable_collision(true)
 	attack_time = attack_timer
 	host.enemy_hit_area.scale.x = -1 if host.sprite.flip_h else 1
+	host.enemy_hit_area.collider.disabled = false
 
 func exit() -> void:
 	_enable_collision(false)
@@ -22,6 +23,7 @@ func exit() -> void:
 	and attack_direction.y < .0:
 		host.velocity.y = -host.specs.basic_attack_down_feedback_impulse
 	host.hitted_enemy = null
+	host.enemy_hit_area.collider.disabled = true
 
 func step(delta : float) -> StateMachineState:
 	_movement()

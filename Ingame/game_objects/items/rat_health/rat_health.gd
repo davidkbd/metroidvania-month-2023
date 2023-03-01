@@ -2,6 +2,9 @@ extends Area2D
 
 class_name RatHealth
 
+@export  var fall_accel      : float = 800.0
+@export  var speed           : float = 2000.0
+
 @onready var sprite          : Sprite2D  = $sprite
 @onready var center_floor_rc : RayCast2D = $center_floor
 @onready var front_floor_rc  : RayCast2D = $front_floor_rc
@@ -39,7 +42,7 @@ func _process(_delta : float) -> void:
 	global_position += velocity * _delta
 
 func _fall(_delta : float) -> void:
-	velocity.y += _delta * 800.0
+	velocity.y += _delta * fall_accel
 
 func _snap_to_floor(_delta) -> void:
 	if center_floor_rc.is_colliding():
@@ -47,7 +50,4 @@ func _snap_to_floor(_delta) -> void:
 		global_position.y = center_floor_rc.get_collision_point().y
 
 func _move(_delta : float) -> void:
-	velocity.x = _delta * direction * 1900.0
-
-func _check_wall() -> void:
-	pass
+	velocity.x = _delta * direction * speed

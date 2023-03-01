@@ -764,13 +764,14 @@ position = Vector2(0, -2)
 
 [node name="enemy_hit_area" type="Area2D" parent="."]
 position = Vector2(0, -16)
-collision_layer = 16384
+collision_layer = 0
 collision_mask = 16384
 monitorable = false
 script = ExtResource("22_o8j16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hit_area"]
 shape = SubResource("RectangleShape2D_hv7lo")
+disabled = true
 
 [node name="enemy_damage_area" parent="." instance=ExtResource("20_yqshm")]
 position = Vector2(0, -13)

@@ -2,14 +2,16 @@ extends Area2D
 
 class_name DestroyableObject
 
+signal destroyed
+
 @export var storeable         : bool = true
 @export var life              : int = 5
 
 @onready var particles : CPUParticles2D = get_node("particles")
-@onready var target    : PhysicsBody2D  = get_node("target")
+@onready var target    : Node2D  = get_node("target")
 
-@onready var target_default_collision_mask : int = target.collision_mask
-@onready var target_default_collision_layer : int = target.collision_layer
+var target_default_collision_mask  : int
+var target_default_collision_layer : int
 
 var instance_data : Dictionary = {
 	"storeable": storeable,
@@ -23,12 +25,14 @@ func activate(_data : Dictionary) -> void:
 		instance_data.life = _data.life
 	if instance_data.life <= 0:
 		target.hide()
-		target.collision_mask = 0
-		target.collision_layer = 0
+		if target is PhysicsBody2D:
+			target.collision_mask = 0
+			target.collision_layer = 0
 	else:
 		target.show()
-		target.collision_mask = target_default_collision_mask
-		target.collision_layer = target_default_collision_layer
+		if target is PhysicsBody2D:
+			target.collision_mask = target_default_collision_mask
+			target.collision_layer = target_default_collision_layer
 	particles.hide()
 
 func deactivate() -> void:
@@ -58,8 +62,10 @@ func _destruction(direction : float) -> void:
 	particles.direction.x = particles.direction.x
 	particles.emitting = true
 	target.hide()
-	target.collision_mask = 0
-	target.collision_layer = 0
+	if target is PhysicsBody2D:
+		target.collision_mask = 0
+		target.collision_layer = 0
+	emit_signal("destroyed")
 	get_tree().call_group(
 			"DESTROYABLE_LISTENER",
 			"destroyable_listener_on_destroyed",
@@ -67,3 +73,9 @@ func _destruction(direction : float) -> void:
 
 func _ready() -> void:
 	instance_data.storeable = storeable
+	instance_data.life = life
+	print(target)
+	if target is PhysicsBody2D:
+		target_default_collision_mask = target.collision_mask
+		target_default_collision_layer = target.collision_layer
+
