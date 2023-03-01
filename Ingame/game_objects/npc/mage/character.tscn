@@ -42,6 +42,9 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_n3n6c"]
+resource_name = "asd"
+
 [sub_resource type="Animation" id="Animation_5np5v"]
 resource_name = "idle"
 length = 0.5
@@ -58,9 +61,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 2, 3, 4, 5]
 }
-
-[sub_resource type="Animation" id="Animation_n3n6c"]
-resource_name = "asd"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohchq"]
 _data = {

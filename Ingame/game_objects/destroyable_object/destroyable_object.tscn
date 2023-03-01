@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://bmrs6x5lnjudw"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/destroyable_object/destroyable_object.gd" id="1_l41if"]
-[ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/level-sprites/destroyable_wall_particle.png" id="2_43uct"]
 
 [node name="destroyable_object" type="Area2D"]
 position = Vector2(-320, 288)
@@ -9,5 +8,3 @@ collision_layer = 16384
 collision_mask = 16384
 monitoring = false
 script = ExtResource("1_l41if")
-particles_texture = ExtResource("2_43uct")
-target_nodepath = NodePath("../DestroyableTileMap")

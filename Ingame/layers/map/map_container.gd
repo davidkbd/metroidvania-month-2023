@@ -13,7 +13,6 @@ var player : Player
 var reset_position_tween : Tween
 
 func room_listener_on_updated(aaa) -> void:
-#	print(aaa)
 	pass
 
 func initialize_rooms_state(_rooms_state : Dictionary) -> void:

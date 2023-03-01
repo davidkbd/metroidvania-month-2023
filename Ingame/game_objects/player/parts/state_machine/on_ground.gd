@@ -18,10 +18,6 @@ func step(delta : float) -> StateMachineState:
 
 	host.move_and_slide()
 
-#	if ControlInput.is_map_just_pressed():
-#		print("MAPPPPP")
-#		get_tree().get_first_node_in_group("MAP").show_map()
-
 	# Returns
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if ControlInput.is_attack_just_pressed():

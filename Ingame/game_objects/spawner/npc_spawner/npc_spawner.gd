@@ -6,6 +6,7 @@ enum NpcType {
 	MAGE
 }
 
+@export var storeable  : bool = true
 @export var npc_type : NpcType = NpcType.MAGE :
 	get: return npc_type
 	set(value):
@@ -22,26 +23,30 @@ const NPC_DATA := [
 	}
 ]
 
-# Es responsabilidad del npc actualizar esta variable por medio de la funcion
-# update_instance_data.
-var instance_data : Dictionary = {}
+var instance_data : Dictionary = {
+	"storeable": storeable,
+	"step": 0
+}
 var instance : Node2D
 var instance_name : String
 
 func update_instance_data(_data : Dictionary) -> void:
 	instance_data[instance_name.to_lower()] = _data
-#
-#func is_storeable() -> void:
-#	return NPC_DATA[npc_type].storeable
 
 func activate(_data : Dictionary) -> void:
+	if _data.size() == 0 or not _data.has("step"):
+		instance_data.step = 0
+	else:
+		instance_data.step = _data.step
+	
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[npc_type].id).instantiate()
 	instance_name = instance.name.to_lower()
 	call_deferred("add_child", instance)
-	instance.update_room_data(_get_instance_data_from_data(_data))
 
 func deactivate() -> void:
-	if is_instance_valid(instance): instance.queue_free()
+	if is_instance_valid(instance):
+		if instance.pass_step(): instance_data.step += 1
+		instance.queue_free()
 
 func get_state() -> Dictionary:
 	return instance_data
@@ -53,6 +58,9 @@ func _get_instance_data_from_data(_data : Dictionary) -> Dictionary:
 func _update_npc_type() -> void:
 	if Engine.is_editor_hint():
 		$sprite.texture = load(SPRITES_PATH % NPC_DATA[npc_type].id)
+
+func _ready() -> void:
+	instance_data.storeable = storeable
 
 func _enter_tree() -> void:
 	if Engine.is_editor_hint():

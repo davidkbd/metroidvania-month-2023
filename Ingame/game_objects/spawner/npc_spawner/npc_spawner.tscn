@@ -6,6 +6,7 @@
 [node name="npc_spawner" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_y8ucm")
+storeable = null
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-40, -110)

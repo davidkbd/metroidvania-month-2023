@@ -41,14 +41,12 @@ func menu_listener_on_game_start_requested(_slot_id : String) -> void:
 	current_slot_id = _slot_id
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.READ)
 	if file: game_state = file.get_var()
-	print("GAMESTATE: ", game_state)
 	await get_tree().process_frame
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_game_state_loaded", game_state)
 
 func player_listener_on_died() -> void:
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.READ)
 	if file: game_state = file.get_var()
-	print("GAMESTATE: ", game_state)
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_player_died_game_state_loaded", game_state)
 
 func player_listener_on_life_updated(_life : Dictionary) -> void:
@@ -62,18 +60,8 @@ func _create_storeable_game_state() -> Dictionary:
 	for room_key in r.rooms.keys():
 		var room_state : Dictionary = r.rooms[room_key].state
 		for object_key in room_state.keys():
-			if r.rooms[room_key].state[object_key].has("character"):
-				# Es un spawner
-				for character_state in r.rooms[room_key].state[object_key].keys():
-					if not r.rooms[room_key].state[object_key][character_state].storeable:
-						r.rooms[room_key].state[object_key]={}
-			else:
-				# No es un spawner, por ejemplo un destroyable object
-				if not r.rooms[room_key].state[object_key].storeable:
-					r.rooms[room_key].state[object_key]={}
-	print(r)
-	print(game_state)
-	print("Hay que desechar todos los datos que se encutren en el dictionary que sean storeable=false")
+			if not r.rooms[room_key].state[object_key].storeable:
+				r.rooms[room_key].state[object_key]={}
 	return r
 
 func _update_map(storeable_game_state : Dictionary) -> void:

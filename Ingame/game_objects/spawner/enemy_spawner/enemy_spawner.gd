@@ -6,6 +6,7 @@ enum EnemyType {
 	KNIGHT
 }
 
+@export var storeable  : bool = true
 @export var enemy_type : EnemyType = EnemyType.KNIGHT :
 	get: return enemy_type
 	set(value):
@@ -21,9 +22,10 @@ const NPC_DATA := [
 	}
 ]
 
-# Es responsabilidad del npc actualizar esta variable por medio de la funcion
-# update_instance_data.
-var instance_data : Dictionary = {}
+var instance_data : Dictionary = {
+	"storeable": storeable,
+	"reborn_timestamp": -1
+}
 var instance : Node2D
 var instance_name : String
 
@@ -31,17 +33,23 @@ func update_instance_data(_data : Dictionary) -> void:
 	instance_data[instance_name.to_lower()] = _data
 
 func activate(_data : Dictionary) -> void:
-	if _data.has("character"):
-		if _data.character.has("reborn_timestamp"):
-			if _data.character.reborn_timestamp > Time.get_unix_time_from_system():
-				return
+	if _data.size() == 0 or not _data.has("reborn_timestamp"):
+		instance_data.reborn_timestamp = -1.0
+	else:
+		instance_data.reborn_timestamp = _data.reborn_timestamp
+
+	if instance_data.reborn_timestamp > Time.get_unix_time_from_system():
+		return
+
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[enemy_type].id).instantiate()
 	instance_name = instance.name.to_lower()
 	call_deferred("add_child", instance)
-	instance.update_room_data(_get_instance_data_from_data(_data))
 
 func deactivate() -> void:
-	if is_instance_valid(instance): instance.queue_free()
+	if is_instance_valid(instance):
+		print("Quiza sea mejor obtener aqui el timestamp en vez de recoger la variable")
+		instance_data.reborn_timestamp = instance.reborn_timestamp
+		instance.queue_free()
 
 func get_state() -> Dictionary:
 	return instance_data
@@ -53,6 +61,9 @@ func _get_instance_data_from_data(_data : Dictionary) -> Dictionary:
 func _update_enemy_type() -> void:
 	if Engine.is_editor_hint():
 		$sprite.texture = load(SPRITES_PATH % NPC_DATA[enemy_type].id)
+
+func _ready() -> void:
+	instance_data.storeable = storeable
 
 func _enter_tree() -> void:
 	if Engine.is_editor_hint():

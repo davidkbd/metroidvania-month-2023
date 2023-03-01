@@ -11,7 +11,6 @@ class_name Room
 var room_data : Dictionary
 
 func activate() -> void:
-	print("ROOM DATA: ", room_data)
 	room_content.activate(room_data)
 	get_tree().call_group("ROOM_LISTENER", "room_listener_on_activated", self)
 
