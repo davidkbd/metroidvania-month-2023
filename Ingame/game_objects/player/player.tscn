@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://d4g326fv20xk1"]
+[gd_scene load_steps=109 format=3 uid="uid://d4g326fv20xk1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://cpm8y1uompigj" path="res://Ingame/game_objects/player/parts/enemy_damage_area/enemy_damage_area.tscn" id="20_yqshm"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.gd" id="22_o8j16"]
 [ext_resource type="PackedScene" uid="uid://ohm0vp136jfk" path="res://Ingame/game_objects/player/parts/restartpoint_area/restartpoint_area.tscn" id="25_v8eju"]
+[ext_resource type="PackedScene" uid="uid://coo4lac6b1v5m" path="res://Ingame/game_objects/player/parts/item_sensor/item_sensor.tscn" id="28_yw00y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
 shader = ExtResource("15_unq2k")
@@ -758,6 +759,8 @@ position = Vector2(0, -16)
 
 [node name="savepoint_sensor" parent="." instance=ExtResource("14_3x4jn")]
 position = Vector2(0, -2)
+
+[node name="item_sensor" parent="." instance=ExtResource("28_yw00y")]
 
 [node name="enemy_hit_area" type="Area2D" parent="."]
 position = Vector2(0, -16)
