@@ -58,25 +58,25 @@ target_nodepath = NodePath("DestroyableTileMap")
 
 [node name="explosion_particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
-position = Vector2(-8, 0)
+position = Vector2(-8, -32)
 emitting = false
-amount = 64
+amount = 24
 lifetime = 2.0
 one_shot = true
 explosiveness = 0.99
 emission_shape = 3
 emission_rect_extents = Vector2(16, 128)
 direction = Vector2(0.75, -0.25)
-spread = 48.76
+spread = 50.0
 gravity = Vector2(0, 200)
-initial_velocity_min = 20.82
-initial_velocity_max = 124.99
+initial_velocity_min = 30.0
+initial_velocity_max = 130.0
 angular_velocity_min = -305.0
 angular_velocity_max = 255.0
 linear_accel_min = -31.02
 linear_accel_max = 57.17
-scale_amount_min = 0.2
-scale_amount_max = 0.75
+scale_amount_min = 0.5
+scale_amount_max = 2.0
 
 [node name="DestroyableTileMap" type="TileMap" parent="room_content/destroyable_object"]
 position = Vector2(320, -288)
