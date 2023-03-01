@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://b68vcgdaf1ye3"]
+[gd_scene load_steps=16 format=3 uid="uid://b68vcgdaf1ye3"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_wnr0d"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="4_6qv04"]
-[ext_resource type="PackedScene" uid="uid://bvt4epkpnecs0" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="4_148m3"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_dkf1h"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_tio88"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/level-sprites/destroyable_wall_particle.png" id="5_5a81s"]
@@ -97,11 +96,11 @@ position = Vector2(-16, -80)
 shape = SubResource("RectangleShape2D_pbe7v")
 
 [node name="JumpHelp" parent="room_content" instance=ExtResource("9_nr8k4")]
-position = Vector2(144, 408)
+position = Vector2(176, 408)
 control_type = 3
 
 [node name="MoveRightHelp" parent="room_content" instance=ExtResource("9_nr8k4")]
-position = Vector2(-160, 320)
+position = Vector2(16, 408)
 control_type = 1
 
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("6_m2y6s")]
@@ -110,11 +109,23 @@ position = Vector2(640, 256)
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_m2y6s")]
 position = Vector2(640, 128)
 
-[node name="savepoint_area" parent="room_content" instance=ExtResource("4_148m3")]
-position = Vector2(-160, 320)
+[node name="rat_health" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(272, 296)
+
+[node name="rat_health2" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(312, 272)
+
+[node name="rat_health3" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(272, 264)
+
+[node name="rat_health4" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(368, 264)
+
+[node name="rat_health5" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(336, 256)
+
+[node name="savepoint" type="Node2D" parent="room_content"]
+position = Vector2(64, 384)
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
 position = Vector2(432, 320)
-
-[node name="rat_health" parent="." instance=ExtResource("13_uxhuq")]
-position = Vector2(272, 296)
