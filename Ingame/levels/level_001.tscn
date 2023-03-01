@@ -1,11 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://dqvs4h4pm2ru7"]
+[gd_scene load_steps=31 format=3 uid="uid://dqvs4h4pm2ru7"]
 
 [ext_resource type="Script" path="res://Ingame/levels/level_001.gd" id="1_67tbm"]
 [ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="2_vpw7i"]
 [ext_resource type="Texture2D" uid="uid://crlffvvvdwuty" path="res://Ingame/level-sprites/default/cavernaSlime.png" id="3_fuh8n"]
 [ext_resource type="Texture2D" uid="uid://erqactl2ihou" path="res://Ingame/level-sprites/default/cavernaSlimeBG.png" id="4_j3vsp"]
 [ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_n3beu"]
-[ext_resource type="PackedScene" uid="uid://c0eke8npk0umn" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
+[ext_resource type="PackedScene" uid="uid://b68vcgdaf1ye3" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
 [ext_resource type="Texture2D" uid="uid://cc6x8cf1uayv5" path="res://Ingame/level-sprites/foreground/room_002_foreground01.png" id="6_nhmka"]
 [ext_resource type="PackedScene" uid="uid://g8e6tumw718r" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
 [ext_resource type="PackedScene" uid="uid://cbx4tsxjquwqb" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
@@ -26,6 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://nl5b1oatad63" path="res://Ingame/rooms/room_011.tscn" id="23_t6j15"]
 [ext_resource type="PackedScene" uid="uid://bp7c17h6dokoq" path="res://Ingame/rooms/room_012_tunnel.tscn" id="24_q05xe"]
 [ext_resource type="PackedScene" uid="uid://bo5t1gv0njpmv" path="res://Ingame/rooms/room_013.tscn" id="26_mqqgf"]
+[ext_resource type="PackedScene" uid="uid://ix0jwr7p8ln7" path="res://Ingame/rooms/room_014.tscn" id="27_dx7ie"]
+[ext_resource type="PackedScene" uid="uid://dhs3ne8rilj6r" path="res://Ingame/rooms/room_015.tscn" id="28_th023"]
+[ext_resource type="PackedScene" uid="uid://c7gnkaoc4h8uc" path="res://Ingame/rooms/room_016.tscn" id="29_p3mn4"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
@@ -167,3 +170,12 @@ position = Vector2(17664, -7304)
 
 [node name="room_013" parent="." instance=ExtResource("26_mqqgf")]
 position = Vector2(12032, -6912)
+
+[node name="room_014" parent="." instance=ExtResource("27_dx7ie")]
+position = Vector2(16608, -8704)
+
+[node name="room_015" parent="." instance=ExtResource("28_th023")]
+position = Vector2(18816, -8608)
+
+[node name="room_016" parent="." instance=ExtResource("29_p3mn4")]
+position = Vector2(20224, -8608)
