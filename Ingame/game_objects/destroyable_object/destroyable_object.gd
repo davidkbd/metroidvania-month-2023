@@ -2,6 +2,7 @@ extends Area2D
 
 class_name DestroyableObject
 
+@export var storeable         : bool = true
 @export var life              : int = 5
 
 @onready var particles : CPUParticles2D = get_node("particles")
@@ -10,8 +11,8 @@ class_name DestroyableObject
 @onready var target_default_collision_mask : int = target.collision_mask
 @onready var target_default_collision_layer : int = target.collision_layer
 
-var instance_data : Dictionary = {
-	"storeable": true,
+@onready var instance_data : Dictionary = {
+	"storeable": storeable,
 	"life": life
 }
 
