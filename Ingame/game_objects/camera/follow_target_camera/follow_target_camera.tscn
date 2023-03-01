@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/camera/follow_target_camera/follow_target_camera.gd" id="1_1ecar"]
 [ext_resource type="Texture2D" uid="uid://c4vx1bf38xb34" path="res://Ingame/game_objects/player/sprites/backing_light.png" id="2_gvsei"]
 
-[node name="follow_target_camera" type="Camera2D" groups=["CAMERA", "PLAYER_LISTENER"]]
+[node name="follow_target_camera" type="Camera2D" groups=["CAMERA", "DESTROYABLE_LISTENER", "PLAYER_LISTENER"]]
 script = ExtResource("1_1ecar")
 
 [node name="backing_light" type="PointLight2D" parent="."]
