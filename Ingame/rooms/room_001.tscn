@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/level-sprites/wall_break_sprite.png" id="5_5a81s"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_m2y6s"]
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="6_mx5ml"]
-[ext_resource type="Script" path="res://Ingame/game_objects/destroyable_object/destroyable_object.gd" id="6_syd7k"]
+[ext_resource type="PackedScene" uid="uid://hxuj5mt5jlf7" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="6_r4jcw"]
 [ext_resource type="PackedScene" uid="uid://cshwlyorvtvl5" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_tvbbv"]
 [ext_resource type="PackedScene" uid="uid://cc3xlv2ppyil" path="res://Ingame/game_objects/control_tip_area/control_tip_area.tscn" id="9_nr8k4"]
 
@@ -47,16 +47,13 @@ layer_0/tile_data = PackedInt32Array(196607, 262146, 2, 131071, 262146, 1, 19660
 
 [node name="room_content" parent="." instance=ExtResource("4_tio88")]
 
-[node name="destroyable_object" type="Area2D" parent="room_content"]
-position = Vector2(-320, 288)
-collision_layer = 16384
-collision_mask = 16384
-monitoring = false
-script = ExtResource("6_syd7k")
-particles_texture = ExtResource("5_5a81s")
-target_nodepath = NodePath("DestroyableTileMap")
+[node name="destroyable_object" parent="room_content" instance=ExtResource("6_r4jcw")]
 
-[node name="explosion_particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_7fpfl")
+
+[node name="particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
 position = Vector2(-16, -32)
 emitting = false
@@ -64,6 +61,7 @@ amount = 24
 lifetime = 2.0
 one_shot = true
 explosiveness = 0.99
+texture = ExtResource("5_5a81s")
 emission_shape = 3
 emission_rect_extents = Vector2(16, 128)
 direction = Vector2(0.75, -0.25)
@@ -78,15 +76,11 @@ linear_accel_max = 57.17
 scale_amount_min = 0.5
 scale_amount_max = 2.0
 
-[node name="DestroyableTileMap" type="TileMap" parent="room_content/destroyable_object"]
+[node name="target" type="TileMap" parent="room_content/destroyable_object"]
 position = Vector2(320, -288)
 tile_set = ExtResource("4_6qv04")
 format = 2
 layer_0/tile_data = PackedInt32Array(458740, 196610, 3, 524276, 196610, 3, 589812, 196610, 3, 655348, 196610, 3, 393205, 327682, 3, 458741, 327682, 3, 524277, 327682, 3, 589813, 327682, 3, 655349, 327682, 3, 393204, 196610, 3, 720884, 196610, 3, 720885, 262146, 2, 327668, 851970, 10, 786420, 851970, 10, 327667, 196610, 3, 393203, 196610, 3, 458739, 196610, 3, 524275, 196610, 3, 589811, 196610, 3, 655347, 196610, 3, 720883, 196610, 3, 786419, 196610, 3, 327669, 327682, 3)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
-position = Vector2(0, -32)
-shape = SubResource("RectangleShape2D_7fpfl")
 
 [node name="JumpHelp" parent="room_content" instance=ExtResource("9_nr8k4")]
 position = Vector2(144, 408)

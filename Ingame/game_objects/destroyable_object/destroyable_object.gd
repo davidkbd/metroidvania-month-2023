@@ -2,12 +2,10 @@ extends Area2D
 
 class_name DestroyableObject
 
-@export var particles_texture : Texture2D
-@export var target_nodepath   : NodePath
 @export var life              : int = 5
 
-@onready var particles : CPUParticles2D = $explosion_particles
-@onready var target = get_node(target_nodepath)
+@onready var particles : CPUParticles2D = get_node("particles")
+@onready var target    : Node2D         = get_node("target")
 
 @onready var current_life : int = life
 
@@ -36,6 +34,3 @@ func _destruction(direction : float) -> void:
 			"DESTROYABLE_LISTENER",
 			"destroyable_listener_on_destroyed",
 			Vector2(direction, .0))
-
-func _ready() -> void:
-	particles.texture = particles_texture
