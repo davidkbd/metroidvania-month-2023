@@ -1,26 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://h14f0sstxiws"]
+[gd_scene load_steps=6 format=3 uid="uid://x41ek8r301gi"]
 
-[ext_resource type="Script" path="res://Ingame/game_objects/room/torch/torch.gd" id="1_k88p6"]
-[ext_resource type="Texture2D" uid="uid://dtjieqg66bvsc" path="res://Ingame/game_objects/room/torch/sprites/torch.png" id="1_x586v"]
-[ext_resource type="Texture2D" uid="uid://bar8e3bdansd5" path="res://Ingame/game_objects/room/torch/sprites/torch-light.png" id="2_2xl48"]
+[ext_resource type="Script" path="res://Ingame/game_objects/room/torch/torch.gd" id="1_ggawi"]
+[ext_resource type="Texture2D" uid="uid://bar8e3bdansd5" path="res://Ingame/game_objects/room/torch/sprites/torch-light.png" id="2_ubdtf"]
+[ext_resource type="Texture2D" uid="uid://dtjieqg66bvsc" path="res://Ingame/game_objects/room/torch/sprites/torch.png" id="3_oq4sr"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wex0v"]
 polygon = PackedVector2Array(-10, 0, 10, 0, 10, 2, -10, 2)
 
 [sub_resource type="Gradient" id="Gradient_t0a16"]
-offsets = PackedFloat32Array(0, 0.0656566, 0.171717, 0.353535, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0.490196, 0.113725, 1, 0.85098, 0, 0.0509804, 0.780392, 0.807843, 0, 0.0352941, 0)
+offsets = PackedFloat32Array(0, 0.0656566, 0.353535, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 0, 0.522227, 0.315574, 0.780392, 0.807843, 0, 0.0352941, 0)
 
-[node name="torch" type="Node2D"]
+[node name="green_torch" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_k88p6")
+script = ExtResource("1_ggawi")
 
 [node name="light" type="PointLight2D" parent="."]
-color = Color(0.937255, 0.184314, 0, 1)
+color = Color(0.376471, 0.588235, 0.227451, 1)
 energy = 8.0
 shadow_enabled = true
 shadow_color = Color(0.027451, 0.0784314, 0.184314, 0.25098)
-texture = ExtResource("2_2xl48")
+texture = ExtResource("2_ubdtf")
 offset = Vector2(0, 8)
 
 [node name="light_occluder" type="LightOccluder2D" parent="."]
@@ -45,5 +45,5 @@ color_ramp = SubResource("Gradient_t0a16")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-24, -16)
-texture = ExtResource("1_x586v")
+texture = ExtResource("3_oq4sr")
 centered = false
