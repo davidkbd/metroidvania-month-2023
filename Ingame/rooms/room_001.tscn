@@ -58,7 +58,7 @@ target_nodepath = NodePath("DestroyableTileMap")
 
 [node name="explosion_particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
-position = Vector2(-8, -32)
+position = Vector2(-16, -32)
 emitting = false
 amount = 24
 lifetime = 2.0
