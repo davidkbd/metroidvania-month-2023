@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://coo4lac6b1v5m"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/item_sensor/item_sensor.gd" id="1_ur06b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr3kb"]
+size = Vector2(16, 16)
+
+[node name="item_sensor" type="Area2D"]
+position = Vector2(0, -2)
+collision_layer = 0
+collision_mask = 256
+monitorable = false
+script = ExtResource("1_ur06b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_fr3kb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

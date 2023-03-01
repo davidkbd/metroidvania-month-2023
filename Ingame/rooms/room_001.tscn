@@ -1,21 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0eke8npk0umn"]
+[gd_scene load_steps=16 format=3 uid="uid://b68vcgdaf1ye3"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_wnr0d"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="4_6qv04"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="4_148m3"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_dkf1h"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_tio88"]
+[ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/level-sprites/destroyable_wall_particle.png" id="5_5a81s"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_m2y6s"]
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="6_mx5ml"]
-[ext_resource type="Script" path="res://Ingame/game_objects/destroyable_object/destroyable_object.gd" id="6_syd7k"]
+[ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="6_r4jcw"]
 [ext_resource type="PackedScene" uid="uid://cshwlyorvtvl5" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_tvbbv"]
+[ext_resource type="Texture2D" uid="uid://by88n8j30vwk1" path="res://Ingame/level-sprites/destroyable_wall_sprite.png" id="8_oidpe"]
 [ext_resource type="PackedScene" uid="uid://cc3xlv2ppyil" path="res://Ingame/game_objects/control_tip_area/control_tip_area.tscn" id="9_nr8k4"]
+[ext_resource type="PackedScene" uid="uid://c78unrdgbqlrf" path="res://Ingame/game_objects/items/rat_health/rat_health.tscn" id="13_uxhuq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1008, 568)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fpfl"]
 size = Vector2(8, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbe7v"]
+size = Vector2(32, 160)
 
 [node name="room_001" type="Node2D"]
 script = ExtResource("1_wnr0d")
@@ -46,51 +51,56 @@ layer_0/tile_data = PackedInt32Array(196607, 262146, 2, 131071, 262146, 1, 19660
 
 [node name="room_content" parent="." instance=ExtResource("4_tio88")]
 
-[node name="destroyable_object" type="Area2D" parent="room_content"]
-position = Vector2(-320, 288)
-collision_layer = 16384
-collision_mask = 16384
-monitoring = false
-script = ExtResource("6_syd7k")
-
-[node name="explosion_particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
-modulate = Color(0.662745, 0.662745, 0.662745, 1)
-position = Vector2(-8, 0)
-emitting = false
-amount = 64
-lifetime = 2.0
-one_shot = true
-explosiveness = 0.99
-emission_shape = 3
-emission_rect_extents = Vector2(16, 128)
-direction = Vector2(0.75, -0.25)
-spread = 48.76
-gravity = Vector2(0, 200)
-initial_velocity_min = 20.82
-initial_velocity_max = 124.99
-angular_velocity_min = -305.0
-angular_velocity_max = 255.0
-linear_accel_min = -31.02
-linear_accel_max = 57.17
-scale_amount_min = 0.2
-scale_amount_max = 0.75
-
-[node name="DestroyableTileMap" type="TileMap" parent="room_content/destroyable_object"]
-position = Vector2(320, -288)
-tile_set = ExtResource("4_6qv04")
-format = 2
-layer_0/tile_data = PackedInt32Array(458740, 196610, 3, 524276, 196610, 3, 589812, 196610, 3, 655348, 196610, 3, 393205, 327682, 3, 458741, 327682, 3, 524277, 327682, 3, 589813, 327682, 3, 655349, 327682, 3, 393204, 196610, 3, 720884, 196610, 3, 720885, 262146, 2, 327668, 851970, 10, 786420, 851970, 10, 327667, 196610, 3, 393203, 196610, 3, 458739, 196610, 3, 524275, 196610, 3, 589811, 196610, 3, 655347, 196610, 3, 720883, 196610, 3, 786419, 196610, 3, 327669, 327682, 3)
+[node name="destroyable_object" parent="room_content" instance=ExtResource("6_r4jcw")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_7fpfl")
 
+[node name="particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+position = Vector2(-16, -32)
+emitting = false
+amount = 24
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+texture = ExtResource("5_5a81s")
+emission_shape = 3
+emission_rect_extents = Vector2(16, 128)
+direction = Vector2(0.75, -0.25)
+spread = 50.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 30.0
+initial_velocity_max = 130.0
+angular_velocity_min = -305.0
+angular_velocity_max = 255.0
+linear_accel_min = -31.02
+linear_accel_max = 57.17
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+
+[node name="target" type="StaticBody2D" parent="room_content/destroyable_object"]
+position = Vector2(0, 32)
+
+[node name="sprite" type="Sprite2D" parent="room_content/destroyable_object/target"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-16, -96)
+texture = ExtResource("8_oidpe")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object/target"]
+position = Vector2(-16, -80)
+shape = SubResource("RectangleShape2D_pbe7v")
+
 [node name="JumpHelp" parent="room_content" instance=ExtResource("9_nr8k4")]
-position = Vector2(144, 408)
+position = Vector2(176, 408)
 control_type = 3
 
 [node name="MoveRightHelp" parent="room_content" instance=ExtResource("9_nr8k4")]
-position = Vector2(-160, 320)
+position = Vector2(16, 408)
 control_type = 1
 
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("6_m2y6s")]
@@ -99,8 +109,23 @@ position = Vector2(640, 256)
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_m2y6s")]
 position = Vector2(640, 128)
 
-[node name="savepoint_area" parent="room_content" instance=ExtResource("4_148m3")]
-position = Vector2(-160, 320)
+[node name="rat_health" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(272, 296)
+
+[node name="rat_health2" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(312, 272)
+
+[node name="rat_health3" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(272, 264)
+
+[node name="rat_health4" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(368, 264)
+
+[node name="rat_health5" parent="room_content" instance=ExtResource("13_uxhuq")]
+position = Vector2(336, 256)
+
+[node name="savepoint" type="Node2D" parent="room_content"]
+position = Vector2(64, 384)
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
 position = Vector2(432, 320)

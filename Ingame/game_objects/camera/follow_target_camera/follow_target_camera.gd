@@ -46,8 +46,14 @@ func _process(_delta : float) -> void:
 		delta_speed = _delta * distance * distance_factor
 		target_position.x = lerp(target_position.x, target.global_position.x, delta_speed)
 		target_position.y = lerp(target_position.y, target.global_position.y, delta_speed)
-		
-	global_position = round(target_position + offset_position)
+
+func _physics_process(delta : float) -> void:
+	var controlled_offset_position : Vector2 = Vector2.ZERO
+	if ControlInput.is_up_pressed():
+		controlled_offset_position = Vector2.UP * 64.0
+	elif ControlInput.is_down_pressed():
+		controlled_offset_position = Vector2.DOWN * 64.0
+	global_position = round(target_position + offset_position + controlled_offset_position)
 
 func _ready() -> void:
 	make_current()
