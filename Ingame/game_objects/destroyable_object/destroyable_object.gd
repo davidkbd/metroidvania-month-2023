@@ -29,6 +29,7 @@ func activate(_data : Dictionary) -> void:
 		target.show()
 		target.collision_mask = target_default_collision_mask
 		target.collision_layer = target_default_collision_layer
+	particles.hide()
 
 func deactivate() -> void:
 	if not instance_data.storeable:
@@ -39,6 +40,7 @@ func get_state() -> Dictionary:
 
 func destroy(_destroyer : CharacterBody2D) -> void:
 	if is_instance_valid(target) and instance_data.life > 0:
+		particles.show()
 		instance_data.life -= 1
 		var direction = sign(_destroyer.position.x - position.x)
 		_hit(direction)
