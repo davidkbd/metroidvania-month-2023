@@ -43,6 +43,9 @@ func activate(_data : Dictionary) -> void:
 func deactivate() -> void:
 	if is_instance_valid(instance): instance.queue_free()
 
+func get_state() -> Dictionary:
+	return instance_data
+
 func _get_instance_data_from_data(_data : Dictionary) -> Dictionary:
 	if _data.has(instance_name): return _data[instance_name]
 	return {}

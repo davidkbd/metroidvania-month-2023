@@ -61,10 +61,16 @@ func _create_storeable_game_state() -> Dictionary:
 	var r : Dictionary = game_state.duplicate(true)
 	for room_key in r.rooms.keys():
 		var room_state : Dictionary = r.rooms[room_key].state
-		for spawner_state in room_state.keys():
-			for character_state in r.rooms[room_key].state[spawner_state].keys():
-				if not r.rooms[room_key].state[spawner_state][character_state].storeable:
-					r.rooms[room_key].state[spawner_state]={}
+		for object_key in room_state.keys():
+			if r.rooms[room_key].state[object_key].has("character"):
+				# Es un spawner
+				for character_state in r.rooms[room_key].state[object_key].keys():
+					if not r.rooms[room_key].state[object_key][character_state].storeable:
+						r.rooms[room_key].state[object_key]={}
+			else:
+				# No es un spawner, por ejemplo un destroyable object
+				if not r.rooms[room_key].state[object_key].storeable:
+					r.rooms[room_key].state[object_key]={}
 	print(r)
 	print(game_state)
 	print("Hay que desechar todos los datos que se encutren en el dictionary que sean storeable=false")

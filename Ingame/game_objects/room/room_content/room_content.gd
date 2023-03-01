@@ -3,21 +3,24 @@ class_name RoomContent
 
 func activate(_room_data : Dictionary) -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
-	for spawner in find_children("*_spawner*"):
-		if _room_data.state.has(spawner.name.to_lower()):
-			spawner.activate(_room_data.state[spawner.name.to_lower()])
-		else:
-			spawner.activate({})
+	for child in get_children():
+		if child.has_method("activate") and not child is SavepointArea:
+			if _room_data.state.has(child.name.to_lower()):
+				child.activate(_room_data.state[child.name.to_lower()])
+			else:
+				child.activate({})
 
 func deactivate() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
-	for spawner in find_children("*_spawner*"):
-		spawner.deactivate()
+	for child in get_children():
+		if child.has_method("deactivate") and not child is SavepointArea:
+			child.deactivate()
 
 func get_state() -> Dictionary:
 	var r : Dictionary = {}
-	for spawner in find_children("*_spawner*"):
-		r[spawner.name.to_lower()] = spawner.instance_data
+	for child in get_children():
+		if child.has_method("get_state") and not child is SavepointArea:
+			r[child.name.to_lower()] = child.get_state()
 	return r
 
 func _enter_tree() -> void:
