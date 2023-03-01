@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dqvs4h4pm2ru7"]
+[gd_scene load_steps=33 format=3 uid="uid://dqvs4h4pm2ru7"]
 
 [ext_resource type="Script" path="res://Ingame/levels/level_001.gd" id="1_67tbm"]
 [ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="2_vpw7i"]
@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://ix0jwr7p8ln7" path="res://Ingame/rooms/room_014.tscn" id="27_dx7ie"]
 [ext_resource type="PackedScene" uid="uid://dhs3ne8rilj6r" path="res://Ingame/rooms/room_015.tscn" id="28_th023"]
 [ext_resource type="PackedScene" uid="uid://c7gnkaoc4h8uc" path="res://Ingame/rooms/room_016.tscn" id="29_p3mn4"]
+[ext_resource type="PackedScene" uid="uid://d25y10fsubq1k" path="res://Ingame/rooms/room_016_tunnel.tscn" id="30_o7mk3"]
+[ext_resource type="PackedScene" uid="uid://cin0xo0pk7wkj" path="res://Ingame/rooms/room_017.tscn" id="31_2go6e"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
@@ -179,3 +181,9 @@ position = Vector2(18816, -8608)
 
 [node name="room_016" parent="." instance=ExtResource("29_p3mn4")]
 position = Vector2(20224, -8608)
+
+[node name="room_016_tunnel" parent="." instance=ExtResource("30_o7mk3")]
+position = Vector2(22528, -7208)
+
+[node name="room_017" parent="." instance=ExtResource("31_2go6e")]
+position = Vector2(23680, -8512)
