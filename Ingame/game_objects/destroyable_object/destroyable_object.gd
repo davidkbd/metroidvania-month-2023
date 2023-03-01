@@ -11,7 +11,7 @@ class_name DestroyableObject
 @onready var target_default_collision_mask : int = target.collision_mask
 @onready var target_default_collision_layer : int = target.collision_layer
 
-@onready var instance_data : Dictionary = {
+var instance_data : Dictionary = {
 	"storeable": storeable,
 	"life": life
 }
@@ -62,3 +62,6 @@ func _destruction(direction : float) -> void:
 			"DESTROYABLE_LISTENER",
 			"destroyable_listener_on_destroyed",
 			Vector2(direction, .0))
+
+func _ready() -> void:
+	instance_data.storeable = storeable
