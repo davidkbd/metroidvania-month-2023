@@ -7,6 +7,7 @@ enum ElementType {
 	RAT_HEALTH, RAT_HEALTH_HOME
 }
 
+@export var reborn_delay_seconds : float = 300.0
 @export var element_type : ElementType = ElementType.RAT_HEALTH :
 	get: return element_type
 	set(value):
@@ -23,11 +24,11 @@ const TYPE_DATA := [
 	{
 		"id": "empty_rat_health_home"
 	}
-
 ]
 
 var instance_data : Dictionary = {
-	"storeable": false
+	"storeable": false,
+	"reborn_timestamp": -1
 }
 var instance : Node2D
 var instance_name : String
@@ -36,12 +37,26 @@ func update_instance_data(_data : Dictionary) -> void:
 	instance_data[instance_name.to_lower()] = _data
 
 func activate(_data : Dictionary) -> void:
+	if _data.size() == 0 or not _data.has("reborn_timestamp"):
+		instance_data.reborn_timestamp = -1.0
+	else:
+		instance_data.reborn_timestamp = _data.reborn_timestamp
+
+	if instance_data.reborn_timestamp > Time.get_unix_time_from_system():
+		return
+	
 	instance = load(PACKEDSCENES_PATH % [TYPE_DATA[element_type].id, TYPE_DATA[element_type].id]).instantiate()
 	instance_name = instance.name.to_lower()
 	call_deferred("add_child", instance)
 
 func deactivate() -> void:
 	if is_instance_valid(instance):
+		if instance is DestroyableObject:
+			if instance.instance_data.life <= 0:
+				instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
+		else:
+			if instance.destroyable.instance_data.life <= 0:
+				instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
 		instance.queue_free()
 
 func get_state() -> Dictionary:
@@ -49,7 +64,6 @@ func get_state() -> Dictionary:
 
 func _update_element_type() -> void:
 	if Engine.is_editor_hint():
-		print(SPRITES_PATH % TYPE_DATA[element_type].id)
 		$sprite.texture = load(SPRITES_PATH % TYPE_DATA[element_type].id)
 
 func _enter_tree() -> void:

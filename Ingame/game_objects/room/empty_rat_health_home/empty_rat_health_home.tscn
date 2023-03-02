@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dsqn"]
 size = Vector2(32, 32)
 
-[node name="base_rat_home_destroyable_object" instance=ExtResource("1_ck5m3")]
+[node name="empty_rat_home_destroyable_object" instance=ExtResource("1_ck5m3")]
 storeable = false
 life = 1
 

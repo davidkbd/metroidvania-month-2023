@@ -54,12 +54,12 @@ layer_0/tile_data = PackedInt32Array(196607, 262146, 2, 131071, 262146, 1, 19660
 [node name="destroyable_object" parent="room_content" instance=ExtResource("6_r4jcw")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
-position = Vector2(0, -32)
+position = Vector2(-320, 256)
 shape = SubResource("RectangleShape2D_7fpfl")
 
 [node name="particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
-position = Vector2(-16, -32)
+position = Vector2(-336, 256)
 emitting = false
 amount = 24
 lifetime = 2.0
@@ -81,7 +81,7 @@ scale_amount_min = 0.5
 scale_amount_max = 2.0
 
 [node name="target" type="StaticBody2D" parent="room_content/destroyable_object"]
-position = Vector2(0, 32)
+position = Vector2(-320, 320)
 
 [node name="sprite" type="Sprite2D" parent="room_content/destroyable_object/target"]
 texture_filter = 1
@@ -114,17 +114,21 @@ position = Vector2(64, 384)
 
 [node name="room_element_spawner" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(208, 320)
+reborn_delay_seconds = null
 
 [node name="room_element_spawner2" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(248, 320)
+reborn_delay_seconds = null
 element_type = 1
 
 [node name="room_element_spawner3" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(288, 320)
+reborn_delay_seconds = null
 element_type = 1
 
 [node name="room_element_spawner4" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(320, 320)
+reborn_delay_seconds = null
 element_type = 1
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
