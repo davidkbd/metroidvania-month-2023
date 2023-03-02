@@ -59,7 +59,7 @@ func _hit(direction : float) -> void:
 	hit_tween.tween_property(target, "position:x", pos, .5)
 
 func _destruction(direction : float) -> void:
-	particles.direction.x = particles.direction.x
+	particles.direction.x = particles.direction.x * (-direction)
 	particles.restart()
 	particles.emitting = true
 	target.hide()

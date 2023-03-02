@@ -29,9 +29,9 @@
 [ext_resource type="PackedScene" path="res://Ingame/rooms/room_014.tscn" id="27_dx7ie"]
 [ext_resource type="PackedScene" path="res://Ingame/rooms/room_015.tscn" id="28_th023"]
 [ext_resource type="PackedScene" path="res://Ingame/rooms/room_016.tscn" id="29_p3mn4"]
-[ext_resource type="PackedScene" uid="uid://cujcjbladjywn" path="res://Ingame/rooms/room_016_tunnel.tscn" id="30_o7mk3"]
-[ext_resource type="PackedScene" uid="uid://calchuynwmm1i" path="res://Ingame/rooms/room_017.tscn" id="31_2go6e"]
-[ext_resource type="PackedScene" uid="uid://c7yflmllmiujm" path="res://Ingame/rooms/room_018.tscn" id="32_assd5"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_016_tunnel.tscn" id="30_o7mk3"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_017.tscn" id="31_2go6e"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_018.tscn" id="32_assd5"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
