@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bknk6ojoxi6oq"]
+[gd_scene load_steps=8 format=3 uid="uid://bknk6ojoxi6oq"]
 
 [ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_pikkf"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_sm35l"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_2dit5"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_mm10w"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="5_g6g7h"]
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="5_uuke3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(4120, 500)
+size = Vector2(4120, 540)
 
 [node name="room_010_tunnel" type="Node2D"]
 script = ExtResource("1_pikkf")
@@ -16,7 +17,7 @@ script = ExtResource("1_pikkf")
 position = Vector2(64, 288)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(644, -262)
+position = Vector2(644, -282)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
@@ -32,6 +33,9 @@ direction = 0
 [node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("4_mm10w")]
 position = Vector2(-1048, -256)
 direction = 0
+
+[node name="savepoint_area" parent="room_content" instance=ExtResource("5_g6g7h")]
+position = Vector2(448, 160)
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
 texture_filter = 1
