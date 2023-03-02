@@ -10,7 +10,9 @@ func enter() -> void:
 	attack_direction = Vector2(ControlInput.get_horizontal_axis(), -ControlInput.get_vertical_axis())
 	if not host.can_attack_down():
 		attack_direction.y = clamp(attack_direction.y, .0, 1.0)
-	host.animation_tree.set("parameters/on_attack/blend_position", attack_direction)
+	
+	host.animation_tree.set("parameters/on_attack/blend_position", 0)
+	host.animation_tree.set("parameters/on_attack/0/blend_position", attack_direction)
 	_enable_collision(true)
 	attack_time = attack_timer
 	host.enemy_hit_area.scale.x = -1 if host.sprite.flip_h else 1
