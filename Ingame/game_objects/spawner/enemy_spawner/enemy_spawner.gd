@@ -7,6 +7,7 @@ enum EnemyType {
 	KNIGHT
 }
 
+@export var reborn_delay_seconds : float = 60.0
 @export var storeable  : bool = true
 @export var enemy_type : EnemyType = EnemyType.KNIGHT :
 	get: return enemy_type
@@ -48,8 +49,8 @@ func activate(_data : Dictionary) -> void:
 
 func deactivate() -> void:
 	if is_instance_valid(instance):
-		print("Quiza sea mejor obtener aqui el timestamp en vez de recoger la variable")
-		instance_data.reborn_timestamp = instance.reborn_timestamp
+		if instance.life <= 0:
+			instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
 		instance.queue_free()
 
 func get_state() -> Dictionary:

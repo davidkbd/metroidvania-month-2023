@@ -293,6 +293,7 @@ graph_offset = Vector2(-178.305, 94.8393)
 collision_layer = 1024
 collision_mask = 1024
 script = ExtResource("1_rovep")
+reborn_delay_seconds = null
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("2_u4jvg")
