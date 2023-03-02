@@ -18,6 +18,8 @@ func exit() -> void:
 	host.set_collision_mask_value(4, true)
 	host.enemy_damage_area.set_collision_mask_value(4, true)
 
+func is_an_on_air_state() -> bool: return true
+
 func step(delta : float) -> StateMachineState:
 	_brake(delta)
 	if dash_time < .0:

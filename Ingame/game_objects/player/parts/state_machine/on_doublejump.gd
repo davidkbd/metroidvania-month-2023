@@ -11,6 +11,8 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
+func is_an_on_air_state() -> bool: return true
+
 func step(delta : float) -> StateMachineState:
 	_movement(delta)
 	host.fall(delta)

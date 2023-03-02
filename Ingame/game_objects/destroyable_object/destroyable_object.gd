@@ -75,7 +75,6 @@ func _destruction(direction : float) -> void:
 func _ready() -> void:
 	instance_data.storeable = storeable
 	instance_data.life = life
-	print(target)
 	if target is PhysicsBody2D:
 		target_default_collision_mask = target.collision_mask
 		target_default_collision_layer = target.collision_layer

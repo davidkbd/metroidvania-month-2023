@@ -11,5 +11,8 @@ func enter() -> void:
 func exit() -> void:
 	print("exit")
 
+func is_an_on_air_state() -> bool:
+	return false
+
 func step(_delta : float) -> StateMachineState:
 	return self
