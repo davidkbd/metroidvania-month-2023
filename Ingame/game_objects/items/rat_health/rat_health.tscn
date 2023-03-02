@@ -1,10 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://c78unrdgbqlrf"]
+[gd_scene load_steps=8 format=3 uid="uid://c78unrdgbqlrf"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/items/rat_health/rat_health.gd" id="1_7nqq0"]
 [ext_resource type="Texture2D" uid="uid://vmdfrtmve2t8" path="res://Ingame/game_objects/items/rat_health/sprite/sprite.png" id="2_2ws6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecuyn"]
 size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_vffs8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_k4pw6"]
+resource_name = "idle"
+length = 0.85
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_wtdki"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e8l0"]
+_data = {
+"RESET": SubResource("Animation_vffs8"),
+"idle": SubResource("Animation_k4pw6"),
+"walk": SubResource("Animation_wtdki")
+}
 
 [node name="rat_health" type="Area2D"]
 z_index = 7
@@ -15,9 +71,12 @@ monitoring = false
 script = ExtResource("1_7nqq0")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(-16, -24)
+position = Vector2(-24, -47)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_2ws6r")
 centered = false
+hframes = 6
+vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -37,3 +96,14 @@ target_position = Vector2(0, 8)
 position = Vector2(0, -8)
 exclude_parent = false
 target_position = Vector2(-28, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0e8l0")
+}
+
+[node name="WalkTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
