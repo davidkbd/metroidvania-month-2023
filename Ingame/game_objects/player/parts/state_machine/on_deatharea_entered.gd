@@ -13,6 +13,7 @@ func enter() -> void:
 	fadeout_executed = false
 	host.life.increment_value(-.5)
 	host.deatharea_entered = false
+	host.superattack_manager.reset_charge()
 
 func exit() -> void:
 	if not host.life.is_died():

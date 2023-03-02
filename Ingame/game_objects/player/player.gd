@@ -20,8 +20,8 @@ class_name Player
 @onready var hitenemy_sfx         : AudioStreamPlayer = $hitenemy_sfx
 @onready var restartpoint_sensor  : Area2D            = $restartpoint_area_sensor
 
-@onready var enemy_hit_area       : Area2D            = $enemy_hit_area
-@onready var enemy_damage_area    : Area2D            = $enemy_damage_area
+@onready var enemy_hit_area                : Area2D       = $enemy_hit_area
+@onready var enemy_damage_area             : Area2D       = $enemy_damage_area
 
 var talking_npc   : NPC = null
 
@@ -40,6 +40,7 @@ func initialize(_game_state : Dictionary) -> void:
 	hitted_enemy = null
 	autoadvance_area = null
 	velocity = Vector2.ZERO
+	superattack_manager.reset_charge()
 
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction

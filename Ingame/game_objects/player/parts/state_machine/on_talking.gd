@@ -12,6 +12,7 @@ func enter() -> void:
 	current_text_position = 0
 	end_talking_lock_time = -10.0
 	host.talking_npc.hide_talk_letter()
+	host.superattack_manager.reset_charge()
 	_pass_text()
 
 func exit() -> void:

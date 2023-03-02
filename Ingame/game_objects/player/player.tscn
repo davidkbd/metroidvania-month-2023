@@ -463,47 +463,6 @@ tracks/2/keys = {
 "values": [Vector2(0, 0), Vector2(4, 56), Vector2(4, 44), Vector2(0, 18), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_c71gu"]
-resource_name = "superattack_up"
-length = 0.3
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [102, 103, 104]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, 8), Vector2(48, 94), Vector2(32, 61.2105), Vector2(16, 60), Vector2(16, 8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -65), Vector2(0, -49.3947), Vector2(0, -26), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_grveq"]
 resource_name = "superattack_horizontal"
 length = 0.3
@@ -543,6 +502,47 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-72, -6), Vector2(-54.6667, -8.66667), Vector2(-48, -6), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c71gu"]
+resource_name = "superattack_up"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [102, 103, 104]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 8), Vector2(48, 94), Vector2(32, 61.2105), Vector2(16, 60), Vector2(16, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -65), Vector2(0, -49.3947), Vector2(0, -26), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3wnei"]
@@ -878,6 +878,7 @@ script = ExtResource("12_olhsd")
 [node name="skills" parent="." instance=ExtResource("11_x5sqa")]
 
 [node name="superattack_manager" parent="." instance=ExtResource("19_dbpgt")]
+charge_seconds = 1.0
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
@@ -970,7 +971,7 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_bjlgn")
 parameters/on_attack/blend_position = 0.0
 parameters/on_attack/0/blend_position = Vector2(0, 0)
-parameters/on_attack/1/blend_position = Vector2(0, 0)
+parameters/on_attack/1/blend_position = Vector2(0.1, -0.00901526)
 parameters/on_ground/blend_position = -0.000424087
 parameters/on_jump/blend_position = Vector2(0.10082, -0.271868)
 
