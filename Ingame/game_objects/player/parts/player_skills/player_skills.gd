@@ -2,7 +2,7 @@ extends Node
 class_name PlayerSkills
 
 var data : Dictionary = {
-	"normal_attack": false,
+	"super_attack": false,
 	"double_jump": false,
 	"dash": false,
 	"snap_wall": false

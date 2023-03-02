@@ -10,6 +10,7 @@ class_name Player
 
 @onready var life                 : PlayerLife        = $life
 @onready var skills               : PlayerSkills      = $skills
+@onready var superattack_manager  : PlayerSuperAttackManager = $superattack_manager
 @onready var body_collider        : CollisionShape2D  = $body_collider
 @onready var onwall_collider      : CollisionShape2D  = $onwall_collider
 @onready var ondash_collider      : CollisionShape2D  = $ondash_collider
@@ -108,7 +109,7 @@ func _ready() -> void:
 	global_position = Vector2.ONE * 9999999999.0
 	
 	print("Ponemos todas las skills pero esto hay que quitarlo")
-	skills.set_skill_value("normal_attack", false)
+	skills.set_skill_value("super_attack", true)
 	skills.set_skill_value("double_jump", true)
 	skills.set_skill_value("dash", true)
 	skills.set_skill_value("snap_wall", true)

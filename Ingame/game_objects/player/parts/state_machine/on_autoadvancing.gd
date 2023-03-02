@@ -24,6 +24,7 @@ func enter() -> void:
 			vector = Vector2.LEFT
 	area_position = host.autoadvance_area.global_position
 	position = host.autoadvance_area.global_position + vector * host.autoadvance_area.distance
+	host.superattack_manager.reset_charge()
 
 func exit() -> void:
 	pass

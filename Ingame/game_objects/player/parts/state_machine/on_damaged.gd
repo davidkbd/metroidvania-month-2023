@@ -20,6 +20,7 @@ func enter() -> void:
 		damage_timer = .1
 		host.life.increment_value(-host.damager.power * host.specs.damage_received_factor)
 	host.damager = {}
+	host.superattack_manager.reset_charge()
 
 func exit() -> void:
 	pass

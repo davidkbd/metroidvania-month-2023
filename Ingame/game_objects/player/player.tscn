@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://d4g326fv20xk1"]
+[gd_scene load_steps=120 format=3 uid="uid://d4g326fv20xk1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="PackedScene" uid="uid://d4idunmyyn4bf" path="res://Ingame/game_objects/player/parts/autoadvance_area_sensor/autoadvance_area_sensor.tscn" id="17_tbw11"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
+[ext_resource type="PackedScene" uid="uid://drs0m44israal" path="res://Ingame/game_objects/player/parts/superattack_manager/superattack_manager.tscn" id="19_dbpgt"]
 [ext_resource type="PackedScene" uid="uid://cpm8y1uompigj" path="res://Ingame/game_objects/player/parts/enemy_damage_area/enemy_damage_area.tscn" id="20_yqshm"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.gd" id="22_o8j16"]
 [ext_resource type="PackedScene" uid="uid://ohm0vp136jfk" path="res://Ingame/game_objects/player/parts/restartpoint_area/restartpoint_area.tscn" id="25_v8eju"]
@@ -298,47 +299,6 @@ tracks/0/keys = {
 "values": [11, 12, 13, 14]
 }
 
-[sub_resource type="Animation" id="Animation_6twuo"]
-resource_name = "simpleattack_horizontal"
-length = 0.3
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [88, 89, 90]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, 8), Vector2(32, 8), Vector2(40, 28), Vector2(32, 20), Vector2(16, 8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-48, 0), Vector2(-28, -10), Vector2(-16, -6), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_7yo6m"]
 resource_name = "simpleattack_down"
 length = 0.3
@@ -378,6 +338,47 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(4, 45), Vector2(4, 36), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6twuo"]
+resource_name = "simpleattack_horizontal"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [88, 89, 90]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 8), Vector2(32, 8), Vector2(40, 28), Vector2(32, 20), Vector2(16, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-48, 0), Vector2(-28, -10), Vector2(-16, -6), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_l6mj0"]
@@ -421,49 +422,8 @@ tracks/2/keys = {
 "values": [Vector2(0, 0), Vector2(0, -40), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_c71gu"]
-resource_name = "normalattack_up"
-length = 0.3
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [102, 103, 104]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, 8), Vector2(48, 94), Vector2(32, 61.2105), Vector2(16, 60), Vector2(16, 8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -65), Vector2(0, -49.3947), Vector2(0, -26), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_fjpyt"]
-resource_name = "normalattack_down"
+resource_name = "superattack_down"
 length = 0.3
 step = 0.01
 tracks/0/type = "value"
@@ -503,8 +463,49 @@ tracks/2/keys = {
 "values": [Vector2(0, 0), Vector2(4, 56), Vector2(4, 44), Vector2(0, 18), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_c71gu"]
+resource_name = "superattack_up"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [102, 103, 104]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 8), Vector2(48, 94), Vector2(32, 61.2105), Vector2(16, 60), Vector2(16, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -65), Vector2(0, -49.3947), Vector2(0, -26), Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_grveq"]
-resource_name = "normalattack_horizontal"
+resource_name = "superattack_horizontal"
 length = 0.3
 step = 0.01
 tracks/0/type = "value"
@@ -555,16 +556,16 @@ _data = {
 "idle": SubResource("Animation_lf06g"),
 "jump": SubResource("Animation_nuy5o"),
 "jump_vertical": SubResource("Animation_ih2rn"),
-"normalattack_down": SubResource("Animation_fjpyt"),
-"normalattack_horizontal": SubResource("Animation_grveq"),
-"normalattack_up": SubResource("Animation_c71gu"),
 "on_wall": SubResource("Animation_njckj"),
 "post_dash": SubResource("Animation_23dfn"),
 "pre_dash": SubResource("Animation_nmacs"),
 "run": SubResource("Animation_dn7p7"),
 "simpleattack_down": SubResource("Animation_7yo6m"),
 "simpleattack_horizontal": SubResource("Animation_6twuo"),
-"simpleattack_up": SubResource("Animation_l6mj0")
+"simpleattack_up": SubResource("Animation_l6mj0"),
+"superattack_down": SubResource("Animation_fjpyt"),
+"superattack_horizontal": SubResource("Animation_grveq"),
+"superattack_up": SubResource("Animation_c71gu")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2eaqa"]
@@ -601,19 +602,19 @@ blend_point_4/node = SubResource("AnimationNodeAnimation_7osej")
 blend_point_4/pos = Vector2(0.1, 0)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_byi24"]
-animation = &"normalattack_up"
+animation = &"superattack_up"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_anuh8"]
-animation = &"normalattack_down"
+animation = &"superattack_down"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8w5v7"]
-animation = &"normalattack_horizontal"
+animation = &"superattack_horizontal"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q0yw4"]
-animation = &"normalattack_horizontal"
+animation = &"superattack_horizontal"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_shlkd"]
-animation = &"simpleattack_horizontal"
+animation = &"superattack_horizontal"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_m0bvx"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_byi24")
@@ -626,6 +627,8 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_q0yw4")
 blend_point_3/pos = Vector2(0, 0)
 blend_point_4/node = SubResource("AnimationNodeAnimation_shlkd")
 blend_point_4/pos = Vector2(0.1, 0)
+min_space = Vector2(-0.5, -0.5)
+max_space = Vector2(0.5, 0.5)
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_y1sy1"]
 blend_point_0/node = SubResource("AnimationNodeBlendSpace2D_20dhx")
@@ -817,7 +820,7 @@ on_ground_state = NodePath("on_ground")
 on_jump_state = NodePath("on_jump")
 on_doublejump_state = NodePath("on_doublejump")
 on_simple_attack_state = NodePath("on_simple_attack")
-on_normal_attack_state = NodePath("on_normal_attack")
+on_super_attack_state = NodePath("on_super_attack")
 on_dash_state = NodePath("on_dash")
 on_air_dash_state = NodePath("on_air_dash")
 on_wall_state = NodePath("on_wall")
@@ -843,7 +846,7 @@ script = ExtResource("7_bx4yu")
 [node name="on_simple_attack" type="Node" parent="state_machine"]
 script = ExtResource("7_v12wq")
 
-[node name="on_normal_attack" type="Node" parent="state_machine"]
+[node name="on_super_attack" type="Node" parent="state_machine"]
 script = ExtResource("8_kqfbx")
 
 [node name="on_dash" type="Node" parent="state_machine"]
@@ -873,6 +876,8 @@ script = ExtResource("12_olhsd")
 [node name="life" parent="." instance=ExtResource("16_t3qh3")]
 
 [node name="skills" parent="." instance=ExtResource("11_x5sqa")]
+
+[node name="superattack_manager" parent="." instance=ExtResource("19_dbpgt")]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 

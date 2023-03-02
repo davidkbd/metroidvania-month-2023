@@ -29,11 +29,8 @@ func step(delta : float) -> StateMachineState:
 	dash_time -= delta
 
 	if host.skills.data.double_jump and ControlInput.is_jump_just_pressed(): return state_machine.on_doublejump
-	if ControlInput.is_attack_just_pressed():
-		if host.skills.data.normal_attack:
-			return state_machine.on_normal_attack
-		else:
-			return state_machine.on_simple_attack
+	if ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
+	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
 	if host.skills.data.snap_wall and host.can_snap_to_wall(): return state_machine.on_wall
 	if host.damager.size(): return state_machine.on_damaged
 	if host.deatharea_entered: return state_machine.on_deatharea_entered

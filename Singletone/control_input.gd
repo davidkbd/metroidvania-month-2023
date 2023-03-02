@@ -30,6 +30,7 @@ func is_jump_just_pressed() ->       bool:  return Input.is_action_just_pressed(
 func is_doublejump_just_pressed() -> bool:  return Input.is_action_just_pressed(DOUBLEJUMP_ACTIONS[configurated_control_mode])
 
 func is_attack_just_pressed() ->     bool:  return Input.is_action_just_pressed(ATTACK_ACTIONS[configurated_control_mode])
+func is_attack_just_released() ->    bool:  return Input.is_action_just_released(ATTACK_ACTIONS[configurated_control_mode])
 func is_dash_just_pressed() ->       bool:  return Input.is_action_just_pressed(DASH_ACTIONS[configurated_control_mode])
 
 func is_map_just_pressed() ->        bool:  return Input.is_action_just_pressed(MAP_ACTIONS[configurated_control_mode])
