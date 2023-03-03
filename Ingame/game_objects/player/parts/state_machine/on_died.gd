@@ -8,6 +8,7 @@ var fade_time     : float
 var fade_is_executed : bool
 
 func enter() -> void:
+	host.animation_playblack.travel(name)
 	finished_time = finished_timer
 	fade_time = fade_timer
 	fade_is_executed = false
