@@ -21,4 +21,3 @@ func _ready() -> void:
 	collision_areas.append($body_area)
 	specs = CharacterAliveSpecs.get_knight_specs()
 	sword_collider.disabled = true
-	call_deferred("_update_room_data")
