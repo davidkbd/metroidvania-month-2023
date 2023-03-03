@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ekuaxdksx7xk"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/restart_point/restart_point.gd" id="1_5lj7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kel7"]
+size = Vector2(32, 32)
+
+[node name="restart_point" type="Area2D"]
+collision_layer = 512
+collision_mask = 512
+monitoring = false
+script = ExtResource("1_5lj7q")
+collider_size = null
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8kel7")
+debug_color = Color(0, 0.623529, 0.541176, 0.419608)
