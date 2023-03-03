@@ -20,3 +20,4 @@ layer = 100
 [node name="menu_sfx" parent="." instance=ExtResource("5_2ts4h")]
 
 [node name="music_manager" parent="." instance=ExtResource("6_mtnew")]
+process_mode = 3
