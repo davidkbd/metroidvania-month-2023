@@ -7,10 +7,10 @@ enum ControlType {
 @export var control_type : ControlType = ControlType.INTERACT
 
 func _on_body_entered(body : Player):
-	get_tree().get_first_node_in_group("HELP_TIPS").show_control(_get_control_action())
+	get_tree().call_group("HELP_TIPS", "show_control", _get_control_action())
 
 func _on_body_exited(body : Player):
-	get_tree().get_first_node_in_group("HELP_TIPS").hide_control()
+	get_tree().call_group("HELP_TIPS", "hide_control")
 
 func _get_control_action() -> String:
 	match control_type:

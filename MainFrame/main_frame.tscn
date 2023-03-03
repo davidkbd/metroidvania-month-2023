@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dfi3x702hcyun" path="res://Menu/menu.tscn" id="3_my4pk"]
 [ext_resource type="PackedScene" uid="uid://bn3oqc5fi2l0h" path="res://MainFrame/fade_in/fade_in.tscn" id="4_p81vl"]
 [ext_resource type="PackedScene" uid="uid://1ba7px6bcwga" path="res://sfx/menu_sfx.tscn" id="5_2ts4h"]
-[ext_resource type="PackedScene" uid="uid://cqku88ctemmvr" path="res://music/music_manager.tscn" id="6_mtnew"]
+[ext_resource type="PackedScene" uid="uid://bw8m4x870p81y" path="res://music/music_manager.tscn" id="6_mtnew"]
 
 [node name="MainFrame" type="Node"]
 script = ExtResource("1_13s85")

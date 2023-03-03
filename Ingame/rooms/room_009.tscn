@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://r5llypc0q34h"]
 
-[ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_7g7e0"]
+[ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_7g7e0"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_82ytf"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_mtwnp"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_v1u0m"]

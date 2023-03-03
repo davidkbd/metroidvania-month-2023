@@ -1,6 +1,7 @@
 extends Node2D
 class_name Room
 
+@export var ost_item      : MusicManager.OstItem = MusicManager.OstItem.SILENT
 @export var parallax_name : String
 
 @onready var player       : Player             = get_tree().get_first_node_in_group("PLAYER")

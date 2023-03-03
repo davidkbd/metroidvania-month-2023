@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbx4tsxjquwqb"]
 
-[ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_ilv60"]
+[ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_srn7x"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_e1mai"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="4_l0ln6"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_m1y3m"]
@@ -11,7 +11,7 @@
 size = Vector2(1608, 2208)
 
 [node name="room_002" type="Node2D"]
-script = ExtResource("1_ilv60")
+script = ExtResource("1_srn7x")
 
 [node name="room_area" parent="." instance=ExtResource("4_m1y3m")]
 position = Vector2(64, 288)

@@ -1,11 +1,17 @@
 extends Node
+class_name MusicManager
+
+enum OstItem {
+	SILENT,
+	FIRST_ROOM,
+	FIRST_ROOM_BATTLE,
+	LONELY,
+	SAVEPOINT,
+}
 
 @export_range(.1, 10.0) var fade_time : float = 1.0
 
 @onready var menu_music     : AudioStreamPlayer = $menu_music
-@onready var ingame_music   : Array[Node] = [
-	$room_001, $room_002_tunnel
-]
 @onready var _current       : AudioStreamPlayer = null
 @onready var _previous      : AudioStreamPlayer = null
 
@@ -18,7 +24,7 @@ func hud_listener_on_game_finished() -> void:
 	_stop()
 
 func room_listener_on_activated(room : Room) -> void:
-	var _next : AudioStreamPlayer = find_child(room.name)
+	var _next : AudioStreamPlayer = _find_asp(room.ost_item)
 	if not is_instance_valid(_next):
 		_stop()
 		return
@@ -27,6 +33,15 @@ func room_listener_on_activated(room : Room) -> void:
 
 func menu_listener_on_game_finished_done() -> void:
 	_play(menu_music)
+
+func _find_asp(_ost_item : OstItem) -> AudioStreamPlayer:
+	match _ost_item:
+		OstItem.SILENT:            return $silent
+		OstItem.FIRST_ROOM:        return $first_room
+		OstItem.FIRST_ROOM_BATTLE: return $first_room_battle
+		OstItem.LONELY:            return $lonely
+		OstItem.SAVEPOINT:         return $savepoint
+	return null
 
 func _play(_music : AudioStreamPlayer) -> void:
 	_previous = _current

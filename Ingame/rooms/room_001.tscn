@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://b68vcgdaf1ye3"]
 
-[ext_resource type="Script" path="res://Ingame/rooms/room_001.gd" id="1_wnr0d"]
+[ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_r80d2"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="4_6qv04"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_dkf1h"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_tio88"]
@@ -23,8 +23,7 @@ size = Vector2(8, 64)
 size = Vector2(32, 160)
 
 [node name="room_001" type="Node2D"]
-script = ExtResource("1_wnr0d")
-parallax_name = "first_room"
+script = ExtResource("1_r80d2")
 
 [node name="room_area" parent="." instance=ExtResource("4_dkf1h")]
 position = Vector2(32, 320)
@@ -114,21 +113,21 @@ position = Vector2(64, 384)
 
 [node name="room_element_spawner" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(208, 320)
-reborn_delay_seconds = null
+reborn_delay_seconds = 300.0
 
 [node name="room_element_spawner2" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(248, 320)
-reborn_delay_seconds = null
+reborn_delay_seconds = 300.0
 element_type = 1
 
 [node name="room_element_spawner3" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(288, 320)
-reborn_delay_seconds = null
+reborn_delay_seconds = 300.0
 element_type = 1
 
 [node name="room_element_spawner4" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(320, 320)
-reborn_delay_seconds = null
+reborn_delay_seconds = 300.0
 element_type = 1
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]

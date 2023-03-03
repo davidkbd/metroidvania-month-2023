@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgdmijka5t3dd"]
 
-[ext_resource type="Script" path="res://Ingame/rooms/room_002.gd" id="1_qfg4p"]
+[ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_qfg4p"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_qqpgj"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="3_36k0n"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_to30v"]
