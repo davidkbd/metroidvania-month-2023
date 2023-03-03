@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://bc0riwyt4qu3w"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_hc18j"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ycif2"]
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_nwe4j"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_7ytix"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_eggwe"]
-[ext_resource type="PackedScene" uid="uid://qx4byamjrdab" path="res://Ingame/game_objects/restart_point/restart_point.tscn" id="6_o1xfd"]
+[ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="6_dkeri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 792)
@@ -33,21 +33,20 @@ layer_0/tile_data = PackedInt32Array(-21, 196610, 1, -589845, 196610, 4, -589844
 [node name="room_content" parent="." instance=ExtResource("4_7ytix")]
 
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("5_eggwe")]
-position = Vector2(-704, 224)
-direction = 3
-
-[node name="autoadvance_area3" parent="room_content" instance=ExtResource("5_eggwe")]
-position = Vector2(-704, 192)
+position = Vector2(-704, 208)
+collider_size = Vector2i(4, 5)
 direction = 3
 
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("5_eggwe")]
-position = Vector2(704, -224)
+position = Vector2(704, -240)
+collider_size = Vector2i(4, 5)
 
-[node name="autoadvance_area4" parent="room_content" instance=ExtResource("5_eggwe")]
-position = Vector2(704, -256)
+[node name="restart_point" parent="." instance=ExtResource("6_dkeri")]
+position = Vector2(-576, 288)
+collider_size = Vector2i(1, 6)
+collider_offset = Vector2i(0, -3)
 
-[node name="restart_point" parent="room_content" instance=ExtResource("6_o1xfd")]
-position = Vector2(-568, 224)
-
-[node name="restart_point2" parent="room_content" instance=ExtResource("6_o1xfd")]
-position = Vector2(576, -224)
+[node name="restart_point2" parent="." instance=ExtResource("6_dkeri")]
+position = Vector2(576, -160)
+collider_size = Vector2i(1, 6)
+collider_offset = Vector2i(0, -3)

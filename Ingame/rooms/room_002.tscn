@@ -26,24 +26,14 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 [node name="autoadvance_area_right" parent="room_content" instance=ExtResource("4_e1mai")]
 position = Vector2(2872, -1728)
 
-[node name="autoadvance_area_top_left" parent="room_content" instance=ExtResource("4_e1mai")]
-position = Vector2(1272, -1536)
-direction = 3
-
 [node name="autoadvance_area_top_left2" parent="room_content" instance=ExtResource("4_e1mai")]
-position = Vector2(1272, -1664)
-direction = 3
-
-[node name="autoadvance_area_top_left3" parent="room_content" instance=ExtResource("4_e1mai")]
-position = Vector2(1272, -1792)
+position = Vector2(1272, -1632)
+collider_size = Vector2i(4, 10)
 direction = 3
 
 [node name="autoadvance_area_bottom_left" parent="room_content" instance=ExtResource("4_e1mai")]
-position = Vector2(1272, 224)
-direction = 3
-
-[node name="autoadvance_area_bottom_left2" parent="room_content" instance=ExtResource("4_e1mai")]
-position = Vector2(1272, 96)
+position = Vector2(1272, 144)
+collider_size = Vector2i(4, 9)
 direction = 3
 
 [node name="ControlTipArea" parent="room_content" instance=ExtResource("5_h1fbl")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://cjk42lw5hm8o6"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_5hd50"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ercv2"]
@@ -29,11 +29,9 @@ layer_0/tile_data = PackedInt32Array(-1572887, 196610, 3, -1507351, 196610, 3, -
 
 [node name="room_content" parent="." instance=ExtResource("4_1m0xs")]
 
-[node name="autoadvance_area" parent="room_content" instance=ExtResource("5_hgqey")]
-position = Vector2(704, 320)
-
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("5_hgqey")]
-position = Vector2(704, 256)
+position = Vector2(704, 288)
+collider_size = Vector2i(4, 6)
 
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("5_hgqey")]
 position = Vector2(-704, -256)

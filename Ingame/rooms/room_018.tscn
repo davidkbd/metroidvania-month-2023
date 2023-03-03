@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=17 format=3 uid="uid://c15gnao1bqafu"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_idys0"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_3piro"]
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_6uk5n"]
-[ext_resource type="PackedScene" uid="uid://qx4byamjrdab" path="res://Ingame/game_objects/restart_point/restart_point.tscn" id="4_1vswo"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_2rotk"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_kpys7"]
 [ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="6_l0tyg"]
@@ -65,7 +64,7 @@ metadata/_edit_horizontal_guides_ = []
 position = Vector2(64, 288)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(280, -328)
+position = Vector2(272, -328)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
@@ -129,12 +128,6 @@ region_rect = Rect2(0, 0, 32, 192)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object/target"]
 position = Vector2(-128, -64)
 shape = SubResource("RectangleShape2D_823td")
-
-[node name="restart_point" parent="room_content" instance=ExtResource("4_1vswo")]
-position = Vector2(-576, 224)
-
-[node name="restart_point2" parent="room_content" instance=ExtResource("4_1vswo")]
-position = Vector2(1248, -320)
 
 [node name="death_area" parent="room_content" instance=ExtResource("10_g886c")]
 position = Vector2(0, -312)

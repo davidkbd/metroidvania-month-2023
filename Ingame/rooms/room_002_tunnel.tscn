@@ -24,18 +24,13 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 [node name="room_content" parent="." instance=ExtResource("3_fw60c")]
 
 [node name="autoadvance_area_left" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(-680, 224)
-direction = 3
-
-[node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(-680, 96)
+position = Vector2(-680, 144)
+collider_size = Vector2i(4, 9)
 direction = 3
 
 [node name="autoadvance_area_right" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(1848, 224)
-
-[node name="autoadvance_area_right2" parent="room_content" instance=ExtResource("4_5alv8")]
-position = Vector2(1848, 96)
+position = Vector2(1848, 144)
+collider_size = Vector2i(4, 9)
 
 [node name="room_element_spawner" parent="room_content" instance=ExtResource("6_drr0k")]
 position = Vector2(328, 288)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.gd" id="1_v180g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu7dy"]
-size = Vector2(128, 128)
+size = Vector2(32, 32)
 
 [node name="autoadvance_area" type="Area2D"]
 collision_layer = 64
@@ -12,5 +12,6 @@ monitoring = false
 script = ExtResource("1_v180g")
 
 [node name="collider" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_hu7dy")
 debug_color = Color(0.976471, 0, 0.427451, 0.419608)

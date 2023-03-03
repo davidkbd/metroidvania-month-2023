@@ -34,29 +34,12 @@ layer_0/tile_data = PackedInt32Array(-1310721, 65538, 3, -1245185, 65538, 3, 196
 [node name="enemy_spawner" parent="room_content" instance=ExtResource("5_ooljq")]
 position = Vector2(40, 288)
 
-[node name="autoadvance_area" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(704, -192)
-
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(704, -64)
-
-[node name="autoadvance_area3" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(64, -1696)
-direction = 0
+position = Vector2(704, 48)
+collider_size = Vector2i(4, 21)
 
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(-64, -1696)
-direction = 0
-
-[node name="autoadvance_area8" parent="room_content" instance=ExtResource("6_xor2i")]
 position = Vector2(-192, -1696)
+collider_size = Vector2i(12, 4)
+collider_offset = Vector2i(4, 0)
 direction = 0
-
-[node name="autoadvance_area5" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(704, 64)
-
-[node name="autoadvance_area6" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(704, 192)
-
-[node name="autoadvance_area7" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(704, 320)

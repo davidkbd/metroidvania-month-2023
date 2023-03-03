@@ -103,10 +103,8 @@ position = Vector2(16, 408)
 control_type = 1
 
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("6_m2y6s")]
-position = Vector2(640, 256)
-
-[node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_m2y6s")]
-position = Vector2(640, 128)
+position = Vector2(640, 176)
+collider_size = Vector2i(4, 9)
 
 [node name="savepoint" type="Node2D" parent="room_content"]
 position = Vector2(64, 384)

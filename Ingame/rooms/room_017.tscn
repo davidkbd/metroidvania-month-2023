@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_gpkn2"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_avv45"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_u0pa6"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="6_rstwu"]
+[ext_resource type="PackedScene" uid="uid://bvt4epkpnecs0" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="6_rstwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2080, 1048)
@@ -32,12 +32,9 @@ layer_0/tile_data = PackedInt32Array(-21, 196610, 1, -589845, 196610, 4, -589844
 
 [node name="room_content" parent="." instance=ExtResource("4_avv45")]
 
-[node name="autoadvance_area" parent="room_content" instance=ExtResource("5_u0pa6")]
-position = Vector2(-704, 224)
-direction = 3
-
 [node name="autoadvance_area3" parent="room_content" instance=ExtResource("5_u0pa6")]
-position = Vector2(-704, 192)
+position = Vector2(-704, 208)
+collider_size = Vector2i(4, 5)
 direction = 3
 
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("5_u0pa6")]

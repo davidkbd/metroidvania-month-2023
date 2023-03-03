@@ -26,16 +26,10 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 position = Vector2(-680, 224)
 direction = 3
 
-[node name="autoadvance_area_right3" parent="room_content" instance=ExtResource("4_qmyac")]
-position = Vector2(600, 384)
-direction = 2
-
 [node name="autoadvance_area_right4" parent="room_content" instance=ExtResource("4_qmyac")]
-position = Vector2(728, 384)
-direction = 2
-
-[node name="autoadvance_area_right5" parent="room_content" instance=ExtResource("4_qmyac")]
-position = Vector2(856, 384)
+position = Vector2(600, 384)
+collider_size = Vector2i(12, 4)
+collider_offset = Vector2i(4, 0)
 direction = 2
 
 [node name="CollisionTileMap" type="TileMap" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://brmrcub5p0ghi"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_irgqd"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_moehs"]
@@ -30,24 +30,16 @@ layer_0/tile_data = PackedInt32Array(131140, 196610, 4, 65604, 196610, 4, 131139
 
 [node name="room_content" parent="." instance=ExtResource("3_s7gjg")]
 
-[node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(-352, 870)
-direction = 3
-
 [node name="autoadvance_area_left4" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(-352, -1080)
-direction = 3
-
-[node name="autoadvance_area_left5" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(-352, -1112)
+position = Vector2(-352, -1096)
+collider_size = Vector2i(4, 5)
 direction = 3
 
 [node name="autoadvance_area_left6" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(448, -1080)
-
-[node name="autoadvance_area_left7" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(448, -1112)
+position = Vector2(448, -1096)
+collider_size = Vector2i(4, 5)
 
 [node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("4_rxcc6")]
-position = Vector2(-352, 742)
+position = Vector2(-352, 808)
+collider_size = Vector2i(4, 8)
 direction = 3

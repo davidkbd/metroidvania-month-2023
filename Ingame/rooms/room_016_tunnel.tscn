@@ -30,24 +30,17 @@ layer_0/tile_data = PackedInt32Array(131128, 327682, 3, 65592, 327682, 3, 131127
 
 [node name="room_content" parent="." instance=ExtResource("4_q8r01")]
 
-[node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("5_b2iph")]
-position = Vector2(24, 1800)
-direction = 3
-
 [node name="autoadvance_area_left4" parent="room_content" instance=ExtResource("5_b2iph")]
-position = Vector2(-352, -1080)
-direction = 3
-
-[node name="autoadvance_area_left5" parent="room_content" instance=ExtResource("5_b2iph")]
-position = Vector2(-352, -1112)
+position = Vector2(-352, -1096)
+collider_size = Vector2i(4, 5)
 direction = 3
 
 [node name="autoadvance_area_left6" parent="room_content" instance=ExtResource("5_b2iph")]
-position = Vector2(448, -1080)
-
-[node name="autoadvance_area_left7" parent="room_content" instance=ExtResource("5_b2iph")]
-position = Vector2(448, -1112)
+position = Vector2(448, -1096)
+collider_size = Vector2i(4, 5)
 
 [node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("5_b2iph")]
-position = Vector2(88, 1800)
+position = Vector2(32, 1800)
+collider_size = Vector2i(6, 4)
+collider_offset = Vector2i(1, 0)
 direction = 3

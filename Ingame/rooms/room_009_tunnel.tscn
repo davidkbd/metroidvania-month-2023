@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://b1g4eesohqg5s"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_gor1j"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_q42lk"]
@@ -23,15 +23,14 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 [node name="room_content" parent="." instance=ExtResource("3_3mr2m")]
 
 [node name="autoadvance_area_left" parent="room_content" instance=ExtResource("4_4uicu")]
-position = Vector2(-680, 224)
+position = Vector2(-680, 240)
+collider_size = Vector2i(4, 3)
 direction = 3
 
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_4uicu")]
-position = Vector2(1784, -128)
-direction = 0
-
-[node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("4_4uicu")]
-position = Vector2(1816, -128)
+position = Vector2(1768, -128)
+collider_size = Vector2i(5, 4)
+collider_offset = Vector2i(1, 0)
 direction = 0
 
 [node name="CollisionTileMap" type="TileMap" parent="."]

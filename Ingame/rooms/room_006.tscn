@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://ch2d3q3r6wopq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_4rs4r"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_mbbam"]
@@ -40,13 +40,11 @@ layer_0/tile_data = PackedInt32Array(-22, 196610, 1, -21, 196610, 1, -20, 196610
 [node name="enemy_spawner" parent="room_content" instance=ExtResource("5_tcio5")]
 position = Vector2(256, 288)
 
-[node name="autoadvance_area" parent="room_content" instance=ExtResource("4_siegw")]
-position = Vector2(-704, -96)
-direction = 3
-
 [node name="autoadvance_area3" parent="room_content" instance=ExtResource("4_siegw")]
-position = Vector2(-704, -224)
+position = Vector2(-704, -160)
+collider_size = Vector2i(4, 8)
 direction = 3
 
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("4_siegw")]
-position = Vector2(1696, -896)
+position = Vector2(1696, -880)
+collider_size = Vector2i(4, 3)

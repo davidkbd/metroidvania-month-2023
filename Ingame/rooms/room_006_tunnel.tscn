@@ -23,19 +23,8 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 [node name="room_content" parent="." instance=ExtResource("3_jc2fp")]
 
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("4_0phip")]
-position = Vector2(24, 672)
-direction = 2
-
-[node name="autoadvance_area2" parent="room_content" instance=ExtResource("4_0phip")]
-position = Vector2(152, 672)
-direction = 2
-
-[node name="autoadvance_area3" parent="room_content" instance=ExtResource("4_0phip")]
-position = Vector2(280, 672)
-direction = 2
-
-[node name="autoadvance_area4" parent="room_content" instance=ExtResource("4_0phip")]
-position = Vector2(408, 672)
+position = Vector2(216, 672)
+collider_size = Vector2i(16, 4)
 direction = 2
 
 [node name="CollisionTileMap" type="TileMap" parent="."]

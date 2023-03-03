@@ -92,40 +92,29 @@ position = Vector2(-128, -64)
 shape = SubResource("RectangleShape2D_rr60h")
 
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(-936, 1120)
-direction = 2
-
-[node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(-904, 1120)
+position = Vector2(-952, 1120)
+collider_size = Vector2i(5, 4)
+collider_offset = Vector2i(1, 0)
 direction = 2
 
 [node name="autoadvance_area_left4" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(824, 1120)
+position = Vector2(808, 1120)
+collider_size = Vector2i(5, 4)
+collider_offset = Vector2i(1, 0)
 direction = 2
-
-[node name="autoadvance_area_left6" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(2232, -96)
 
 [node name="autoadvance_area_left7" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(2232, -224)
-
-[node name="autoadvance_area_left8" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(2224, -1120)
+position = Vector2(2232, -160)
+collider_size = Vector2i(4, 8)
 
 [node name="autoadvance_area_left9" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(2224, -1248)
+position = Vector2(2232, -1184)
+collider_size = Vector2i(4, 8)
 
 [node name="autoadvance_area_left10" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(-2344, -1272)
+position = Vector2(-2344, -1312)
+collider_size = Vector2i(4, 6)
 direction = 3
-
-[node name="autoadvance_area_left11" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(-2344, -1344)
-direction = 3
-
-[node name="autoadvance_area_left5" parent="room_content" instance=ExtResource("4_v1u0m")]
-position = Vector2(856, 1120)
-direction = 2
 
 [node name="torch" parent="room_content" instance=ExtResource("6_aaomk")]
 position = Vector2(-2128, 672)

@@ -1,4 +1,4 @@
-@icon("res://Ingame/game_objects/restart_point/icon.png")
+@icon("res://Ingame/game_objects/room/restart_point/icon.png")
 @tool
 extends Area2D
 class_name RestartPointArea
@@ -27,5 +27,5 @@ func _update_collider() -> void:
 		collider.position = collider_offset * 32.0
 
 func _ready():
-	if not Engine.is_editor_hint():
-		_update_collider()
+#	if not Engine.is_editor_hint():
+	_update_collider()
