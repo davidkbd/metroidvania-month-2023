@@ -16,6 +16,9 @@ func enter() -> void:
 	host.superattack_manager.reset_charge()
 
 func exit() -> void:
+	# Volvemos a resetear la variable por si se ha reactivado algun collider
+	# y con ello ha vuelto a entrar en on_deatharea_entered
+	host.deatharea_entered = false
 	if not host.life.is_died():
 		host.global_position = host.restartpoint_sensor.last_restartpoint.global_position
 		host.velocity = Vector2.ZERO
