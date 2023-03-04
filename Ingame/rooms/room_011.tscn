@@ -12,6 +12,7 @@ size = Vector2(1176, 664)
 
 [node name="room_011" type="Node2D"]
 script = ExtResource("1_odv0u")
+ost_item = 4
 
 [node name="room_area" parent="." instance=ExtResource("2_angpq")]
 position = Vector2(64, 288)
