@@ -8,6 +8,10 @@ var pos_end : Vector2
 
 var target_offset : Vector2
 
+const look_delay : float = .6
+
+var look_delay_time : float
+
 func enable(_player : Player) -> void:
 	set_physics_process(true)
 	target = _player
@@ -23,11 +27,14 @@ func set_rect(_rect : Rect2):
 
 func _physics_process(_delta : float) -> void:
 	if ControlInput.is_up_pressed():
-		target_offset.y = -156.0
+		if look_delay_time < .0: target_offset.y = -156.0
+		look_delay_time -= _delta
 	elif ControlInput.is_down_pressed():
-		target_offset.y = 192.0
+		if look_delay_time < .0: target_offset.y = 192.0
+		look_delay_time -= _delta
 	else:
 		target_offset.y = .0
+		look_delay_time = look_delay
 	_update_position()
 
 func _update_position() -> void:
