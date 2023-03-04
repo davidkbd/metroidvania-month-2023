@@ -25,7 +25,7 @@ func set_rect(_rect : Rect2):
 	pos_ini = _rect.position
 	pos_end = pos_ini + _rect.size
 
-func _physics_process(_delta : float) -> void:
+func _process(_delta : float) -> void:
 	if ControlInput.is_up_pressed():
 		if look_delay_time < .0: target_offset.y = -156.0
 		look_delay_time -= _delta
