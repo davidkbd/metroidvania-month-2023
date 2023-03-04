@@ -61,7 +61,7 @@ func _create_storeable_game_state() -> Dictionary:
 		var room_state : Dictionary = r.rooms[room_key].state
 		for object_key in room_state.keys():
 			if not r.rooms[room_key].state[object_key].storeable:
-				r.rooms[room_key].state[object_key]={}
+				r.rooms[room_key].state[object_key]={ "storeable": false }
 	return r
 
 func _update_map(storeable_game_state : Dictionary) -> void:

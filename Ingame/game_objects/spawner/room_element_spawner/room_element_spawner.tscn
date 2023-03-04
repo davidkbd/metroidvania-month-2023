@@ -6,7 +6,6 @@
 [node name="room_element_spawner" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_y3s08")
-reborn_delay_seconds = null
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-16, -32)
