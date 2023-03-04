@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_sm35l"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_2dit5"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_mm10w"]
-[ext_resource type="PackedScene" uid="uid://bvt4epkpnecs0" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="5_g6g7h"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="5_g6g7h"]
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="5_uuke3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
