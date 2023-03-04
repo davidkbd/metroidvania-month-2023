@@ -18,6 +18,13 @@ func destroyable_listener_on_destroyed(direction : Vector2) -> void:
 	offset = direction * 5.0
 	shake_tween.tween_property(self, "offset", Vector2.ZERO, 1.0)
 
+func player_listener_on_damaged(player : Player) -> void:
+	if shake_tween: shake_tween.kill()
+	shake_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	var direction = (player.global_position - player.damager.global_position).normalized()
+	offset = direction * player.damager.power
+	shake_tween.tween_property(self, "offset", Vector2.ZERO, 1.0)
+
 func player_listener_on_deatharea_restarted() -> void:
 	fading = true
 	await create_tween().tween_interval(.25).finished

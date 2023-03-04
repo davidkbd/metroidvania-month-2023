@@ -293,7 +293,6 @@ graph_offset = Vector2(-178.305, 94.8393)
 collision_layer = 1024
 collision_mask = 1024
 script = ExtResource("1_rovep")
-reborn_delay_seconds = null
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("2_u4jvg")
@@ -371,6 +370,7 @@ power = 15.0
 [node name="SwordCollider" type="CollisionShape2D" parent="sword_area"]
 position = Vector2(-32, -16)
 shape = SubResource("CircleShape2D_bagww")
+disabled = true
 
 [node name="attack_foot_particles" type="CPUParticles2D" parent="."]
 position = Vector2(-16, 0)

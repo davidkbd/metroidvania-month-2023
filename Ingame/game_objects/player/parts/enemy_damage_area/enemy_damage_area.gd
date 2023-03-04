@@ -3,6 +3,7 @@ extends Area2D
 @export var disabled_seconds : float = .2
 
 @onready var default_collision_mask = collision_mask
+@onready var player : Player = get_parent()
 
 var disable_area_tween : Tween
 
@@ -13,7 +14,8 @@ func enable_collision() -> void:
 	collision_mask = default_collision_mask
 
 func _on_area_entered(area : Area2D) -> void:
-	get_parent().damager = area.get_damage_data()
+	player.damager = area.get_damage_data()
+	get_tree().call_group("PLAYER_LISTENER", "player_listener_on_damaged", player)
 	disable_collision()
 	if disable_area_tween: disable_area_tween.kill()
 	disable_area_tween = create_tween()
