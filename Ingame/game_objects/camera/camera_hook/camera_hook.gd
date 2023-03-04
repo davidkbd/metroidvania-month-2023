@@ -13,13 +13,13 @@ const look_delay : float = .6
 var look_delay_time : float
 
 func enable(_player : Player) -> void:
-	set_physics_process(true)
+	set_process(true)
 	target = _player
 	_update_position()
 	target_offset = Vector2.ZERO
 
 func disable() -> void:
-	set_physics_process(false)
+	set_process(false)
 
 func set_rect(_rect : Rect2):
 	pos_ini = _rect.position
@@ -42,4 +42,4 @@ func _update_position() -> void:
 	global_position.y = clamp(target.global_position.y + target_offset.y, pos_ini.y, pos_end.y)
 
 func _ready() -> void:
-	set_physics_process(false)
+	set_process(false)
