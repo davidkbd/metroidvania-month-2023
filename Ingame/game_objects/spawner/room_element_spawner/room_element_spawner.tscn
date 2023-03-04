@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.gd" id="1_y3s08"]
 [ext_resource type="Texture2D" uid="uid://qhedh0c7ybeh" path="res://Ingame/game_objects/room/rat_health_home/sprites/spawner_sprite.png" id="2_0fkiy"]
 
-[node name="room_element_spawner" type="Node2D"]
+[node name="room_element_spawner" type="Node2D" groups=["PLAYER_LISTENER"]]
 texture_filter = 1
 script = ExtResource("1_y3s08")
 

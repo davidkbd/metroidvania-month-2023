@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.gd" id="1_u1ik3"]
 [ext_resource type="Texture2D" uid="uid://clx1ays1e4ui4" path="res://Ingame/game_objects/enemy/knight/sprites/spawner_sprite.png" id="2_ex4ik"]
 
-[node name="enemy_spawner" type="Node2D"]
+[node name="enemy_spawner" type="Node2D" groups=["PLAYER_LISTENER"]]
 texture_filter = 1
 script = ExtResource("1_u1ik3")
 

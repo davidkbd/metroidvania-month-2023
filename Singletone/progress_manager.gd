@@ -41,7 +41,7 @@ func menu_listener_on_game_start_requested(_slot_id : String) -> void:
 	current_slot_id = _slot_id
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.READ)
 	if file: game_state = file.get_var()
-	await get_tree().process_frame
+#	await get_tree().process_frame
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_game_state_loaded", game_state)
 
 func player_listener_on_died() -> void:

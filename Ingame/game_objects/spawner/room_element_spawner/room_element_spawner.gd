@@ -32,11 +32,16 @@ var instance_data : Dictionary = {
 }
 var instance : Node2D
 var instance_name : String
+var player_is_died : bool
+
+func player_listener_on_died() -> void:
+	player_is_died = true
 
 func update_instance_data(_data : Dictionary) -> void:
 	instance_data[instance_name.to_lower()] = _data
 
 func activate(_data : Dictionary) -> void:
+	player_is_died = false
 	if _data.size() == 0 or not _data.has("reborn_timestamp"):
 		instance_data.reborn_timestamp = -1.0
 	else:
@@ -44,7 +49,7 @@ func activate(_data : Dictionary) -> void:
 
 	if instance_data.reborn_timestamp > Time.get_unix_time_from_system():
 		return
-	
+
 	instance = load(PACKEDSCENES_PATH % [TYPE_DATA[element_type].id, TYPE_DATA[element_type].id]).instantiate()
 	instance_name = instance.name.to_lower()
 	call_deferred("add_child", instance)
@@ -52,10 +57,14 @@ func activate(_data : Dictionary) -> void:
 func deactivate() -> void:
 	if is_instance_valid(instance):
 		if instance is DestroyableObject:
-			if instance.instance_data.life <= 0:
+			if player_is_died:
+				instance_data.reborn_timestamp = -1.0
+			elif instance.instance_data.life <= 0:
 				instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
 		else:
-			if instance.destroyable.instance_data.life <= 0:
+			if player_is_died:
+				instance_data.reborn_timestamp = -1.0
+			elif instance.destroyable.instance_data.life <= 0:
 				instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
 		instance.queue_free()
 
