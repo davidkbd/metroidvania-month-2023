@@ -24,17 +24,25 @@ func hud_listener_on_game_finished() -> void:
 	_stop()
 
 func room_listener_on_activated(room : Room) -> void:
-	var _next : AudioStreamPlayer = _find_asp(room.ost_item)
+	# deferred porque la instancia de enemigos se hace deferred
+	# y si no esta peticion llegaria antes de estar hecho
+	call_deferred("_room_activated", room)
+
+func room_listener_on_cleared(room : Room) -> void:
+	_room_activated(room)
+
+func menu_listener_on_game_finished_done() -> void:
+	_play(menu_music)
+
+func _room_activated(room : Room) -> void:
+	var _next : AudioStreamPlayer = _find_audio_stream_player(room.battle_ost_item if room.is_any_enemy() else room.ost_item)
 	if not is_instance_valid(_next):
 		_stop()
 		return
 	if _current == _next: return
 	_play(_next)
 
-func menu_listener_on_game_finished_done() -> void:
-	_play(menu_music)
-
-func _find_asp(_ost_item : OstItem) -> AudioStreamPlayer:
+func _find_audio_stream_player(_ost_item : OstItem) -> AudioStreamPlayer:
 	match _ost_item:
 		OstItem.SILENT:            return $silent
 		OstItem.FIRST_ROOM:        return $first_room

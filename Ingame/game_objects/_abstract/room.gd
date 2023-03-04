@@ -1,8 +1,12 @@
 extends Node2D
 class_name Room
 
-@export var ost_item      : MusicManager.OstItem = MusicManager.OstItem.SILENT
-@export var parallax_name : String
+@export_group("Music")
+@export var ost_item        : MusicManager.OstItem = MusicManager.OstItem.SILENT
+@export var battle_ost_item : MusicManager.OstItem = MusicManager.OstItem.SILENT
+
+@export_group("Environment")
+@export var parallax_name   : String
 
 @onready var player       : Player             = get_tree().get_first_node_in_group("PLAYER")
 @onready var camera       : FollowTargetCamera = get_tree().get_first_node_in_group("CAMERA")
@@ -10,6 +14,14 @@ class_name Room
 @onready var room_content : RoomContent        = _find_room_content()
 
 var room_data : Dictionary
+
+func is_any_enemy() -> bool:
+	return get_tree().get_nodes_in_group("ENEMY").size() > 0
+
+func AAAAAAAAA() -> void:
+	# Cada vez que muere un enemigo
+	if not is_any_enemy():
+		get_tree().call_group("ROOM_LISTENER", "room_listener_on_cleared")
 
 func activate() -> void:
 	room_content.activate(room_data)
