@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cadjydy7dfqd0"]
+[gd_scene load_steps=4 format=3 uid="uid://cadjydy7dfqd0"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/camera/follow_target_camera/follow_target_camera.gd" id="1_1ecar"]
 [ext_resource type="Texture2D" uid="uid://c4vx1bf38xb34" path="res://Ingame/game_objects/player/sprites/backing_light.png" id="2_gvsei"]
+[ext_resource type="Texture2D" uid="uid://cod1y7w45pm38" path="res://backinglight-mask.png" id="3_swlun"]
 
 [node name="follow_target_camera" type="Camera2D" groups=["CAMERA", "DESTROYABLE_LISTENER", "PLAYER_LISTENER"]]
 script = ExtResource("1_1ecar")
 
 [node name="backing_light" type="PointLight2D" parent="."]
+visible = false
 range_layer_min = -100
 range_layer_max = -10
 texture = ExtResource("2_gvsei")
+
+[node name="backing_light2" type="PointLight2D" parent="."]
+visible = false
+blend_mode = 1
+range_layer_min = -100
+range_layer_max = -10
+texture = ExtResource("3_swlun")
+texture_scale = 2.0

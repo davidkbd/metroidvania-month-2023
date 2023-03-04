@@ -29,3 +29,6 @@ func set_died() -> void:
 func _enable_hit_collisions(_enabled : bool) -> void:
 	for collision in collision_areas:
 		collision.collision_layer = 8 if _enabled else 0
+
+func _enter_tree() -> void:
+	add_to_group("ENEMY")

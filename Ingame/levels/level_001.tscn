@@ -1,11 +1,13 @@
-[gd_scene load_steps=34 format=3 uid="uid://dqvs4h4pm2ru7"]
+[gd_scene load_steps=40 format=3 uid="uid://dqvs4h4pm2ru7"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/level.gd" id="1_c54te"]
 [ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="2_vpw7i"]
 [ext_resource type="Texture2D" uid="uid://crlffvvvdwuty" path="res://Ingame/level-sprites/default/cavernaSlime.png" id="3_fuh8n"]
 [ext_resource type="Texture2D" uid="uid://erqactl2ihou" path="res://Ingame/level-sprites/default/cavernaSlimeBG.png" id="4_j3vsp"]
 [ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_n3beu"]
+[ext_resource type="Shader" path="res://fog.gdshader" id="4_o5l67"]
 [ext_resource type="PackedScene" uid="uid://b68vcgdaf1ye3" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
+[ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="5_r0vl8"]
 [ext_resource type="Texture2D" uid="uid://cc6x8cf1uayv5" path="res://Ingame/level-sprites/foreground/room_002_foreground01.png" id="6_nhmka"]
 [ext_resource type="PackedScene" uid="uid://g8e6tumw718r" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
 [ext_resource type="PackedScene" uid="uid://cbx4tsxjquwqb" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
@@ -46,6 +48,40 @@ adjustment_enabled = true
 adjustment_brightness = 0.6
 adjustment_contrast = 1.23
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nqvhr"]
+noise_type = 0
+fractal_lacunarity = 1.695
+fractal_gain = 0.61
+fractal_weighted_strength = 0.29
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wqn7o"]
+seamless = true
+noise = SubResource("FastNoiseLite_nqvhr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnyp8"]
+shader = ExtResource("4_o5l67")
+shader_parameter/timescale = 0.1
+shader_parameter/min_noise = 0.3
+shader_parameter/max_noise = 0.8
+shader_parameter/intensity = 0.3
+shader_parameter/color_limit = 32.0
+shader_parameter/noise = SubResource("NoiseTexture2D_wqn7o")
+
+[sub_resource type="GDScript" id="GDScript_uyqmg"]
+script/source = "extends Sprite2D
+
+@onready var mat : ShaderMaterial = material.duplicate()
+
+func _ready() -> void:
+	var noisetex : NoiseTexture2D = mat.get_shader_parameter(\"noise\").duplicate()
+#	noise.noise.set(\"seed\", randi_range(1, 100))
+	var noise : FastNoiseLite = FastNoiseLite.new()
+	noise.seed = randi_range(1, 1000)
+	noisetex.noise = noise
+	mat.set_shader_parameter(\"noise\", noisetex)
+	material = mat
+"
+
 [node name="level_001" type="Node2D" groups=["LEVEL"]]
 texture_filter = 1
 script = ExtResource("1_c54te")
@@ -66,6 +102,7 @@ scroll_base_scale = Vector2(-1, -1)
 motion_scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/first_room_bg"]
+light_mask = 0
 texture_filter = 1
 position = Vector2(-96, -48)
 texture = ExtResource("3_fuh8n")
@@ -75,6 +112,7 @@ centered = false
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles" instance=ExtResource("4_n3beu")]
+light_mask = 0
 position = Vector2(320, 192)
 scale_amount_min = 0.2
 scale_amount_max = 1.0
@@ -83,9 +121,77 @@ scale_amount_max = 1.0
 motion_scale = Vector2(0.3, 0.3)
 
 [node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles2" instance=ExtResource("4_n3beu")]
+light_mask = 0
 position = Vector2(320, 192)
 scale_amount_min = 0.4
 scale_amount_max = 1.2
+
+[node name="Fog3" type="CanvasLayer" parent="parallax"]
+layer = -90
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="fog" type="Sprite2D" parent="parallax/Fog3"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_gnyp8")
+position = Vector2(112, 112)
+scale = Vector2(16, 16)
+texture = ExtResource("5_r0vl8")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+script = SubResource("GDScript_uyqmg")
+
+[node name="Fog2" type="CanvasLayer" parent="parallax"]
+layer = -90
+follow_viewport_enabled = true
+follow_viewport_scale = 0.7
+
+[node name="fog" type="Sprite2D" parent="parallax/Fog2"]
+modulate = Color(0.541176, 0.541176, 0.541176, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_gnyp8")
+position = Vector2(112, 112)
+scale = Vector2(16, 16)
+texture = ExtResource("5_r0vl8")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+script = SubResource("GDScript_uyqmg")
+
+[node name="Fog1" type="CanvasLayer" parent="parallax"]
+layer = -90
+follow_viewport_enabled = true
+follow_viewport_scale = 0.6
+
+[node name="fog" type="Sprite2D" parent="parallax/Fog1"]
+modulate = Color(0.403922, 0.403922, 0.403922, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_gnyp8")
+position = Vector2(112, 112)
+scale = Vector2(16, 16)
+texture = ExtResource("5_r0vl8")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+script = SubResource("GDScript_uyqmg")
+
+[node name="Fog4" type="CanvasLayer" parent="parallax"]
+layer = 5
+visible = false
+follow_viewport_enabled = true
+follow_viewport_scale = 1.1
+
+[node name="fog" type="Sprite2D" parent="parallax/Fog4"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_gnyp8")
+position = Vector2(112, 112)
+scale = Vector2(16, 16)
+texture = ExtResource("5_r0vl8")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+script = SubResource("GDScript_uyqmg")
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="parallax"]
 layer = 1

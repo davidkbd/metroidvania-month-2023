@@ -28,7 +28,7 @@ var instance_data : Dictionary = {
 	"storeable": storeable,
 	"reborn_timestamp": -1
 }
-var instance : Node2D
+var instance : EnemyCharacterAlive
 var instance_name : String
 var player_is_died : bool
 
@@ -50,7 +50,7 @@ func activate(_data : Dictionary) -> void:
 
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[enemy_type].id).instantiate()
 	instance_name = instance.name.to_lower()
-	call_deferred("add_child", instance)
+	call_deferred("_add_instance_to_scene")
 
 func deactivate() -> void:
 	if is_instance_valid(instance):
@@ -62,6 +62,11 @@ func deactivate() -> void:
 
 func get_state() -> Dictionary:
 	return instance_data
+
+func _add_instance_to_scene() -> void:
+	add_child(instance)
+	for other in get_tree().get_nodes_in_group("ENEMY"):
+		instance.add_collision_exception_with(other)
 
 func _get_instance_data_from_data(_data : Dictionary) -> Dictionary:
 	if _data.has(instance_name): return _data[instance_name]
