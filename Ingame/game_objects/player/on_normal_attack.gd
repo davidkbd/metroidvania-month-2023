@@ -1,6 +1,6 @@
 extends StateMachineState
 
-@export var attack_timer : float = .3
+@export var attack_timer : float = .2
 
 var attack_time : float
 var attack_direction : Vector2

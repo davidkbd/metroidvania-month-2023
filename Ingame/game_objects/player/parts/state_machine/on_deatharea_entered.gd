@@ -12,6 +12,7 @@ func enter() -> void:
 	teleport_time = teleport_timer
 	fadeout_executed = false
 	host.life.increment_value(-.5)
+	host.animation_playblack.travel("on_died")
 	host.deatharea_entered = false
 	host.superattack_manager.reset_charge()
 
