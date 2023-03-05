@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_v1u0m"]
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="5_gu2h1"]
 [ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="5_vqqti"]
-[ext_resource type="PackedScene" uid="uid://h14f0sstxiws" path="res://Ingame/game_objects/room/torch/torch.tscn" id="6_aaomk"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/level-sprites/destroyable_wall_particle.png" id="6_bhhsm"]
 [ext_resource type="Texture2D" uid="uid://clafed8te5hpm" path="res://Ingame/level-sprites/room009_destroyable_wall.png" id="7_7nm4p"]
+[ext_resource type="PackedScene" uid="uid://x41ek8r301gi" path="res://Ingame/game_objects/room/torch/green_torch.tscn" id="9_hpa4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(4592, 2648)
@@ -116,14 +116,80 @@ position = Vector2(-2344, -1312)
 collider_size = Vector2i(4, 6)
 direction = 3
 
-[node name="torch" parent="room_content" instance=ExtResource("6_aaomk")]
-position = Vector2(-2128, 672)
+[node name="green_torch" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1944, 352)
 
-[node name="torch2" parent="room_content" instance=ExtResource("6_aaomk")]
-position = Vector2(-2128, 552)
+[node name="green_torch2" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1584, 352)
 
-[node name="torch3" parent="room_content" instance=ExtResource("6_aaomk")]
-position = Vector2(-2128, 416)
+[node name="green_torch3" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1232, 352)
 
-[node name="torch4" parent="room_content" instance=ExtResource("6_aaomk")]
-position = Vector2(-2024, 360)
+[node name="green_torch4" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-928, 344)
+
+[node name="green_torch5" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-928, 96)
+
+[node name="green_torch6" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1232, 96)
+
+[node name="green_torch7" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1584, 96)
+
+[node name="green_torch8" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1952, 96)
+
+[node name="green_torch9" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1952, 96)
+
+[node name="green_torch10" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1952, -160)
+
+[node name="green_torch11" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1584, -160)
+
+[node name="green_torch12" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1248, -160)
+
+[node name="green_torch13" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-936, -160)
+
+[node name="green_torch15" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-928, -416)
+
+[node name="green_torch16" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1240, -416)
+
+[node name="green_torch17" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1584, -416)
+
+[node name="green_torch18" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1960, -416)
+
+[node name="green_torch19" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-736, -664)
+
+[node name="green_torch20" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1016, -672)
+
+[node name="green_torch21" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1344, -672)
+
+[node name="green_torch22" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1672, -680)
+
+[node name="green_torch23" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-1992, -680)
+
+[node name="green_torch24" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-584, 160)
+
+[node name="green_torch25" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-592, -120)
+
+[node name="green_torch26" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-600, -408)
+
+[node name="green_torch14" parent="room_content" instance=ExtResource("9_hpa4t")]
+position = Vector2(-2120, 528)
