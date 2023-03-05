@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://qhf55h8w530v"]
+[gd_scene load_steps=7 format=3 uid="uid://qhf55h8w530v"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_c7xbx"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ms4b8"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_fw60c"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_5alv8"]
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="5_l1a3c"]
-[ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="6_drr0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2536, 424)
@@ -32,10 +31,6 @@ direction = 3
 [node name="autoadvance_area_right" parent="room_content" instance=ExtResource("4_5alv8")]
 position = Vector2(1848, 144)
 collider_size = Vector2i(4, 9)
-
-[node name="room_element_spawner" parent="room_content" instance=ExtResource("6_drr0k")]
-position = Vector2(328, 288)
-reborn_delay_seconds = 300.0
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
 texture_filter = 1

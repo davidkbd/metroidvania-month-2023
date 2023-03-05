@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://r5llypc0q34h"]
+[gd_scene load_steps=19 format=3 uid="uid://r5llypc0q34h"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_7g7e0"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_82ytf"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://x41ek8r301gi" path="res://Ingame/game_objects/room/torch/green_torch.tscn" id="9_hpa4t"]
 [ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="10_psun7"]
 [ext_resource type="PackedScene" uid="uid://pocl8mkktbxj" path="res://Ingame/game_objects/death_area/death_area.tscn" id="11_qmlip"]
+[ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="13_glw0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(4592, 2648)
@@ -235,3 +236,15 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/death_area3"]
 position = Vector2(56, 8.5)
 shape = SubResource("RectangleShape2D_sa6pa")
+
+[node name="room_element_spawner2" parent="room_content" instance=ExtResource("13_glw0a")]
+position = Vector2(-464, 992)
+
+[node name="room_element_spawner3" parent="room_content" instance=ExtResource("13_glw0a")]
+position = Vector2(-408, 992)
+
+[node name="room_element_spawner4" parent="room_content" instance=ExtResource("13_glw0a")]
+position = Vector2(-352, 992)
+
+[node name="room_element_spawner5" parent="room_content" instance=ExtResource("13_glw0a")]
+position = Vector2(-296, 992)

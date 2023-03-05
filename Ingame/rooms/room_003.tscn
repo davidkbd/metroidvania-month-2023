@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0vn0c2ckxsjs"]
+[gd_scene load_steps=9 format=3 uid="uid://b0vn0c2ckxsjs"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_6dtbh"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_d5o5w"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_6hfr1"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_othvg"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="7_kjeg2"]
+[ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="7_tyb04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 712)
@@ -47,3 +48,9 @@ direction = 0
 
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("7_kjeg2")]
 position = Vector2(704, 224)
+
+[node name="room_element_spawner" parent="room_content" instance=ExtResource("7_tyb04")]
+position = Vector2(448, 288)
+
+[node name="room_element_spawner2" parent="room_content" instance=ExtResource("7_tyb04")]
+position = Vector2(496, 288)

@@ -119,6 +119,7 @@ direction = 3
 position = Vector2(1376, -320)
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("6_l0tyg")]
+visible = false
 position = Vector2(1326, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
@@ -215,4 +216,12 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/death_area5"]
 position = Vector2(88, 11)
+shape = SubResource("RectangleShape2D_3pyv7")
+
+[node name="death_area6" parent="room_content" instance=ExtResource("10_g886c")]
+position = Vector2(200, 304)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/death_area6"]
+position = Vector2(-232, 8)
 shape = SubResource("RectangleShape2D_3pyv7")
