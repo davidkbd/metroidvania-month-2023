@@ -23,7 +23,7 @@ func initialize_map_state(_map_state : Dictionary) -> void:
 
 func open() -> void:
 	show()
-	map.open()
+	map.queue_redraw()
 
 func _physics_process(_delta : float):
 	if reset_position_tween: return

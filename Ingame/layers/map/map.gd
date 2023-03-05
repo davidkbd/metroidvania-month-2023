@@ -2,20 +2,15 @@ extends Node2D
 
 @export var offset : Vector2 = Vector2.ZERO
 
-const PATH = Directories.MAP_PNG_PATH + "map-%s.png"
+@onready var MAP_IMAGES : Dictionary = _preload_pngs()
+
+const PATH = "map-%s%s.png"
 
 var map_state : Dictionary
 
 
 func initialize_map_state(_map_state : Dictionary) -> void:
 	map_state = _map_state
-
-func open() -> void:
-	var room : Dictionary
-	for key in map_state:
-		room = map_state[key]
-		if not room.has("res"): room["res"] = load(PATH % key)
-			
 
 func _draw():
 	var room : Dictionary
@@ -26,8 +21,17 @@ func _draw():
 		room = map_state[key]
 		if room.visible:
 			pos = Vector2(room.position_x, room.position_y)
-			draw_texture(load(PATH % key), floor(pos * .08) + offset)
-#	while i < map_pos.size():
-#		draw_texture(map_image[i], map_pos[i])
-##		draw_texture(map_image[i], map_pos[i]  + Vector2.ONE)
-#		i += 1
+			var secrets = "" if room.variation == 0 else "-SECRETS"
+			draw_texture(MAP_IMAGES[PATH % [key,secrets]], floor(pos * .08) + offset)
+
+func _preload_pngs() -> Dictionary:
+	var r : Dictionary = {}
+	var dir = DirAccess.open(Directories.MAP_PNG_PATH)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if file_name.begins_with("map-room") and file_name.ends_with(".png"):
+				r[file_name] = load(Directories.MAP_PNG_PATH + file_name)
+			file_name = dir.get_next()
+	return r

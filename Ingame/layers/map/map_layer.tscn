@@ -30,7 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.0470588, 0.0588235, 0.105882, 0.627451)
+color = Color(0.247059, 0.282353, 0.411765, 0.627451)
 
 [node name="title" parent="map_container" instance=ExtResource("1_2ao4x")]
 z_index = 6

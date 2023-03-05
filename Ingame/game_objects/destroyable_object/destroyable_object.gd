@@ -4,8 +4,12 @@ class_name DestroyableObject
 
 signal destroyed
 
+@export_group("Progress")
 @export var storeable         : bool = true
-@export var life              : int = 5
+@export var is_map_secret     : bool = false
+
+@export_group("Gameplay")
+@export var life              : int = 3
 
 @onready var particles : CPUParticles2D = get_node("particles")
 @onready var target    : Node2D  = get_node("target")
@@ -50,6 +54,8 @@ func destroy(_destroyer : CharacterBody2D) -> void:
 		_hit(direction)
 		if instance_data.life <= 0:
 			_destruction(direction)
+			if is_map_secret:
+				get_tree().call_group("ROOM_LISTENER", "room_listener_on_secret_revelated", get_parent().get_parent())
 
 func _hit(direction : float) -> void:
 	if hit_tween: hit_tween.kill()

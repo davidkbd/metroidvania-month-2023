@@ -52,6 +52,7 @@ layer_0/tile_data = PackedInt32Array(196607, 262146, 2, 131071, 262146, 1, 19660
 [node name="room_content" parent="." instance=ExtResource("4_tio88")]
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("6_r4jcw")]
+is_map_secret = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
 position = Vector2(-320, 256)

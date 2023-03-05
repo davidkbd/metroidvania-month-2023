@@ -37,6 +37,10 @@ func room_listener_on_activated(room : Room) -> void:
 			"variation": 0
 		}
 
+func room_listener_on_secret_revelated(room : Room) -> void:
+	if game_state.map.has(room.name):
+		game_state.map[room.name].variation = 1
+
 func menu_listener_on_game_start_requested(_slot_id : String) -> void:
 	current_slot_id = _slot_id
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.READ)
