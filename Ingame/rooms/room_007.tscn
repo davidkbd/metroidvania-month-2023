@@ -34,7 +34,7 @@ layer_0/tile_data = PackedInt32Array(-65518, 196610, 4, -65517, 196610, 2, -1310
 [node name="room_content" parent="." instance=ExtResource("4_5wlx3")]
 
 [node name="enemy_spawner" parent="room_content" instance=ExtResource("5_omthn")]
-position = Vector2(40, 288)
+position = Vector2(-64, 384)
 
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_5aovd")]
 position = Vector2(-1024, 48)
