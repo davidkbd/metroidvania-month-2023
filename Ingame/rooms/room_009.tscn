@@ -134,7 +134,9 @@ collider_size = Vector2i(4, 6)
 direction = 3
 
 [node name="restart_point" parent="room_content" instance=ExtResource("10_psun7")]
-position = Vector2(-1344, -1024)
+position = Vector2(-1344, -960)
+collider_size = Vector2i(1, 4)
+collider_offset = Vector2i(0, -2)
 
 [node name="green_torch" parent="room_content" instance=ExtResource("9_hpa4t")]
 position = Vector2(-1944, 352)
