@@ -28,6 +28,7 @@ func hud_listener_on_level_finished() -> void:
 	queue_free()
 
 func _open() -> void:
+	if get_tree().paused: return
 	visible = true
 	get_tree().paused = true
 	if main_game_instance: main_game_instance.queue_free()

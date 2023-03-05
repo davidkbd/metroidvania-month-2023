@@ -14,6 +14,7 @@ func progress_listener_on_progress_stored(_game_state : Dictionary) -> void:
 	initialize(_game_state)
 
 func show_map() -> void:
+	if get_tree().paused: return
 	get_tree().paused = true
 	container.open()
 	if container_visivility_tween: container_visivility_tween.kill()
