@@ -112,21 +112,17 @@ position = Vector2(64, 384)
 
 [node name="room_element_spawner" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(208, 320)
-reborn_delay_seconds = 300.0
 
 [node name="room_element_spawner2" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(248, 320)
-reborn_delay_seconds = 300.0
 element_type = 1
 
 [node name="room_element_spawner3" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(288, 320)
-reborn_delay_seconds = 300.0
 element_type = 1
 
 [node name="room_element_spawner4" parent="room_content" instance=ExtResource("11_nuhjb")]
 position = Vector2(320, 320)
-reborn_delay_seconds = 300.0
 element_type = 1
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
