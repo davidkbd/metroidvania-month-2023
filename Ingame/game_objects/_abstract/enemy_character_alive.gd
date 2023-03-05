@@ -1,6 +1,8 @@
 extends CharacterAlive
 class_name EnemyCharacterAlive
 
+signal died
+
 @export_group("Data")
 @export var is_storeable : bool = false
 @export_group("Life")
@@ -24,7 +26,7 @@ func hit(_position : Vector2, _power : float) -> void:
 		_enable_hit_collisions(true)
 
 func set_died() -> void:
-	pass
+	emit_signal("died")
 
 func _enable_hit_collisions(_enabled : bool) -> void:
 	for collision in collision_areas:

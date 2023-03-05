@@ -35,7 +35,7 @@ func menu_listener_on_game_finished_done() -> void:
 	_play(menu_music)
 
 func _room_activated(room : Room) -> void:
-	var _next : AudioStreamPlayer = _find_audio_stream_player(room.battle_ost_item if room.is_any_enemy() else room.ost_item)
+	var _next : AudioStreamPlayer = _find_audio_stream_player(room.battle_ost_item if room.is_any_enemy_alive() else room.ost_item)
 	if not is_instance_valid(_next):
 		_stop()
 		return

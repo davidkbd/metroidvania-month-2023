@@ -7,6 +7,8 @@ enum EnemyType {
 	KNIGHT
 }
 
+signal died
+
 @export var reborn_delay_seconds : float = 60.0
 @export var storeable  : bool = true
 @export var enemy_type : EnemyType = EnemyType.KNIGHT :
@@ -31,6 +33,7 @@ var instance_data : Dictionary = {
 var instance : EnemyCharacterAlive
 var instance_name : String
 var player_is_died : bool
+var enemy_is_died  : bool
 
 func player_listener_on_died() -> void:
 	player_is_died = true
@@ -48,6 +51,7 @@ func activate(_data : Dictionary) -> void:
 	if instance_data.reborn_timestamp > Time.get_unix_time_from_system():
 		return
 
+	enemy_is_died = false
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[enemy_type].id).instantiate()
 	instance_name = instance.name.to_lower()
 	call_deferred("_add_instance_to_scene")
@@ -65,8 +69,13 @@ func get_state() -> Dictionary:
 
 func _add_instance_to_scene() -> void:
 	add_child(instance)
+	instance.died.connect(_on_enemy_died)
 	for other in get_tree().get_nodes_in_group("ENEMY"):
 		instance.add_collision_exception_with(other)
+
+func _on_enemy_died() -> void:
+	enemy_is_died = true
+	emit_signal("died")
 
 func _get_instance_data_from_data(_data : Dictionary) -> Dictionary:
 	if _data.has(instance_name): return _data[instance_name]

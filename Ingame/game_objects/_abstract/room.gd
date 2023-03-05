@@ -15,13 +15,8 @@ class_name Room
 
 var room_data : Dictionary
 
-func is_any_enemy() -> bool:
-	return get_tree().get_nodes_in_group("ENEMY").size() > 0
-
-func AAAAAAAAA() -> void:
-	# Cada vez que muere un enemigo
-	if not is_any_enemy():
-		get_tree().call_group("ROOM_LISTENER", "room_listener_on_cleared")
+func is_any_enemy_alive() -> bool:
+	return room_content.is_any_enemy_alive()
 
 func activate() -> void:
 	room_content.activate(room_data)
