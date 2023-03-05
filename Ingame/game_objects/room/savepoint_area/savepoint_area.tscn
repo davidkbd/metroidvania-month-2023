@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvt4epkpnecs0"]
+[gd_scene load_steps=4 format=3 uid="uid://t6bwob3bwtvf"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.gd" id="1_xyabg"]
 [ext_resource type="Texture2D" uid="uid://cveoer743k8wb" path="res://Ingame/game_objects/room/savepoint_area/sprites/savepoint_area.png" id="2_qoamr"]

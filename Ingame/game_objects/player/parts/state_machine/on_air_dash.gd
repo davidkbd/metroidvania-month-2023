@@ -22,14 +22,12 @@ func is_an_on_air_state() -> bool: return true
 
 func step(delta : float) -> StateMachineState:
 	_brake(delta)
-	if dash_time < .0:
-		host.fall(delta)
-		host.animation_playblack.travel("on_air")
 
 	host.move_and_slide()
 	
 	dash_time -= delta
 
+	if dash_time < .0: return state_machine.on_air
 	if host.skills.data.double_jump and ControlInput.is_jump_just_pressed(): return state_machine.on_doublejump
 	if ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
@@ -38,7 +36,6 @@ func step(delta : float) -> StateMachineState:
 	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	if host.is_on_floor(): return state_machine.on_ground
-	#	if dash_time < .0: return state_machine.on_air
 	return self
 
 func _brake(_delta : float) -> void:
