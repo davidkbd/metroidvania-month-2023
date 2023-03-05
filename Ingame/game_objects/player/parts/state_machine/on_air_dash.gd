@@ -12,11 +12,15 @@ func enter() -> void:
 	host.set_collision_layer_value(4, false)
 	host.set_collision_mask_value(4, false)
 	host.enemy_damage_area.set_collision_mask_value(4, false)
+	host.ondash_collider.disabled = false
+	host.body_collider.disabled = true
 
 func exit() -> void:
 	host.set_collision_layer_value(4, true)
 	host.set_collision_mask_value(4, true)
 	host.enemy_damage_area.set_collision_mask_value(4, true)
+	host.ondash_collider.disabled = true
+	host.body_collider.disabled = false
 
 func is_an_on_air_state() -> bool: return true
 
@@ -32,6 +36,8 @@ func step(delta : float) -> StateMachineState:
 	if ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
 	if host.skills.data.snap_wall and host.can_snap_to_wall(): return state_machine.on_wall
+	# Si el raycast de snap no detecta pared, pero aun asi nos hemos chocado con una, nos caemos:
+	if host.is_on_wall(): return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged
 	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
