@@ -13,6 +13,8 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
+	_tilemap_interact()
+	
 	_coyote_time(delta)
 	_movement()
 
@@ -29,6 +31,18 @@ func step(delta : float) -> StateMachineState:
 	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	return self
+
+func _tilemap_interact() -> void:
+	var col : KinematicCollision2D
+	var collider : Object
+	var coords : Vector2i
+	for i in host.get_slide_collision_count():
+		col = host.get_slide_collision(i)
+		collider = col.get_collider()
+		
+		if collider is TrapsTileMap:
+			coords = collider.get_coords_for_body_rid(col.get_collider_rid())
+			collider.interact(coords)
 
 func _coyote_time(delta : float) -> void:
 	if host.is_on_floor():
