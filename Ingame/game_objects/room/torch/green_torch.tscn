@@ -44,6 +44,7 @@ scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_t0a16")
 
 [node name="sprite" type="Sprite2D" parent="."]
+light_mask = 0
 texture_filter = 1
 position = Vector2(-32, -16)
 texture = ExtResource("3_6167x")

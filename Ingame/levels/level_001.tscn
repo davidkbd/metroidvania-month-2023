@@ -132,31 +132,37 @@ scale_amount_min = 0.4
 scale_amount_max = 1.2
 
 [node name="room_002_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
-motion_scale = Vector2(0.3, 0.3)
+motion_scale = Vector2(0.1, 0.1)
 parallax_name = "room_002"
 
 [node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_far"]
 texture_repeat = 3
-position = Vector2(1002, -272)
-texture = ExtResource("5_51je7")
+position = Vector2(304, -2032)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_0g2dc")
 centered = false
 
 [node name="room_002_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
-motion_scale = Vector2(0.5, 0.5)
+visible = false
+motion_scale = Vector2(0.9, 0.9)
 parallax_name = "room_002"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
-position = Vector2(1060, -1352)
+visible = false
+modulate = Color(1.5, 1.5, 1.5, 1)
+position = Vector2(2649, -1656)
 texture = ExtResource("6_gms54")
 centered = false
 
 [node name="room_002_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
-motion_scale = Vector2(0.7, 0.7)
+visible = false
+motion_scale = Vector2(0.95, 0.95)
 parallax_name = "room_002"
 
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_near"]
-position = Vector2(1327, -1256)
-texture = ExtResource("7_0g2dc")
+visible = false
+position = Vector2(2928, -1968)
+texture = ExtResource("5_51je7")
 centered = false
 
 [node name="Fog3" type="CanvasLayer" parent="parallax"]

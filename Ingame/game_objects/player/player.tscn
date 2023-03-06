@@ -939,6 +939,7 @@ script = ExtResource("7_bx4yu")
 
 [node name="on_simple_attack" type="Node" parent="state_machine"]
 script = ExtResource("7_v12wq")
+attack_timer = 0.3
 
 [node name="on_super_attack" type="Node" parent="state_machine"]
 script = ExtResource("8_kqfbx")
