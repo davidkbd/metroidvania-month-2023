@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dstir0dpm1ust"
-path="res://.godot/imported/room_002_paralax1.png-642b266cae1446c507e3d7368e810ebf.ctex"
+uid="uid://c4tyv6grw3es7"
+path="res://.godot/imported/room_002_paralax_far.png-5d0ae58c9457696fbf7b74763bdfd7e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/level-sprites/background/room_002_paralax1.png"
-dest_files=["res://.godot/imported/room_002_paralax1.png-642b266cae1446c507e3d7368e810ebf.ctex"]
+source_file="res://Ingame/level-sprites/background/room_002_paralax_far.png"
+dest_files=["res://.godot/imported/room_002_paralax_far.png-5d0ae58c9457696fbf7b74763bdfd7e4.ctex"]
 
 [params]
 
