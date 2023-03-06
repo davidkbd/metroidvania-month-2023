@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cod1y7w45pm38"
-path="res://.godot/imported/backinglight-mask.png-9ecc3d9280f14cb0e187d2a05642937a.ctex"
+path="res://.godot/imported/backinglight-mask.png-6959bbad1bc2a0cf020c03c192341c09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backinglight-mask.png"
-dest_files=["res://.godot/imported/backinglight-mask.png-9ecc3d9280f14cb0e187d2a05642937a.ctex"]
+source_file="res://Ingame/game_objects/player/sprites/backinglight-mask.png"
+dest_files=["res://.godot/imported/backinglight-mask.png-6959bbad1bc2a0cf020c03c192341c09.ctex"]
 
 [params]
 

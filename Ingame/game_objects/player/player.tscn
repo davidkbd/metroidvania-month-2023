@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://d4g326fv20xk1"]
+[gd_scene load_steps=140 format=3 uid="uid://bbpxw10hb7ur6"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -33,7 +33,8 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/enemy_hit_area/enemy_hit_area.gd" id="22_o8j16"]
 [ext_resource type="PackedScene" uid="uid://ohm0vp136jfk" path="res://Ingame/game_objects/player/parts/restartpoint_area/restartpoint_area.tscn" id="25_v8eju"]
 [ext_resource type="PackedScene" uid="uid://coo4lac6b1v5m" path="res://Ingame/game_objects/player/parts/item_sensor/item_sensor.tscn" id="28_yw00y"]
-[ext_resource type="Texture2D" uid="uid://cod1y7w45pm38" path="res://backinglight-mask.png" id="34_e58yy"]
+[ext_resource type="Texture2D" uid="uid://cod1y7w45pm38" path="res://Ingame/game_objects/player/sprites/backinglight-mask.png" id="34_e58yy"]
+[ext_resource type="Texture2D" uid="uid://c4vx1bf38xb34" path="res://Ingame/game_objects/player/sprites/backing_light.png" id="34_q436p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
 shader = ExtResource("15_unq2k")
@@ -1071,6 +1072,12 @@ parameters/on_ground/blend_position = -0.000424087
 parameters/on_jump/blend_position = Vector2(0.10082, -0.271868)
 
 [node name="backing_light" type="PointLight2D" parent="."]
+position = Vector2(0, -1)
+range_item_cull_mask = 4
+texture = ExtResource("34_q436p")
+texture_scale = 0.5
+
+[node name="backing_light_mask" type="PointLight2D" parent="."]
 position = Vector2(0, -1)
 blend_mode = 1
 range_layer_min = -100
