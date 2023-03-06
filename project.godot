@@ -132,6 +132,7 @@ A={
 
 2d_render/layer_1="Todo menos player y tiles"
 2d_render/layer_2="Player"
+2d_render/layer_3="Solo tiles background"
 2d_physics/layer_1="player_floor"
 2d_physics/layer_2="no_go_down_platform"
 2d_physics/layer_3="player_room-area"
