@@ -1,6 +1,10 @@
 extends StateMachineState
 
+@export var check_floor_ray_origin_position = Vector2.UP * 8.0
+@export var check_floor_ray_left_position = Vector2.LEFT * 32.0
+@export var check_floor_ray_right_position = Vector2.RIGHT * 32.0
 @export var check_floor_ray_vector : Vector2 = Vector2.DOWN * 32.0
+
 @export var coyote_time : float = .08
 
 var coyote_timer : float
@@ -33,17 +37,26 @@ func step(delta : float) -> StateMachineState:
 	return self
 
 func _tilemap_interact() -> void:
-	var col : KinematicCollision2D
-	var collider : Object
-#	var coords : Vector2i
-	for i in host.get_slide_collision_count():
-		col = host.get_slide_collision(i)
-		collider = col.get_collider()
-		if collider is TrapFloor:
-##			print(col, "  ", col.get_collider_rid())
-#			coords = collider.get_coords_for_body_rid(col.get_collider_rid())
-#			collider.interact(coords)
-			collider.call_deferred("interact", col.get_collider_rid())
+	if not host.is_on_floor(): return
+	var origin = host.global_position + check_floor_ray_origin_position
+	var result = _tilemap_interact_raycast(origin)
+	if result.size() == 0:
+		result = _tilemap_interact_raycast(origin + check_floor_ray_left_position)
+	if result.size() == 0:
+		result = _tilemap_interact_raycast(origin + check_floor_ray_right_position)
+	if result.size() == 0:
+		return
+
+	if result.collider is TrapsTileMap:
+		result.collider.interact(result.rid)
+
+func _tilemap_interact_raycast(_origin : Vector2) -> Dictionary:
+	var destination = _origin + check_floor_ray_vector
+	var query = PhysicsRayQueryParameters2D.create(_origin, destination)
+	query.collide_with_bodies = true
+	query.collide_with_areas = false
+	query.collision_mask = 1
+	return host.space_state.intersect_ray(query)
 
 func _coyote_time(delta : float) -> void:
 	if host.is_on_floor():
