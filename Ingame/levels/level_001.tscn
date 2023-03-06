@@ -104,6 +104,7 @@ environment = SubResource("Environment_mmnho")
 [node name="first_room_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 position = Vector2(2, 0)
 motion_scale = Vector2(0.3, 0.3)
+parallax_name = "first_room"
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/first_room_bg"]
 light_mask = 0
@@ -113,6 +114,7 @@ texture = ExtResource("3_fuh8n")
 centered = false
 
 [node name="first_room_particles" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+parallax_name = "first_room"
 
 [node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles" instance=ExtResource("4_n3beu")]
 light_mask = 0
@@ -121,6 +123,7 @@ scale_amount_min = 0.2
 scale_amount_max = 1.0
 
 [node name="first_room_particles2" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+parallax_name = "first_room"
 
 [node name="ambient_particles" parent="parallax/ParallaxBackground/first_room_particles2" instance=ExtResource("4_n3beu")]
 light_mask = 0
@@ -130,6 +133,7 @@ scale_amount_max = 1.2
 
 [node name="room_002_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.3, 0.3)
+parallax_name = "room_002"
 
 [node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_far"]
 texture_repeat = 3
@@ -139,6 +143,7 @@ centered = false
 
 [node name="room_002_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.5, 0.5)
+parallax_name = "room_002"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
 position = Vector2(1060, -1352)
@@ -147,6 +152,7 @@ centered = false
 
 [node name="room_002_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.7, 0.7)
+parallax_name = "room_002"
 
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_near"]
 position = Vector2(1327, -1256)
@@ -225,11 +231,13 @@ layer = 1
 
 [node name="first_room_particles" parent="parallax/ParallaxForeground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(1.1, 1.1)
+parallax_name = "first_room"
 
 [node name="ambient_particles" parent="parallax/ParallaxForeground/first_room_particles" instance=ExtResource("4_n3beu")]
 
 [node name="first_room_roots" parent="parallax/ParallaxForeground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(1.2, 1.2)
+parallax_name = "first_room"
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxForeground/first_room_roots"]
 texture_filter = 1
@@ -239,6 +247,7 @@ centered = false
 
 [node name="room_002" parent="parallax/ParallaxForeground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(1.04, 1.04)
+parallax_name = "room_002"
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxForeground/room_002"]
 position = Vector2(4112, -728)
@@ -246,8 +255,10 @@ texture = ExtResource("6_nhmka")
 
 [node name="room_001_secret" parent="." instance=ExtResource("6_tc7rs")]
 position = Vector2(0, 32)
+parallax_name = "first_room"
 
 [node name="room_001" parent="." instance=ExtResource("5_olijw")]
+parallax_name = "first_room"
 metadata/_edit_lock_ = true
 
 [node name="room_002" parent="." instance=ExtResource("7_75ef1")]
@@ -260,6 +271,7 @@ position = Vector2(1800, 32)
 
 [node name="room_002_tunnel" parent="." instance=ExtResource("10_dh8cp")]
 position = Vector2(1320, 32)
+parallax_name = "room_002_tunnel"
 
 [node name="room_003" parent="." instance=ExtResource("11_hgltt")]
 position = Vector2(5472, -1600)
