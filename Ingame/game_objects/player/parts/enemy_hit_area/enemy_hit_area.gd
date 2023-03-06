@@ -19,3 +19,5 @@ func _hit_enemy(area : Area2D) -> void:
 
 func _hit_destroyable(area : Area2D) -> void:
 	area.destroy(player)
+	var diff = area.global_position.x - player.global_position.x
+	player.velocity.x = -player.specs.basic_attack_feedback_impulse * sign(diff)

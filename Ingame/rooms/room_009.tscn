@@ -65,16 +65,16 @@ layer_0/tile_data = PackedInt32Array(-655374, 196610, 3, -720910, 196610, 4, -72
 [node name="room_content" parent="." instance=ExtResource("3_mtwnp")]
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("5_vqqti")]
-position = Vector2(-376, -608)
+position = Vector2(-496, -640)
 is_map_secret = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
-position = Vector2(-144, -32)
+position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_u8tic")
 
 [node name="particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
-position = Vector2(-144, -32)
+position = Vector2(-16, 0)
 emitting = false
 amount = 24
 lifetime = 2.0
@@ -96,17 +96,15 @@ scale_amount_min = 0.5
 scale_amount_max = 2.0
 
 [node name="target" type="StaticBody2D" parent="room_content/destroyable_object"]
-position = Vector2(0, 32)
 
 [node name="sprite" type="Sprite2D" parent="room_content/destroyable_object/target"]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-16, -96)
+position = Vector2(112, -32)
 texture = ExtResource("7_7nm4p")
 region_rect = Rect2(0, 0, 32, 192)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object/target"]
-position = Vector2(-128, -64)
 shape = SubResource("RectangleShape2D_rr60h")
 
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_v1u0m")]
