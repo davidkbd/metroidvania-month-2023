@@ -35,14 +35,15 @@ func step(delta : float) -> StateMachineState:
 func _tilemap_interact() -> void:
 	var col : KinematicCollision2D
 	var collider : Object
-	var coords : Vector2i
+#	var coords : Vector2i
 	for i in host.get_slide_collision_count():
 		col = host.get_slide_collision(i)
 		collider = col.get_collider()
-		
-		if collider is TrapsTileMap:
-			coords = collider.get_coords_for_body_rid(col.get_collider_rid())
-			collider.interact(coords)
+		if collider is TrapFloor:
+##			print(col, "  ", col.get_collider_rid())
+#			coords = collider.get_coords_for_body_rid(col.get_collider_rid())
+#			collider.interact(coords)
+			collider.call_deferred("interact", col.get_collider_rid())
 
 func _coyote_time(delta : float) -> void:
 	if host.is_on_floor():
