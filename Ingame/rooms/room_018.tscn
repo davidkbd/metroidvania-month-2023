@@ -132,16 +132,15 @@ direction = 3
 position = Vector2(1376, -320)
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("6_l0tyg")]
-visible = false
-position = Vector2(1326, 63)
+position = Vector2(1198, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
-position = Vector2(-144, -32)
+position = Vector2(-16, -32)
 shape = SubResource("RectangleShape2D_phxry")
 
 [node name="particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
 modulate = Color(0.662745, 0.662745, 0.662745, 1)
-position = Vector2(-144, -32)
+position = Vector2(-16, -32)
 emitting = false
 amount = 24
 lifetime = 2.0
@@ -163,7 +162,7 @@ scale_amount_min = 0.5
 scale_amount_max = 2.0
 
 [node name="target" type="StaticBody2D" parent="room_content/destroyable_object"]
-position = Vector2(0, 32)
+position = Vector2(128, 32)
 
 [node name="sprite" type="Sprite2D" parent="room_content/destroyable_object/target"]
 texture_filter = 1
