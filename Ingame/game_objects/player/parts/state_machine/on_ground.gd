@@ -1,9 +1,5 @@
 extends StateMachineState
 
-@export var check_floor_ray_origin_position = Vector2.UP * 8.0
-@export var check_floor_ray_left_position = Vector2.LEFT * 32.0
-@export var check_floor_ray_right_position = Vector2.RIGHT * 32.0
-@export var check_floor_ray_vector : Vector2 = Vector2.DOWN * 32.0
 
 @export var coyote_time : float = .08
 
@@ -17,14 +13,14 @@ func exit() -> void:
 	pass
 
 func step(delta : float) -> StateMachineState:
-	_tilemap_interact()
-	
 	_coyote_time(delta)
 	_movement()
 
 	host.move_and_slide()
+	# Si haces el interact antes del move and slide peta
+	_tilemap_interact()
 
-	# Returns
+#	# Returns
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
@@ -37,26 +33,11 @@ func step(delta : float) -> StateMachineState:
 	return self
 
 func _tilemap_interact() -> void:
-	if not host.is_on_floor(): return
-	var origin = host.global_position + check_floor_ray_origin_position
-	var result = _tilemap_interact_raycast(origin)
-	if result.size() == 0:
-		result = _tilemap_interact_raycast(origin + check_floor_ray_left_position)
-	if result.size() == 0:
-		result = _tilemap_interact_raycast(origin + check_floor_ray_right_position)
-	if result.size() == 0:
-		return
-
-	if result.collider is TrapsTileMap:
-		result.collider.interact(result.rid)
-
-func _tilemap_interact_raycast(_origin : Vector2) -> Dictionary:
-	var destination = _origin + check_floor_ray_vector
-	var query = PhysicsRayQueryParameters2D.create(_origin, destination)
-	query.collide_with_bodies = true
-	query.collide_with_areas = false
-	query.collision_mask = 1
-	return host.space_state.intersect_ray(query)
+	if host.is_on_floor():
+		for i in host.get_slide_collision_count():
+			var col = host.get_slide_collision(i)
+			if col and col.get_collider() is TrapsTileMap:
+				col.get_collider().interact(col.get_collider_rid())
 
 func _coyote_time(delta : float) -> void:
 	if host.is_on_floor():
