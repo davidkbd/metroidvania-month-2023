@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch2d3q3r6wopq"]
+[gd_scene load_steps=11 format=3 uid="uid://ch2d3q3r6wopq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_4rs4r"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_mbbam"]
@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="5_ng338"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_tcio5"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="8_40mqe"]
+[ext_resource type="PackedScene" uid="uid://x41ek8r301gi" path="res://Ingame/game_objects/room/torch/green_torch.tscn" id="9_phqn1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2416, 1512)
@@ -74,3 +75,21 @@ position = Vector2(528, 288)
 
 [node name="room_element_spawner4" parent="room_content" instance=ExtResource("8_40mqe")]
 position = Vector2(576, 288)
+
+[node name="green_torch" parent="room_content" instance=ExtResource("9_phqn1")]
+position = Vector2(1272, -896)
+
+[node name="green_torch2" parent="room_content" instance=ExtResource("9_phqn1")]
+position = Vector2(832, -896)
+
+[node name="green_torch3" parent="room_content" instance=ExtResource("9_phqn1")]
+position = Vector2(384, -896)
+
+[node name="green_torch4" parent="room_content" instance=ExtResource("9_phqn1")]
+position = Vector2(-64, -896)
+
+[node name="green_torch5" parent="room_content" instance=ExtResource("9_phqn1")]
+position = Vector2(-448, -896)
+
+[node name="green_torch6" parent="room_content" instance=ExtResource("9_phqn1")]
+position = Vector2(-384, -568)
