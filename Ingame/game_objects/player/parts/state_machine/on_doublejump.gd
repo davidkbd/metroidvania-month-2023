@@ -22,6 +22,7 @@ func step(delta : float) -> StateMachineState:
 	prevent_on_wall_timer -= delta
 
 	if host.is_on_floor(): return state_machine.on_ground
+	if host.skills.data.drop_attack and ControlInput.is_attack_just_pressed() and ControlInput.is_down_pressed(): return state_machine.on_drop_attack
 	if ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
 	if host.skills.data.snap_wall and prevent_on_wall_timer < .0 and host.can_snap_to_wall(): return state_machine.on_wall
