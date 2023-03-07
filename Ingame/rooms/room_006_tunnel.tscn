@@ -30,6 +30,7 @@ collider_size = Vector2i(16, 4)
 direction = 2
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
+light_mask = 4
 position = Vector2(-232, 288)
 tile_set = ExtResource("5_pwqaa")
 format = 2
