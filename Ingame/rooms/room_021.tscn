@@ -66,6 +66,7 @@ shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
+light_mask = 0
 texture_filter = 1
 position = Vector2(32, 320)
 tile_set = ExtResource("3_wsns8")
@@ -85,6 +86,7 @@ collider_size = Vector2i(1, 6)
 collider_offset = Vector2i(0, -3)
 
 [node name="TileMap" type="TileMap" parent="room_content"]
+light_mask = 0
 texture_filter = 1
 position = Vector2(-64, 288)
 tile_set = SubResource("TileSet_0gvuo")
@@ -114,6 +116,7 @@ position = Vector2(112, 400)
 shape = SubResource("RectangleShape2D_m38j1")
 
 [node name="TileMap2" type="TileMap" parent="room_content"]
+light_mask = 0
 texture_filter = 1
 position = Vector2(1152, 288)
 tile_set = SubResource("TileSet_ntwah")

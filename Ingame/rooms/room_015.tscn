@@ -20,15 +20,21 @@ texture_region_size = Vector2i(32, 32)
 0:0/animation_frame_1/duration = 0.1
 0:0/animation_frame_2/duration = 0.1
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 0:1/animation_columns = 3
 0:1/animation_frame_0/duration = 0.1
 0:1/animation_frame_1/duration = 0.1
 0:1/animation_frame_2/duration = 0.1
 0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
 0:2/animation_frame_0/duration = 0.1
 0:2/animation_frame_1/duration = 0.1
 0:2/animation_frame_2/duration = 0.1
 0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_6thai"]
 tile_size = Vector2i(32, 32)
@@ -53,6 +59,7 @@ shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
+light_mask = 0
 texture_filter = 1
 position = Vector2(32, 320)
 tile_set = ExtResource("3_nwe4j")
@@ -72,6 +79,7 @@ position = Vector2(704, -240)
 collider_size = Vector2i(4, 5)
 
 [node name="TileMap" type="TileMap" parent="room_content"]
+light_mask = 0
 texture_filter = 1
 position = Vector2(0, 192)
 tile_set = SubResource("TileSet_6thai")

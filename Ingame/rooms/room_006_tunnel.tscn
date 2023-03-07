@@ -30,6 +30,7 @@ collider_size = Vector2i(16, 4)
 direction = 2
 
 [node name="CollisionTileMap" type="TileMap" parent="."]
+light_mask = 0
 texture_filter = 1
 position = Vector2(-232, 288)
 tile_set = ExtResource("5_pwqaa")
