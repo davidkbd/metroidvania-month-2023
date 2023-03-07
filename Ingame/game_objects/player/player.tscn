@@ -1075,6 +1075,7 @@ parameters/on_jump/blend_position = Vector2(0.10082, -0.271868)
 position = Vector2(0, -1)
 range_item_cull_mask = 4
 texture = ExtResource("34_q436p")
+texture_scale = 0.5
 
 [node name="backing_light_mask" type="PointLight2D" parent="."]
 position = Vector2(0, -1)

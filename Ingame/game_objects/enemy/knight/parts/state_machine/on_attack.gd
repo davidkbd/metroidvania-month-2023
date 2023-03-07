@@ -3,7 +3,7 @@ extends StateMachineState
 var time : float
 
 func enter() -> void:
-	host.animation_playblack.travel(name)
+	host.animation_playblack.start(name, true)
 	host.velocity = Vector2.ZERO
 	time = host.animation.get_animation("attack").length
 
