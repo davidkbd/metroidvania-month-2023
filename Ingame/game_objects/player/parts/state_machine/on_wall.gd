@@ -1,6 +1,10 @@
 extends StateMachineState
 
+@export var max_wall_distance : float = 60.0
+
 var onwall_collider_initial_position : Vector2
+
+var wall_raycast_result : Dictionary
 
 var walled_time
 var intial_direction
@@ -20,7 +24,10 @@ func exit() -> void:
 
 func step(delta : float) -> StateMachineState:
 	_update_direction()
+	_throw_wall_raycast()
+	_snap_to_wall()
 	_walled_gravity(delta)
+	
 	host.move_and_slide()
 	walled_time -= delta
 	
@@ -62,7 +69,7 @@ func _restore_colliders() -> void:
 func _update_host_references() -> void:
 	onwall_collider_initial_position = host.onwall_collider.position
 
-func _is_on_wall() -> bool:
+func _throw_wall_raycast() -> void:
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
 	var origin : Vector2 = host.global_position + host.check_snap_wall_ray_position
 	query.from = origin
@@ -71,8 +78,17 @@ func _is_on_wall() -> bool:
 	query.collide_with_areas = false
 	query.collision_mask = 1
 	query.exclude = [host.get_rid()]
-	var result = host.space_state.intersect_ray(query)
-	return result.size() > 0
+	wall_raycast_result = host.space_state.intersect_ray(query)
+
+func _snap_to_wall() -> void:
+	if wall_raycast_result.size() > 0:
+		var distance : float = host.global_position.distance_to(wall_raycast_result.position)
+		if distance > max_wall_distance:
+			host.velocity.x += distance * direction
+
+func _is_on_wall() -> bool:
+	return wall_raycast_result.size() > 0
+
 
 func _ready() -> void:
 	call_deferred("_update_host_references")
