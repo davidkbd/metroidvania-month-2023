@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c78unrdgbqlrf"]
+[gd_scene load_steps=8 format=3 uid="uid://buhu8jvvns5cx"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/items/rat_health/rat_health.gd" id="1_7nqq0"]
-[ext_resource type="Texture2D" uid="uid://vmdfrtmve2t8" path="res://Ingame/game_objects/items/rat_health/sprite/sprite.png" id="2_2ws6r"]
+[ext_resource type="Texture2D" uid="uid://vmdfrtmve2t8" path="res://Ingame/game_objects/items/rat_health/sprites/sprite.png" id="2_2ws6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecuyn"]
 size = Vector2(16, 16)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctw2nba5ftwjk"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/spawner/item_spawner/item_spawner.gd" id="1_p6xs7"]
+[ext_resource type="Texture2D" uid="uid://2fpuqfs6clce" path="res://Ingame/game_objects/items/rat_health/sprites/spawner_sprite.png" id="2_pujkj"]
+
+[node name="item_spawner" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_p6xs7")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-16, -32)
+texture = ExtResource("2_pujkj")
+centered = false

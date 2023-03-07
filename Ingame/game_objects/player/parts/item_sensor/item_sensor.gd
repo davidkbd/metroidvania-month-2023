@@ -19,7 +19,7 @@ func _eat_rat(_rat : RatHealth) -> void:
 	player.add_child(rat)
 
 	player.life.increment_value(1.0)
-	_rat.queue_free()
+	_rat.catch()
 	
 	var tween : Tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(rat, "modulate:a", .0, 2.0)

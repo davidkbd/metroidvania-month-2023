@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch2d3q3r6wopq"]
+[gd_scene load_steps=11 format=3 uid="uid://ch2d3q3r6wopq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_4rs4r"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_mbbam"]
@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="5_ng338"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_tcio5"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="8_40mqe"]
+[ext_resource type="PackedScene" uid="uid://ctw2nba5ftwjk" path="res://Ingame/game_objects/spawner/item_spawner/item_spawner.tscn" id="9_but3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2416, 1512)
@@ -26,6 +27,7 @@ shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
+light_mask = 4
 tile_set = ExtResource("5_ng338")
 format = 2
 layer_0/tile_data = PackedInt32Array(655342, 2949122, 9, 720878, 2949122, 10, 786414, 2949122, 11, 851950, 2949122, 12, 655343, 3014658, 9, 720879, 3014658, 10, 786415, 3014658, 11, 851951, 3014658, 12, 655344, 3080194, 9, 720880, 3080194, 10, 786416, 3080194, 11, 851952, 3080194, 12, 655345, 3145730, 9, 720881, 3145730, 10, 786417, 3145730, 11, 851953, 3145730, 12, 393198, 2949122, 5, 458734, 2949122, 6, 524270, 2949122, 7, 589806, 2949122, 8, 393199, 3014658, 5, 458735, 3014658, 6, 524271, 3014658, 7, 589807, 3014658, 8, 393200, 3080194, 5, 458736, 3080194, 6, 524272, 3080194, 7, 589808, 3080194, 8, 393201, 3145730, 5, 458737, 3145730, 6, 524273, 3145730, 7, 589809, 3145730, 8)
@@ -67,3 +69,12 @@ position = Vector2(528, 288)
 
 [node name="room_element_spawner4" parent="room_content" instance=ExtResource("8_40mqe")]
 position = Vector2(576, 288)
+
+[node name="rat_spawner" parent="room_content" instance=ExtResource("9_but3v")]
+position = Vector2(256, -480)
+
+[node name="rat_spawner2" parent="room_content" instance=ExtResource("9_but3v")]
+position = Vector2(408, -480)
+
+[node name="rat_spawner3" parent="room_content" instance=ExtResource("9_but3v")]
+position = Vector2(408, -832)
