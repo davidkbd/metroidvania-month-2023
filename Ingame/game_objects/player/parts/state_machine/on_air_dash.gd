@@ -33,7 +33,7 @@ func step(delta : float) -> StateMachineState:
 
 	if dash_time < .0: return state_machine.on_air
 	if host.skills.data.double_jump and ControlInput.is_jump_just_pressed(): return state_machine.on_doublejump
-	if ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
+	if host.skills.data.drop_attack and ControlInput.is_attack_just_pressed() and ControlInput.is_down_pressed(): return state_machine.on_drop_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
 	if host.skills.data.snap_wall and host.can_snap_to_wall(): return state_machine.on_wall
 	# Si el raycast de snap no detecta pared, pero aun asi nos hemos chocado con una, nos caemos:

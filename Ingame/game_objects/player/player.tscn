@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://d4g326fv20xk1"]
+[gd_scene load_steps=141 format=3 uid="uid://d4g326fv20xk1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_attack.gd" id="7_v12wq"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_wall.gd" id="8_2ivm0"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/on_normal_attack.gd" id="8_kqfbx"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_drop_attack.gd" id="9_kutxv"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_dash.gd" id="9_qc1tk"]
 [ext_resource type="PackedScene" uid="uid://dbs2cljuqmi6" path="res://Ingame/game_objects/player/parts/player_skills/player_skills.tscn" id="11_x5sqa"]
@@ -917,6 +918,7 @@ on_jump_state = NodePath("on_jump")
 on_doublejump_state = NodePath("on_doublejump")
 on_simple_attack_state = NodePath("on_simple_attack")
 on_super_attack_state = NodePath("on_super_attack")
+on_drop_attack_state = NodePath("on_drop_attack")
 on_dash_state = NodePath("on_dash")
 on_air_dash_state = NodePath("on_air_dash")
 on_wall_state = NodePath("on_wall")
@@ -945,6 +947,9 @@ attack_timer = 0.3
 
 [node name="on_super_attack" type="Node" parent="state_machine"]
 script = ExtResource("8_kqfbx")
+
+[node name="on_drop_attack" type="Node" parent="state_machine"]
+script = ExtResource("9_kutxv")
 
 [node name="on_dash" type="Node" parent="state_machine"]
 script = ExtResource("9_qc1tk")
@@ -988,7 +993,6 @@ texture = ExtResource("13_vjjdm")
 centered = false
 hframes = 11
 vframes = 14
-frame = 14
 script = ExtResource("16_4ekit")
 
 [node name="body_collider" type="CollisionShape2D" parent="."]

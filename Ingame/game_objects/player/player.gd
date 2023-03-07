@@ -114,3 +114,4 @@ func _ready() -> void:
 	skills.set_skill_value("double_jump", true)
 	skills.set_skill_value("dash", true)
 	skills.set_skill_value("snap_wall", true)
+	skills.set_skill_value("drop_attack", true)

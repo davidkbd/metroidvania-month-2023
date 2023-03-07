@@ -22,6 +22,7 @@ static func get_default_specs() -> Dictionary:
 "basic_attack_power":  10.0,
 "basic_attack_feedback_impulse": 600.0,
 "basic_attack_down_feedback_impulse": 600.0,
+"drop_attack_impulse": 700.0,
 "dash_impulse":        800.0,
 "air_dash_impulse":    1000.0,
 "dash_deceleration":   30.0

@@ -17,6 +17,7 @@ func step(delta : float) -> StateMachineState:
 	host.animation_tree.set("parameters/on_jump/blend_position", host.velocity.y)
 
 	if host.is_on_floor(): return state_machine.on_ground
+	if host.skills.data.drop_attack and ControlInput.is_attack_just_pressed() and ControlInput.is_down_pressed(): return state_machine.on_drop_attack
 	if state_machine.previous_state != state_machine.on_simple_attack and ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
 	if host.skills.data.snap_wall and host.can_snap_to_wall(): return state_machine.on_wall
