@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vmdfrtmve2t8"
-path="res://.godot/imported/sprite.png-66f45e903d9f7ba8abd0cedbaa045a55.ctex"
+uid="uid://bm8g1jsi36hy8"
+path="res://.godot/imported/icon.png-9a12bed3f99de1233e5573021942897f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/game_objects/items/rat_health/sprite/sprite.png"
-dest_files=["res://.godot/imported/sprite.png-66f45e903d9f7ba8abd0cedbaa045a55.ctex"]
+source_file="res://Ingame/game_objects/spawner/item_spawner/icon.png"
+dest_files=["res://.godot/imported/icon.png-9a12bed3f99de1233e5573021942897f.ctex"]
 
 [params]
 

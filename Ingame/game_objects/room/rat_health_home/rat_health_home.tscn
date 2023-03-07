@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnia8dcybumqw"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/room/rat_health_home/rat_health_home.gd" id="1_hs7yi"]
-[ext_resource type="PackedScene" uid="uid://c78unrdgbqlrf" path="res://Ingame/game_objects/items/rat_health/rat_health.tscn" id="2_80f6v"]
+[ext_resource type="PackedScene" uid="uid://buhu8jvvns5cx" path="res://Ingame/game_objects/items/rat_health/rat_health.tscn" id="2_80f6v"]
 [ext_resource type="PackedScene" uid="uid://ctyeoebop0jmq" path="res://Ingame/game_objects/room/empty_rat_health_home/empty_rat_health_home.tscn" id="3_fbnak"]
 
 [node name="rat_health_home" type="Node2D"]

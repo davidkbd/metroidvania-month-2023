@@ -1,28 +1,25 @@
 @tool
-@icon("res://Ingame/game_objects/spawner/room_element_spawner/icon.png")
+@icon("res://Ingame/game_objects/spawner/item_spawner/icon.png")
 extends Node2D
-class_name RoomElementSpawner
+class_name ItemSpawner
 
 enum ElementType {
-	RAT_HEALTH_HOME, EMPTY_RAT_HEALTH_HOME
+	RAT_HEALTH
 }
 
 @export var reborn_delay_seconds : float = 300.0
-@export var element_type : ElementType = ElementType.RAT_HEALTH_HOME :
+@export var element_type : ElementType = ElementType.RAT_HEALTH :
 	get: return element_type
 	set(value):
 		if value == element_type: return
 		element_type = value
 		_update_element_type()
 
-const SPRITES_PATH      := "res://Ingame/game_objects/room/%s/sprites/spawner_sprite.png"
-const PACKEDSCENES_PATH := "res://Ingame/game_objects/room/%s/%s.tscn"
+const SPRITES_PATH      := "res://Ingame/game_objects/items/%s/sprites/spawner_sprite.png"
+const PACKEDSCENES_PATH := "res://Ingame/game_objects/items/%s/%s.tscn"
 const TYPE_DATA := [
 	{
-		"id": "rat_health_home"
-	},
-	{
-		"id": "empty_rat_health_home"
+		"id": "rat_health"
 	}
 ]
 
@@ -59,12 +56,12 @@ func deactivate() -> void:
 		if instance is DestroyableObject:
 			if player_is_died:
 				instance_data.reborn_timestamp = -1.0
-			elif instance.instance_data.life <= 0:
+			elif instance.catched:
 				instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
 		else:
 			if player_is_died:
 				instance_data.reborn_timestamp = -1.0
-			elif instance.destroyable.instance_data.life <= 0:
+			elif instance.catched:
 				instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
 		instance.queue_free()
 

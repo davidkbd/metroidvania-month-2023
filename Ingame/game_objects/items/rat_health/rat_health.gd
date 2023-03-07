@@ -21,7 +21,17 @@ class_name RatHealth
 
 @onready var velocity : Vector2 = Vector2.ZERO
 @onready var timer
+
 var walk_timer_flag : bool
+
+var catched : bool
+
+func catch() -> void:
+	catched = true
+	sprite.hide()
+	collision_layer = 0
+	collision_mask = 0
+	set_process(false)
 
 func _process(_delta : float) -> void:
 	is_on_floor = center_floor_rc.is_colliding()
