@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ks3ubg31qgk4"]
+[gd_scene load_steps=9 format=3 uid="uid://ks3ubg31qgk4"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_odv0u"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_angpq"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_p1mmn"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_2utpy"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_p475j"]
+[ext_resource type="PackedScene" uid="uid://x41ek8r301gi" path="res://Ingame/game_objects/room/torch/green_torch.tscn" id="7_ndmbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1176, 664)
@@ -47,3 +48,9 @@ direction = 3
 
 [node name="savepoint_area" parent="room_content" instance=ExtResource("3_3dhyg")]
 position = Vector2(-128, 32)
+
+[node name="green_torch3" parent="room_content" instance=ExtResource("7_ndmbl")]
+position = Vector2(-256, 208)
+
+[node name="green_torch4" parent="room_content" instance=ExtResource("7_ndmbl")]
+position = Vector2(0, 200)

@@ -68,7 +68,6 @@ layer_0/tile_data = PackedInt32Array(-655374, 196610, 3, -720910, 196610, 4, -72
 [node name="room_content" parent="." instance=ExtResource("3_mtwnp")]
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("5_vqqti")]
-visible = false
 position = Vector2(-496, -640)
 is_map_secret = true
 
