@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c7n7hoavwiy8l"]
+[gd_scene load_steps=51 format=3 uid="uid://c7n7hoavwiy8l"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/character.gd" id="1_rovep"]
 [ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/enemy/knight/sprites/character.png" id="2_gepj4"]
@@ -6,13 +6,13 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_idle.gd" id="3_jmssg"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_patrol.gd" id="4_uvc5i"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_chase.gd" id="5_ugfq0"]
-[ext_resource type="PackedScene" uid="uid://4lmxxuoxtbht" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.tscn" id="6_06166"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_die.gd" id="8_8jep2"]
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="8_k7dny"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_qu7c6"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.gd" id="13_v1ptd"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/damage_area/damage_area.gd" id="14_v5hiw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
@@ -25,6 +25,10 @@ shader_parameter/dissolve_texture = ExtResource("10_qu7c6")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
 radius = 24.0
 height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2820"]
+radius = 64.0
+height = 640.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0h6vo"]
 radius = 20.0
@@ -345,10 +349,16 @@ position = Vector2(0, -40)
 position = Vector2(0, -40)
 shape = SubResource("CapsuleShape2D_o5kqg")
 
-[node name="PlayerSensor" parent="." instance=ExtResource("6_06166")]
+[node name="PlayerSensor" type="Area2D" parent="."]
 position = Vector2(0, -40)
 collision_layer = 8
 collision_mask = 8
+monitorable = false
+script = ExtResource("13_v1ptd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSensor"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v2820")
 
 [node name="body_area" type="Area2D" parent="."]
 collision_layer = 8
@@ -453,3 +463,5 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
 [connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]
+[connection signal="body_entered" from="PlayerSensor" to="PlayerSensor" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="PlayerSensor" to="PlayerSensor" method="_on_body_exited" flags=18]

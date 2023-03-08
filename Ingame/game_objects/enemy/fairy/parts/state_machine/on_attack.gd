@@ -5,14 +5,13 @@ var time : float
 func enter() -> void:
 	host.animation_playblack.start(name, true)
 	host.velocity = Vector2.ZERO
-	time = host.animation.get_animation("attack").length
+	time = .5
 
 func exit() -> void:
 	host.sword_collider.disabled = true
 	
 func step(delta : float) -> StateMachineState:
 	_brake()
-	host.fall(delta)
 	host.move_and_slide()
 	
 	time -= delta
@@ -23,3 +22,4 @@ func step(delta : float) -> StateMachineState:
 
 func _brake() -> void:
 	host.velocity.x = move_toward(host.velocity.x, .0, host.specs.attack_deceleration)
+	host.velocity.y = move_toward(host.velocity.y, .0, host.specs.attack_deceleration)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bdaqfw1673oh1"]
+[gd_scene load_steps=51 format=3 uid="uid://bdaqfw1673oh1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/character.gd" id="1_6s1t7"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/state_machine.gd" id="2_usxyx"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_t325o"]
 [ext_resource type="Texture2D" uid="uid://brhjv6tu1mkv7" path="res://Ingame/game_objects/enemy/gremlin/sprites/character.png" id="11_2lvjc"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/enemy_sprite/enemy_sprite.gd" id="12_q6xj6"]
-[ext_resource type="PackedScene" uid="uid://c1qg87yvkoh2c" path="res://Ingame/game_objects/enemy/gremlin/parts/player_sensor/player_sensor.tscn" id="13_wqve6"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/player_sensor/player_sensor.gd" id="13_ar4d2"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/damage_area/damage_area.gd" id="14_607np"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
@@ -25,6 +25,10 @@ shader_parameter/dissolve_texture = ExtResource("10_t325o")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
 radius = 20.0
 height = 45.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2820"]
+radius = 64.0
+height = 640.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0h6vo"]
 radius = 20.0
@@ -369,7 +373,15 @@ position = Vector2(0, -40)
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_o5kqg")
 
-[node name="PlayerSensor" parent="." instance=ExtResource("13_wqve6")]
+[node name="PlayerSensor" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+monitorable = false
+script = ExtResource("13_ar4d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSensor"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v2820")
 
 [node name="body_area" type="Area2D" parent="."]
 collision_layer = 8
@@ -474,3 +486,5 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
 [connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]
+[connection signal="body_entered" from="PlayerSensor" to="PlayerSensor" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="PlayerSensor" to="PlayerSensor" method="_on_body_exited" flags=18]

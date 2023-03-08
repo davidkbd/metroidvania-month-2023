@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/character.gd" id="1_6s1t7"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/state_machine.gd" id="2_usxyx"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_idle.gd" id="3_w44qr"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_patrol.gd" id="4_qu6n8"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_chase.gd" id="5_0315x"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_comeback.gd" id="6_6u1vv"]
@@ -11,8 +10,8 @@
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="9_q6t6u"]
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_t325o"]
 [ext_resource type="Texture2D" uid="uid://brhjv6tu1mkv7" path="res://Ingame/game_objects/enemy/gremlin/sprites/character.png" id="11_2lvjc"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/player_sensor/player_sensor.gd" id="12_gmqoe"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/enemy_sprite/enemy_sprite.gd" id="12_q6xj6"]
-[ext_resource type="PackedScene" uid="uid://c1qg87yvkoh2c" path="res://Ingame/game_objects/enemy/gremlin/parts/player_sensor/player_sensor.tscn" id="13_wqve6"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/damage_area/damage_area.gd" id="14_607np"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
@@ -21,6 +20,9 @@ shader_parameter/dissolve_value = 1.0
 shader_parameter/animation_columns = 6
 shader_parameter/animation_rows = 3
 shader_parameter/dissolve_texture = ExtResource("10_t325o")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vwb4"]
+radius = 312.103
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
 radius = 20.0
@@ -314,23 +316,19 @@ graph_offset = Vector2(42.825, 13.0968)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
 
 [node name="character" type="CharacterBody2D"]
-collision_layer = 1024
-collision_mask = 1024
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_6s1t7")
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("2_usxyx")
-on_idle_state = NodePath("on_idle")
 on_patrol_state = NodePath("on_patrol")
 on_attack_state = NodePath("on_attack")
 on_chase_state = NodePath("on_chase")
 on_comeback_state = NodePath("on_comeback")
 on_damaged_state = NodePath("on_damaged")
 on_die_state = NodePath("on_die")
-initial_state = NodePath("on_idle")
-
-[node name="on_idle" type="Node" parent="state_machine"]
-script = ExtResource("3_w44qr")
+initial_state = NodePath("on_patrol")
 
 [node name="on_patrol" type="Node" parent="state_machine"]
 script = ExtResource("4_qu6n8")
@@ -349,11 +347,8 @@ script = ExtResource("7_jpvdm")
 [node name="on_die" type="Node" parent="state_machine"]
 script = ExtResource("8_htgti")
 
-[node name="IdlePatrolSwitchTimer" type="Timer" parent="state_machine"]
-one_shot = true
-
 [node name="navigation_agent" type="NavigationAgent2D" parent="."]
-path_desired_distance = 8.0
+path_desired_distance = 4.0
 debug_enabled = true
 
 [node name="sprite" type="Sprite2D" parent="."]
@@ -369,11 +364,19 @@ script = ExtResource("12_q6xj6")
 [node name="Center" type="Node2D" parent="."]
 position = Vector2(0, -40)
 
+[node name="PlayerSensor" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+monitorable = false
+script = ExtResource("12_gmqoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSensor"]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_2vwb4")
+
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_o5kqg")
-
-[node name="PlayerSensor" parent="." instance=ExtResource("13_wqve6")]
 
 [node name="body_area" type="Area2D" parent="."]
 collision_layer = 8
@@ -477,4 +480,5 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
-[connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]
+[connection signal="body_entered" from="PlayerSensor" to="PlayerSensor" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="PlayerSensor" to="PlayerSensor" method="_on_body_exited" flags=18]
