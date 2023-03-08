@@ -20,7 +20,7 @@ func step(delta : float) -> StateMachineState:
 	if state_machine.previous_state != state_machine.on_simple_attack and ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
 	if host.skills.data.snap_wall and host.can_snap_to_wall(): return state_machine.on_wall
-	if host.skills.data.dash and ControlInput.is_dash_just_pressed(): return state_machine.on_air_dash
+	if not state_machine.previous_state.is_an_on_air_state() and host.skills.data.dash and ControlInput.is_dash_just_pressed(): return state_machine.on_air_dash
 	if host.damager.size(): return state_machine.on_damaged
 	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
