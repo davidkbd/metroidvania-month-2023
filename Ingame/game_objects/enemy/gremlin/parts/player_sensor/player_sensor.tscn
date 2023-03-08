@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1qg87yvkoh2c"]
 
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.gd" id="1_hkjnd"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/player_sensor/player_sensor.gd" id="1_hkjnd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2820"]
 radius = 64.0

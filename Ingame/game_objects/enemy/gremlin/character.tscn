@@ -1,19 +1,19 @@
 [gd_scene load_steps=50 format=3 uid="uid://bdaqfw1673oh1"]
 
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/character.gd" id="1_y51f7"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/state_machine.gd" id="2_e2c13"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_idle.gd" id="3_w44qr"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_patrol.gd" id="4_qu6n8"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_chase.gd" id="5_0315x"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_comeback.gd" id="6_6u1vv"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_attack.gd" id="7_jpvdm"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_die.gd" id="8_htgti"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/character.gd" id="1_6s1t7"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/state_machine.gd" id="2_usxyx"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_idle.gd" id="3_w44qr"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_patrol.gd" id="4_qu6n8"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_chase.gd" id="5_0315x"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_comeback.gd" id="6_6u1vv"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_attack.gd" id="7_jpvdm"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_die.gd" id="8_htgti"]
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="9_q6t6u"]
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_t325o"]
 [ext_resource type="Texture2D" uid="uid://brhjv6tu1mkv7" path="res://Ingame/game_objects/enemy/gremlin/sprites/character.png" id="11_2lvjc"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/enemy_sprite/enemy_sprite.gd" id="12_q6xj6"]
-[ext_resource type="PackedScene" uid="uid://4lmxxuoxtbht" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.tscn" id="13_0ullx"]
-[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/damage_area/damage_area.gd" id="14_607np"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/enemy_sprite/enemy_sprite.gd" id="12_q6xj6"]
+[ext_resource type="PackedScene" uid="uid://c1qg87yvkoh2c" path="res://Ingame/game_objects/enemy/gremlin/parts/player_sensor/player_sensor.tscn" id="13_wqve6"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/damage_area/damage_area.gd" id="14_607np"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
 shader = ExtResource("9_q6t6u")
@@ -316,10 +316,10 @@ graph_offset = Vector2(42.825, 13.0968)
 [node name="character" type="CharacterBody2D"]
 collision_layer = 1024
 collision_mask = 1024
-script = ExtResource("1_y51f7")
+script = ExtResource("1_6s1t7")
 
 [node name="state_machine" type="Node" parent="."]
-script = ExtResource("2_e2c13")
+script = ExtResource("2_usxyx")
 on_idle_state = NodePath("on_idle")
 on_patrol_state = NodePath("on_patrol")
 on_attack_state = NodePath("on_attack")
@@ -327,7 +327,7 @@ on_chase_state = NodePath("on_chase")
 on_comeback_state = NodePath("on_comeback")
 on_damaged_state = NodePath("on_damaged")
 on_die_state = NodePath("on_die")
-initial_state = NodePath("on_patrol")
+initial_state = NodePath("on_idle")
 
 [node name="on_idle" type="Node" parent="state_machine"]
 script = ExtResource("3_w44qr")
@@ -369,10 +369,7 @@ position = Vector2(0, -40)
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_o5kqg")
 
-[node name="PlayerSensor" parent="." instance=ExtResource("13_0ullx")]
-position = Vector2(0, -40)
-collision_layer = 8
-collision_mask = 8
+[node name="PlayerSensor" parent="." instance=ExtResource("13_wqve6")]
 
 [node name="body_area" type="Area2D" parent="."]
 collision_layer = 8

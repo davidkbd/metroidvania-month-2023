@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://cxqeripkn381w"]
 
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
-[ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/state_machine.gd" id="2_u4jvg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/gremlin/character.gd" id="1_rovep"]
+[ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/gremlin/sprites/character.png" id="2_gepj4"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/gremlin/parts/state_machine/state_machine.gd" id="2_u4jvg"]
 
 [sub_resource type="Animation" id="Animation_7ourq"]
 length = 0.001
