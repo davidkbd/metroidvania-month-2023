@@ -19,5 +19,5 @@ func attack_impulse() -> void:
 func _ready() -> void:
 	collision_areas.append($sword_area)
 	collision_areas.append($body_area)
-	specs = CharacterAliveSpecs.get_knight_specs()
+	specs = CharacterAliveSpecs.get_gremlin_specs()
 	sword_collider.disabled = true
