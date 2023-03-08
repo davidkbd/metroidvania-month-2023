@@ -4,7 +4,8 @@ extends Node2D
 class_name EnemySpawner
 
 enum EnemyType {
-	KNIGHT
+	KNIGHT,
+	GREMLIN
 }
 
 signal died
@@ -23,6 +24,9 @@ const PACKEDSCENES_PATH := "res://Ingame/game_objects/enemy/%s/character.tscn"
 const NPC_DATA := [
 	{
 		"id": "knight"
+	},
+	{
+		"id": "gremlin"
 	}
 ]
 
