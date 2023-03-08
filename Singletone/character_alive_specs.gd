@@ -59,7 +59,7 @@ static func get_fairy_specs() -> Dictionary:
 "idle_speed":              8.0,
 "idle_movement":           16.0,
 "idle_acceleration":       48.0,
-"speed":                   20.0,
+"speed":                   50.0,
 "acceleration":            32.0,
 "deceleration":            32.0,
 "attack_deceleration":     15.0,

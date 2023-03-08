@@ -7,6 +7,9 @@ extends EnemyCharacterAlive
 @onready var attack_foot_particles : CPUParticles2D    = $attack_foot_particles
 @onready var explode_particles     : Array = [ $explode_color1, $explode_color2, $explode_color3 ]
 
+@onready var default_position      : Vector2 = global_position
+
+
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
 	sword_collider.position = Vector2.LEFT * (-32.0) * walk_direction

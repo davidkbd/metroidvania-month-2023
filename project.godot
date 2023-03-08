@@ -146,10 +146,6 @@ A={
 2d_physics/layer_11="floor_and_enemy"
 2d_physics/layer_15="destroyable"
 
-[navigation]
-
-2d/default_cell_size=16
-
 [physics]
 
 2d/default_gravity=2000.0

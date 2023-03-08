@@ -10,6 +10,7 @@ func enter() -> void:
 	current_position = host.global_position
 	host.animation_playblack.travel(name)
 	state_machine.start_idle_patrol_switch_timer()
+	host.velocity = Vector2.ZERO
 
 func exit() -> void:
 	pass
