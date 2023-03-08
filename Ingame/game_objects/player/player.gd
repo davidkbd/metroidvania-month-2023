@@ -71,6 +71,11 @@ func can_snap_to_wall() -> bool:
 	var result = space_state.intersect_ray(query)
 	if result.size() == 0: return false
 	
+	if result.normal - Vector2.LEFT != Vector2.ZERO \
+	and result.normal - Vector2.RIGHT != Vector2.ZERO:
+		return false
+
+	
 	# Compruebo si el techo esta demasiado bajo
 	query = PhysicsRayQueryParameters2D.new()
 	query.from = global_position
