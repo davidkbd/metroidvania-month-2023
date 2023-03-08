@@ -1,14 +1,15 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dcreykohtx3s6"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://dcreykohtx3s6"]
 
 [ext_resource type="Texture2D" uid="uid://d1hp7x0jqkfes" path="res://Ingame/level-sprites/default/tiles/Tile_Plantilla.png" id="3_71ilr"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5sn71"]
+vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fdm8"]
 texture = ExtResource("3_71ilr")
 texture_region_size = Vector2i(32, 32)
-7:0/0 = 0
-7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-7:0/0/physics_layer_0/angular_velocity = 0.0
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:1/0 = 0
 2:1/0/terrain_set = 1
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1437,6 +1438,10 @@ texture_region_size = Vector2i(32, 32)
 36:18/0 = 0
 36:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 36:18/0/physics_layer_0/angular_velocity = 0.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_5sn71")
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -1462,4 +1467,5 @@ terrain_set_1/terrain_4/name = "Terrain 4"
 terrain_set_1/terrain_4/color = Color(0.28125, 0.5, 0.25, 1)
 terrain_set_1/terrain_5/name = "Terrain 5"
 terrain_set_1/terrain_5/color = Color(0.25, 0.5, 0.3125, 1)
+navigation_layer_0/layers = 1
 sources/2 = SubResource("TileSetAtlasSource_1fdm8")

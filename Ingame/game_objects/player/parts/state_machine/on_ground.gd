@@ -53,4 +53,4 @@ func _movement() -> void:
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
 	else:
 		host.animation_tree.set("parameters/on_ground/blend_position", .0)
-		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
+		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.acceleration)

@@ -5,7 +5,8 @@ class_name EnemySpawner
 
 enum EnemyType {
 	KNIGHT,
-	GREMLIN
+	GREMLIN,
+	FAIRY
 }
 
 signal died
@@ -27,6 +28,9 @@ const NPC_DATA := [
 	},
 	{
 		"id": "gremlin"
+	},
+	{
+		"id": "fairy"
 	}
 ]
 

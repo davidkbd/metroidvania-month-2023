@@ -55,4 +55,4 @@ func _movement() -> void:
 	if host.walk_direction:
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
 	else:
-		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
+		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.acceleration)
