@@ -6,9 +6,10 @@ func enter() -> void:
 	host.animation_playblack.start(name, true)
 	host.velocity = Vector2.ZERO
 	time = .5
+	host.throw_projectile()
 
 func exit() -> void:
-	host.sword_collider.disabled = true
+	pass
 	
 func step(delta : float) -> StateMachineState:
 	_brake()

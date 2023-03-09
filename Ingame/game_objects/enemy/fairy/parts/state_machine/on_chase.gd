@@ -16,6 +16,7 @@ func step(_delta : float) -> StateMachineState:
 	if not host.player: return state_machine.on_patrol
 	
 	_movement(_delta)
+	_look_at_player()
 	host.move_and_slide()
 	
 	if host.life <= 0: return state_machine.on_die
@@ -27,6 +28,10 @@ func _movement(_delta : float):
 	var direction = host.global_position.direction_to(next_location)
 	host.navigation_agent.path_max_distance = 8.0
 	host.velocity = lerp(host.velocity, direction * host.specs.speed, _delta)
+
+func _look_at_player() -> void:
+	if not host.player: return
+	host.set_walk_direction(sign(host.player.global_position.x - host.global_position.x))
 
 func _choose_destination() -> void:
 	var angle = randf_range(-PI, PI)

@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv4oxwal6jo33"]
+
+[ext_resource type="Texture2D" uid="uid://uhid1mjlm4ay" path="res://Ingame/game_objects/enemy/fairy/projectile/sprites/fairy-projectile-light.png" id="1_18w1f"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/projectile/fairy_projectile.gd" id="1_uyvbf"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/projectile/player_sensor.gd" id="3_ee6de"]
+[ext_resource type="Texture2D" uid="uid://bxyqqp5tpdfdl" path="res://Ingame/game_objects/enemy/fairy/projectile/sprites/projectile.png" id="4_v2dlj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxjsi"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mee7n"]
+radius = 4.0
+
+[sub_resource type="Curve" id="Curve_c7f4x"]
+max_value = 2.0
+_data = [Vector2(0, 2), 0.0, 0.157576, 0, 0, Vector2(0.217949, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_khlf7"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.875445, 1, 1, 1, 0)
+
+[node name="fairy_projectile" type="CharacterBody2D"]
+collision_layer = 1024
+collision_mask = 1024
+script = ExtResource("1_uyvbf")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fxjsi")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("4_v2dlj")
+
+[node name="light" type="PointLight2D" parent="."]
+texture = ExtResource("1_18w1f")
+texture_scale = 0.25
+
+[node name="player_sensor" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("3_ee6de")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_sensor"]
+shape = SubResource("CircleShape2D_mee7n")
+
+[node name="tail_particles" type="CPUParticles2D" parent="."]
+amount = 512
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 16.0
+angular_velocity_max = 131.71
+scale_amount_curve = SubResource("Curve_c7f4x")
+color_ramp = SubResource("Gradient_khlf7")
+
+[node name="destroy_particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 2.0
+initial_velocity_max = 64.0
+angular_velocity_max = 131.71
+color_ramp = SubResource("Gradient_khlf7")
