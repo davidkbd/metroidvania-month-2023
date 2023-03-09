@@ -204,7 +204,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_kkfye"]
 resource_name = "idle"
-length = 0.6
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -213,10 +213,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [10, 11, 12, 13, 14, 15]
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_tkdw1"]
@@ -300,7 +300,7 @@ advance_expression = "get_parent().state_machine.current_state == get_parent().s
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6x3qt"]
 states/Start/position = Vector2(255, 141)
 states/on_attack/node = SubResource("AnimationNodeAnimation_467lh")
-states/on_attack/position = Vector2(630, 230)
+states/on_attack/position = Vector2(630.5, 286)
 states/on_chase/node = SubResource("AnimationNodeAnimation_uejeg")
 states/on_chase/position = Vector2(630, -16)
 states/on_comeback/node = SubResource("AnimationNodeAnimation_j5kbv")
@@ -312,7 +312,7 @@ states/on_idle/position = Vector2(454, -16)
 states/on_patrol/node = SubResource("AnimationNodeAnimation_k8uwv")
 states/on_patrol/position = Vector2(454, 141)
 transitions = ["Start", "on_patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "on_patrol", "on_idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "on_idle", "on_patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "on_idle", "on_chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "on_patrol", "on_chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "on_chase", "on_attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "on_chase", "on_idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "on_attack", "on_chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "on_chase", "on_patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "on_patrol", "on_die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "on_idle", "on_die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "on_chase", "on_die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "on_attack", "on_die", SubResource("AnimationNodeStateMachineTransition_q3eem"), "on_chase", "on_comeback", SubResource("AnimationNodeStateMachineTransition_tsj41"), "on_comeback", "on_idle", SubResource("AnimationNodeStateMachineTransition_5nxpp")]
-graph_offset = Vector2(-90.375, -193.206)
+graph_offset = Vector2(26.175, 23.934)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
 
