@@ -41,14 +41,14 @@ layer_0/tile_data = PackedInt32Array(196589, 196610, 4, 262125, 131074, 3, 32766
 [node name="room_content" parent="." instance=ExtResource("4_7fi40")]
 
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("5_1vtrd")]
-position = Vector2(696, 304)
+position = Vector2(704, 304)
 collider_size = Vector2i(4, 5)
 
 [node name="savepoint_area" parent="room_content" instance=ExtResource("6_rsl6g")]
 position = Vector2(88, 128)
 
 [node name="torch" parent="room_content" instance=ExtResource("7_m4ll1")]
-position = Vector2(-88, 64)
+position = Vector2(-128, 64)
 
 [node name="torch3" parent="room_content" instance=ExtResource("7_m4ll1")]
 position = Vector2(-128, 320)
