@@ -21,6 +21,7 @@ func menu_listener_on_options_pressed() -> void:
 func menu_listener_on_game_menu_pressed() -> void:
 	if options_instance: options_instance.queue_free()
 	options_instance = null
+	get_tree().paused = false # esto es porque si no el _open detecta el pause y no abre, para evitar mapa y menu simultaneamente
 	_open()
 
 func hud_listener_on_level_finished() -> void:
