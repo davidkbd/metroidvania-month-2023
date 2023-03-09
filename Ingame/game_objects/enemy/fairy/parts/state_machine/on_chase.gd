@@ -1,16 +1,13 @@
 extends StateMachineState
 
 @export var chase_distance   : float = 200.0
-#@export var min_attack_delay : float = 2.0
-#@export var max_attack_delay : float = 5.0
 
-#var attack_delay_time : float
 var navigation_finished : bool
 
 func enter() -> void:
-	host.animation_playblack.travel(name)
-#	_calc_attack_delay_time()
-	_choose_destination()
+	if host.player:
+		host.animation_playblack.travel(name)
+		_choose_destination()
 
 func exit() -> void:
 	pass
@@ -21,11 +18,8 @@ func step(_delta : float) -> StateMachineState:
 	_movement(_delta)
 	host.move_and_slide()
 	
-#	attack_delay_time -= _delta
-
 	if host.life <= 0: return state_machine.on_die
 	if navigation_finished: return state_machine.on_attack
-#	if attack_delay_time < .0: return state_machine.on_attack
 	return self
 
 func _movement(_delta : float):
@@ -35,19 +29,19 @@ func _movement(_delta : float):
 	host.velocity = lerp(host.velocity, direction * host.specs.speed, _delta)
 
 func _choose_destination() -> void:
+	var angle = randf_range(-PI, PI)
 	var destination = host.player.global_position
-	destination.x += cos(randf_range(-PI, PI)) * chase_distance
-	destination.y += sin(randf_range(-PI, PI)) * chase_distance
+	destination.x += cos(angle) * chase_distance
+	destination.y += sin(angle) * chase_distance
 	host.navigation_agent.target_position = destination
 	navigation_finished = false
+	if not host.navigation_agent.is_target_reachable():
+		_choose_destination()
 
 func _on_velocity_computed(_safe_velocity: Vector2) -> void:
-#	host.global_position += _safe_velocity
-	host.velocity = _safe_velocity
-	print("VELOCITY COMPUTED ", _safe_velocity)
+	pass
 
 func _on_path_changed() -> void:
-#	print("ON_PATH_CHANGED: ", host.navigation_agent.get_current_navigation_path())
 	pass
 
 func _on_target_reached() -> void:

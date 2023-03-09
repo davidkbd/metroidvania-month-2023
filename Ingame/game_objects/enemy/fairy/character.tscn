@@ -348,7 +348,8 @@ script = ExtResource("7_jpvdm")
 script = ExtResource("8_htgti")
 
 [node name="navigation_agent" type="NavigationAgent2D" parent="."]
-path_desired_distance = 4.0
+path_desired_distance = 32.0
+path_max_distance = 20.0
 debug_enabled = true
 
 [node name="sprite" type="Sprite2D" parent="."]
