@@ -1,12 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cakesqjbmp7uw"]
+[gd_scene load_steps=12 format=3 uid="uid://cakesqjbmp7uw"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_01/character.gd" id="1_n3opr"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_01/parts/state_machine/state_machine.gd" id="2_rc5fo"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_01/parts/state_machine/on_idle.gd" id="3_813kx"]
 [ext_resource type="Texture2D" uid="uid://c8ykt1ddaygkm" path="res://Ingame/game_objects/npc/slime_01/sprites/character.png" id="4_ylxyt"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8pc5s"]
-radius = 12.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kxqh1"]
 animation = &"asd"
@@ -81,17 +76,9 @@ _data = {
 "talking": SubResource("Animation_n3n6c")
 }
 
-[node name="character" type="CharacterBody2D"]
+[node name="character" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_n3opr")
-
-[node name="state_machine" type="Node" parent="."]
-script = ExtResource("2_rc5fo")
-on_idle_state = NodePath("on_idle")
-initial_state = NodePath("on_idle")
-
-[node name="on_idle" type="Node" parent="state_machine"]
-script = ExtResource("3_813kx")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-56, -70)
@@ -100,11 +87,6 @@ texture = ExtResource("4_ylxyt")
 centered = false
 hframes = 11
 vframes = 14
-
-[node name="BodyCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
-shape = SubResource("CircleShape2D_8pc5s")
-disabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_a37ib")

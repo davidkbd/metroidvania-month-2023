@@ -33,7 +33,7 @@ func show_talk_letter() -> void:
 	talk_letter_label_instance.global_position = global_position + talk_letter_label_offset
 
 func hide_talk_letter() -> void:
-	help_tips.hide_pad()
+	help_tips.hide_control()
 	if is_instance_valid(talk_letter_label_instance): talk_letter_label_instance.queue_free()
 
 func _instance_area() -> void:

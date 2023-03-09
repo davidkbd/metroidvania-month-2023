@@ -1,4 +1,4 @@
-extends CharacterAlive
+extends NPC
 
 var value : int = 0
 

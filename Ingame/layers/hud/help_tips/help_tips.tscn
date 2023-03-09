@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://bl3dnxdp2mlac"]
 
 [ext_resource type="Script" path="res://Ingame/layers/hud/help_tips/help_tips.gd" id="1_ovly0"]
 [ext_resource type="Texture2D" uid="uid://df0nori5j7y4k" path="res://UI/sprites/control-pad.png" id="2_pxhih"]
