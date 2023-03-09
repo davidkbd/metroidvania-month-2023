@@ -8,6 +8,9 @@
 script = ExtResource("1_hs7yi")
 rat_health_template = ExtResource("2_80f6v")
 
+[node name="rat_output_position" type="Marker2D" parent="."]
+position = Vector2(0, -24)
+
 [node name="base_rat_home_destroyable_object" parent="." instance=ExtResource("3_fbnak")]
 
 [connection signal="destroyed" from="base_rat_home_destroyable_object" to="." method="_on_base_rat_home_destroyable_object_destroyed"]
