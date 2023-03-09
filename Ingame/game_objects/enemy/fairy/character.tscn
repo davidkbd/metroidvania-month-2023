@@ -226,7 +226,7 @@ position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_o5kqg")
 
 [node name="projectile_output_position" type="Marker2D" parent="."]
-position = Vector2(-10, -16)
+position = Vector2(-10, -20)
 
 [node name="PlayerSensor" type="Area2D" parent="."]
 collision_layer = 9
@@ -243,6 +243,7 @@ collision_layer = 8
 collision_mask = 0
 monitoring = false
 script = ExtResource("14_607np")
+enable_invulnerability = false
 
 [node name="body_collider" type="CollisionShape2D" parent="body_area"]
 position = Vector2(0, -17)
