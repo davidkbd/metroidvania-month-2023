@@ -4,11 +4,13 @@ extends Node2D
 class_name NpcSpawner
 
 enum NpcType {
-	MAGE
+	SLIME_01,
+	SLIME_02,
+	SLIME_03
 }
 
 @export var storeable  : bool = true
-@export var npc_type : NpcType = NpcType.MAGE :
+@export var npc_type : NpcType = NpcType.SLIME_01 :
 	get: return npc_type
 	set(value):
 		if value == npc_type: return
@@ -20,6 +22,14 @@ const PACKEDSCENES_PATH := "res://Ingame/game_objects/npc/%s/character.tscn"
 const NPC_DATA := [
 	{
 		"id": "slime_01"
+#		"storeable": true
+	},
+	{
+		"id": "slime_02"
+#		"storeable": true
+	},
+	{
+		"id": "slime_03"
 #		"storeable": true
 	}
 ]

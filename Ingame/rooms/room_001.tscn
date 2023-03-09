@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_m2y6s"]
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="6_mx5ml"]
 [ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="6_r4jcw"]
-[ext_resource type="PackedScene" uid="uid://cshwlyorvtvl5" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_tvbbv"]
+[ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="6_tvbbv"]
 [ext_resource type="Texture2D" uid="uid://by88n8j30vwk1" path="res://Ingame/level-sprites/destroyable_wall_sprite.png" id="8_oidpe"]
 [ext_resource type="PackedScene" uid="uid://cc3xlv2ppyil" path="res://Ingame/game_objects/control_tip_area/control_tip_area.tscn" id="9_nr8k4"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="11_nuhjb"]

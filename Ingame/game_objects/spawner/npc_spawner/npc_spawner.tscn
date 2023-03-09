@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3m0r2duc0f8k"]
+[gd_scene load_steps=3 format=3 uid="uid://d3m0r2duc0f8k"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.gd" id="1_y8ucm"]
+[ext_resource type="Texture2D" uid="uid://cw4fvakxlxoe7" path="res://Ingame/game_objects/npc/slime_01/sprites/spawner_sprite.png" id="2_ew1s6"]
 
 [node name="npc_spawner" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_y8ucm")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(-40, -110)
+position = Vector2(-40, -64)
+texture = ExtResource("2_ew1s6")
 centered = false
