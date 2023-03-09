@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_die.gd" id="8_htgti"]
 [ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="9_q6t6u"]
 [ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_t325o"]
-[ext_resource type="Texture2D" uid="uid://brhjv6tu1mkv7" path="res://Ingame/game_objects/enemy/gremlin/sprites/character.png" id="11_2lvjc"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/enemy_sprite/enemy_sprite.gd" id="12_q6xj6"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/player_sensor/player_sensor.gd" id="13_ar4d2"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/damage_area/damage_area.gd" id="14_607np"]
@@ -21,6 +20,9 @@ shader_parameter/dissolve_value = 1.0
 shader_parameter/animation_columns = 6
 shader_parameter/animation_rows = 3
 shader_parameter/dissolve_texture = ExtResource("10_t325o")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_68kjt"]
+load_path = "res://.godot/imported/character.png-858dc316f5943e6dca3823df28b99e8f.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
 radius = 20.0
@@ -247,22 +249,22 @@ _data = {
 "patrol": SubResource("Animation_tkdw1")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6kqv2"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wq2e2"]
 animation = &"attack"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i2ufr"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uqjqo"]
 animation = &"chase"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yltc1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_smxtd"]
 animation = &"patrol"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uxrnv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vtkdt"]
 animation = &"die"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s0mlb"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k5e75"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c26op"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ptmw4"]
 animation = &"patrol"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hx8j"]
@@ -298,19 +300,19 @@ advance_expression = "get_parent().state_machine.current_state == get_parent().s
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5nxpp"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i8lyk"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_itqge"]
 states/Start/position = Vector2(255, 141)
-states/on_attack/node = SubResource("AnimationNodeAnimation_6kqv2")
+states/on_attack/node = SubResource("AnimationNodeAnimation_wq2e2")
 states/on_attack/position = Vector2(630, 230)
-states/on_chase/node = SubResource("AnimationNodeAnimation_i2ufr")
+states/on_chase/node = SubResource("AnimationNodeAnimation_uqjqo")
 states/on_chase/position = Vector2(630, -16)
-states/on_comeback/node = SubResource("AnimationNodeAnimation_yltc1")
+states/on_comeback/node = SubResource("AnimationNodeAnimation_smxtd")
 states/on_comeback/position = Vector2(454, -126.525)
-states/on_die/node = SubResource("AnimationNodeAnimation_uxrnv")
+states/on_die/node = SubResource("AnimationNodeAnimation_vtkdt")
 states/on_die/position = Vector2(797.16, 141)
-states/on_idle/node = SubResource("AnimationNodeAnimation_s0mlb")
+states/on_idle/node = SubResource("AnimationNodeAnimation_k5e75")
 states/on_idle/position = Vector2(454, -16)
-states/on_patrol/node = SubResource("AnimationNodeAnimation_c26op")
+states/on_patrol/node = SubResource("AnimationNodeAnimation_ptmw4")
 states/on_patrol/position = Vector2(454, 141)
 transitions = ["Start", "on_patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "on_patrol", "on_idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "on_idle", "on_patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "on_idle", "on_chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "on_patrol", "on_chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "on_chase", "on_attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "on_chase", "on_idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "on_attack", "on_chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "on_chase", "on_patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "on_patrol", "on_die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "on_idle", "on_die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "on_chase", "on_die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "on_attack", "on_die", SubResource("AnimationNodeStateMachineTransition_q3eem"), "on_chase", "on_comeback", SubResource("AnimationNodeStateMachineTransition_tsj41"), "on_comeback", "on_idle", SubResource("AnimationNodeStateMachineTransition_5nxpp")]
 graph_offset = Vector2(42.825, 13.0968)
@@ -360,7 +362,7 @@ one_shot = true
 texture_filter = 1
 material = SubResource("ShaderMaterial_i0l2x")
 position = Vector2(-64, -80)
-texture = ExtResource("11_2lvjc")
+texture = SubResource("CompressedTexture2D_68kjt")
 centered = false
 hframes = 15
 vframes = 4
@@ -480,7 +482,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_i8lyk")
+tree_root = SubResource("AnimationNodeStateMachine_itqge")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
