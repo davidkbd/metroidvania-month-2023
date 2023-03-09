@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://bikcvbeqp8uja"]
+[gd_scene load_steps=15 format=3 uid="uid://cakesqjbmp7uw"]
 
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/character.gd" id="1_rf4bo"]
-[ext_resource type="Texture2D" uid="uid://cdbmmkrhnoa7n" path="res://Ingame/game_objects/npc/mage/sprites/character.png" id="2_8vnf1"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/parts/state_machine/state_machine.gd" id="2_448ke"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/mage/parts/state_machine/on_idle.gd" id="3_1guig"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_01/character.gd" id="1_n3opr"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_01/parts/state_machine/state_machine.gd" id="2_rc5fo"]
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_01/parts/state_machine/on_idle.gd" id="3_813kx"]
+[ext_resource type="Texture2D" uid="uid://c8ykt1ddaygkm" path="res://Ingame/game_objects/npc/slime_01/sprites/character.png" id="4_ylxyt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgkmu"]
-radius = 24.0
-height = 80.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8pc5s"]
+radius = 12.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kxqh1"]
 animation = &"asd"
@@ -42,12 +41,9 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_n3n6c"]
-resource_name = "asd"
-
 [sub_resource type="Animation" id="Animation_5np5v"]
 resource_name = "idle"
-length = 0.5
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -56,41 +52,59 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 2, 3, 4, 5]
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_n3n6c"]
+resource_name = "talking"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohchq"]
 _data = {
 "RESET": SubResource("Animation_yha46"),
-"asd": SubResource("Animation_n3n6c"),
-"idle": SubResource("Animation_5np5v")
+"idle": SubResource("Animation_5np5v"),
+"talking": SubResource("Animation_n3n6c")
 }
 
 [node name="character" type="CharacterBody2D"]
 texture_filter = 1
-script = ExtResource("1_rf4bo")
+script = ExtResource("1_n3opr")
 
 [node name="state_machine" type="Node" parent="."]
-script = ExtResource("2_448ke")
+script = ExtResource("2_rc5fo")
 on_idle_state = NodePath("on_idle")
 initial_state = NodePath("on_idle")
 
 [node name="on_idle" type="Node" parent="state_machine"]
-script = ExtResource("3_1guig")
+script = ExtResource("3_813kx")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(-96, -110)
-texture = ExtResource("2_8vnf1")
+position = Vector2(-56, -70)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ylxyt")
 centered = false
-hframes = 7
-vframes = 2
+hframes = 11
+vframes = 14
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, -40)
-shape = SubResource("CapsuleShape2D_pgkmu")
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_8pc5s")
+disabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_a37ib")

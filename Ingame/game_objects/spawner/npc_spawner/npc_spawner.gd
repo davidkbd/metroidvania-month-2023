@@ -19,7 +19,7 @@ const SPRITES_PATH      := "res://Ingame/game_objects/npc/%s/sprites/spawner_spr
 const PACKEDSCENES_PATH := "res://Ingame/game_objects/npc/%s/character.tscn"
 const NPC_DATA := [
 	{
-		"id": "mage"
+		"id": "slime_01"
 #		"storeable": true
 	}
 ]

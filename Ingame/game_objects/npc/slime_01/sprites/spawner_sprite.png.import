@@ -2,23 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://degb8ht2g4ua0"
-path="res://.godot/imported/spawner_sprite.png-876f56aa71f9b474490e5ea384a4dbb9.ctex"
+uid="uid://cw4fvakxlxoe7"
+path="res://.godot/imported/spawner_sprite.png-d0f51e4b9eb3f08c7a3a250c4532b695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/game_objects/npc/mage/sprites/spawner_sprite.png"
-dest_files=["res://.godot/imported/spawner_sprite.png-876f56aa71f9b474490e5ea384a4dbb9.ctex"]
+source_file="res://Ingame/game_objects/npc/slime_01/sprites/spawner_sprite.png"
+dest_files=["res://.godot/imported/spawner_sprite.png-d0f51e4b9eb3f08c7a3a250c4532b695.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
