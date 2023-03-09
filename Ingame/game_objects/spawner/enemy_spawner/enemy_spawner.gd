@@ -71,6 +71,9 @@ func deactivate() -> void:
 		elif instance.life <= 0:
 			instance_data.reborn_timestamp = Time.get_unix_time_from_system() + reborn_delay_seconds
 		instance.queue_free()
+	for child in get_children():
+		if child is EnemyProjectile and is_instance_valid(child):
+			child.queue_free()
 
 func get_state() -> Dictionary:
 	return instance_data
