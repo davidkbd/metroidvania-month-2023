@@ -5,6 +5,7 @@
 
 [node name="enemy_spawner" type="Node2D" groups=["PLAYER_LISTENER"]]
 texture_filter = 1
+position = Vector2(0, 4)
 script = ExtResource("1_u1ik3")
 
 [node name="sprite" type="Sprite2D" parent="."]
