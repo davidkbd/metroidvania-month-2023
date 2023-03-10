@@ -374,7 +374,7 @@ one_shot = true
 [node name="sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_i0l2x")
-position = Vector2(-64, -80)
+position = Vector2(-64, -79)
 texture = SubResource("CompressedTexture2D_68kjt")
 centered = false
 hframes = 15
