@@ -1,13 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjk42lw5hm8o6"]
+[gd_scene load_steps=12 format=3 uid="uid://cjk42lw5hm8o6"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_5hd50"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ercv2"]
 [ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_n4w7h"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_1m0xs"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_hgqey"]
+[ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="6_vatfx"]
+[ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/level-sprites/destroyable_wall_particle.png" id="7_tusb6"]
+[ext_resource type="Texture2D" uid="uid://3ycogsjr0t8s" path="res://Ingame/level-sprites/room013_destroyable_wall.png" id="8_ss0sn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 888)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4jlv"]
+size = Vector2(8, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rgvl"]
+size = Vector2(32, 128)
 
 [node name="room_013" type="Node2D"]
 script = ExtResource("1_5hd50")
@@ -17,7 +26,7 @@ battle_ost_item = 2
 [node name="room_area" parent="." instance=ExtResource("2_ercv2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(0, 36)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
@@ -39,3 +48,46 @@ collider_size = Vector2i(4, 6)
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("5_hgqey")]
 position = Vector2(-704, -256)
 direction = 3
+
+[node name="destroyable_object" parent="room_content" instance=ExtResource("6_vatfx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object"]
+position = Vector2(-608, -256)
+shape = SubResource("RectangleShape2D_h4jlv")
+
+[node name="particles" type="CPUParticles2D" parent="room_content/destroyable_object"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+position = Vector2(-608, -256)
+emitting = false
+amount = 24
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+texture = ExtResource("7_tusb6")
+emission_shape = 3
+emission_rect_extents = Vector2(16, 128)
+direction = Vector2(0.75, -0.25)
+spread = 50.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 30.0
+initial_velocity_max = 130.0
+angular_velocity_min = -305.0
+angular_velocity_max = 255.0
+linear_accel_min = -31.02
+linear_accel_max = 57.17
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+
+[node name="target" type="StaticBody2D" parent="room_content/destroyable_object"]
+position = Vector2(1328, 96)
+
+[node name="sprite" type="Sprite2D" parent="room_content/destroyable_object/target"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-2000, -96)
+texture = ExtResource("8_ss0sn")
+region_rect = Rect2(0, 0, 32, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object/target"]
+position = Vector2(-1952, -352)
+shape = SubResource("RectangleShape2D_6rgvl")

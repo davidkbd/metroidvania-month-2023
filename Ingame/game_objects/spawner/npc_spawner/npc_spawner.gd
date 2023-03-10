@@ -6,7 +6,8 @@ class_name NpcSpawner
 enum NpcType {
 	SLIME_01,
 	SLIME_02,
-	SLIME_03
+	SLIME_03,
+	SLIME_04
 }
 
 @export var storeable  : bool = true
@@ -31,7 +32,12 @@ const NPC_DATA := [
 	{
 		"id": "slime_03"
 #		"storeable": true
+	},
+	{
+		"id": "slime_04"
+#		"storeable": true
 	}
+	
 ]
 
 var instance_data : Dictionary = {

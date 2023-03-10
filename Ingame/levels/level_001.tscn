@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dqvs4h4pm2ru7"]
+[gd_scene load_steps=48 format=3 uid="uid://dqvs4h4pm2ru7"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/level.gd" id="1_c54te"]
 [ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="2_vpw7i"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://cujcjbladjywn" path="res://Ingame/rooms/room_016_tunnel.tscn" id="30_o7mk3"]
 [ext_resource type="PackedScene" uid="uid://calchuynwmm1i" path="res://Ingame/rooms/room_017.tscn" id="31_2go6e"]
 [ext_resource type="PackedScene" uid="uid://c15gnao1bqafu" path="res://Ingame/rooms/room_018.tscn" id="32_assd5"]
+[ext_resource type="PackedScene" uid="uid://dnhai84wfgtrc" path="res://Ingame/rooms/room_013_secret.tscn" id="33_6nqs7"]
 [ext_resource type="PackedScene" uid="uid://coewdtrff1jxy" path="res://Ingame/rooms/room_019.tscn" id="35_n8v53"]
 [ext_resource type="PackedScene" uid="uid://b7xwlutiauugu" path="res://Ingame/rooms/room_020.tscn" id="36_i8745"]
 [ext_resource type="PackedScene" uid="uid://c7vfkeqp830lf" path="res://Ingame/rooms/room_021.tscn" id="37_82fqi"]
@@ -327,6 +328,9 @@ position = Vector2(17664, -7304)
 
 [node name="room_013" parent="." instance=ExtResource("26_mqqgf")]
 position = Vector2(12032, -6912)
+
+[node name="room_013_secret" parent="." instance=ExtResource("33_6nqs7")]
+position = Vector2(10624, -6912)
 
 [node name="room_014" parent="." instance=ExtResource("27_dx7ie")]
 position = Vector2(16608, -8704)
