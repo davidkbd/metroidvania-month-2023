@@ -7,6 +7,7 @@ enum OstItem {
 	FIRST_ROOM_BATTLE,
 	LONELY,
 	SAVEPOINT,
+	SEWERS
 }
 
 @export_range(.1, 10.0) var fade_time : float = 1.0
@@ -49,6 +50,7 @@ func _find_audio_stream_player(_ost_item : OstItem) -> AudioStreamPlayer:
 		OstItem.FIRST_ROOM_BATTLE: return $first_room_battle
 		OstItem.LONELY:            return $lonely
 		OstItem.SAVEPOINT:         return $savepoint
+		OstItem.SEWERS:            return $sewers
 	return null
 
 func _play(_music : AudioStreamPlayer) -> void:
