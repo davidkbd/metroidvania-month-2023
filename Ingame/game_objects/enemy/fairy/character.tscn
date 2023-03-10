@@ -243,7 +243,6 @@ collision_layer = 8
 collision_mask = 0
 monitoring = false
 script = ExtResource("14_607np")
-enable_invulnerability = false
 
 [node name="body_collider" type="CollisionShape2D" parent="body_area"]
 position = Vector2(0, -17)

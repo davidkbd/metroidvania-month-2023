@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/player/parts/room_area_sensor/room_area_sensor.tscn" id="12_vty2u"]
 [ext_resource type="Texture2D" uid="uid://cgfj5jge5ikem" path="res://Ingame/game_objects/player/sprites/player.png" id="13_vjjdm"]
 [ext_resource type="PackedScene" uid="uid://n1gl7gekmp5d" path="res://Ingame/game_objects/player/parts/savepoint_sensor/savepoint_sensor.tscn" id="14_3x4jn"]
-[ext_resource type="PackedScene" uid="uid://cx066at1a4v8i" path="res://Ingame/game_objects/player/parts/npc_sensor/npc_sensor.tscn" id="14_omfj5"]
+[ext_resource type="PackedScene" uid="uid://dtlcwyr4vumah" path="res://Ingame/game_objects/player/parts/npc_sensor/npc_sensor.tscn" id="14_omfj5"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_died.gd" id="14_r8c4a"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_air_dash.gd" id="15_nxfi3"]
 [ext_resource type="Shader" path="res://Ingame/shaders/player_shader.gdshader" id="15_unq2k"]

@@ -144,6 +144,7 @@ A={
 2d_physics/layer_9="item"
 2d_physics/layer_10="player_restart_point"
 2d_physics/layer_11="floor_and_enemy"
+2d_physics/layer_14="enemy_player_ignore_invulnerability"
 2d_physics/layer_15="destroyable"
 
 [physics]
