@@ -8,7 +8,6 @@ const PATH = "map-%s%s.png"
 
 var map_state : Dictionary
 
-
 func initialize_map_state(_map_state : Dictionary) -> void:
 	map_state = _map_state
 

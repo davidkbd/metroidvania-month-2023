@@ -14,10 +14,12 @@ func enter() -> void:
 	host.talking_npc.hide_talk_letter()
 	host.superattack_manager.reset_charge()
 	_pass_text()
+	get_tree().call_group("PLAYER_LISTENER", "player_listener_on_talk_started")
 
 func exit() -> void:
 	dialog_textboxses.stop()
 	host.talking_npc = null
+	get_tree().call_group("PLAYER_LISTENER", "player_listener_on_talk_finished")
 
 func step(delta : float) -> StateMachineState:
 	if not is_instance_valid(host.talking_npc): return state_machine.on_ground

@@ -6,10 +6,25 @@ extends Control
 var main_game_instance : Control
 var options_instance : Control
 
+var prevent_opening : bool
+
+func player_listener_on_map_opened() -> void:
+	prevent_opening = true
+
+func player_listener_on_map_closed() -> void:
+	prevent_opening = false
+
+func player_listener_on_talk_started() -> void:
+	prevent_opening = true
+
+func player_listener_on_talk_finished() -> void:
+	prevent_opening = false
+
 func menu_listener_on_continue_pressed() -> void:
 	AudioServer.set_bus_effect_enabled(2, 1, false)
 	visible = false
 	get_tree().paused = false
+	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_menu_closed")
 
 func menu_listener_on_options_pressed() -> void:
 	if main_game_instance: main_game_instance.queue_free()
@@ -21,7 +36,6 @@ func menu_listener_on_options_pressed() -> void:
 func menu_listener_on_game_menu_pressed() -> void:
 	if options_instance: options_instance.queue_free()
 	options_instance = null
-	get_tree().paused = false # esto es porque si no el _open detecta el pause y no abre, para evitar mapa y menu simultaneamente
 	_open()
 
 func hud_listener_on_level_finished() -> void:
@@ -29,13 +43,14 @@ func hud_listener_on_level_finished() -> void:
 	queue_free()
 
 func _open() -> void:
-	if get_tree().paused: return
+	if prevent_opening: return
 	visible = true
 	get_tree().paused = true
 	if main_game_instance: main_game_instance.queue_free()
 	main_game_instance = main_game_template.instantiate()
 	add_child(main_game_instance)
 	AudioServer.set_bus_effect_enabled(2, 1, true)
+	get_tree().call_group("MENU_LISTENER", "menu_listener_on_game_menu_opened")
 
 func _process(_delta : float):
 	if visible: return

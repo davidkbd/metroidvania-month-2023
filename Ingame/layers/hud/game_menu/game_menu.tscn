@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cf04maky452na" path="res://Menu/options_menu/options_menu.tscn" id="2_bs0pm"]
 [ext_resource type="PackedScene" uid="uid://f4v7abodr3s0" path="res://Ingame/layers/hud/game_menu/main_game_menu/main_game_menu.tscn" id="2_ddse3"]
 
-[node name="game_menu" type="Control" groups=["HUD_LISTENER", "MENU_LISTENER"]]
+[node name="game_menu" type="Control" groups=["HUD_LISTENER", "MENU_LISTENER", "PLAYER_LISTENER"]]
 process_mode = 3
 texture_filter = 1
 layout_mode = 3
