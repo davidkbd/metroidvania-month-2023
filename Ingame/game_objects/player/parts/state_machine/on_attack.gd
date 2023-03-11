@@ -35,6 +35,7 @@ func step(delta : float) -> StateMachineState:
 	attack_time -= delta
 
 	if host.deatharea_entered: return state_machine.on_deatharea_entered
+	if host.damager.size(): return state_machine.on_damaged
 	if not state_machine.previous_state.is_an_on_air_state() and ControlInput.is_jump_just_pressed(): return state_machine.on_jump
 	if host.hitted_enemy and is_instance_valid(host.hitted_enemy): return state_machine.on_ground
 	if attack_time < .0:
