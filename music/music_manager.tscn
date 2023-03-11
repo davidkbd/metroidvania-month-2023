@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw8m4x870p81y"]
+[gd_scene load_steps=9 format=3 uid="uid://bw8m4x870p81y"]
 
 [ext_resource type="Script" path="res://music/music_manager.gd" id="1_vs7ks"]
 [ext_resource type="AudioStream" uid="uid://suuvcrso0qoa" path="res://music/music01.ogg" id="2_we8vj"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://baph15frdob5d" path="res://music/first-room-battle.ogg" id="4_tbyuq"]
 [ext_resource type="AudioStream" uid="uid://uo4whbohrbna" path="res://music/savepoint-room.ogg" id="6_cickf"]
 [ext_resource type="AudioStream" uid="uid://cskj6tg6t2kv7" path="res://music/sewers.ogg" id="7_27ps2"]
+[ext_resource type="AudioStream" uid="uid://catvrxbq3wuhm" path="res://music/sewers-battle.ogg" id="8_8dqca"]
 
 [node name="music_manager" type="Node" groups=["HUD_LISTENER", "MENU_LISTENER", "ROOM_LISTENER"]]
 script = ExtResource("1_vs7ks")
@@ -40,5 +41,5 @@ stream = ExtResource("7_27ps2")
 bus = &"music"
 
 [node name="sewers_battle" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_27ps2")
+stream = ExtResource("8_8dqca")
 bus = &"music"
