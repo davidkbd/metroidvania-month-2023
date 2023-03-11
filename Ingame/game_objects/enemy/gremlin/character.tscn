@@ -382,6 +382,7 @@ texture = SubResource("CompressedTexture2D_68kjt")
 centered = false
 hframes = 15
 vframes = 4
+frame = 45
 script = ExtResource("12_q6xj6")
 
 [node name="Center" type="Node2D" parent="."]
@@ -505,6 +506,7 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_itqge")
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
 [connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]
