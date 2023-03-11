@@ -16,13 +16,16 @@ func enter() -> void:
 		host.eating_enemy.eat_health()
 
 func exit() -> void:
-	if eat_success:
-		host.life.increment_value(1.0)
+#	if eat_success:
+#		host.life.increment_value(1.0)
+	pass
 
 func step(delta : float) -> StateMachineState:
 	if not is_instance_valid(eating_enemy): return state_machine.on_ground
 
 	eat_time -= delta
+	
+	host.life.increment_value(delta)
 	
 	if eat_time < .0:
 		eat_success = true
