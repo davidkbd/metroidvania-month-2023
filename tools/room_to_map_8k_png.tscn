@@ -55,13 +55,11 @@ func _ready():
 [sub_resource type="Environment" id="Environment_mp5yv"]
 background_mode = 3
 background_canvas_max_layer = 10
-glow_enabled = true
 glow_intensity = 3.5
 glow_strength = 0.49
 glow_bloom = 0.68
 glow_blend_mode = 0
 fog_light_energy = 2.82
-adjustment_enabled = true
 adjustment_brightness = 0.6
 adjustment_contrast = 1.23
 
