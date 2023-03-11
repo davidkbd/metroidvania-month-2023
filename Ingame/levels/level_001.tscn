@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dqvs4h4pm2ru7"]
+[gd_scene load_steps=48 format=3 uid="uid://dd5n68mfc1aqs"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/level.gd" id="1_c54te"]
 [ext_resource type="PackedScene" uid="uid://diqjdxqle3ann" path="res://Ingame/game_objects/room/parallax/parallax_layer.tscn" id="2_vpw7i"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="5_r0vl8"]
 [ext_resource type="Texture2D" uid="uid://cc6x8cf1uayv5" path="res://Ingame/level-sprites/foreground/room_002_foreground01.png" id="6_nhmka"]
 [ext_resource type="Texture2D" uid="uid://crib3j3pscx1k" path="res://Ingame/level-sprites/background/room_002_paralax3.png" id="6_tbh3o"]
-[ext_resource type="PackedScene" uid="uid://g8e6tumw718r" path="res://Ingame/rooms/room_001_secret.tscn" id="6_tc7rs"]
 [ext_resource type="PackedScene" uid="uid://cbx4tsxjquwqb" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
 [ext_resource type="Texture2D" uid="uid://d301wgv3eb1hm" path="res://Ingame/level-sprites/background/room_002_paralax2.png" id="7_uxxmg"]
 [ext_resource type="Texture2D" uid="uid://cdjr5nuufsa0h" path="res://Ingame/level-sprites/background/room_002_paralax1.png" id="8_vw1a5"]
@@ -20,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b0vn0c2ckxsjs" path="res://Ingame/rooms/room_003.tscn" id="11_hgltt"]
 [ext_resource type="PackedScene" uid="uid://brjkpj6nrt24k" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
 [ext_resource type="PackedScene" uid="uid://dgdmijka5t3dd" path="res://Ingame/rooms/room_004.tscn" id="13_dsqei"]
+[ext_resource type="PackedScene" uid="uid://br12cm3tbsl0t" path="res://Ingame/rooms/room_001_combat.tscn" id="13_xr4d0"]
 [ext_resource type="PackedScene" uid="uid://bssipoexjcdj8" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_s8mat"]
 [ext_resource type="PackedScene" uid="uid://cwh0rcolcsywr" path="res://Ingame/rooms/room_006_tunnel.tscn" id="15_u1dht"]
 [ext_resource type="PackedScene" uid="uid://ch2d3q3r6wopq" path="res://Ingame/rooms/room_006.tscn" id="16_uxsce"]
@@ -265,9 +265,8 @@ parallax_name = "room_002"
 position = Vector2(4112, -728)
 texture = ExtResource("6_nhmka")
 
-[node name="room_001_secret" parent="." instance=ExtResource("6_tc7rs")]
-position = Vector2(0, 32)
-parallax_name = "first_room"
+[node name="room_001_combat" parent="." instance=ExtResource("13_xr4d0")]
+position = Vector2(-1112, -64)
 
 [node name="room_001" parent="." instance=ExtResource("5_olijw")]
 parallax_name = "first_room"
@@ -335,8 +334,6 @@ battle_ost_item = 6
 
 [node name="room_013_secret" parent="." instance=ExtResource("33_6nqs7")]
 position = Vector2(10624, -6912)
-ost_item = 5
-battle_ost_item = 6
 
 [node name="room_014" parent="." instance=ExtResource("27_dx7ie")]
 position = Vector2(16608, -8704)
