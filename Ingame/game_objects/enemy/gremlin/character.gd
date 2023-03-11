@@ -8,7 +8,6 @@ extends EnemyCharacterAlive
 @onready var explode_particles     : Array = [ $explode_color1, $explode_color2, $explode_color3 ]
 
 func set_walk_direction(_direction : float) -> void:
-	print(_direction, " ", state_machine.current_state)
 	walk_direction = _direction
 	sword_collider.position = Vector2.LEFT * (-40.0) * walk_direction
 	attack_foot_particles.position.x = 16.0 * walk_direction

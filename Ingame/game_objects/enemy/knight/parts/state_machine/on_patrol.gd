@@ -31,6 +31,7 @@ func _choose_direction():
 	host.set_walk_direction(-1.0 if randi()%2 == 0 else -1.0)
 
 func _can_walk() -> bool:
+	if not host.floor_sensor.is_colliding(): return false
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
 	var my_position = host.center.global_position
 	query.from = my_position

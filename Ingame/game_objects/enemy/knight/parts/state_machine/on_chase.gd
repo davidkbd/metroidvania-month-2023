@@ -18,7 +18,9 @@ func step(delta : float) -> StateMachineState:
 	return self
 
 func _movement():
-	if host.walk_direction:
+	if not host.floor_sensor.is_colliding():
+		host.velocity.x = .0
+	elif host.walk_direction:
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
 	else:
 		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
