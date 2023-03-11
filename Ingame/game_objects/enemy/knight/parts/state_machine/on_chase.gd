@@ -13,7 +13,7 @@ func step(delta : float) -> StateMachineState:
 	_movement()
 	host.fall(delta)
 	host.move_and_slide()
-	if host.player.global_position.distance_to(host.center.global_position) < host.specs.attack_distance: 
+	if host.player.global_position.distance_to(host.center.global_position) < state_machine.attack_data.distance: 
 		return state_machine.on_attack
 	return self
 

@@ -323,6 +323,11 @@ script = ExtResource("8_8jep2")
 [node name="IdlePatrolSwitchTimer" type="Timer" parent="state_machine"]
 one_shot = true
 
+[node name="AttackChooseTimer" type="Timer" parent="state_machine"]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
 [node name="sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-80, -126)
@@ -457,5 +462,6 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
 [connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]
+[connection signal="timeout" from="state_machine/AttackChooseTimer" to="state_machine" method="_on_attack_choose_timer_timeout"]
 [connection signal="body_entered" from="PlayerSensor" to="PlayerSensor" method="_on_body_entered" flags=18]
 [connection signal="body_exited" from="PlayerSensor" to="PlayerSensor" method="_on_body_exited" flags=18]
