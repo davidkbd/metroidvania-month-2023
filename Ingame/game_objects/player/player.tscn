@@ -405,7 +405,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [89, 88]
+"values": [90, 88]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -414,10 +414,10 @@ tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(16, 8), Vector2(32, 8), Vector2(40, 28), Vector2(16, 8)]
+"values": [Vector2(16, 8), Vector2(32, 8), Vector2(51, 28), Vector2(40, 28), Vector2(16, 8)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -426,10 +426,10 @@ tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1, 0.15),
+"times": PackedFloat32Array(0, 0.01, 0.05, 0.15),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-48, 0), Vector2(-28, -10), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(-48, 0), Vector2(-53.5, -9), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_l6mj0"]

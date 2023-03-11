@@ -132,3 +132,7 @@ element_type = 1
 
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
 position = Vector2(432, 320)
+
+[node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_m2y6s")]
+position = Vector2(-416, 256)
+direction = 3

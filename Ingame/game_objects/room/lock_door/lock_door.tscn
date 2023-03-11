@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqx4c4e158ajn"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/room/lock_door/lock_door.gd" id="1_30k6k"]
+[ext_resource type="Texture2D" uid="uid://ir6cddcmeq50" path="res://Ingame/game_objects/room/lock_door/sprites/door_up.png" id="1_jdmdw"]
+[ext_resource type="Texture2D" uid="uid://bsbuexnxiiqak" path="res://Ingame/game_objects/room/lock_door/sprites/door_down.png" id="2_g5u55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1icuw"]
+size = Vector2(128, 16)
+
+[node name="LockDoor" type="StaticBody2D" groups=["ROOM_LISTENER"]]
+z_index = -1
+texture_filter = 1
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_30k6k")
+
+[node name="Sprite2DTop" type="Sprite2D" parent="."]
+position = Vector2(-8, -198)
+texture = ExtResource("1_jdmdw")
+centered = false
+
+[node name="Sprite2DBot" type="Sprite2D" parent="."]
+position = Vector2(-8, 0)
+texture = ExtResource("2_g5u55")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_1icuw")
+one_way_collision = true

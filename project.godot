@@ -23,8 +23,8 @@ ControlInput="*res://Singletone/control_input.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=7680
+window/size/viewport_height=4320
 window/stretch/mode="viewport"
 
 [input]
@@ -144,6 +144,7 @@ A={
 2d_physics/layer_9="item"
 2d_physics/layer_10="player_restart_point"
 2d_physics/layer_11="floor_and_enemy"
+2d_physics/layer_12="lock_door"
 2d_physics/layer_14="enemy_player_ignore_invulnerability"
 2d_physics/layer_15="destroyable"
 

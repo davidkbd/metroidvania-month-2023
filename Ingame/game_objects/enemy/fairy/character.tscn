@@ -178,7 +178,7 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_6s1t7")
 projectile_template = ExtResource("2_ftaxs")
-max_life = 40.0
+max_life = 20.0
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("2_usxyx")
