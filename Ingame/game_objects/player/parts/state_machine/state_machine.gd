@@ -15,6 +15,7 @@ extends StateMachine
 @export var on_died_state              : NodePath
 @export var on_deatharea_entered_state : NodePath
 @export var on_talking_state           : NodePath
+@export var on_eating_state            : NodePath
 
 
 
@@ -33,3 +34,4 @@ extends StateMachine
 @onready var on_died              : StateMachineState = get_node(on_died_state)
 @onready var on_deatharea_entered : StateMachineState = get_node(on_deatharea_entered_state)
 @onready var on_talking           : StateMachineState = get_node(on_talking_state)
+@onready var on_eating            : StateMachineState = get_node(on_eating_state)

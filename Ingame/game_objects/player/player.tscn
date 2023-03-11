@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://d4g326fv20xk1"]
+[gd_scene load_steps=142 format=3 uid="uid://d4g326fv20xk1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cpejugcss86qx" path="res://Ingame/game_objects/player/sprites/player_bubbles.png" id="17_0r6jg"]
 [ext_resource type="AudioStream" uid="uid://l13snotni5q0" path="res://sfx/ingame_player_jump.wav" id="17_77pts"]
 [ext_resource type="PackedScene" uid="uid://d4idunmyyn4bf" path="res://Ingame/game_objects/player/parts/autoadvance_area_sensor/autoadvance_area_sensor.tscn" id="17_tbw11"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_eating.gd" id="18_mfmrr"]
 [ext_resource type="AudioStream" uid="uid://lqj0ldjflddh" path="res://sfx/ingame_player_damaged.wav" id="19_40l7c"]
 [ext_resource type="PackedScene" uid="uid://drs0m44israal" path="res://Ingame/game_objects/player/parts/superattack_manager/superattack_manager.tscn" id="19_dbpgt"]
 [ext_resource type="PackedScene" uid="uid://cpm8y1uompigj" path="res://Ingame/game_objects/player/parts/enemy_damage_area/enemy_damage_area.tscn" id="20_yqshm"]
@@ -927,6 +928,7 @@ on_damaged_state = NodePath("on_damaged")
 on_died_state = NodePath("on_died")
 on_deatharea_entered_state = NodePath("on_deatharea_entered")
 on_talking_state = NodePath("on_talking")
+on_eating_state = NodePath("on_eating")
 initial_state = NodePath("on_ground")
 
 [node name="on_autoadvancing" type="Node" parent="state_machine"]
@@ -974,6 +976,9 @@ script = ExtResource("15_ydl34")
 
 [node name="on_talking" type="Node" parent="state_machine"]
 script = ExtResource("12_olhsd")
+
+[node name="on_eating" type="Node" parent="state_machine"]
+script = ExtResource("18_mfmrr")
 
 [node name="life" parent="." instance=ExtResource("16_t3qh3")]
 

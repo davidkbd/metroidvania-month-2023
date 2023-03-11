@@ -25,6 +25,7 @@ func step(delta : float) -> StateMachineState:
 	if ControlInput.is_attack_just_pressed(): return state_machine.on_simple_attack
 	if host.skills.data.super_attack and host.superattack_manager.charged() and ControlInput.is_attack_just_released(): return state_machine.on_super_attack
 	if host.skills.data.snap_wall and ControlInput.is_dash_just_pressed(): return state_machine.on_dash
+	if host.eating_enemy and ControlInput.is_interact_just_pressed(): return state_machine.on_eating
 	if host.talking_npc and ControlInput.is_interact_just_pressed(): return state_machine.on_talking
 	if coyote_timer < .0: return state_machine.on_air
 	if host.damager.size(): return state_machine.on_damaged

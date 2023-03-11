@@ -8,22 +8,23 @@ class_name Player
 @export var check_attack_down_ray_position  : Vector2 = Vector2.UP * 16.0
 @export var check_attack_down_ray_vector    : Vector2 = Vector2.DOWN * 96.0
 
-@onready var life                 : PlayerLife        = $life
-@onready var skills               : PlayerSkills      = $skills
+@onready var life                 : PlayerLife               = $life
+@onready var skills               : PlayerSkills             = $skills
 @onready var superattack_manager  : PlayerSuperAttackManager = $superattack_manager
-@onready var body_collider        : CollisionShape2D  = $body_collider
-@onready var onwall_collider      : CollisionShape2D  = $onwall_collider
-@onready var ondash_collider      : CollisionShape2D  = $ondash_collider
-@onready var savepoint_sensor     : Area2D            = $savepoint_sensor
-@onready var jump_sfx             : AudioStreamPlayer = $jump_sfx
-@onready var damaged_sfx          : AudioStreamPlayer = $damaged_sfx
-@onready var hitenemy_sfx         : AudioStreamPlayer = $hitenemy_sfx
-@onready var restartpoint_sensor  : Area2D            = $restartpoint_area_sensor
+@onready var body_collider        : CollisionShape2D         = $body_collider
+@onready var onwall_collider      : CollisionShape2D         = $onwall_collider
+@onready var ondash_collider      : CollisionShape2D         = $ondash_collider
+@onready var savepoint_sensor     : Area2D                   = $savepoint_sensor
+@onready var jump_sfx             : AudioStreamPlayer        = $jump_sfx
+@onready var damaged_sfx          : AudioStreamPlayer        = $damaged_sfx
+@onready var hitenemy_sfx         : AudioStreamPlayer        = $hitenemy_sfx
+@onready var restartpoint_sensor  : Area2D                   = $restartpoint_area_sensor
 
 @onready var enemy_hit_area                : Area2D       = $enemy_hit_area
 @onready var enemy_damage_area             : Area2D       = $enemy_damage_area
 
 var talking_npc   : NPC = null
+var eating_enemy  : EnemyCharacterAlive = null
 
 var damager       : Dictionary = {}
 var hitted_enemy  : EnemyCharacterAlive = null

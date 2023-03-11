@@ -15,8 +15,7 @@ signal died
 
 var collision_areas : Array[Area2D] = []
 var walk_direction  : float
-
-var catched : bool
+var eat_health_area : Area2D
 
 func hit(_position : Vector2, _power : float) -> void:
 	velocity.x = (global_position.x - _position.x) * _power * .5
@@ -27,19 +26,27 @@ func hit(_position : Vector2, _power : float) -> void:
 		await create_tween().tween_interval(.2).finished
 		_enable_hit_collisions(true)
 
+func eat_health() -> void:
+	if eat_health_area and is_instance_valid(eat_health_area):
+		eat_health_area.queue_free()
+
 func set_died() -> void:
-	var area : Area2D = Area2D.new()
+	_create_interact_area()
+	set_collision_mask_value(11, true) # colision contra suelo activada
+	emit_signal("died")
+
+func _create_interact_area() -> void:
+	eat_health_area = Area2D.new()
 	var collision_shape : CollisionShape2D = CollisionShape2D.new()
-	area.add_child(collision_shape)
+	eat_health_area.add_child(collision_shape)
 	collision_shape.shape = CircleShape2D.new()
 	collision_shape.shape.radius = 24.0
-	area.monitoring = false
-	area.monitorable = true
-	area.collision_layer = 256
-	area.collision_mask = 0
-	area.position = Vector2.ZERO
-	add_child(area)
-	emit_signal("died")
+	eat_health_area.monitoring = false
+	eat_health_area.monitorable = true
+	eat_health_area.collision_layer = 32 # interact
+	eat_health_area.collision_mask = 0
+	eat_health_area.position = Vector2.ZERO
+	add_child(eat_health_area)
 
 func _enable_hit_collisions(_enabled : bool) -> void:
 	for collision in collision_areas:
@@ -47,10 +54,3 @@ func _enable_hit_collisions(_enabled : bool) -> void:
 
 func _enter_tree() -> void:
 	add_to_group("ENEMY")
-
-func catch() -> void:
-	catched = true
-	sprite.hide()
-	collision_layer = 0
-	collision_mask = 0
-	set_process(false)
