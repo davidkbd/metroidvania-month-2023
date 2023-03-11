@@ -2,10 +2,12 @@ extends StateMachineState
 
 var time : float
 
+var attack_deceleration : float
+
 func enter() -> void:
 	host.animation_playblack.start(name, true)
 	host.velocity = Vector2.ZERO
-	time = host.animation.get_animation("attack").length
+	_choose_attack()
 
 func exit() -> void:
 	host.sword_collider.disabled = true
@@ -22,4 +24,13 @@ func step(delta : float) -> StateMachineState:
 	return self
 
 func _brake() -> void:
-	host.velocity.x = move_toward(host.velocity.x, .0, host.specs.attack_deceleration)
+	host.velocity.x = move_toward(host.velocity.x, .0, attack_deceleration)
+
+func _choose_attack() -> void:
+	match randi_range(1, 2):
+		1:
+			attack_deceleration = host.specs.attack1_deceleration
+			time = host.animation.get_animation("attack").length
+		2:
+			attack_deceleration = host.specs.attack2_deceleration
+			time = host.animation.get_animation("attack").length
