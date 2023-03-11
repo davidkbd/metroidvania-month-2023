@@ -266,7 +266,7 @@ position = Vector2(4112, -728)
 texture = ExtResource("6_nhmka")
 
 [node name="room_001_combat" parent="." instance=ExtResource("13_xr4d0")]
-position = Vector2(-1112, -64)
+position = Vector2(-1064, -64)
 
 [node name="room_001" parent="." instance=ExtResource("5_olijw")]
 parallax_name = "first_room"
