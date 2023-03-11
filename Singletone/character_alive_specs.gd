@@ -65,7 +65,7 @@ static func get_fairy_specs() -> Dictionary:
 "deceleration":            50.0,
 "attack_deceleration":     15.0,
 "attack_impulse":          400.0,
-"attack_feedback_impulse": 30.0,
+"attack_feedback_impulse": 200.0,
 "attack_distance":         160.0,
 "gravity":                 ProjectSettings.get_setting("physics/2d/default_gravity"),
 "max_up_speed":            -10000.0,

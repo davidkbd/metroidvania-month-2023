@@ -24,7 +24,8 @@ func throw_projectile() -> void:
 	if player:
 		var diff = global_position - player.global_position
 		projectile_instance.rotation = diff.angle()
-		print("FALTA EL ATTACK IMPULSE DE FAIRY")
+		velocity.x = cos(diff.angle()) * specs.attack_feedback_impulse
+		velocity.y = sin(diff.angle()) * specs.attack_feedback_impulse
 
 func _ready() -> void:
 	collision_areas.append($body_area)

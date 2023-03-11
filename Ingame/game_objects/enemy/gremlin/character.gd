@@ -1,15 +1,18 @@
 extends EnemyCharacterAlive
 
 @onready var center                : Node2D = $Center
+@onready var floor_sensor          : RayCast2D = $floor_sensor
 @onready var animation             : AnimationPlayer  = $AnimationPlayer
 @onready var sword_collider        : CollisionShape2D = $sword_area/SwordCollider
 @onready var attack_foot_particles : CPUParticles2D   = $attack_foot_particles
 @onready var explode_particles     : Array = [ $explode_color1, $explode_color2, $explode_color3 ]
 
 func set_walk_direction(_direction : float) -> void:
+	print(_direction, " ", state_machine.current_state)
 	walk_direction = _direction
 	sword_collider.position = Vector2.LEFT * (-40.0) * walk_direction
 	attack_foot_particles.position.x = 16.0 * walk_direction
+	floor_sensor.position.x = 32.0 * walk_direction
 
 func attack_impulse(_impulse_count : int) -> void:
 	if player:
