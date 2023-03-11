@@ -35,6 +35,7 @@ static func get_knight_specs() -> Dictionary:
 "attack_impulse":          400.0,
 "attack_feedback_impulse": 15.0,
 "attack_distance":         128.0,
+"damage_feedback_inpulse": .2,
 "gravity":                 ProjectSettings.get_setting("physics/2d/default_gravity"),
 "max_up_speed":            -10000.0,
 "max_down_speed":          700.0,
@@ -50,6 +51,7 @@ static func get_gremlin_specs() -> Dictionary:
 "attack_second_impulse":   400.0,
 "attack_feedback_impulse": 30.0,
 "attack_distance":         160.0,
+"damage_feedback_inpulse": .2,
 "gravity":                 ProjectSettings.get_setting("physics/2d/default_gravity"),
 "max_up_speed":            -10000.0,
 "max_down_speed":          700.0,
@@ -57,16 +59,11 @@ static func get_gremlin_specs() -> Dictionary:
 
 static func get_fairy_specs() -> Dictionary:
 	return {
-"idle_speed":              8.0,
-"idle_movement":           16.0,
-"idle_acceleration":       48.0,
 "speed":                   180.0,
-"acceleration":            50.0,
-"deceleration":            50.0,
 "attack_deceleration":     15.0,
 "attack_feedback_impulse": 20.0,
 "throw_projectile_feedback_impulse": 200.0,
-"attack_distance":         160.0,
+"damage_feedback_inpulse": .5,
 "gravity":                 ProjectSettings.get_setting("physics/2d/default_gravity"),
 "max_up_speed":            -10000.0,
 "max_down_speed":          700.0,
