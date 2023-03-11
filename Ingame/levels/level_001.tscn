@@ -304,6 +304,8 @@ position = Vector2(9448, -640)
 
 [node name="room_006" parent="." instance=ExtResource("16_uxsce")]
 position = Vector2(9984, -2944)
+ost_item = 5
+battle_ost_item = 6
 
 [node name="room_007" parent="." instance=ExtResource("17_y2cyn")]
 position = Vector2(9376, 480)
@@ -328,9 +330,13 @@ position = Vector2(17664, -7304)
 
 [node name="room_013" parent="." instance=ExtResource("26_mqqgf")]
 position = Vector2(12032, -6912)
+ost_item = 5
+battle_ost_item = 6
 
 [node name="room_013_secret" parent="." instance=ExtResource("33_6nqs7")]
 position = Vector2(10624, -6912)
+ost_item = 5
+battle_ost_item = 6
 
 [node name="room_014" parent="." instance=ExtResource("27_dx7ie")]
 position = Vector2(16608, -8704)
