@@ -19,8 +19,8 @@ var walk_direction  : float
 var catched : bool
 
 func hit(_position : Vector2, _power : float) -> void:
-	velocity.x = (global_position.x - _position.x) * _power * .5
-	velocity.y = -1 * _power * 15.0
+	velocity.x = (global_position.x - _position.x) * _power * .1
+	velocity.y = -1 * _power * 4.0
 	life -= _power
 	_enable_hit_collisions(false)
 	if life > 0:
