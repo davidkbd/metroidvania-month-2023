@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b0vn0c2ckxsjs" path="res://Ingame/rooms/room_003.tscn" id="11_hgltt"]
 [ext_resource type="PackedScene" uid="uid://brjkpj6nrt24k" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
 [ext_resource type="PackedScene" uid="uid://dgdmijka5t3dd" path="res://Ingame/rooms/room_004.tscn" id="13_dsqei"]
-[ext_resource type="PackedScene" uid="uid://cg166ptijgfiw" path="res://Ingame/rooms/room_001_combat.tscn" id="13_xr4d0"]
+[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_combat.tscn" id="13_xr4d0"]
 [ext_resource type="PackedScene" uid="uid://bssipoexjcdj8" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_s8mat"]
 [ext_resource type="PackedScene" uid="uid://cwh0rcolcsywr" path="res://Ingame/rooms/room_006_tunnel.tscn" id="15_u1dht"]
 [ext_resource type="PackedScene" uid="uid://ch2d3q3r6wopq" path="res://Ingame/rooms/room_006.tscn" id="16_uxsce"]

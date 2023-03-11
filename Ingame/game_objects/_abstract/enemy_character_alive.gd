@@ -29,6 +29,8 @@ func hit(_position : Vector2, _power : float) -> void:
 func eat_health() -> void:
 	if eat_health_area and is_instance_valid(eat_health_area):
 		eat_health_area.queue_free()
+		var tween : Tween = create_tween()
+		tween.tween_property(self, "modulate:a", .0, 1.0)
 
 func set_died() -> void:
 	_create_interact_area()

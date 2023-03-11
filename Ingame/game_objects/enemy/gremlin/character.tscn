@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bdaqfw1673oh1"]
+[gd_scene load_steps=48 format=3 uid="uid://bdaqfw1673oh1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/character.gd" id="1_6s1t7"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/state_machine.gd" id="2_usxyx"]
@@ -8,18 +8,9 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_comeback.gd" id="6_6u1vv"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_attack.gd" id="7_jpvdm"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/state_machine/on_die.gd" id="8_htgti"]
-[ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="9_q6t6u"]
-[ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_t325o"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/enemy_sprite/enemy_sprite.gd" id="12_q6xj6"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/player_sensor/player_sensor.gd" id="13_ar4d2"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/gremlin/parts/damage_area/damage_area.gd" id="14_607np"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
-shader = ExtResource("9_q6t6u")
-shader_parameter/dissolve_value = 1.0
-shader_parameter/animation_columns = 6
-shader_parameter/animation_rows = 3
-shader_parameter/dissolve_texture = ExtResource("10_t325o")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_68kjt"]
 load_path = "res://.godot/imported/character.png-858dc316f5943e6dca3823df28b99e8f.ctex"
@@ -376,13 +367,11 @@ one_shot = true
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_i0l2x")
 position = Vector2(-64, -79)
 texture = SubResource("CompressedTexture2D_68kjt")
 centered = false
 hframes = 15
 vframes = 4
-frame = 45
 script = ExtResource("12_q6xj6")
 
 [node name="Center" type="Node2D" parent="."]

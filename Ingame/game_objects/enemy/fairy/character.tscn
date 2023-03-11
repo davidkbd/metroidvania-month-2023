@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bdaqfw1673oh1"]
+[gd_scene load_steps=36 format=3 uid="uid://bdaqfw1673oh1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/character.gd" id="1_6s1t7"]
 [ext_resource type="PackedScene" uid="uid://dv4oxwal6jo33" path="res://Ingame/game_objects/enemy/fairy/projectile/fairy_projectile.tscn" id="2_ftaxs"]
@@ -7,18 +7,9 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_chase.gd" id="5_0315x"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_attack.gd" id="7_jpvdm"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_die.gd" id="8_htgti"]
-[ext_resource type="Shader" path="res://Ingame/shaders/disolve.gdshader" id="9_q6t6u"]
-[ext_resource type="Texture2D" uid="uid://otwks1gui2s1" path="res://Ingame/shaders/disolve-texture.png" id="10_t325o"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/player_sensor/player_sensor.gd" id="12_gmqoe"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/enemy_sprite/enemy_sprite.gd" id="12_q6xj6"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/damage_area/damage_area.gd" id="14_607np"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0l2x"]
-shader = ExtResource("9_q6t6u")
-shader_parameter/dissolve_value = 1.0
-shader_parameter/animation_columns = 6
-shader_parameter/animation_rows = 3
-shader_parameter/dissolve_texture = ExtResource("10_t325o")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mc5we"]
 load_path = "res://.godot/imported/character.png-b27cef487bc92ab8ddb4b1be73424af5.ctex"
@@ -210,7 +201,6 @@ debug_enabled = true
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_i0l2x")
 position = Vector2(-32, -64)
 texture = SubResource("CompressedTexture2D_mc5we")
 centered = false
