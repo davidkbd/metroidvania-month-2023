@@ -14,9 +14,6 @@ func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
 	projectile_output_position.position.x = 14 * sign(_direction)
 
-func attack_impulse() -> void:
-	velocity.x = specs.attack_impulse * walk_direction
-
 func throw_projectile() -> void:
 	var projectile_instance = projectile_template.instantiate()
 	get_parent().add_child(projectile_instance)
@@ -24,8 +21,8 @@ func throw_projectile() -> void:
 	if player:
 		var diff = global_position - player.global_position
 		projectile_instance.rotation = diff.angle()
-		velocity.x = cos(diff.angle()) * specs.attack_feedback_impulse
-		velocity.y = sin(diff.angle()) * specs.attack_feedback_impulse
+		velocity.x = cos(diff.angle()) * specs.throw_projectile_feedback_impulse
+		velocity.y = sin(diff.angle()) * specs.throw_projectile_feedback_impulse
 
 func _ready() -> void:
 	collision_areas.append($body_area)
