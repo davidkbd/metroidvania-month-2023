@@ -7,6 +7,8 @@ signal died
 @export var is_storeable : bool = false
 @export_group("Life")
 @export_range(10.0, 500.0) var max_life : float = 100.0
+@export_group("Visualization")
+@export var damaged_modulate_color : Color = Color(2.5, 2.5, 2.5, 1.0)
 
 @onready var initial_position : Vector2 = global_position
 @onready var player           : Player = null
@@ -17,10 +19,16 @@ var collision_areas : Array[Area2D] = []
 var walk_direction  : float
 var eat_health_area : Area2D
 
+var modulate_tween : Tween
+
 func hit(_position : Vector2, _power : float) -> void:
 	velocity.x = (global_position.x - _position.x) * _power * specs.damage_feedback_inpulse
 	velocity.y = -1 * _power * 4.0
 	life -= _power
+	if modulate_tween: modulate_tween.kill()
+	modulate_tween = create_tween()
+	modulate = damaged_modulate_color
+	modulate_tween.tween_property(self, "modulate", Color.WHITE, .25)
 	_enable_hit_collisions(false)
 	if life > 0:
 		await create_tween().tween_interval(.2).finished
@@ -29,8 +37,9 @@ func hit(_position : Vector2, _power : float) -> void:
 func eat_health() -> void:
 	if eat_health_area and is_instance_valid(eat_health_area):
 		eat_health_area.queue_free()
-		var tween : Tween = create_tween()
-		tween.tween_property(self, "modulate:a", .0, 1.0)
+		if modulate_tween: modulate_tween.kill()
+		modulate_tween = create_tween()
+		modulate_tween.tween_property(self, "modulate:a", .0, 1.0)
 
 func set_died() -> void:
 	_create_interact_area()
