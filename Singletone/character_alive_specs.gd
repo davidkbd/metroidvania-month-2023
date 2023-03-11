@@ -46,6 +46,7 @@ static func get_knight_specs() -> Dictionary:
 static func get_gremlin_specs() -> Dictionary:
 	return {
 "speed":                   150.0,
+"jump":                    600.0,
 "acceleration":            32.0,
 "deceleration":            32.0,
 "attack_deceleration":     15.0,

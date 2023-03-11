@@ -20,7 +20,7 @@ radius = 20.0
 height = 45.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2820"]
-radius = 64.0
+radius = 160.0
 height = 512.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0h6vo"]
@@ -380,6 +380,16 @@ position = Vector2(0, -40)
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_o5kqg")
+
+[node name="wall_top_sensor" type="RayCast2D" parent="."]
+position = Vector2(0, -104)
+target_position = Vector2(-48, 0)
+collision_mask = 1024
+
+[node name="wall_sensor" type="RayCast2D" parent="."]
+position = Vector2(0, -24)
+target_position = Vector2(-48, 0)
+collision_mask = 1024
 
 [node name="floor_sensor" type="RayCast2D" parent="."]
 position = Vector2(-32, -8)

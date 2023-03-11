@@ -10,6 +10,11 @@ func step(delta : float) -> StateMachineState:
 	_choose_direction()
 	_movement()
 	host.fall(delta)
+	if host.wall_sensor.is_colliding():
+		if host.wall_top_sensor.is_colliding():
+			print("NO SE")
+		else:
+			_jump()
 	host.move_and_slide()
 	if host.life <= 0: return state_machine.on_die
 	if host.player : return state_machine.on_chase
@@ -22,7 +27,7 @@ func _initial_position_distance() -> float:
 		return .0
 	else:
 		return distance_to_init
-		
+
 func _movement():
 	if host.walk_direction:
 		host.velocity.x = move_toward(host.velocity.x, host.walk_direction * host.specs.speed, host.specs.acceleration)
@@ -32,3 +37,6 @@ func _movement():
 func _choose_direction():
 	host.set_walk_direction(-sign(host.global_position.x - host.initial_position.x))
 
+func _jump() -> void:
+	if host.is_on_floor():
+		host.velocity.y = -host.specs.jump
