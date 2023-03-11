@@ -51,7 +51,7 @@ static func get_gremlin_specs() -> Dictionary:
 "attack_second_impulse":   450.0,
 "attack_feedback_impulse": 30.0,
 "attack_distance":         160.0,
-"damage_feedback_inpulse": .2,
+"damage_feedback_inpulse": .3,
 "gravity":                 ProjectSettings.get_setting("physics/2d/default_gravity"),
 "max_up_speed":            -10000.0,
 "max_down_speed":          700.0,

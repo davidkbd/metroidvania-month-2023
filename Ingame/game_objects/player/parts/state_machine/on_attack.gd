@@ -42,7 +42,7 @@ func step(delta : float) -> StateMachineState:
 		if state_machine.previous_state.is_an_on_air_state():
 			return state_machine.on_air
 		return state_machine.on_ground
-	if ControlInput.is_attack_just_pressed():
+	if attack_time < .0 and ControlInput.is_attack_just_pressed():
 		host.animation_playblack.start("on_attack", true)
 		enter()
 	return self
