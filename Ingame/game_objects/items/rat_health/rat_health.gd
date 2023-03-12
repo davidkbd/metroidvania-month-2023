@@ -82,3 +82,9 @@ func _on_walk_timer_timeout():
 func start_walk_timer():
 	walk_timer_flag = true
 	walk_timer.start(randi_range(3,7))
+
+func _ready():
+	for player in get_tree().get_nodes_in_group("PLAYER"):
+		center_floor_rc.add_exception(player)
+		front_floor_rc.add_exception(player)
+		front_wall_rc.add_exception(player)
