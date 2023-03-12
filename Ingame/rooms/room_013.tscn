@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjk42lw5hm8o6"]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_5hd50"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ercv2"]
-[ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_n4w7h"]
+[ext_resource type="TileSet" path="res://Ingame/levels/tiles/sewer.tres" id="3_n4w7h"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_1m0xs"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_hgqey"]
 [ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="6_vatfx"]
-[ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/level-sprites/destroyable_wall_particle.png" id="7_tusb6"]
-[ext_resource type="Texture2D" uid="uid://3ycogsjr0t8s" path="res://Ingame/level-sprites/room013_destroyable_wall.png" id="8_ss0sn"]
+[ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="7_tusb6"]
+[ext_resource type="Texture2D" uid="uid://3ycogsjr0t8s" path="res://Ingame/rooms/destroyable_walls/sprites/room013_destroyable_wall.png" id="8_ss0sn"]
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="9_pevmx"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="10_xlcot"]
 

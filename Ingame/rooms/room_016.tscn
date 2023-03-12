@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmb5g5gqubu7r"]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_2s145"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_j233y"]
-[ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_8nx7k"]
+[ext_resource type="TileSet" path="res://Ingame/levels/tiles/sewer.tres" id="3_8nx7k"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_0v24i"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_0n8rj"]
 [ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="6_rqls3"]
-[ext_resource type="Texture2D" uid="uid://dtste5y7d3gvy" path="res://Ingame/level-sprites/default/tiles/animated/roll-anim.png" id="7_70h48"]
-[ext_resource type="PackedScene" uid="uid://pocl8mkktbxj" path="res://Ingame/game_objects/death_area/death_area.tscn" id="8_agfq7"]
+[ext_resource type="Texture2D" uid="uid://dtste5y7d3gvy" path="res://Ingame/levels/tiles/sprites/animated/traps.png" id="7_70h48"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/death_area/death_area.tscn" id="8_agfq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2672, 864)

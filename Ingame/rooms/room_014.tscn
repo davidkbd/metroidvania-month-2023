@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj16u2b6a5btq"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_pfkqc"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_n5a0i"]
-[ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_ch0vf"]
+[ext_resource type="TileSet" path="res://Ingame/levels/tiles/sewer.tres" id="3_ch0vf"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_1p3hp"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_rcgx0"]
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="6_h5kb6"]

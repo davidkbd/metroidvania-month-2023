@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch2d3q3r6wopq"]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_4rs4r"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_mbbam"]
-[ext_resource type="TileSet" uid="uid://bdkkkf2gyfb3n" path="res://Ingame/levels/level_tilesets/ground_sewer_tiles.tres" id="3_2mhlk"]
+[ext_resource type="TileSet" path="res://Ingame/levels/tiles/sewer.tres" id="3_2mhlk"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_x6l5q"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_siegw"]
-[ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="5_ng338"]
+[ext_resource type="TileSet" path="res://Ingame/levels/tiles/cavern.tres" id="5_ng338"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_tcio5"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="8_40mqe"]
-[ext_resource type="PackedScene" uid="uid://x41ek8r301gi" path="res://Ingame/game_objects/room/torch/green_torch.tscn" id="9_phqn1"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="9_phqn1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2416, 1512)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cg166ptijgfiw"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_flm2t"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_qdibk"]
-[ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="3_lgtmr"]
+[ext_resource type="TileSet" path="res://Ingame/levels/tiles/cavern.tres" id="3_lgtmr"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_w6t2n"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="6_d758a"]
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="7_3xbmb"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/room/control_tip_area/control_tip_area.gd" id="1_5eeb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndxwk"]
+size = Vector2(64, 64)
+
+[node name="ControlTipArea" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_5eeb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_ndxwk")
+debug_color = Color(0.639216, 0.52549, 0, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
