@@ -335,6 +335,7 @@ texture = ExtResource("2_gepj4")
 centered = false
 hframes = 10
 vframes = 4
+frame = 10
 script = ExtResource("9_30soe")
 
 [node name="Center" type="Node2D" parent="."]

@@ -4,7 +4,7 @@ extends StateMachineState
 @export var check_ceil_ray_position_r : Vector2 = Vector2.UP * 16.0 + Vector2.RIGHT * 16.0
 @export var check_ceil_ray_vector   : Vector2 = Vector2.UP * 32.0
 
-@export var dash_timer : float = .5
+@export var dash_timer : float = .6
 
 var dash_time          : float
 var direction          : float
@@ -13,10 +13,11 @@ var under_platform     : bool
 func enter() -> void:
 	host.animation_playblack.travel(name)
 	dash_time = dash_timer
-	host.velocity.x = host.specs.dash_impulse * (1.0 if host.sprite.flip_h else -1.0)
+	_impulse()
 	host.set_collision_layer_value(4, false)
 	host.set_collision_mask_value(4, false)
 	host.enemy_damage_area.disable_collision()
+	host.enemy_damage_area.disable_ignored_invulnerability_collision()
 	host.ondash_collider.disabled = false
 	host.body_collider.disabled = true
 	direction = sign(host.velocity.x)
@@ -24,7 +25,10 @@ func enter() -> void:
 func exit() -> void:
 	host.set_collision_layer_value(4, true)
 	host.set_collision_mask_value(4, true)
+	# Si estas invulnerable... y haces dash, se acaba la invulnerabilidad
+	# esto se deberia de mejorar
 	host.enemy_damage_area.enable_collision()
+	host.enemy_damage_area.enable_ignored_invulnerability_collision()
 	host.ondash_collider.disabled = true
 	host.body_collider.disabled = false
 
@@ -48,6 +52,14 @@ func step(delta : float) -> StateMachineState:
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	if dash_time < .0 and not under_platform: return state_machine.on_ground
 	return self
+
+func _impulse() -> void:
+	var direction = ControlInput.get_horizontal_axis()
+	if direction:
+		host.velocity.x = host.specs.dash_impulse * sign(direction)
+	else:
+		host.velocity.x = host.specs.dash_impulse * (1.0 if host.sprite.flip_h else -1.0)
+	host.set_walk_direction(sign(host.velocity.x))
 
 func _is_under_platform() -> bool:
 	return _is_under_platform_raycast(host.global_position + check_ceil_ray_position_l) \
