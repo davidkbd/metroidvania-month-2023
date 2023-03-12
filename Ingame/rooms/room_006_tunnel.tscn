@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwh0rcolcsywr"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_mdcrw"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_nv7n2"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_jc2fp"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_0phip"]
-[ext_resource type="TileSet" uid="uid://dcreykohtx3s6" path="res://Ingame/levels/level_tilesets/ground_tiles.tres" id="5_pwqaa"]
-[ext_resource type="PackedScene" uid="uid://cdm20dhmriqil" path="res://Ingame/game_objects/control_disable_area/control_disable_area.tscn" id="6_redvj"]
+[ext_resource type="TileSet" path="res://Ingame/levels/tiles/cavern.tres" id="5_pwqaa"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/control_disable_area/control_disable_area.tscn" id="6_redvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(832, 2576)
