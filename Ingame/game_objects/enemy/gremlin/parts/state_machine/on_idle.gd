@@ -8,8 +8,13 @@ func exit() -> void:
 	pass
 	
 func step(delta : float) -> StateMachineState:
+	_brake()
 	host.fall(delta)
+	host.move_and_slide()
 	if host.life <= 0: return state_machine.on_die
 	if host.player : return state_machine.on_chase
 	if state_machine.idle_patrol_timer_flag: return state_machine.on_patrol
 	return self
+
+func _brake() -> void:
+	host.velocity.x = move_toward(host.velocity.x, .0, host.specs.attack_deceleration)

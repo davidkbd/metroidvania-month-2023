@@ -32,7 +32,8 @@ func _movement():
 		host.velocity.x = move_toward(host.velocity.x, .0, host.specs.deceleration)
 	
 func _choose_direction():
-	host.set_walk_direction(sign(host.player.global_position.x - host.global_position.x))
+	if _i_can_see_the_player():
+		host.set_walk_direction(sign(host.player.global_position.x - host.global_position.x))
 
 func _jump() -> void:
 	if host.is_on_floor():
