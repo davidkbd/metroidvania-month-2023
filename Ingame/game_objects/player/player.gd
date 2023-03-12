@@ -3,7 +3,7 @@ extends CharacterAlive
 class_name Player
 
 @export var check_snap_wall_ray_position    : Vector2 = Vector2.UP * 56.0
-@export var check_snap_wall_ray_vector      : Vector2 = Vector2.LEFT * 64.0
+@export var check_snap_wall_ray_vector      : Vector2 = Vector2.LEFT * 48.0
 @export var check_snap_wall_ray_ceil_vector : Vector2 = Vector2.UP * 64.0
 @export var check_attack_down_ray_position  : Vector2 = Vector2.UP * 16.0
 @export var check_attack_down_ray_vector    : Vector2 = Vector2.DOWN * 96.0
