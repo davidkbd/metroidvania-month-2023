@@ -18,9 +18,11 @@ func step(_delta : float) -> StateMachineState:
 	_movement(_delta)
 	_look_at_player()
 	host.move_and_slide()
+	_check_navigation_finished()
 	
 	if host.life <= 0: return state_machine.on_die
-	if navigation_finished: return state_machine.on_attack
+	if navigation_finished:
+		return state_machine.on_attack
 	return self
 
 func _movement(_delta : float):
@@ -28,6 +30,9 @@ func _movement(_delta : float):
 	var direction = host.global_position.direction_to(next_location)
 	host.navigation_agent.path_max_distance = 8.0
 	host.velocity = lerp(host.velocity, direction * host.specs.speed, _delta)
+
+func _check_navigation_finished() -> void:
+	navigation_finished = host.global_position.distance_to(host.navigation_agent.target_position) < host.navigation_agent.path_desired_distance
 
 func _look_at_player() -> void:
 	if not host.player: return
@@ -55,24 +60,3 @@ func _choose_destination() -> void:
 		retry += 1
 		angle += angle_retry_increment
 	navigation_finished = false
-
-func _on_velocity_computed(_safe_velocity: Vector2) -> void:
-	pass
-
-func _on_path_changed() -> void:
-	pass
-
-func _on_target_reached() -> void:
-	pass
-
-func _on_navigation_finished() -> void:
-	navigation_finished = true
-
-func _connect_navigation_agent() -> void:
-	host.navigation_agent.velocity_computed.connect(_on_velocity_computed)
-	host.navigation_agent.path_changed.connect(_on_path_changed)
-	host.navigation_agent.target_reached.connect(_on_target_reached)
-	host.navigation_agent.navigation_finished.connect(_on_navigation_finished)
-
-func _ready() -> void:
-	call_deferred("_connect_navigation_agent")
