@@ -48,7 +48,7 @@ func _on_attack_choose_timer_timeout():
 			attack_data.deceleration = get_parent().specs.attack1_deceleration
 			attack_data.distance     = get_parent().specs.attack1_distance
 		2:
-			attack_data.animation    = "attack"
+			attack_data.animation    = "attack_2"
 			attack_data.deceleration = get_parent().specs.attack2_deceleration
 			attack_data.distance     = get_parent().specs.attack2_distance
 
