@@ -13,6 +13,7 @@ func enter() -> void:
 	fade_time = fade_timer
 	fade_is_executed = false
 	host.enemy_damage_area.disable_collision()
+	host.enemy_damage_area.disable_ignored_invulnerability_collision()
 	host.superattack_manager.reset_charge()
 
 func exit() -> void:

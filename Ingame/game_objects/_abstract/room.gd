@@ -39,8 +39,7 @@ func teleport_player() -> void:
 	var savepoint : Node2D = _find_savepoint()
 	if savepoint == null: return
 	
-	player.global_position = savepoint.global_position
-	player.velocity = Vector2.ZERO
+	player.reset_to_savepoint(savepoint)
 	room_area.configure_hook()
 	room_area.hook.enable(player)
 	camera.set_target(room_area.hook)

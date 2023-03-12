@@ -11,14 +11,18 @@ func enter() -> void:
 	host.velocity.y = .0
 	host.set_collision_layer_value(4, false)
 	host.set_collision_mask_value(4, false)
-	host.enemy_damage_area.set_collision_mask_value(4, false)
+	host.enemy_damage_area.disable_collision()
+	host.enemy_damage_area.disable_ignored_invulnerability_collision()
 	host.ondash_collider.disabled = false
 	host.body_collider.disabled = true
 
 func exit() -> void:
 	host.set_collision_layer_value(4, true)
 	host.set_collision_mask_value(4, true)
-	host.enemy_damage_area.set_collision_mask_value(4, true)
+	# Si estas invulnerable... y haces dash, se acaba la invulnerabilidad
+	# esto se deberia de mejorar
+	host.enemy_damage_area.enable_collision()
+	host.enemy_damage_area.enable_ignored_invulnerability_collision()
 	host.ondash_collider.disabled = true
 	host.body_collider.disabled = false
 

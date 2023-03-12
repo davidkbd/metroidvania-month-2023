@@ -20,42 +20,35 @@ class_name Player
 @onready var hitenemy_sfx         : AudioStreamPlayer        = $hitenemy_sfx
 @onready var restartpoint_sensor  : Area2D                   = $restartpoint_area_sensor
 
-@onready var enemy_hit_area                : Area2D       = $enemy_hit_area
-@onready var enemy_damage_area             : Area2D       = $enemy_damage_area
+@onready var enemy_hit_area       : Area2D                   = $enemy_hit_area
+@onready var enemy_damage_area    : Area2D                   = $enemy_damage_area
 
-var talking_npc   : NPC = null
-var eating_enemy  : EnemyCharacterAlive = null
+var talking_npc       : NPC                 = null
+var eating_enemy      : EnemyCharacterAlive = null
 
-var damager       : Dictionary = {}
-var hitted_enemy  : EnemyCharacterAlive = null
+var damager           : Dictionary          = {}
+var hitted_enemy      : EnemyCharacterAlive = null
 
-var deatharea_entered : bool
-var autoadvance_area  : AutoadvanceArea = null
+var deatharea_entered : bool                = false
+var autoadvance_area  : AutoadvanceArea     = null
 var walk_direction    : float
 
 func initialize(_game_state : Dictionary) -> void:
 	skills.initialize(_game_state)
 	life.initialize(_game_state)
+
+func reset_to_savepoint(_savepoint : Node2D) -> void:
+	global_position = _savepoint.global_position
 	talking_npc = null
 	damager = {}
 	hitted_enemy = null
 	autoadvance_area = null
 	velocity = Vector2.ZERO
 	superattack_manager.reset_charge()
+	enemy_damage_area.reset()
 
 func set_walk_direction(_direction : float) -> void:
 	walk_direction = _direction
-
-func can_hit_endemy() -> bool:
-	if damager: return false
-	if is_on_floor(): return false
-	return velocity.y > .0
-
-func can_double_jump() -> bool:
-	return skills.data.double_jump
-
-func can_dash() -> bool:
-	return skills.data.dash
 
 func can_snap_to_wall() -> bool:
 	if not is_on_wall(): return false

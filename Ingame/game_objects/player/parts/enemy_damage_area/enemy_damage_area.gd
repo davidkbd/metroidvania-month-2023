@@ -13,6 +13,19 @@ func disable_collision() -> void:
 func enable_collision() -> void:
 	set_collision_mask_value(4, true)
 
+func disable_ignored_invulnerability_collision() -> void:
+	set_collision_mask_value(14, false)
+
+func enable_ignored_invulnerability_collision() -> void:
+	set_collision_mask_value(14, true)
+
+func reset() -> void:
+	if disable_area_tween: disable_area_tween.kill()
+	if hilight_tween: hilight_tween.kill()
+	enable_collision()
+	enable_ignored_invulnerability_collision()
+	player.modulate = Color.WHITE
+
 func _on_area_entered(area : Area2D) -> void:
 	player.damager = area.get_damage_data()
 	get_tree().call_group("PLAYER_LISTENER", "player_listener_on_damaged", player)
@@ -23,8 +36,6 @@ func _on_area_entered(area : Area2D) -> void:
 func _hilight_player() -> void:
 	if hilight_tween: hilight_tween.kill()
 	hilight_tween = create_tween()
-#	player.modulate = Color(2.5, .0, .0, 1)
-#	hilight_tween.tween_property(player, "modulate", Color.WHITE, 1.0)
 	hilight_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUINT) \
 			.set_loops() \
 			.tween_property(player, "modulate", Color(1.0, 1.0, 1.0, .5), .3) \
