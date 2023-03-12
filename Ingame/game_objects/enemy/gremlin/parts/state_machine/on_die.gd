@@ -3,6 +3,8 @@ extends StateMachineState
 func enter() -> void:
 	host.animation_playblack.travel(name)
 	host.set_died()
+	host.body_collider.disabled = true
+	host.sword_collider.disabled = true
 
 func exit() -> void:
 	pass

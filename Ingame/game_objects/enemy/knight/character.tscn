@@ -136,6 +136,72 @@ tracks/4/keys = {
 "values": [Vector2(0, 1), Vector2(0, -39), Vector2(0, -47), Vector2(0, -55)]
 }
 
+[sub_resource type="Animation" id="Animation_hcepd"]
+resource_name = "attack_2"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../sword_area/SwordCollider:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_impulse"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../sword_area/SwordCollider:shape:radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 0.0323521),
+"update": 0,
+"values": [16.0, 40.0, 10.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../sword_area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9, 1, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 0.0245182, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, -39), Vector2(0, -47), Vector2(0, -55)]
+}
+
 [sub_resource type="Animation" id="Animation_htql3"]
 resource_name = "chase"
 length = 0.8
@@ -201,72 +267,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [10, 11, 12, 13]
-}
-
-[sub_resource type="Animation" id="Animation_hcepd"]
-resource_name = "attack_2"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../sword_area/SwordCollider:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.8),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"attack_impulse"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../sword_area/SwordCollider:shape:radius")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.8, 0.9, 1.1),
-"transitions": PackedFloat32Array(1, 1, 0.0323521),
-"update": 0,
-"values": [16.0, 40.0, 10.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../sword_area:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.8, 0.9, 1, 1.2),
-"transitions": PackedFloat32Array(1, 0.0245182, 1, 1),
-"update": 0,
-"values": [Vector2(0, 1), Vector2(0, -39), Vector2(0, -47), Vector2(0, -55)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uoji7"]
@@ -346,7 +346,7 @@ states/on_idle/position = Vector2(454, -16)
 states/on_patrol/node = SubResource("AnimationNodeAnimation_c26op")
 states/on_patrol/position = Vector2(454, 141)
 transitions = ["Start", "on_patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "on_patrol", "on_idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "on_idle", "on_patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "on_idle", "on_chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "on_patrol", "on_chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "on_chase", "on_attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "on_chase", "on_idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "on_attack", "on_chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "on_chase", "on_patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "on_patrol", "on_die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "on_idle", "on_die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "on_chase", "on_die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "on_attack", "on_die", SubResource("AnimationNodeStateMachineTransition_q3eem"), "on_chase", "on_comeback", SubResource("AnimationNodeStateMachineTransition_tsj41"), "on_comeback", "on_idle", SubResource("AnimationNodeStateMachineTransition_5nxpp")]
-graph_offset = Vector2(171.345, -159.771)
+graph_offset = Vector2(-278.205, -0.178153)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
 

@@ -8,6 +8,8 @@ func enter() -> void:
 #	for particles in host.explode_particles:
 #		particles.emitting = true
 
+	host.body_collider.disabled = true
+
 func exit() -> void:
 	pass
 

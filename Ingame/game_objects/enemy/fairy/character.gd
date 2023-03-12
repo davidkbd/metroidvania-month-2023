@@ -3,8 +3,9 @@ extends EnemyCharacterAlive
 @export var projectile_template         : PackedScene
 
 @onready var navigation_agent           : NavigationAgent2D = $navigation_agent
-@onready var center                     : Node2D = $Center
+@onready var center                     : Node2D            = $Center
 @onready var animation                  : AnimationPlayer   = $AnimationPlayer
+@onready var body_collider              : CollisionShape2D  = $body_area/body_collider
 @onready var explode_particles          : Array = [ $explode_color1, $explode_color2, $explode_color3 ]
 @onready var projectile_output_position : Marker2D = $projectile_output_position
 

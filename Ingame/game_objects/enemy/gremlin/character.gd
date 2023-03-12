@@ -5,6 +5,7 @@ extends EnemyCharacterAlive
 @onready var wall_top_sensor       : RayCast2D = $wall_top_sensor
 @onready var floor_sensor          : RayCast2D = $floor_sensor
 @onready var animation             : AnimationPlayer  = $AnimationPlayer
+@onready var body_collider         : CollisionShape2D = $body_area/body_collider
 @onready var sword_collider        : CollisionShape2D = $sword_area/SwordCollider
 @onready var attack_foot_particles : CPUParticles2D   = $attack_foot_particles
 @onready var explode_particles     : Array = [ $explode_color1, $explode_color2, $explode_color3 ]

@@ -1,8 +1,36 @@
-[gd_scene load_steps=15 format=3 uid="uid://cxqeripkn381w"]
+[gd_scene load_steps=49 format=3 uid="uid://c7n7hoavwiy8l"]
 
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/character.gd" id="1_rovep"]
-[ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/npc/knight/sprites/character.png" id="2_gepj4"]
-[ext_resource type="Script" path="res://Ingame/game_objects/npc/knight/parts/state_machine/state_machine.gd" id="2_u4jvg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/character.gd" id="1_rovep"]
+[ext_resource type="Texture2D" uid="uid://cp7qighlspcwd" path="res://Ingame/game_objects/enemy/knight/sprites/character.png" id="2_gepj4"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/state_machine.gd" id="2_u4jvg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_idle.gd" id="3_jmssg"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_patrol.gd" id="4_uvc5i"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_chase.gd" id="5_ugfq0"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_attack.gd" id="6_bii6k"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_comeback.gd" id="6_y37hn"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/state_machine/on_die.gd" id="8_8jep2"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/enemy_sprite/enemy_sprite.gd" id="9_30soe"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/player_sensor/player_sensor.gd" id="13_v1ptd"]
+[ext_resource type="Script" path="res://Ingame/game_objects/enemy/knight/parts/damage_area/damage_area.gd" id="14_v5hiw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
+radius = 16.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2820"]
+radius = 64.0
+height = 640.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0h6vo"]
+radius = 16.0
+height = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bagww"]
+radius = 40.0
+
+[sub_resource type="Gradient" id="Gradient_gq6km"]
+offsets = PackedFloat32Array(0, 0.257576, 0.823232, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.0941176, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_7ourq"]
 length = 0.001
@@ -18,11 +46,33 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../sword_area/SwordCollider:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [40.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../sword_area:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_3r3ke"]
 resource_name = "attack"
-length = 0.4
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,30 +80,131 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [10, 11, 12, 13]
-<<<<<<< HEAD
+"values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../SwordCollider:disabled")
+tracks/1/path = NodePath("../sword_area/SwordCollider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
-=======
->>>>>>> bd186c831ee54ff5feacd13a55053c8e3971ff54
+"values": [true, false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_impulse"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../sword_area/SwordCollider:shape:radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 0.0323521),
+"update": 0,
+"values": [16.0, 40.0, 10.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../sword_area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.4, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 0.0245182, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, -39), Vector2(0, -47), Vector2(0, -55)]
 }
 
-[sub_resource type="Animation" id="Animation_kkfye"]
-resource_name = "idle"
-length = 0.4
+[sub_resource type="Animation" id="Animation_hcepd"]
+resource_name = "attack_2"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../sword_area/SwordCollider:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_impulse"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../sword_area/SwordCollider:shape:radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 0.0323521),
+"update": 0,
+"values": [16.0, 40.0, 10.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../sword_area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9, 1, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 0.0245182, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, -39), Vector2(0, -47), Vector2(0, -55)]
+}
+
+[sub_resource type="Animation" id="Animation_htql3"]
+resource_name = "chase"
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -62,57 +213,378 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [10, 11, 12, 13]
 }
 
+[sub_resource type="Animation" id="Animation_p5f1j"]
+resource_name = "die"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_kkfye"]
+resource_name = "idle"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_tkdw1"]
+resource_name = "patrol"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13]
+}
+
+<<<<<<< HEAD
+[sub_resource type="Animation" id="Animation_hcepd"]
+resource_name = "attack_2"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../sword_area/SwordCollider:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_impulse"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../sword_area/SwordCollider:shape:radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 0.0323521),
+"update": 0,
+"values": [16.0, 40.0, 10.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../sword_area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 0.9, 1, 1.2),
+"transitions": PackedFloat32Array(1, 0.0245182, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, -39), Vector2(0, -47), Vector2(0, -55)]
+}
+
+=======
+>>>>>>> 83ec497c948cf6809fcd823766b7c6d195c96044
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uoji7"]
 _data = {
 "RESET": SubResource("Animation_7ourq"),
 "attack": SubResource("Animation_3r3ke"),
-"idle": SubResource("Animation_kkfye")
+"attack_2": SubResource("Animation_hcepd"),
+"chase": SubResource("Animation_htql3"),
+"die": SubResource("Animation_p5f1j"),
+"idle": SubResource("Animation_kkfye"),
+"patrol": SubResource("Animation_tkdw1")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_go2b7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6kqv2"]
 animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i2ufr"]
+animation = &"chase"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yltc1"]
+animation = &"patrol"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uxrnv"]
+animation = &"die"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s0mlb"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xneiq"]
-auto_advance = true
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c26op"]
+animation = &"patrol"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hx8j"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aakgw"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v7w2j"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2a2y2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ix6lv"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1k3hg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07pm7"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iue7h"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vrb1j"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s6twy"]
+advance_expression = "get_parent().state_machine.current_state == get_parent().state_machine.on_die"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mpchp"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1ffr6"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q3eem"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tsj41"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5nxpp"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i8lyk"]
-states/attack/node = SubResource("AnimationNodeAnimation_go2b7")
-states/attack/position = Vector2(374.5, 131.5)
-states/idle/node = SubResource("AnimationNodeAnimation_s0mlb")
-states/idle/position = Vector2(358, 70)
-transitions = ["Start", "attack", SubResource("AnimationNodeStateMachineTransition_xneiq")]
+states/Start/position = Vector2(255, 141)
+states/on_attack/node = SubResource("AnimationNodeAnimation_6kqv2")
+states/on_attack/position = Vector2(630, 230)
+states/on_chase/node = SubResource("AnimationNodeAnimation_i2ufr")
+states/on_chase/position = Vector2(630, -16)
+states/on_comeback/node = SubResource("AnimationNodeAnimation_yltc1")
+states/on_comeback/position = Vector2(454, -126.525)
+states/on_die/node = SubResource("AnimationNodeAnimation_uxrnv")
+states/on_die/position = Vector2(797.16, 141)
+states/on_idle/node = SubResource("AnimationNodeAnimation_s0mlb")
+states/on_idle/position = Vector2(454, -16)
+states/on_patrol/node = SubResource("AnimationNodeAnimation_c26op")
+states/on_patrol/position = Vector2(454, 141)
+transitions = ["Start", "on_patrol", SubResource("AnimationNodeStateMachineTransition_1hx8j"), "on_patrol", "on_idle", SubResource("AnimationNodeStateMachineTransition_aakgw"), "on_idle", "on_patrol", SubResource("AnimationNodeStateMachineTransition_v7w2j"), "on_idle", "on_chase", SubResource("AnimationNodeStateMachineTransition_2a2y2"), "on_patrol", "on_chase", SubResource("AnimationNodeStateMachineTransition_ix6lv"), "on_chase", "on_attack", SubResource("AnimationNodeStateMachineTransition_1k3hg"), "on_chase", "on_idle", SubResource("AnimationNodeStateMachineTransition_07pm7"), "on_attack", "on_chase", SubResource("AnimationNodeStateMachineTransition_iue7h"), "on_chase", "on_patrol", SubResource("AnimationNodeStateMachineTransition_vrb1j"), "on_patrol", "on_die", SubResource("AnimationNodeStateMachineTransition_s6twy"), "on_idle", "on_die", SubResource("AnimationNodeStateMachineTransition_mpchp"), "on_chase", "on_die", SubResource("AnimationNodeStateMachineTransition_1ffr6"), "on_attack", "on_die", SubResource("AnimationNodeStateMachineTransition_q3eem"), "on_chase", "on_comeback", SubResource("AnimationNodeStateMachineTransition_tsj41"), "on_comeback", "on_idle", SubResource("AnimationNodeStateMachineTransition_5nxpp")]
+graph_offset = Vector2(171.345, -159.771)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_crlg2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bagww"]
-radius = 40.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5kqg"]
-radius = 24.0
-height = 80.0
-
 [node name="character" type="CharacterBody2D"]
+position = Vector2(0, -1)
+collision_layer = 1024
+collision_mask = 1024
 script = ExtResource("1_rovep")
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("2_u4jvg")
+on_idle_state = NodePath("on_idle")
+on_patrol_state = NodePath("on_patrol")
+on_attack_state = NodePath("on_attack")
+on_chase_state = NodePath("on_chase")
+on_comeback_state = NodePath("on_comeback")
+on_damaged_state = NodePath("on_damaged")
+on_die_state = NodePath("on_die")
+initial_state = NodePath("on_patrol")
+
+[node name="on_idle" type="Node" parent="state_machine"]
+script = ExtResource("3_jmssg")
+
+[node name="on_patrol" type="Node" parent="state_machine"]
+script = ExtResource("4_uvc5i")
+
+[node name="on_chase" type="Node" parent="state_machine"]
+script = ExtResource("5_ugfq0")
+
+[node name="on_comeback" type="Node" parent="state_machine"]
+script = ExtResource("6_y37hn")
+
+[node name="on_attack" type="Node" parent="state_machine"]
+script = ExtResource("6_bii6k")
+
+[node name="on_damaged" type="Node" parent="state_machine"]
+
+[node name="on_die" type="Node" parent="state_machine"]
+script = ExtResource("8_8jep2")
+
+[node name="IdlePatrolSwitchTimer" type="Timer" parent="state_machine"]
+one_shot = true
+
+[node name="AttackChooseTimer" type="Timer" parent="state_machine"]
+wait_time = 0.1
+one_shot = true
+autostart = true
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-96, -110)
+position = Vector2(-128, -126)
 texture = ExtResource("2_gepj4")
 centered = false
-hframes = 5
-vframes = 3
+hframes = 10
+vframes = 5
+script = ExtResource("9_30soe")
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(0, -40)
+
+[node name="BodyCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("CapsuleShape2D_o5kqg")
+
+[node name="floor_sensor" type="RayCast2D" parent="."]
+position = Vector2(-32, -8)
+target_position = Vector2(0, 24)
+collision_mask = 1024
+
+[node name="PlayerSensor" type="Area2D" parent="."]
+position = Vector2(0, -40)
+collision_layer = 8
+collision_mask = 8
+monitorable = false
+script = ExtResource("13_v1ptd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSensor"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v2820")
+
+[node name="body_area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("14_v5hiw")
+
+[node name="body_collider" type="CollisionShape2D" parent="body_area"]
+position = Vector2(0, -40)
+shape = SubResource("CapsuleShape2D_0h6vo")
+
+[node name="sword_area" type="Area2D" parent="."]
+collision_layer = 8200
+collision_mask = 0
+monitoring = false
+script = ExtResource("14_v5hiw")
+power = 15.0
+
+[node name="SwordCollider" type="CollisionShape2D" parent="sword_area"]
+position = Vector2(-32, -15)
+shape = SubResource("CircleShape2D_bagww")
+disabled = true
+
+[node name="attack_foot_particles" type="CPUParticles2D" parent="."]
+position = Vector2(-16, 0)
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.67
+emission_shape = 3
+emission_rect_extents = Vector2(4, 1)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_min = 68.84
+initial_velocity_max = 94.2
+color = Color(0.654902, 0.662745, 0.603922, 1)
+
+[node name="explode_color1" type="CPUParticles2D" parent="."]
+position = Vector2(0, -40)
+emitting = false
+amount = 128
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(24, 32)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+angle_min = -436.7
+angle_max = 401.3
+scale_amount_max = 2.0
+color = Color(0.333333, 0.403922, 0.490196, 1)
+color_ramp = SubResource("Gradient_gq6km")
+
+[node name="explode_color2" type="CPUParticles2D" parent="."]
+position = Vector2(0, -40)
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(24, 32)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+angle_min = -436.7
+angle_max = 401.3
+scale_amount_max = 2.0
+color = Color(0.286275, 0.192157, 0.152941, 1)
+color_ramp = SubResource("Gradient_gq6km")
+
+[node name="explode_color3" type="CPUParticles2D" parent="."]
+position = Vector2(0, -40)
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(24, 32)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+angle_min = -436.7
+angle_max = 401.3
+scale_amount_max = 2.0
+color = Color(0.85098, 0.643137, 0.239216, 1)
+color_ramp = SubResource("Gradient_gq6km")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sprite")
@@ -123,13 +595,10 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_i8lyk")
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_crlg2")
 
-[node name="SwordCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 56)
-shape = SubResource("CircleShape2D_bagww")
-disabled = true
-
-[node name="BodyCollider" type="CollisionShape2D" parent="."]
-position = Vector2(24, 80)
-shape = SubResource("CapsuleShape2D_o5kqg")
+[connection signal="timeout" from="state_machine/IdlePatrolSwitchTimer" to="state_machine" method="_on_idle_patrol_switch_timer_timeout"]
+[connection signal="timeout" from="state_machine/AttackChooseTimer" to="state_machine" method="_on_attack_choose_timer_timeout"]
+[connection signal="body_entered" from="PlayerSensor" to="PlayerSensor" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="PlayerSensor" to="PlayerSensor" method="_on_body_exited" flags=18]
