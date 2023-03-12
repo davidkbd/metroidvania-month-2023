@@ -24,6 +24,7 @@ func activate() -> void:
 
 func deactivate() -> void:
 	room_content.deactivate()
+	get_tree().call_group("ROOM_LISTENER", "room_listener_on_deactivated", self)
 
 func initialize(_game_state : Dictionary) -> void:
 	var room_name = name.to_lower()
