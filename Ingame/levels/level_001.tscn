@@ -167,6 +167,7 @@ motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_002_tunnel"
 
 [node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_far"]
+light_mask = 0
 texture_repeat = 3
 position = Vector2(-136, -72)
 texture = SubResource("CompressedTexture2D_0qwmx")
@@ -179,6 +180,7 @@ motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_002_tunnel"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_med"]
+light_mask = 0
 position = Vector2(-240, -48)
 texture = SubResource("CompressedTexture2D_bf1ag")
 centered = false
@@ -190,6 +192,7 @@ motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_002_tunnel"
 
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_near"]
+light_mask = 0
 position = Vector2(-344, -40)
 texture = SubResource("CompressedTexture2D_1t2jm")
 centered = false
@@ -197,6 +200,7 @@ centered = false
 [node name="room_002_bg" type="ParallaxLayer" parent="parallax/ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_bg"]
+light_mask = 0
 position = Vector2(3976, -864)
 texture = ExtResource("5_homtb")
 
@@ -205,6 +209,7 @@ motion_scale = Vector2(0.7, 0.7)
 parallax_name = "room_002"
 
 [node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_far"]
+light_mask = 0
 texture_repeat = 3
 position = Vector2(2160, -1408)
 scale = Vector2(0.7, 0.7)
@@ -216,6 +221,7 @@ motion_scale = Vector2(0.8, 0.8)
 parallax_name = "room_002"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
+light_mask = 0
 position = Vector2(2536, -1584)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_uxxmg")
@@ -226,6 +232,7 @@ motion_scale = Vector2(0.9, 0.9)
 parallax_name = "room_002"
 
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_near"]
+light_mask = 0
 position = Vector2(2856, -1880)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_vw1a5")
