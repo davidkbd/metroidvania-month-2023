@@ -1,15 +1,9 @@
 extends StateMachineState
 
-var hilight_tween : Tween
-
 var damage_timer : float
 
 func enter() -> void:
 	host.animation_playblack.travel(name)
-	if hilight_tween: hilight_tween.kill()
-	hilight_tween = create_tween()
-	host.modulate = Color(1.5, 1.5, 1.5, 1)
-	hilight_tween.tween_property(host, "modulate", Color.WHITE, .50)
 	host.damaged_sfx.play()
 	if host.damager.size():
 		var impulse := Vector2.ZERO
