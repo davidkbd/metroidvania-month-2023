@@ -34,14 +34,27 @@ func _look_at_player() -> void:
 	host.set_walk_direction(sign(host.player.global_position.x - host.global_position.x))
 
 func _choose_destination() -> void:
-	var angle = randf_range(-PI, PI)
-	var destination = host.player.global_position
-	destination.x += cos(angle) * chase_distance
-	destination.y += sin(angle) * chase_distance
-	host.navigation_agent.target_position = destination
+	var bad_destination : bool = true
+	var retries : int = 20
+	var retry   : int = 0
+	var angle   : float = randf_range(-PI, PI)
+	var angle_retry_increment : float = TAU / retries
+	
+	while bad_destination and retry < retries:
+		# Si el player se esta respawneando, estara en una posicion
+		# MUY lejos y ahi no hay navegacion. PERO, en el siguiente
+		# fotograma ya aparecera en escena. La cosa es que el Fairy
+		# en ese salto de posicion tan grande dejaria de tenerlo como
+		# objetivo porque saldria de su area, y entraria en estado patrol
+		var destination = host.player.global_position
+		destination.x += cos(angle) * chase_distance
+		destination.y += sin(angle) * chase_distance
+		host.navigation_agent.target_position = destination
+		if host.navigation_agent.is_target_reachable():
+			bad_destination = false
+		retry += 1
+		angle += angle_retry_increment
 	navigation_finished = false
-	if not host.navigation_agent.is_target_reachable():
-		_choose_destination()
 
 func _on_velocity_computed(_safe_velocity: Vector2) -> void:
 	pass

@@ -1,6 +1,6 @@
 extends StateMachineState
 
-@export var raycast_direction        : Vector2 = Vector2.LEFT * 32.0
+#@export var raycast_direction        : Vector2 = Vector2.LEFT * 32.0
 
 func enter() -> void:
 	host.animation_playblack.travel(name)

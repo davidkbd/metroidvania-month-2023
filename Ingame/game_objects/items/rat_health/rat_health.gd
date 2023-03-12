@@ -32,9 +32,12 @@ func catch() -> void:
 	collision_layer = 0
 	collision_mask = 0
 	set_process(false)
+	set_physics_process(false)
 
-func _process(_delta : float) -> void:
+func _physics_process(_delta : float) -> void:
 	is_on_floor = center_floor_rc.is_colliding()
+	if not is_on_floor:
+		print("RATA NO EN SUELO ", get_path())
 	
 	need_change = need_change or (
 	is_on_floor and (not front_floor_rc.is_colliding() or front_wall_rc.is_colliding()))
@@ -55,6 +58,8 @@ func _process(_delta : float) -> void:
 	
 	scale.x = -direction
 	global_position += velocity * _delta
+
+func _process(_delta : float) -> void:
 	animation.play("walk" if velocity.x else "idle")
 
 func _fall(_delta : float) -> void:

@@ -7,7 +7,7 @@ var attack_deceleration : float
 func enter() -> void:
 	host.animation_playblack.start(name, true)
 	host.velocity = Vector2.ZERO
-	attack_deceleration = host.specs.attack2_deceleration
+	attack_deceleration = state_machine.attack_data.deceleration
 	time = host.animation.get_animation(state_machine.attack_data.animation).length
 
 func exit() -> void:

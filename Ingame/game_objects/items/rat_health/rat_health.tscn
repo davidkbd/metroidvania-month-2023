@@ -83,9 +83,9 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_ecuyn")
 
 [node name="center_floor" type="RayCast2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 exclude_parent = false
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 16)
 
 [node name="front_floor_rc" type="RayCast2D" parent="."]
 position = Vector2(-20, -8)

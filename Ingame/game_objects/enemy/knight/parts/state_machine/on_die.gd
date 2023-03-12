@@ -17,4 +17,4 @@ func _disolve(q : float) -> void:
 	pass
 
 func _brake() -> void:
-	host.velocity.x = move_toward(host.velocity.x, .0, host.specs.attack_deceleration)
+	host.velocity.x = move_toward(host.velocity.x, .0, state_machine.attack_data.deceleration)
