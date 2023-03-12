@@ -5,7 +5,7 @@ var time : float
 func enter() -> void:
 	host.animation_playblack.start(name, true)
 	host.velocity = Vector2.ZERO
-	time = .5
+	time = .6
 	host.throw_projectile()
 
 func exit() -> void:

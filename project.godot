@@ -26,6 +26,7 @@ ControlInput="*res://Singletone/control_input.gd"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="viewport"
+window/layer_12=""
 
 [input]
 
@@ -134,6 +135,7 @@ A={
 2d_render/layer_2="Player"
 2d_render/layer_3="Solo tiles background"
 2d_physics/layer_1="player_floor"
+2d_physics/layer_2="no_go_down_platform"
 2d_physics/layer_3="player_room-area"
 2d_physics/layer_4="enemy_player"
 2d_physics/layer_5="player_savepoint"
