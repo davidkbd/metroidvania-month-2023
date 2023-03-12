@@ -89,7 +89,6 @@ texture = SubResource("CompressedTexture2D_u264k")
 centered = false
 hframes = 11
 vframes = 14
-frame = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_a37ib")

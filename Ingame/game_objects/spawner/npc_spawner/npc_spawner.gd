@@ -47,7 +47,7 @@ const NPC_DATA := [
 
 var instance_data : Dictionary = {
 	"storeable": storeable,
-	"step": 0
+	"data": {}
 }
 var instance : Node2D
 var instance_name : String
@@ -56,10 +56,8 @@ func update_instance_data(_data : Dictionary) -> void:
 	instance_data[instance_name.to_lower()] = _data
 
 func activate(_data : Dictionary) -> void:
-	if _data.size() == 0 or not _data.has("step"):
-		instance_data.step = 0
-	else:
-		instance_data.step = _data.step
+	if _data.size() > 0 and _data.has("data"):
+		instance_data.data = _data.data
 	
 	instance = load(PACKEDSCENES_PATH % NPC_DATA[npc_type].id).instantiate()
 	instance_name = instance.name.to_lower()
@@ -67,7 +65,7 @@ func activate(_data : Dictionary) -> void:
 
 func deactivate() -> void:
 	if is_instance_valid(instance):
-		if instance.pass_step(): instance_data.step += 1
+		instance_data.data = instance.data
 		instance.queue_free()
 
 func get_state() -> Dictionary:

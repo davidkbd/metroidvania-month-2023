@@ -1,7 +1,6 @@
 extends Node2D
 class_name NPC
 
-
 @export_category("Talk Letter Label")
 @export var talk_letter_label_offset : Vector2 = Vector2.UP * 128.0
 @export var talk_letter_label_first_color : Color = Color.RED

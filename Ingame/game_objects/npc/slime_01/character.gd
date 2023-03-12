@@ -1,8 +1,11 @@
 extends NPC
 
-var value : int = 0
+var data : Dictionary = {
+	"last_talk": -1
+}
 
 func get_texts() -> Array[String]:
+	data.last_talk = Time.get_unix_time_from_system()
 	return [
 		"Welcome little one!",
 		"You came here for a reason",
@@ -11,6 +14,3 @@ func get_texts() -> Array[String]:
 		"There are other upset creatures that will attack anyone they don't know",
 		"Try your best and please, save us"
 	]
-
-func pass_step() -> bool:
-	return true

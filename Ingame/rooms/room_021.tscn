@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_0wcwj"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_sb2ff"]
-[ext_resource type="TileSet" path="res://Ingame/levels/tiles/sewer.tres" id="3_wsns8"]
+[ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="3_wsns8"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_k48wq"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_qawp0"]
 [ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="6_lfkas"]
