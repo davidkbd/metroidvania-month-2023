@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://d4g326fv20xk1"]
+[gd_scene load_steps=142 format=3 uid="uid://cod00olgejgpf"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_air.gd" id="4_taln5"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_jump.gd" id="5_mtmft"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_doublejump.gd" id="7_bx4yu"]
-[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_attack.gd" id="7_v12wq"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_simple_attack.gd" id="7_lusim"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_wall.gd" id="8_2ivm0"]
-[ext_resource type="Script" path="res://Ingame/game_objects/player/on_normal_attack.gd" id="8_kqfbx"]
+[ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_super_attack.gd" id="8_mykkq"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_drop_attack.gd" id="9_kutxv"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_damaged.gd" id="9_l3fvl"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/on_dash.gd" id="9_qc1tk"]
@@ -943,10 +943,10 @@ script = ExtResource("5_mtmft")
 script = ExtResource("7_bx4yu")
 
 [node name="on_simple_attack" type="Node" parent="state_machine"]
-script = ExtResource("7_v12wq")
+script = ExtResource("7_lusim")
 
 [node name="on_super_attack" type="Node" parent="state_machine"]
-script = ExtResource("8_kqfbx")
+script = ExtResource("8_mykkq")
 
 [node name="on_drop_attack" type="Node" parent="state_machine"]
 script = ExtResource("9_kutxv")
