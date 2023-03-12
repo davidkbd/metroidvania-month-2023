@@ -36,8 +36,6 @@ func catch() -> void:
 
 func _physics_process(_delta : float) -> void:
 	is_on_floor = center_floor_rc.is_colliding()
-	if not is_on_floor:
-		print("RATA NO EN SUELO ", get_path())
 	
 	need_change = need_change or (
 	is_on_floor and (not front_floor_rc.is_colliding() or front_wall_rc.is_colliding()))

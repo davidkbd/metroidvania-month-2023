@@ -19,25 +19,33 @@ const MENU_ACTIONS       : Array[String] = ["st","st","st"]
 
 var configurated_control_mode : int = 1
 
-func get_horizontal_axis() ->        float: return Input.get_axis(L_ACTIONS[configurated_control_mode], R_ACTIONS[configurated_control_mode])
-func get_vertical_axis() ->          float: return Input.get_axis(U_ACTIONS[configurated_control_mode], D_ACTIONS[configurated_control_mode])
+var enabled : bool = true
+
+func enable() -> void:
+	enabled = true
+
+func disable() -> void:
+	enabled = false
+
+func get_horizontal_axis() ->        float: return Input.get_axis(L_ACTIONS[configurated_control_mode], R_ACTIONS[configurated_control_mode]) if enabled else .0
+func get_vertical_axis() ->          float: return Input.get_axis(U_ACTIONS[configurated_control_mode], D_ACTIONS[configurated_control_mode]) if enabled else .0
 #func is_left_pressed() ->            bool:  return Input.is_action_pressed(L_ACTIONS[configurated_control_mode])
 #func is_right_pressed() ->           bool:  return Input.is_action_pressed(R_ACTIONS[configurated_control_mode])
-func is_up_pressed() ->              bool:  return Input.is_action_pressed(U_ACTIONS[configurated_control_mode])
-func is_down_pressed() ->            bool:  return Input.is_action_pressed(D_ACTIONS[configurated_control_mode])
+func is_up_pressed() ->              bool:  return enabled and Input.is_action_pressed(U_ACTIONS[configurated_control_mode])
+func is_down_pressed() ->            bool:  return enabled and Input.is_action_pressed(D_ACTIONS[configurated_control_mode])
 
-func is_jump_just_pressed() ->       bool:  return Input.is_action_just_pressed(JUMP_ACTIONS[configurated_control_mode])
-func is_doublejump_just_pressed() -> bool:  return Input.is_action_just_pressed(DOUBLEJUMP_ACTIONS[configurated_control_mode])
+func is_jump_just_pressed() ->       bool:  return enabled and Input.is_action_just_pressed(JUMP_ACTIONS[configurated_control_mode])
+func is_doublejump_just_pressed() -> bool:  return enabled and Input.is_action_just_pressed(DOUBLEJUMP_ACTIONS[configurated_control_mode])
 
-func is_attack_just_pressed() ->     bool:  return Input.is_action_just_pressed(ATTACK_ACTIONS[configurated_control_mode])
-func is_attack_just_released() ->    bool:  return Input.is_action_just_released(ATTACK_ACTIONS[configurated_control_mode])
-func is_dash_just_pressed() ->       bool:  return Input.is_action_just_pressed(DASH_ACTIONS[configurated_control_mode])
+func is_attack_just_pressed() ->     bool:  return enabled and Input.is_action_just_pressed(ATTACK_ACTIONS[configurated_control_mode])
+func is_attack_just_released() ->    bool:  return enabled and Input.is_action_just_released(ATTACK_ACTIONS[configurated_control_mode])
+func is_dash_just_pressed() ->       bool:  return enabled and Input.is_action_just_pressed(DASH_ACTIONS[configurated_control_mode])
 
-func is_map_just_pressed() ->        bool:  return Input.is_action_just_pressed(MAP_ACTIONS[configurated_control_mode])
-func is_menu_just_pressed() ->       bool:  return Input.is_action_just_pressed(MENU_ACTIONS[configurated_control_mode])
+func is_map_just_pressed() ->        bool:  return enabled and Input.is_action_just_pressed(MAP_ACTIONS[configurated_control_mode])
+func is_menu_just_pressed() ->       bool:  return enabled and Input.is_action_just_pressed(MENU_ACTIONS[configurated_control_mode])
 
-func is_interact_just_pressed()  ->  bool:  return Input.is_action_just_pressed(INTERACT_ACTIONS[configurated_control_mode])
-func is_pass_text_just_pressed() ->  bool:  return Input.is_action_just_pressed(PASS_TEXT_ACTIONS[configurated_control_mode])
+func is_interact_just_pressed()  ->  bool:  return enabled and Input.is_action_just_pressed(INTERACT_ACTIONS[configurated_control_mode])
+func is_pass_text_just_pressed() ->  bool:  return enabled and Input.is_action_just_pressed(PASS_TEXT_ACTIONS[configurated_control_mode])
 
 func _ready() -> void:
 	add_to_group("SETTINGS_LISTENER")
