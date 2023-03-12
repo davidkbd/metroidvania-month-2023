@@ -65,3 +65,6 @@ func _enable_hit_collisions(_enabled : bool) -> void:
 
 func _enter_tree() -> void:
 	add_to_group("ENEMY")
+
+func _ready() -> void:
+	$AnimationTree.active = true

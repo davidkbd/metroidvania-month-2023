@@ -22,6 +22,7 @@ func attack_impulse() -> void:
 	attack_foot_particles.emitting = true
 
 func _ready() -> void:
+	super._ready()
 	collision_areas.append($sword_area)
 	collision_areas.append($body_area)
 	specs = CharacterAliveSpecs.get_knight_specs()

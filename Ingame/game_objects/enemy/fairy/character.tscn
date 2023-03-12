@@ -221,6 +221,7 @@ texture = SubResource("CompressedTexture2D_mc5we")
 centered = false
 hframes = 10
 vframes = 4
+frame = 1
 script = ExtResource("12_q6xj6")
 
 [node name="Center" type="Node2D" parent="."]
