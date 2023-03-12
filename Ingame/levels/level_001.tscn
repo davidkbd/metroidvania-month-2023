@@ -179,7 +179,6 @@ motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_002_tunnel"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_med"]
-modulate = Color(1.5, 1.5, 1.5, 1)
 position = Vector2(-240, -48)
 texture = SubResource("CompressedTexture2D_bf1ag")
 centered = false
@@ -217,7 +216,6 @@ motion_scale = Vector2(0.8, 0.8)
 parallax_name = "room_002"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
-modulate = Color(1.5, 1.5, 1.5, 1)
 position = Vector2(2536, -1584)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_uxxmg")
