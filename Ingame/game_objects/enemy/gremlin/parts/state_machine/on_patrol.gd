@@ -32,13 +32,14 @@ func _choose_direction():
 
 func _can_walk() -> bool:
 	if not host.floor_sensor.is_colliding(): return false
-	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
-	var my_position = host.center.global_position
-	query.from = my_position
-	query.to = my_position + raycast_direction * Vector2.LEFT * host.walk_direction
-	query.collide_with_bodies = true
-	query.collide_with_areas = false
-	query.collision_mask = 1
-	var result = host.space_state.intersect_ray(query)
-	return result.size() == 0
+	return not host.wall_sensor.is_colliding()
+#	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.new()
+#	var my_position = host.center.global_position
+#	query.from = my_position
+#	query.to = my_position + raycast_direction * Vector2.LEFT * host.walk_direction
+#	query.collide_with_bodies = true
+#	query.collide_with_areas = false
+#	query.collision_mask = 1
+#	var result = host.space_state.intersect_ray(query)
+#	return result.size() == 0
 
