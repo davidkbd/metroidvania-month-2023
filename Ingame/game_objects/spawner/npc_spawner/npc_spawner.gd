@@ -7,7 +7,8 @@ enum NpcType {
 	SLIME_01,
 	SLIME_02,
 	SLIME_03,
-	SLIME_04
+	SLIME_04,
+	SLIME_05
 }
 
 @export var storeable  : bool = true
@@ -35,6 +36,10 @@ const NPC_DATA := [
 	},
 	{
 		"id": "slime_04"
+#		"storeable": true
+	},
+	{
+		"id": "slime_05"
 #		"storeable": true
 	}
 	
