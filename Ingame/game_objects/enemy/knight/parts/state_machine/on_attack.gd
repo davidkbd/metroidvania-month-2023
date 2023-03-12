@@ -8,7 +8,8 @@ func enter() -> void:
 	host.animation_playblack.start(name, true)
 	host.velocity = Vector2.ZERO
 	attack_deceleration = state_machine.attack_data.deceleration
-	time = host.animation.get_animation(state_machine.attack_data.animation).length
+	host.animation_tree.set("parameters/on_attack/blend_position", state_machine.attack_data.animation_blend)
+	time = state_machine.attack_data.animation_length
 
 func exit() -> void:
 	host.sword_collider.disabled = true

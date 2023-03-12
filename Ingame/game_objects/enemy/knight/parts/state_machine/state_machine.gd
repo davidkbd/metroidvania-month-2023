@@ -29,7 +29,8 @@ extends StateMachine
 var idle_patrol_timer_flag : bool
 
 @onready var attack_data : Dictionary = {
-	"animation": "",
+	"animation_blend": .0,
+	"animation_length": 1.0,
 	"deceleration": 0,
 	"distance": 0
 }
@@ -44,13 +45,15 @@ func _on_attack_choose_timer_timeout():
 	
 	match attack_id:
 		1:
-			attack_data.animation    = "attack"
-			attack_data.deceleration = get_parent().specs.attack1_deceleration
-			attack_data.distance     = get_parent().specs.attack1_distance
+			attack_data.animation_blend = .0
+			attack_data.animation_length = 1.0
+			attack_data.deceleration    = get_parent().specs.attack1_deceleration
+			attack_data.distance        = get_parent().specs.attack1_distance
 		2:
-			attack_data.animation    = "attack_2"
-			attack_data.deceleration = get_parent().specs.attack2_deceleration
-			attack_data.distance     = get_parent().specs.attack2_distance
+			attack_data.animation_blend = .1
+			attack_data.animation_length = 1.7
+			attack_data.deceleration    = get_parent().specs.attack2_deceleration
+			attack_data.distance        = get_parent().specs.attack2_distance
 
 	attack_choose_timer.start(randi_range(attack_choose_min_time, attack_choose_max_time))
 
