@@ -5,8 +5,11 @@ extends StateMachineState
 var attack_time : float
 var attack_direction : Vector2
 
+var attack_pressed : bool
+
 func enter() -> void:
-	host.animation_playblack.travel("on_attack")
+	attack_pressed = false
+	host.animation_playblack.start("on_attack", true)
 	attack_direction = Vector2(ControlInput.get_horizontal_axis(), -ControlInput.get_vertical_axis())
 	if not host.can_attack_down():
 		attack_direction.y = clamp(attack_direction.y, .0, 1.0)
@@ -34,6 +37,8 @@ func step(delta : float) -> StateMachineState:
 	
 	attack_time -= delta
 
+	if ControlInput.is_attack_just_pressed():
+		attack_pressed = true
 	if host.deatharea_entered: return state_machine.on_deatharea_entered
 	if host.damager.size(): return state_machine.on_damaged
 	if not state_machine.previous_state.is_an_on_air_state() and ControlInput.is_jump_just_pressed(): return state_machine.on_jump
@@ -41,10 +46,11 @@ func step(delta : float) -> StateMachineState:
 	if attack_time < .0:
 		if state_machine.previous_state.is_an_on_air_state():
 			return state_machine.on_air
+		if attack_pressed:
+			enter()
+			return self
+
 		return state_machine.on_ground
-	if attack_time < .0 and ControlInput.is_attack_just_pressed():
-		host.animation_playblack.start("on_attack", true)
-		enter()
 	return self
 
 func _enable_collision(_enabled : bool) -> void:

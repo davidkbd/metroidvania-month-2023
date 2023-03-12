@@ -338,6 +338,7 @@ texture = ExtResource("6_nhmka")
 
 [node name="room_001_combat" parent="." instance=ExtResource("13_xr4d0")]
 position = Vector2(-1064, -64)
+metadata/_edit_lock_ = true
 
 [node name="room_001" parent="." instance=ExtResource("5_olijw")]
 parallax_name = "first_room"
@@ -346,89 +347,117 @@ metadata/_edit_lock_ = true
 [node name="room_002" parent="." instance=ExtResource("7_75ef1")]
 position = Vector2(1896, 32)
 parallax_name = "room_002"
+metadata/_edit_lock_ = true
 
 [node name="room_002_secret" parent="." instance=ExtResource("9_l220f")]
 position = Vector2(1800, 32)
+metadata/_edit_lock_ = true
 
 [node name="room_002_tunnel" parent="." instance=ExtResource("10_dh8cp")]
 position = Vector2(1320, 32)
 parallax_name = "room_002_tunnel"
+metadata/_edit_lock_ = true
 
 [node name="room_003" parent="." instance=ExtResource("11_hgltt")]
-position = Vector2(5464, -1600)
+position = Vector2(5472, -1600)
+metadata/_edit_lock_ = true
 
 [node name="room_003_tunnel" parent="." instance=ExtResource("12_po3mq")]
 position = Vector2(6856, -1600)
+metadata/_edit_lock_ = true
 
 [node name="room_004" parent="." instance=ExtResource("13_dsqei")]
 position = Vector2(5472, -2432)
+metadata/_edit_lock_ = true
 
 [node name="room_004_savepoint" parent="." instance=ExtResource("21_0jfjp")]
 position = Vector2(4064, -2432)
+metadata/_edit_lock_ = true
 
 [node name="room_004_tunnel" parent="." instance=ExtResource("14_s8mat")]
 position = Vector2(6856, -2880)
+metadata/_edit_lock_ = true
 
 [node name="room_006_tunnel" parent="." instance=ExtResource("15_u1dht")]
 position = Vector2(9448, -640)
+metadata/_edit_lock_ = true
 
 [node name="room_006" parent="." instance=ExtResource("16_uxsce")]
 position = Vector2(9984, -2944)
 ost_item = 5
 battle_ost_item = 6
+metadata/_edit_lock_ = true
 
 [node name="room_007" parent="." instance=ExtResource("17_y2cyn")]
 position = Vector2(9376, 480)
+metadata/_edit_lock_ = true
 
 [node name="room_008" parent="." instance=ExtResource("18_0mwn2")]
 position = Vector2(7648, 480)
+metadata/_edit_lock_ = true
 
 [node name="room_009_tunnel" parent="." instance=ExtResource("19_h3l0m")]
 position = Vector2(12360, -4064)
+metadata/_edit_lock_ = true
 
 [node name="room_009" parent="." instance=ExtResource("20_t6n72")]
 position = Vector2(15072, -5312)
+metadata/_edit_lock_ = true
 
 [node name="room_010_tunnel" parent="." instance=ExtResource("22_j37te")]
 position = Vector2(16992, -3936)
+metadata/_edit_lock_ = true
 
 [node name="room_011" parent="." instance=ExtResource("23_t6j15")]
 position = Vector2(18016, -5632)
+metadata/_edit_lock_ = true
 
 [node name="room_012_tunnel" parent="." instance=ExtResource("24_q05xe")]
 position = Vector2(17664, -7304)
+metadata/_edit_lock_ = true
 
 [node name="room_013" parent="." instance=ExtResource("26_mqqgf")]
 position = Vector2(12032, -6912)
 ost_item = 5
 battle_ost_item = 6
+metadata/_edit_lock_ = true
 
 [node name="room_013_secret" parent="." instance=ExtResource("33_6nqs7")]
 position = Vector2(10624, -6912)
+metadata/_edit_lock_ = true
 
 [node name="room_014" parent="." instance=ExtResource("27_dx7ie")]
 position = Vector2(16608, -8704)
+metadata/_edit_lock_ = true
 
 [node name="room_015" parent="." instance=ExtResource("28_th023")]
 position = Vector2(18816, -8608)
+metadata/_edit_lock_ = true
 
 [node name="room_016" parent="." instance=ExtResource("29_p3mn4")]
 position = Vector2(20224, -8608)
+metadata/_edit_lock_ = true
 
 [node name="room_016_tunnel" parent="." instance=ExtResource("30_o7mk3")]
 position = Vector2(22528, -7208)
+metadata/_edit_lock_ = true
 
 [node name="room_017" parent="." instance=ExtResource("31_2go6e")]
 position = Vector2(23680, -8512)
+metadata/_edit_lock_ = true
 
 [node name="room_018" parent="." instance=ExtResource("32_assd5")]
 position = Vector2(20448, -4064)
+metadata/_edit_lock_ = true
 
 [node name="room_019" parent="." instance=ExtResource("35_n8v53")]
 position = Vector2(22528, -4608)
+metadata/_edit_lock_ = true
 
 [node name="room_020" parent="." instance=ExtResource("36_i8745")]
 position = Vector2(24608, -4608)
+metadata/_edit_lock_ = true
 
 [node name="room_021" parent="." instance=ExtResource("37_82fqi")]
 position = Vector2(20224, -7136)
+metadata/_edit_lock_ = true

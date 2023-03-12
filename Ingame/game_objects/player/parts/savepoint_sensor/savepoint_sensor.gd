@@ -21,6 +21,7 @@ func _on_area_exited(_area : SavepointArea):
 
 func _physics_process(_delta : float) -> void:
 	if savepoint and ControlInput.is_interact_just_pressed():
+		get_parent().life.reset()
 		get_tree().get_first_node_in_group("HELP_TIPS").hide_control()
 		savepoint.activate()
 		savepoint = null
