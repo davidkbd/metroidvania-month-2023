@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ci2r5kfigpcu1"]
+[gd_scene load_steps=24 format=3 uid="uid://ci2r5kfigpcu1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_idys0"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_3piro"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/death_area/death_area.tscn" id="10_g886c"]
 [ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="10_p0uur"]
 [ext_resource type="Texture2D" uid="uid://dtste5y7d3gvy" path="res://Ingame/levels/tiles/sprites/animated/traps.png" id="11_nhxwr"]
+[ext_resource type="PackedScene" uid="uid://dl4qyhmom6ndh" path="res://sfx/roll_trap_sfx.tscn" id="14_vkx6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2096, 888)
@@ -245,3 +246,9 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/death_area6"]
 position = Vector2(-232, 8)
 shape = SubResource("RectangleShape2D_3pyv7")
+
+[node name="roll_trap_sfx" parent="room_content" instance=ExtResource("14_vkx6u")]
+position = Vector2(32, 40)
+
+[node name="roll_trap_sfx2" parent="room_content" instance=ExtResource("14_vkx6u")]
+position = Vector2(672, 40)

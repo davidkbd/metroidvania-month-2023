@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl4qyhmom6ndh"]
+
+[ext_resource type="AudioStream" uid="uid://b3wusy78ap5qi" path="res://sfx/NEW/mechanical-sfx_m001-27933.wav" id="1_aewnl"]
+
+[node name="roll_trap_sfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_aewnl")
+volume_db = -3.0
+autoplay = true
+attenuation = 0.554785
+bus = &"sfx"

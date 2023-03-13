@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=16 format=3 uid="uid://b7beisx2twja4"]
 
 [ext_resource type="Script" path="res://Menu/principal_menu/principal_menu.gd" id="1_bp4pa"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0msl5"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c0lno0c0myi3d" path="res://Menu/buttons/credits_button/credits_button.tscn" id="8_njrsb"]
 [ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="9_c00c0"]
 [ext_resource type="PackedScene" uid="uid://b8xl2b6d65mfo" path="res://Menu/buttons/quit_button/quit_button.tscn" id="9_cg4ke"]
-[ext_resource type="PackedScene" path="res://Menu/buttons/help_button/help_button.tscn" id="12_qrxpa"]
+[ext_resource type="PackedScene" uid="uid://bvkqv0hgdg836" path="res://Menu/buttons/help_button/help_button.tscn" id="12_qrxpa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
 animations = [{
@@ -63,11 +63,16 @@ texture = ExtResource("2_0msl5")
 sprite_frames = SubResource("SpriteFrames_h6so0")
 
 [node name="panel" type="NinePatchRect" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.68
 anchor_top = 0.56
 anchor_right = 0.97
 anchor_bottom = 0.98
+offset_left = -0.200012
+offset_top = 30.4
+offset_right = 0.199951
+offset_bottom = 0.199982
 texture = ExtResource("2_uh5pl")
 patch_margin_left = 16
 patch_margin_top = 16
@@ -75,7 +80,7 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="title" parent="." instance=ExtResource("9_c00c0")]
-position = Vector2(440, 184)
+position = Vector2(440, 208)
 text = "Metroidcosa"
 
 [node name="play_button" parent="." instance=ExtResource("6_dab66")]
@@ -86,9 +91,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 536.0
-offset_top = 216.0
+offset_top = 248.0
 offset_right = 600.0
-offset_bottom = 232.0
+offset_bottom = 264.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -100,13 +105,14 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 536.0
-offset_top = 240.0
+offset_top = 272.0
 offset_right = 600.0
-offset_bottom = 256.0
+offset_bottom = 288.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="controls_button" parent="." instance=ExtResource("12_qrxpa")]
+[node name="help_button" parent="." instance=ExtResource("12_qrxpa")]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
@@ -128,9 +134,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 536.0
-offset_top = 288.0
+offset_top = 296.0
 offset_right = 600.0
-offset_bottom = 304.0
+offset_bottom = 312.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -142,8 +148,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 536.0
-offset_top = 312.0
+offset_top = 320.0
 offset_right = 600.0
-offset_bottom = 328.0
+offset_bottom = 336.0
 grow_horizontal = 1
 grow_vertical = 1
