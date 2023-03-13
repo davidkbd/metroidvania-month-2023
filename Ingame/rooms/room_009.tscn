@@ -44,7 +44,6 @@ shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
-visible = false
 light_mask = 4
 tile_set = ExtResource("5_gu2h1")
 format = 2
