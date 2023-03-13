@@ -357,14 +357,13 @@ centered = false
 [node name="room_004_tunnel_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 texture_filter = 1
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_004_tunnel"
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_bg"]
 light_mask = 0
 texture_filter = 1
 texture_repeat = 3
-position = Vector2(1064, -2432)
+position = Vector2(1040, -2232)
 texture = SubResource("CompressedTexture2D_o67cn")
 centered = false
 region_enabled = true
@@ -374,43 +373,42 @@ region_rect = Rect2(0, 0, 4000, 2000)
 texture_filter = 1
 position = Vector2(912, -560)
 motion_scale = Vector2(0.7, 0.7)
-motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_004_tunnel"
 
 [node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_far"]
-visible = false
 light_mask = 0
 texture_repeat = 3
-position = Vector2(2056, -2192)
+position = Vector2(3384, -1776)
 texture = SubResource("CompressedTexture2D_4w4e1")
 centered = false
-region_rect = Rect2(0, 0, 2000, 2000)
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2000)
 
 [node name="room_004_tunnel_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 texture_filter = 1
 motion_scale = Vector2(0.8, 0.8)
-motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_004_tunnel"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_med"]
-visible = false
 light_mask = 0
-position = Vector2(1200, -2832)
+position = Vector2(4600, -2688)
 texture = SubResource("CompressedTexture2D_l5blw")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2000)
 
 [node name="room_004_tunnel_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 texture_filter = 1
 motion_scale = Vector2(0.9, 0.9)
-motion_mirroring = Vector2(2527, 0)
 parallax_name = "room_004_tunnel"
 
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_near"]
-visible = false
 light_mask = 0
-position = Vector2(1104, -2976)
+position = Vector2(5776, -3040)
 texture = SubResource("CompressedTexture2D_aweja")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2000)
 
 [node name="Fog3" type="CanvasLayer" parent="parallax"]
 layer = -90
