@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ci2r5kfigpcu1"]
+[gd_scene load_steps=23 format=3 uid="uid://ci2r5kfigpcu1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_idys0"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_3piro"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="6_m06if"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="7_bka2g"]
 [ext_resource type="Texture2D" uid="uid://great1007ve3" path="res://Ingame/rooms/destroyable_walls/sprites/room018_destroyable_wall.png" id="8_mu22t"]
+[ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="8_s27xa"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/death_area/death_area.tscn" id="10_g886c"]
 [ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="10_p0uur"]
 [ext_resource type="Texture2D" uid="uid://dtste5y7d3gvy" path="res://Ingame/levels/tiles/sprites/animated/traps.png" id="11_nhxwr"]
@@ -134,6 +135,10 @@ direction = 3
 
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("5_kpys7")]
 position = Vector2(1376, -320)
+
+[node name="npc_spawner" parent="room_content" instance=ExtResource("8_s27xa")]
+position = Vector2(-232, 320)
+npc_type = 7
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("6_l0tyg")]
 

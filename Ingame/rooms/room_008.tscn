@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csayp6knrfe0d"]
+[gd_scene load_steps=18 format=3 uid="uid://csayp6knrfe0d"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_dv7hw"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_5m3fy"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_xor2i"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/death_area/death_area.tscn" id="7_4vfki"]
 [ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="8_chdt1"]
+[ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="9_btrxr"]
 [ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="9_k55iq"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="10_bywac"]
 [ext_resource type="Texture2D" uid="uid://bfefy1spou7dp" path="res://Ingame/rooms/destroyable_walls/sprites/room008_destroyable_wall.png" id="11_1fa1i"]
@@ -102,6 +103,10 @@ collider_offset = Vector2i(0, -5)
 position = Vector2(-736, -688)
 collider_size = Vector2i(1, 10)
 collider_offset = Vector2i(0, -5)
+
+[node name="npc_spawner" parent="room_content" instance=ExtResource("9_btrxr")]
+position = Vector2(-64, -800)
+npc_type = 5
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("9_k55iq")]
 position = Vector2(-144, -620)

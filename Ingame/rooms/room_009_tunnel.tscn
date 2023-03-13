@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpg6dyxmyfsbq"]
+[gd_scene load_steps=9 format=3 uid="uid://cpg6dyxmyfsbq"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_gor1j"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_q42lk"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_3mr2m"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_4uicu"]
 [ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="5_1322n"]
+[ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="6_d5nq3"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="6_u2sgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
@@ -48,6 +49,10 @@ direction = 3
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_4uicu")]
 position = Vector2(1784, -128)
 direction = 0
+
+[node name="enemy_spawner" parent="room_content" instance=ExtResource("6_d5nq3")]
+position = Vector2(704, 288)
+enemy_type = 1
 
 [node name="green_torch" parent="." instance=ExtResource("6_u2sgi")]
 position = Vector2(-352, 192)

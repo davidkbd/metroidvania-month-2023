@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=16 format=3 uid="uid://b68vcgdaf1ye3"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_r80d2"]
-[ext_resource type="TileSet" path="res://Ingame/levels/tiles/cavern.tres" id="4_6qv04"]
+[ext_resource type="TileSet" uid="uid://dmwgrihiyreyd" path="res://Ingame/levels/tiles/cavern.tres" id="4_6qv04"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="4_dkf1h"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_tio88"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="5_5a81s"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="11_nuhjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(1008, 568)
+size = Vector2(1071, 568)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fpfl"]
 size = Vector2(8, 64)
@@ -30,7 +30,7 @@ ost_item = 1
 position = Vector2(32, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(111, -156)
+position = Vector2(79.5, -156)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
@@ -53,6 +53,7 @@ layer_0/tile_data = PackedInt32Array(196607, 262146, 2, 131071, 262146, 1, 19660
 [node name="room_content" parent="." instance=ExtResource("4_tio88")]
 
 [node name="destroyable_object" parent="room_content" instance=ExtResource("6_r4jcw")]
+texture_filter = 1
 position = Vector2(-336, 264)
 is_map_secret = true
 
@@ -90,11 +91,8 @@ collision_mask = 1025
 
 [node name="sprite" type="Sprite2D" parent="room_content/destroyable_object/target"]
 texture_filter = 1
-texture_repeat = 2
-position = Vector2(-16, -96)
+position = Vector2(-48, -96)
 texture = ExtResource("8_oidpe")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 192)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/destroyable_object/target"]
 position = Vector2(-16, -80)
@@ -133,6 +131,8 @@ element_type = 1
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
 position = Vector2(432, 320)
 
-[node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_m2y6s")]
-position = Vector2(-416, 256)
-direction = 3
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(1796, -466)
+tile_set = ExtResource("4_6qv04")
+format = 2
+layer_0/tile_data = PackedInt32Array(327669, 327682, 3, 393205, 327682, 3, 458741, 327682, 3, 524277, 327682, 3, 589813, 327682, 3, 655349, 327682, 3, 720885, 262146, 2, 720884, 196610, 3, 655348, 196610, 3, 589812, 196610, 3, 524276, 196610, 3, 458740, 196610, 3, 393204, 196610, 3, 327668, 196610, 3, 262132, 196610, 3, 262131, 196610, 3, 327667, 196610, 3, 393203, 196610, 3, 458739, 196610, 3, 524275, 196610, 3, 589811, 196610, 3, 655347, 196610, 3, 720883, 196610, 3)

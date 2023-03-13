@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cep1yq2c6klue"]
+[gd_scene load_steps=8 format=3 uid="uid://cep1yq2c6klue"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_pw6hu"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_us53f"]
 [ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="3_jg5h3"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_q8r01"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_b2iph"]
+[ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="6_c2qtx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(816, 3032)
@@ -50,3 +51,15 @@ collider_size = Vector2i(4, 5)
 [node name="autoadvance_area_left3" parent="room_content" instance=ExtResource("5_b2iph")]
 position = Vector2(96, 1768)
 direction = 3
+
+[node name="gremlin_spawner" parent="room_content" instance=ExtResource("6_c2qtx")]
+position = Vector2(280, 8)
+enemy_type = 1
+
+[node name="gremlin_spawner2" parent="room_content" instance=ExtResource("6_c2qtx")]
+position = Vector2(280, 1128)
+enemy_type = 1
+
+[node name="gremlin_spawner3" parent="room_content" instance=ExtResource("6_c2qtx")]
+position = Vector2(-80, 456)
+enemy_type = 1
