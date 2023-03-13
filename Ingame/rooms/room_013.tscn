@@ -96,18 +96,22 @@ shape = SubResource("RectangleShape2D_6rgvl")
 [node name="LockDoor" parent="room_content" instance=ExtResource("9_pevmx")]
 position = Vector2(640, 384)
 
-[node name="enemy_spawner" parent="room_content" instance=ExtResource("10_xlcot")]
+[node name="fairy_spawner" parent="room_content" instance=ExtResource("10_xlcot")]
 position = Vector2(-248, -200)
 enemy_type = 2
 
-[node name="enemy_spawner2" parent="room_content" instance=ExtResource("10_xlcot")]
+[node name="fairy_spawner2" parent="room_content" instance=ExtResource("10_xlcot")]
 position = Vector2(216, -128)
 enemy_type = 2
 
-[node name="enemy_spawner3" parent="room_content" instance=ExtResource("10_xlcot")]
+[node name="fairy_spawner3" parent="room_content" instance=ExtResource("10_xlcot")]
 position = Vector2(-352, 216)
 enemy_type = 2
 
-[node name="enemy_spawner4" parent="room_content" instance=ExtResource("10_xlcot")]
+[node name="gremlin_spawner" parent="room_content" instance=ExtResource("10_xlcot")]
 position = Vector2(-256, 384)
+enemy_type = 1
+
+[node name="gremlin_spawner2" parent="room_content" instance=ExtResource("10_xlcot")]
+position = Vector2(216, 384)
 enemy_type = 1
