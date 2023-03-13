@@ -50,7 +50,7 @@ direction = 3
 position = Vector2(1784, -128)
 direction = 0
 
-[node name="enemy_spawner" parent="room_content" instance=ExtResource("6_d5nq3")]
+[node name="gremlin_spawner" parent="room_content" instance=ExtResource("6_d5nq3")]
 position = Vector2(704, 288)
 enemy_type = 1
 

@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://brjkpj6nrt24k"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_mdcrw"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_nv7n2"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_jc2fp"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_qmyac"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_3cjcs"]
-[ext_resource type="TileSet" path="res://Ingame/levels/tiles/cavern.tres" id="5_pwqaa"]
+[ext_resource type="TileSet" uid="uid://dmwgrihiyreyd" path="res://Ingame/levels/tiles/cavern.tres" id="5_pwqaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1856, 448)
@@ -40,8 +40,12 @@ layer_0/tile_data = PackedInt32Array(196607, 196610, 3, 131071, 196610, 2, 19660
 
 [node name="room_content" parent="." instance=ExtResource("3_jc2fp")]
 
-[node name="enemy_spawner" parent="room_content" instance=ExtResource("5_3cjcs")]
+[node name="gremlin_spawner" parent="room_content" instance=ExtResource("5_3cjcs")]
 position = Vector2(-88, 288)
+enemy_type = 1
+
+[node name="gremlin_spawner2" parent="room_content" instance=ExtResource("5_3cjcs")]
+position = Vector2(304, 288)
 enemy_type = 1
 
 [node name="autoadvance_area_left" parent="room_content" instance=ExtResource("4_qmyac")]
