@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c7vfkeqp830lf"]
+[gd_scene load_steps=18 format=3 uid="uid://c7vfkeqp830lf"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_0wcwj"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_sb2ff"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/death_area/death_area.tscn" id="8_ojadt"]
 [ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="9_87bl5"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="10_mboop"]
+[ext_resource type="PackedScene" uid="uid://dl4qyhmom6ndh" path="res://sfx/roll_trap_sfx.tscn" id="11_vgy5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2584, 864)
@@ -162,3 +163,12 @@ enemy_type = 2
 [node name="enemy_spawner3" parent="room_content" instance=ExtResource("10_mboop")]
 position = Vector2(1360, 208)
 enemy_type = 2
+
+[node name="roll_trap_sfx" parent="room_content" instance=ExtResource("11_vgy5k")]
+position = Vector2(-240, 320)
+
+[node name="roll_trap_sfx2" parent="room_content" instance=ExtResource("11_vgy5k")]
+position = Vector2(712, 320)
+
+[node name="roll_trap_sfx3" parent="room_content" instance=ExtResource("11_vgy5k")]
+position = Vector2(1472, 320)

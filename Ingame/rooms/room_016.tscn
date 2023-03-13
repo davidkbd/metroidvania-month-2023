@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxop872qfhvby"]
+[gd_scene load_steps=15 format=3 uid="uid://cxop872qfhvby"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_2s145"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_j233y"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bg7cwbsk4o21r" path="res://Ingame/game_objects/room/restart_point/restart_point.tscn" id="6_rqls3"]
 [ext_resource type="Texture2D" uid="uid://dtste5y7d3gvy" path="res://Ingame/levels/tiles/sprites/animated/traps.png" id="7_70h48"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/death_area/death_area.tscn" id="8_agfq7"]
+[ext_resource type="PackedScene" uid="uid://dl4qyhmom6ndh" path="res://sfx/roll_trap_sfx.tscn" id="10_23urd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2672, 864)
@@ -51,7 +52,7 @@ size = Vector2(832, 32)
 [node name="room_016" type="Node2D"]
 script = ExtResource("1_2s145")
 ost_item = 6
-battle_ost_item = 7
+battle_ost_item = 6
 
 [node name="room_area" parent="." instance=ExtResource("2_j233y")]
 
@@ -140,3 +141,9 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_content/death_area2"]
 position = Vector2(96, 400)
 shape = SubResource("RectangleShape2D_072d6")
+
+[node name="roll_trap_sfx" parent="room_content" instance=ExtResource("10_23urd")]
+position = Vector2(64, 160)
+
+[node name="roll_trap_sfx2" parent="room_content" instance=ExtResource("10_23urd")]
+position = Vector2(1248, 320)
