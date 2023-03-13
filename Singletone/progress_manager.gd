@@ -11,6 +11,12 @@ var game_state : Dictionary = {
 	},
 	"map": {
 	},
+	"missions": {
+		"kill_fairies": {
+			"active": false,
+			"completed": false
+		}
+	},
 	"rooms": {}
 }
 
@@ -76,7 +82,6 @@ func _update_map(storeable_game_state : Dictionary) -> void:
 		room.visible = true
 		if room.has("res"):
 			room.erase("res")
-			
 
 func _ready():
 	add_to_group("PLAYER_LISTENER")
