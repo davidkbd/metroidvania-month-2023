@@ -17,8 +17,7 @@ func step(delta : float) -> StateMachineState:
 	_movement()
 
 	host.move_and_slide()
-	# Si haces el interact antes del move and slide peta
-	_tilemap_interact()
+	_floor_interact()
 
 #	# Returns
 	if ControlInput.is_jump_just_pressed(): return state_machine.on_jump
@@ -33,12 +32,12 @@ func step(delta : float) -> StateMachineState:
 	if host.autoadvance_area and is_instance_valid(host.autoadvance_area): return state_machine.on_autoadvancing
 	return self
 
-func _tilemap_interact() -> void:
+func _floor_interact() -> void:
 	if host.is_on_floor():
 		for i in host.get_slide_collision_count():
 			var col = host.get_slide_collision(i)
-			if col and col.get_collider() is TrapsTileMap:
-				col.get_collider().interact(col.get_collider_rid())
+			if col and col.get_collider() is BreakablePlatform:
+				col.get_collider().interact()
 
 func _coyote_time(delta : float) -> void:
 	if host.is_on_floor():
