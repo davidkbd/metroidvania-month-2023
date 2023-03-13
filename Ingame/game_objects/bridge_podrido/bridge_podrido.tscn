@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl1rd6alc1ml1"]
+
+[ext_resource type="Texture2D" uid="uid://bi2luipxhd4ps" path="res://Ingame/game_objects/bridge_podrido/sprites/bridge_podrido.png" id="1_03pja"]
+[ext_resource type="Script" path="res://Ingame/game_objects/bridge_podrido/bridge_podrido.gd" id="1_vj2b0"]
+[ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="2_kb2q8"]
+
+[sub_resource type="Gradient" id="Gradient_nr2wu"]
+offsets = PackedFloat32Array(0, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.82263, 1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emksd"]
+size = Vector2(160, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bopd5"]
+size = Vector2(64, 96)
+
+[node name="bridge_podrido" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_vj2b0")
+
+[node name="mini_particles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.15
+emission_shape = 3
+emission_rect_extents = Vector2(48, 2)
+gravity = Vector2(0, 200)
+angle_min = -1.6
+angle_max = 154.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.447059, 0.584314, 0.866667, 1)
+color_ramp = SubResource("Gradient_nr2wu")
+
+[node name="big_particles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_kb2q8")
+emission_shape = 3
+emission_rect_extents = Vector2(48, 8)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_min = 4.0
+initial_velocity_max = 32.0
+angle_min = -1.6
+angle_max = 154.0
+color_ramp = SubResource("Gradient_nr2wu")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-128, 0)
+texture = ExtResource("1_03pja")
+centered = false
+offset = Vector2(0, -96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 16)
+shape = SubResource("RectangleShape2D_emksd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(96, -48)
+shape = SubResource("RectangleShape2D_bopd5")
