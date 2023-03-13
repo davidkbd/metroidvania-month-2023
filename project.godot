@@ -23,8 +23,8 @@ ControlInput="*res://Singletone/control_input.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=7680
+window/size/viewport_height=4320
 window/stretch/mode="viewport"
 window/layer_12=""
 
