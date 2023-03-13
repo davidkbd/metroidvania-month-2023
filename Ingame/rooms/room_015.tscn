@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dtste5y7d3gvy" path="res://Ingame/levels/tiles/sprites/animated/traps.png" id="6_kclgx"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/death_area/death_area.tscn" id="7_ol0gv"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="8_pe5wd"]
-[ext_resource type="PackedScene" uid="uid://dl4qyhmom6ndh" path="res://sfx/roll_trap_sfx.tscn" id="10_ko155"]
+[ext_resource type="PackedScene" path="res://sfx/roll_trap_sfx.tscn" id="10_ko155"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 792)

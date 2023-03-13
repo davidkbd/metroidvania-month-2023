@@ -7,6 +7,6 @@ var data : Dictionary = {
 func get_texts() -> Array[String]:
 	data.last_talk = Time.get_unix_time_from_system()
 	return [
-		"Snap to the wall and jump in the other direction",
-		"It's so funny"
+		"Consume dead bodies to gain power",
+		"Just look up when you found any"
 	]
