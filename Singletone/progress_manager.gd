@@ -28,6 +28,11 @@ const DEFAULT_GAMESTATE : Dictionary = {
 			"completed": false
 		}
 	},
+	"bundle": {
+		"bridge_podrido": {
+			"destroyed": false
+		}
+	},
 	"rooms": {}
 }
 
