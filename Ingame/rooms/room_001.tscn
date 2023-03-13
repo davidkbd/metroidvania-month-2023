@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="11_nuhjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(1071, 568)
+size = Vector2(1015, 568)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fpfl"]
 size = Vector2(8, 64)
@@ -30,7 +30,7 @@ ost_item = 1
 position = Vector2(32, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(79.5, -156)
+position = Vector2(107.5, -156)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
@@ -109,6 +109,11 @@ control_type = 1
 [node name="autoadvance_area" parent="room_content" instance=ExtResource("6_m2y6s")]
 position = Vector2(640, 176)
 collider_size = Vector2i(4, 9)
+
+[node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_m2y6s")]
+position = Vector2(-360, 240)
+collider_size = Vector2i(2, 5)
+direction = 3
 
 [node name="savepoint" type="Node2D" parent="room_content"]
 position = Vector2(64, 384)
