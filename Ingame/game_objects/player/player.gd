@@ -97,6 +97,7 @@ func can_attack_down() -> bool:
 	return result.size() == 0
 
 func entered_in_death_area() -> void:
+	if life.is_died(): return
 	if restartpoint_sensor.last_restartpoint and is_instance_valid(restartpoint_sensor.last_restartpoint):
 		deatharea_entered = true
 
