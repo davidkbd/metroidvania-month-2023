@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cy51rr2wdrtug"
+path="res://.godot/imported/- - sewers.ogg-b3320293cf8c981e68213d21ec88945c.oggvorbisstr"
+
+[deps]
+
+source_file="res://_reaper/music/02/- - sewers.ogg"
+dest_files=["res://.godot/imported/- - sewers.ogg-b3320293cf8c981e68213d21ec88945c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

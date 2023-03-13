@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ddotdiwfuqkn"
+path="res://.godot/imported/- - sewers.wav-3064e9495c625d0d6f3bea452f516cc5.sample"
+
+[deps]
+
+source_file="res://_reaper/music/02/- - sewers.wav"
+dest_files=["res://.godot/imported/- - sewers.wav-3064e9495c625d0d6f3bea452f516cc5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -3,8 +3,9 @@ class_name MusicManager
 
 enum OstItem {
 	SILENT,
-	FIRST_ROOM,
-	FIRST_ROOM_BATTLE,
+	CAVERNS_INITIAL,
+	CAVERNS,
+	CAVERNS_BATTLE,
 	LONELY,
 	SAVEPOINT,
 	SEWERS,
@@ -47,8 +48,9 @@ func _room_activated(room : Room) -> void:
 func _find_audio_stream_player(_ost_item : OstItem) -> AudioStreamPlayer:
 	match _ost_item:
 		OstItem.SILENT:            return $silent
-		OstItem.FIRST_ROOM:        return $first_room
-		OstItem.FIRST_ROOM_BATTLE: return $first_room_battle
+		OstItem.CAVERNS_INITIAL:   return $caverns_initial
+		OstItem.CAVERNS:           return $caverns
+		OstItem.CAVERNS_BATTLE:    return $caverns_battle
 		OstItem.LONELY:            return $lonely
 		OstItem.SAVEPOINT:         return $savepoint
 		OstItem.SEWERS:            return $sewers

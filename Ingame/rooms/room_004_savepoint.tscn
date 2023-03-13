@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://bufcpa7gjurs4"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_8t18y"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_rty7b"]
-[ext_resource type="TileSet" path="res://Ingame/levels/tiles/cavern.tres" id="3_gwgeg"]
+[ext_resource type="TileSet" uid="uid://dmwgrihiyreyd" path="res://Ingame/levels/tiles/cavern.tres" id="3_gwgeg"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_7fi40"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_1vtrd"]
 [ext_resource type="PackedScene" uid="uid://t6bwob3bwtvf" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="6_rsl6g"]
@@ -13,7 +13,7 @@ size = Vector2(1216, 680)
 
 [node name="room_004_savepoint" type="Node2D"]
 script = ExtResource("1_8t18y")
-ost_item = 4
+ost_item = 5
 
 [node name="room_area" parent="." instance=ExtResource("2_rty7b")]
 

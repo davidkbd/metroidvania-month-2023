@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://xhech3ybgrqn"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_k5ijc"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_q8mdx"]
-[ext_resource type="TileSet" path="res://Ingame/levels/tiles/sewer.tres" id="3_2wsty"]
+[ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="3_2wsty"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_s7cbh"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_p0iec"]
 
@@ -11,8 +11,8 @@ size = Vector2(1784, 936)
 
 [node name="room_020" type="Node2D"]
 script = ExtResource("1_k5ijc")
-ost_item = 5
-battle_ost_item = 6
+ost_item = 6
+battle_ost_item = 7
 
 [node name="room_area" parent="." instance=ExtResource("2_q8mdx")]
 position = Vector2(64, 288)

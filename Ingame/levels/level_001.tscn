@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3]
+[gd_scene load_steps=52 format=3 uid="uid://fvyte744x2sp"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/level.gd" id="1_c54te"]
 [ext_resource type="PackedScene" path="res://Ingame/levels/parallax_layer/parallax_layer.tscn" id="2_vpw7i"]
@@ -11,37 +11,37 @@
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="5_r0vl8"]
 [ext_resource type="Texture2D" uid="uid://cc6x8cf1uayv5" path="res://Ingame/levels/parallax_layer/sprites/foreground/room_002_foreground01.png" id="6_nhmka"]
 [ext_resource type="Texture2D" uid="uid://crib3j3pscx1k" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax3.png" id="6_tbh3o"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
+[ext_resource type="PackedScene" uid="uid://d1yiliau2vn7v" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
 [ext_resource type="Texture2D" uid="uid://d301wgv3eb1hm" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax2.png" id="7_uxxmg"]
 [ext_resource type="Texture2D" uid="uid://cdjr5nuufsa0h" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax1.png" id="8_vw1a5"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_002_secret.tscn" id="9_l220f"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_002_tunnel.tscn" id="10_dh8cp"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_003.tscn" id="11_hgltt"]
+[ext_resource type="PackedScene" uid="uid://bfbxd6ngqctwc" path="res://Ingame/rooms/room_002_secret.tscn" id="9_l220f"]
+[ext_resource type="PackedScene" uid="uid://sml08gtbpkp0" path="res://Ingame/rooms/room_002_tunnel.tscn" id="10_dh8cp"]
+[ext_resource type="PackedScene" uid="uid://bkdx1cjef5tax" path="res://Ingame/rooms/room_003.tscn" id="11_hgltt"]
 [ext_resource type="PackedScene" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_004.tscn" id="13_dsqei"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_combat.tscn" id="13_xr4d0"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_s8mat"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_006_tunnel.tscn" id="15_u1dht"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_006.tscn" id="16_uxsce"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_007.tscn" id="17_y2cyn"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_008.tscn" id="18_0mwn2"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_009_tunnel.tscn" id="19_h3l0m"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_009.tscn" id="20_t6n72"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_004_savepoint.tscn" id="21_0jfjp"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_010_tunnel.tscn" id="22_j37te"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_011.tscn" id="23_t6j15"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_012_tunnel.tscn" id="24_q05xe"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_013.tscn" id="26_mqqgf"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_014.tscn" id="27_dx7ie"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_015.tscn" id="28_th023"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_016.tscn" id="29_p3mn4"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_016_tunnel.tscn" id="30_o7mk3"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_017.tscn" id="31_2go6e"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_018.tscn" id="32_assd5"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_013_secret.tscn" id="33_6nqs7"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_019.tscn" id="35_n8v53"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_020.tscn" id="36_i8745"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_021.tscn" id="37_82fqi"]
+[ext_resource type="PackedScene" uid="uid://jvmgscj7a8aj" path="res://Ingame/rooms/room_004.tscn" id="13_dsqei"]
+[ext_resource type="PackedScene" uid="uid://cjy42dcv7n4ns" path="res://Ingame/rooms/room_001_combat.tscn" id="13_xr4d0"]
+[ext_resource type="PackedScene" uid="uid://c5ln4hnx7xo2k" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_s8mat"]
+[ext_resource type="PackedScene" uid="uid://bgyv586q0ga1d" path="res://Ingame/rooms/room_006_tunnel.tscn" id="15_u1dht"]
+[ext_resource type="PackedScene" uid="uid://civ87ynp7pl6l" path="res://Ingame/rooms/room_006.tscn" id="16_uxsce"]
+[ext_resource type="PackedScene" uid="uid://dyshcyvyemutn" path="res://Ingame/rooms/room_007.tscn" id="17_y2cyn"]
+[ext_resource type="PackedScene" uid="uid://csayp6knrfe0d" path="res://Ingame/rooms/room_008.tscn" id="18_0mwn2"]
+[ext_resource type="PackedScene" uid="uid://cpg6dyxmyfsbq" path="res://Ingame/rooms/room_009_tunnel.tscn" id="19_h3l0m"]
+[ext_resource type="PackedScene" uid="uid://cprcfdxouvpne" path="res://Ingame/rooms/room_009.tscn" id="20_t6n72"]
+[ext_resource type="PackedScene" uid="uid://bufcpa7gjurs4" path="res://Ingame/rooms/room_004_savepoint.tscn" id="21_0jfjp"]
+[ext_resource type="PackedScene" uid="uid://fsko2k3detel" path="res://Ingame/rooms/room_010_tunnel.tscn" id="22_j37te"]
+[ext_resource type="PackedScene" uid="uid://c686r7vgmnd8j" path="res://Ingame/rooms/room_011.tscn" id="23_t6j15"]
+[ext_resource type="PackedScene" uid="uid://0myqt2iee3d3" path="res://Ingame/rooms/room_012_tunnel.tscn" id="24_q05xe"]
+[ext_resource type="PackedScene" uid="uid://dj7vldccptd1o" path="res://Ingame/rooms/room_013.tscn" id="26_mqqgf"]
+[ext_resource type="PackedScene" uid="uid://cwve6vgiajvgt" path="res://Ingame/rooms/room_014.tscn" id="27_dx7ie"]
+[ext_resource type="PackedScene" uid="uid://blwc0q4ud5h0y" path="res://Ingame/rooms/room_015.tscn" id="28_th023"]
+[ext_resource type="PackedScene" uid="uid://cxop872qfhvby" path="res://Ingame/rooms/room_016.tscn" id="29_p3mn4"]
+[ext_resource type="PackedScene" uid="uid://cep1yq2c6klue" path="res://Ingame/rooms/room_016_tunnel.tscn" id="30_o7mk3"]
+[ext_resource type="PackedScene" uid="uid://crry0npkuko7b" path="res://Ingame/rooms/room_017.tscn" id="31_2go6e"]
+[ext_resource type="PackedScene" uid="uid://ci2r5kfigpcu1" path="res://Ingame/rooms/room_018.tscn" id="32_assd5"]
+[ext_resource type="PackedScene" uid="uid://5unrvkbvejoq" path="res://Ingame/rooms/room_013_secret.tscn" id="33_6nqs7"]
+[ext_resource type="PackedScene" uid="uid://coewdtrff1jxy" path="res://Ingame/rooms/room_019.tscn" id="35_n8v53"]
+[ext_resource type="PackedScene" uid="uid://xhech3ybgrqn" path="res://Ingame/rooms/room_020.tscn" id="36_i8745"]
+[ext_resource type="PackedScene" uid="uid://c7vfkeqp830lf" path="res://Ingame/rooms/room_021.tscn" id="37_82fqi"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
@@ -364,6 +364,8 @@ metadata/_edit_lock_ = true
 
 [node name="room_003_tunnel" parent="." instance=ExtResource("12_po3mq")]
 position = Vector2(6856, -1600)
+ost_item = 2
+battle_ost_item = 3
 metadata/_edit_lock_ = true
 
 [node name="room_004" parent="." instance=ExtResource("13_dsqei")]
@@ -384,8 +386,6 @@ metadata/_edit_lock_ = true
 
 [node name="room_006" parent="." instance=ExtResource("16_uxsce")]
 position = Vector2(9984, -2944)
-ost_item = 5
-battle_ost_item = 6
 metadata/_edit_lock_ = true
 
 [node name="room_007" parent="." instance=ExtResource("17_y2cyn")]
@@ -418,8 +418,6 @@ metadata/_edit_lock_ = true
 
 [node name="room_013" parent="." instance=ExtResource("26_mqqgf")]
 position = Vector2(12032, -6912)
-ost_item = 5
-battle_ost_item = 6
 metadata/_edit_lock_ = true
 
 [node name="room_013_secret" parent="." instance=ExtResource("33_6nqs7")]
@@ -460,4 +458,6 @@ metadata/_edit_lock_ = true
 
 [node name="room_021" parent="." instance=ExtResource("37_82fqi")]
 position = Vector2(20224, -7136)
+ost_item = 6
+battle_ost_item = 7
 metadata/_edit_lock_ = true
