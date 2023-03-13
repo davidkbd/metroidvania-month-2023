@@ -81,6 +81,9 @@ _data = {
 [node name="character" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_ouxu0")
+talk_letter_label_first_color = Color(0.313726, 0.619608, 0.219608, 1)
+talk_letter_label_last_color = Color(0.317647, 0.623529, 0.6, 1)
+talk_letter_label_shadow_color = Color(0.12549, 0.254902, 0.631373, 1)
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-56, -70)
