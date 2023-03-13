@@ -2,12 +2,23 @@ extends Node
 
 @onready var PROGRESS_FILE = Directories.PROGRESS_PATH + "game-state-%s.data"
 
-var game_state : Dictionary = {
+const DEFAULT_GAMESTATE : Dictionary = {
 	"level": {
 		"level": "level_001",
 		"room_spawn": "room_001"
 	},
 	"player": {
+		"skills": {
+			"super_attack": true,
+			"double_jump": true,
+			"dash": true,
+			"snap_wall": true,
+			"drop_attack": true
+		},
+		"life": {
+			"value": 4,
+			"max_value": 4
+		}
 	},
 	"map": {
 	},
@@ -20,6 +31,7 @@ var game_state : Dictionary = {
 	"rooms": {}
 }
 
+var game_state : Dictionary
 var current_slot_id : String
 
 func progress_listener_on_room_updated(_room_id : String, _data : Dictionary) -> void:
@@ -51,13 +63,15 @@ func menu_listener_on_game_start_requested(_slot_id : String) -> void:
 	current_slot_id = _slot_id
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.READ)
 	if file: game_state = file.get_var()
-#	await get_tree().process_frame
-	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_game_state_loaded", game_state)
+	else: game_state = DEFAULT_GAMESTATE.duplicate(true)
 	print("Stored state: ", game_state)
+	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_game_state_loaded", game_state)
 
 func player_listener_on_died() -> void:
 	var file = FileAccess.open(PROGRESS_FILE % current_slot_id, FileAccess.READ)
 	if file: game_state = file.get_var()
+	else: game_state = DEFAULT_GAMESTATE.duplicate(true)
+	print("Stored state: ", game_state)
 	get_tree().call_group("PROGRESS_LISTENER", "progress_listener_on_player_died_game_state_loaded", game_state)
 
 func player_listener_on_life_updated(_life : Dictionary) -> void:

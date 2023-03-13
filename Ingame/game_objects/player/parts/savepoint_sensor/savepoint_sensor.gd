@@ -15,8 +15,7 @@ func _on_area_entered(area : SavepointArea):
 		savepoint = area
 
 func _on_area_exited(_area : SavepointArea):
-	print("OJO que aqui al salir de la partida puede dar nulo")
-	get_tree().get_first_node_in_group("HELP_TIPS").hide_control()
+	get_tree().call_group("HELP_TIPS", "hide_control")
 	savepoint = null
 
 func _physics_process(_delta : float) -> void:
