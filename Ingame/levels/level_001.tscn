@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_n3beu"]
 [ext_resource type="Shader" path="res://fog.gdshader" id="4_o5l67"]
 [ext_resource type="Texture2D" uid="uid://c71lgk7hlrjj2" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax_fondo.png" id="5_homtb"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
+[ext_resource type="PackedScene" uid="uid://b68vcgdaf1ye3" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="5_r0vl8"]
 [ext_resource type="Texture2D" uid="uid://cc6x8cf1uayv5" path="res://Ingame/levels/parallax_layer/sprites/foreground/room_002_foreground01.png" id="6_nhmka"]
 [ext_resource type="Texture2D" uid="uid://crib3j3pscx1k" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax3.png" id="6_tbh3o"]
@@ -17,10 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://bfbxd6ngqctwc" path="res://Ingame/rooms/room_002_secret.tscn" id="9_l220f"]
 [ext_resource type="PackedScene" uid="uid://sml08gtbpkp0" path="res://Ingame/rooms/room_002_tunnel.tscn" id="10_dh8cp"]
 [ext_resource type="PackedScene" uid="uid://bkdx1cjef5tax" path="res://Ingame/rooms/room_003.tscn" id="11_hgltt"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
+[ext_resource type="PackedScene" uid="uid://brjkpj6nrt24k" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
 [ext_resource type="PackedScene" uid="uid://jvmgscj7a8aj" path="res://Ingame/rooms/room_004.tscn" id="13_dsqei"]
 [ext_resource type="PackedScene" uid="uid://c5ln4hnx7xo2k" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_s8mat"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_001_secret.tscn" id="14_vprd8"]
+[ext_resource type="PackedScene" uid="uid://didct0sxvmfma" path="res://Ingame/rooms/room_001_secret.tscn" id="14_vprd8"]
 [ext_resource type="PackedScene" uid="uid://bgyv586q0ga1d" path="res://Ingame/rooms/room_006_tunnel.tscn" id="15_u1dht"]
 [ext_resource type="PackedScene" uid="uid://civ87ynp7pl6l" path="res://Ingame/rooms/room_006.tscn" id="16_uxsce"]
 [ext_resource type="PackedScene" uid="uid://dyshcyvyemutn" path="res://Ingame/rooms/room_007.tscn" id="17_y2cyn"]
@@ -124,7 +124,7 @@ parallax_name = "first_room"
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/first_room_bg"]
 light_mask = 0
 texture_filter = 1
-position = Vector2(-96, -48)
+position = Vector2(-106, -48)
 texture = ExtResource("3_fuh8n")
 centered = false
 
@@ -197,6 +197,56 @@ position = Vector2(-344, -40)
 texture = SubResource("CompressedTexture2D_1t2jm")
 centered = false
 
+[node name="room_003_tunnel_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(2527, 0)
+parallax_name = "room_003_tunnel"
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_bg"]
+light_mask = 0
+texture_filter = 1
+position = Vector2(-1152, 2512)
+texture = SubResource("CompressedTexture2D_wbqo5")
+centered = false
+
+[node name="room_003_tunnel_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(2527, 0)
+parallax_name = "room_003_tunnel"
+
+[node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_far"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(24, 1712)
+texture = SubResource("CompressedTexture2D_0qwmx")
+centered = false
+
+[node name="room_003_tunnel_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(2527, 0)
+parallax_name = "room_003_tunnel"
+
+[node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_med"]
+light_mask = 0
+position = Vector2(-88, 1544)
+texture = SubResource("CompressedTexture2D_bf1ag")
+centered = false
+
+[node name="room_003_tunnel_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(2527, 0)
+parallax_name = "room_003_tunnel"
+
+[node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_near"]
+light_mask = 0
+position = Vector2(-184, 1400)
+texture = SubResource("CompressedTexture2D_1t2jm")
+centered = false
+
 [node name="room_002_bg" type="ParallaxLayer" parent="parallax/ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_bg"]
@@ -211,7 +261,7 @@ parallax_name = "room_002"
 [node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_far"]
 light_mask = 0
 texture_repeat = 3
-position = Vector2(2160, -1408)
+position = Vector2(2488, -1480)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_tbh3o")
 centered = false
@@ -222,7 +272,7 @@ parallax_name = "room_002"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
 light_mask = 0
-position = Vector2(2536, -1584)
+position = Vector2(2816, -1496)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_uxxmg")
 centered = false
@@ -233,7 +283,61 @@ parallax_name = "room_002"
 
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_near"]
 light_mask = 0
-position = Vector2(2856, -1880)
+position = Vector2(2752, -1648)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_vw1a5")
+centered = false
+
+[node name="room_002_secret_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_mirroring = Vector2(3000, 0)
+parallax_name = "room_002_secret"
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_bg"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(1272, -664)
+texture = ExtResource("5_homtb")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2000)
+
+[node name="room_002_secret_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+motion_scale = Vector2(0.7, 0.7)
+parallax_name = "room_002_secret"
+
+[node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_far"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(272, -1168)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_tbh3o")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 2000)
+
+[node name="room_002_secret_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+motion_scale = Vector2(0.8, 0.8)
+parallax_name = "room_002_secret"
+
+[node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_med"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(216, -1312)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_uxxmg")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 2000)
+
+[node name="room_002_secret_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_repeat = 3
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(2000, 0)
+parallax_name = "room_002_secret"
+
+[node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_near"]
+light_mask = 0
+position = Vector2(-688, -1984)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_vw1a5")
 centered = false
@@ -341,7 +445,7 @@ parallax_name = "first_room"
 metadata/_edit_lock_ = true
 
 [node name="room_001_secret" parent="." instance=ExtResource("14_vprd8")]
-position = Vector2(-56, 32)
+position = Vector2(-16, 32)
 metadata/_edit_lock_ = true
 
 [node name="room_002" parent="." instance=ExtResource("7_75ef1")]
@@ -351,6 +455,7 @@ metadata/_edit_lock_ = true
 
 [node name="room_002_secret" parent="." instance=ExtResource("9_l220f")]
 position = Vector2(1800, 32)
+parallax_name = "room_002_secret"
 metadata/_edit_lock_ = true
 
 [node name="room_002_tunnel" parent="." instance=ExtResource("10_dh8cp")]
@@ -366,6 +471,7 @@ metadata/_edit_lock_ = true
 position = Vector2(6856, -1600)
 ost_item = 2
 battle_ost_item = 3
+parallax_name = "room_003_tunnel"
 metadata/_edit_lock_ = true
 
 [node name="room_004" parent="." instance=ExtResource("13_dsqei")]
