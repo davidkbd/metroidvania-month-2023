@@ -50,7 +50,7 @@ size = Vector2(832, 32)
 [node name="room_015" type="Node2D"]
 script = ExtResource("1_hc18j")
 ost_item = 6
-battle_ost_item = 7
+battle_ost_item = 6
 metadata/_edit_horizontal_guides_ = []
 
 [node name="room_area" parent="." instance=ExtResource("2_ycif2")]

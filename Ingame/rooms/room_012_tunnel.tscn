@@ -12,7 +12,7 @@ size = Vector2(816, 2324)
 [node name="room_012_tunnel" type="Node2D"]
 script = ExtResource("1_irgqd")
 ost_item = 6
-battle_ost_item = 7
+battle_ost_item = 6
 
 [node name="room_area" parent="." instance=ExtResource("2_moehs")]
 position = Vector2(64, 288)

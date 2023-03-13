@@ -13,7 +13,7 @@ size = Vector2(1424, 888)
 [node name="room_014" type="Node2D"]
 script = ExtResource("1_pfkqc")
 ost_item = 6
-battle_ost_item = 7
+battle_ost_item = 6
 
 [node name="room_area" parent="." instance=ExtResource("2_n5a0i")]
 
