@@ -28,6 +28,7 @@ func hud_listener_on_game_finished() -> void:
 
 func room_listener_on_dramatic_event() -> void:
 	_stop()
+	$dramatic_event.play()
 
 func room_listener_on_activated(room : Room) -> void:
 	# deferred porque la instancia de enemigos se hace deferred
@@ -97,3 +98,5 @@ func _ready() -> void:
 			music.stop()
 			music.volume_db = -80
 	_play(menu_music)
+	$dramatic_event.volume_db = 0
+
