@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://civ87ynp7pl6l"]
+[gd_scene load_steps=14 format=3 uid="uid://civ87ynp7pl6l"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_4rs4r"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_mbbam"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bl1rd6alc1ml1" path="res://Ingame/game_objects/bridge_podrido/bridge_podrido.tscn" id="9_hx1dw"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="9_phqn1"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/control_disable_area/control_disable_area.tscn" id="10_0glyk"]
+[ext_resource type="AudioStream" uid="uid://cnjrunepxvtnh" path="res://music/dramatic_event.ogg" id="10_6ny4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2416, 1512)
@@ -82,6 +83,9 @@ position = Vector2(576, 288)
 position = Vector2(-224, 288)
 collision_layer = 1025
 collision_mask = 1025
+
+[node name="dramatic_event" type="AudioStreamPlayer" parent="room_content/bridge_podrido"]
+stream = ExtResource("10_6ny4h")
 
 [node name="control_disable_area" parent="room_content/bridge_podrido" instance=ExtResource("10_0glyk")]
 position = Vector2(-16, -48)

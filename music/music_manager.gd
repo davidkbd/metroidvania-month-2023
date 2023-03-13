@@ -26,6 +26,9 @@ func hud_listener_on_level_closed() -> void:
 func hud_listener_on_game_finished() -> void:
 	_stop()
 
+func room_listener_on_dramatic_event() -> void:
+	_stop()
+
 func room_listener_on_activated(room : Room) -> void:
 	# deferred porque la instancia de enemigos se hace deferred
 	# y si no esta peticion llegaria antes de estar hecho
