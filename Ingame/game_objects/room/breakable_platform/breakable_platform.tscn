@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdy7e87uq1umk"]
+
+[ext_resource type="Texture2D" uid="uid://byuvtyrgprw7w" path="res://Ingame/game_objects/room/breakable_platform/sprites/breakable_platform.png" id="1_xk617"]
+[ext_resource type="Script" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform.gd" id="1_xucct"]
+[ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="2_jxcs3"]
+
+[sub_resource type="Gradient" id="Gradient_tejny"]
+offsets = PackedFloat32Array(0, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.82263, 1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwrpm"]
+size = Vector2(96, 16)
+
+[node name="breakable_platform" type="StaticBody2D"]
+texture_filter = 1
+collision_layer = 1025
+collision_mask = 0
+script = ExtResource("1_xucct")
+
+[node name="mini_particles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.15
+emission_shape = 3
+emission_rect_extents = Vector2(48, 2)
+gravity = Vector2(0, 200)
+angle_min = -1.6
+angle_max = 154.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.447059, 0.584314, 0.866667, 1)
+color_ramp = SubResource("Gradient_tejny")
+
+[node name="big_particles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_jxcs3")
+emission_shape = 3
+emission_rect_extents = Vector2(48, 8)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_min = 4.0
+initial_velocity_max = 32.0
+angle_min = -1.6
+angle_max = 154.0
+color_ramp = SubResource("Gradient_tejny")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-48, 0)
+texture = ExtResource("1_xk617")
+centered = false
+vframes = 3
+
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_kwrpm")
