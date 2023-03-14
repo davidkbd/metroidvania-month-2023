@@ -46,6 +46,7 @@ func _open():
 	await door_anim_tween.finished
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(11, false)
+	$opened_sfx.play()
 	
 func _close():
 	if door_anim_tween: door_anim_tween.kill()
