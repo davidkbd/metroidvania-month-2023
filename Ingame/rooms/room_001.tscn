@@ -12,11 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://by88n8j30vwk1" path="res://Ingame/rooms/destroyable_walls/sprites/room001_destroyable_wall_sprite.png" id="8_oidpe"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/control_tip_area/control_tip_area.tscn" id="9_nr8k4"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="11_nuhjb"]
-[ext_resource type="PackedScene" uid="uid://c6mlk4mk0bsjn" path="res://Ingame/game_objects/items/skill_dash/skill_dash.tscn" id="13_m7onm"]
-[ext_resource type="PackedScene" uid="uid://b3n6r65xgu3mt" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall.tscn" id="14_csuc1"]
-[ext_resource type="PackedScene" uid="uid://b20g0bxsr031g" path="res://Ingame/game_objects/items/skill_double_jump/skill_double_jump.tscn" id="15_eo2ug"]
-[ext_resource type="PackedScene" uid="uid://4kjkvvj178cs" path="res://Ingame/game_objects/items/skill_drop_attack/skill_drop_attack.tscn" id="16_ftefc"]
-[ext_resource type="PackedScene" uid="uid://c3sg6ph4trics" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack.tscn" id="17_pcdgt"]
+[ext_resource type="PackedScene" uid="uid://hamx3m84le0w" path="res://Ingame/game_objects/items/skill_dash/skill_dash_spawner.tscn" id="13_gcuvj"]
+[ext_resource type="PackedScene" uid="uid://ckj4f3ct76iym" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall_spawner.tscn" id="14_4h53k"]
+[ext_resource type="PackedScene" uid="uid://bjmi5gvjfv8er" path="res://Ingame/game_objects/items/skill_double_jump/skill_double_jump_spawner.tscn" id="15_ktutf"]
+[ext_resource type="PackedScene" uid="uid://dqnmswno6loj3" path="res://Ingame/game_objects/items/skill_drop_attack/skill_drop_attack_spawner.tscn" id="16_216h7"]
+[ext_resource type="PackedScene" uid="uid://c7bfdip2p4xgl" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack_spawner.tscn" id="17_ssrle"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1015, 568)
@@ -138,20 +138,20 @@ element_type = 1
 position = Vector2(320, 320)
 element_type = 1
 
+[node name="skill_dash_spawner" parent="room_content" instance=ExtResource("13_gcuvj")]
+position = Vector2(-64, 320)
+
+[node name="skill_snap_wall_spawner" parent="room_content" instance=ExtResource("14_4h53k")]
+position = Vector2(0, 320)
+
+[node name="skill_double_jump_spawner" parent="room_content" instance=ExtResource("15_ktutf")]
+position = Vector2(-128, 320)
+
+[node name="skill_drop_attack_spawner" parent="room_content" instance=ExtResource("16_216h7")]
+position = Vector2(-192, 320)
+
+[node name="skill_super_attack_spawner" parent="room_content" instance=ExtResource("17_ssrle")]
+position = Vector2(-256, 320)
+
 [node name="npc_spawner" parent="room_content" instance=ExtResource("6_tvbbv")]
 position = Vector2(432, 320)
-
-[node name="skill_dash" parent="room_content" instance=ExtResource("13_m7onm")]
-position = Vector2(360, 320)
-
-[node name="skill_snap_wall" parent="room_content" instance=ExtResource("14_csuc1")]
-position = Vector2(280, 320)
-
-[node name="skill_double_jump" parent="room_content" instance=ExtResource("15_eo2ug")]
-position = Vector2(-48, 320)
-
-[node name="skill_drop_attack" parent="room_content" instance=ExtResource("16_ftefc")]
-position = Vector2(-240, 320)
-
-[node name="skill_super_attack" parent="room_content" instance=ExtResource("17_pcdgt")]
-position = Vector2(-144, 320)

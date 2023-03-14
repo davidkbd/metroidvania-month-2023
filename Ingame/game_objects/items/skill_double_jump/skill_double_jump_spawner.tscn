@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjmi5gvjfv8er"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/items/skill_double_jump/skill_double_jump_spawner.gd" id="1_6o368"]
+[ext_resource type="PackedScene" uid="uid://b20g0bxsr031g" path="res://Ingame/game_objects/items/skill_double_jump/skill_double_jump.tscn" id="2_qhelh"]
+
+[node name="skill_double_jump_spawner" type="Node2D"]
+script = ExtResource("1_6o368")
+item_template = ExtResource("2_qhelh")

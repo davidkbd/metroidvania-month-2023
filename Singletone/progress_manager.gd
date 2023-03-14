@@ -31,6 +31,21 @@ const DEFAULT_GAMESTATE : Dictionary = {
 	"bundle": {
 		"bridge_podrido": {
 			"destroyed": false
+		},
+		"skill_dash": {
+			"catched": false
+		},
+		"skill_snap_wall": {
+			"catched": false
+		},
+		"skill_double_jump": {
+			"catched": false
+		},
+		"skill_drop_attack": {
+			"catched": false
+		},
+		"skill_super_attack": {
+			"catched": false
 		}
 	},
 	"rooms": {}

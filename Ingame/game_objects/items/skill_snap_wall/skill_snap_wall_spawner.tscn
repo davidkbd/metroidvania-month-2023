@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckj4f3ct76iym"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall_spawner.gd" id="1_pbao7"]
+[ext_resource type="PackedScene" uid="uid://b3n6r65xgu3mt" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall.tscn" id="2_k6s70"]
+
+[node name="skill_snap_wall_spawner" type="Node2D"]
+script = ExtResource("1_pbao7")
+item_template = ExtResource("2_k6s70")
