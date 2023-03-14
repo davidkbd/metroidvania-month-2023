@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7bfdip2p4xgl"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack_spawner.gd" id="1_2xxtm"]
+[ext_resource type="PackedScene" uid="uid://c3sg6ph4trics" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack.tscn" id="2_r614x"]
+
+[node name="skill_super_attack_spawner" type="Node2D"]
+script = ExtResource("1_2xxtm")
+item_template = ExtResource("2_r614x")
