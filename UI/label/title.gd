@@ -141,6 +141,7 @@ func _get_char_metadata(_char : String) -> Dictionary:
 		"^": return { "width": 10, "pos": 74 }
 		"/": return { "width": 10, "pos": 75 }
 		"=": return { "width": 10, "pos": 76 }
+		",": return { "width": 10, "pos": 77 }
 	return { "width": 16, "pos": 70 }
 
 func _print_char(_x : int, _y : int, _w : int, _char_pos : int) -> void:
