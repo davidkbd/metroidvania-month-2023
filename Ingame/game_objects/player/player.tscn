@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://tuo0s8k1gqtx"]
+[gd_scene load_steps=154 format=3 uid="uid://tuo0s8k1gqtx"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -603,6 +603,23 @@ tracks/2/keys = {
 "values": [Vector2(0, 0), Vector2(0, -65), Vector2(0, -49.3947), Vector2(0, -26), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_2h8gk"]
+resource_name = "eating"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [22, 65, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3wnei"]
 _data = {
 "RESET": SubResource("Animation_gfq3y"),
@@ -611,6 +628,7 @@ _data = {
 "dash": SubResource("Animation_yn2dc"),
 "died": SubResource("Animation_07iio"),
 "double_jump": SubResource("Animation_pyij5"),
+"eating": SubResource("Animation_2h8gk"),
 "fall": SubResource("Animation_5eyh6"),
 "fall_vertical": SubResource("Animation_q47ot"),
 "idle": SubResource("Animation_lf06g"),
@@ -708,6 +726,9 @@ animation = &"died"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8itoi"]
 animation = &"double_jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n58qe"]
+animation = &"eating"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ylugh"]
 animation = &"idle"
@@ -877,6 +898,12 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tdy8x"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cgdxd"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r8ls1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_005e5"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f4fiv"]
 states/Start/position = Vector2(-119, 101)
 states/on_air/node = SubResource("AnimationNodeAnimation_2eaqa")
@@ -893,6 +920,8 @@ states/on_died/node = SubResource("AnimationNodeAnimation_jx4bc")
 states/on_died/position = Vector2(548.932, 54.7496)
 states/on_doublejump/node = SubResource("AnimationNodeAnimation_8itoi")
 states/on_doublejump/position = Vector2(99.523, -442.368)
+states/on_eating/node = SubResource("AnimationNodeAnimation_n58qe")
+states/on_eating/position = Vector2(-129.644, -63.8777)
 states/on_ground/node = SubResource("AnimationNodeBlendSpace1D_hdxuj")
 states/on_ground/position = Vector2(114.523, 146)
 states/on_jump/node = SubResource("AnimationNodeBlendSpace2D_y0kpu")
@@ -905,8 +934,8 @@ states/post_double_jump/node = SubResource("AnimationNodeAnimation_7105e")
 states/post_double_jump/position = Vector2(99.523, -191.631)
 states/pre_dash/node = SubResource("AnimationNodeAnimation_f2lqk")
 states/pre_dash/position = Vector2(74.9325, 335.164)
-transitions = ["on_doublejump", "on_wall", SubResource("AnimationNodeStateMachineTransition_bc0ao"), "on_air", "on_wall", SubResource("AnimationNodeStateMachineTransition_1h6dp"), "on_wall", "on_air", SubResource("AnimationNodeStateMachineTransition_sxd1o"), "Start", "on_ground", SubResource("AnimationNodeStateMachineTransition_b74ck"), "on_ground", "on_air", SubResource("AnimationNodeStateMachineTransition_4kmwi"), "on_air", "on_ground", SubResource("AnimationNodeStateMachineTransition_7s5o5"), "on_wall", "on_ground", SubResource("AnimationNodeStateMachineTransition_102h6"), "on_ground", "on_jump", SubResource("AnimationNodeStateMachineTransition_elpxu"), "on_jump", "on_doublejump", SubResource("AnimationNodeStateMachineTransition_d3gy4"), "on_jump", "on_ground", SubResource("AnimationNodeStateMachineTransition_5x7cb"), "on_jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_ydcgu"), "on_wall", "on_jump", SubResource("AnimationNodeStateMachineTransition_3jk0h"), "on_jump", "on_air_dash", SubResource("AnimationNodeStateMachineTransition_nsqke"), "on_air_dash", "on_doublejump", SubResource("AnimationNodeStateMachineTransition_44p4p"), "on_air_dash", "on_ground", SubResource("AnimationNodeStateMachineTransition_7yr6e"), "on_dash", "on_jump", SubResource("AnimationNodeStateMachineTransition_nlykn"), "pre_dash", "on_dash", SubResource("AnimationNodeStateMachineTransition_bljs6"), "on_ground", "pre_dash", SubResource("AnimationNodeStateMachineTransition_2y4hr"), "on_dash", "post_dash", SubResource("AnimationNodeStateMachineTransition_q8itr"), "post_dash", "on_ground", SubResource("AnimationNodeStateMachineTransition_blhrt"), "on_air_dash", "on_wall", SubResource("AnimationNodeStateMachineTransition_s37dl"), "on_ground", "on_attack", SubResource("AnimationNodeStateMachineTransition_7b3jw"), "on_attack", "on_ground", SubResource("AnimationNodeStateMachineTransition_lw440"), "on_attack", "on_jump", SubResource("AnimationNodeStateMachineTransition_pgluy"), "on_ground", "on_damaged", SubResource("AnimationNodeStateMachineTransition_ljcdf"), "on_air", "on_damaged", SubResource("AnimationNodeStateMachineTransition_63lov"), "on_wall", "on_damaged", SubResource("AnimationNodeStateMachineTransition_4c5od"), "on_jump", "on_damaged", SubResource("AnimationNodeStateMachineTransition_15ws8"), "on_attack", "on_damaged", SubResource("AnimationNodeStateMachineTransition_u6ylo"), "on_doublejump", "on_damaged", SubResource("AnimationNodeStateMachineTransition_tulip"), "on_damaged", "on_ground", SubResource("AnimationNodeStateMachineTransition_4gfo7"), "on_damaged", "on_air", SubResource("AnimationNodeStateMachineTransition_ybb1k"), "on_damaged", "on_died", SubResource("AnimationNodeStateMachineTransition_qkgpk"), "on_died", "on_ground", SubResource("AnimationNodeStateMachineTransition_q1sd0"), "on_doublejump", "post_double_jump", SubResource("AnimationNodeStateMachineTransition_gm6oy"), "post_double_jump", "on_ground", SubResource("AnimationNodeStateMachineTransition_hmc0a"), "on_attack", "on_air", SubResource("AnimationNodeStateMachineTransition_tdy8x")]
-graph_offset = Vector2(-1.368, -406.442)
+transitions = ["on_doublejump", "on_wall", SubResource("AnimationNodeStateMachineTransition_bc0ao"), "on_air", "on_wall", SubResource("AnimationNodeStateMachineTransition_1h6dp"), "on_wall", "on_air", SubResource("AnimationNodeStateMachineTransition_sxd1o"), "Start", "on_ground", SubResource("AnimationNodeStateMachineTransition_b74ck"), "on_ground", "on_air", SubResource("AnimationNodeStateMachineTransition_4kmwi"), "on_air", "on_ground", SubResource("AnimationNodeStateMachineTransition_7s5o5"), "on_wall", "on_ground", SubResource("AnimationNodeStateMachineTransition_102h6"), "on_ground", "on_jump", SubResource("AnimationNodeStateMachineTransition_elpxu"), "on_jump", "on_doublejump", SubResource("AnimationNodeStateMachineTransition_d3gy4"), "on_jump", "on_ground", SubResource("AnimationNodeStateMachineTransition_5x7cb"), "on_jump", "on_wall", SubResource("AnimationNodeStateMachineTransition_ydcgu"), "on_wall", "on_jump", SubResource("AnimationNodeStateMachineTransition_3jk0h"), "on_jump", "on_air_dash", SubResource("AnimationNodeStateMachineTransition_nsqke"), "on_air_dash", "on_doublejump", SubResource("AnimationNodeStateMachineTransition_44p4p"), "on_air_dash", "on_ground", SubResource("AnimationNodeStateMachineTransition_7yr6e"), "on_dash", "on_jump", SubResource("AnimationNodeStateMachineTransition_nlykn"), "pre_dash", "on_dash", SubResource("AnimationNodeStateMachineTransition_bljs6"), "on_ground", "pre_dash", SubResource("AnimationNodeStateMachineTransition_2y4hr"), "on_dash", "post_dash", SubResource("AnimationNodeStateMachineTransition_q8itr"), "post_dash", "on_ground", SubResource("AnimationNodeStateMachineTransition_blhrt"), "on_air_dash", "on_wall", SubResource("AnimationNodeStateMachineTransition_s37dl"), "on_ground", "on_attack", SubResource("AnimationNodeStateMachineTransition_7b3jw"), "on_attack", "on_ground", SubResource("AnimationNodeStateMachineTransition_lw440"), "on_attack", "on_jump", SubResource("AnimationNodeStateMachineTransition_pgluy"), "on_ground", "on_damaged", SubResource("AnimationNodeStateMachineTransition_ljcdf"), "on_air", "on_damaged", SubResource("AnimationNodeStateMachineTransition_63lov"), "on_wall", "on_damaged", SubResource("AnimationNodeStateMachineTransition_4c5od"), "on_jump", "on_damaged", SubResource("AnimationNodeStateMachineTransition_15ws8"), "on_attack", "on_damaged", SubResource("AnimationNodeStateMachineTransition_u6ylo"), "on_doublejump", "on_damaged", SubResource("AnimationNodeStateMachineTransition_tulip"), "on_damaged", "on_ground", SubResource("AnimationNodeStateMachineTransition_4gfo7"), "on_damaged", "on_air", SubResource("AnimationNodeStateMachineTransition_ybb1k"), "on_damaged", "on_died", SubResource("AnimationNodeStateMachineTransition_qkgpk"), "on_died", "on_ground", SubResource("AnimationNodeStateMachineTransition_q1sd0"), "on_doublejump", "post_double_jump", SubResource("AnimationNodeStateMachineTransition_gm6oy"), "post_double_jump", "on_ground", SubResource("AnimationNodeStateMachineTransition_hmc0a"), "on_attack", "on_air", SubResource("AnimationNodeStateMachineTransition_tdy8x"), "on_ground", "on_eating", SubResource("AnimationNodeStateMachineTransition_cgdxd"), "on_eating", "on_ground", SubResource("AnimationNodeStateMachineTransition_r8ls1"), "on_eating", "on_damaged", SubResource("AnimationNodeStateMachineTransition_005e5")]
+graph_offset = Vector2(-427.669, -73.1871)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bjlgn"]
 

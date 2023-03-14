@@ -8,6 +8,7 @@ var eat_success : bool
 var eating_enemy : EnemyCharacterAlive
 
 func enter() -> void:
+	host.animation_playblack.travel(name)	
 	host.velocity = Vector2.ZERO
 	eat_success = false
 	eat_time = eat_timer
