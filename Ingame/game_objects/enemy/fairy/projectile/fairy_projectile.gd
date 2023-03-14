@@ -6,3 +6,5 @@ func _physics_process(_delta : float) -> void:
 	
 	if move_and_slide():
 		_destroy()
+		$sfx_tail.stop()
+		$sfx_crash.play()

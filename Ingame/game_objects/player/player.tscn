@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://cod00olgejgpf"]
+[gd_scene load_steps=146 format=3 uid="uid://tuo0s8k1gqtx"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -40,7 +40,6 @@
 [ext_resource type="AudioStream" uid="uid://bfngnqepeivte" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_1.wav" id="35_g7f2b"]
 [ext_resource type="AudioStream" uid="uid://b7eum1k4pv8d7" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_2.wav" id="36_0423a"]
 [ext_resource type="AudioStream" uid="uid://cr5bsec1jtrlm" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_3.wav" id="37_h4ros"]
-[ext_resource type="AudioStream" uid="uid://x3tlgu74ralt" path="res://sfx/NEW/ingame_whitenoise.wav" id="38_01lbu"]
 [ext_resource type="AudioStream" uid="uid://dqd65fbtxewlb" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_4.wav" id="38_mw6rv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
@@ -1073,7 +1072,6 @@ volume_db = -16.0
 bus = &"sfx"
 
 [node name="super_attack_charge" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("38_01lbu")
 volume_db = -24.0
 pitch_scale = 0.2
 bus = &"sfx"

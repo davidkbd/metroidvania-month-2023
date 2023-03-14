@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv4oxwal6jo33"]
+[gd_scene load_steps=11 format=3 uid="uid://p23br3xyn7s"]
 
 [ext_resource type="Texture2D" uid="uid://uhid1mjlm4ay" path="res://Ingame/game_objects/enemy/fairy/projectile/sprites/fairy-projectile-light.png" id="1_18w1f"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/projectile/fairy_projectile.gd" id="1_uyvbf"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/projectile/player_sensor.gd" id="3_ee6de"]
 [ext_resource type="Texture2D" uid="uid://bxyqqp5tpdfdl" path="res://Ingame/game_objects/enemy/fairy/projectile/sprites/projectile.png" id="4_v2dlj"]
+[ext_resource type="AudioStream" uid="uid://cj5lm60ofbmoj" path="res://sfx/NEW/ingame_fairy_projectile.wav" id="5_i2g6f"]
+[ext_resource type="AudioStream" uid="uid://bppu0tdnewqqp" path="res://sfx/NEW/ingame_fairy_projectile_throw.wav" id="6_jvvj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxjsi"]
 radius = 4.0
@@ -24,7 +26,6 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.875445, 1, 1, 1, 0)
 collision_layer = 1024
 collision_mask = 1024
 script = ExtResource("1_uyvbf")
-speed = null
 
 [node name="collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fxjsi")
@@ -69,3 +70,28 @@ initial_velocity_min = 2.0
 initial_velocity_max = 64.0
 angular_velocity_max = 131.71
 color_ramp = SubResource("Gradient_khlf7")
+
+[node name="sfx_tail" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_i2g6f")
+volume_db = -16.0
+autoplay = true
+max_distance = 512.0
+attenuation = 2.0
+bus = &"sfx"
+
+[node name="sfx_throw" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jvvj3")
+volume_db = -12.0
+autoplay = true
+max_distance = 512.0
+attenuation = 1.8025
+bus = &"sfx"
+
+[node name="sfx_crash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jvvj3")
+volume_db = -12.0
+pitch_scale = 1.2
+autoplay = true
+max_distance = 512.0
+attenuation = 1.8025
+bus = &"sfx"

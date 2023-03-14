@@ -56,6 +56,7 @@ func _close():
 	door_anim_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	door_anim_tween.tween_property(door_bot_sprite, "position:y", -64.0, 1.0)
 	door_anim_tween.parallel().tween_property(door_top_sprite, "position:y", -134.0, 1.0)
+	$closed_sfx.play()
 
 func _get_room() -> Room:
 	var i : int = 0

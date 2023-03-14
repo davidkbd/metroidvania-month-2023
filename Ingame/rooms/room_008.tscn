@@ -72,8 +72,8 @@ position = Vector2(320, 384)
 enemy_type = 1
 
 [node name="autoadvance_area2" parent="room_content" instance=ExtResource("6_xor2i")]
-position = Vector2(704, 48)
-collider_size = Vector2i(4, 21)
+position = Vector2(704, 384)
+collider_offset = Vector2i(0, -2)
 
 [node name="autoadvance_area4" parent="room_content" instance=ExtResource("6_xor2i")]
 position = Vector2(-192, -1696)
