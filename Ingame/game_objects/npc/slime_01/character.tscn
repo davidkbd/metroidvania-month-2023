@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cakesqjbmp7uw"]
+[gd_scene load_steps=13 format=3 uid="uid://cakesqjbmp7uw"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_01/character.gd" id="1_n3opr"]
+[ext_resource type="AudioStream" uid="uid://rd5lrvx0ovi6" path="res://sfx/NEW/ingame_npc_talk.wav" id="3_ib2px"]
 [ext_resource type="Texture2D" uid="uid://c8ykt1ddaygkm" path="res://Ingame/game_objects/npc/slime_01/sprites/character.png" id="4_ylxyt"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kxqh1"]
@@ -101,3 +102,8 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_qsblk")
 libraries = {
 "": SubResource("AnimationLibrary_ohchq")
 }
+
+[node name="talk_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ib2px")
+volume_db = -15.0
+bus = &"sfx"

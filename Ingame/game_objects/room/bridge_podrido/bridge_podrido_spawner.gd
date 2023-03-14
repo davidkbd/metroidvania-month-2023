@@ -8,7 +8,7 @@ var instance : BridgePodrido
 func activate(_data : Dictionary) -> void:
 	if not ProgressManager.game_state.bundle.bridge_podrido.destroyed:
 		instance = bridge_podrido_template.instantiate()
-		add_child(instance)
+		call_deferred("add_child", instance)
 
 func deactivate() -> void:
 	if is_instance_valid(instance):

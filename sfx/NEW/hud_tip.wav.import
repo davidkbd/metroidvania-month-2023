@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://iqmnlrwka5ab"
-path="res://.godot/imported/ingame_win.wav-18ba28778a6efd474273af0539c902e7.sample"
+path="res://.godot/imported/hud_tip.wav-b8971a96584af62a9391cdccda2ad4f3.sample"
 
 [deps]
 
-source_file="res://sfx/ingame_win.wav"
-dest_files=["res://.godot/imported/ingame_win.wav-18ba28778a6efd474273af0539c902e7.sample"]
+source_file="res://sfx/NEW/hud_tip.wav"
+dest_files=["res://.godot/imported/hud_tip.wav-b8971a96584af62a9391cdccda2ad4f3.sample"]
 
 [params]
 

@@ -21,6 +21,7 @@ func enter() -> void:
 	host.ondash_collider.disabled = false
 	host.body_collider.disabled = true
 	direction = sign(host.velocity.x)
+	host.dash_sfx.play()
 
 func exit() -> void:
 	host.set_collision_layer_value(4, true)

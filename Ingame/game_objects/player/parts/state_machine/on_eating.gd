@@ -14,6 +14,7 @@ func enter() -> void:
 	if is_instance_valid(host.eating_enemy):
 		eating_enemy = host.eating_enemy
 		host.eating_enemy.eat_health()
+	host.slurp_sfx.play()
 
 func exit() -> void:
 #	if eat_success:

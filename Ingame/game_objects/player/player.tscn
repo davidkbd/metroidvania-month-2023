@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://tuo0s8k1gqtx"]
+[gd_scene load_steps=149 format=3 uid="uid://tuo0s8k1gqtx"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -41,6 +41,9 @@
 [ext_resource type="AudioStream" uid="uid://b7eum1k4pv8d7" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_2.wav" id="36_0423a"]
 [ext_resource type="AudioStream" uid="uid://cr5bsec1jtrlm" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_3.wav" id="37_h4ros"]
 [ext_resource type="AudioStream" uid="uid://dqd65fbtxewlb" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_4.wav" id="38_mw6rv"]
+[ext_resource type="AudioStream" uid="uid://cijq3cd2iyffq" path="res://sfx/NEW/ingame_player_dash.wav" id="39_eus0c"]
+[ext_resource type="AudioStream" uid="uid://b1aasb0pnntht" path="res://sfx/NEW/ingame_player_slurp.wav" id="40_n8jld"]
+[ext_resource type="AudioStream" uid="uid://dhtfykhsaeki4" path="res://sfx/NEW/ingame_player_reapear.wav" id="42_c0p0s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
 shader = ExtResource("15_unq2k")
@@ -1082,6 +1085,16 @@ volume_db = -16.0
 pitch_scale = 2.0
 bus = &"sfx"
 
+[node name="dash_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_eus0c")
+volume_db = -13.0
+bus = &"sfx"
+
+[node name="slurp_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_n8jld")
+volume_db = -15.0
+bus = &"sfx"
+
 [node name="damaged_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_40l7c")
 volume_db = -13.0
@@ -1092,6 +1105,11 @@ bus = &"sfx"
 stream = ExtResource("19_40l7c")
 volume_db = -13.0
 pitch_scale = 2.0
+bus = &"sfx"
+
+[node name="reapear_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_c0p0s")
+volume_db = -10.0
 bus = &"sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
