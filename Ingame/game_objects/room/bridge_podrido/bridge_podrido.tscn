@@ -18,6 +18,7 @@ size = Vector2(64, 96)
 
 [node name="bridge_podrido" type="StaticBody2D"]
 texture_filter = 1
+collision_layer = 1025
 script = ExtResource("1_yrdw1")
 
 [node name="mini_particles" type="CPUParticles2D" parent="."]

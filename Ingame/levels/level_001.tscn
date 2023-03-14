@@ -585,6 +585,92 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
+[node name="room_006_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_mirroring = Vector2(3000, 0)
+parallax_name = "room_006"
+
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_006_bg"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(699, -981)
+texture = ExtResource("5_homtb")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 4500)
+
+[node name="room_006__far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+motion_scale = Vector2(0.7, 0.7)
+parallax_name = "room_006"
+
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_006__far"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(6445, -3025)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_tbh3o")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 7000)
+
+[node name="room_006_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+motion_scale = Vector2(0.8, 0.8)
+parallax_name = "room_006"
+
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_006_med"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(6695, -2925)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_uxxmg")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 7000)
+
+[node name="room_006_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_repeat = 3
+motion_scale = Vector2(0.9, 0.9)
+parallax_name = "room_006"
+
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_006_near"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(-1732, -3421)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_vw1a5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 7000)
+
+[node name="room_006_secret_particles" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+parallax_name = "room_006"
+
+[node name="ambient_particles" parent="parallax/ParallaxBackground/room_006_secret_particles" instance=ExtResource("4_n3beu")]
+light_mask = 0
+position = Vector2(9610, -2759)
+amount = 50
+scale_amount_min = 0.2
+scale_amount_max = 1.0
+
+[node name="room_006_secret_particles2" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+parallax_name = "room_006"
+
+[node name="ambient_particles" parent="parallax/ParallaxBackground/room_006_secret_particles2" instance=ExtResource("4_n3beu")]
+light_mask = 0
+position = Vector2(9668, -869)
+amount = 50
+scale_amount_min = 0.4
+scale_amount_max = 1.2
+
+[node name="room_006_secret_particles3" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+parallax_name = "room_006"
+
+[node name="ambient_particles" parent="parallax/ParallaxBackground/room_006_secret_particles3" instance=ExtResource("4_n3beu")]
+light_mask = 0
+position = Vector2(9145, 589)
+amount = 50
+scale_amount_min = 0.4
+scale_amount_max = 1.2
+
 [node name="Fog3" type="CanvasLayer" parent="parallax"]
 layer = -90
 follow_viewport_enabled = true
@@ -731,7 +817,6 @@ metadata/_edit_lock_ = true
 
 [node name="room_003_tunnel" parent="." instance=ExtResource("12_po3mq")]
 position = Vector2(6856, -1600)
-battle_ost_item = 3
 parallax_name = "room_003_tunnel"
 metadata/_edit_lock_ = true
 
@@ -751,14 +836,17 @@ metadata/_edit_lock_ = true
 
 [node name="room_006_tunnel" parent="." instance=ExtResource("15_u1dht")]
 position = Vector2(9448, -640)
+parallax_name = "room_006"
 metadata/_edit_lock_ = true
 
 [node name="room_006" parent="." instance=ExtResource("16_uxsce")]
 position = Vector2(9984, -2944)
+parallax_name = "room_006"
 metadata/_edit_lock_ = true
 
 [node name="room_007" parent="." instance=ExtResource("17_y2cyn")]
 position = Vector2(9376, 480)
+parallax_name = "room_006"
 
 [node name="room_008" parent="." instance=ExtResource("18_0mwn2")]
 position = Vector2(7648, 480)
