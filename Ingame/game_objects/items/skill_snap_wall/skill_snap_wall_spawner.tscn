@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckj4f3ct76iym"]
+[gd_scene load_steps=4 format=3 uid="uid://ckj4f3ct76iym"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall_spawner.gd" id="1_pbao7"]
 [ext_resource type="PackedScene" uid="uid://b3n6r65xgu3mt" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall.tscn" id="2_k6s70"]
+[ext_resource type="Texture2D" uid="uid://btk4ldqxet2xo" path="res://Ingame/game_objects/items/skill_snap_wall/sprites/spawner_sprite.png" id="3_utytc"]
 
 [node name="skill_snap_wall_spawner" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_pbao7")
 item_template = ExtResource("2_k6s70")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-36, -67)
+texture = ExtResource("3_utytc")
+centered = false

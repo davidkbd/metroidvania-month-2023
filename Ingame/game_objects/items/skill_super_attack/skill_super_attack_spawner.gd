@@ -5,12 +5,16 @@ extends Node2D
 var instance : SkillItem
 
 func activate(_data : Dictionary) -> void:
-	if not ProgressManager.game_state.bundle.skill_super_attack.catched:
-		instance = item_template.instantiate()
-		call_deferred("add_child", instance)
+	instance = item_template.instantiate()
+	call_deferred("add_child", instance)
+	if ProgressManager.game_state.bundle.skill_super_attack.catched:
+		instance.call_deferred("disable")
 
 func deactivate() -> void:
 	if is_instance_valid(instance):
 		if instance.catched:
 			ProgressManager.game_state.bundle.skill_super_attack.catched = true
 		instance.queue_free()
+
+func _enter_tree() -> void:
+	find_child("sprite").queue_free()

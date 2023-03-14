@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://hamx3m84le0w"]
+[gd_scene load_steps=4 format=3 uid="uid://hamx3m84le0w"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/items/skill_dash/skill_dash_spawner.gd" id="1_0ib3a"]
 [ext_resource type="PackedScene" uid="uid://c6mlk4mk0bsjn" path="res://Ingame/game_objects/items/skill_dash/skill_dash.tscn" id="2_ji7wc"]
+[ext_resource type="Texture2D" uid="uid://cv31ycmew7ckk" path="res://Ingame/game_objects/items/skill_dash/sprites/spawner_sprite.png" id="3_03n32"]
 
 [node name="skill_dash_spawner" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_0ib3a")
 item_template = ExtResource("2_ji7wc")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-36, -67)
+texture = ExtResource("3_03n32")
+centered = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3n6r65xgu3mt"]
+[gd_scene load_steps=5 format=3 uid="uid://b3n6r65xgu3mt"]
 
-[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="1_3kp04"]
 [ext_resource type="Script" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall.gd" id="1_ms45h"]
+[ext_resource type="Texture2D" uid="uid://dqxoswyqawqnv" path="res://Ingame/game_objects/items/skill_snap_wall/sprites/item.png" id="2_88yc0"]
+[ext_resource type="Texture2D" uid="uid://dq4m22lphsc84" path="res://Ingame/game_objects/items/skill_super_attack/sprites/item-light.png" id="3_f6mjj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecuyn"]
 size = Vector2(48, 16)
@@ -14,12 +15,19 @@ collision_mask = 0
 monitoring = false
 script = ExtResource("1_ms45h")
 
+[node name="sprite" type="Sprite2D" parent="."]
+light_mask = 0
+z_index = -3
+position = Vector2(-36, -67)
+texture = ExtResource("2_88yc0")
+centered = false
+vframes = 2
+
+[node name="light" type="PointLight2D" parent="."]
+position = Vector2(-19, -46)
+texture = ExtResource("3_f6mjj")
+texture_scale = 0.5
+
 [node name="collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_ecuyn")
-
-[node name="label" parent="." instance=ExtResource("1_3kp04")]
-position = Vector2(0, -8)
-text = "Snap Wall"
-centered = true
-vertical_centered = true
