@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdy7e87uq1umk"]
+[gd_scene load_steps=8 format=3 uid="uid://bdy7e87uq1umk"]
 
 [ext_resource type="Texture2D" uid="uid://byuvtyrgprw7w" path="res://Ingame/game_objects/room/breakable_platform/sprites/breakable_platform.png" id="1_xk617"]
 [ext_resource type="Script" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform.gd" id="1_xucct"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="2_jxcs3"]
+[ext_resource type="AudioStream" uid="uid://cdrvrkamlx4v0" path="res://sfx/NEW/ingame_breakable_platform_breaking.wav" id="4_iinpt"]
+[ext_resource type="AudioStream" uid="uid://bfe10bbs0ab8w" path="res://sfx/NEW/ingame_breakable_platform_broken.wav" id="5_xawu1"]
 
 [sub_resource type="Gradient" id="Gradient_tejny"]
 offsets = PackedFloat32Array(0, 0.8, 1)
@@ -60,3 +62,15 @@ vframes = 3
 [node name="collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_kwrpm")
+
+[node name="breaking_sfx" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("4_iinpt")
+volume_db = -4.0
+bus = &"sfx"
+
+[node name="broken_sfx" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("5_xawu1")
+volume_db = -4.0
+bus = &"sfx"
