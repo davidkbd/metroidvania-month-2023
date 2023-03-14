@@ -113,7 +113,7 @@ position = Vector2(2, 0)
 motion_scale = Vector2(0.3, 0.3)
 parallax_name = "first_room"
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/first_room_bg"]
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/first_room_bg"]
 light_mask = 0
 texture_filter = 1
 position = Vector2(-106, -48)
@@ -146,7 +146,7 @@ position = Vector2(-2, 0)
 motion_scale = Vector2(0.3, 0.3)
 parallax_name = "room_002_tunnel"
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_bg"]
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_bg"]
 light_mask = 0
 texture_filter = 1
 position = Vector2(-336, -144)
@@ -158,7 +158,7 @@ texture_filter = 1
 motion_scale = Vector2(0.7, 0.7)
 parallax_name = "room_002_tunnel"
 
-[node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_far"]
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_far"]
 light_mask = 0
 texture_repeat = 3
 position = Vector2(-128, -48)
@@ -170,7 +170,7 @@ texture_filter = 1
 motion_scale = Vector2(0.8, 0.8)
 parallax_name = "room_002_tunnel"
 
-[node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_med"]
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_med"]
 light_mask = 0
 position = Vector2(-32, -48)
 texture = ExtResource("7_xw60q")
@@ -181,7 +181,7 @@ texture_filter = 1
 motion_scale = Vector2(0.9, 0.9)
 parallax_name = "room_002_tunnel"
 
-[node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_near"]
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_near"]
 light_mask = 0
 position = Vector2(-344, -40)
 texture = ExtResource("6_wpjyy")
@@ -205,7 +205,7 @@ texture_filter = 1
 motion_scale = Vector2(0.3, 0.3)
 parallax_name = "room_003_tunnel"
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_bg"]
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_bg"]
 light_mask = 0
 texture_filter = 1
 position = Vector2(1920, -680)
@@ -217,7 +217,7 @@ texture_filter = 1
 motion_scale = Vector2(0.7, 0.7)
 parallax_name = "room_003_tunnel"
 
-[node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_far"]
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_far"]
 light_mask = 0
 texture_repeat = 3
 position = Vector2(4448, -1216)
@@ -229,7 +229,7 @@ texture_filter = 1
 motion_scale = Vector2(0.8, 0.8)
 parallax_name = "room_003_tunnel"
 
-[node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_med"]
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_med"]
 light_mask = 0
 position = Vector2(4640, -1384)
 texture = ExtResource("7_xw60q")
@@ -240,7 +240,7 @@ texture_filter = 1
 motion_scale = Vector2(0.9, 0.9)
 parallax_name = "room_003_tunnel"
 
-[node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_near"]
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_near"]
 light_mask = 0
 position = Vector2(4896, -1528)
 texture = ExtResource("6_wpjyy")
@@ -248,7 +248,7 @@ centered = false
 
 [node name="room_002_bg" type="ParallaxLayer" parent="parallax/ParallaxBackground"]
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_bg"]
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_bg"]
 light_mask = 0
 position = Vector2(3976, -864)
 texture = ExtResource("5_homtb")
@@ -257,7 +257,7 @@ texture = ExtResource("5_homtb")
 motion_scale = Vector2(0.7, 0.7)
 parallax_name = "room_002"
 
-[node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_far"]
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_far"]
 light_mask = 0
 texture_repeat = 3
 position = Vector2(2488, -1480)
@@ -269,7 +269,7 @@ centered = false
 motion_scale = Vector2(0.8, 0.8)
 parallax_name = "room_002"
 
-[node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
 light_mask = 0
 position = Vector2(2816, -1496)
 scale = Vector2(0.8, 0.8)
@@ -280,25 +280,12 @@ centered = false
 motion_scale = Vector2(0.9, 0.9)
 parallax_name = "room_002"
 
-[node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_near"]
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_near"]
 light_mask = 0
 position = Vector2(2752, -1648)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_vw1a5")
 centered = false
-
-[node name="room_002_secret_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
-texture_filter = 1
-motion_mirroring = Vector2(3000, 0)
-parallax_name = "room_002_secret"
-
-[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_bg"]
-light_mask = 0
-texture_repeat = 3
-position = Vector2(1272, -664)
-texture = ExtResource("5_homtb")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2000)
 
 [node name="room_002_particles" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.9, 0.9)
@@ -312,11 +299,24 @@ emission_rect_extents = Vector2(1500, 1500)
 scale_amount_min = 0.2
 scale_amount_max = 1.0
 
+[node name="room_002_secret_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_mirroring = Vector2(3000, 0)
+parallax_name = "room_002_secret"
+
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_bg"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(1272, -664)
+texture = ExtResource("5_homtb")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2000)
+
 [node name="room_002_secret_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.7, 0.7)
 parallax_name = "room_002_secret"
 
-[node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_far"]
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_far"]
 light_mask = 0
 texture_repeat = 3
 position = Vector2(272, -1168)
@@ -330,7 +330,7 @@ region_rect = Rect2(0, 0, 4000, 2000)
 motion_scale = Vector2(0.8, 0.8)
 parallax_name = "room_002_secret"
 
-[node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_med"]
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_med"]
 light_mask = 0
 texture_repeat = 3
 position = Vector2(216, -1312)
@@ -346,7 +346,7 @@ motion_scale = Vector2(0.9, 0.9)
 motion_mirroring = Vector2(2000, 0)
 parallax_name = "room_002_secret"
 
-[node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_near"]
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_secret_near"]
 light_mask = 0
 position = Vector2(-688, -1984)
 scale = Vector2(0.9, 0.9)
@@ -373,12 +373,114 @@ amount = 50
 scale_amount_min = 0.4
 scale_amount_max = 1.2
 
+[node name="room_003_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+position = Vector2(-2, 0)
+motion_scale = Vector2(0.3, 0.3)
+parallax_name = "room_003"
+
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_bg"]
+light_mask = 0
+texture_filter = 1
+position = Vector2(1172, -911)
+texture = ExtResource("5_j7npj")
+centered = false
+
+[node name="room_003_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.7, 0.7)
+parallax_name = "room_003"
+
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_far"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(3140, -1426)
+texture = ExtResource("8_3qv5p")
+centered = false
+
+[node name="room_003_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.8, 0.8)
+parallax_name = "room_003"
+
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_med"]
+light_mask = 0
+position = Vector2(3228, -1619)
+texture = ExtResource("7_xw60q")
+centered = false
+
+[node name="room_003_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.9, 0.9)
+parallax_name = "room_003"
+
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_near"]
+light_mask = 0
+position = Vector2(2907, -1781)
+texture = ExtResource("6_wpjyy")
+centered = false
+
+[node name="room_004_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+position = Vector2(-2, 0)
+motion_scale = Vector2(0.3, 0.3)
+parallax_name = "room_004"
+
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_bg"]
+light_mask = 0
+texture_filter = 1
+position = Vector2(1146, -1027)
+texture = ExtResource("5_j7npj")
+centered = false
+
+[node name="room_004_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.7, 0.7)
+parallax_name = "room_004"
+
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_far"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(2757, -3009)
+texture = ExtResource("8_3qv5p")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="room_004_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.8, 0.8)
+parallax_name = "room_004"
+
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_med"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(3230, -3265)
+texture = ExtResource("7_xw60q")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="room_004_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_scale = Vector2(0.9, 0.9)
+parallax_name = "room_004"
+
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_near"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(3766, -3566)
+texture = ExtResource("6_wpjyy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
 [node name="room_004_tunnel_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 texture_filter = 1
 motion_scale = Vector2(0.3, 0.3)
 parallax_name = "room_004_tunnel"
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_bg"]
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_bg"]
 light_mask = 0
 texture_filter = 1
 texture_repeat = 3
@@ -394,7 +496,7 @@ position = Vector2(912, -560)
 motion_scale = Vector2(0.7, 0.7)
 parallax_name = "room_004_tunnel"
 
-[node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_far"]
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_far"]
 light_mask = 0
 texture_repeat = 3
 position = Vector2(3614, -1794)
@@ -408,7 +510,7 @@ texture_filter = 1
 motion_scale = Vector2(0.8, 0.8)
 parallax_name = "room_004_tunnel"
 
-[node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_med"]
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_med"]
 light_mask = 0
 position = Vector2(5058, -2697)
 texture = ExtResource("7_xw60q")
@@ -421,13 +523,66 @@ texture_filter = 1
 motion_scale = Vector2(0.9, 0.9)
 parallax_name = "room_004_tunnel"
 
-[node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_near"]
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_near"]
 light_mask = 0
 position = Vector2(6059, -3018)
 texture = ExtResource("6_wpjyy")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 2000)
+
+[node name="room_008_bg" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+texture_filter = 1
+motion_mirroring = Vector2(3000, 0)
+parallax_name = "room_008"
+
+[node name="ParallaxBG" type="Sprite2D" parent="parallax/ParallaxBackground/room_008_bg"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(-1640, -21)
+texture = ExtResource("5_homtb")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 3000)
+
+[node name="room_008_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+motion_scale = Vector2(0.7, 0.7)
+parallax_name = "room_008"
+
+[node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_008_far"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(4899, -1016)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_tbh3o")
+centered = false
+
+[node name="room_008_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+motion_scale = Vector2(0.8, 0.8)
+parallax_name = "room_008"
+
+[node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_008_med"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(5406, -1131)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_uxxmg")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 4000)
+
+[node name="room_008_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
+motion_scale = Vector2(0.9, 0.9)
+parallax_name = "room_008"
+
+[node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_008_near"]
+light_mask = 0
+texture_repeat = 3
+position = Vector2(4434, -2142)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_vw1a5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 4000)
 
 [node name="Fog3" type="CanvasLayer" parent="parallax"]
 layer = -90
@@ -570,6 +725,7 @@ metadata/_edit_lock_ = true
 
 [node name="room_003" parent="." instance=ExtResource("11_hgltt")]
 position = Vector2(5472, -1600)
+parallax_name = "room_003"
 metadata/_edit_lock_ = true
 
 [node name="room_003_tunnel" parent="." instance=ExtResource("12_po3mq")]
@@ -580,6 +736,7 @@ metadata/_edit_lock_ = true
 
 [node name="room_004" parent="." instance=ExtResource("13_dsqei")]
 position = Vector2(5472, -2432)
+parallax_name = "room_004"
 metadata/_edit_lock_ = true
 
 [node name="room_004_savepoint" parent="." instance=ExtResource("21_0jfjp")]
@@ -605,6 +762,7 @@ metadata/_edit_lock_ = true
 
 [node name="room_008" parent="." instance=ExtResource("18_0mwn2")]
 position = Vector2(7648, 480)
+parallax_name = "room_008"
 metadata/_edit_lock_ = true
 
 [node name="room_009_tunnel" parent="." instance=ExtResource("19_h3l0m")]
