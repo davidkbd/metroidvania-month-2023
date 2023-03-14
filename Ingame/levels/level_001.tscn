@@ -397,7 +397,7 @@ parallax_name = "room_004_tunnel"
 [node name="Room002ParalaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_far"]
 light_mask = 0
 texture_repeat = 3
-position = Vector2(3384, -1776)
+position = Vector2(3614, -1794)
 texture = ExtResource("8_3qv5p")
 centered = false
 region_enabled = true
@@ -410,7 +410,7 @@ parallax_name = "room_004_tunnel"
 
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_med"]
 light_mask = 0
-position = Vector2(4600, -2688)
+position = Vector2(5058, -2697)
 texture = ExtResource("7_xw60q")
 centered = false
 region_enabled = true
@@ -423,7 +423,7 @@ parallax_name = "room_004_tunnel"
 
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_near"]
 light_mask = 0
-position = Vector2(5776, -3040)
+position = Vector2(6059, -3018)
 texture = ExtResource("6_wpjyy")
 centered = false
 region_enabled = true
