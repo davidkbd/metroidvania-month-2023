@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://lnpmfhamp4as"]
+[gd_scene load_steps=11 format=3 uid="uid://7ks73qsghpg"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/room/bridge_podrido/bridge_podrido.gd" id="1_yrdw1"]
 [ext_resource type="Texture2D" uid="uid://boytx56j73662" path="res://Ingame/game_objects/room/bridge_podrido/sprites/particles.png" id="2_ko5l1"]
 [ext_resource type="Texture2D" uid="uid://bi2luipxhd4ps" path="res://Ingame/game_objects/room/bridge_podrido/sprites/bridge_podrido.png" id="3_4k1dn"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/control_disable_area/control_disable_area.tscn" id="4_g86kx"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_ycfw5"]
+[ext_resource type="AudioStream" uid="uid://dronyp2c33ekp" path="res://sfx/NEW/ingame_bridge_breaking.wav" id="6_3wtmw"]
+[ext_resource type="AudioStream" uid="uid://c6i6iboy8capj" path="res://sfx/NEW/ingame_bridge_broken.wav" id="7_it4oo"]
 
 [sub_resource type="Gradient" id="Gradient_nr2wu"]
 offsets = PackedFloat32Array(0, 0.8, 1)
@@ -78,3 +80,15 @@ collider_size = Vector2i(5, 12)
 collider_size = Vector2i(2, 4)
 collider_offset = Vector2i(0, -2)
 fade_out_in = false
+
+[node name="breaking_sfx" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("6_3wtmw")
+volume_db = -10.0
+bus = &"sfx"
+
+[node name="broken_sfx" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("7_it4oo")
+volume_db = -10.0
+bus = &"sfx"

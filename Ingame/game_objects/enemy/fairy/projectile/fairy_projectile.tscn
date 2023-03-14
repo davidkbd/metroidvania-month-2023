@@ -73,7 +73,7 @@ color_ramp = SubResource("Gradient_khlf7")
 
 [node name="sfx_tail" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_i2g6f")
-volume_db = -16.0
+volume_db = -14.0
 autoplay = true
 max_distance = 512.0
 attenuation = 2.0
@@ -81,7 +81,7 @@ bus = &"sfx"
 
 [node name="sfx_throw" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_jvvj3")
-volume_db = -12.0
+volume_db = -10.0
 autoplay = true
 max_distance = 512.0
 attenuation = 1.8025
@@ -89,7 +89,7 @@ bus = &"sfx"
 
 [node name="sfx_crash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_jvvj3")
-volume_db = -12.0
+volume_db = -10.0
 pitch_scale = 1.2
 autoplay = true
 max_distance = 512.0

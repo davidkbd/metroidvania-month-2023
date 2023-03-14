@@ -23,12 +23,14 @@ func _break_begin() -> void:
 	var tween : Tween = create_tween()
 	tween.tween_property(sprite, "frame", 2, .2)
 	tween.tween_interval(break_delay)
+	$breaking_sfx.play()
 	await tween.finished
 	_break()
 	await create_tween().tween_interval(restore_delay).finished
 	_restore()
 
 func _break() -> void:
+	$broken_sfx.play()
 	set_physics_process(false)
 	big_particles.restart()
 	big_particles.emitting = true

@@ -9,6 +9,7 @@ var tip_tween : Tween
 
 func progress_listener_on_progress_stored(_game_state : Dictionary) -> void:
 	saved_label.show()
+	$tip_sfx.play()
 	var tween = create_tween().tween_interval(1.0)
 	await tween.finished
 	saved_label.hide()
