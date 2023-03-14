@@ -8,7 +8,7 @@ var instance : BreakablePlatform
 
 func activate(_data : Dictionary) -> void:
 	instance = breakable_platform_template.instantiate()
-	add_child(instance)
+	call_deferred("add_child", instance)
 
 func deactivate() -> void:
 	if is_instance_valid(instance):
