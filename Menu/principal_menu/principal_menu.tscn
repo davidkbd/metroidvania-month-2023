@@ -110,7 +110,7 @@ texture = ExtResource("2_0msl5")
 
 [node name="moco" parent="background" instance=ExtResource("3_xhhig")]
 sprite_frames = SubResource("SpriteFrames_h6so0")
-frame_progress = 0.773549
+frame_progress = 0.439301
 
 [node name="panel" type="NinePatchRect" parent="."]
 visible = false
