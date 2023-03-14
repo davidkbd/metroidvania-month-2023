@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://fsko2k3detel"]
+[gd_scene load_steps=8 format=3 uid="uid://fsko2k3detel"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_pikkf"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_sm35l"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_2dit5"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_mm10w"]
-[ext_resource type="PackedScene" uid="uid://t6bwob3bwtvf" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="5_g6g7h"]
 [ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="5_uuke3"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="7_hr1c2"]
 
@@ -47,9 +46,6 @@ position = Vector2(2752, 96)
 [node name="autoadvance_area_left2" parent="room_content" instance=ExtResource("4_mm10w")]
 position = Vector2(-1088, -256)
 direction = 0
-
-[node name="savepoint_area" parent="room_content" instance=ExtResource("5_g6g7h")]
-position = Vector2(448, 160)
 
 [node name="green_torch" parent="room_content" instance=ExtResource("7_hr1c2")]
 position = Vector2(-512, 64)

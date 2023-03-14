@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://fvyte744x2sp"]
+[gd_scene load_steps=53 format=3 uid="uid://fvyte744x2sp"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/level.gd" id="1_c54te"]
 [ext_resource type="PackedScene" path="res://Ingame/levels/parallax_layer/parallax_layer.tscn" id="2_vpw7i"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://coewdtrff1jxy" path="res://Ingame/rooms/room_019.tscn" id="35_n8v53"]
 [ext_resource type="PackedScene" uid="uid://xhech3ybgrqn" path="res://Ingame/rooms/room_020.tscn" id="36_i8745"]
 [ext_resource type="PackedScene" uid="uid://c7vfkeqp830lf" path="res://Ingame/rooms/room_021.tscn" id="37_82fqi"]
+[ext_resource type="PackedScene" uid="uid://bu8oapkta7nxg" path="res://Ingame/rooms/room_016_savepoint.tscn" id="42_5ioh8"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
@@ -621,7 +622,7 @@ parallax_name = "room_006"
 [node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_006_med"]
 light_mask = 0
 texture_repeat = 3
-position = Vector2(6695, -2925)
+position = Vector2(6542, -2986)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_uxxmg")
 centered = false
@@ -898,6 +899,9 @@ metadata/_edit_lock_ = true
 [node name="room_016_tunnel" parent="." instance=ExtResource("30_o7mk3")]
 position = Vector2(22528, -7208)
 metadata/_edit_lock_ = true
+
+[node name="room_016_savepoint" parent="." instance=ExtResource("42_5ioh8")]
+position = Vector2(22720, -8832)
 
 [node name="room_017" parent="." instance=ExtResource("31_2go6e")]
 position = Vector2(23680, -8512)

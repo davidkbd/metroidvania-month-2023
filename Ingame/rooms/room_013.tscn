@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj7vldccptd1o"]
+[gd_scene load_steps=15 format=3 uid="uid://dj7vldccptd1o"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_5hd50"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ercv2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://3ycogsjr0t8s" path="res://Ingame/rooms/destroyable_walls/sprites/room013_destroyable_wall.png" id="8_ss0sn"]
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="9_pevmx"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="10_xlcot"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="11_v8cmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 888)
@@ -122,3 +123,15 @@ enemy_type = 1
 [node name="gremlin_spawner2" parent="room_content" instance=ExtResource("10_xlcot")]
 position = Vector2(216, 384)
 enemy_type = 1
+
+[node name="green_torch" parent="room_content" instance=ExtResource("11_v8cmp")]
+position = Vector2(332, 296)
+
+[node name="green_torch2" parent="room_content" instance=ExtResource("11_v8cmp")]
+position = Vector2(333, 1)
+
+[node name="green_torch3" parent="room_content" instance=ExtResource("11_v8cmp")]
+position = Vector2(-216, -4)
+
+[node name="green_torch4" parent="room_content" instance=ExtResource("11_v8cmp")]
+position = Vector2(-206, 283)

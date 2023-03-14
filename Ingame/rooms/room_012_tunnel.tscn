@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://0myqt2iee3d3"]
+[gd_scene load_steps=8 format=3 uid="uid://0myqt2iee3d3"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_irgqd"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_moehs"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_s7gjg"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_rxcc6"]
 [ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="5_vv1us"]
+[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="6_qvh5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(816, 2324)
@@ -53,3 +54,15 @@ collider_size = Vector2i(4, 5)
 position = Vector2(-352, 808)
 collider_size = Vector2i(4, 8)
 direction = 3
+
+[node name="green_torch" parent="room_content" instance=ExtResource("6_qvh5t")]
+position = Vector2(-63, 863)
+
+[node name="green_torch2" parent="room_content" instance=ExtResource("6_qvh5t")]
+position = Vector2(-90, 38)
+
+[node name="green_torch3" parent="room_content" instance=ExtResource("6_qvh5t")]
+position = Vector2(179, -499)
+
+[node name="green_torch4" parent="room_content" instance=ExtResource("6_qvh5t")]
+position = Vector2(-113, -1077)
