@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0kv7e3ne81p8"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/room/bridge_podrido/bridge_podrido_spawner.gd" id="1_erc37"]
+[ext_resource type="PackedScene" uid="uid://lnpmfhamp4as" path="res://Ingame/game_objects/room/bridge_podrido/bridge_podrido.tscn" id="2_j6a2r"]
+
+[node name="bridge_podrido_spawner" type="Node2D"]
+script = ExtResource("1_erc37")
+bridge_podrido_template = ExtResource("2_j6a2r")

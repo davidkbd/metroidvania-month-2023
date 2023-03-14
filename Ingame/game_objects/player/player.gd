@@ -110,8 +110,9 @@ func _ready() -> void:
 	global_position = Vector2.ONE * 9999999999.0
 	
 	print("Ponemos todas las skills pero esto hay que quitarlo")
-	skills.set_skill_value("super_attack", true)
-	skills.set_skill_value("double_jump", true)
-	skills.set_skill_value("dash", true)
-	skills.set_skill_value("snap_wall", true)
-	skills.set_skill_value("drop_attack", true)
+	#esto esta en el ProgressManager, en el default gamestate
+#	skills.set_skill_value("super_attack", true)
+#	skills.set_skill_value("double_jump", true)
+#	skills.set_skill_value("dash", true)
+#	skills.set_skill_value("snap_wall", true)
+#	skills.set_skill_value("drop_attack", true)

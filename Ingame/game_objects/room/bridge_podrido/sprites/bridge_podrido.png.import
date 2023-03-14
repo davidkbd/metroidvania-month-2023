@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi2luipxhd4ps"
-path="res://.godot/imported/bridge_podrido.png-8e3095aeeef2de86c6b8acefcf4e85e5.ctex"
+path="res://.godot/imported/bridge_podrido.png-b727de5495d8b265b128115549bf3672.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingame/game_objects/bridge_podrido/sprites/bridge_podrido.png"
-dest_files=["res://.godot/imported/bridge_podrido.png-8e3095aeeef2de86c6b8acefcf4e85e5.ctex"]
+source_file="res://Ingame/game_objects/room/bridge_podrido/sprites/bridge_podrido.png"
+dest_files=["res://.godot/imported/bridge_podrido.png-b727de5495d8b265b128115549bf3672.ctex"]
 
 [params]
 

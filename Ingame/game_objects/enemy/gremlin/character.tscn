@@ -366,6 +366,7 @@ script = ExtResource("8_htgti")
 one_shot = true
 
 [node name="sprite" type="Sprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 position = Vector2(-64, -79)
 texture = SubResource("CompressedTexture2D_68kjt")

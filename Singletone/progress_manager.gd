@@ -9,11 +9,11 @@ const DEFAULT_GAMESTATE : Dictionary = {
 	},
 	"player": {
 		"skills": {
-			"super_attack": false,
-			"double_jump": false,
-			"dash": false,
-			"snap_wall": false,
-			"drop_attack": false
+			"super_attack": true,
+			"double_jump":  true,
+			"dash":         true,
+			"snap_wall":    true,
+			"drop_attack":  true
 		},
 		"life": {
 			"value": 4,

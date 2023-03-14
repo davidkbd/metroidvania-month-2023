@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://civ87ynp7pl6l"]
+[gd_scene load_steps=11 format=3 uid="uid://chcfnp1ivpxvv"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_4rs4r"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_mbbam"]
@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_siegw"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_tcio5"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="8_40mqe"]
-[ext_resource type="PackedScene" uid="uid://bl1rd6alc1ml1" path="res://Ingame/game_objects/bridge_podrido/bridge_podrido.tscn" id="9_hx1dw"]
+[ext_resource type="PackedScene" uid="uid://c0kv7e3ne81p8" path="res://Ingame/game_objects/room/bridge_podrido/bridge_podrido_spawner.tscn" id="9_pgok5"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="9_phqn1"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/control_disable_area/control_disable_area.tscn" id="10_0glyk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2416, 1512)
@@ -62,6 +61,9 @@ direction = 3
 position = Vector2(1696, -880)
 collider_size = Vector2i(4, 3)
 
+[node name="bridge_podrido_spawner" parent="room_content" instance=ExtResource("9_pgok5")]
+position = Vector2(-320, 288)
+
 [node name="room_element_spawner2" parent="room_content" instance=ExtResource("8_40mqe")]
 position = Vector2(480, 288)
 
@@ -70,21 +72,6 @@ position = Vector2(528, 288)
 
 [node name="room_element_spawner4" parent="room_content" instance=ExtResource("8_40mqe")]
 position = Vector2(576, 288)
-
-[node name="bridge_podrido" parent="room_content" instance=ExtResource("9_hx1dw")]
-position = Vector2(-224, 288)
-collision_layer = 1025
-collision_mask = 1025
-
-[node name="control_disable_area" parent="room_content/bridge_podrido" instance=ExtResource("10_0glyk")]
-position = Vector2(-16, -48)
-collider_size = Vector2i(5, 12)
-
-[node name="autoadvance_area" parent="room_content/bridge_podrido" instance=ExtResource("4_siegw")]
-position = Vector2(-96, 0)
-collider_size = Vector2i(2, 4)
-collider_offset = Vector2i(0, -2)
-fade_out_in = false
 
 [node name="green_torch" parent="room_content" instance=ExtResource("9_phqn1")]
 position = Vector2(1272, -896)

@@ -215,6 +215,7 @@ path_max_distance = 20.0
 debug_enabled = true
 
 [node name="sprite" type="Sprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 position = Vector2(-32, -64)
 texture = SubResource("CompressedTexture2D_mc5we")
