@@ -5,6 +5,7 @@ var data : Dictionary = {
 }
 
 func get_texts() -> Array[String]:
+	$talk_sfx.play()
 	data.last_talk = Time.get_unix_time_from_system()
 	return [
 		"You know you can climb over the walls to reach high places?",

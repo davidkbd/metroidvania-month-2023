@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cih437c5386p4"]
+[gd_scene load_steps=13 format=3 uid="uid://cih437c5386p4"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_02/character.gd" id="1_6duwt"]
+[ext_resource type="AudioStream" uid="uid://rd5lrvx0ovi6" path="res://sfx/NEW/ingame_npc_talk.wav" id="2_reqqy"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u264k"]
 load_path = "res://.godot/imported/character.png-dde20af795301f55b7008e4b1e88422a.ctex"
@@ -103,3 +104,8 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_qsblk")
 libraries = {
 "": SubResource("AnimationLibrary_ohchq")
 }
+
+[node name="talk_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_reqqy")
+volume_db = -15.0
+bus = &"sfx"
