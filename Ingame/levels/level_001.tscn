@@ -608,7 +608,7 @@ parallax_name = "room_006"
 [node name="ParallaxFar" type="Sprite2D" parent="parallax/ParallaxBackground/room_006__far"]
 light_mask = 0
 texture_repeat = 3
-position = Vector2(6445, -3025)
+position = Vector2(6304, -3040)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_tbh3o")
 centered = false
@@ -902,6 +902,7 @@ metadata/_edit_lock_ = true
 
 [node name="room_016_savepoint" parent="." instance=ExtResource("42_5ioh8")]
 position = Vector2(22720, -8832)
+metadata/_edit_lock_ = true
 
 [node name="room_017" parent="." instance=ExtResource("31_2go6e")]
 position = Vector2(23680, -8512)
