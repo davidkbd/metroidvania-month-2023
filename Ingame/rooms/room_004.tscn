@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_to30v"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="6_i1shb"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_sxi5s"]
-[ext_resource type="PackedScene" uid="uid://bdy7e87uq1umk" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform.tscn" id="7_j8ulx"]
+[ext_resource type="PackedScene" uid="uid://b4qq70ymjcyj8" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform_spawner.tscn" id="7_w8xp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 896)
@@ -63,14 +63,14 @@ enemy_type = 2
 position = Vector2(336, 56)
 enemy_type = 2
 
-[node name="breakable_platform" parent="room_content" instance=ExtResource("7_j8ulx")]
+[node name="breakable_platform_spawner1" parent="room_content" instance=ExtResource("7_w8xp2")]
 position = Vector2(-64, 128)
 
-[node name="breakable_platform2" parent="room_content" instance=ExtResource("7_j8ulx")]
+[node name="breakable_platform_spawner2" parent="room_content" instance=ExtResource("7_w8xp2")]
 position = Vector2(64, 32)
 
-[node name="breakable_platform3" parent="room_content" instance=ExtResource("7_j8ulx")]
+[node name="breakable_platform_spawner3" parent="room_content" instance=ExtResource("7_w8xp2")]
 position = Vector2(208, -64)
 
-[node name="breakable_platform4" parent="room_content" instance=ExtResource("7_j8ulx")]
+[node name="breakable_platform_spawner4" parent="room_content" instance=ExtResource("7_w8xp2")]
 position = Vector2(360, -128)

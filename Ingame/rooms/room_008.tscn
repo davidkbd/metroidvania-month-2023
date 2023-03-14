@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="9_k55iq"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="10_bywac"]
 [ext_resource type="Texture2D" uid="uid://bfefy1spou7dp" path="res://Ingame/rooms/destroyable_walls/sprites/room008_destroyable_wall.png" id="11_1fa1i"]
-[ext_resource type="PackedScene" uid="uid://bdy7e87uq1umk" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform.tscn" id="13_rnt41"]
+[ext_resource type="PackedScene" uid="uid://b4qq70ymjcyj8" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform_spawner.tscn" id="13_gsous"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1712, 2168)
@@ -64,7 +64,7 @@ position = Vector2(-64, -1416)
 enemy_type = 2
 
 [node name="fairy_spawner2" parent="room_content" instance=ExtResource("5_ooljq")]
-position = Vector2(-720, -1240)
+position = Vector2(-680, -1360)
 enemy_type = 2
 
 [node name="gremlin_spawner" parent="room_content" instance=ExtResource("5_ooljq")]
@@ -156,23 +156,23 @@ position = Vector2(-656, -100)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_op75p")
 
-[node name="breakable_platform" parent="room_content" instance=ExtResource("13_rnt41")]
+[node name="breakable_platform_spawner1" parent="room_content" instance=ExtResource("13_gsous")]
 position = Vector2(0, -1504)
 
-[node name="breakable_platform2" parent="room_content" instance=ExtResource("13_rnt41")]
-position = Vector2(-224, -1568)
-
-[node name="breakable_platform3" parent="room_content" instance=ExtResource("13_rnt41")]
-position = Vector2(-336, -1440)
-
-[node name="breakable_platform4" parent="room_content" instance=ExtResource("13_rnt41")]
-position = Vector2(112, -1376)
-
-[node name="breakable_platform5" parent="room_content" instance=ExtResource("13_rnt41")]
+[node name="breakable_platform_spawner2" parent="room_content" instance=ExtResource("13_gsous")]
 position = Vector2(240, -1472)
 
-[node name="breakable_platform6" parent="room_content" instance=ExtResource("13_rnt41")]
+[node name="breakable_platform_spawner3" parent="room_content" instance=ExtResource("13_gsous")]
+position = Vector2(112, -1376)
+
+[node name="breakable_platform_spawner4" parent="room_content" instance=ExtResource("13_gsous")]
+position = Vector2(-224, -1568)
+
+[node name="breakable_platform_spawner5" parent="room_content" instance=ExtResource("13_gsous")]
+position = Vector2(-336, -1440)
+
+[node name="breakable_platform_spawner6" parent="room_content" instance=ExtResource("13_gsous")]
 position = Vector2(-680, -1344)
 
-[node name="breakable_platform7" parent="room_content" instance=ExtResource("13_rnt41")]
+[node name="breakable_platform_spawner7" parent="room_content" instance=ExtResource("13_gsous")]
 position = Vector2(-160, -416)
