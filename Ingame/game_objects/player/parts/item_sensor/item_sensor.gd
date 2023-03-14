@@ -3,10 +3,12 @@ extends Area2D
 @onready var player : Player = get_parent()
 
 func _on_area_entered(area : Area2D):
-	if area is RatHealth:
+	if area is RatHealthItem:
 		_eat_rat(area)
+	elif area is SkillItem:
+		_get_double_jump(area)
 
-func _eat_rat(_rat : RatHealth) -> void:
+func _eat_rat(_rat : RatHealthItem) -> void:
 	var rat = Sprite2D.new()
 	rat.texture = _rat.sprite.texture
 	rat.hframes = _rat.sprite.hframes
@@ -26,3 +28,9 @@ func _eat_rat(_rat : RatHealth) -> void:
 	await tween.finished
 	if is_instance_valid(rat):
 		rat.queue_free()
+
+func _get_double_jump(_item : SkillItem) -> void:
+	player.skills.set_skill_value(
+			_item.get_skill_name(),
+			true)
+	_item.catch()

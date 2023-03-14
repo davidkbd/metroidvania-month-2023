@@ -39,3 +39,8 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
 script = ExtResource("3_ppvbv")
+
+[node name="text" parent="." instance=ExtResource("4_hpej5")]
+position = Vector2(320, 24)
+width = 480
+centered = true

@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name RatHealth
+class_name RatHealthItem
 
 @export  var fall_accel      : float = 800.0
 @export  var speed           : float = 7000.0

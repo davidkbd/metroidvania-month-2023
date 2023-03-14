@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var destroyable         : DestroyableObject = $base_rat_home_destroyable_object
 @onready var rat_output_position : Marker2D          = $rat_output_position
-var rat_instance : RatHealth
+var rat_instance : RatHealthItem
 
 func _on_base_rat_home_destroyable_object_destroyed():
 	rat_instance = rat_health_template.instantiate()
