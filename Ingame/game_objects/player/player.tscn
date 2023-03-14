@@ -352,7 +352,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_7yo6m"]
 resource_name = "simpleattack_down"
-length = 0.2
+length = 0.3
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -361,10 +361,10 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [110, 110]
+"values": [110, 111, 112]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -373,7 +373,7 @@ tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1),
+"times": PackedFloat32Array(0, 0.01, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(16, 8), Vector2(40, 42), Vector2(16, 8)]
@@ -385,7 +385,7 @@ tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1),
+"times": PackedFloat32Array(0, 0.01, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(4, 45), Vector2(0, 0)]
@@ -393,7 +393,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_6twuo"]
 resource_name = "simpleattack_horizontal"
-length = 0.2
+length = 0.3
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -402,10 +402,10 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [90, 88]
+"values": [90, 91, 92]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -414,7 +414,7 @@ tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.05, 0.1, 0.15),
+"times": PackedFloat32Array(0, 0.01, 0.05, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(16, 8), Vector2(32, 8), Vector2(51, 28), Vector2(40, 28), Vector2(16, 8)]
@@ -426,7 +426,7 @@ tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.05, 0.15),
+"times": PackedFloat32Array(0, 0.01, 0.05, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-48, 0), Vector2(-53.5, -9), Vector2(0, 0)]
@@ -434,7 +434,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_l6mj0"]
 resource_name = "simpleattack_up"
-length = 0.2
+length = 0.3
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -443,10 +443,10 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [99, 99]
+"values": [99, 100, 101]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -455,7 +455,7 @@ tracks/1/path = NodePath("enemy_hit_area/CollisionShape2D:shape:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1),
+"times": PackedFloat32Array(0, 0.01, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(16, 8), Vector2(48, 44), Vector2(16, 8)]
@@ -467,7 +467,7 @@ tracks/2/path = NodePath("enemy_hit_area/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.1),
+"times": PackedFloat32Array(0, 0.01, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -40), Vector2(0, 0)]
@@ -487,7 +487,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [113, 114, 115]
+"values": [113, 111, 112]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -528,7 +528,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [91, 92, 93]
+"values": [93, 91, 92]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -569,7 +569,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [102, 103, 104]
+"values": [102, 100, 101]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -944,9 +944,11 @@ script = ExtResource("7_bx4yu")
 
 [node name="on_simple_attack" type="Node" parent="state_machine"]
 script = ExtResource("7_lusim")
+attack_timer = 0.3
 
 [node name="on_super_attack" type="Node" parent="state_machine"]
 script = ExtResource("8_mykkq")
+attack_timer = 0.3
 
 [node name="on_drop_attack" type="Node" parent="state_machine"]
 script = ExtResource("9_kutxv")
