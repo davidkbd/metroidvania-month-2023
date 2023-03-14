@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dit2fh7iqtem4"]
+[gd_scene load_steps=12 format=3 uid="uid://dit2fh7iqtem4"]
 
 [ext_resource type="Script" path="res://UI/textbox/textbox.gd" id="1_7eh0l"]
 [ext_resource type="Texture2D" uid="uid://bcuc2g4hdxhd8" path="res://UI/sprites/textbox-border1.png" id="2_mni56"]
-[ext_resource type="PackedScene" uid="uid://cqrajpo01h5eo" path="res://UI/label/label.tscn" id="2_nh2ad"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="2_nh2ad"]
 [ext_resource type="Texture2D" uid="uid://ty3focco66gk" path="res://UI/sprites/textbox-border2.png" id="3_iudkf"]
 [ext_resource type="Texture2D" uid="uid://cm11jvimjaefb" path="res://UI/sprites/textbox-border3.png" id="4_l4nx3"]
 [ext_resource type="Texture2D" uid="uid://hyko2x1is3sq" path="res://UI/sprites/textbox-border4.png" id="5_l4y6q"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cmeid18h257cy" path="res://UI/sprites/textbox-border6.png" id="7_scx03"]
 [ext_resource type="Texture2D" uid="uid://bccyxvvbi8nyl" path="res://UI/sprites/textbox-border7.png" id="8_c7ifa"]
 [ext_resource type="Texture2D" uid="uid://bkb6fkyogxb5p" path="res://UI/sprites/textbox-border8.png" id="9_ualon"]
+[ext_resource type="AudioStream" uid="uid://2pppa88uvq4v" path="res://sfx/NEW/hud_letter.wav" id="11_h5gmu"]
 
 [node name="textbox" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_7eh0l")
-border_textures = [ExtResource("2_mni56"), ExtResource("3_iudkf"), ExtResource("4_l4nx3"), ExtResource("5_l4y6q"), ExtResource("6_8kcff"), ExtResource("7_scx03"), ExtResource("8_c7ifa"), ExtResource("9_ualon")]
+border_textures = Array[Texture2D]([ExtResource("2_mni56"), ExtResource("3_iudkf"), ExtResource("4_l4nx3"), ExtResource("5_l4y6q"), ExtResource("6_8kcff"), ExtResource("7_scx03"), ExtResource("8_c7ifa"), ExtResource("9_ualon")])
 
 [node name="border" type="Sprite2D" parent="."]
 texture = ExtResource("2_mni56")
@@ -26,3 +27,9 @@ width = 364
 first_half_color = Color(0.694118, 0.756863, 0.698039, 1)
 last_half_color = Color(0.580392, 0.623529, 0.580392, 1)
 shadow_color = Color(0.268504, 0.29857, 0.268527, 1)
+
+[node name="letter_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_h5gmu")
+volume_db = -22.0
+max_polyphony = 2
+bus = &"sfx"

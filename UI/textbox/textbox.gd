@@ -30,7 +30,9 @@ func _update(_text) -> void:
 	if is_inside_tree():
 		var text_height : int = $label.calc_size(text).y
 		$border.texture = border_textures[clamp(text_height / $label.CHAR_HEIGHT - 3, 0, border_textures.size() - 1)]
-		$label.text = _text
+		if $label.text != _text:
+			$letter_sfx.play()
+			$label.text = _text
 
 func _animate() -> void:
 	if text_tween: text_tween.kill()
