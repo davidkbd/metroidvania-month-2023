@@ -27,8 +27,12 @@ func _process(_delta : float) -> void:
 		charging = true
 		time = charge_seconds
 		color_intensity = 1.0
+		player.super_attack_charge_sfx.play()
+		player.super_attack_charge_sfx.pitch_scale = .2
 	elif ControlInput.is_attack_just_released():
 		charging = false
+		player.super_attack_charge_sfx.stop()
+	player.super_attack_charge_sfx.pitch_scale = clamp(player.super_attack_charge_sfx.pitch_scale + _delta * .5, .2, 1.0)
 
 	if charging:
 		player.sprite.modulate = Color(color_intensity, color_intensity, color_intensity, 1)

@@ -18,6 +18,8 @@ func enter() -> void:
 	host.enemy_hit_area.scale.x = -1 if host.sprite.flip_h else 1
 	host.enemy_hit_area.collider.disabled = false
 
+	host.whoosh_sfx[randi_range(0, 3)].play()
+
 func exit() -> void:
 	_enable_collision(false)
 	if host.hitted_enemy \

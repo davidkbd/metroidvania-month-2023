@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://cod00olgejgpf"]
+[gd_scene load_steps=147 format=3 uid="uid://cod00olgejgpf"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/player/parts/state_machine/state_machine.gd" id="1_5x2j1"]
 [ext_resource type="Script" path="res://Ingame/game_objects/player/player.gd" id="1_p8tho"]
@@ -37,6 +37,11 @@
 [ext_resource type="PackedScene" uid="uid://coo4lac6b1v5m" path="res://Ingame/game_objects/player/parts/item_sensor/item_sensor.tscn" id="28_yw00y"]
 [ext_resource type="Texture2D" uid="uid://cod1y7w45pm38" path="res://Ingame/game_objects/player/sprites/backinglight-mask.png" id="34_e58yy"]
 [ext_resource type="Texture2D" uid="uid://c4vx1bf38xb34" path="res://Ingame/game_objects/player/sprites/backing_light.png" id="34_q436p"]
+[ext_resource type="AudioStream" uid="uid://bfngnqepeivte" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_1.wav" id="35_g7f2b"]
+[ext_resource type="AudioStream" uid="uid://b7eum1k4pv8d7" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_2.wav" id="36_0423a"]
+[ext_resource type="AudioStream" uid="uid://cr5bsec1jtrlm" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_3.wav" id="37_h4ros"]
+[ext_resource type="AudioStream" uid="uid://x3tlgu74ralt" path="res://sfx/NEW/ingame_whitenoise.wav" id="38_01lbu"]
+[ext_resource type="AudioStream" uid="uid://dqd65fbtxewlb" path="res://sfx/NEW/ingame_player_short-whoosh-13x-14526_4.wav" id="38_mw6rv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7brj"]
 shader = ExtResource("15_unq2k")
@@ -1046,6 +1051,32 @@ disabled = true
 
 [node name="enemy_damage_area" parent="." instance=ExtResource("20_yqshm")]
 position = Vector2(0, -13)
+
+[node name="whoosh1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_g7f2b")
+volume_db = -16.0
+bus = &"sfx"
+
+[node name="whoosh2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_0423a")
+volume_db = -16.0
+bus = &"sfx"
+
+[node name="whoosh3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_h4ros")
+volume_db = -16.0
+bus = &"sfx"
+
+[node name="whoosh4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_mw6rv")
+volume_db = -16.0
+bus = &"sfx"
+
+[node name="super_attack_charge" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_01lbu")
+volume_db = -24.0
+pitch_scale = 0.2
+bus = &"sfx"
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_77pts")

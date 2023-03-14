@@ -22,6 +22,8 @@ class_name Player
 
 @onready var enemy_hit_area       : Area2D                   = $enemy_hit_area
 @onready var enemy_damage_area    : Area2D                   = $enemy_damage_area
+@onready var whoosh_sfx           : Array                    = [ $whoosh1, $whoosh2, $whoosh3, $whoosh4 ]
+@onready var super_attack_charge_sfx : AudioStreamPlayer     = $super_attack_charge
 
 var talking_npc       : NPC                 = null
 var eating_enemy      : EnemyCharacterAlive = null
