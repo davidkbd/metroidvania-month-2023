@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xhech3ybgrqn"]
+[gd_scene load_steps=10 format=3 uid="uid://xhech3ybgrqn"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_k5ijc"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_q8mdx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_p0iec"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="6_g14as"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="7_5u3hk"]
+[ext_resource type="PackedScene" uid="uid://b20g0bxsr031g" path="res://Ingame/game_objects/items/skill_double_jump/skill_double_jump.tscn" id="8_k5cgs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1784, 936)
@@ -26,6 +27,7 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 light_mask = 4
+z_index = -1
 position = Vector2(33, 320)
 tile_set = ExtResource("3_2wsty")
 format = 2
@@ -72,3 +74,6 @@ position = Vector2(376, -304)
 
 [node name="green_torch6" parent="room_content" instance=ExtResource("7_5u3hk")]
 position = Vector2(736, -320)
+
+[node name="skill_double_jump" parent="room_content" instance=ExtResource("8_k5cgs")]
+position = Vector2(832, -224)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1yiliau2vn7v"]
+[gd_scene load_steps=10 format=3 uid="uid://d1yiliau2vn7v"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_srn7x"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_e1mai"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_7o3yd"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/control_tip_area/control_tip_area.tscn" id="5_h1fbl"]
 [ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="7_fovrc"]
+[ext_resource type="PackedScene" uid="uid://b3n6r65xgu3mt" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall.tscn" id="8_0fcjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1608, 2208)
@@ -66,3 +67,6 @@ npc_type = 3
 [node name="npc_spawner2" parent="room_content" instance=ExtResource("7_fovrc")]
 position = Vector2(2584, -1600)
 npc_type = 9
+
+[node name="skill_snap_wall" parent="room_content" instance=ExtResource("8_0fcjx")]
+position = Vector2(2560, -192)
