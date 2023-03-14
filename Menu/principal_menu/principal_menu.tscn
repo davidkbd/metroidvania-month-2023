@@ -1,40 +1,89 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7beisx2twja4"]
+[gd_scene load_steps=23 format=3 uid="uid://b7beisx2twja4"]
 
 [ext_resource type="Script" path="res://Menu/principal_menu/principal_menu.gd" id="1_bp4pa"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="2_0msl5"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="2_uh5pl"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="3_xhhig"]
-[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="4_782pu"]
-[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="5_rllpr"]
-[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="6_5xuon"]
+[ext_resource type="Texture2D" uid="uid://dkgv7xbopclys" path="res://Menu/sprites/moco.png" id="4_l2g1s"]
 [ext_resource type="PackedScene" uid="uid://d00sany3yuwyv" path="res://Menu/buttons/play_button/play_button.tscn" id="6_dab66"]
 [ext_resource type="PackedScene" uid="uid://ccx1mv6cykivo" path="res://Menu/buttons/options_button/options_button.tscn" id="7_5rj78"]
-[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="7_t8lch"]
 [ext_resource type="PackedScene" uid="uid://c0lno0c0myi3d" path="res://Menu/buttons/credits_button/credits_button.tscn" id="8_njrsb"]
-[ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="9_c00c0"]
 [ext_resource type="PackedScene" uid="uid://b8xl2b6d65mfo" path="res://Menu/buttons/quit_button/quit_button.tscn" id="9_cg4ke"]
 [ext_resource type="PackedScene" uid="uid://bvkqv0hgdg836" path="res://Menu/buttons/help_button/help_button.tscn" id="12_qrxpa"]
+[ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="14_0qmve"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hi5v"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stf6n"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emby3"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owp7b"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi0rr"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk7at"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1vay"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eem8s"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsfxu"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(5120, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vgap"]
+atlas = ExtResource("4_l2g1s")
+region = Rect2(5760, 0, 640, 360)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_782pu")
+"texture": SubResource("AtlasTexture_2hi5v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rllpr")
+"texture": SubResource("AtlasTexture_stf6n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_5xuon")
+"texture": SubResource("AtlasTexture_emby3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_t8lch")
+"texture": SubResource("AtlasTexture_owp7b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_5xuon")
+"texture": SubResource("AtlasTexture_pi0rr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rllpr")
+"texture": SubResource("AtlasTexture_sk7at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1vay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eem8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsfxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vgap")
 }],
 "loop": true,
 "name": &"default",
@@ -59,10 +108,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0msl5")
 
-[node name="zzz" parent="background" instance=ExtResource("3_xhhig")]
+[node name="moco" parent="background" instance=ExtResource("3_xhhig")]
 sprite_frames = SubResource("SpriteFrames_h6so0")
+frame_progress = 0.773549
 
 [node name="panel" type="NinePatchRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.68
@@ -79,10 +130,6 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="title" parent="." instance=ExtResource("9_c00c0")]
-position = Vector2(440, 208)
-text = "Metroidcosa"
-
 [node name="play_button" parent="." instance=ExtResource("6_dab66")]
 layout_mode = 0
 anchors_preset = 0
@@ -90,10 +137,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 536.0
-offset_top = 248.0
-offset_right = 600.0
-offset_bottom = 264.0
+offset_left = 500.0
+offset_top = 251.0
+offset_right = 564.0
+offset_bottom = 267.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -104,10 +151,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 536.0
-offset_top = 272.0
-offset_right = 600.0
-offset_bottom = 288.0
+offset_left = 500.0
+offset_top = 275.0
+offset_right = 564.0
+offset_bottom = 291.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -133,10 +180,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 536.0
-offset_top = 296.0
-offset_right = 600.0
-offset_bottom = 312.0
+offset_left = 500.0
+offset_top = 299.0
+offset_right = 564.0
+offset_bottom = 315.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -147,9 +194,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 536.0
-offset_top = 320.0
-offset_right = 600.0
-offset_bottom = 336.0
+offset_left = 500.0
+offset_top = 323.0
+offset_right = 564.0
+offset_bottom = 339.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="metroidvaniamonth" parent="." instance=ExtResource("14_0qmve")]
+position = Vector2(8, 344)
+text = "Metroidvania Month Jam"
+width = 256
+last_half_color = Color(0.34902, 0.823529, 0.580392, 1)

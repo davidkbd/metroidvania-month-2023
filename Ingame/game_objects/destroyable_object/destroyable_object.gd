@@ -69,6 +69,7 @@ func _hit(direction : float) -> void:
 	var pos = target.position.x
 	target.position.x += direction * 4.0
 	hit_tween.tween_property(target, "position:x", pos, .5)
+	$break_sfx.play()
 
 func _destruction(direction : float) -> void:
 	particles.direction.x = particles.direction.x * direction
