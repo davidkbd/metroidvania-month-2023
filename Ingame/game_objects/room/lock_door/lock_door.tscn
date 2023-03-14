@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqx4c4e158ajn"]
+[gd_scene load_steps=7 format=3 uid="uid://dqx4c4e158ajn"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/room/lock_door/lock_door.gd" id="1_30k6k"]
 [ext_resource type="Texture2D" uid="uid://ir6cddcmeq50" path="res://Ingame/game_objects/room/lock_door/sprites/door_up.png" id="1_jdmdw"]
 [ext_resource type="Texture2D" uid="uid://bsbuexnxiiqak" path="res://Ingame/game_objects/room/lock_door/sprites/door_down.png" id="2_g5u55"]
 [ext_resource type="AudioStream" uid="uid://c848a66cmfi2l" path="res://sfx/NEW/ingame_door_closed.wav" id="4_hs2ld"]
+[ext_resource type="AudioStream" uid="uid://duuwvbq0yyevn" path="res://sfx/NEW/ingame_door_opened.wav" id="5_fgnyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1icuw"]
 size = Vector2(128, 16)
@@ -34,4 +35,9 @@ one_way_collision = true
 [node name="closed_sfx" type="AudioStreamPlayer2D" parent="."]
 process_mode = 1
 stream = ExtResource("4_hs2ld")
+bus = &"sfx"
+
+[node name="opened_sfx" type="AudioStreamPlayer2D" parent="."]
+process_mode = 1
+stream = ExtResource("5_fgnyj")
 bus = &"sfx"
