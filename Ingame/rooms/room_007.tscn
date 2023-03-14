@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyshcyvyemutn"]
+[gd_scene load_steps=10 format=3 uid="uid://dyshcyvyemutn"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_d1c0k"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_gvijo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_omthn"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_5aovd"]
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="7_u36xv"]
+[ext_resource type="PackedScene" uid="uid://c3sg6ph4trics" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack.tscn" id="8_ev36l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1744, 920)
@@ -26,6 +27,7 @@ debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 light_mask = 4
+z_index = -1
 position = Vector2(32, 320)
 tile_set = ExtResource("3_m2gtq")
 format = 2
@@ -42,6 +44,10 @@ layer_0/tile_data = PackedInt32Array(-65518, 196610, 4, -65517, 196610, 2, -1310
 
 [node name="room_content" parent="." instance=ExtResource("4_5wlx3")]
 
+[node name="LockDoor" parent="room_content" instance=ExtResource("7_u36xv")]
+position = Vector2(-992, 256)
+rotation = 3.14159
+
 [node name="hero_spawner" parent="room_content" instance=ExtResource("5_omthn")]
 position = Vector2(-64, 384)
 reborn_delay_seconds = 300.0
@@ -56,6 +62,5 @@ position = Vector2(288, -448)
 collider_size = Vector2i(14, 4)
 direction = 0
 
-[node name="LockDoor" parent="room_content" instance=ExtResource("7_u36xv")]
-position = Vector2(-992, 256)
-rotation = 3.14159
+[node name="skill_super_attack" parent="room_content" instance=ExtResource("8_ev36l")]
+position = Vector2(424, 384)

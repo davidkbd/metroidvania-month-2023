@@ -651,12 +651,12 @@ parallax_name = "room_006"
 [node name="ParallaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_006_near2"]
 light_mask = 0
 texture_repeat = 3
-position = Vector2(7808, -3328)
+position = Vector2(7816, -3280)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_vw1a5")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 1000, 3000)
+region_rect = Rect2(0, 0, 2000, 3000)
 
 [node name="room_006_secret_particles" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 parallax_name = "room_006"
