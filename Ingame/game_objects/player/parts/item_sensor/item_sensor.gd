@@ -25,6 +25,7 @@ func _eat_rat(_rat : RatHealthItem) -> void:
 	
 	var tween : Tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(rat, "modulate:a", .0, 2.0)
+	player.slurp_sfx.play()
 	await tween.finished
 	if is_instance_valid(rat):
 		rat.queue_free()

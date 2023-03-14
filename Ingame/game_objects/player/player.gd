@@ -15,15 +15,18 @@ class_name Player
 @onready var onwall_collider      : CollisionShape2D         = $onwall_collider
 @onready var ondash_collider      : CollisionShape2D         = $ondash_collider
 @onready var savepoint_sensor     : Area2D                   = $savepoint_sensor
-@onready var jump_sfx             : AudioStreamPlayer        = $jump_sfx
-@onready var damaged_sfx          : AudioStreamPlayer        = $damaged_sfx
-@onready var hitenemy_sfx         : AudioStreamPlayer        = $hitenemy_sfx
 @onready var restartpoint_sensor  : Area2D                   = $restartpoint_area_sensor
 
 @onready var enemy_hit_area       : Area2D                   = $enemy_hit_area
 @onready var enemy_damage_area    : Area2D                   = $enemy_damage_area
+
 @onready var whoosh_sfx           : Array                    = [ $whoosh1, $whoosh2, $whoosh3, $whoosh4 ]
 @onready var super_attack_charge_sfx : AudioStreamPlayer     = $super_attack_charge
+@onready var dash_sfx             : AudioStreamPlayer        = $dash_sfx
+@onready var jump_sfx             : AudioStreamPlayer        = $jump_sfx
+@onready var damaged_sfx          : AudioStreamPlayer        = $damaged_sfx
+@onready var hitenemy_sfx         : AudioStreamPlayer        = $hitenemy_sfx
+@onready var slurp_sfx            : AudioStreamPlayer        = $slurp_sfx
 
 var talking_npc       : NPC                 = null
 var eating_enemy      : EnemyCharacterAlive = null
