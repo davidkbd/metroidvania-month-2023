@@ -271,7 +271,7 @@ parallax_name = "room_002"
 
 [node name="ParallaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_med"]
 light_mask = 0
-position = Vector2(2816, -1496)
+position = Vector2(2631, -1508)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_uxxmg")
 centered = false
@@ -555,6 +555,8 @@ position = Vector2(4899, -1392)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_tbh3o")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 3000)
 
 [node name="room_008_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
 motion_scale = Vector2(0.8, 0.8)
