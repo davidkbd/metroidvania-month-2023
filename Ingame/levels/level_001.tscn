@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://fvyte744x2sp"]
+[gd_scene load_steps=52 format=3 uid="uid://fvyte744x2sp"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/level.gd" id="1_c54te"]
 [ext_resource type="PackedScene" path="res://Ingame/levels/parallax_layer/parallax_layer.tscn" id="2_vpw7i"]
@@ -7,17 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://dibcteanvf73m" path="res://Ingame/Particles/ambient_particles/ambient_particles.tscn" id="4_n3beu"]
 [ext_resource type="Shader" path="res://fog.gdshader" id="4_o5l67"]
 [ext_resource type="Texture2D" uid="uid://c71lgk7hlrjj2" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax_fondo.png" id="5_homtb"]
+[ext_resource type="Texture2D" uid="uid://bdyr38nbshsmi" path="res://Ingame/levels/parallax_layer/sprites/background/Pxfondo_grutaLong_largo.png" id="5_j7npj"]
 [ext_resource type="PackedScene" uid="uid://b68vcgdaf1ye3" path="res://Ingame/rooms/room_001.tscn" id="5_olijw"]
 [ext_resource type="Texture2D" uid="uid://c464qp6x0o0cy" path="res://48x48.png" id="5_r0vl8"]
 [ext_resource type="Texture2D" uid="uid://cc6x8cf1uayv5" path="res://Ingame/levels/parallax_layer/sprites/foreground/room_002_foreground01.png" id="6_nhmka"]
 [ext_resource type="Texture2D" uid="uid://crib3j3pscx1k" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax3.png" id="6_tbh3o"]
+[ext_resource type="Texture2D" uid="uid://x3tpox1kwax3" path="res://Ingame/levels/parallax_layer/sprites/background/PxP1_grutaLong_largo.png" id="6_wpjyy"]
 [ext_resource type="PackedScene" uid="uid://d1yiliau2vn7v" path="res://Ingame/rooms/room_002.tscn" id="7_75ef1"]
 [ext_resource type="Texture2D" uid="uid://d301wgv3eb1hm" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax2.png" id="7_uxxmg"]
+[ext_resource type="Texture2D" uid="uid://u7lgjtfpub2k" path="res://Ingame/levels/parallax_layer/sprites/background/PxP2_grutaLong_largo.png" id="7_xw60q"]
+[ext_resource type="Texture2D" uid="uid://7d1ey0q11w6b" path="res://Ingame/levels/parallax_layer/sprites/background/PxP3_grutaLong_largo.png" id="8_3qv5p"]
 [ext_resource type="Texture2D" uid="uid://cdjr5nuufsa0h" path="res://Ingame/levels/parallax_layer/sprites/background/room_002_paralax1.png" id="8_vw1a5"]
 [ext_resource type="PackedScene" uid="uid://bfbxd6ngqctwc" path="res://Ingame/rooms/room_002_secret.tscn" id="9_l220f"]
 [ext_resource type="PackedScene" uid="uid://sml08gtbpkp0" path="res://Ingame/rooms/room_002_tunnel.tscn" id="10_dh8cp"]
 [ext_resource type="PackedScene" uid="uid://bkdx1cjef5tax" path="res://Ingame/rooms/room_003.tscn" id="11_hgltt"]
-[ext_resource type="PackedScene" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
+[ext_resource type="PackedScene" uid="uid://brjkpj6nrt24k" path="res://Ingame/rooms/room_003_tunnel.tscn" id="12_po3mq"]
 [ext_resource type="PackedScene" uid="uid://jvmgscj7a8aj" path="res://Ingame/rooms/room_004.tscn" id="13_dsqei"]
 [ext_resource type="PackedScene" uid="uid://c5ln4hnx7xo2k" path="res://Ingame/rooms/room_004_tunnel.tscn" id="14_s8mat"]
 [ext_resource type="PackedScene" uid="uid://didct0sxvmfma" path="res://Ingame/rooms/room_001_secret.tscn" id="14_vprd8"]
@@ -55,30 +59,6 @@ fog_light_energy = 2.82
 adjustment_enabled = true
 adjustment_brightness = 0.6
 adjustment_contrast = 1.23
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbqo5"]
-load_path = "res://.godot/imported/Pxfondo_grutaLong_largo.png-dd3374a5b14c24f2ae6c263b8221a60c.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0qwmx"]
-load_path = "res://.godot/imported/PxP3_grutaLong_largo.png-9b6983ce51d2b6b80037b42d4bbad886.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bf1ag"]
-load_path = "res://.godot/imported/PxP2_grutaLong_largo.png-2945a9983b3a316c6c71ff05cf924442.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1t2jm"]
-load_path = "res://.godot/imported/PxP1_grutaLong_largo.png-0f0c0967f725a1694dff2524b36b0047.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o67cn"]
-load_path = "res://.godot/imported/Pxfondo_grutaLong_largo.png-dd3374a5b14c24f2ae6c263b8221a60c.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4w4e1"]
-load_path = "res://.godot/imported/PxP3_grutaLong_largo.png-9b6983ce51d2b6b80037b42d4bbad886.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l5blw"]
-load_path = "res://.godot/imported/PxP2_grutaLong_largo.png-2945a9983b3a316c6c71ff05cf924442.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aweja"]
-load_path = "res://.godot/imported/PxP1_grutaLong_largo.png-0f0c0967f725a1694dff2524b36b0047.ctex"
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nqvhr"]
 noise_type = 0
@@ -170,7 +150,7 @@ parallax_name = "room_002_tunnel"
 light_mask = 0
 texture_filter = 1
 position = Vector2(-336, -144)
-texture = SubResource("CompressedTexture2D_wbqo5")
+texture = ExtResource("5_j7npj")
 centered = false
 
 [node name="room_002_tunnel_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
@@ -182,7 +162,7 @@ parallax_name = "room_002_tunnel"
 light_mask = 0
 texture_repeat = 3
 position = Vector2(-128, -48)
-texture = SubResource("CompressedTexture2D_0qwmx")
+texture = ExtResource("8_3qv5p")
 centered = false
 
 [node name="room_002_tunnel_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
@@ -193,7 +173,7 @@ parallax_name = "room_002_tunnel"
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_med"]
 light_mask = 0
 position = Vector2(-32, -48)
-texture = SubResource("CompressedTexture2D_bf1ag")
+texture = ExtResource("7_xw60q")
 centered = false
 
 [node name="room_002_tunnel_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
@@ -204,7 +184,7 @@ parallax_name = "room_002_tunnel"
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_002_tunnel_near"]
 light_mask = 0
 position = Vector2(-344, -40)
-texture = SubResource("CompressedTexture2D_1t2jm")
+texture = ExtResource("6_wpjyy")
 centered = false
 
 [node name="room_002_tunnel_particles" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
@@ -229,7 +209,7 @@ parallax_name = "room_003_tunnel"
 light_mask = 0
 texture_filter = 1
 position = Vector2(1920, -680)
-texture = SubResource("CompressedTexture2D_wbqo5")
+texture = ExtResource("5_j7npj")
 centered = false
 
 [node name="room_003_tunnel_far" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
@@ -241,7 +221,7 @@ parallax_name = "room_003_tunnel"
 light_mask = 0
 texture_repeat = 3
 position = Vector2(4448, -1216)
-texture = SubResource("CompressedTexture2D_0qwmx")
+texture = ExtResource("8_3qv5p")
 centered = false
 
 [node name="room_003_tunnel_med" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
@@ -252,7 +232,7 @@ parallax_name = "room_003_tunnel"
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_med"]
 light_mask = 0
 position = Vector2(4640, -1384)
-texture = SubResource("CompressedTexture2D_bf1ag")
+texture = ExtResource("7_xw60q")
 centered = false
 
 [node name="room_003_tunnel_near" parent="parallax/ParallaxBackground" instance=ExtResource("2_vpw7i")]
@@ -263,7 +243,7 @@ parallax_name = "room_003_tunnel"
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_003_tunnel_near"]
 light_mask = 0
 position = Vector2(4896, -1528)
-texture = SubResource("CompressedTexture2D_1t2jm")
+texture = ExtResource("6_wpjyy")
 centered = false
 
 [node name="room_002_bg" type="ParallaxLayer" parent="parallax/ParallaxBackground"]
@@ -403,7 +383,7 @@ light_mask = 0
 texture_filter = 1
 texture_repeat = 3
 position = Vector2(1040, -2232)
-texture = SubResource("CompressedTexture2D_o67cn")
+texture = ExtResource("5_j7npj")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 2000)
@@ -418,7 +398,7 @@ parallax_name = "room_004_tunnel"
 light_mask = 0
 texture_repeat = 3
 position = Vector2(3384, -1776)
-texture = SubResource("CompressedTexture2D_4w4e1")
+texture = ExtResource("8_3qv5p")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 2000)
@@ -431,7 +411,7 @@ parallax_name = "room_004_tunnel"
 [node name="Room002ParalaxMed" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_med"]
 light_mask = 0
 position = Vector2(4600, -2688)
-texture = SubResource("CompressedTexture2D_l5blw")
+texture = ExtResource("7_xw60q")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 2000)
@@ -444,7 +424,7 @@ parallax_name = "room_004_tunnel"
 [node name="Room002ParalaxNear" type="Sprite2D" parent="parallax/ParallaxBackground/room_004_tunnel_near"]
 light_mask = 0
 position = Vector2(5776, -3040)
-texture = SubResource("CompressedTexture2D_aweja")
+texture = ExtResource("6_wpjyy")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 2000)
