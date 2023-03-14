@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c6i6iboy8capj"
-path="res://.godot/imported/falling_rocks.wav-fd9af121395261016b9f890d2d84f5cc.sample"
+path="res://.godot/imported/ingame_bridge_broken.wav-65bd21778a9f1fa8f1681c632c32d4d5.sample"
 
 [deps]
 
-source_file="res://sfx/NEW/falling_rocks.wav"
-dest_files=["res://.godot/imported/falling_rocks.wav-fd9af121395261016b9f890d2d84f5cc.sample"]
+source_file="res://sfx/NEW/ingame_bridge_broken.wav"
+dest_files=["res://.godot/imported/ingame_bridge_broken.wav-65bd21778a9f1fa8f1681c632c32d4d5.sample"]
 
 [params]
 
