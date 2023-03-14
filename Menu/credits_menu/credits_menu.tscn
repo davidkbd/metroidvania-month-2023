@@ -1,12 +1,42 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://bq7l7agldwvsr"]
 
 [ext_resource type="Script" path="res://Menu/credits_menu/credits_menu.gd" id="1_3dtsr"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="3_6yr1s"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="3_io8xj"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="4_7o2va"]
+[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="4_nrn6f"]
+[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="5_sgkd8"]
 [ext_resource type="PackedScene" uid="uid://crmma1xtnk53b" path="res://UI/label/title.tscn" id="5_wrqxl"]
 [ext_resource type="PackedScene" uid="uid://cv385iasb73a4" path="res://UI/label/label.tscn" id="5_y2i5s"]
-[ext_resource type="PackedScene" uid="uid://tiwfehad74ty" path="res://Menu/buttons/back_button/back_button.tscn" id="6_r2q8y"]
+[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="6_nvic6"]
+[ext_resource type="PackedScene" uid="uid://cimlcghry86oa" path="res://Menu/buttons/back_button/back_button.tscn" id="6_r2q8y"]
+[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="7_acb5o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nrn6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sgkd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nvic6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_acb5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nvic6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sgkd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="credits_menu" type="Control"]
 texture_filter = 1
@@ -19,7 +49,7 @@ grow_vertical = 2
 script = ExtResource("1_3dtsr")
 
 [node name="background" type="TextureRect" parent="."]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -27,9 +57,10 @@ grow_vertical = 2
 texture = ExtResource("3_io8xj")
 
 [node name="zzz" parent="background" instance=ExtResource("4_7o2va")]
+sprite_frames = SubResource("SpriteFrames_h6so0")
 
 [node name="panel" type="NinePatchRect" parent="."]
-anchors_preset = -1
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.04
 anchor_right = 0.8
@@ -102,3 +133,4 @@ centered = true
 last_half_color = Color(0.772549, 0.623529, 0.8, 1)
 
 [node name="back_button" parent="." instance=ExtResource("6_r2q8y")]
+layout_mode = 1
