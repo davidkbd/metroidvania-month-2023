@@ -17,6 +17,7 @@ func enter() -> void:
 	host.superattack_manager.reset_charge()
 
 func exit() -> void:
+	host.reapear_sfx.play()
 	host.velocity = Vector2.ZERO
 	get_tree().call_group("PLAYER_LISTENER", "player_listener_on_died")
 

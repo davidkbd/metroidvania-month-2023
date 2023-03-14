@@ -27,6 +27,7 @@ class_name Player
 @onready var damaged_sfx          : AudioStreamPlayer        = $damaged_sfx
 @onready var hitenemy_sfx         : AudioStreamPlayer        = $hitenemy_sfx
 @onready var slurp_sfx            : AudioStreamPlayer        = $slurp_sfx
+@onready var reapear_sfx          : AudioStreamPlayer        = $reapear_sfx
 
 var talking_npc       : NPC                 = null
 var eating_enemy      : EnemyCharacterAlive = null
