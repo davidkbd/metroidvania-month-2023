@@ -7,13 +7,13 @@ var onwall_collider_initial_position : Vector2
 var wall_raycast_result : Dictionary
 
 var walled_time
-var intial_direction
+var initial_direction
 var direction
 
 func enter() -> void:
 	host.animation_playblack.travel(name)
-	intial_direction = host.walk_direction
-	_apply_sprite_fip(intial_direction)
+	initial_direction = host.walk_direction
+	_apply_sprite_fip(initial_direction)
 	walled_time = .15
 	direction = .0
 	host.velocity = Vector2.ZERO
@@ -31,7 +31,11 @@ func step(delta : float) -> StateMachineState:
 	host.move_and_slide()
 	walled_time -= delta
 	
-	if ControlInput.is_jump_just_pressed() and direction != intial_direction and direction != .0:
+#	if ControlInput.is_jump_just_pressed() and direction != initial_direction and direction != .0:
+#		_apply_impulse(direction)
+#		return state_machine.on_jump
+	if direction and direction != initial_direction \
+	and ControlInput.is_jump_pressed():
 		_apply_impulse(direction)
 		return state_machine.on_jump
 	if host.is_on_floor(): return state_machine.on_ground
