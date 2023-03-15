@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_u0pa6"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="6_5tsu2"]
 [ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="7_mu0ld"]
-[ext_resource type="PackedScene" uid="uid://c6mlk4mk0bsjn" path="res://Ingame/game_objects/items/skill_dash/skill_dash.tscn" id="8_t08at"]
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="9_30u16"]
+[ext_resource type="PackedScene" uid="uid://hamx3m84le0w" path="res://Ingame/game_objects/items/skill_dash/skill_dash_spawner.tscn" id="10_fo8vt"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="10_xxmjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
@@ -78,9 +78,6 @@ enemy_type = 1
 position = Vector2(1144, -384)
 npc_type = 8
 
-[node name="skill_dash" parent="room_content" instance=ExtResource("8_t08at")]
-position = Vector2(1000, -384)
-
 [node name="LockDoor" parent="room_content" instance=ExtResource("9_30u16")]
 position = Vector2(880, -384)
 
@@ -89,3 +86,6 @@ position = Vector2(-72, 288)
 
 [node name="room_element_spawner3" parent="room_content" instance=ExtResource("10_xxmjl")]
 position = Vector2(-16, 288)
+
+[node name="skill_dash_spawner" parent="room_content" instance=ExtResource("10_fo8vt")]
+position = Vector2(1000, -384)

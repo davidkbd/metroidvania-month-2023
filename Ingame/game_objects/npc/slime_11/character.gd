@@ -8,8 +8,7 @@ func get_texts() -> Array[String]:
 	$talk_sfx.play()
 	data.last_talk = Time.get_unix_time_from_system()
 	return [
-		"You don't see me",
-		"I'm invisible",
-		"...",
-		"So that power I bought is useless?"
+		"This roots let you save the game progress",
+		"Just look up when you found any",
+		"This will also heal you"
 	]

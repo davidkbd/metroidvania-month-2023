@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_omthn"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="6_5aovd"]
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="7_u36xv"]
-[ext_resource type="PackedScene" uid="uid://c3sg6ph4trics" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack.tscn" id="8_ev36l"]
+[ext_resource type="PackedScene" uid="uid://c7bfdip2p4xgl" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack_spawner.tscn" id="8_825ue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1744, 920)
@@ -62,5 +62,5 @@ position = Vector2(288, -448)
 collider_size = Vector2i(14, 4)
 direction = 0
 
-[node name="skill_super_attack" parent="room_content" instance=ExtResource("8_ev36l")]
+[node name="skill_super_attack_spawner" parent="room_content" instance=ExtResource("8_825ue")]
 position = Vector2(424, 384)

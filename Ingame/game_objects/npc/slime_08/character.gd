@@ -8,6 +8,6 @@ func get_texts() -> Array[String]:
 	$talk_sfx.play()
 	data.last_talk = Time.get_unix_time_from_system()
 	return [
-		"You know you can do the super attack by concentrating your attack?",
+		"You know you can perform a super attack by concentrating your attack?",
 		"The range is higher"
 	]

@@ -9,6 +9,6 @@ func get_texts() -> Array[String]:
 	data.last_talk = Time.get_unix_time_from_system()
 	return [
 		"You know you can climb over the walls to reach high places?",
-		"But it's difficult to learn the DOUBLE JUMP",
-		"Do you know how to do such thing?"
+		"But it's difficult to find the DOUBLE JUMP ability, I wish to find the power root somewhere..",
+		"Have you found it?"
 	]

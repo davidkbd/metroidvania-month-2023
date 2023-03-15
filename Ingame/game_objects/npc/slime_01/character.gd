@@ -13,5 +13,6 @@ func get_texts() -> Array[String]:
 		"Those filthy ones who call themselves heroes are ruinig the underground",
 		"Go outside and stop them.\nBut beware...",
 		"There are other upset creatures that will attack anyone they don't know",
-		"Try your best and please, save us"
+		"Try your best and please...",
+		"Save us from them"
 	]

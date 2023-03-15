@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bufcpa7gjurs4"]
+[gd_scene load_steps=10 format=3 uid="uid://bufcpa7gjurs4"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_8t18y"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_rty7b"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_1vtrd"]
 [ext_resource type="PackedScene" uid="uid://t6bwob3bwtvf" path="res://Ingame/game_objects/room/savepoint_area/savepoint_area.tscn" id="6_rsl6g"]
 [ext_resource type="PackedScene" uid="uid://h14f0sstxiws" path="res://Ingame/game_objects/room/torch/torch.tscn" id="7_m4ll1"]
+[ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="8_2sjdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1216, 680)
@@ -61,3 +62,7 @@ position = Vector2(256, 320)
 
 [node name="torch2" parent="room_content" instance=ExtResource("7_m4ll1")]
 position = Vector2(256, 64)
+
+[node name="npc_spawner" parent="room_content" instance=ExtResource("8_2sjdq")]
+position = Vector2(272, 128)
+npc_type = 10

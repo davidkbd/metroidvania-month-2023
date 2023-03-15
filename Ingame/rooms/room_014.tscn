@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dqx4c4e158ajn" path="res://Ingame/game_objects/room/lock_door/lock_door.tscn" id="6_h5kb6"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="7_j6xdx"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="8_rxjq2"]
-[ext_resource type="PackedScene" uid="uid://4kjkvvj178cs" path="res://Ingame/game_objects/items/skill_drop_attack/skill_drop_attack.tscn" id="9_fs5d5"]
+[ext_resource type="PackedScene" uid="uid://dqnmswno6loj3" path="res://Ingame/game_objects/items/skill_drop_attack/skill_drop_attack_spawner.tscn" id="9_ijysi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1424, 888)
@@ -85,5 +85,5 @@ enemy_type = 1
 position = Vector2(-264, -96)
 enemy_type = 1
 
-[node name="skill_drop_attack" parent="room_content" instance=ExtResource("9_fs5d5")]
+[node name="skill_drop_attack_spawner" parent="room_content" instance=ExtResource("9_ijysi")]
 position = Vector2(-512, -224)

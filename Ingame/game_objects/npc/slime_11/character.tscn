@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://cdv17pqee45sm"]
+
+[ext_resource type="Script" path="res://Ingame/game_objects/npc/slime_11/character.gd" id="1_oxfi1"]
+[ext_resource type="AudioStream" uid="uid://rd5lrvx0ovi6" path="res://sfx/NEW/ingame_npc_talk.wav" id="2_heh7e"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0efx4"]
+load_path = "res://.godot/imported/character.png-95222f787038a9bba724fb51085f306e.ctex"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kxqh1"]
+animation = &"asd"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_47fju"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5reon"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a37ib"]
+states/asd/node = SubResource("AnimationNodeAnimation_kxqh1")
+states/asd/position = Vector2(593.5, 105)
+states/idle/node = SubResource("AnimationNodeAnimation_47fju")
+states/idle/position = Vector2(433, 92.5)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5reon")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_qsblk"]
+
+[sub_resource type="Animation" id="Animation_yha46"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5np5v"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_n3n6c"]
+resource_name = "talking"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohchq"]
+_data = {
+"RESET": SubResource("Animation_yha46"),
+"idle": SubResource("Animation_5np5v"),
+"talking": SubResource("Animation_n3n6c")
+}
+
+[node name="character" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_oxfi1")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-56, -70)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_0efx4")
+centered = false
+hframes = 11
+vframes = 14
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_a37ib")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_qsblk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ohchq")
+}
+
+[node name="talk_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_heh7e")
+volume_db = -15.0
+bus = &"sfx"

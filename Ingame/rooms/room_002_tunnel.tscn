@@ -58,7 +58,7 @@ position = Vector2(-48, 208)
 position = Vector2(904, 200)
 
 [node name="room_element_spawner2" parent="room_content" instance=ExtResource("7_eet7e")]
-position = Vector2(224, 288)
+position = Vector2(1392, 288)
 element_type = 1
 
 [node name="room_element_spawner3" parent="room_content" instance=ExtResource("7_eet7e")]

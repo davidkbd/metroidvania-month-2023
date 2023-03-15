@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="5_7o3yd"]
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/control_tip_area/control_tip_area.tscn" id="5_h1fbl"]
 [ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="7_fovrc"]
-[ext_resource type="PackedScene" uid="uid://b3n6r65xgu3mt" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall.tscn" id="8_0fcjx"]
+[ext_resource type="PackedScene" uid="uid://ckj4f3ct76iym" path="res://Ingame/game_objects/items/skill_snap_wall/skill_snap_wall_spawner.tscn" id="8_t5n52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(1608, 2208)
@@ -68,5 +68,5 @@ npc_type = 3
 position = Vector2(2584, -1600)
 npc_type = 9
 
-[node name="skill_snap_wall" parent="room_content" instance=ExtResource("8_0fcjx")]
-position = Vector2(2560, -192)
+[node name="skill_snap_wall_spawner" parent="room_content" instance=ExtResource("8_t5n52")]
+position = Vector2(2552, -192)
