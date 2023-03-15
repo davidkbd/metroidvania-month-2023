@@ -14,5 +14,5 @@ func get_texts() -> Array[String]:
 		"Go outside and stop them.\nBut beware...",
 		"There are other upset creatures that will attack anyone they don't know",
 		"Try your best and please...",
-		"Save us from them"
+		"Save us"
 	]

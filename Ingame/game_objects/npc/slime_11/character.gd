@@ -10,5 +10,5 @@ func get_texts() -> Array[String]:
 	return [
 		"This roots let you save the game progress",
 		"Just look up when you found any",
-		"This will also heal you"
+		"This will also heal you and save the progress on that pretty map"
 	]
