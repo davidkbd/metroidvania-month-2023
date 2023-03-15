@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://bdaqfw1673oh1"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/character.gd" id="1_6s1t7"]
-[ext_resource type="PackedScene" uid="uid://dv4oxwal6jo33" path="res://Ingame/game_objects/enemy/fairy/projectile/fairy_projectile.tscn" id="2_ftaxs"]
+[ext_resource type="PackedScene" uid="uid://p23br3xyn7s" path="res://Ingame/game_objects/enemy/fairy/projectile/fairy_projectile.tscn" id="2_ftaxs"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/state_machine.gd" id="2_usxyx"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_patrol.gd" id="4_qu6n8"]
 [ext_resource type="Script" path="res://Ingame/game_objects/enemy/fairy/parts/state_machine/on_chase.gd" id="5_0315x"]
@@ -212,7 +212,6 @@ script = ExtResource("8_htgti")
 [node name="navigation_agent" type="NavigationAgent2D" parent="."]
 path_desired_distance = 32.0
 path_max_distance = 20.0
-debug_enabled = true
 
 [node name="sprite" type="Sprite2D" parent="."]
 z_index = 1

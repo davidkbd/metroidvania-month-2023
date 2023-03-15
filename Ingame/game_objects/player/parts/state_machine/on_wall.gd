@@ -9,6 +9,7 @@ var wall_raycast_result : Dictionary
 var walled_time
 var initial_direction
 var direction
+var jump_pressed
 
 func enter() -> void:
 	host.animation_playblack.travel(name)
@@ -16,6 +17,7 @@ func enter() -> void:
 	_apply_sprite_fip(initial_direction)
 	walled_time = .15
 	direction = .0
+	jump_pressed = false
 	host.velocity = Vector2.ZERO
 	_update_colliders()
 
@@ -34,8 +36,14 @@ func step(delta : float) -> StateMachineState:
 #	if ControlInput.is_jump_just_pressed() and direction != initial_direction and direction != .0:
 #		_apply_impulse(direction)
 #		return state_machine.on_jump
-	if direction and direction != initial_direction \
-	and ControlInput.is_jump_pressed():
+	if ControlInput.is_jump_just_pressed():
+		jump_pressed = true
+	elif ControlInput.is_jump_just_released():
+		jump_pressed = false
+
+	if abs(direction) > .9 \
+	and sign(direction) != sign(initial_direction) \
+	and jump_pressed:
 		_apply_impulse(direction)
 		return state_machine.on_jump
 	if host.is_on_floor(): return state_machine.on_ground

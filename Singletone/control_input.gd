@@ -34,8 +34,8 @@ func get_vertical_axis() ->          float: return Input.get_axis(U_ACTIONS[conf
 func is_up_pressed() ->              bool:  return enabled and Input.is_action_pressed(U_ACTIONS[configurated_control_mode])
 func is_down_pressed() ->            bool:  return enabled and Input.is_action_pressed(D_ACTIONS[configurated_control_mode])
 
-func is_jump_pressed() ->            bool:  return enabled and Input.is_action_pressed(JUMP_ACTIONS[configurated_control_mode])
 func is_jump_just_pressed() ->       bool:  return enabled and Input.is_action_just_pressed(JUMP_ACTIONS[configurated_control_mode])
+func is_jump_just_released() ->      bool:  return enabled and Input.is_action_just_released(JUMP_ACTIONS[configurated_control_mode])
 func is_doublejump_just_pressed() -> bool:  return enabled and Input.is_action_just_pressed(DOUBLEJUMP_ACTIONS[configurated_control_mode])
 
 func is_attack_just_pressed() ->     bool:  return enabled and Input.is_action_just_pressed(ATTACK_ACTIONS[configurated_control_mode])
