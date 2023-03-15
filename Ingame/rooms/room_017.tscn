@@ -15,7 +15,7 @@ size = Vector2(2080, 1048)
 [node name="room_017" type="Node2D"]
 script = ExtResource("1_n3lki")
 ost_item = 6
-battle_ost_item = 6
+battle_ost_item = 7
 metadata/_edit_horizontal_guides_ = []
 
 [node name="room_area" parent="." instance=ExtResource("2_canr2")]

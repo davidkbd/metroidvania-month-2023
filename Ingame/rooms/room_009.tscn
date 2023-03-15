@@ -39,7 +39,7 @@ battle_ost_item = 6
 position = Vector2(64, 288)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(-120, -488)
+position = Vector2(-112, -488)
 shape = SubResource("RectangleShape2D_ebpdk")
 debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
