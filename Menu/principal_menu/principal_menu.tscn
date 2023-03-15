@@ -204,6 +204,6 @@ grow_vertical = 1
 
 [node name="metroidvaniamonth" parent="." instance=ExtResource("14_0qmve")]
 position = Vector2(8, 344)
-text = "Metroidvania Month Jam"
+text = "Metroidvania Month Jam 19"
 width = 256
 last_half_color = Color(0.34902, 0.823529, 0.580392, 1)

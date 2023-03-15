@@ -1,11 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://rx8yagvwwkhi"]
+[gd_scene load_steps=12 format=3 uid="uid://rx8yagvwwkhi"]
 
 [ext_resource type="Script" path="res://Menu/slots_menu/slots_menu.gd" id="1_oe2fm"]
 [ext_resource type="PackedScene" uid="uid://dki6cesf6s3jt" path="res://Menu/slots_menu/parts/slot_data_control/slot_data_control.tscn" id="2_rh7q7"]
 [ext_resource type="Texture2D" uid="uid://sd23yphf2o81" path="res://Menu/sprites/background.png" id="4_xrtvo"]
+[ext_resource type="Texture2D" uid="uid://doe6jbsnkeuh4" path="res://Menu/sprites/zzz_1.png" id="5_3yehp"]
 [ext_resource type="PackedScene" uid="uid://dvjb27dw4m1jk" path="res://Menu/sprites/zzz_sprite.tscn" id="5_eev1d"]
 [ext_resource type="Texture2D" uid="uid://bn7tv5yu8vc6g" path="res://UI/sprites/panel.png" id="5_wlm5d"]
+[ext_resource type="Texture2D" uid="uid://dq6hl58syqdvh" path="res://Menu/sprites/zzz_2.png" id="6_20ddv"]
 [ext_resource type="PackedScene" uid="uid://cimlcghry86oa" path="res://Menu/buttons/back_button/back_button.tscn" id="6_tgvgy"]
+[ext_resource type="Texture2D" uid="uid://d3rkd46euyp57" path="res://Menu/sprites/zzz_3.png" id="7_k17kt"]
+[ext_resource type="Texture2D" uid="uid://c8cnaqtaat1t5" path="res://Menu/sprites/zzz_4.png" id="8_8u87x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6so0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3yehp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_20ddv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k17kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8u87x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k17kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_20ddv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="slots" type="Control" groups=["MENU_LISTENER"]]
 texture_filter = 1
@@ -19,7 +49,7 @@ script = ExtResource("1_oe2fm")
 slot_data_control_template = ExtResource("2_rh7q7")
 
 [node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -27,9 +57,10 @@ grow_vertical = 2
 texture = ExtResource("4_xrtvo")
 
 [node name="zzz" parent="Background" instance=ExtResource("5_eev1d")]
+sprite_frames = SubResource("SpriteFrames_h6so0")
 
 [node name="panel" type="NinePatchRect" parent="."]
-anchors_preset = -1
+layout_mode = 0
 anchor_left = 0.06
 anchor_top = 0.18
 anchor_right = 0.94
@@ -43,7 +74,7 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="container" type="CenterContainer" parent="."]
-anchors_preset = -1
+layout_mode = 0
 anchor_left = 0.08
 anchor_top = 0.2
 anchor_right = 0.92
@@ -52,10 +83,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="slot_list" type="GridContainer" parent="container"]
-offset_left = 268.0
-offset_top = 108.0
-offset_right = 268.0
-offset_bottom = 108.0
+layout_mode = 2
 columns = 3
 
 [node name="back_button" parent="." instance=ExtResource("6_tgvgy")]
+layout_mode = 1

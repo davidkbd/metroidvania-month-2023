@@ -4,6 +4,17 @@
 [ext_resource type="Script" path="res://Menu/buttons/back_button/back_button.gd" id="2_v8lgr"]
 
 [node name="back_button" instance=ExtResource("1_dk1up")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 560.0
+offset_top = 328.0
+offset_right = 624.0
+offset_bottom = 344.0
+grow_horizontal = 1
+grow_vertical = 1
 script = ExtResource("2_v8lgr")
 text = "Back"
 
