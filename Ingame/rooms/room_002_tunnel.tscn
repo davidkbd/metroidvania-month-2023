@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://sml08gtbpkp0"]
+[gd_scene load_steps=9 format=3 uid="uid://sml08gtbpkp0"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_c7xbx"]
 [ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ms4b8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_5alv8"]
 [ext_resource type="TileSet" uid="uid://dmwgrihiyreyd" path="res://Ingame/levels/tiles/cavern.tres" id="5_l1a3c"]
 [ext_resource type="PackedScene" uid="uid://h14f0sstxiws" path="res://Ingame/game_objects/room/torch/torch.tscn" id="6_pd381"]
+[ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="7_eet7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
 size = Vector2(2536, 424)
@@ -55,3 +56,15 @@ position = Vector2(-48, 208)
 
 [node name="torch2" parent="room_content" instance=ExtResource("6_pd381")]
 position = Vector2(904, 200)
+
+[node name="room_element_spawner2" parent="room_content" instance=ExtResource("7_eet7e")]
+position = Vector2(224, 288)
+element_type = 1
+
+[node name="room_element_spawner3" parent="room_content" instance=ExtResource("7_eet7e")]
+position = Vector2(832, 288)
+element_type = 1
+
+[node name="room_element_spawner4" parent="room_content" instance=ExtResource("7_eet7e")]
+position = Vector2(480, 288)
+element_type = 1
