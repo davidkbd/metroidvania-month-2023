@@ -10,6 +10,7 @@ monitoring = false
 script = ExtResource("1_l41if")
 
 [node name="break_sfx" type="AudioStreamPlayer" parent="."]
+process_mode = 1
 stream = ExtResource("2_hvou2")
 volume_db = -13.0
 bus = &"sfx"

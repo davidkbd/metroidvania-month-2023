@@ -103,6 +103,7 @@ libraries = {
 }
 
 [node name="talk_sfx" type="AudioStreamPlayer" parent="."]
+process_mode = 1
 stream = ExtResource("2_heh7e")
 volume_db = -15.0
 bus = &"sfx"

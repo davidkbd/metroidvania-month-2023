@@ -13,6 +13,7 @@ func activate(_room_data : Dictionary) -> void:
 func deactivate() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	for child in get_children():
+		print(child.name)
 		if child.has_method("deactivate") and not child is SavepointArea:
 			child.deactivate()
 
