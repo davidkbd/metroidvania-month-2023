@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c3sg6ph4trics" path="res://Ingame/game_objects/items/skill_super_attack/skill_super_attack.tscn" id="2_r614x"]
 [ext_resource type="Texture2D" uid="uid://stlarslmv1m5" path="res://Ingame/game_objects/items/skill_super_attack/sprites/spawner_sprite.png" id="3_dflqd"]
 
-[node name="skill_super_attack_spawner" type="Node2D"]
+[node name="skill_super_attack_spawner" type="Node2D" groups=["PLAYER_LISTENER"]]
 texture_filter = 1
 script = ExtResource("1_2xxtm")
 item_template = ExtResource("2_r614x")

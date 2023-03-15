@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b20g0bxsr031g" path="res://Ingame/game_objects/items/skill_double_jump/skill_double_jump.tscn" id="2_qhelh"]
 [ext_resource type="Texture2D" uid="uid://bv2xkk3oibnwr" path="res://Ingame/game_objects/items/skill_double_jump/sprites/spawner_sprite.png" id="3_3eih3"]
 
-[node name="skill_double_jump_spawner" type="Node2D"]
+[node name="skill_double_jump_spawner" type="Node2D" groups=["PLAYER_LISTENER"]]
 texture_filter = 1
 script = ExtResource("1_6o368")
 item_template = ExtResource("2_qhelh")
