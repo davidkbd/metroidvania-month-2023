@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmrs6x5lnjudw"]
+[gd_scene load_steps=3 format=3 uid="uid://bmrs6x5lnjudw"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/destroyable_object/destroyable_object.gd" id="1_l41if"]
+[ext_resource type="AudioStream" uid="uid://bfe10bbs0ab8w" path="res://sfx/NEW/ingame_breakable_platform_broken.wav" id="2_hvou2"]
 
 [node name="destroyable_object" type="Area2D"]
 collision_layer = 16384
 collision_mask = 0
 monitoring = false
 script = ExtResource("1_l41if")
+
+[node name="break_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hvou2")
+volume_db = -13.0
+bus = &"sfx"
