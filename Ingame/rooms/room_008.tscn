@@ -1,7 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://csayp6knrfe0d"]
+[gd_scene load_steps=17 format=3 uid="uid://csayp6knrfe0d"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_dv7hw"]
-[ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_5m3fy"]
 [ext_resource type="TileSet" uid="uid://dmwgrihiyreyd" path="res://Ingame/levels/tiles/cavern.tres" id="3_ekpu7"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_0261m"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="5_ooljq"]
@@ -12,10 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bmrs6x5lnjudw" path="res://Ingame/game_objects/destroyable_object/destroyable_object.tscn" id="9_k55iq"]
 [ext_resource type="Texture2D" uid="uid://cw2g4r7fsxx8g" path="res://Ingame/Particles/destroyable_wall/cavern_destroyable_wall_particle.png" id="10_bywac"]
 [ext_resource type="Texture2D" uid="uid://bfefy1spou7dp" path="res://Ingame/rooms/destroyable_walls/sprites/room008_destroyable_wall.png" id="11_1fa1i"]
-[ext_resource type="PackedScene" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform_spawner.tscn" id="13_gsous"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(1712, 2168)
+[ext_resource type="PackedScene" uid="uid://b4qq70ymjcyj8" path="res://Ingame/game_objects/room/breakable_platform/breakable_platform_spawner.tscn" id="13_gsous"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpp6u"]
 size = Vector2(128, 12)
@@ -33,14 +29,6 @@ size = Vector2(32, 96.0001)
 script = ExtResource("1_dv7hw")
 ost_item = 2
 battle_ost_item = 2
-
-[node name="room_area" parent="." instance=ExtResource("2_5m3fy")]
-position = Vector2(64, 288)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(-208, -908)
-shape = SubResource("RectangleShape2D_ebpdk")
-debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 light_mask = 4

@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://coewdtrff1jxy"]
+[gd_scene load_steps=9 format=3 uid="uid://coewdtrff1jxy"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_n3lki"]
-[ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_canr2"]
 [ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="3_gpkn2"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_avv45"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_u0pa6"]
@@ -10,22 +9,11 @@
 [ext_resource type="PackedScene" path="res://Ingame/game_objects/room/torch/sewer_torch.tscn" id="8_xybk8"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="9_fknvq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(2096, 1240)
-
 [node name="room_019" type="Node2D"]
 script = ExtResource("1_n3lki")
 ost_item = 6
 battle_ost_item = 7
 metadata/_edit_horizontal_guides_ = []
-
-[node name="room_area" parent="." instance=ExtResource("2_canr2")]
-position = Vector2(64, 288)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(272, -508)
-shape = SubResource("RectangleShape2D_ebpdk")
-debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 light_mask = 4

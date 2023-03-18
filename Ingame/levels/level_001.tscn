@@ -46,7 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://coewdtrff1jxy" path="res://Ingame/rooms/room_019.tscn" id="35_n8v53"]
 [ext_resource type="PackedScene" uid="uid://xhech3ybgrqn" path="res://Ingame/rooms/room_020.tscn" id="36_i8745"]
 [ext_resource type="PackedScene" uid="uid://c7vfkeqp830lf" path="res://Ingame/rooms/room_021.tscn" id="37_82fqi"]
-[ext_resource type="PackedScene" uid="uid://bu8oapkta7nxg" path="res://Ingame/rooms/room_016_savepoint.tscn" id="42_5ioh8"]
+[ext_resource type="PackedScene" uid="uid://de730dlgvw0gr" path="res://Ingame/rooms/room_016_savepoint.tscn" id="42_5ioh8"]
 
 [sub_resource type="Environment" id="Environment_mmnho"]
 background_mode = 3
@@ -809,16 +809,16 @@ parallax_name = "first_room"
 metadata/_edit_lock_ = true
 
 [node name="room_001_secret" parent="." instance=ExtResource("14_vprd8")]
-position = Vector2(-16, 32)
+position = Vector2(-800, 224)
 metadata/_edit_lock_ = true
 
 [node name="room_002" parent="." instance=ExtResource("7_75ef1")]
-position = Vector2(1896, 32)
+position = Vector2(3936, -672)
 parallax_name = "room_002"
 metadata/_edit_lock_ = true
 
 [node name="room_002_secret" parent="." instance=ExtResource("9_l220f")]
-position = Vector2(1800, 32)
+position = Vector2(1824, -800)
 parallax_name = "room_002_secret"
 metadata/_edit_lock_ = true
 

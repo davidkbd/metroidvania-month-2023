@@ -1,28 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://sml08gtbpkp0"]
+[gd_scene load_steps=7 format=3 uid="uid://sml08gtbpkp0"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_c7xbx"]
-[ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_ms4b8"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="3_fw60c"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="4_5alv8"]
 [ext_resource type="TileSet" uid="uid://dmwgrihiyreyd" path="res://Ingame/levels/tiles/cavern.tres" id="5_l1a3c"]
 [ext_resource type="PackedScene" uid="uid://h14f0sstxiws" path="res://Ingame/game_objects/room/torch/torch.tscn" id="6_pd381"]
 [ext_resource type="PackedScene" uid="uid://ohwp62djoxfh" path="res://Ingame/game_objects/spawner/room_element_spawner/room_element_spawner.tscn" id="7_eet7e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(2536, 424)
-
 [node name="room_002_tunnel" type="Node2D"]
 script = ExtResource("1_c7xbx")
 ost_item = 2
 battle_ost_item = 2
-
-[node name="room_area" parent="." instance=ExtResource("2_ms4b8")]
-position = Vector2(64, 288)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(524, -140)
-shape = SubResource("RectangleShape2D_ebpdk")
-debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 light_mask = 4

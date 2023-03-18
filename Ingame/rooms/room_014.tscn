@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwve6vgiajvgt"]
+[gd_scene load_steps=9 format=3 uid="uid://cwve6vgiajvgt"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_pfkqc"]
-[ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_n5a0i"]
 [ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="3_ch0vf"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_1p3hp"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_rcgx0"]
@@ -10,20 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="8_rxjq2"]
 [ext_resource type="PackedScene" uid="uid://dqnmswno6loj3" path="res://Ingame/game_objects/items/skill_drop_attack/skill_drop_attack_spawner.tscn" id="9_ijysi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(1424, 888)
-
 [node name="room_014" type="Node2D"]
 script = ExtResource("1_pfkqc")
 ost_item = 6
 battle_ost_item = 6
-
-[node name="room_area" parent="." instance=ExtResource("2_n5a0i")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(0, 36)
-shape = SubResource("RectangleShape2D_ebpdk")
-debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 light_mask = 4

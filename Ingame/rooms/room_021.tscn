@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://c7vfkeqp830lf"]
+[gd_scene load_steps=16 format=3 uid="uid://c7vfkeqp830lf"]
 
 [ext_resource type="Script" path="res://Ingame/game_objects/_abstract/room.gd" id="1_0wcwj"]
-[ext_resource type="PackedScene" uid="uid://iyjbmvwu3mln" path="res://Ingame/game_objects/room/room_area/room_area.tscn" id="2_sb2ff"]
 [ext_resource type="TileSet" uid="uid://cfnvb5xkjyxnl" path="res://Ingame/levels/tiles/sewer.tres" id="3_wsns8"]
 [ext_resource type="PackedScene" uid="uid://dt5tsxpcpmftw" path="res://Ingame/game_objects/room/room_content/room_content.tscn" id="4_k48wq"]
 [ext_resource type="PackedScene" uid="uid://d0t83wkvk5d6l" path="res://Ingame/game_objects/room/autoadvance_area/autoadvance_area.tscn" id="5_qawp0"]
@@ -11,9 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://d3m0r2duc0f8k" path="res://Ingame/game_objects/spawner/npc_spawner/npc_spawner.tscn" id="9_87bl5"]
 [ext_resource type="PackedScene" uid="uid://djaquspk2nph0" path="res://Ingame/game_objects/spawner/enemy_spawner/enemy_spawner.tscn" id="10_mboop"]
 [ext_resource type="PackedScene" path="res://sfx/roll_trap_sfx.tscn" id="11_vgy5k"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebpdk"]
-size = Vector2(2584, 864)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejif4"]
 texture = ExtResource("7_tnb2s")
@@ -60,13 +56,6 @@ size = Vector2(832, 32)
 [node name="room_021" type="Node2D"]
 script = ExtResource("1_0wcwj")
 ost_item = 4
-
-[node name="room_area" parent="." instance=ExtResource("2_sb2ff")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="room_area"]
-position = Vector2(668, 16)
-shape = SubResource("RectangleShape2D_ebpdk")
-debug_color = Color(0.415686, 0.552941, 0.662745, 0.419608)
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 light_mask = 4

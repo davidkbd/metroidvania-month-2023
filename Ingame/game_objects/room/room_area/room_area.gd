@@ -32,7 +32,7 @@ func disable_room() -> void:
 	room_area_manager.room_deactivate(room)
 
 func configure_hook() -> void:
-	var col  : CollisionShape2D = get_node("CollisionShape2D")
+	var col  : CollisionShape2D = get_node("collider")
 	var rect : Rect2 = col.shape.get_rect()
 	
 	rect.size.x -= viewport_size.x
