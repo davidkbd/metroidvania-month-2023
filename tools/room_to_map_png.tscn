@@ -33,7 +33,7 @@ func _make_snapshots() -> void:
 			await get_tree().physics_frame
 		
 			if _show_secrets(room_instance):
-				await get_tree().physics_frame
+				await get_tree().create_tween().tween_interval(.2).finished
 				export_img = viewport.get_texture().get_image()
 				export_path = output_directory + \"/map-\" + file.replace(\".tscn\", \"-SECRETS.png\")
 				export_img.save_png(export_path)
@@ -45,14 +45,18 @@ func _make_snapshots() -> void:
 func _clean_room(room_instance) -> void:
 	var content = room_instance.find_child(\"room_content\")
 	for spawner in content.find_children(\"*spawner*\"):
-		spawner.queue_free()
+		spawner.hide()
+	for background in room_instance.find_children(\"*Background*\"):
+		if background is TileMap:
+			background.hide()
 
 func _show_secrets(room_instance) -> bool:
 	var secrets = 0
 	for child in room_instance.room_content.get_children():
 		if child is DestroyableObject:
+			print(child.get_path())
 			secrets += 1
-			child.queue_free()
+			child.hide()
 	return secrets > 0
 
 func _ready():
