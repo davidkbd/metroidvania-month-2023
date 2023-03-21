@@ -25,6 +25,7 @@ func start_button_grab_focus() -> void:
 	start_button.grab_focus()
 
 func _on_start_button_pressed():
+	start_button.disabled = true
 	emit_signal("start_pressed", slot_id)
 
 func _on_delete_button_pressed() -> void:
